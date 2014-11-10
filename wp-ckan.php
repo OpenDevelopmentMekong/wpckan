@@ -39,21 +39,6 @@ if(!class_exists('wpckan'))
             // Do nothing
         } // END public static function deactivate
 
-        // Add a link to the settings page onto the plugin page
-        if(isset($wpckan))
-        {
-            // Add the settings link to the plugins page
-            function plugin_settings_link($links)
-            {
-                $settings_link = '<a href="options-general.php?page=wpckan">Settings</a>';
-                array_unshift($links, $settings_link);
-                return $links;
-            }
-
-            $plugin = plugin_basename(__FILE__);
-            add_filter("plugin_action_links_$plugin", 'plugin_settings_link');
-        }
-
 
         /**
          * hook into WP's admin_init action hook
@@ -108,6 +93,21 @@ if(class_exists('wpckan'))
 
     // instantiate the plugin class
     $wp_plugin_template = new WP_Plugin_Template();
+
+    // Add a link to the settings page onto the plugin page
+    if(isset($wpckan))
+    {
+        // Add the settings link to the plugins page
+        function plugin_settings_link($links)
+        {
+            $settings_link = '<a href="options-general.php?page=wpckan">Settings</a>';
+            array_unshift($links, $settings_link);
+            return $links;
+        }
+
+        $plugin = plugin_basename(__FILE__);
+        add_filter("plugin_action_links_$plugin", 'plugin_settings_link');
+    }
 }
 
 ?>
