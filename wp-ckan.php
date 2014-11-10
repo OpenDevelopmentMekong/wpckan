@@ -39,13 +39,6 @@ if(!class_exists('wpckan'))
             // Do nothing
         } // END public static function deactivate
 
-        // Installation and uninstallation hooks
-        register_activation_hook(__FILE__, array('wpckan', 'activate'));
-        register_deactivation_hook(__FILE__, array('wpckan', 'deactivate'));
-
-        // instantiate the plugin class
-        $wpckan = new wpckan();
-
         // Add a link to the settings page onto the plugin page
         if(isset($wpckan))
         {
@@ -105,6 +98,16 @@ if(!class_exists('wpckan'))
         }
 
     } // END class wpckan-Plugin
-} // END if(!class_exists('wpckan-Plugin'))
+} // END if(!class_exists('wpckan'))
+
+if(class_exists('wpckan'))
+{
+    // Installation and uninstallation hooks
+    register_activation_hook(__FILE__, array('wpckan', 'activate'));
+    register_deactivation_hook(__FILE__, array('wpckan', 'deactivate'));
+
+    // instantiate the plugin class
+    $wp_plugin_template = new WP_Plugin_Template();
+}
 
 ?>
