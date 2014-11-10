@@ -92,7 +92,7 @@ if(class_exists('wpckan'))
     register_deactivation_hook(__FILE__, array('wpckan', 'deactivate'));
 
     // instantiate the plugin class
-    $wp_plugin_template = new WP_Plugin_Template();
+    $wpckan = new wpckan();
 
     // Add a link to the settings page onto the plugin page
     if(isset($wpckan))
