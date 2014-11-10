@@ -9,7 +9,6 @@
  * License: TBD
  */
 
-<?php
 if(!class_exists('wp-ckan'))
 {
     class wp-ckan
@@ -107,3 +106,5 @@ if(!class_exists('wp-ckan'))
 
     } // END class WP-CKAN-Plugin
 } // END if(!class_exists('WP-CKAN-Plugin'))
+
+?>
