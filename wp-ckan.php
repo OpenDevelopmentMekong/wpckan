@@ -1,17 +1,17 @@
 <?php
 /**
- * Plugin Name: wp-ckan
+ * Plugin Name: wpckan
  * Plugin URI:
- * Description: wp-ckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
+ * Description: wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
  * Version: 0.1
  * Author: Alex Corbi
  * Author URI: http://www.open-steps.org
  * License: TBD
  */
 
-if(!class_exists('wp-ckan'))
+if(!class_exists('wpckan'))
 {
-    class wp-ckan
+    class wpckan
     {
         /**
          * Construct the plugin object
@@ -40,19 +40,19 @@ if(!class_exists('wp-ckan'))
         } // END public static function deactivate
 
         // Installation and uninstallation hooks
-        register_activation_hook(__FILE__, array('wp-ckan', 'activate'));
-        register_deactivation_hook(__FILE__, array('wp-ckan', 'deactivate'));
+        register_activation_hook(__FILE__, array('wpckan', 'activate'));
+        register_deactivation_hook(__FILE__, array('wpckan', 'deactivate'));
 
         // instantiate the plugin class
-        $wp-ckan = new wp-ckan();
+        $wpckan = new wpckan();
 
         // Add a link to the settings page onto the plugin page
-        if(isset($wp-ckan))
+        if(isset($wpckan))
         {
             // Add the settings link to the plugins page
             function plugin_settings_link($links)
             {
-                $settings_link = '<a href="options-general.php?page=wp-ckan">Settings</a>';
+                $settings_link = '<a href="options-general.php?page=wpckan">Settings</a>';
                 array_unshift($links, $settings_link);
                 return $links;
             }
@@ -78,8 +78,8 @@ if(!class_exists('wp-ckan'))
         public function init_settings()
         {
             // register the settings for this plugin
-            register_setting('wp-ckan-group', 'setting_a');
-            register_setting('wp-ckan-group', 'setting_b');
+            register_setting('wpckan-group', 'setting_a');
+            register_setting('wpckan-group', 'setting_b');
         }
 
         /**
@@ -87,7 +87,7 @@ if(!class_exists('wp-ckan'))
          */
         public function add_menu()
         {
-            add_options_page('WP-CKAN Settings', 'WP-CKAN', 'manage_options', 'wp-ckan', array(&$this, 'plugin_settings_page'));
+            add_options_page('wpckan Settings', 'wpckan', 'manage_options', 'wpckan', array(&$this, 'plugin_settings_page'));
         } // END public function add_menu()
 
         /**
@@ -104,7 +104,7 @@ if(!class_exists('wp-ckan'))
             include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
         }
 
-    } // END class WP-CKAN-Plugin
-} // END if(!class_exists('WP-CKAN-Plugin'))
+    } // END class wpckan-Plugin
+} // END if(!class_exists('wpckan-Plugin'))
 
 ?>
