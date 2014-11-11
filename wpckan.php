@@ -56,9 +56,13 @@ if(!class_exists('wpckan'))
         public function init_settings()
         {
             // register the settings for this plugin
-            register_setting('wpckan-group', 'setting_ckan_url');
+            register_setting('wpckan-group', 'setting_ckan_url' , 'sanitize_url');
             register_setting('wpckan-group', 'setting_ckan_api');
             register_setting('wpckan-group', 'setting_archive_freq');
+        }
+
+        function sanitize_url($input) {
+          return esc_url($input);
         }
 
         /**

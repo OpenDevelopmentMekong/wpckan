@@ -7,19 +7,27 @@
         <table class="form-table">
             <tr valign="top">
                 <th scope="row"><label for="setting_ckan_url">CKAN Url</label></th>
-                <td><input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php echo get_option('setting_ckan_url'); ?>" /></td>
+                <td><input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php if (get_option('setting_ckan_url')===""){
+                  echo "http://";
+                } else {
+                  echo get_option('setting_ckan_url');
+                }
+                ?>" /></td>
             </tr>
             <tr valign="top">
                 <th scope="row"><label for="setting_ckan_api">CKAN Apikey</label></th>
-                <td><input type="text" name="setting_ckan_api" id="setting_ckan_api" value="<?php echo get_option('setting_ckan_api'); ?>" /></td>
+                <td>
+                  <input type="text" name="setting_ckan_api" id="setting_ckan_api" value="<?php echo get_option('setting_ckan_api'); ?>" />
+                  <p class="description">Available under the profile page of a CKAN user with Admin rights.</p>
+                </td>
             </tr>
             <tr valign="top">
               <th scope="row"><label for"setting_archive_freq">Archive contents when:</label></th>
               <td>
                 <select name="setting_archive_freq" id="setting_archive_freq">
-                  <option value="0" <?php if(get_option('setting_ckan_api') == 0) echo 'selected="selected"' ?>>Post is modified</option>
-                  <option value="1" <?php if(get_option('setting_ckan_api') == 1) echo 'selected="selected"' ?>>Daily</option>
-                  <option value="2" <?php if(get_option('setting_ckan_api') == 2) echo 'selected="selected"' ?>>Weekly</option>
+                  <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>>Post is modified</option>
+                  <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>>Daily</option>
+                  <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>>Weekly</option>
                 </select>
               </td>
             </tr>
