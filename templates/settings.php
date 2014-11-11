@@ -17,9 +17,9 @@
               <th scope="row"><label for"setting_archive_freq">Archive contents when:</label></th>
               <td>
                 <select name="setting_archive_freq" id="setting_archive_freq">
-                  <option value="0" selected="selected">Post is modified</option>
-                  <option value="1">Daily</option>
-                  <option value="2">Weekly</option>
+                  <option value="0" <?php if(get_option('setting_ckan_api') == 0) echo 'selected="selected"' ?>>Post is modified</option>
+                  <option value="1" <?php if(get_option('setting_ckan_api') == 1) echo 'selected="selected"' ?>>Daily</option>
+                  <option value="2" <?php if(get_option('setting_ckan_api') == 2) echo 'selected="selected"' ?>>Weekly</option>
                 </select>
               </td>
             </tr>

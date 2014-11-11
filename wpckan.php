@@ -58,6 +58,7 @@ if(!class_exists('wpckan'))
             // register the settings for this plugin
             register_setting('wpckan-group', 'setting_ckan_url');
             register_setting('wpckan-group', 'setting_ckan_api');
+            register_setting('wpckan-group', 'setting_archive_freq');
         }
 
         /**
@@ -65,7 +66,7 @@ if(!class_exists('wpckan'))
          */
         public function add_menu()
         {
-            add_options_page('wpckan Settings', 'wpckan', 'manage_options', 'wpckan', array(&$this, 'plugin_settings_page'));
+            add_options_page('WPCKAN Settings', 'wpckan', 'manage_options', 'wpckan', array(&$this, 'plugin_settings_page'));
         } // END public function add_menu()
 
         /**
