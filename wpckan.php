@@ -56,8 +56,8 @@ if(!class_exists('wpckan'))
         public function init_settings()
         {
             // register the settings for this plugin
-            register_setting('wpckan-group', 'setting_a');
-            register_setting('wpckan-group', 'setting_b');
+            register_setting('wpckan-group', 'setting_ckan_url');
+            register_setting('wpckan-group', 'setting_ckan_api');
         }
 
         /**
