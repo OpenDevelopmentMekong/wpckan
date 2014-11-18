@@ -69,4 +69,15 @@ Wordpress' unique id identifier (UUID) will be used.
 
 ## Installation
 
+1. Install composer http://getcomposer.org/
+2. Install dependencies <code>composer install</code>
+3. Copy to the plugins folder of your wordpress installation
+
+## Uses
+
+* Analog logger https://github.com/jbroadway/analog
+* Silex CKAN PHP Client https://github.com/SilexConsulting/CKAN_PHP
+
 ## License
+
+TBD

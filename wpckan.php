@@ -9,6 +9,8 @@
  * License: TBD
  */
 
+include_once "utils.php";
+
 if(!class_exists('wpckan'))
 {
     class wpckan
@@ -18,10 +20,14 @@ if(!class_exists('wpckan'))
          */
         public function __construct()
         {
-            // register actions
             add_action('admin_init', array(&$this, 'admin_init'));
             add_action('admin_menu', array(&$this, 'add_menu'));
-        } // END public function __construct
+            add_action('publish_post', array(&$this, 'wpckan_publish_post'));
+        }
+
+        function wpckan_publish_post( $post_ID ) {
+          wpckan_log("published a post with id: " . $post_ID);
+        }
 
         /**
          * Activate the plugin
@@ -29,7 +35,7 @@ if(!class_exists('wpckan'))
         public static function activate()
         {
             // Do nothing
-        } // END public static function activate
+        }
 
         /**
          * Deactivate the plugin
@@ -37,17 +43,14 @@ if(!class_exists('wpckan'))
         public static function deactivate()
         {
             // Do nothing
-        } // END public static function deactivate
-
+        }
 
         /**
          * hook into WP's admin_init action hook
          */
         public function admin_init()
         {
-            // Set up the settings for this plugin
             $this->init_settings();
-            // Possibly do additional admin_init tasks
         }
 
         /**
@@ -55,7 +58,6 @@ if(!class_exists('wpckan'))
          */
         public function init_settings()
         {
-            // register the settings for this plugin
             register_setting('wpckan-group', 'setting_ckan_url' , 'sanitize_url');
             register_setting('wpckan-group', 'setting_ckan_api');
             register_setting('wpckan-group', 'setting_archive_freq');
@@ -71,7 +73,7 @@ if(!class_exists('wpckan'))
         public function add_menu()
         {
             add_options_page('WPCKAN Settings', 'wpckan', 'manage_options', 'wpckan', array(&$this, 'plugin_settings_page'));
-        } // END public function add_menu()
+        }
 
         /**
          * Menu Callback
@@ -83,12 +85,12 @@ if(!class_exists('wpckan'))
                 wp_die(__('You do not have sufficient permissions to access this page.'));
             }
 
-            // Render the settings template
             include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
         }
 
-    } // END class wpckan-Plugin
-} // END if(!class_exists('wpckan'))
+    }
+}
+
 
 if(class_exists('wpckan'))
 {
