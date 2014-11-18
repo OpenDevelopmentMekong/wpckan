@@ -23,10 +23,84 @@ if(!class_exists('wpckan'))
             add_action('admin_init', array(&$this, 'admin_init'));
             add_action('admin_menu', array(&$this, 'add_menu'));
             add_action('publish_post', array(&$this, 'wpckan_publish_post'));
+            add_action('save_post', array(&$this, 'wpckan_save_post'));
+            add_action('add_meta_boxes', array(&$this, 'wpckan_add_dataset_meta_box'));
+        }
+
+        function wpckan_add_dataset_meta_box($post_type) {
+
+          $post_types = array( 'post', 'page' );
+          if ( in_array( $post_type, $post_types )) {
+              add_meta_box('wpckan_add_related_dataset',__( 'Add related CKAN content', 'wpckan_add_related_dataset_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
+          }
+
+        }
+
+        function wpckan_render_dataset_meta_box( $post ) {
+
+          // Add an nonce field so we can check for it later.
+          wp_nonce_field( 'wpckan_add_related_dataset', 'wpckan_add_related_dataset_nonce' );
+
+          $value = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
+
+          echo '<label for="wpckan_dataset_url_field">';
+          _e( 'Dataset\'s URL', 'myplugin_textdomain' );
+          echo '</label> ';
+          echo '<input type="text" id="wpckan_dataset_url_field" name="wpckan_dataset_url_field" value="' . esc_attr( $value ) . '" size="25" />';
         }
 
         function wpckan_publish_post( $post_ID ) {
-          wpckan_log("published a post with id: " . $post_ID);
+
+          wpckan_log("wpckan_publish_post: " . $post_ID);
+
+          if (wpckan_post_should_be_archived( $post_ID )){
+            //TODO
+          }
+
+        }
+
+        function wpckan_save_post( $post_ID ) {
+
+          wpckan_log("wpckan_save_post: " . $post_ID);
+
+          // Check if our nonce is set.
+          if ( ! isset( $_POST['wpckan_add_related_dataset_nonce'] ) )
+            return $post_ID;
+
+          $nonce = $_POST['wpckan_add_related_dataset_nonce'];
+
+          if ( ! wp_verify_nonce( $nonce, 'wpckan_add_related_dataset' ) )
+            return $post_ID;
+
+          // If this is an autosave, our form has not been submitted,
+          //     so we don't want to do anything.
+          if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+             return $post_ID;
+
+          // Check the user's permissions.
+          if ( 'page' == $_POST['post_type'] ) {
+
+            if ( ! current_user_can( 'edit_page', $post_id ) )
+              return $post_ID;
+
+          } else {
+
+            if ( ! current_user_can( 'edit_post', $post_id ) )
+              return $post_ID;
+          }
+
+          /* OK, its safe for us to save the data now. */
+
+          // Sanitize the user input.
+          $dataset_url = wpckan_sanitize_url( $_POST['wpckan_dataset_url_field'] );
+
+          // Update the meta field.
+          update_post_meta( $post_ID, 'wpckan_related_dataset_url', $dataset_url );
+
+          if (wpckan_post_should_be_archived( $post_ID )){
+              //TODO
+          }
+
         }
 
         /**
@@ -58,13 +132,9 @@ if(!class_exists('wpckan'))
          */
         public function init_settings()
         {
-            register_setting('wpckan-group', 'setting_ckan_url' , 'sanitize_url');
+            register_setting('wpckan-group', 'setting_ckan_url' , 'wpckan_sanitize_url');
             register_setting('wpckan-group', 'setting_ckan_api');
             register_setting('wpckan-group', 'setting_archive_freq');
-        }
-
-        function sanitize_url($input) {
-          return esc_url($input);
         }
 
         /**
