@@ -9,6 +9,7 @@
   use Analog\Analog;
 
   function wpckan_log($text) {
+    // Logs to /tmp/analog.txt
     Analog::log ($text);
   }
 

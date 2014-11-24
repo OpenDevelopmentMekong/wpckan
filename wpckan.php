@@ -9,7 +9,7 @@
  * License: TBD
  */
 
-include_once "utils.php";
+include_once "wpckan_utils.php";
 
 if(!class_exists('wpckan'))
 {
@@ -25,6 +25,15 @@ if(!class_exists('wpckan'))
             add_action('publish_post', array(&$this, 'wpckan_publish_post'));
             add_action('save_post', array(&$this, 'wpckan_save_post'));
             add_action('add_meta_boxes', array(&$this, 'wpckan_add_dataset_meta_box'));
+            add_shortcode('wpckan_related_dataset', array(&$this, 'wpckan_do_get_related_dataset'));
+        }
+
+        function wpckan_do_get_related_dataset($atts) {
+
+          wpckan_log("wpckan_do_get_related_dataset: " . $atts['post_id']);
+          $post_id = $atts['post_id'];
+          return "Related datasets for post with id: ". $post_id;
+
         }
 
         function wpckan_add_dataset_meta_box($post_type) {
