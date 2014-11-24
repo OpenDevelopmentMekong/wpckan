@@ -25,14 +25,25 @@ if(!class_exists('wpckan'))
             add_action('publish_post', array(&$this, 'wpckan_publish_post'));
             add_action('save_post', array(&$this, 'wpckan_save_post'));
             add_action('add_meta_boxes', array(&$this, 'wpckan_add_dataset_meta_box'));
-            add_shortcode('wpckan_related_dataset', array(&$this, 'wpckan_do_get_related_dataset'));
+            add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_get_related_datasets'));
+            add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_query_datasets'));
         }
 
-        function wpckan_do_get_related_dataset($atts) {
+        function wpckan_do_get_related_datasets($atts) {
 
-          wpckan_log("wpckan_do_get_related_dataset: " . $atts['post_id']);
+          wpckan_log("wpckan_do_get_related_datasets: " . $atts['post_id']);
           $post_id = $atts['post_id'];
           return "Related datasets for post with id: ". $post_id;
+
+        }
+
+        function wpckan_do_query_datasets($atts) {
+
+          wpckan_log("wpckan_do_query_related_datasets: " . $atts['query'] . " " . $atts['organization'] ." " . $atts['group']);
+          $query = $atts['query'];
+          $organization = $atts['organization'];
+          $group = $atts['group'];
+          return "Related datasets for query: ". $query . " organization: " . $organization . " group: " . $group;
 
         }
 
