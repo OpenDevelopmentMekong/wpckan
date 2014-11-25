@@ -6,7 +6,7 @@
 
         <table class="form-table">
             <tr valign="top">
-                <th scope="row"><label for="setting_ckan_url">CKAN Url</label></th>
+                <th scope="row"><label for="setting_ckan_url"><?php _e('CKAN Url','wpckan_settings_ckan_url_title') ?></label></th>
                 <td><input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php if (get_option('setting_ckan_url')===""){
                   echo "http://";
                 } else {
@@ -15,19 +15,26 @@
                 ?>" /></td>
             </tr>
             <tr valign="top">
-                <th scope="row"><label for="setting_ckan_api">CKAN Apikey</label></th>
+                <th scope="row"><label for="setting_ckan_api"><?php _e('CKAN Api','wpckan_setting_ckan_api_title') ?></label></th>
                 <td>
                   <input type="text" name="setting_ckan_api" id="setting_ckan_api" value="<?php echo get_option('setting_ckan_api'); ?>" />
-                  <p class="description">Available under the profile page of a CKAN user with Admin rights.</p>
+                  <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan_settings_ckan_api_summary') ?>.</p>
                 </td>
             </tr>
             <tr valign="top">
-              <th scope="row"><label for"setting_archive_freq">Archive contents when:</label></th>
+              <th scope="row"><label for="setting_ckan_orga"><?php _e('CKAN Organization','wpckan_setting_ckan_orga_title') ?></label></th>
+              <td>
+                <input type="text" name="setting_ckan_orga" id="setting_ckan_orga" value="<?php echo get_option('setting_ckan_orga'); ?>" />
+                <p class="description"><?php _e('Name of the organization to assign the archived posts to (Optional).','wpckan_settings_ckan_orga_summary') ?></p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <th scope="row"><label for"setting_archive_freq"><?php _e('Archive contents when:','wpckan_settings_archive_freq') ?></label></th>
               <td>
                 <select name="setting_archive_freq" id="setting_archive_freq">
-                  <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>>Post is modified</option>
-                  <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>>Daily</option>
-                  <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>>Weekly</option>
+                  <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_settings_archive_freq_0' )?></option>
+                  <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>><?php _e('Daily','wpckan_settings_archive_freq_1') ?></option>
+                  <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>><?php _e('Weekly','wpckan_settings_archive_freq_2') ?></option>
                 </select>
               </td>
             </tr>
