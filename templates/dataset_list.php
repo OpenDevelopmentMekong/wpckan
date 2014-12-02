@@ -1,4 +1,4 @@
-<?php if (!$dataset_array) die(); ?>
+<?php if (is_null($dataset_array)) die(); ?>
 
 <ul>
 <?php foreach ($dataset_array as $value){ ?>
