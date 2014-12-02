@@ -38,13 +38,8 @@ if(!class_exists('wpckan'))
         }
 
         function wpckan_do_shortcode_query_datasets($atts) {
-          wpckan_log("wpckan_do_query_related_datasets: " . $atts['query'] . " " . $atts['organization'] ." " . $atts['group']);
-
-          $query = $atts['query'];
-          $organization = $atts['organization'];
-          $group = $atts['group'];
-          return wpckan_do_query_datasets($query,$organization,$group);
-
+          wpckan_log("wpckan_do_query_related_datasets: " . print_r($atts,true));
+          return wpckan_do_query_datasets($atts);
         }
 
         function wpckan_add_dataset_meta_box($post_type) {
