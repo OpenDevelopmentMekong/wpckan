@@ -68,7 +68,7 @@ if(!class_exists('wpckan'))
         function wpckan_publish_post( $post_ID ) {
           wpckan_log("wpckan_publish_post: " . $post_ID);
 
-          if (wpckan_post_should_be_archived( $post_ID )){
+          if (wpckan_post_should_be_archived_on_publish( $post_ID )){
             $post = get_post($post_ID);
             wpckan_api_archive_post_as_dataset($post);
           }
@@ -112,7 +112,7 @@ if(!class_exists('wpckan'))
           // Update the meta field.
           update_post_meta( $post_ID, 'wpckan_related_dataset_url', $dataset_url );
 
-          if (wpckan_post_should_be_archived( $post_ID )){
+          if (wpckan_post_should_be_archived_on_save( $post_ID )){
             $post = get_post($post_ID);
             wpckan_api_archive_post_as_dataset($post);
           }

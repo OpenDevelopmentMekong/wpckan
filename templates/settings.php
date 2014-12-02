@@ -35,9 +35,10 @@
               <th scope="row"><label for"setting_archive_freq"><?php _e('Archive contents when:','wpckan_settings_archive_freq') ?></label></th>
               <td>
                 <select name="setting_archive_freq" id="setting_archive_freq">
-                  <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_settings_archive_freq_0' )?></option>
-                  <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>><?php _e('Daily','wpckan_settings_archive_freq_1') ?></option>
-                  <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>><?php _e('Weekly','wpckan_settings_archive_freq_2') ?></option>
+                  <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>><?php _e('Post is published','wpckan_settings_archive_freq_0' )?></option>
+                  <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_settings_archive_freq_1') ?></option>
+                  <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>><?php _e('Daily','wpckan_settings_archive_freq_2') ?></option>
+                  <option value="3" <?php if(get_option('setting_archive_freq') == 3) echo 'selected="selected"' ?>><?php _e('Weekly','wpckan_settings_archive_freq_3') ?></option>
                 </select>
               </td>
             </tr>
