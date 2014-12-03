@@ -20,13 +20,28 @@ if(!class_exists('wpckan'))
          */
         public function __construct()
         {
-            add_action('admin_init', array(&$this, 'admin_init'));
-            add_action('admin_menu', array(&$this, 'add_menu'));
-            add_action('publish_post', array(&$this, 'wpckan_publish_post'));
-            add_action('save_post', array(&$this, 'wpckan_save_post'));
-            add_action('add_meta_boxes', array(&$this, 'wpckan_add_dataset_meta_box'));
-            add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
-            add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
+          add_action('admin_init', array(&$this, 'admin_init'));
+          add_action('admin_menu', array(&$this, 'add_menu'));
+          add_action('publish_post', array(&$this, 'wpckan_publish_post'));
+          add_action('edit_post', array(&$this, 'wpckan_edit_post'));
+          add_action('save_post', array(&$this, 'wpckan_enqueue_metabox_logic_scripts'));
+          add_action('add_meta_boxes', array(&$this, 'wpckan_add_dataset_meta_box'));
+          add_action('wp_ajax_wpckan_query_datasets_ajax', array(&$this, 'wpckan_query_datasets_callback_ajax'));
+          add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
+          add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
+        }
+
+        function wpckan_enqueue_metabox_logic_scripts($hook){
+          wpckan_log("wpckan_enqueue_metabox_logic_scripts");
+
+          wp_enqueue_script( 'ajax-script', plugins_url( '/js/wpckan_metabox_logic.js', __FILE__ ), array('jquery') );
+          //wp_localize_script( 'ajax-script', 'ajax_object',array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
+        }
+
+        function wpckan_query_datasets_callback() {
+          wpckan_log("wpckan_query_datasets_callback");
+
+          die();
         }
 
         function wpckan_do_shortcode_get_related_datasets($atts) {
@@ -34,11 +49,11 @@ if(!class_exists('wpckan'))
 
           $post_id = $atts['post_id'];
           return wpckan_do_get_related_datasets($post_id);
-
         }
 
         function wpckan_do_shortcode_query_datasets($atts) {
           wpckan_log("wpckan_do_query_related_datasets: " . print_r($atts,true));
+
           return wpckan_do_query_datasets($atts);
         }
 
@@ -49,20 +64,14 @@ if(!class_exists('wpckan'))
           if ( in_array( $post_type, $post_types )) {
               add_meta_box('wpckan_add_related_dataset',__( 'Add related CKAN content', 'wpckan_add_related_dataset_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
           }
-
         }
 
         function wpckan_render_dataset_meta_box( $post ) {
+          wpckan_log("wpckan_render_dataset_meta_box: " . print_r($post,true));
 
-          // Add an nonce field so we can check for it later.
-          wp_nonce_field( 'wpckan_add_related_dataset', 'wpckan_add_related_dataset_nonce' );
-
-          $value = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
-
-          echo '<label for="wpckan_dataset_url_field">';
-          _e( 'Dataset\'s URL', 'myplugin_textdomain' );
-          echo '</label> ';
-          echo '<input type="text" id="wpckan_dataset_url_field" name="wpckan_dataset_url_field" value="' . esc_attr( $value ) . '" size="25" />';
+          wp_nonce_field('wpckan_add_related_dataset', 'wpckan_add_related_dataset_nonce');
+          $related_dataset = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
+          require 'templates/related_datasets_metabox.php';
         }
 
         function wpckan_publish_post( $post_ID ) {
@@ -72,13 +81,11 @@ if(!class_exists('wpckan'))
             $post = get_post($post_ID);
             wpckan_api_archive_post_as_dataset($post);
           }
-
         }
 
-        function wpckan_save_post( $post_ID ) {
-          wpckan_log("wpckan_save_post: " . $post_ID);
+        function wpckan_edit_post( $post_ID ) {
+          wpckan_log("wpckan_edit_post: " . $post_ID);
 
-          // Check if our nonce is set.
           if ( ! isset( $_POST['wpckan_add_related_dataset_nonce'] ) )
             return $post_ID;
 

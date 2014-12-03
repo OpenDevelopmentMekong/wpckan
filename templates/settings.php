@@ -31,6 +31,7 @@
                 <?php echo wpckan_do_get_organizations_list(); ?>
               </td>
             </tr>
+            // TODO: Add option to archive into a certain group
             <tr valign="top">
               <th scope="row"><label for"setting_archive_freq"><?php _e('Archive contents when:','wpckan_settings_archive_freq') ?></label></th>
               <td>
