@@ -18,12 +18,9 @@ resources)
 
 Add an option on the settings for the user to choose if the previews of the related datasets
 are shown automatically or not and to configure how they will be shown. Alternatively,
-users can use shortcodes or template tags for embedding information about related
+users can use shortcodes for embedding information about related
 datasets on other parts of the posts or pages.
 
-Template Tags:
-```php
-<?php wp_ckan_get_related_datasets('post_id','preview'); ?>
 ```
 Shortcodes:
 ```php
@@ -36,16 +33,10 @@ Plugin will expose a function that returns a list of CKAN datasets resulting aft
 CKAN's API. Datasets can be queried after Organization, Group and/or specifying a textual
 search.
 The results of this function can be shown anywhere on a Wordpress instance (Posts,
-Pages, etc..) by calling a shortcode or template tag. This function could be integrated
+Pages, etc..) by calling a shortcode. This function could be integrated
 within the search mechanism of the chosen Wordpress theme (JEO) in order to present
 both contents from WP and CKAN together (i.e 2 column result list)
 
-Template Tags:
-```php
-<?php wp_ckan_query_datasets('query','limit'); ?>
-<?php wp_ckan_query_datasets_from_organization('query','organization','limit'); ?>
-<?php wp_ckan_query_datasets_from_group('query','group','limit'); ?>
-```
 Shortcodes:
 ```php
 [wp_ckan_query_datasets query=”forestry” organization=”odmcambodia” group=”news”
