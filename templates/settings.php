@@ -8,6 +8,7 @@
           $ckan_url = get_option('setting_ckan_url');
           if (!$ckan_url)
             $ckan_url = "http://";
+            update_option('setting_ckan_valid_settings',wpckan_api_ping());
         ?>
 
         <table class="form-table">
@@ -39,7 +40,7 @@
           <tr valign="top" >
             <th scope="row"><label for"setting_archive_freq"><?php _e('Archive contents when:','wpckan_settings_archive_freq') ?></label></th>
             <td>
-              <select name="setting_archive_freq" id="setting_archive_freq" <?php if (!wpckan_api_ping()) echo "DISABLED";?>>
+              <select name="setting_archive_freq" id="setting_archive_freq" <?php if (!get_option('setting_ckan_valid_settings')) echo "DISABLED";?>>
                 <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>><?php _e('Post is published','wpckan_settings_archive_freq_0' )?></option>
                 <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_settings_archive_freq_1') ?></option>
                 <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>><?php _e('Daily','wpckan_settings_archive_freq_2') ?></option>
