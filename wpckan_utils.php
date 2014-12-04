@@ -135,6 +135,26 @@
   * Api
   */
 
+  function wpckan_api_ping() {
+
+    try{
+
+      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $commandName = 'SiteRead';
+      $arguments = array();
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_do_ping commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+
+    } catch (Exception $e){
+      return false;
+    }
+
+    return true;
+
+  }
+
   function wpckan_api_search_package_with_id($id){
 
     try{
@@ -165,14 +185,14 @@
 
   function wpckan_api_parameter_error($function,$message){
     $error_log = "ERROR Parameters on " . $function . " message: " . $message;
-    $error_message = "Something went wrong";
+    $error_message = "Something went wrong, check your connection details";
     wpckan_log($error_log);
     return __($error_message,'wpckan_api_parameter_error');
   }
 
   function wpckan_api_call_error($function,$message){
     $error_log = "ERROR API CALL on " . $function . " message: " . $message;
-    $error_message = "Something went wrong";
+    $error_message = "Something went wrong, check your connection details";
     wpckan_log($error_log);
     return __($error_message,'wpckan_api_call_error');
   }
@@ -196,6 +216,12 @@
   /*
   * Utilities
   */
+
+  function wpckan_validate_settings(){
+    if (is_null(wpckan_get_ckan_settings)) return false;
+
+
+  }
 
   function wpckan_get_ckan_settings(){
 

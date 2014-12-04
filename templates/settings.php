@@ -11,38 +11,42 @@
         ?>
 
         <table class="form-table">
-            <tr valign="top">
-                <th scope="row"><label for="setting_ckan_url"><?php _e('CKAN Url','wpckan_settings_ckan_url_title') ?></label></th>
-                <td>
-                  <input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php echo $ckan_url ?>"/>
-                  <p class="description"><?php _e('Specify protocoll like http:// or https://','wpckan_settings_ckan_url_summary') ?>.</p>
-                </td>
-            </tr>
-            <tr valign="top">
-                <th scope="row"><label for="setting_ckan_api"><?php _e('CKAN Api','wpckan_setting_ckan_api_title') ?></label></th>
-                <td>
-                  <input type="text" name="setting_ckan_api" id="setting_ckan_api" value="<?php echo get_option('setting_ckan_api'); ?>" />
-                  <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan_settings_ckan_api_summary') ?>.</p>
-                </td>
-            </tr>
-            <tr valign="top">
-              <th scope="row"><label for="setting_ckan_organization"><?php _e('CKAN Organization','wpckan_setting_ckan_organization_title') ?></label></th>
+          <th scope="row"><label for="setting_ckan_url"><h3><?php _e('Connecting to CKAN','wpckan_settings_ckan_connection_header') ?></h3></label></th>
+          <tr valign="top">
+              <th scope="row"><label for="setting_ckan_url"><?php _e('CKAN Url','wpckan_settings_ckan_url_title') ?></label></th>
               <td>
-                <?php echo wpckan_do_get_organizations_list(); ?>
+                <input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php echo $ckan_url ?>"/>
+                <p class="description"><?php _e('Specify protocoll like http:// or https://','wpckan_settings_ckan_url_summary') ?>.</p>
               </td>
-            </tr>
-            // TODO: Add option to archive into a certain group
-            <tr valign="top">
-              <th scope="row"><label for"setting_archive_freq"><?php _e('Archive contents when:','wpckan_settings_archive_freq') ?></label></th>
+          </tr>
+          <tr valign="top">
+              <th scope="row"><label for="setting_ckan_api"><?php _e('CKAN Api','wpckan_setting_ckan_api_title') ?></label></th>
               <td>
-                <select name="setting_archive_freq" id="setting_archive_freq">
-                  <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>><?php _e('Post is published','wpckan_settings_archive_freq_0' )?></option>
-                  <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_settings_archive_freq_1') ?></option>
-                  <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>><?php _e('Daily','wpckan_settings_archive_freq_2') ?></option>
-                  <option value="3" <?php if(get_option('setting_archive_freq') == 3) echo 'selected="selected"' ?>><?php _e('Weekly','wpckan_settings_archive_freq_3') ?></option>
-                </select>
+                <input type="text" name="setting_ckan_api" id="setting_ckan_api" value="<?php echo get_option('setting_ckan_api'); ?>"/>
+                <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan_settings_ckan_api_summary') ?>.</p>
               </td>
-            </tr>
+          </tr>
+          <tr>
+            <th scope="row"><label for="setting_ckan_url"><h3><?php _e('Archiving','wpckan_settings_ckan_archiving_header') ?></h3></label></th>
+          </tr>
+          <tr valign="top">
+            <th scope="row"><label for="setting_ckan_organization"><?php _e('CKAN Organization','wpckan_setting_ckan_organization_title') ?></label></th>
+            <td>
+              <?php echo wpckan_do_get_organizations_list(); ?>
+            </td>
+          </tr>
+          <!-- TODO: Add option to archive into a certain group -->
+          <tr valign="top" >
+            <th scope="row"><label for"setting_archive_freq"><?php _e('Archive contents when:','wpckan_settings_archive_freq') ?></label></th>
+            <td>
+              <select name="setting_archive_freq" id="setting_archive_freq" <?php if (!wpckan_api_ping()) echo "DISABLED";?>>
+                <option value="0" <?php if(get_option('setting_archive_freq') == 0) echo 'selected="selected"' ?>><?php _e('Post is published','wpckan_settings_archive_freq_0' )?></option>
+                <option value="1" <?php if(get_option('setting_archive_freq') == 1) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_settings_archive_freq_1') ?></option>
+                <option value="2" <?php if(get_option('setting_archive_freq') == 2) echo 'selected="selected"' ?>><?php _e('Daily','wpckan_settings_archive_freq_2') ?></option>
+                <option value="3" <?php if(get_option('setting_archive_freq') == 3) echo 'selected="selected"' ?>><?php _e('Weekly','wpckan_settings_archive_freq_3') ?></option>
+              </select>
+            </td>
+          </tr>
         </table>
         <?php @submit_button(); ?>
     </form>

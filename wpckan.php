@@ -20,28 +20,27 @@ if(!class_exists('wpckan'))
          */
         public function __construct()
         {
-          add_action('admin_init', array(&$this, 'admin_init'));
-          add_action('admin_menu', array(&$this, 'add_menu'));
+          add_action('admin_init', array(&$this, 'wpckan_admin_init'));
+          add_action('admin_menu', array(&$this, 'wpckan_add_menu'));
+          add_action( 'wp_enqueue_scripts', array( $this, 'register_plugin_styles' ) );
           add_action('publish_post', array(&$this, 'wpckan_publish_post'));
           add_action('edit_post', array(&$this, 'wpckan_edit_post'));
           add_action('save_post', array(&$this, 'wpckan_enqueue_metabox_logic_scripts'));
           add_action('add_meta_boxes', array(&$this, 'wpckan_add_dataset_meta_box'));
-          add_action('wp_ajax_wpckan_query_datasets_ajax', array(&$this, 'wpckan_query_datasets_callback_ajax'));
           add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
           add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
+        }
+
+
+        public function register_plugin_styles() {
+          wp_register_style( 'wpckan_css', plugins_url( '/css/wpckan_style.css', __FILE__ ));
+          wp_enqueue_style( 'wpckan_css' );
         }
 
         function wpckan_enqueue_metabox_logic_scripts($hook){
           wpckan_log("wpckan_enqueue_metabox_logic_scripts");
 
-          wp_enqueue_script( 'ajax-script', plugins_url( '/js/wpckan_metabox_logic.js', __FILE__ ), array('jquery') );
-          //wp_localize_script( 'ajax-script', 'ajax_object',array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
-        }
-
-        function wpckan_query_datasets_callback() {
-          wpckan_log("wpckan_query_datasets_callback");
-
-          die();
+          wp_enqueue_script( 'wpckan_js', plugins_url( '/js/wpckan_metabox_logic.js', __FILE__ ), array('jquery') );
         }
 
         function wpckan_do_shortcode_get_related_datasets($atts) {
@@ -145,7 +144,7 @@ if(!class_exists('wpckan'))
         /**
          * hook into WP's admin_init action hook
          */
-        public function admin_init()
+        public function wpckan_admin_init()
         {
             $this->init_settings();
         }
@@ -164,7 +163,7 @@ if(!class_exists('wpckan'))
         /**
          * add a menu
          */
-        public function add_menu()
+        public function wpckan_add_menu()
         {
             add_options_page('WPCKAN Settings', 'wpckan', 'manage_options', 'wpckan', array(&$this, 'plugin_settings_page'));
         }
