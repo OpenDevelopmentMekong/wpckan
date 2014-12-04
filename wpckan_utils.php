@@ -8,6 +8,7 @@
   require 'vendor/autoload.php';
   use Silex\ckan\CkanClient;
   use Analog\Analog;
+  use Analog\Handler;
 
   function wpckan_do_get_related_datasets($post_id) {
     return "<p>Related datasets for post with id: ". $post_id . "</p>";
@@ -209,7 +210,8 @@
   */
 
   function wpckan_log($text) {
-    // Logs to /tmp/analog.txt
+    if (!is_null(get_option('setting_ckan_log_path')))
+      Analog::handler(Handler\File::init (get_option('setting_ckan_log_path')));
     Analog::log ($text);
   }
 

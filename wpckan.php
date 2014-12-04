@@ -159,6 +159,7 @@ if(!class_exists('wpckan'))
             register_setting('wpckan-group', 'setting_archive_freq');
             register_setting('wpckan-group', 'setting_ckan_organization');
             register_setting('wpckan-group', 'setting_ckan_valid_settings');
+            register_setting('wpckan-group', 'setting_ckan_log_path');
         }
 
         /**
