@@ -59,7 +59,7 @@
 
     try{
       $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
-      $commandName = 'GetGroups';
+      $commandName = 'GetOrganizations';
       $arguments = array('all_fields' => true);
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
@@ -77,6 +77,31 @@
 
   }
 
+  function wpckan_do_get_groups_list() {
+
+    if (is_null(wpckan_get_ckan_settings()))
+    return wpckan_api_settings_error("wpckan_do_get_groups");
+
+    try{
+      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $commandName = 'GetGroups';
+      $arguments = array('all_fields' => true);
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_do_get_groups_list commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+
+      if ($response["success"]==false){
+        return wpckan_api_call_error("wpckan_do_get_groups",null);
+      }
+    } catch (Exception $e){
+      return wpckan_api_call_error("wpckan_do_get_groups_list",$e->getMessage());
+    }
+
+    return wpckan_api_show_groups_dropdown($response["result"]);
+
+  }
+
   function wpckan_api_archive_post_as_dataset($post){
 
     if (is_null(wpckan_get_ckan_settings()))
@@ -89,8 +114,10 @@
     $data = array('name' => $post->post_name,
                   'title' => $post->post_title,
                   'notes' => $post->post_content);
-    if (get_option('setting_ckan_organization'))
+    if (get_option('setting_ckan_organization') && get_option('setting_ckan_organization')!=-1)
       $data['owner_org'] = get_option('setting_ckan_organization');
+    if (get_option('setting_ckan_group') && get_option('setting_ckan_group')!==-1)
+      $data['groups'] = array(array('id' => get_option('setting_ckan_group')));
 
     if (count(wpckan_api_search_package_with_id($post->post_title))==0){
       $commandName = 'PackageCreate';
@@ -132,9 +159,33 @@
     require 'templates/organization_list.php';
   }
 
+  function wpckan_api_show_groups_dropdown($groups){
+    require 'templates/groups_list.php';
+  }
+
   /*
   * Api
   */
+
+  // function wpckan_api_get_config() {
+  //
+  //   try{
+  //
+  //     $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+  //     $commandName = 'StatusShow';
+  //     $arguments = array();
+  //     $command = $ckanClient->getCommand($commandName,$arguments);
+  //     $response = $command->execute();
+  //
+  //     wpckan_log("wpckan_api_get_config commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+  //
+  //   } catch (Exception $e){
+  //     return wpckan_api_call_error("wpckan_api_get_config",$e->getMessage());
+  //   }
+  //
+  //   wpckan_log(print_r($response,true));
+  //
+  // }
 
   function wpckan_api_ping() {
 
@@ -169,11 +220,11 @@
       wpckan_log("wpckan_api_search_package_with_id commandName: " . $commandName . " arguments: " . print_r($arguments,true));
 
       if ($response["success"]==false){
-        return wpckan_api_call_error("wpckan_api_archive_post_as_dataset",null);
+        return wpckan_api_call_error("wpckan_api_search_package_with_id",null);
       }
 
     } catch (Exception $e){
-      return wpckan_api_call_error("wpckan_api_archive_post_as_dataset",$e->getMessage());
+      return wpckan_api_call_error("wpckan_api_search_package_with_id",$e->getMessage());
     }
 
     return $response["result"]["results"];
@@ -221,8 +272,6 @@
 
   function wpckan_validate_settings(){
     if (is_null(wpckan_get_ckan_settings)) return false;
-
-
   }
 
   function wpckan_get_ckan_settings(){

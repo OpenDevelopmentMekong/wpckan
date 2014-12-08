@@ -20,7 +20,7 @@
               <th scope="row"><label for="setting_ckan_url"><?php _e('CKAN Url','wpckan_settings_ckan_url_title') ?></label></th>
               <td>
                 <input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php echo $ckan_url ?>"/>
-                <p class="description"><?php _e('Specify protocoll like http:// or https://','wpckan_settings_ckan_url_summary') ?>.</p>
+                <p class="description"><?php _e('Specify protocol such as http:// or https://','wpckan_settings_ckan_url_summary') ?>.</p>
               </td>
           </tr>
           <tr valign="top">
@@ -37,7 +37,12 @@
               <?php echo wpckan_do_get_organizations_list(); ?>
             </td>
           </tr>
-          <!-- TODO: Add option to archive into a certain group -->
+          <tr valign="top">
+            <th scope="row"><label for="setting_ckan_group"><?php _e('CKAN Group','wpckan_setting_ckan_group_title') ?></label></th>
+            <td>
+              <?php echo wpckan_do_get_groups_list(); ?>
+            </td>
+          </tr>
           <tr valign="top" >
             <th scope="row"><label for"setting_archive_freq"><?php _e('Archive contents when:','wpckan_settings_archive_freq') ?></label></th>
             <td>
