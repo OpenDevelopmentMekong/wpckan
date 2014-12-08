@@ -1,5 +1,5 @@
-<?php if (is_null($dataset)) die(); ?>
+<?php if (is_null($data)) die(); ?>
 
 <h1>
-  <?php echo $dataset["title"] ?>
+  <?php echo $data["title"] ?>
 </h1>

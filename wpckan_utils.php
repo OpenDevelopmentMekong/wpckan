@@ -148,19 +148,19 @@
   */
 
   function wpckan_api_show_dataset_list($dataset_array){
-    require 'templates/dataset_list.php';
+    return wpckan_output_template('templates/dataset_list.php',$dataset_array);
   }
 
   function wpckan_api_show_dataset_detail($dataset){
-    require 'templates/dataset_detail.php';
+    return wpckan_output_template('templates/dataset_detail.php',$dataset);
   }
 
   function wpckan_api_show_organizations_dropdown($organizations){
-    require 'templates/organization_list.php';
+    return wpckan_output_template('templates/organization_list.php',$organizations);
   }
 
   function wpckan_api_show_groups_dropdown($groups){
-    require 'templates/groups_list.php';
+    return wpckan_output_template('templates/groups_list.php',$groups);
   }
 
   /*
@@ -270,6 +270,14 @@
   * Utilities
   */
 
+  function wpckan_output_template($template_url,$data){
+    ob_start();
+    require $template_url;
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+  }
+
   function wpckan_validate_settings(){
     if (is_null(wpckan_get_ckan_settings)) return false;
   }
@@ -297,6 +305,10 @@
 
   function wpckan_sanitize_url($input) {
     return esc_url($input);
+  }
+
+  function IsNullOrEmptyString($question){
+    return (!isset($question) || trim($question)==='');
   }
 
 ?>
