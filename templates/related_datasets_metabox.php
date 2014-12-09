@@ -1,4 +1,4 @@
-<?php if (is_null($data)) die(); ?>
+<!-- <?php if (is_null($data)) die(); ?> -->
 
 <label for="wpckan_dataset_url_field">
   <?php _e( 'Dataset\'s URL', 'myplugin_textdomain' ) ?>

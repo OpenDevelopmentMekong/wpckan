@@ -110,10 +110,14 @@
     if (!isset($post))
       return wpckan_api_call_error("wpckan_api_archive_post_as_dataset",null);
 
+    $extras = array(array('published_under' => get_permalink($post->ID)));
+
     $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
     $data = array('name' => $post->post_name,
                   'title' => $post->post_title,
-                  'notes' => $post->post_content);
+                  'notes' => $post->post_content,
+                  'extras' => $extras);
+
     if (get_option('setting_ckan_organization') && get_option('setting_ckan_organization')!=-1)
       $data['owner_org'] = get_option('setting_ckan_organization');
     if (get_option('setting_ckan_group') && get_option('setting_ckan_group')!==-1)
@@ -143,6 +147,16 @@
 
   }
 
+  // TODO: Cleanup / improve
+  // function wpckan_api_archive_all_posts_as_dataset(){
+  //
+  //   $posts = get_posts();
+  //   foreach ( $posts as $post ){
+  //     wpckan_api_archive_post_as_dataset($post);
+  //   }
+  //
+  // }
+
   /*
   * Templates
   */
@@ -167,6 +181,7 @@
   * Api
   */
 
+  // TODO: Cleanup / improve
   // function wpckan_api_get_config() {
   //
   //   try{

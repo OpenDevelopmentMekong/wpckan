@@ -22,7 +22,7 @@ if(!class_exists('wpckan'))
         {
           add_action('admin_init', array(&$this, 'wpckan_admin_init'));
           add_action('admin_menu', array(&$this, 'wpckan_add_menu'));
-          add_action( 'wp_enqueue_scripts', array( $this, 'register_plugin_styles' ) );
+          add_action('wp_enqueue_scripts', array( $this, 'register_plugin_styles' ) );
           add_action('publish_post', array(&$this, 'wpckan_publish_post'));
           add_action('edit_post', array(&$this, 'wpckan_edit_post'));
           add_action('save_post', array(&$this, 'wpckan_enqueue_metabox_logic_scripts'));
@@ -69,7 +69,8 @@ if(!class_exists('wpckan'))
           wpckan_log("wpckan_render_dataset_meta_box: " . print_r($post,true));
 
           wp_nonce_field('wpckan_add_related_dataset', 'wpckan_add_related_dataset_nonce');
-          $related_dataset = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
+          $data = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
+          //We do not use wpckan_output_template here, just require.
           require 'templates/related_datasets_metabox.php';
         }
 
@@ -147,6 +148,7 @@ if(!class_exists('wpckan'))
         public function wpckan_admin_init()
         {
             $this->init_settings();
+
         }
 
         /**
