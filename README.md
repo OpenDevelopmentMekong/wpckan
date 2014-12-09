@@ -21,7 +21,6 @@ are shown automatically or not and to configure how they will be shown. Alternat
 users can use shortcodes for embedding information about related
 datasets on other parts of the posts or pages.
 
-```
 Shortcodes:
 ```php
 [wp_ckan_related_datasets show_preview=”yes” ]

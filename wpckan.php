@@ -22,25 +22,27 @@ if(!class_exists('wpckan'))
         {
           add_action('admin_init', array(&$this, 'wpckan_admin_init'));
           add_action('admin_menu', array(&$this, 'wpckan_add_menu'));
-          add_action('wp_enqueue_scripts', array( $this, 'register_plugin_styles' ) );
+          add_action('admin_enqueue_scripts', array( &$this, 'wpckan_register_plugin_styles' ) );
           add_action('publish_post', array(&$this, 'wpckan_publish_post'));
           add_action('edit_post', array(&$this, 'wpckan_edit_post'));
-          add_action('save_post', array(&$this, 'wpckan_enqueue_metabox_logic_scripts'));
+          add_action('save_post', array(&$this, 'wpckan_register_metabox_logic_scripts'));
           add_action('add_meta_boxes', array(&$this, 'wpckan_add_dataset_meta_box'));
           add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
           add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
         }
 
 
-        public function register_plugin_styles() {
-          wp_register_style( 'wpckan_css', plugins_url( '/css/wpckan_style.css', __FILE__ ));
+        public function wpckan_register_plugin_styles($hook) {
+          wpckan_log("wpckan_register_plugin_styles");
+
+          wp_register_style( 'wpckan_css', plugins_url( 'wpckan/css/wpckan_style.css'));
           wp_enqueue_style( 'wpckan_css' );
         }
 
-        function wpckan_enqueue_metabox_logic_scripts($hook){
+        function wpckan_register_metabox_logic_scripts($hook){
           wpckan_log("wpckan_enqueue_metabox_logic_scripts");
 
-          wp_enqueue_script( 'wpckan_js', plugins_url( '/js/wpckan_metabox_logic.js', __FILE__ ), array('jquery') );
+          wp_enqueue_script( 'wpckan_js', plugins_url( 'wpckan/js/wpckan_metabox_logic.js'), array('jquery') );
         }
 
         function wpckan_do_shortcode_get_related_datasets($atts) {
@@ -117,7 +119,7 @@ if(!class_exists('wpckan'))
           $dataset_url = wpckan_sanitize_url( $_POST['wpckan_dataset_url_field'] );
 
           // Update the meta field.
-          update_post_meta( $post_ID, 'wpckan_related_dataset_url', $dataset_url );
+          update_post_meta( $post_ID, 'wpckan_related_dataset_url', $dataset_url );        
 
           if (wpckan_post_should_be_archived_on_save( $post_ID )){
             $post = get_post($post_ID);
