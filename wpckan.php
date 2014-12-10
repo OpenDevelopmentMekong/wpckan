@@ -9,7 +9,9 @@
  * License: TBD
  */
 
-include_once "wpckan_utils.php";
+ require 'vendor/autoload.php';
+ include_once plugin_dir_path( __FILE__ ) . 'utils/wpckan_utils.php' ;
+ include_once plugin_dir_path( __FILE__ ) . 'utils/wpckan_api.php' ;
 
 if(!class_exists('wpckan'))
 {
@@ -31,7 +33,6 @@ if(!class_exists('wpckan'))
           add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
         }
 
-
         public function wpckan_register_plugin_styles($hook) {
           wpckan_log("wpckan_register_plugin_styles");
 
@@ -48,12 +49,16 @@ if(!class_exists('wpckan'))
         function wpckan_do_shortcode_get_related_datasets($atts) {
           wpckan_log("wpckan_do_get_related_datasets: " . $atts['post_id']);
 
+          if (!wpckan_validate_settings()) die;
+
           $post_id = $atts['post_id'];
           return wpckan_do_get_related_datasets($post_id);
         }
 
         function wpckan_do_shortcode_query_datasets($atts) {
           wpckan_log("wpckan_do_query_related_datasets: " . print_r($atts,true));
+
+          if (!wpckan_validate_settings()) die;
 
           return wpckan_do_query_datasets($atts);
         }
@@ -119,7 +124,7 @@ if(!class_exists('wpckan'))
           $dataset_url = wpckan_sanitize_url( $_POST['wpckan_dataset_url_field'] );
 
           // Update the meta field.
-          update_post_meta( $post_ID, 'wpckan_related_dataset_url', $dataset_url );        
+          update_post_meta( $post_ID, 'wpckan_related_dataset_url', $dataset_url );
 
           if (wpckan_post_should_be_archived_on_save( $post_ID )){
             $post = get_post($post_ID);
@@ -134,6 +139,7 @@ if(!class_exists('wpckan'))
         public static function activate()
         {
             // Do nothing
+            wpckan_log('wpckan plugin activated');
         }
 
         /**
@@ -142,6 +148,7 @@ if(!class_exists('wpckan'))
         public static function deactivate()
         {
             // Do nothing
+            wpckan_log('wpckan plugin deactivated');
         }
 
         /**
