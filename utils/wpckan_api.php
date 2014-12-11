@@ -7,34 +7,13 @@
   * Api
   */
 
-  // TODO: Cleanup / improve
-  // function wpckan_api_get_config() {
-  //
-  //   try{
-  //
-  //     $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
-  //     $commandName = 'StatusShow';
-  //     $arguments = array();
-  //     $command = $ckanClient->getCommand($commandName,$arguments);
-  //     $response = $command->execute();
-  //
-  //     wpckan_log("wpckan_api_get_config commandName: " . $commandName . " arguments: " . print_r($arguments,true));
-  //
-  //   } catch (Exception $e){
-  //     return wpckan_api_call_error("wpckan_api_get_config",$e->getMessage());
-  //   }
-  //
-  //   wpckan_log(print_r($response,true));
-  //
-  // }
-
-  function wpckan_do_query_datasets($atts) {
+  function wpckan_api_query_datasets($atts) {
 
     if (is_null(wpckan_get_ckan_settings()))
-      return wpckan_api_settings_error("wpckan_do_query_datasets");
+      return wpckan_api_settings_error("wpckan_api_query_datasets");
 
     if (!isset($atts['query']))
-      return wpckan_api_call_error("wpckan_do_query_datasets",null);
+      return wpckan_api_call_error("wpckan_api_query_datasets",null);
 
     try{
 
@@ -52,24 +31,24 @@
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_do_query_datasets commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_api_query_datasets commandName: " . $commandName . " arguments: " . print_r($arguments,true));
 
       if ($response["success"]==false){
-        return wpckan_api_call_error("wpckan_do_query_datasets",null);
+        return wpckan_api_call_error("wpckan_api_query_datasets",null);
       }
 
     } catch (Exception $e){
-      return wpckan_api_call_error("wpckan_do_query_datasets",$e->getMessage());
+      return wpckan_api_call_error("wpckan_api_query_datasets",$e->getMessage());
     }
 
-    return wpckan_api_show_dataset_list($response["result"]["results"]);
+    return $response["result"]["results"];
 
   }
 
-  function wpckan_do_get_organizations_list() {
+  function wpckan_api_get_organizations_list() {
 
     if (is_null(wpckan_get_ckan_settings()))
-      return wpckan_api_settings_error("wpckan_do_get_organizations");
+      return wpckan_api_settings_error("wpckan_get_organizations_list");
 
     try{
       $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
@@ -78,20 +57,20 @@
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_do_get_organizations_list commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_get_organizations_list commandName: " . $commandName . " arguments: " . print_r($arguments,true));
 
       if ($response["success"]==false){
         return wpckan_api_call_error("wpckan_do_get_organizations",null);
       }
     } catch (Exception $e){
-      return wpckan_api_call_error("wpckan_do_get_organizations_list",$e->getMessage());
+      return wpckan_api_call_error("wpckan_get_organizations_list",$e->getMessage());
     }
 
-    return wpckan_api_show_organizations_dropdown($response["result"]);
+    return $response["result"];
 
   }
 
-  function wpckan_do_get_groups_list() {
+  function wpckan_api_get_groups_list() {
 
     if (is_null(wpckan_get_ckan_settings()))
       return wpckan_api_settings_error("wpckan_do_get_groups");
@@ -112,10 +91,11 @@
       return wpckan_api_call_error("wpckan_do_get_groups_list",$e->getMessage());
     }
 
-    return wpckan_api_show_groups_dropdown($response["result"]);
+    return $response["result"];
 
   }
 
+  //TODO improve
   function wpckan_api_archive_post_as_dataset($post){
 
     if (is_null(wpckan_get_ckan_settings()))
@@ -132,12 +112,15 @@
                   'title' => $post->post_title,
                   'notes' => $post->post_content);
 
-    if (get_option('setting_ckan_organization') && get_option('setting_ckan_organization')!=-1)
-      $data['owner_org'] = get_option('setting_ckan_organization');
-    if (get_option('setting_ckan_group') && get_option('setting_ckan_group')!=="-1")
-      $data['groups'] = array(array('id' => get_option('setting_ckan_group')));
+    $archive_orga = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
+    $archive_group = get_post_meta( $post->ID, 'wpckan_archive_post_group', true );
 
-    if (count(wpckan_api_search_package_with_id($post->post_title))==0){
+    if ($archive_orga && $archive_orga!=-1)
+      $data['owner_org'] = $archive_orga;
+    if ($archive_group && $archive_group!=="-1")
+      $data['groups'] = array(array('id' => $archive_group));
+
+    if (count(wpckan_api_search_package_with_id($post->post_name))==0){
       $commandName = 'PackageCreate';
     }else{
       $commandName = 'PackageUpdate';
