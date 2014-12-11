@@ -67,7 +67,7 @@ if(!class_exists('wpckan'))
         function wpckan_add_meta_boxes($post_type) {
           wpckan_log("wpckan_add_meta_boxes: " . $post_type);
 
-          $post_types = array( 'post', 'page' );
+          $post_types = array( 'post' ); //TODO add 'page'?
           if ( in_array( $post_type, $post_types )) {
               //add_meta_box('wpckan_add_related_dataset',__( 'Add related CKAN content', 'wpckan_add_related_dataset_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
               add_meta_box('wpckan_archive_post',__( 'Archive Post as CKAN dataset', 'wpckan_archive_post_title' ),array(&$this, 'wpckan_render_archive_post_meta_box'),$post_type,'side','high');
@@ -128,7 +128,7 @@ if(!class_exists('wpckan'))
           //wpckan_edit_post_logic_dataset_metabox($post_ID);
           wpckan_edit_post_logic_archive_post_metabox($post_ID);
 
-        }        
+        }
 
         /**
          * Activate the plugin
