@@ -1,23 +1,22 @@
-<?php if (is_null($data)) die(); ?>
+<?php if (is_null($related_datasets)) die(); ?>
 
 <?php if (wpckan_validate_settings()){ ?>
 
-  <b><?php _e( 'Dataset\'s URL', 'wpckan_related_datasets_entries_title' ) ?></b>
-  <div id="wpckan_related_datasets_entries">
-    <p>
-      <input class="new" onChange="wpckan_related_dataset_metabox_on_change();" type="text" id="wpckan_dataset_url_field_0" name="wpckan_dataset_url_field_0" value="<?php echo esc_attr( $data[0] )?>" size="25" />
-      <input class="button delete" type="button" value="Delete">
-    </p>
+  <label for="wpckan_related_datasets_add_field"><b><?php _e('Add related datasets','wpckan_related_datasets_add_title') ?></b></label>
+  <p>
+    <input id="wpckan_related_datasets_add_field" class="new typeahead" onInput="wpckan_related_dataset_metabox_on_input();" wpckan-base-url="<?php echo wpckan_get_ckan_settings()["baseUrl"]; ?>" placeholder="Type for suggestions" type="text" name="wpckan_related_datasets_add_field" value="" size="25" />
+    <input id="wpckan_related_datasets_add_button" class="button add disabled" type="button" value="Add" onClick="wpckan_related_dataset_metabox_add();" />
+  </p>
+  <div id="wpckan_related_datasets_list">
+
+    <?php foreach ($related_datasets as $dataset) { ?>
+
+      <p><a href="<?php echo $dataset["dataset_url"] ?>"><?php echo $dataset["dataset_title"] ?></a>   <a class="delete" href="#" wpckan_dataset_id="<?php echo $dataset['dataset_id'] ?>">Delete</a></p>
+
+    <?php } ?>
+
   </div>
-  <!-- <input type="button" class="button add" value="Add" onClick="wpckan_related_dataset_metabox_add();"> -->
-  <div id="wpckan_related_datasets_options">
-    <p><b><?php _e( 'Select what to show', 'wpckan_related_datasets_options_title' ) ?></b></p>
-    <input type="checkbox" name="wpckan_related_datasets_options_0" value="Title"> Title<br>
-    <input type="checkbox" name="wpckan_related_datasets_options_1" value="Description" checked> Description<br>
-    <input type="checkbox" name="wpckan_related_datasets_options_2" value="License"> License<br>
-    <input type="checkbox" name="wpckan_related_datasets_options_3" value="Author"> License<br>
-    <input type="checkbox" name="wpckan_related_datasets_options_4" value="Resources"> Resources<br>
-  </div>
+  <input id="wpckan_add_related_datasets_datasets" name="wpckan_add_related_datasets_datasets" type="hidden" value='<?php echo $related_datasets_json ?>'/>
 
 <?php } else { ?>
 

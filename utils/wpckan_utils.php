@@ -16,21 +16,20 @@
   }
 
   function wpckan_edit_post_logic_dataset_metabox($post_ID){
-    wpckan_log("wpckan_edit_post_logic_dataset_metabox: " . $post_ID);
+    wpckan_log("wpckan_edit_post_logic_datasets_metabox: " . $post_ID);
 
-    if ( ! isset( $_POST['wpckan_add_related_dataset_nonce'] ) )
+    if ( ! isset( $_POST['wpckan_add_related_datasets_nonce'] ) )
     return $post_ID;
 
-    $nonce = $_POST['wpckan_add_related_dataset_nonce'];
+    $nonce = $_POST['wpckan_add_related_datasets_nonce'];
 
-    if ( ! wp_verify_nonce( $nonce, 'wpckan_add_related_dataset' ) )
+    if ( ! wp_verify_nonce( $nonce, 'wpckan_add_related_datasets' ) )
     return $post_ID;
 
-    // // Sanitize the user input.
-    // $dataset_url = wpckan_sanitize_url( $_POST['wpckan_dataset_url_field'] );
-    //
-    // // Update the meta field.
-    // update_post_meta( $post_ID, 'wpckan_related_dataset_url', $dataset_url );
+    $datasets_json = $_POST['wpckan_add_related_datasets_datasets'];
+
+    // Update the meta field.
+    update_post_meta( $post_ID, 'wpckan_related_datasets', $datasets_json );
 
   }
 

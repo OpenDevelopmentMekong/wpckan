@@ -10,6 +10,7 @@
   ],
   "require": {
     "silex/ckan_client": "dev-master",
-    "analog/analog": "dev-master"
+    "analog/analog": "dev-master",
+    "twitter/typeahead.js": "dev-master"
   }
 }

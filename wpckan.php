@@ -27,7 +27,7 @@ if(!class_exists('wpckan'))
           add_action('admin_enqueue_scripts', array( &$this, 'wpckan_register_plugin_styles' ) );
           add_action('publish_post', array(&$this, 'wpckan_publish_post'));
           add_action('edit_post', array(&$this, 'wpckan_edit_post'));
-          add_action('save_post', array(&$this, 'wpckan_register_metabox_logic_scripts'));
+          add_action('save_post', array(&$this, 'wpckan_save_post'));
           add_action('add_meta_boxes', array(&$this, 'wpckan_add_meta_boxes'));
           add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
           add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
@@ -38,13 +38,6 @@ if(!class_exists('wpckan'))
 
           wp_register_style( 'wpckan_css', plugins_url( 'wpckan/css/wpckan_style.css'));
           wp_enqueue_style( 'wpckan_css' );
-        }
-
-        public function wpckan_register_metabox_logic_scripts($hook){
-          wpckan_log("wpckan_register_metabox_logic_scripts");
-
-          wp_register_script( 'wpckan_js', plugins_url( 'wpckan/js/wpckan_metabox_logic.js'), array('jquery') );
-          wp_enqueue_script( 'wpckan_js');
         }
 
         function wpckan_do_shortcode_get_related_datasets($atts) {
@@ -69,19 +62,31 @@ if(!class_exists('wpckan'))
 
           $post_types = array( 'post' ); //TODO add 'page'?
           if ( in_array( $post_type, $post_types )) {
-              //add_meta_box('wpckan_add_related_dataset',__( 'Add related CKAN content', 'wpckan_add_related_dataset_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
+              add_meta_box('wpckan_add_related_datasets',__( 'Add related CKAN content', 'wpckan_add_related_datasets_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
               add_meta_box('wpckan_archive_post',__( 'Archive Post as CKAN dataset', 'wpckan_archive_post_title' ),array(&$this, 'wpckan_render_archive_post_meta_box'),$post_type,'side','high');
           }
+
+          wp_register_script( 'wpckan_bloodhound', plugins_url( 'wpckan/vendor/twitter/typeahead.js/dist/bloodhound.min.js'), array('jquery') );
+          wp_enqueue_script( 'wpckan_bloodhound');
+          wp_register_script( 'wpckan_typeahead', plugins_url( 'wpckan/vendor/twitter/typeahead.js/dist/typeahead.jquery.js'), array('jquery') );
+          wp_enqueue_script( 'wpckan_typeahead');
+          wp_register_script( 'wpckan_js', plugins_url( 'wpckan/js/wpckan_metabox_logic.js'), array('jquery') );
+          wp_enqueue_script( 'wpckan_js');
         }
 
-        // function wpckan_render_dataset_meta_box( $post ) {
-        //   wpckan_log("wpckan_render_dataset_meta_box: " . print_r($post,true));
-        //
-        //   wp_nonce_field('wpckan_add_related_dataset', 'wpckan_add_related_dataset_nonce');
-        //   $data = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
-        //   //We do not use wpckan_output_template here, just require.
-        //   require 'templates/related_datasets_metabox.php';
-        // }
+        function wpckan_render_dataset_meta_box( $post ) {
+          wpckan_log("wpckan_render_dataset_meta_box: " . print_r($post,true));
+
+          wp_nonce_field('wpckan_add_related_datasets', 'wpckan_add_related_datasets_nonce');
+          $related_datasets_json = get_post_meta( $post->ID, 'wpckan_related_datasets', true );
+          $related_datasets = array();
+          if (!IsNullOrEmptyString($related_datasets_json))
+            $related_datasets = json_decode($related_datasets_json,true);
+          else
+            $related_datasets_json = "[]";
+          //We do not use wpckan_output_template here, just require.
+          require 'templates/related_datasets_metabox.php';
+        }
 
         function wpckan_render_archive_post_meta_box( $post ) {
           wpckan_log("wpckan_render_archive_post_meta_box: " . print_r($post,true));
@@ -101,6 +106,13 @@ if(!class_exists('wpckan'))
             $post = get_post($post_ID);
             wpckan_api_archive_post_as_dataset($post);
           }
+        }
+
+        function wpckan_save_post( $post_ID ) {
+          wpckan_log("wpckan_save_post: " . $post_ID);
+
+          wpckan_edit_post_logic_dataset_metabox($post_ID);
+          wpckan_edit_post_logic_archive_post_metabox($post_ID);
         }
 
         function wpckan_edit_post( $post_ID ) {
@@ -123,11 +135,8 @@ if(!class_exists('wpckan'))
               return $post_ID;
           }
 
-          /* OK, its safe for us to save the data now. */
-
-          //wpckan_edit_post_logic_dataset_metabox($post_ID);
+          wpckan_edit_post_logic_dataset_metabox($post_ID);
           wpckan_edit_post_logic_archive_post_metabox($post_ID);
-
         }
 
         /**

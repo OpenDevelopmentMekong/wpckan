@@ -3,25 +3,6 @@
   color: #FF0000;
 }
 
-#wpckan_related_datasets_entries{
-  width:100%;
-}
-
-#wpckan_related_datasets_entries .new{
-  width: 180px;
-  float:left;
-}
-
-#wpckan_related_datasets_entries .delete{
-  float:left;
-}
-
 .add{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#wpckan_related_datasets_options{
-  width:100%;
-  margin-top: 10px;
+  
 }
