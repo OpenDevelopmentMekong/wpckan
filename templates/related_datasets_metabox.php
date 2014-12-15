@@ -11,7 +11,7 @@
 
     <?php foreach ($related_datasets as $dataset) { ?>
 
-      <p><a href="<?php echo $dataset["dataset_url"] ?>"><?php echo $dataset["dataset_title"] ?></a>   <a class="delete" href="#" wpckan_dataset_id="<?php echo $dataset['dataset_id'] ?>">Delete</a></p>
+      <p><a href="<?php echo $dataset["dataset_url"] ?>"><?php echo $dataset["dataset_title"] ?></a>   <a class="delete" href="#" wpckan-dataset-id="<?php echo $dataset['dataset_id'] ?>">Delete</a></p>
 
     <?php } ?>
 

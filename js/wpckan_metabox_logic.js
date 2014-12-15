@@ -1,6 +1,6 @@
-const DATASET_ID_ATTR = "wpckan-id";
-const DATASET_TITLE_ATTR = "wpckan-title";
-const DATASET_URL_ATTR = "wpckan-url";
+const DATASET_ID_ATTR = "wpckan-dataset-id";
+const DATASET_TITLE_ATTR = "wpckan-dataset-title";
+const DATASET_URL_ATTR = "wpckan-dataset-url";
 const CKAN_URL = "wpckan-base-url"
 
 var field;
@@ -49,6 +49,7 @@ jQuery( document ).ready(function() {
 
   // Instantiate the Typeahead UI
   jQuery('.typeahead').typeahead(null, {
+    highlight: true,
     displayKey: 'title',
     source: suggestions.ttAdapter()
   }).on("typeahead:selected",function(event,item,dataset){
@@ -63,7 +64,7 @@ jQuery( document ).ready(function() {
 
   // TODO improve
   jQuery('.delete').on("click",function(){
-    var dataset_id = jQuery(this).attr("wpckan_dataset_id");
+    var dataset_id = jQuery(this).attr(DATASET_ID_ATTR);
     removeDatasetWithIdForEntry(dataset_id,this);
   });
 
@@ -92,10 +93,10 @@ function wpckan_related_dataset_metabox_add(){
   clearField();
 
   var entry = jQuery('<p><a href='+dataset_url+'>'+dataset_title+'</a>   </p>');
-  var del = jQuery('<a class="delete error" wpckan_dataset_id='+dataset_id+' href="#">Delete</a>');
+  var del = jQuery('<a class="delete error" '+DATASET_ID_ATTR+'='+dataset_id+' href="#">Delete</a>');
   // TODO improve
   jQuery(del).on("click",function(){
-    var dataset_id = jQuery(this).attr("wpckan_dataset_id");
+    var dataset_id = jQuery(this).attr(DATASET_ID_ATTR);
     removeDatasetWithIdForEntry(dataset_id,this);
   });
   entry.append(del);
@@ -124,12 +125,14 @@ function addDataset(dataset_id,dataset_title,dataset_url){
 //TODO optimize (using lodash)
 function removeDatasetWithIdForEntry(id,entry){
   entry.parentNode.remove();  //use plain javascript here to get the parent
-  var dataset = getDatasetWithId(id);
-  if (dataset){
-    console.log("removing " + id + "from datasets");
-    datasets.pop(dataset);
+  var datasetIndex = getDatasetIndexWithId(id);
+  if (datasetIndex){
+    console.log("removing " + id + " from datasets");
+    datasets.splice(datasetIndex,1);
+    setFormValue();
+    return;
   }
-  setFormValue();
+
 }
 
 //TODO optimize (using lodash)
@@ -137,6 +140,16 @@ function getDatasetWithId(id){
   for (index in datasets){
     if (datasets[index]["dataset_id"] == id){
       return datasets[index];
+    }
+  }
+  return null;
+}
+
+//TODO optimize (using lodash)
+function getDatasetIndexWithId(id){
+  for (index in datasets){
+    if (datasets[index]["dataset_id"] == id){
+      return index;
     }
   }
   return null;
