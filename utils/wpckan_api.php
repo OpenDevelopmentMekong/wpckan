@@ -50,7 +50,7 @@
 
       $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
       $commandName = 'PackageSearch';
-      $arguments = array('q' => $atts['query']);
+      $arguments = array('q' => $atts['query'], 'rows' => (int)$atts['limit']);
 
       $filter = null;
       if (isset($atts['organization'])) $filter = $filter . "+owner_org:" . $atts['organization'];

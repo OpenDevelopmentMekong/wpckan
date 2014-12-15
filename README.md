@@ -23,9 +23,13 @@ Per default, this shortcode shows only title and notes of the CKAN dataset (See 
 * **include_fields_resources**:  (Optional) Comma-separated.
 Per default, this shortcode shows only name, description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
+* **limit**: (Optional) Number.
+Limits the amount of datasets shown by the shortcode.
+
 Examples:
 ```php
 [wpckan_related_datasets]
+[wpckan_related_datasets limit="3"]
 [wpckan_related_datasets include_fields_dataset="title,description,author"]
 [wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
 ```
@@ -83,9 +87,13 @@ Per default, this shortcode shows only title (with link to the dataset's URL) an
 * **include_fields_resources**:  (Optional) Comma-separated.
 Per default, this shortcode shows only name (with link to the resources's URL), description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
+* **limit**: (Optional) Number.
+Limits the amount of datasets shown by the shortcode.
+
 Examples:
 ```php
 [wpckan_query_datasets query="coal"]
+[wpckan_query_datasets query="corruption" limit="5"]
 [wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 ```

@@ -56,8 +56,8 @@
   * Shortcodes
   */
 
-  function wpckan_do_get_related_datasets($atts) {
-    wpckan_log("wpckan_do_get_related_datasets");
+  function wpckan_show_related_datasets($atts) {
+    wpckan_log("wpckan_show_related_datasets " . print_r($atts,true));
 
     $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
     $related_datasets = array();
@@ -68,13 +68,15 @@
     foreach ($related_datasets as $dataset){
       $dataset_atts = array("id" => $dataset["dataset_id"]);
       array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+      if (array_key_exists("limit",$atts) && (count($dataset_array) >= (int)($atts["limit"]))) break;
     }
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
   }
 
   function wpckan_show_query_datasets($atts) {
-    wpckan_log("wpckan_show_query_datasets");
+    wpckan_log("wpckan_show_query_datasets "  . print_r($atts,true));
 
+    //TODO implement limit for this call
     $dataset_array = wpckan_api_query_datasets($atts);
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
   }
