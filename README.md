@@ -5,7 +5,7 @@ A wordpress plugin for integrating CKAN and WP.
 
 ## Description
 
-wp-ckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
+wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
 
 ## Features
 
@@ -14,21 +14,20 @@ wp-ckan is a wordpress plugin that exposes a series of functionalities to bring 
 Plugin presents a metabox while users are editing posts with an autocompletion input field that
 allows the user to add related CKAN datasets. Suggestions for related datasets and its metadata (title, description, and resources) are shown to the user while typing in the input field. Users can add a certain number of datasets that will get stored along the post's metadata.
 
-In order to use this information, this plugin exposes a shortcode for embedding information about related
-datasets on the content of the post.
-The plugin can be extended by adding following parameters:
+In order to use this information, this plugin exposes the **[wpckan_related_datasets]** shortcode for embedding information about related datasets on the content of the post.
+The shortcode has following parameters:
 
 * **include_fields_dataset**:  (Optional) Comma-separated.
-Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
+Per default, this shortcode shows only title and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
 
 * **include_fields_resources**:  (Optional) Comma-separated.
-Per default, this shortcode shows only name (with link to the resources's URL), description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
+Per default, this shortcode shows only name, description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
 Examples:
 ```php
-[wp_ckan_related_datasets]
-[wp_ckan_related_datasets include_fields_dataset="title,description,author"]
-[wp_ckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
+[wpckan_related_datasets]
+[wpckan_related_datasets include_fields_dataset="title,description,author"]
+[wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
 ```
 
 An example showing how the information returned by this shortcode will be structured:
@@ -64,12 +63,13 @@ An example showing how the information returned by this shortcode will be struct
 
 ### Feature 2: Query lists of CKAN datasets
 
-Plugin will expose a function that returns a list of CKAN datasets resulting after querying
-CKAN's API. Datasets can be queried after Organization, Group and/or specifying a textual
+Plugin exposes a function which returns a list of CKAN datasets resulting after querying
+CKAN's API. Resulting datasets can be filtered by organization, group and/or specifying a textual
 search.
+
 The results of this function can be shown anywhere on a Wordpress instance (Posts,
-Pages, etc..) by calling a shortcode. Per default, this shortcode shows only title and description of the dataset.
-The plugin can be extended by adding following parameters:
+Pages, etc..) by calling the **[wpckan_query_datasets query="QUERY"]** shortcode. Per default, this shortcode shows only title and description of the dataset.
+The shortcode has following parameters:
 
 * **query**: (Mandatory) Term to query the database.
 
@@ -78,16 +78,16 @@ The plugin can be extended by adding following parameters:
 * **group**: (Optional) Filter dataset results by showing only those belonging to a certain group.
 
 * **include_fields_dataset**:  (Optional) Comma-separated.
-Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
+Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
 
 * **include_fields_resources**:  (Optional) Comma-separated.
 Per default, this shortcode shows only name (with link to the resources's URL), description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
 Examples:
 ```php
-[wp_ckan_query_datasets query="coal"]
-[wp_ckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
-[wp_ckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
+[wpckan_query_datasets query="coal"]
+[wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
+[wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 ```
 
 ```html

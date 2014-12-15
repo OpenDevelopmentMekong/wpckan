@@ -3,7 +3,7 @@
 <?php
   $include_fields_dataset = array();
   $include_fields_resources = array();
-  if (array_key_exists("include_fields_resources",$atts))
+  if (array_key_exists("include_fields_dataset",$atts))
     $include_fields_dataset = explode(",",$atts["include_fields_dataset"]);
   array_push($include_fields_dataset,"title"); //ensure that this field is present
   array_push($include_fields_dataset,"notes"); //ensure that this field is present
@@ -23,6 +23,9 @@
         <?php } ?>
         <?php if (array_key_exists("notes",$dataset) && !IsNullOrEmptyString($dataset["notes"]) && in_array("notes",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_notes"><?php echo $dataset["notes"] ?></div>
+        <?php } ?>
+        <?php if (array_key_exists("url",$dataset) && !IsNullOrEmptyString($dataset["url"]) && in_array("url",$include_fields_dataset)) {?>
+          <div class="wpckan_dataset_url"><?php echo $dataset["url"] ?></div>
         <?php } ?>
         <?php if (array_key_exists("license",$dataset) && !IsNullOrEmptyString($dataset["license"]) && in_array("license",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_license"><?php echo $dataset["license"] ?></div>
