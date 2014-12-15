@@ -4,3 +4,6 @@
 [submodule "vendor/silex/ckan_client"]
   path = vendor/silex/ckan_client
   url = https://github.com/OpenDevelopmentMekong/CKAN_PHP.git
+[submodule "vendor/twitter/typeahead.js"]
+	path = vendor/twitter/typeahead.js
+	url = https://github.com/twitter/typeahead.js.git
