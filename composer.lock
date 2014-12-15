@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc1bc11772e2b4b96ca33c1e4d061f88",
+    "hash": "cdbac90ccbd3c6fa9271fa351a9aee94",
     "packages": [
         {
             "name": "analog/analog",
@@ -191,13 +191,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/OpenDevelopmentMekong/ckan_php.git",
-                "reference": "2207081528240fd97e9e6b7c9875947599798a13"
+                "url": "https://github.com/OpenDevelopmentMekong/CKAN_PHP.git",
+                "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OpenDevelopmentMekong/ckan_php/zipball/2207081528240fd97e9e6b7c9875947599798a13",
-                "reference": "2207081528240fd97e9e6b7c9875947599798a13",
+                "url": "https://api.github.com/repos/OpenDevelopmentMekong/CKAN_PHP/zipball/cd00f26dd02b600018d2ee44b0b5db604ed432ec",
+                "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec",
                 "shasum": ""
             },
             "require": {
@@ -217,7 +217,7 @@
             "support": {
                 "source": "https://github.com/OpenDevelopmentMekong/ckan_php/tree/master"
             },
-            "time": "2014-12-09 18:31:03"
+            "time": "2014-12-15 22:05:01"
         },
         {
             "name": "symfony/event-dispatcher",

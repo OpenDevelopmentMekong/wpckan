@@ -92,6 +92,101 @@
         ]
     },
     {
+        "name": "twitter/typeahead.js",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twitter/typeahead.js.git",
+            "reference": "0fd2467baa3e0593b91794b485be0bd725b7d2cb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/0fd2467baa3e0593b91794b485be0bd725b7d2cb",
+            "reference": "0fd2467baa3e0593b91794b485be0bd725b7d2cb",
+            "shasum": ""
+        },
+        "time": "2014-10-01 14:38:12",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Twitter Inc.",
+                "homepage": "https://twitter.com/twitteross"
+            }
+        ],
+        "description": "fast and fully-featured autocomplete library",
+        "homepage": "http://twitter.github.com/typeahead.js",
+        "keywords": [
+            "autocomplete",
+            "typeahead"
+        ]
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "v2.6.1",
+        "version_normalized": "2.6.1.0",
+        "target-dir": "Symfony/Component/EventDispatcher",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/EventDispatcher.git",
+            "reference": "720fe9bca893df7ad1b4546649473b5afddf0216"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/720fe9bca893df7ad1b4546649473b5afddf0216",
+            "reference": "720fe9bca893df7ad1b4546649473b5afddf0216",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.0",
+            "symfony/dependency-injection": "~2.6",
+            "symfony/expression-language": "~2.6",
+            "symfony/stopwatch": "~2.2"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2014-12-02 20:19:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "http://symfony.com"
+    },
+    {
         "name": "guzzle/guzzle",
         "version": "v3.9.2",
         "version_normalized": "3.9.2.0",
@@ -186,113 +281,18 @@
         ]
     },
     {
-        "name": "symfony/event-dispatcher",
-        "version": "v2.6.1",
-        "version_normalized": "2.6.1.0",
-        "target-dir": "Symfony/Component/EventDispatcher",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/EventDispatcher.git",
-            "reference": "720fe9bca893df7ad1b4546649473b5afddf0216"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/720fe9bca893df7ad1b4546649473b5afddf0216",
-            "reference": "720fe9bca893df7ad1b4546649473b5afddf0216",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/config": "~2.0",
-            "symfony/dependency-injection": "~2.6",
-            "symfony/expression-language": "~2.6",
-            "symfony/stopwatch": "~2.2"
-        },
-        "suggest": {
-            "symfony/dependency-injection": "",
-            "symfony/http-kernel": ""
-        },
-        "time": "2014-12-02 20:19:20",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\EventDispatcher\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Symfony EventDispatcher Component",
-        "homepage": "http://symfony.com"
-    },
-    {
-        "name": "twitter/typeahead.js",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/twitter/typeahead.js.git",
-            "reference": "0fd2467baa3e0593b91794b485be0bd725b7d2cb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/0fd2467baa3e0593b91794b485be0bd725b7d2cb",
-            "reference": "0fd2467baa3e0593b91794b485be0bd725b7d2cb",
-            "shasum": ""
-        },
-        "time": "2014-10-01 14:38:12",
-        "type": "library",
-        "installation-source": "source",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Twitter Inc.",
-                "homepage": "https://twitter.com/twitteross"
-            }
-        ],
-        "description": "fast and fully-featured autocomplete library",
-        "homepage": "http://twitter.github.com/typeahead.js",
-        "keywords": [
-            "autocomplete",
-            "typeahead"
-        ]
-    },
-    {
         "name": "silex/ckan_client",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/OpenDevelopmentMekong/ckan_php.git",
-            "reference": "2207081528240fd97e9e6b7c9875947599798a13"
+            "url": "https://github.com/OpenDevelopmentMekong/CKAN_PHP.git",
+            "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/OpenDevelopmentMekong/ckan_php/zipball/2207081528240fd97e9e6b7c9875947599798a13",
-            "reference": "2207081528240fd97e9e6b7c9875947599798a13",
+            "url": "https://api.github.com/repos/OpenDevelopmentMekong/CKAN_PHP/zipball/cd00f26dd02b600018d2ee44b0b5db604ed432ec",
+            "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec",
             "shasum": ""
         },
         "require": {
@@ -302,7 +302,7 @@
             "behat/behat": "2.4.*@stable",
             "phpunit/phpunit": "3.7@stable"
         },
-        "time": "2014-12-09 18:31:03",
+        "time": "2014-12-15 22:05:01",
         "type": "library",
         "installation-source": "source",
         "autoload": {
