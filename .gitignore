@@ -12,4 +12,3 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 .remote-sync.json
-vendor

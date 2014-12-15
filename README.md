@@ -131,11 +131,16 @@ Examples:
 
 The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived (on save or on publish).
 
-## Installation
+## Development
 
 1. Install composer http://getcomposer.org/
-2. Install dependencies <code>composer install</code>
-3. Copy to the plugins folder of your wordpress installation
+2. Edit composer.json for adding/modifying dependencies versions
+3. Install dependencies <code>composer install</code>
+
+## Installation
+
+1. Copy to the plugins folder of your wordpress installation
+2. Activate 
 
 ## Uses
 
