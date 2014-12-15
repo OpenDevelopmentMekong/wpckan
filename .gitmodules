@@ -1,0 +1,3 @@
+[submodule "vendor/analog/analog"]
+	path = vendor/analog/analog
+	url = https://github.com/jbroadway/analog.git
