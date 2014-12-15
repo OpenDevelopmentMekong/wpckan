@@ -11,19 +11,55 @@ wp-ckan is a wordpress plugin that exposes a series of functionalities to bring 
 
 ### Feature 1: Add related CKAN datasets to posts.
 
-Plugin presents a Metabox while editing Posts with an autocompletion input field that
-allows the user to add related CKAN datasets. Related datasets are rendered through a
-live preview of the contents and metadata included in the dataset (title, description, and
-resources)
+Plugin presents a metabox while users are editing posts with an autocompletion input field that
+allows the user to add related CKAN datasets. Suggestions for related datasets and its metadata (title, description, and resources) are shown to the user while typing in the input field. Users can add a certain number of datasets that will get stored along the post's metadata.
 
-Add an option on the settings for the user to choose if the previews of the related datasets
-are shown automatically or not and to configure how they will be shown. Alternatively,
-users can use shortcodes for embedding information about related
-datasets on other parts of the posts or pages.
+In order to use this information, this plugin exposes a shortcode for embedding information about related
+datasets on the content of the post.
+The plugin can be extended by adding following parameters:
 
-Shortcodes:
+* **include_fields_dataset**:  (Optional) Comma-separated.
+Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
+
+* **include_fields_resources**:  (Optional) Comma-separated.
+Per default, this shortcode shows only name (with link to the resources's URL), description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
+
+Examples:
 ```php
-[wp_ckan_related_datasets show_preview=”yes” ]
+[wp_ckan_related_datasets]
+[wp_ckan_related_datasets include_fields_dataset="title,description,author"]
+[wp_ckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
+```
+
+An example showing how the information returned by this shortcode will be structured:
+
+```html
+<div class="wpckan_dataset_list">
+  <ul>
+    <li>
+      <div class="wpckan_dataset">
+        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_notes">Notes</div>
+        <div class="wpckan_dataset_license">License</div>
+        <div class="wpckan_dataset_author">Author</div>
+        /*.... other fields ....*/
+        <div class="wpckan_resources_list">
+          <ul>
+            <li>
+              <div class="wpckan_resource">
+                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_description">Description</div>
+                /*.... other fields ....*/
+              </div>
+            </li>
+            /*.... other resources ....*/
+          </ul>
+        </div>
+      </div>
+    </li>
+    /*.... other dataset <li> ....*/
+  </ul>
+</div>
 ```
 
 ### Feature 2: Query lists of CKAN datasets
@@ -32,30 +68,60 @@ Plugin will expose a function that returns a list of CKAN datasets resulting aft
 CKAN's API. Datasets can be queried after Organization, Group and/or specifying a textual
 search.
 The results of this function can be shown anywhere on a Wordpress instance (Posts,
-Pages, etc..) by calling a shortcode. This function could be integrated
-within the search mechanism of the chosen Wordpress theme (JEO) in order to present
-both contents from WP and CKAN together (i.e 2 column result list)
+Pages, etc..) by calling a shortcode. Per default, this shortcode shows only title and description of the dataset.
+The plugin can be extended by adding following parameters:
 
-Shortcodes:
+* **query**: (Mandatory) Term to query the database.
+
+* **organization**: (Optional) Filter dataset results by showing only those belonging to a certain organization.
+
+* **group**: (Optional) Filter dataset results by showing only those belonging to a certain group.
+
+* **include_fields_dataset**:  (Optional) Comma-separated.
+Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
+
+* **include_fields_resources**:  (Optional) Comma-separated.
+Per default, this shortcode shows only name (with link to the resources's URL), description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
+
+Examples:
 ```php
-[wp_ckan_query_datasets query=”forestry” organization=”odmcambodia” group=”news”
-limit=”5”]
+[wp_ckan_query_datasets query="coal"]
+[wp_ckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
+[wp_ckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 ```
 
-Returns a list of datasets found after querying the CKAN database. 4 possible parameters:
-1. query: a text to search forestry.
-2. organization: filter datasets that belong to specified organization.
-3. group: filter datasets that are assigned to specified group
-4. limit: limit the number of results
+```html
+<div class="wpckan_dataset_list">
+  <ul>
+    <li>
+      <div class="wpckan_dataset">
+        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_notes">Notes</div>
+        <div class="wpckan_dataset_license">License</div>
+        <div class="wpckan_dataset_author">Author</div>
+        /*.... other fields ....*/
+        <div class="wpckan_resources_list">
+          <ul>
+            <li>
+              <div class="wpckan_resource">
+                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_description">Description</div>
+                /*.... other fields ....*/
+              </div>
+            </li>
+          </ul>
+          /*.... other resources ....*/
+        </div>
+      </div>
+    </li>
+  /*.... other dataset <li> ....*/
+  </ul>
+</div>
+```
 
 ### Feature 3: Archiving WP Posts in CKAN
 
-The plugin will expose a function that archives WP-generated content into CKAN. This function
-can be configured to be triggered when a post is published/modified or periodically (hourly, daily,
-weekly). For instance, using Hooks to trigger this function when a Wordpress' post is created,
-modified or deleted (See List of Wordpress Hooks).
-In order to be able to identify and relate Wordpress' content (Posts) with archived content in CKAN,
-Wordpress' unique id identifier (UUID) will be used.
+The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived (on save or on publish).
 
 ## Installation
 
@@ -67,6 +133,7 @@ Wordpress' unique id identifier (UUID) will be used.
 
 * Analog logger https://github.com/jbroadway/analog
 * Silex CKAN PHP Client https://github.com/SilexConsulting/CKAN_PHP
+* Twitter's typeahead https://github.com/twitter/typeahead.js/
 
 ## License
 

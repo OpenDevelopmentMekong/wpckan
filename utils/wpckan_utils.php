@@ -8,13 +8,6 @@
   use Analog\Analog;
   use Analog\Handler;
 
-  function wpckan_do_get_related_datasets($post_id) {
-    //TODO Implement
-    //1. retrieve datasets
-    //2. Call wpckan_output_template with dataset_list.php template
-    return "<p>Related datasets for post with id: ". $post_id . "</p>";
-  }
-
   function wpckan_edit_post_logic_dataset_metabox($post_ID){
     wpckan_log("wpckan_edit_post_logic_datasets_metabox: " . $post_ID);
 
@@ -60,15 +53,37 @@
   }
 
   /*
+  * Shortcodes
+  */
+
+  function wpckan_do_get_related_datasets($atts) {
+    wpckan_log("wpckan_do_get_related_datasets");
+
+    $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
+    $related_datasets = array();
+    if (!IsNullOrEmptyString($related_datasets_json))
+      $related_datasets = json_decode($related_datasets_json,true);
+
+    $dataset_array = array();
+    foreach ($related_datasets as $dataset){
+      $dataset_atts = array("id" => $dataset["dataset_id"]);
+      array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+    }
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
+  }
+
+  function wpckan_show_query_datasets($atts) {
+    wpckan_log("wpckan_show_query_datasets");
+
+    $dataset_array = wpckan_api_query_datasets($atts);
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
+  }
+
+  /*
   * Templates
   */
 
-  function wpckan_show_query_datasets($atts) {
-    $dataset_array = wpckan_api_query_datasets($atts);
-    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array);
-  }
-
-  function wpckan_output_template($template_url,$data){
+  function wpckan_output_template($template_url,$data,$atts){
     ob_start();
     require $template_url;
     $output = ob_get_contents();

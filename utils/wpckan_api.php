@@ -7,6 +7,37 @@
   * Api
   */
 
+  function wpckan_api_get_dataset($atts) {
+
+    if (is_null(wpckan_get_ckan_settings()))
+    return wpckan_api_settings_error("wpckan_api_get_dataset");
+
+    if (!isset($atts['id']))
+    return wpckan_api_call_error("wpckan_api_get_dataset",null);
+
+    try{
+
+      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $commandName = 'GetDataset';
+      $arguments = array('id' => $atts['id'], 'use_default_schema' => true);
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_api_get_dataset commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+
+      if ($response["success"]==false){
+        return wpckan_api_call_error("wpckan_api_get_dataset",null);
+      }
+
+    } catch (Exception $e){
+      return wpckan_api_call_error("wpckan_api_get_dataset",$e->getMessage());
+    }
+
+    wpckan_log("wpckan_api_get_dataset: " . print_r($response["result"],true));
+    return $response["result"];
+
+  }
+
   function wpckan_api_query_datasets($atts) {
 
     if (is_null(wpckan_get_ckan_settings()))
