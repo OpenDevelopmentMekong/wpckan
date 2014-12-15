@@ -1,3 +1,6 @@
 [submodule "vendor/analog/analog"]
 	path = vendor/analog/analog
 	url = https://github.com/jbroadway/analog.git
+[submodule "vendor/silex/ckan_client"]
+	path = vendor/silex/ckan_client
+	url = https://github.com/OpenDevelopmentMekong/CKAN_PHP.git
