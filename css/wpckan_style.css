@@ -26,3 +26,19 @@
 .tt-dataset{
   border-bottom: 1px solid #666;
 }
+
+#wpckan_archive_post_orga{
+  width:100%;
+}
+
+#wpckan_archive_post_group{
+  width:100%;
+}
+
+#wpckan_archive_post_freq{
+  width:100%;
+}
+
+#wpckan_related_datasets_add_field{
+  width:100%;
+}

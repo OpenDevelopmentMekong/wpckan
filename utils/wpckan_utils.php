@@ -110,6 +110,24 @@
   * Utilities
   */
 
+  function wpckan_get_group_names_for_user(){
+    $groups = wpckan_api_get_group_list_for_user();
+    $group_names = array();
+    foreach ($groups as $group){
+      array_push($group_names,$group["display_name"]);
+    }
+    return $group_names;
+  }
+
+  function wpckan_get_organization_names_for_user(){
+    $organizations = wpckan_api_get_organization_list_for_user();
+    $organization_names = array();
+    foreach ($organizations as $organization){
+      array_push($organization_names,$organization["display_name"]);
+    }
+    return $organization_names;
+  }
+
   function wpckan_validate_settings_read(){
     return wpckan_api_ping();
   }

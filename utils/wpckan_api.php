@@ -208,6 +208,50 @@
 
   }
 
+  function wpckan_api_get_organization_list_for_user() {
+    wpckan_log("wpckan_api_get_organization_list_for_user");
+
+    try{
+
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
+      $commandName = 'GetOrganizationsUserIsMemberOf';
+      $arguments = array('permission' => 'create_dataset');
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_api_get_organization_list_for_user commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
+
+    } catch (Exception $e){
+      return wpckan_api_call_error("wpckan_api_get_organization_list_for_user",$e->getMessage());
+    }
+
+    return $response["result"];
+
+  }
+
+  function wpckan_api_get_group_list_for_user() {
+    wpckan_log("wpckan_api_get_group_list_for_user");
+
+    try{
+
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
+      $commandName = 'GetGroupsUserCanEdit';
+      $arguments = array();
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_api_get_group_list_for_user commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
+
+    } catch (Exception $e){
+      return wpckan_api_call_error("wpckan_api_get_group_list_for_user",$e->getMessage());
+    }
+    
+    return $response["result"];
+
+  }
+
   function wpckan_api_user_show($id) {
     wpckan_log("wpckan_api_user_show");
 

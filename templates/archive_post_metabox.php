@@ -2,18 +2,25 @@
 
 <?php if (wpckan_validate_settings_write()){ ?>
 
+  <?php $organization_names = wpckan_get_organization_names_for_user();
+        $group_names = wpckan_get_group_names_for_user(); ?>
+
   <label for="wpckan_archive_post_orga"><b><?php _e('CKAN Organization','wpckan_setting_ckan_organization_title') ?></b></label>
   <p><select name="wpckan_archive_post_orga" id="wpckan_archive_post_orga">
     <option <?php if($archive_orga == -1) echo 'selected="selected"' ?> value="-1"><?php _e('None','wpckan_archive_post_orga_none')?></option>
     <?php foreach (wpckan_api_get_organizations_list() as $value){ ?>
-      <option <?php if($archive_orga == $value["id"]) echo 'selected="selected"' ?> value="<?php echo $value["id"] ?>"><?php echo $value["display_name"]?></option>
+      <?php if (in_array($value["display_name"],$organization_names)) { ?>
+        <option <?php if($archive_orga == $value["id"]) echo 'selected="selected"' ?> value="<?php echo $value["id"] ?>"><?php echo $value["display_name"]?></option>
+      <?php } ?>
     <?php } ?>
   </select></p>
   <label for="setting_ckan_group"><b><?php _e('CKAN Group','wpckan_setting_ckan_group_title') ?></b></label>
   <p><select name="wpckan_archive_post_group" id="wpckan_archive_post_group">
     <option <?php if($archive_group == -1) echo 'selected="selected"' ?> value="-1"><?php _e('None','wpckan_archive_post_group_none')?></option>
     <?php foreach (wpckan_api_get_groups_list() as $value){ ?>
-      <option <?php if($archive_group == $value["id"]) echo 'selected="selected"' ?> value="<?php echo $value["id"] ?>"><?php echo $value["display_name"]?></option>
+      <?php if (in_array($value["display_name"],$group_names)) { ?>
+        <option <?php if($archive_group == $value["id"]) echo 'selected="selected"' ?> value="<?php echo $value["id"] ?>"><?php echo $value["display_name"]?></option>
+      <?php } ?>
     <?php } ?>
   </select></p>
   <label for"wpckan_archive_post_freq"><b><?php _e('Archive contents when:','wpckan_archive_post_freq') ?></b></label>
