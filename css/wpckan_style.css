@@ -1,4 +1,4 @@
-//TODO: add styles
+
 .error{
   color: #FF0000;
 }
@@ -9,10 +9,16 @@
 
 .tt-dropdown-menu{
   background:#fff;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 .tt-suggestions{
   background:#fff;
   padding:10px;
   width:200px;
+}
+
+.tt-dataset{
+  border-bottom: 1px solid #666;
 }

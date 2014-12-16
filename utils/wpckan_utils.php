@@ -76,7 +76,6 @@
   function wpckan_show_query_datasets($atts) {
     wpckan_log("wpckan_show_query_datasets "  . print_r($atts,true));
 
-    //TODO implement limit for this call
     $dataset_array = wpckan_api_query_datasets($atts);
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
   }

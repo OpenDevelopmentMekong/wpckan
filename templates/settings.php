@@ -5,13 +5,16 @@
         <?php @do_settings_fields('wpckan-group'); ?>
 
         <?php
+          wpckan_log("Rendering settings.php");
           $ckan_url = get_option('setting_ckan_url');
           $ckan_api = get_option('setting_ckan_api');
           $logging_path = get_option('setting_ckan_log_path');
           if (!$logging_path)
             $logging_path = DEFAULT_LOG;
-          $valid_connection = wpckan_api_ping();
+          $valid_connection = wpckan_validate_settings();
           update_option('setting_ckan_valid_settings',$valid_connection);
+
+          wpckan_api_user_show($ckan_api);
         ?>
 
         <table class="form-table">
@@ -20,7 +23,7 @@
               <th scope="row"><label for="setting_ckan_url"><?php _e('CKAN Url','wpckan_settings_ckan_url_title') ?></label></th>
               <td>
                 <input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php echo $ckan_url ?>"/>
-                <p class="description"><?php _e('Specify protocol such as http:// or https://','wpckan_settings_ckan_url_summary') ?>.</p>
+                <p class="description"><?php _e('Specify protocol such as http:// or https://. Do not include trailing slash at the end of the url!','wpckan_settings_ckan_url_summary') ?>.</p>
               </td>
           </tr>
           <tr valign="top">

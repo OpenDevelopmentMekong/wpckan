@@ -134,15 +134,13 @@ The plugin presents a metabox while users are editing posts. It allows users to 
 ## Installation
 
 1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpckan.git --recursive</code> into the Wordpress plugins folder.
-2. Activate
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Development
 
 1. Install composer http://getcomposer.org/
 2. Edit composer.json for adding/modifying dependencies versions
 3. Install dependencies <code>composer install</code>
-
-
 
 ## Uses
 
@@ -152,4 +150,4 @@ The plugin presents a metabox while users are editing posts. It allows users to 
 
 ## License
 
-TBD
+GPLv3 (see LICENSE.txt)

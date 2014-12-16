@@ -41,7 +41,7 @@ jQuery( document ).ready(function() {
           });
         }
       }
-    }
+    },limit:20
   });
 
   // Initialize the Bloodhound suggestion engine
@@ -49,6 +49,8 @@ jQuery( document ).ready(function() {
 
   // Instantiate the Typeahead UI
   jQuery('.typeahead').typeahead(null, {
+    hint: true,
+    minLength: 1,
     highlight: true,
     displayKey: 'title',
     source: suggestions.ttAdapter()

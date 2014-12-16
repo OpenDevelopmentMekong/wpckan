@@ -126,7 +126,6 @@
 
   }
 
-  //TODO improve
   function wpckan_api_archive_post_as_dataset($post){
 
     if (is_null(wpckan_get_ckan_settings()))
@@ -135,8 +134,7 @@
     if (!isset($post))
       return wpckan_api_call_error("wpckan_api_archive_post_as_dataset",null);
 
-    //TODO Add permalink on extras
-    //$extras = array(array('published_under' => get_permalink($post->ID)));
+    // $extras = array(array('published_under' => get_permalink($post->ID)));
 
     $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
     $data = array('name' => $post->post_name,
@@ -178,26 +176,6 @@
 
   }
 
-  function wpckan_api_ping() {
-
-    try{
-
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
-      $commandName = 'SiteRead';
-      $arguments = array();
-      $command = $ckanClient->getCommand($commandName,$arguments);
-      $response = $command->execute();
-
-      wpckan_log("wpckan_do_ping commandName: " . $commandName . " arguments: " . print_r($arguments,true));
-
-    } catch (Exception $e){
-      return false;
-    }
-
-    return true;
-
-  }
-
   function wpckan_api_search_package_with_id($id){
 
     try{
@@ -219,6 +197,71 @@
     }
 
     return $response["result"]["results"];
+
+  }
+
+  function wpckan_api_user_show($id) {
+    wpckan_log("wpckan_api_user_show");
+
+    try{
+
+      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $commandName = 'GetUser';
+      $arguments = array('id' => $id);
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_api_user_show commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+
+    } catch (Exception $e){
+      return wpckan_api_call_error("wpckan_api_user_show",$e->getMessage());
+    }
+
+    wpckan_log($response);
+    return $response["result"];
+
+  }
+
+  function wpckan_api_ping() {
+    wpckan_log("wpckan_api_ping");
+
+    try{
+
+      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $commandName = 'SiteRead';
+      $arguments = array();
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_do_ping commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+
+    } catch (Exception $e){
+      wpckan_api_call_error("wpckan_api_ping",$e->getMessage());
+      return false;
+    }
+
+    return true;
+
+  }
+
+  function wpckan_api_status_show() {
+    wpckan_log("wpckan_api_status_show");
+
+    try{
+
+      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $commandName = 'StatusShow';
+      $arguments = array();
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_api_status_show commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+
+    } catch (Exception $e){
+      return wpckan_api_call_error("wpckan_api_status_show",$e->getMessage());
+    }
+
+    return $response["result"];
 
   }
 

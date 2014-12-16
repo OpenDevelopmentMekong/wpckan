@@ -1,61 +1,153 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
+=== wpckan ===
+Contributors: acorbi
 Donate link: http://example.com/
-Tags: comments, spam
+Tags: ckan, api, datasets, open data
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Tested up to: 4.0
+Stable tag: trunk
 License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+## Features
 
-A few notes about the sections above:
+### Feature 1: Add related CKAN datasets to posts.
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+Plugin presents a metabox while users are editing posts with an autocompletion input field that
+allows the user to add related CKAN datasets. Suggestions for related datasets and its metadata (title, description, and resources) are shown to the user while typing in the input field. Users can add a certain number of datasets that will get stored along the post's metadata.
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+In order to use this information, this plugin exposes the **[wpckan_related_datasets]** shortcode for embedding information about related datasets on the content of the post.
+The shortcode has following parameters:
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+* **include_fields_dataset**:  (Optional) Comma-separated.
+Per default, this shortcode shows only title and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
+
+* **include_fields_resources**:  (Optional) Comma-separated.
+Per default, this shortcode shows only name, description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
+
+* **limit**: (Optional) Number.
+Limits the amount of datasets shown by the shortcode.
+
+Examples:
+```php
+[wpckan_related_datasets]
+[wpckan_related_datasets limit="3"]
+[wpckan_related_datasets include_fields_dataset="title,description,author"]
+[wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
+```
+
+An example showing how the information returned by this shortcode will be structured:
+
+```html
+<div class="wpckan_dataset_list">
+  <ul>
+    <li>
+      <div class="wpckan_dataset">
+        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_notes">Notes</div>
+        <div class="wpckan_dataset_license">License</div>
+        <div class="wpckan_dataset_author">Author</div>
+        /*.... other fields ....*/
+        <div class="wpckan_resources_list">
+          <ul>
+            <li>
+              <div class="wpckan_resource">
+                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_description">Description</div>
+                /*.... other fields ....*/
+              </div>
+            </li>
+            /*.... other resources ....*/
+          </ul>
+        </div>
+      </div>
+    </li>
+    /*.... other dataset <li> ....*/
+  </ul>
+</div>
+```
+
+### Feature 2: Query lists of CKAN datasets
+
+Plugin exposes a function which returns a list of CKAN datasets resulting after querying
+CKAN's API. Resulting datasets can be filtered by organization, group and/or specifying a textual
+search.
+
+The results of this function can be shown anywhere on a Wordpress instance (Posts,
+Pages, etc..) by calling the **[wpckan_query_datasets query="QUERY"]** shortcode. Per default, this shortcode shows only title and description of the dataset.
+The shortcode has following parameters:
+
+* **query**: (Mandatory) Term to query the database.
+
+* **organization**: (Optional) Filter dataset results by showing only those belonging to a certain organization.
+
+* **group**: (Optional) Filter dataset results by showing only those belonging to a certain group.
+
+* **include_fields_dataset**:  (Optional) Comma-separated.
+Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
+
+* **include_fields_resources**:  (Optional) Comma-separated.
+Per default, this shortcode shows only name (with link to the resources's URL), description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
+
+* **limit**: (Optional) Number.
+Limits the amount of datasets shown by the shortcode.
+
+Examples:
+```php
+[wpckan_query_datasets query="coal"]
+[wpckan_query_datasets query="corruption" limit="5"]
+[wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
+[wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
+```
+
+```html
+<div class="wpckan_dataset_list">
+  <ul>
+    <li>
+      <div class="wpckan_dataset">
+        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_notes">Notes</div>
+        <div class="wpckan_dataset_license">License</div>
+        <div class="wpckan_dataset_author">Author</div>
+        /*.... other fields ....*/
+        <div class="wpckan_resources_list">
+          <ul>
+            <li>
+              <div class="wpckan_resource">
+                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_description">Description</div>
+                /*.... other fields ....*/
+              </div>
+            </li>
+          </ul>
+          /*.... other resources ....*/
+        </div>
+      </div>
+    </li>
+  /*.... other dataset <li> ....*/
+  </ul>
+</div>
+```
+
+### Feature 3: Archiving WP Posts in CKAN
+
+The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived (on save or on publish).
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpckan.git --recursive</code> into the Wordpress plugins folder.
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Which version of the CKAN API does this plugin use? =
 
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+API Version 3 (http://ckan.readthedocs.org/en/latest/api/index.html#action-api-reference)
 
 == Screenshots ==
 
@@ -67,48 +159,9 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+= 0.9 =
+* First version
 
 == Upgrade Notice ==
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
 == Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
