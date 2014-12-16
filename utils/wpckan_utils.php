@@ -97,8 +97,9 @@
   */
 
   function wpckan_log($text) {
-    if (!IsNullOrEmptyString(get_option('setting_ckan_log_path')))
-      Analog::handler(Handler\File::init (get_option('setting_ckan_log_path')));
+    if (!get_option('setting_log_enabled')) return;
+    if (!IsNullOrEmptyString(get_option('setting_log_path')))
+      Analog::handler(Handler\File::init (get_option('setting_log_path')));
     else
       Analog::handler(Handler\File::init (DEFAULT_LOG));
 
@@ -109,8 +110,12 @@
   * Utilities
   */
 
-  function wpckan_validate_settings(){
+  function wpckan_validate_settings_read(){
     return wpckan_api_ping();
+  }
+
+  function wpckan_validate_settings_write(){
+    return !IsNullOrEmptyString(get_option('setting_ckan_api'));
   }
 
   function wpckan_get_ckan_settings(){

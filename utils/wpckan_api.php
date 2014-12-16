@@ -17,13 +17,14 @@
 
     try{
 
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'GetDataset';
       $arguments = array('id' => $atts['id'], 'use_default_schema' => true);
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_api_get_dataset commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_api_get_dataset commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
       if ($response["success"]==false){
         return wpckan_api_call_error("wpckan_api_get_dataset",null);
@@ -48,7 +49,8 @@
 
     try{
 
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'PackageSearch';
       $arguments = array('q' => $atts['query'], 'rows' => (int)$atts['limit']);
 
@@ -62,7 +64,7 @@
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_api_query_datasets commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_api_query_datasets commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
       if ($response["success"]==false){
         return wpckan_api_call_error("wpckan_api_query_datasets",null);
@@ -82,13 +84,15 @@
       return wpckan_api_settings_error("wpckan_get_organizations_list");
 
     try{
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'GetOrganizations';
       $arguments = array('all_fields' => true);
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_get_organizations_list commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_get_organizations_list commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
       if ($response["success"]==false){
         return wpckan_api_call_error("wpckan_do_get_organizations",null);
@@ -107,13 +111,15 @@
       return wpckan_api_settings_error("wpckan_do_get_groups");
 
     try{
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'GetGroups';
       $arguments = array('all_fields' => true);
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_do_get_groups_list commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_do_get_groups_list commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
       if ($response["success"]==false){
         return wpckan_api_call_error("wpckan_do_get_groups",null);
@@ -160,12 +166,13 @@
 
       wpckan_log(json_encode($data));
 
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $arguments = array('data' => json_encode($data));
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_api_archive_post_as_dataset commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_api_archive_post_as_dataset commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
       if ($response["success"]==false){
         return wpckan_api_call_error("wpckan_api_archive_post_as_dataset",null);
@@ -180,13 +187,14 @@
 
     try{
 
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'PackageSearch';
       $arguments = array('fq' => '+name: ' . $id);
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_api_search_package_with_id commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_api_search_package_with_id commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
       if ($response["success"]==false){
         return wpckan_api_call_error("wpckan_api_search_package_with_id",null);
@@ -205,13 +213,14 @@
 
     try{
 
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'GetUser';
       $arguments = array('id' => $id);
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_api_user_show commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_api_user_show commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
     } catch (Exception $e){
       return wpckan_api_call_error("wpckan_api_user_show",$e->getMessage());
@@ -227,13 +236,14 @@
 
     try{
 
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'SiteRead';
       $arguments = array();
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_do_ping commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_do_ping commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
     } catch (Exception $e){
       wpckan_api_call_error("wpckan_api_ping",$e->getMessage());
@@ -249,13 +259,14 @@
 
     try{
 
-      $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
       $commandName = 'StatusShow';
       $arguments = array();
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_api_status_show commandName: " . $commandName . " arguments: " . print_r($arguments,true));
+      wpckan_log("wpckan_api_status_show commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
     } catch (Exception $e){
       return wpckan_api_call_error("wpckan_api_status_show",$e->getMessage());

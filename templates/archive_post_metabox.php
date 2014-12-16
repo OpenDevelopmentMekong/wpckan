@@ -1,6 +1,6 @@
 <?php if (is_null($archive_orga) || is_null($archive_group) || is_null($archive_freq)) die(); ?>
 
-<?php if (wpckan_validate_settings()){ ?>
+<?php if (wpckan_validate_settings_write()){ ?>
 
   <label for="wpckan_archive_post_orga"><b><?php _e('CKAN Organization','wpckan_setting_ckan_organization_title') ?></b></label>
   <p><select name="wpckan_archive_post_orga" id="wpckan_archive_post_orga">

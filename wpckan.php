@@ -43,7 +43,7 @@ if(!class_exists('wpckan'))
         function wpckan_do_shortcode_get_related_datasets($atts) {
           wpckan_log("wpckan_do_shortcode_get_related_datasets: " . print_r($atts,true));
 
-          if (!wpckan_validate_settings()) die;
+          if (!wpckan_validate_settings_read()) die;
 
           $atts["post_id"] = get_the_ID();
           return wpckan_show_related_datasets($atts);
@@ -52,7 +52,7 @@ if(!class_exists('wpckan'))
         function wpckan_do_shortcode_query_datasets($atts) {
           wpckan_log("wpckan_do_query_related_datasets: " . print_r($atts,true));
 
-          if (!wpckan_validate_settings()) die;
+          if (!wpckan_validate_settings_read()) die;
 
           return wpckan_show_query_datasets($atts);
         }
@@ -176,8 +176,10 @@ if(!class_exists('wpckan'))
             register_setting('wpckan-group', 'setting_archive_freq');
             register_setting('wpckan-group', 'setting_ckan_organization');
             register_setting('wpckan-group', 'setting_ckan_group');
-            register_setting('wpckan-group', 'setting_ckan_valid_settings');
-            register_setting('wpckan-group', 'setting_ckan_log_path');
+            register_setting('wpckan-group', 'setting_ckan_valid_settings_read');
+            register_setting('wpckan-group', 'setting_ckan_valid_settings_write');
+            register_setting('wpckan-group', 'setting_log_path');
+            register_setting('wpckan-group', 'setting_log_enabled');
         }
 
         /**

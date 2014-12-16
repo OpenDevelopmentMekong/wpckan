@@ -1,6 +1,6 @@
 <?php if (is_null($related_datasets)) die(); ?>
 
-<?php if (wpckan_validate_settings()){ ?>
+<?php if (wpckan_validate_settings_read()){ ?>
 
   <label for="wpckan_related_datasets_add_field"><b><?php _e('Add related datasets','wpckan_related_datasets_add_title') ?></b></label>
   <p>
