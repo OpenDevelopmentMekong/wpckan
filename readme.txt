@@ -1,6 +1,6 @@
 === wpckan ===
 Contributors: acorbi
-Donate link: http://example.com/
+Donate link:
 Tags: ckan, api, datasets, open data
 Requires at least: 3.0.1
 Tested up to: 4.0
@@ -151,11 +151,8 @@ API Version 3 (http://ckan.readthedocs.org/en/latest/api/index.html#action-api-r
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Settings screen
+2. Metaboxes provided by the plugin
 
 == Changelog ==
 
