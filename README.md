@@ -3,13 +3,13 @@ wp-ckan
 
 A wordpress plugin for integrating CKAN and WP.
 
-## Description
+# Description
 
 wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
 
-## Features
+# Features
 
-### Feature 1: Add related CKAN datasets to posts.
+## Feature 1: Add related CKAN datasets to posts.
 
 Plugin presents a metabox while users are editing posts with an autocompletion input field that
 allows the user to add related CKAN datasets. Suggestions for related datasets and its metadata (title, description, and resources) are shown to the user while typing in the input field. Users can add a certain number of datasets that will get stored along the post's metadata.
@@ -65,7 +65,7 @@ An example showing how the information returned by this shortcode will be struct
 </div>
 ```
 
-### Feature 2: Query lists of CKAN datasets
+## Feature 2: Query lists of CKAN datasets
 
 Plugin exposes a function which returns a list of CKAN datasets resulting after querying
 CKAN's API. Resulting datasets can be filtered by organization, group and/or specifying a textual
@@ -127,27 +127,31 @@ Examples:
 </div>
 ```
 
-### Feature 3: Archiving WP Posts in CKAN
+## Feature 3: Archiving WP Posts in CKAN
 
 The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived (on save or on publish).
 
-## Installation
+# Installation
 
 1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpckan.git --recursive</code> into the Wordpress plugins folder.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-## Development
+# Development
 
 1. Install composer http://getcomposer.org/
 2. Edit composer.json for adding/modifying dependencies versions
 3. Install dependencies <code>composer install</code>
 
-## Uses
+# Uses
 
 * Analog logger https://github.com/jbroadway/analog
 * Silex CKAN PHP Client https://github.com/SilexConsulting/CKAN_PHP
 * Twitter's typeahead https://github.com/twitter/typeahead.js/
 
-## License
+# Copyright and License
 
-GPLv3 (see LICENSE.txt)
+This material is copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
+
+It is open and licensed under the GNU General Public License (GPL) v3.0 whose full text may be found at:
+
+http://www.fsf.org/licensing/licenses/gpl-3.0.html
