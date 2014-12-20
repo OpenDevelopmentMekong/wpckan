@@ -246,41 +246,6 @@
         ]
     },
     {
-        "name": "silex/ckan_client",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/OpenDevelopmentMekong/CKAN_PHP.git",
-            "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/OpenDevelopmentMekong/CKAN_PHP/zipball/cd00f26dd02b600018d2ee44b0b5db604ed432ec",
-            "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec",
-            "shasum": ""
-        },
-        "require": {
-            "guzzle/guzzle": "*"
-        },
-        "require-dev": {
-            "behat/behat": "2.4.*@stable",
-            "phpunit/phpunit": "3.7@stable"
-        },
-        "time": "2014-12-15 22:05:01",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Silex\\ckan": "src/",
-                "Silex\\ckan\\tests": "test/"
-            }
-        },
-        "support": {
-            "source": "https://github.com/OpenDevelopmentMekong/ckan_php/tree/master"
-        }
-    },
-    {
         "name": "twitter/typeahead.js",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -314,5 +279,40 @@
             "autocomplete",
             "typeahead"
         ]
+    },
+    {
+        "name": "silex/ckan_client",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/OpenDevelopmentMekong/CKAN_PHP.git",
+            "reference": "3914a98e982a185f92cb32432893595944c8b427"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/OpenDevelopmentMekong/CKAN_PHP/zipball/3914a98e982a185f92cb32432893595944c8b427",
+            "reference": "3914a98e982a185f92cb32432893595944c8b427",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/guzzle": "*"
+        },
+        "require-dev": {
+            "behat/behat": "2.4.*@stable",
+            "phpunit/phpunit": "3.7@stable"
+        },
+        "time": "2014-12-16 19:00:35",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Silex\\ckan": "src/",
+                "Silex\\ckan\\tests": "test/"
+            }
+        },
+        "support": {
+            "source": "https://github.com/OpenDevelopmentMekong/CKAN_PHP/tree/master"
+        }
     }
 ]

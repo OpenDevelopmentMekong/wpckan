@@ -5,7 +5,7 @@ Tags: ckan, api, datasets, open data
 Requires at least: 3.0.1
 Tested up to: 4.0
 Stable tag: trunk
-License: GPLv3
+License: GPLv3 / copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.

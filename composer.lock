@@ -192,12 +192,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/OpenDevelopmentMekong/CKAN_PHP.git",
-                "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec"
+                "reference": "3914a98e982a185f92cb32432893595944c8b427"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OpenDevelopmentMekong/CKAN_PHP/zipball/cd00f26dd02b600018d2ee44b0b5db604ed432ec",
-                "reference": "cd00f26dd02b600018d2ee44b0b5db604ed432ec",
+                "url": "https://api.github.com/repos/OpenDevelopmentMekong/CKAN_PHP/zipball/3914a98e982a185f92cb32432893595944c8b427",
+                "reference": "3914a98e982a185f92cb32432893595944c8b427",
                 "shasum": ""
             },
             "require": {
@@ -215,9 +215,9 @@
                 }
             },
             "support": {
-                "source": "https://github.com/OpenDevelopmentMekong/ckan_php/tree/master"
+                "source": "https://github.com/OpenDevelopmentMekong/CKAN_PHP/tree/master"
             },
-            "time": "2014-12-15 22:05:01"
+            "time": "2014-12-16 19:00:35"
         },
         {
             "name": "symfony/event-dispatcher",
