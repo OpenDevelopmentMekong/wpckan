@@ -41,7 +41,7 @@ An example showing how the information returned by this shortcode will be struct
   <ul>
     <li>
       <div class="wpckan_dataset">
-        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_title"><a href="http://link_to_dataset">Title</a></div>
         <div class="wpckan_dataset_notes">Notes</div>
         <div class="wpckan_dataset_license">License</div>
         <div class="wpckan_dataset_author">Author</div>
@@ -50,7 +50,7 @@ An example showing how the information returned by this shortcode will be struct
           <ul>
             <li>
               <div class="wpckan_resource">
-                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_name"><a href="http://link_to_resource">Name</a></div>
                 <div class="wpckan_resource_description">Description</div>
                 /*.... other fields ....*/
               </div>
@@ -103,7 +103,7 @@ Examples:
   <ul>
     <li>
       <div class="wpckan_dataset">
-        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_title"><a href="http://link_to_dataset">Title</a></div>
         <div class="wpckan_dataset_notes">Notes</div>
         <div class="wpckan_dataset_license">License</div>
         <div class="wpckan_dataset_author">Author</div>
@@ -112,7 +112,7 @@ Examples:
           <ul>
             <li>
               <div class="wpckan_resource">
-                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_name"><a href="http://link_to_resource">Name</a></div>
                 <div class="wpckan_resource_description">Description</div>
                 /*.... other fields ....*/
               </div>

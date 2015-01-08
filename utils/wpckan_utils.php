@@ -92,6 +92,18 @@
     return $output;
   }
 
+  function wpckan_get_link_to_dataset($dataset_name){
+    wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
+
+    return get_option('setting_ckan_url') . "/dataset/" . $dataset_name;
+  }
+
+  function wpckan_get_link_to_resource($dataset_name,$resource_id){
+    wpckan_log("wpckan_get_link_to_resource "  . print_r($dataset_name,true) . " " . print_r($resource_id,true));
+
+    return wpckan_get_link_to_dataset($dataset_name) . "/resource/" . $resource_id;
+  }
+
   /*
   * Logging
   */
