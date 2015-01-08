@@ -19,7 +19,7 @@
     <li>
       <div class="wpckan_dataset">
         <?php if (array_key_exists("title",$dataset) && !IsNullOrEmptyString($dataset["title"]) && in_array("title",$include_fields_dataset)) {?>
-          <div class="wpckan_dataset_title"><?php echo $dataset["title"] ?></div>
+          <div class="wpckan_dataset_title"><a target="_blank" href="<?php echo wpckan_get_link_to_dataset($dataset["name"]) ?>"><?php echo $dataset["title"] ?></a></div>
         <?php } ?>
         <?php if (array_key_exists("notes",$dataset) && !IsNullOrEmptyString($dataset["notes"]) && in_array("notes",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_notes"><?php echo $dataset["notes"] ?></div>
@@ -52,7 +52,7 @@
                 <li>
                   <div class="wpckan_resource">
                     <?php if (array_key_exists("name",$resource) && !IsNullOrEmptyString($resource["name"]) && in_array("name",$include_fields_resources)) {?>
-                      <div class="wpckan_resource_name"><?php echo $resource["name"] ?></div>
+                      <div class="wpckan_resource_name"><a target="_blank" href="<?php echo wpckan_get_link_to_resource($dataset["name"],$resource["id"]) ?>"><?php echo $resource["name"] ?></a></div>
                       <?php } ?>
                       <?php if (array_key_exists("description",$resource) && !IsNullOrEmptyString($resource["description"]) && in_array("description",$include_fields_resources)) {?>
                         <div class="wpckan_resource_description"><?php echo $resource["description"] ?></div>
