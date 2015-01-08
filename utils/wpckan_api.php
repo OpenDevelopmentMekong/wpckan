@@ -52,7 +52,11 @@
       $settings = wpckan_get_ckan_settings();
       $ckanClient = CkanClient::factory($settings);
       $commandName = 'PackageSearch';
-      $arguments = array('q' => $atts['query'], 'rows' => (int)$atts['limit']);
+      $arguments = array('q' => $atts['query']);
+
+      if (isset($atts['limit'])){
+        $arguments['rows'] = (int)$atts['limit'];
+      }
 
       $filter = null;
       if (isset($atts['organization'])) $filter = $filter . "+owner_org:" . $atts['organization'];
@@ -247,7 +251,7 @@
     } catch (Exception $e){
       return wpckan_api_call_error("wpckan_api_get_group_list_for_user",$e->getMessage());
     }
-    
+
     return $response["result"];
 
   }
