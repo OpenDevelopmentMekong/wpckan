@@ -73,6 +73,50 @@
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
   }
 
+  function wpckan_show_number_of_related_datasets($atts) {
+    wpckan_log("wpckan_show_number_of_related_datasets " . print_r($atts,true));
+
+    $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
+    $related_datasets = array();
+    if (!IsNullOrEmptyString($related_datasets_json))
+    $related_datasets = json_decode($related_datasets_json,true);
+
+    if (array_key_exists("group",$atts))
+      $filter_group = $atts["group"];
+    if (array_key_exists("organization",$atts)){
+      $filter_organization = wpckan_api_get_organization($atts["organization"]);
+    }
+
+    $dataset_array = array();
+    foreach ($related_datasets as $dataset){
+
+      $qualifies = false;
+      if (!isset($filter_group) && !isset($filter_organization))
+        $qualifies = true;
+
+      if (isset($filter_group) && !$qualifies){
+
+        $groups = json_decode($dataset["dataset_groups"], true);
+
+        wpckan_log("GROUPS "  . print_r($groups,true));
+
+        foreach ($groups as $group){
+          if (strtolower($filter_group) == strtolower($group["name"])){
+            $qualifies = true;
+          }
+        }
+      }
+      if (isset($filter_organization) && !qualifies){
+        if ($dataset["owner_org"] == $filter_organization["id"]){
+          $qualifies = true;
+        }
+      }
+      if ($qualifies)
+        array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+    }
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_number.php',$dataset_array,$atts);
+  }
+
   function wpckan_show_query_datasets($atts) {
     wpckan_log("wpckan_show_query_datasets "  . print_r($atts,true));
 

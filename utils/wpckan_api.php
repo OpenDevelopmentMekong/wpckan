@@ -234,6 +234,28 @@
 
   }
 
+  function wpckan_api_get_organization($organization_name) {
+    wpckan_log("wpckan_api_get_organization");
+
+    try{
+
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
+      $commandName = 'GetOrganizations';
+      $arguments = array('organizations' => array($organization_name), 'all_fields'=> true);
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_api_get_organization commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
+
+    } catch (Exception $e){
+      return wpckan_api_call_error("wpckan_api_get_organization",$e->getMessage());
+    }
+
+    return $response["result"][0];
+
+  }
+
   function wpckan_api_get_group_list_for_user() {
     wpckan_log("wpckan_api_get_group_list_for_user");
 

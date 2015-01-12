@@ -30,6 +30,7 @@ if(!class_exists('wpckan'))
           add_action('save_post', array(&$this, 'wpckan_save_post'));
           add_action('add_meta_boxes', array(&$this, 'wpckan_add_meta_boxes'));
           add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
+          add_shortcode('wpckan_number_of_related_datasets', array(&$this, 'wpckan_do_shortcode_get_number_of_related_datasets'));
           add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
         }
 
@@ -47,6 +48,15 @@ if(!class_exists('wpckan'))
 
           $atts["post_id"] = get_the_ID();
           return wpckan_show_related_datasets($atts);
+        }
+
+        function wpckan_do_shortcode_get_number_of_related_datasets($atts) {
+          wpckan_log("wpckan_do_shortcode_get_number_of_related_datasets: " . print_r($atts,true));
+
+          if (!wpckan_validate_settings_read()) die;
+
+          $atts["post_id"] = get_the_ID();
+          return wpckan_show_number_of_related_datasets($atts);
         }
 
         function wpckan_do_shortcode_query_datasets($atts) {
