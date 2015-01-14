@@ -84,35 +84,43 @@
     if (array_key_exists("group",$atts))
       $filter_group = $atts["group"];
     if (array_key_exists("organization",$atts)){
-      $filter_organization = wpckan_api_get_organization($atts["organization"]);
+      $filter_organization = $atts["organization"];
     }
 
     $dataset_array = array();
     foreach ($related_datasets as $dataset){
 
       $qualifies = false;
-      if (!isset($filter_group) && !isset($filter_organization))
+
+      if (!isset($filter_group) && !isset($filter_organization)){
         $qualifies = true;
+      }else{
 
-      if (isset($filter_group) && !$qualifies){
+        // Check if dataset belongs to group
+        if (isset($filter_group)){
+          $qualifies = false;
+          $groups = json_decode($dataset["dataset_groups"], true);
+          foreach ($groups as $group){
+            if (strtolower($filter_group) == strtolower($group["name"])){
+              $qualifies = true;
+            }
+          }
+        }
 
-        $groups = json_decode($dataset["dataset_groups"], true);
-
-        wpckan_log("GROUPS "  . print_r($groups,true));
-
-        foreach ($groups as $group){
-          if (strtolower($filter_group) == strtolower($group["name"])){
+        // Check if dataset belongs to organization
+        if (isset($filter_organization) && isset($dataset["dataset_org"])){
+          $qualifies = false;
+          $organization = wpckan_api_get_organization($dataset["dataset_org"]);
+          if ( $organization["name"] == $filter_organization){
             $qualifies = true;
           }
         }
       }
-      if (isset($filter_organization) && !qualifies){
-        if ($dataset["owner_org"] == $filter_organization["id"]){
-          $qualifies = true;
-        }
-      }
-      if ($qualifies)
+
+      if ($qualifies){
+        $dataset_atts = array("id" => $dataset["dataset_id"]);
         array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+      }
     }
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_number.php',$dataset_array,$atts);
   }

@@ -2,6 +2,7 @@ const DATASET_ID_ATTR = "wpckan-dataset-id";
 const DATASET_TITLE_ATTR = "wpckan-dataset-title";
 const DATASET_URL_ATTR = "wpckan-dataset-url";
 const DATASET_GROUPS_ATTR = "wpckan-dataset-groups";
+const DATASET_ORG_ATTR = "wpckan-dataset-org";
 const CKAN_URL = "wpckan-base-url"
 
 var field;
@@ -38,7 +39,8 @@ jQuery( document ).ready(function() {
               id: dataset["id"],
               title: dataset["title"],
               url: dataset["url"],
-              groups: JSON.stringify(dataset["groups"])
+              groups: JSON.stringify(dataset["groups"]),
+              owner_org: dataset["owner_org"]
             };
           });
         }
@@ -61,10 +63,12 @@ jQuery( document ).ready(function() {
     console.log(item["title"]);
     console.log(item["url"]);
     console.log(item["groups"]);
+    console.log(item["owner_org"]);
     jQuery(this).attr(DATASET_ID_ATTR,item["id"]);
     jQuery(this).attr(DATASET_TITLE_ATTR,item["title"]);
     jQuery(this).attr(DATASET_URL_ATTR,item["url"]);
     jQuery(this).attr(DATASET_GROUPS_ATTR,item["groups"]);
+    jQuery(this).attr(DATASET_ORG_ATTR,item["owner_org"]);
     addButton.removeClass("disabled");
   });
 
@@ -89,6 +93,7 @@ function wpckan_related_dataset_metabox_add(){
   var dataset_title = field.attr(DATASET_TITLE_ATTR);
   var dataset_url = field.attr(DATASET_URL_ATTR);
   var dataset_groups = field.attr(DATASET_GROUPS_ATTR);
+  var dataset_org = field.attr(DATASET_ORG_ATTR);
 
   var dataset = getDatasetWithId(dataset_id);
   if (dataset){
@@ -96,7 +101,7 @@ function wpckan_related_dataset_metabox_add(){
     return;
   }
 
-  addDataset(dataset_id,dataset_title,dataset_url,dataset_groups);
+  addDataset(dataset_id,dataset_title,dataset_url,dataset_groups,dataset_org);
   clearField();
 
   var entry = jQuery('<p><a href='+dataset_url+'>'+dataset_title+'</a>   </p>');
@@ -123,8 +128,8 @@ function setFormValue(){
   jQuery("#wpckan_add_related_datasets_datasets").val(datasets_json);
 }
 
-function addDataset(dataset_id,dataset_title,dataset_url,dataset_groups){
-  datasets.push({"dataset_id": dataset_id, "dataset_title": dataset_title, "dataset_url": dataset_url, "dataset_groups": dataset_groups});
+function addDataset(dataset_id,dataset_title,dataset_url,dataset_groups,dataset_org){
+  datasets.push({"dataset_id": dataset_id, "dataset_title": dataset_title, "dataset_url": dataset_url, "dataset_groups": dataset_groups, "dataset_org": dataset_org});
   console.log("Added dataset with id: " + dataset_id + " datasets in array: "+ datasets.length);
   setFormValue();
 }

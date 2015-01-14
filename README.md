@@ -1,7 +1,7 @@
 wp-ckan
 =======
 
-A wordpress plugin for integrating CKAN and WP.
+A wordpress plugin for integrating CKAN http://ckan.org/ and WP http://wordpress.org/.
 
 # Description
 
@@ -64,6 +64,41 @@ An example showing how the information returned by this shortcode will be struct
   </ul>
 </div>
 ```
+
+Also, the plugin exposes the  **[wpckan_number_of_related_datasets]** shortcode for returning the number of related datasets assigned to the post as a customizable link so a summary can be presented on the wordpress side.
+The shortcode has following parameters:
+
+* **group**:  (Optional)
+Specify the name (Not title) of a group available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+
+* **organization**:  (Optional)
+Specify the name (Not title) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+
+Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
+
+* **link_url**:  (Optional)
+Specify the URL to link the produced output with some other resource (i.e: in the CKAN instance)
+
+* **prefix**:  (Optional)
+Prepends a string before the number.
+
+* **suffix**:  (Optional)
+Appends a string after the number.
+
+Examples:
+```php
+[wpckan_number_of_related_datasets]
+[wpckan_number_of_related_datasets link_url="http://link_to_more"]
+[wpckan_number_of_related_datasets group="news"]
+[wpckan_number_of_related_datasets group="news" suffix=" datasets found in the news."]
+[wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
+```
+An example (corresponding to the last example above) showing how the information returned by this shortcode will be structured:
+
+```html
+<div class="wpckan_dataset_number">
+  <p><a target="_blank" href="http://link_to_more">Number of datasets: (5)</a></p>
+</div>
 
 ## Feature 2: Query lists of CKAN datasets
 

@@ -234,15 +234,15 @@
 
   }
 
-  function wpckan_api_get_organization($organization_name) {
+  function wpckan_api_get_organization($id) {
     wpckan_log("wpckan_api_get_organization");
 
     try{
 
       $settings = wpckan_get_ckan_settings();
       $ckanClient = CkanClient::factory($settings);
-      $commandName = 'GetOrganizations';
-      $arguments = array('organizations' => array($organization_name), 'all_fields'=> true);
+      $commandName = 'GetGroup';
+      $arguments = array('id' => $id, 'include_datasets'=> false);
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
@@ -252,7 +252,7 @@
       return wpckan_api_call_error("wpckan_api_get_organization",$e->getMessage());
     }
 
-    return $response["result"][0];
+    return $response["result"];
 
   }
 

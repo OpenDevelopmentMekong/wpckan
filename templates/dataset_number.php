@@ -10,5 +10,5 @@
 ?>
 
 <div class="wpckan_dataset_number">
-  <p><?php echo $prefix ?><a href="#"><?php echo count($data) ?></a><?php echo $suffix ?></p>
+  <p><a <?php if (array_key_exists("link_url",$atts)){ ?>target="_blank" href=<?php echo $atts["link_url"] ?><?php } ?>><?php echo $prefix ?><?php echo count($data) ?><?php echo $suffix ?></a></p>
 </div>
