@@ -197,6 +197,49 @@
   * Utilities
   */
 
+  function wpckan_cleanup_text_for_archiving($post_content){
+    $post_content = wpckan_detect_and_remove_shortcodes_in_text($post_content);    
+    return $post_content;
+  }
+
+  function wpckan_detect_and_remove_shortcodes_in_text($text)
+  {
+    global $post;
+    $pattern = get_shortcode_regex();
+    $shortcodes = ["wpckan_related_datasets","wpckan_number_of_related_datasets","wpckan_query_datasets"];
+
+    foreach($shortcodes as $shortcode){
+      if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
+      && array_key_exists( 2, $matches )
+      && in_array( $shortcode, $matches[2] ) )
+      {
+        foreach($matches as $match){
+          $text = str_replace($match,"",$text);
+        }
+      }
+    }
+    return $text;
+  }
+
+  function wpckan_detect_and_echo_shortcodes_in_text($text)
+  {
+    global $post;
+    $pattern = get_shortcode_regex();
+    $shortcodes = ["wpckan_related_datasets","wpckan_number_of_related_datasets","wpckan_query_datasets"];
+
+    foreach($shortcodes as $shortcode){
+      if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
+      && array_key_exists( 2, $matches )
+      && in_array( $shortcode, $matches[2] ) )
+      {
+        foreach($matches as $match){
+          $text = str_replace($match,do_shortcode($match),$text);
+        }
+      }
+    }
+    return $text;
+  }
+
   function wpckan_get_complete_url_for_dataset($dataset){
     return get_option('setting_ckan_url') . "/dataset/" . $dataset["name"];
   }

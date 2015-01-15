@@ -149,7 +149,7 @@
     $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
     $data = array('name' => $post->post_name,
                   'title' => $post->post_title,
-                  'notes' => $post->post_content);
+                  'notes' => wpckan_cleanup_text_for_archiving($post->post_content));
 
     $archive_orga = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
     $archive_group = get_post_meta( $post->ID, 'wpckan_archive_post_group', true );
