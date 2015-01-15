@@ -9,7 +9,7 @@
   </p>
   <div id="wpckan_related_datasets_list">
     <?php foreach ($related_datasets as $dataset) { ?>
-      <p><a target="_blank" href="<?php echo $dataset["dataset_url"] ?>"><?php echo $dataset["dataset_title"] ?></a>   <a class="delete" href="#" wpckan-dataset-id="<?php echo $dataset['dataset_id'] ?>">Delete</a></p>
+      <p><a target="_blank" href="<?php echo $dataset["dataset_url"] ?>"><?php echo $dataset["dataset_title"] ?></a>   <a class="delete error" href="#" wpckan-dataset-id="<?php echo $dataset['dataset_id'] ?>">Delete</a></p>
     <?php } ?>
   </div>
   <input id="wpckan_add_related_datasets_datasets" name="wpckan_add_related_datasets_datasets" type="hidden" value='<?php echo $related_datasets_json ?>'/>

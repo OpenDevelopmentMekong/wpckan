@@ -76,6 +76,9 @@ Specify the name (Not title) of an organization available on the target CKAN ins
 
 Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
 
+* **limit**: (Optional) Number.
+Limits the amount of datasets shown by the shortcode.
+
 * **link_url**:  (Optional)
 Specify the URL to link the produced output with some other resource (i.e: in the CKAN instance)
 
@@ -90,6 +93,7 @@ Examples:
 [wpckan_number_of_related_datasets]
 [wpckan_number_of_related_datasets link_url="http://link_to_more"]
 [wpckan_number_of_related_datasets group="news"]
+[wpckan_number_of_related_datasets group="news" limit="1"]
 [wpckan_number_of_related_datasets group="news" suffix=" datasets found in the news."]
 [wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
 ```

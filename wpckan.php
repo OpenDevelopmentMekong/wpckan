@@ -10,6 +10,7 @@
  */
 
  require 'vendor/autoload.php';
+ include_once plugin_dir_path( __FILE__ ) . 'utils/wpckan_exceptions.php' ;
  include_once plugin_dir_path( __FILE__ ) . 'utils/wpckan_utils.php' ;
  include_once plugin_dir_path( __FILE__ ) . 'utils/wpckan_api.php' ;
 
@@ -114,7 +115,11 @@ if(!class_exists('wpckan'))
 
           if (wpckan_post_should_be_archived_on_publish( $post_ID )){
             $post = get_post($post_ID);
-            wpckan_api_archive_post_as_dataset($post);
+            try{
+              wpckan_api_archive_post_as_dataset($post);
+            }catch(Exception $e){
+              wpckan_log($e->getMessage());
+            }
           }
         }
 
