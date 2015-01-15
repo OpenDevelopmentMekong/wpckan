@@ -174,6 +174,10 @@
   * Utilities
   */
 
+  function wpckan_get_complete_url_for_dataset($dataset){
+    return get_option('setting_ckan_url') . "/dataset/" . $dataset["name"];
+  }
+
   function wpckan_get_group_names_for_user(){
     $groups = wpckan_api_get_group_list_for_user();
     $group_names = array();
@@ -203,7 +207,7 @@
   function wpckan_get_ckan_settings(){
 
       $settings = array(
-        'baseUrl' => get_option('setting_ckan_url') . "/api/" ,
+        'baseUrl' => get_option('setting_ckan_url') . "/api/",
         'scheme' => 'http',
         'apiKey' => get_option('setting_ckan_api')
       );
@@ -224,7 +228,11 @@
   }
 
   function wpckan_sanitize_url($input) {
-    return esc_url($input);
+    $clean_url = esc_url($input);
+    if(substr($clean_url, -1) == '/') {
+      $clean_url = substr($clean_url, 0, -1);
+    }
+    return $clean_url;
   }
 
   function IsNullOrEmptyString($question){

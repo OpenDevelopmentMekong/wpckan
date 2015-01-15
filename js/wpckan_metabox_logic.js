@@ -1,9 +1,10 @@
 const DATASET_ID_ATTR = "wpckan-dataset-id";
 const DATASET_TITLE_ATTR = "wpckan-dataset-title";
-const DATASET_URL_ATTR = "wpckan-dataset-url";
+const DATASET_NAME_ATTR = "wpckan-dataset-name";
 const DATASET_GROUPS_ATTR = "wpckan-dataset-groups";
 const DATASET_ORG_ATTR = "wpckan-dataset-org";
-const CKAN_URL = "wpckan-base-url"
+const CKAN_API_URL = "wpckan-api-url"
+const CKAN_BASE_URL = "wpckan-base-url"
 
 var field;
 var datasetList;
@@ -31,14 +32,14 @@ jQuery( document ).ready(function() {
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: field.attr(CKAN_URL) + '3/action/package_search?q=%QUERY',
+      url: field.attr(CKAN_API_URL) + '3/action/package_search?q=%QUERY',
       filter: function (json) {
         if (json.success){
           return jQuery.map(json.result.results, function (dataset) {
             return {
               id: dataset["id"],
               title: dataset["title"],
-              url: dataset["url"],
+              name: dataset["name"],
               groups: JSON.stringify(dataset["groups"]),
               owner_org: dataset["owner_org"]
             };
@@ -61,12 +62,12 @@ jQuery( document ).ready(function() {
   }).on("typeahead:selected",function(event,item,dataset){
     console.log(item["id"]);
     console.log(item["title"]);
-    console.log(item["url"]);
+    console.log(item["name"]);
     console.log(item["groups"]);
     console.log(item["owner_org"]);
     jQuery(this).attr(DATASET_ID_ATTR,item["id"]);
     jQuery(this).attr(DATASET_TITLE_ATTR,item["title"]);
-    jQuery(this).attr(DATASET_URL_ATTR,item["url"]);
+    jQuery(this).attr(DATASET_NAME_ATTR,item["name"]);
     jQuery(this).attr(DATASET_GROUPS_ATTR,item["groups"]);
     jQuery(this).attr(DATASET_ORG_ATTR,item["owner_org"]);
     addButton.removeClass("disabled");
@@ -91,7 +92,7 @@ function wpckan_related_dataset_metabox_add(){
 
   var dataset_id = field.attr(DATASET_ID_ATTR);
   var dataset_title = field.attr(DATASET_TITLE_ATTR);
-  var dataset_url = field.attr(DATASET_URL_ATTR);
+  var dataset_url = field.attr(CKAN_BASE_URL) + "/dataset/" + field.attr(DATASET_NAME_ATTR);
   var dataset_groups = field.attr(DATASET_GROUPS_ATTR);
   var dataset_org = field.attr(DATASET_ORG_ATTR);
 
@@ -104,7 +105,7 @@ function wpckan_related_dataset_metabox_add(){
   addDataset(dataset_id,dataset_title,dataset_url,dataset_groups,dataset_org);
   clearField();
 
-  var entry = jQuery('<p><a href='+dataset_url+'>'+dataset_title+'</a>   </p>');
+  var entry = jQuery('<p><a target="_blank" href='+dataset_url+'>'+dataset_title+'</a>   </p>');
   var del = jQuery('<a class="delete error" '+DATASET_ID_ATTR+'='+dataset_id+' href="#">Delete</a>');
   // TODO improve
   jQuery(del).on("click",function(){
