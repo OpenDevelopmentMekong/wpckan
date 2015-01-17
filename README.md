@@ -103,6 +103,7 @@ An example (corresponding to the last example above) showing how the information
 <div class="wpckan_dataset_number">
   <p><a target="_blank" href="http://link_to_more">Number of datasets: (5)</a></p>
 </div>
+```
 
 ## Feature 2: Query lists of CKAN datasets
 
