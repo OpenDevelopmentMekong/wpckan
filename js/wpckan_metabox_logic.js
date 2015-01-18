@@ -10,10 +10,12 @@ var field;
 var datasetList;
 var addButton;
 
+var DEBUG = false;
+
 var datasets = [];
 
 jQuery( document ).ready(function() {
-  console.log("wpckan_metabox_logic.js document ready");
+  if (DEBUG) console.log("wpckan_metabox_logic.js document ready");
 
   getFormValue();
 
@@ -60,11 +62,13 @@ jQuery( document ).ready(function() {
     displayKey: 'title',
     source: suggestions.ttAdapter()
   }).on("typeahead:selected",function(event,item,dataset){
-    console.log(item["id"]);
-    console.log(item["title"]);
-    console.log(item["name"]);
-    console.log(item["groups"]);
-    console.log(item["owner_org"]);
+    if (DEBUG) {
+      console.log(item["id"]);
+      console.log(item["title"]);
+      console.log(item["name"]);
+      console.log(item["groups"]);
+      console.log(item["owner_org"]);
+    }
     jQuery(this).attr(DATASET_ID_ATTR,item["id"]);
     jQuery(this).attr(DATASET_TITLE_ATTR,item["title"]);
     jQuery(this).attr(DATASET_NAME_ATTR,item["name"]);
@@ -82,13 +86,13 @@ jQuery( document ).ready(function() {
 });
 
 function wpckan_related_dataset_metabox_on_input(){
-  console.log("wpckan_related_dataset_metabox_on_input");
+  if (DEBUG) console.log("wpckan_related_dataset_metabox_on_input");
 
   addButton.addClass("disabled");
 }
 
 function wpckan_related_dataset_metabox_add(){
-  console.log("wpckan_related_dataset_metabox_add");
+  if (DEBUG) console.log("wpckan_related_dataset_metabox_add");
 
   var dataset_id = field.attr(DATASET_ID_ATTR);
   var dataset_title = field.attr(DATASET_TITLE_ATTR);
@@ -119,19 +123,19 @@ function wpckan_related_dataset_metabox_add(){
 
 function getFormValue(){
   var datasets_json = jQuery("#wpckan_add_related_datasets_datasets").val();
-  console.log("getFormValue "+ datasets_json);
-  datasets = JSON.parse(datasets_json);
+  if (DEBUG) console.log("getFormValue "+ datasets_json);
+  if (datasets_json) JSON.parse(datasets_json);
 }
 
 function setFormValue(){
   var datasets_json = JSON.stringify(datasets);
-  console.log("setFormValue "+ datasets_json);
+  if (DEBUG) console.log("setFormValue "+ datasets_json);
   jQuery("#wpckan_add_related_datasets_datasets").val(datasets_json);
 }
 
 function addDataset(dataset_id,dataset_title,dataset_url,dataset_groups,dataset_org){
   datasets.push({"dataset_id": dataset_id, "dataset_title": dataset_title, "dataset_url": dataset_url, "dataset_groups": dataset_groups, "dataset_org": dataset_org});
-  console.log("Added dataset with id: " + dataset_id + " datasets in array: "+ datasets.length);
+  if (DEBUG) console.log("Added dataset with id: " + dataset_id + " datasets in array: "+ datasets.length);
   setFormValue();
 }
 
@@ -140,7 +144,7 @@ function removeDatasetWithIdForEntry(id,entry){
   entry.parentNode.remove();  //use plain javascript here to get the parent
   var datasetIndex = getDatasetIndexWithId(id);
   if (datasetIndex){
-    console.log("removing " + id + " from datasets");
+    if (DEBUG) console.log("removing " + id + " from datasets");
     datasets.splice(datasetIndex,1);
     setFormValue();
     return;
