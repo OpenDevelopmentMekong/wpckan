@@ -198,7 +198,7 @@
   */
 
   function wpckan_cleanup_text_for_archiving($post_content){
-    $post_content = wpckan_detect_and_remove_shortcodes_in_text($post_content);    
+    $post_content = wpckan_detect_and_remove_shortcodes_in_text($post_content);
     return $post_content;
   }
 
@@ -206,7 +206,7 @@
   {
     global $post;
     $pattern = get_shortcode_regex();
-    $shortcodes = ["wpckan_related_datasets","wpckan_number_of_related_datasets","wpckan_query_datasets"];
+    $shortcodes = array("wpckan_related_datasets","wpckan_number_of_related_datasets","wpckan_query_datasets");
 
     foreach($shortcodes as $shortcode){
       if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
@@ -225,7 +225,7 @@
   {
     global $post;
     $pattern = get_shortcode_regex();
-    $shortcodes = ["wpckan_related_datasets","wpckan_number_of_related_datasets","wpckan_query_datasets"];
+    $shortcodes = array("wpckan_related_datasets","wpckan_number_of_related_datasets","wpckan_query_datasets");
 
     foreach($shortcodes as $shortcode){
       if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
