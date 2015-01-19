@@ -276,6 +276,7 @@
     try{
       wpckan_api_ping();
     }catch(Exception $e){
+      wpckan_log($e->getMessage());
       return false;
     }
     return true;

@@ -45,7 +45,7 @@ if(!class_exists('wpckan'))
         function wpckan_do_shortcode_get_related_datasets($atts) {
           wpckan_log("wpckan_do_shortcode_get_related_datasets: " . print_r($atts,true));
 
-          if (!wpckan_validate_settings_read()) die;
+          if (!wpckan_validate_settings_read()) return;
 
           $atts["post_id"] = get_the_ID();
           return wpckan_show_related_datasets($atts);
@@ -54,7 +54,7 @@ if(!class_exists('wpckan'))
         function wpckan_do_shortcode_get_number_of_related_datasets($atts) {
           wpckan_log("wpckan_do_shortcode_get_number_of_related_datasets: " . print_r($atts,true));
 
-          if (!wpckan_validate_settings_read()) die;
+          if (!wpckan_validate_settings_read()) return;
 
           $atts["post_id"] = get_the_ID();
           return wpckan_show_number_of_related_datasets($atts);
