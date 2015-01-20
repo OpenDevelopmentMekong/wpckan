@@ -41,7 +41,7 @@
     $archive_group = $_POST['wpckan_archive_post_group'];
     $archive_freq = $_POST['wpckan_archive_post_freq'];
 
-    update_post_meta( $post_ID, 'wpckan_related_dataset_url', $archive_orga );
+    update_post_meta( $post_ID, 'wpckan_archive_post_orga', $archive_orga );
     update_post_meta( $post_ID, 'wpckan_archive_post_group', $archive_group );
     update_post_meta( $post_ID, 'wpckan_archive_post_freq', $archive_freq );
 
