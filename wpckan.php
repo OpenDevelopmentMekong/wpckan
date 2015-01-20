@@ -71,7 +71,7 @@ if(!class_exists('wpckan'))
         function wpckan_add_meta_boxes($post_type) {
           wpckan_log("wpckan_add_meta_boxes: " . $post_type);
 
-          $post_types = array( 'post', 'page' );
+          $post_types = apply_filters('wpckan_post_types', array( 'post', 'page' ));
           if ( in_array( $post_type, $post_types )) {
               add_meta_box('wpckan_add_related_datasets',__( 'Add related CKAN content', 'wpckan_add_related_datasets_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
               add_meta_box('wpckan_archive_post',__( 'Archive Post as CKAN dataset', 'wpckan_archive_post_title' ),array(&$this, 'wpckan_render_archive_post_meta_box'),$post_type,'side','high');
