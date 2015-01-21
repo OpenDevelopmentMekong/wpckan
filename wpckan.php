@@ -103,7 +103,7 @@ if(!class_exists('wpckan'))
           wpckan_log("wpckan_render_archive_post_meta_box: " . print_r($post,true));
 
           wp_nonce_field('wpckan_archive_post', 'wpckan_archive_post_nonce');
-          $archive_orga = get_post_meta( $post->ID, 'wpckan_related_dataset_url', true );
+          $archive_orga = get_post_meta( $post->ID, 'wpckan_archive_post_orga', true );
           $archive_group = get_post_meta( $post->ID, 'wpckan_archive_post_group', true );
           $archive_freq = get_post_meta( $post->ID, 'wpckan_archive_post_freq', true );
           //We do not use wpckan_output_template here, just require.
