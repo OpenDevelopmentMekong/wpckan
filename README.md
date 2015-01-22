@@ -26,10 +26,15 @@ Per default, this shortcode shows only name, description and format of the resou
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode.
 
+* **page**: (Optional) Number.
+When used together with **limit**, returned datasets will get paginated. In case of possible pagination, this parameter specifies which page is returned. If there are not enough related datasets to paginate, this parameter will be ignored.
+Example: if there are 8 related datasets, limit = 2, page = 2, then datasets 2 and 3 will be returned. Mind that order begins on 1.
+
 Examples:
 ```php
 [wpckan_related_datasets]
 [wpckan_related_datasets limit="3"]
+[wpckan_related_datasets limit="3" page="2"]
 [wpckan_related_datasets include_fields_dataset="title,description,author"]
 [wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
 ```
@@ -130,10 +135,15 @@ Per default, this shortcode shows only name (with link to the resources's URL), 
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode.
 
+* **page**: (Optional) Number.
+When used together with **limit**, returned datasets will get paginated. In case of possible pagination, this parameter specifies which page is returned. If there are not enough related datasets to paginate, this parameter will be ignored.
+Example: if there are 8 related datasets, limit = 2, page = 2, then datasets 2 and 3 will be returned. Mind that order begins on 1.
+
 Examples:
 ```php
 [wpckan_query_datasets query="coal"]
 [wpckan_query_datasets query="corruption" limit="5"]
+[wpckan_query_datasets query="corruption" limit="5" page="1"]
 [wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 ```
