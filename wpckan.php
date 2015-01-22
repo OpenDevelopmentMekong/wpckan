@@ -93,8 +93,7 @@ if(!class_exists('wpckan'))
           $related_datasets = array();
           if (!IsNullOrEmptyString($related_datasets_json))
             $related_datasets = json_decode($related_datasets_json,true);
-          else
-            $related_datasets_json = "[]";
+
           //We do not use wpckan_output_template here, just require.
           require 'templates/related_datasets_metabox.php';
         }
