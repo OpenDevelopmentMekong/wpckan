@@ -89,12 +89,11 @@ if(!class_exists('wpckan'))
           wpckan_log("wpckan_render_dataset_meta_box: " . print_r($post,true));
 
           wp_nonce_field('wpckan_add_related_datasets', 'wpckan_add_related_datasets_nonce');
-          $related_datasets_json = get_post_meta( $post->ID, 'wpckan_related_datasets', true );
+          $related_datasets_json = get_post_meta( $post->ID, 'wpckan_related_datasets', true );          
           $related_datasets = array();
           if (!IsNullOrEmptyString($related_datasets_json))
             $related_datasets = json_decode($related_datasets_json,true);
-          else
-            $related_datasets_json = "[]";
+
           //We do not use wpckan_output_template here, just require.
           require 'templates/related_datasets_metabox.php';
         }
