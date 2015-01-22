@@ -68,15 +68,29 @@
     if (!IsNullOrEmptyString($related_datasets_json))
       $related_datasets = json_decode($related_datasets_json,true);
 
+    $limit = 0;
+    if (array_key_exists("limit",$atts)){
+      $limit = (int)($atts["limit"]);
+    }
+
+    $page = 0;
+    if (array_key_exists("limit",$atts) && array_key_exists("page",$atts)){
+      $page = (int)($atts["page"]);
+    }
+
+    $count = 0;
     $dataset_array = array();
     foreach ($related_datasets as $dataset){
-      $dataset_atts = array("id" => $dataset["dataset_id"]);
-      try{
-        array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
-      }catch(Exception $e){
-        wpckan_log($e->getMessage());
+      if (($page == 0) || (($count >= (($page-1) * $limit)) && ($count <= ($page * $limit)))){
+        $dataset_atts = array("id" => $dataset["dataset_id"]);
+        try{
+          array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+        }catch(Exception $e){
+          wpckan_log($e->getMessage());
+        }
+        if (($limit != 0) && (count($dataset_array) >= $limit)) break;
       }
-      if (array_key_exists("limit",$atts) && (count($dataset_array) >= (int)($atts["limit"]))) break;
+      $count++;
     }
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
   }
