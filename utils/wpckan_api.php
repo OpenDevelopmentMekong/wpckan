@@ -56,6 +56,11 @@
 
       if (isset($atts['limit'])){
         $arguments['rows'] = (int)$atts['limit'];
+
+        if (isset($atts['page'])){
+          $page = (int)$atts['page'];
+          if ($page > 0) $arguments['start'] = (int)$atts['limit'] * ($page - 1);
+        }
       }
 
       $filter = null;
