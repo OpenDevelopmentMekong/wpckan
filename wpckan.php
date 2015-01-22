@@ -3,7 +3,7 @@
  * Plugin Name: wpckan
  * Plugin URI:
  * Description: wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
- * Version: 0.9.5
+ * Version: 0.9.6
  * Author: Alex Corbi (mail@lifeformapps.com)
  * Author URI: http://www.lifeformapps.com
  * License: GPLv3
@@ -93,8 +93,7 @@ if(!class_exists('wpckan'))
           $related_datasets = array();
           if (!IsNullOrEmptyString($related_datasets_json))
             $related_datasets = json_decode($related_datasets_json,true);
-          else
-            $related_datasets_json = "[]";
+
           //We do not use wpckan_output_template here, just require.
           require 'templates/related_datasets_metabox.php';
         }
