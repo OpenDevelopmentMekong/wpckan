@@ -162,7 +162,9 @@
 
     $dataset_array = array();
     try{
-      $dataset_array = wpckan_api_query_datasets($atts);
+      $result = wpckan_api_query_datasets($atts);
+      $dataset_array = $result["results"];
+      $atts["count"] = $result["count"];
     }catch(Exception $e){
       wpckan_log($e->getMessage());
     }
@@ -173,32 +175,6 @@
   /*
   * Templates
   */
-
-  function wpckan_prev_page_link($atts) {
-    wpckan_log("wpckan_prev_page_link");
-
-    if (array_key_exists("limit",$atts) && array_key_exists("page",$atts) && array_key_exists("prev_page_link",$atts)){
-      $prev_page_title = "Previous";
-      if (array_key_exists("prev_page_title",$atts)) $prev_page_title = $atts["prev_page_title"];
-      if (!wpckan_pagination_first($atts["page"])){
-        return ("<a href=\"" . $atts["prev_page_link"] . "\">" . $prev_page_title . "</a>");
-      }
-    }
-    return "";
-  }
-
-  function wpckan_next_page_link($datasets,$atts) {
-    wpckan_log("wpckan_next_page_link");
-
-    if (array_key_exists("limit",$atts) && array_key_exists("page",$atts) && array_key_exists("next_page_link",$atts)){
-      $next_page_title = "Next";
-      if (array_key_exists("next_page_title",$atts)) $next_page_title = $atts["next_page_title"];
-      if (!wpckan_pagination_last($datasets,$atts["limit"],$atts["page"])){
-        return ("<a href=\"" . $atts["next_page_link"] . "\">" . $next_page_title . "</a>");
-      }
-    }
-    return "";
-  }
 
   function wpckan_output_template($template_url,$data,$atts){
     ob_start();
@@ -358,9 +334,9 @@
     return $clean_url;
   }
 
-  function wpckan_pagination_last($datasets,$limit,$page) {
+  function wpckan_pagination_last($count,$limit,$page) {
     wpckan_log("wpckan_pagination_last");
-    return (count($datasets) == ($limit * $page));
+    return (count($count) == ($limit * $page));
   }
 
   function wpckan_pagination_first($page) {

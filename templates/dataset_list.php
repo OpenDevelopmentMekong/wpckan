@@ -11,6 +11,8 @@
     $include_fields_resources = explode(",",$atts["include_fields_resources"]);
   array_push($include_fields_resources,"name"); //ensure that this field is present
   array_push($include_fields_resources,"description"); //ensure that this field is present
+  $count = count($atts["related_dataset"]);
+  if (array_key_exists("count",$atts)) $count = $atts["count"];
 ?>
 
 <div class="wpckan_dataset_list">
@@ -91,7 +93,7 @@
   if (array_key_exists("limit",$atts) && array_key_exists("page",$atts) && array_key_exists("next_page_link",$atts)){
     $next_page_title = "Next";
     if (array_key_exists("next_page_title",$atts)) $next_page_title = $atts["next_page_title"];
-    if (!wpckan_pagination_last($atts["related_datasets"],$atts["limit"],$atts["page"])){
+    if (!wpckan_pagination_last($count,$atts["limit"],$atts["page"])){
       echo ("<a href=\"" . $atts["next_page_link"] . "\">" . $next_page_title . "</a>");
     }
   }

@@ -83,7 +83,7 @@
         wpckan_api_call_error("wpckan_api_query_datasets",$e->getMessage());
     }
 
-    return $response["result"]["results"];
+    return $response["result"];
 
   }
 
