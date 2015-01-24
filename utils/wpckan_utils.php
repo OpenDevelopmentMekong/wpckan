@@ -80,6 +80,7 @@
 
     $count = 0;
     $dataset_array = array();
+    $atts["related_datasets"] = $related_datasets;
     foreach ($related_datasets as $dataset){
       if (($page == 0) || (($count >= (($page-1) * $limit)) && ($count <= ($page * $limit)))){
         $dataset_atts = array("id" => $dataset["dataset_id"]);
@@ -359,7 +360,7 @@
 
   function wpckan_pagination_last($datasets,$limit,$page) {
     wpckan_log("wpckan_pagination_last");
-    return (count($datasets) == (int($limit) * int($page)));
+    return (count($datasets) == ($limit * $page));
   }
 
   function wpckan_pagination_first($page) {

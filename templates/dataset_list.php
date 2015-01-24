@@ -91,7 +91,7 @@
   if (array_key_exists("limit",$atts) && array_key_exists("page",$atts) && array_key_exists("next_page_link",$atts)){
     $next_page_title = "Next";
     if (array_key_exists("next_page_title",$atts)) $next_page_title = $atts["next_page_title"];
-    if (!wpckan_pagination_last($data,$atts["limit"],$atts["page"])){
+    if (!wpckan_pagination_last($atts["related_datasets"],$atts["limit"],$atts["page"])){
       echo ("<a href=\"" . $atts["next_page_link"] . "\">" . $next_page_title . "</a>");
     }
   }
