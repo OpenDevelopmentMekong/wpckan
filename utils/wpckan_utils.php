@@ -80,6 +80,7 @@
 
     $count = 0;
     $dataset_array = array();
+    $atts["related_datasets"] = $related_datasets;
     foreach ($related_datasets as $dataset){
       if (($page == 0) || (($count >= (($page-1) * $limit)) && ($count <= ($page * $limit)))){
         $dataset_atts = array("id" => $dataset["dataset_id"]);
@@ -161,7 +162,10 @@
 
     $dataset_array = array();
     try{
-      $dataset_array = wpckan_api_query_datasets($atts);
+      $result = wpckan_api_query_datasets($atts);
+      $dataset_array = $result["results"];
+      $atts["count"] = $result["count"];
+      wpckan_log("COUNT "  . print_r($atts["count"],true));
     }catch(Exception $e){
       wpckan_log($e->getMessage());
     }
@@ -329,6 +333,16 @@
       $clean_url = substr($clean_url, 0, -1);
     }
     return $clean_url;
+  }
+
+  function wpckan_pagination_last($count,$limit,$page) {
+    wpckan_log("wpckan_pagination_last");
+    return (($count >= ($limit * ($page -1 ))) && ($count <= ($limit * $page)));
+  }
+
+  function wpckan_pagination_first($page) {
+    wpckan_log("wpckan_pagination_first");
+    return ($page == 1);
   }
 
   function IsNullOrEmptyString($question){
