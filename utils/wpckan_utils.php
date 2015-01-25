@@ -165,6 +165,7 @@
       $result = wpckan_api_query_datasets($atts);
       $dataset_array = $result["results"];
       $atts["count"] = $result["count"];
+      wpckan_log("COUNT "  . print_r($atts["count"],true));
     }catch(Exception $e){
       wpckan_log($e->getMessage());
     }
@@ -336,7 +337,7 @@
 
   function wpckan_pagination_last($count,$limit,$page) {
     wpckan_log("wpckan_pagination_last");
-    return (count($count) == ($limit * $page));
+    return (($count >= ($limit * ($page -1 ))) && ($count <= ($limit * $page)));
   }
 
   function wpckan_pagination_first($page) {
