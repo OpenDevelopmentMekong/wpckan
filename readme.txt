@@ -16,7 +16,7 @@ wpckan is a wordpress plugin that exposes a series of functionalities to bring c
 
 ## Features
 
-### Feature 1: Add related CKAN datasets to posts.
+## Feature 1: Add related CKAN datasets to posts.
 
 Plugin presents a metabox while users are editing posts with an autocompletion input field that
 allows the user to add related CKAN datasets. Suggestions for related datasets and its metadata (title, description, and resources) are shown to the user while typing in the input field. Users can add a certain number of datasets that will get stored along the post's metadata.
@@ -33,10 +33,30 @@ Per default, this shortcode shows only name, description and format of the resou
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode.
 
+#### Pagination
+
+* **page**: (Optional) Number.
+When used together with **limit**, returned datasets will get paginated. In case of possible pagination, this parameter specifies which page is returned. If there are not enough related datasets to paginate, this parameter will be ignored.
+Example: if there are 8 related datasets, limit = 2, page = 2, then datasets 2 and 3 will be returned. Mind that order begins on 1.
+
+* **prev_page_link**: (Optional) String.
+If provided, and as long **limit** and **page** are also given parameters, shows a link to this URL. The default text is "Previous"
+
+* **prev_page_title**: (Optional) String.
+Replaces "Previous" (Standard text) with the specified text.
+
+* **next_page_link**: (Optional) String.
+If provided, and as long **limit** and **page** are also given parameters, shows a link to this URL. The default text is "Next"
+
+* **next_page_title**: (Optional) String.
+Replaces "Next" (Standard text) with the specified text.
+
 Examples:
 ```php
 [wpckan_related_datasets]
 [wpckan_related_datasets limit="3"]
+[wpckan_related_datasets limit="3" page="2"]
+[wpckan_related_datasets limit="3" page="2" prev_page_link="http://test?prev_page" next_page_link="http://test?next_page"]
 [wpckan_related_datasets include_fields_dataset="title,description,author"]
 [wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
 ```
@@ -48,7 +68,7 @@ An example showing how the information returned by this shortcode will be struct
   <ul>
     <li>
       <div class="wpckan_dataset">
-        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_title"><a href="http://link_to_dataset">Title</a></div>
         <div class="wpckan_dataset_notes">Notes</div>
         <div class="wpckan_dataset_license">License</div>
         <div class="wpckan_dataset_author">Author</div>
@@ -57,7 +77,7 @@ An example showing how the information returned by this shortcode will be struct
           <ul>
             <li>
               <div class="wpckan_resource">
-                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_name"><a href="http://link_to_resource">Name</a></div>
                 <div class="wpckan_resource_description">Description</div>
                 /*.... other fields ....*/
               </div>
@@ -70,9 +90,53 @@ An example showing how the information returned by this shortcode will be struct
     /*.... other dataset <li> ....*/
   </ul>
 </div>
+<div class="wpckan_dataset_list_pagination">
+  <a href="#">Previous</a>
+  <a href="#">Next</a>
+</div>
 ```
 
-### Feature 2: Query lists of CKAN datasets
+Also, the plugin exposes the  **[wpckan_number_of_related_datasets]** shortcode for returning the number of related datasets assigned to the post as a customizable link so a summary can be presented on the wordpress side.
+The shortcode has following parameters:
+
+* **group**:  (Optional)
+Specify the name (Not title) of a group available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+
+* **organization**:  (Optional)
+Specify the name (Not title) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+
+Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
+
+* **limit**: (Optional) Number.
+Limits the amount of datasets shown by the shortcode.
+
+* **link_url**:  (Optional)
+Specify the URL to link the produced output with some other resource (i.e: in the CKAN instance)
+
+* **prefix**:  (Optional)
+Prepends a string before the number.
+
+* **suffix**:  (Optional)
+Appends a string after the number.
+
+Examples:
+```php
+[wpckan_number_of_related_datasets]
+[wpckan_number_of_related_datasets link_url="http://link_to_more"]
+[wpckan_number_of_related_datasets group="news"]
+[wpckan_number_of_related_datasets group="news" limit="1"]
+[wpckan_number_of_related_datasets group="news" suffix=" datasets found in the news."]
+[wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
+```
+An example (corresponding to the last example above) showing how the information returned by this shortcode will be structured:
+
+```html
+<div class="wpckan_dataset_number">
+  <p><a target="_blank" href="http://link_to_more">Number of datasets: (5)</a></p>
+</div>
+```
+
+## Feature 2: Query lists of CKAN datasets
 
 Plugin exposes a function which returns a list of CKAN datasets resulting after querying
 CKAN's API. Resulting datasets can be filtered by organization, group and/or specifying a textual
@@ -97,10 +161,30 @@ Per default, this shortcode shows only name (with link to the resources's URL), 
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode.
 
+#### Pagination
+
+* **page**: (Optional) Number.
+When used together with **limit**, returned datasets will get paginated. In case of possible pagination, this parameter specifies which page is returned. If there are not enough related datasets to paginate, this parameter will be ignored.
+Example: if there are 8 related datasets, limit = 2, page = 2, then datasets 2 and 3 will be returned. Mind that order begins on 1.
+
+* **prev_page_link**: (Optional) String.
+If provided, and as long **limit** and **page** are also given parameters, shows a link to this URL. The default text is "Previous"
+
+* **prev_page_title**: (Optional) String.
+Replaces "Previous" (Standard text) with the specified text.
+
+* **next_page_link**: (Optional) String.
+If provided, and as long **limit** and **page** are also given parameters, shows a link to this URL. The default text is "Next"
+
+* **next_page_title**: (Optional) String.
+Replaces "Next" (Standard text) with the specified text.
+
 Examples:
 ```php
 [wpckan_query_datasets query="coal"]
 [wpckan_query_datasets query="corruption" limit="5"]
+[wpckan_query_datasets query="corruption" limit="5" page="1"]
+[wpckan_query_datasets query="politics" limit="3" page="2" prev_page_link="http://test?prev_page" next_page_link="http://test?next_page"]
 [wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 ```
@@ -110,7 +194,7 @@ Examples:
   <ul>
     <li>
       <div class="wpckan_dataset">
-        <div class="wpckan_dataset_title">Title</div>
+        <div class="wpckan_dataset_title"><a href="http://link_to_dataset">Title</a></div>
         <div class="wpckan_dataset_notes">Notes</div>
         <div class="wpckan_dataset_license">License</div>
         <div class="wpckan_dataset_author">Author</div>
@@ -119,7 +203,7 @@ Examples:
           <ul>
             <li>
               <div class="wpckan_resource">
-                <div class="wpckan_resource_name">Name</div>
+                <div class="wpckan_resource_name"><a href="http://link_to_resource">Name</a></div>
                 <div class="wpckan_resource_description">Description</div>
                 /*.... other fields ....*/
               </div>
@@ -132,9 +216,13 @@ Examples:
   /*.... other dataset <li> ....*/
   </ul>
 </div>
+<div class="wpckan_dataset_list_pagination">
+<a href="#">Previous</a>
+<a href="#">Next</a>
+</div>
 ```
 
-### Feature 3: Archiving WP Posts in CKAN
+## Feature 3: Archiving WP Posts in CKAN
 
 The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived (on save or on publish).
 
