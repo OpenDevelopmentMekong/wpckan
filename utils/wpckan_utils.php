@@ -3,6 +3,8 @@
   define("FREQ_NEVER","0");
   define("FREQ_POST_PUBLISHED","1");
   define("FREQ_POST_SAVED","2");
+  define("FILTER_ALL","0");
+  define("FILTER_ONLY_WITH_RESOURCES","1");
   define("DEFAULT_LOG","/tmp/wpckan.log");
 
   use Analog\Analog;
@@ -78,6 +80,11 @@
       $page = (int)($atts["page"]);
     }
 
+    $filter = FILTER_ALL;
+    if (array_key_exists("filter",$atts)){
+      $filter = $atts["filter"];
+    }
+
     $count = 0;
     $dataset_array = array();
     $atts["related_datasets"] = $related_datasets;
@@ -85,7 +92,9 @@
       if (($page == 0) || (($count >= (($page-1) * $limit)) && ($count <= ($page * $limit)))){
         $dataset_atts = array("id" => $dataset["dataset_id"]);
         try{
-          array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+          if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
+           array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+          }
         }catch(Exception $e){
           wpckan_log($e->getMessage());
         }
@@ -108,6 +117,11 @@
       $filter_group = $atts["group"];
     if (array_key_exists("organization",$atts)){
       $filter_organization = $atts["organization"];
+    }
+
+    $filter = FILTER_ALL;
+    if (array_key_exists("filter",$atts)){
+      $filter = $atts["filter"];
     }
 
     $dataset_array = array();
@@ -147,7 +161,9 @@
       if ($qualifies){
         $dataset_atts = array("id" => $dataset["dataset_id"]);
         try{
+         if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
           array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+         }
         }catch(Exception $e){
           wpckan_log($e->getMessage());
         }
@@ -165,12 +181,23 @@
       $result = wpckan_api_query_datasets($atts);
       $dataset_array = $result["results"];
       $atts["count"] = $result["count"];
-      wpckan_log("COUNT "  . print_r($atts["count"],true));
     }catch(Exception $e){
       wpckan_log($e->getMessage());
     }
 
-    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
+    $filter = FILTER_ALL;
+    if (array_key_exists("filter",$atts)){
+      $filter = $atts["filter"];
+    }
+
+    $filtered_dataset_array = array();
+    foreach ($dataset_array as $dataset){
+     if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
+      array_push($filtered_dataset_array,wpckan_api_get_dataset($dataset));
+     }
+    }
+
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$filtered_dataset_array,$atts);
   }
 
   /*
@@ -214,6 +241,17 @@
   /*
   * Utilities
   */
+
+  function wpckan_dataset_has_resources($dataset){
+    if (array_key_exists("dataset_num_resources",$dataset)){
+     return ($dataset["dataset_num_resources"] >= 1);
+    }
+
+    if (array_key_exists("num_resources",$dataset)){
+     return ($dataset["num_resources"] >= 1);
+    }
+    return false;
+  }
 
   function wpckan_cleanup_text_for_archiving($post_content){
     $post_content = wpckan_detect_and_remove_shortcodes_in_text($post_content);
