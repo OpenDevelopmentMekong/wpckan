@@ -50,7 +50,19 @@
               <?php } ?>
             </td>
           </tr>
-          <!-- Connection status end -->
+          <!-- Related datasets -->
+          <tr valign="top">
+            <th scope="row"><label for="settings_supported_post_types"><?php _e('Supported post types','wpckan_settings_supported_post_types_title') ?></label></th>
+            <td>
+             <?php
+              foreach (get_post_types() as $post_type) {
+              $settings_name =  "setting_supported_post_types_" . $post_type;
+             ?>
+              <p><input type="checkbox" name="<?php echo $settings_name ?>" id="<?php echo $settings_name ?>" <?php if (get_option($settings_name))  echo 'checked="true"'; ?>><?php echo $post_type ?></input></p>
+             <?php } ?>
+           </td>
+          </tr>
+          <!-- Logging -->
           <th scope="row"><label><h3><?php _e('Logging','wpckan_settings_logging_header') ?></h3></label></th>
           <tr valign="top">
             <th scope="row"><label for="setting_log_enabled"><?php _e('Enable log','wpckan_settings_log_enabled_title') ?></label></th>

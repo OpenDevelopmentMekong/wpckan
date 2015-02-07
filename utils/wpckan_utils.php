@@ -242,6 +242,11 @@
   * Utilities
   */
 
+  function wpckan_is_supported_post_type($post_type){
+   $settings_name =  "setting_supported_post_types_" . $post_type;
+   return get_option($settings_name);
+  }
+
   function wpckan_dataset_has_resources($dataset){
     if (array_key_exists("dataset_num_resources",$dataset)){
      return ($dataset["dataset_num_resources"] >= 1);
