@@ -17,14 +17,19 @@ allows the user to add related CKAN datasets. Suggestions for related datasets a
 In order to use this information, this plugin exposes the **[wpckan_related_datasets]** shortcode for embedding information about related datasets on the content of the post.
 The shortcode has following parameters:
 
-* **include_fields_dataset**:  (Optional) Comma-separated.
+* **include_fields_dataset**:  (Optional) Comma-separated string.
 Per default, this shortcode shows only title and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
 
-* **include_fields_resources**:  (Optional) Comma-separated.
+* **include_fields_resources**:  (Optional) Comma-separated string.
 Per default, this shortcode shows only name, description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
 * **limit**: (Optional) Number.
-Limits the amount of datasets shown by the shortcode.
+Limits the amount of datasets shown by the shortcode string.
+
+* **filter**: (Optional) Number.
+Filters the datasets according to following criteria:
+  * '0' (ALL): Return all datasets (Default)
+  * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
 
 #### Pagination
 
@@ -103,6 +108,11 @@ Note: If both **group** and **organization** parameters are specified then the d
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode.
 
+* **filter**: (Optional) Number.
+Filters the datasets according to following criteria:
+  * '0' (ALL): Return all datasets (Default)
+  * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
+
 * **link_url**:  (Optional)
 Specify the URL to link the produced output with some other resource (i.e: in the CKAN instance)
 
@@ -153,6 +163,11 @@ Per default, this shortcode shows only name (with link to the resources's URL), 
 
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode.
+
+* **filter**: (Optional) Number.
+Filters the datasets according to following criteria:
+  * '0' (ALL): Return all datasets (Default)
+  * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
 
 #### Pagination
 
