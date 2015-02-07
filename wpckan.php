@@ -69,12 +69,12 @@ if(!class_exists('wpckan'))
         }
 
         function wpckan_add_meta_boxes($post_type) {
-          wpckan_log("wpckan_add_meta_boxes: " . $post_type);
+          wpckan_log("wpckan_add_meta_boxes: " . $post_type . " " . print_r(get_post_types(),true));
 
-          $post_types = apply_filters('wpckan_post_types', array( 'post', 'page' ));
-          if ( in_array( $post_type, $post_types )) {
-              add_meta_box('wpckan_add_related_datasets',__( 'Add related CKAN content', 'wpckan_add_related_datasets_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
-              add_meta_box('wpckan_archive_post',__( 'Archive Post as CKAN dataset', 'wpckan_archive_post_title' ),array(&$this, 'wpckan_render_archive_post_meta_box'),$post_type,'side','high');
+          $post_types = apply_filters('wpckan_filter_post_types', get_post_types());
+          if (in_array( $post_type, $post_types ) && wpckan_is_supported_post_type($post_type)) {
+           add_meta_box('wpckan_add_related_datasets',__( 'Add related CKAN content', 'wpckan_add_related_datasets_title' ),array(&$this, 'wpckan_render_dataset_meta_box'),$post_type,'side','high');
+           add_meta_box('wpckan_archive_post',__( 'Archive Post as CKAN dataset', 'wpckan_archive_post_title' ),array(&$this, 'wpckan_render_archive_post_meta_box'),$post_type,'side','high');
           }
 
           wp_register_script( 'wpckan_bloodhound', plugins_url( 'wpckan/vendor/twitter/typeahead.js/dist/bloodhound.min.js'), array('jquery') );
@@ -194,6 +194,11 @@ if(!class_exists('wpckan'))
             register_setting('wpckan-group', 'setting_ckan_valid_settings_write');
             register_setting('wpckan-group', 'setting_log_path');
             register_setting('wpckan-group', 'setting_log_enabled');
+
+            foreach (get_post_types() as $post_type){
+             $settings_name =  "setting_supported_post_types_" . $post_type;
+             register_setting('wpckan-group', $settings_name);
+            }
         }
 
         /**
