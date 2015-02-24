@@ -152,7 +152,7 @@
 
     $extras = array();
     $custom_fields = get_post_custom($post->ID);
-    foreach ( $custom_fields as $key => $value ) {     
+    foreach ( $custom_fields as $key => $value ) {
      if ((substr($key,0,1) == "_") || (substr($key,0,7) == "wpckan_") || (IsNullOrEmptyString($key)) || (IsNullOrEmptyString($value)))
        continue;
      array_push($extras,array('key' => $key, 'value' => implode(", ", $value)));
@@ -160,7 +160,7 @@
 
     $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
     $data = array('name' => $post->post_name,
-                  'title' => $post->post_title,
+                  'title' => wpckan_strip_mqtranslate_tags($post->post_title),
                   'notes' => wpckan_cleanup_text_for_archiving($post->post_content),
                   'extras' => $extras);
 
