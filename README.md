@@ -234,6 +234,8 @@ Examples:
 
 The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived.
 
+**WARNING** This feature archives the custom fields along with the title and description. However, custom fields beginning with **_** or **wpckan_** will not be stored.
+
 # Installation
 
 1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpckan.git --recursive</code> into the Wordpress plugins folder.
