@@ -259,6 +259,7 @@
 
   function wpckan_cleanup_text_for_archiving($post_content){
     $post_content = wpckan_detect_and_remove_shortcodes_in_text($post_content);
+    $post_content = wpckan_strip_mqtranslate_tags($post_content);
     return $post_content;
   }
 
@@ -368,6 +369,12 @@
     if(substr($clean_url, -1) == '/') {
       $clean_url = substr($clean_url, 0, -1);
     }
+    return $clean_url;
+  }
+
+  function wpckan_strip_mqtranslate_tags($input) {
+    $clean_url = str_replace("<!--:-->", " ", $input);
+    $clean_url = strip_tags($clean_url);
     return $clean_url;
   }
 
