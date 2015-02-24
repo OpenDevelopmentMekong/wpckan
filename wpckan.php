@@ -26,7 +26,6 @@ if(!class_exists('wpckan'))
           add_action('admin_init', array(&$this, 'wpckan_admin_init'));
           add_action('admin_menu', array(&$this, 'wpckan_add_menu'));
           add_action('admin_enqueue_scripts', array( &$this, 'wpckan_register_plugin_styles' ) );
-          add_action('publish_post', array(&$this, 'wpckan_publish_post'));
           add_action('edit_post', array(&$this, 'wpckan_edit_post'));
           add_action('save_post', array(&$this, 'wpckan_save_post'));
           add_action('add_meta_boxes', array(&$this, 'wpckan_add_meta_boxes'));
@@ -107,19 +106,6 @@ if(!class_exists('wpckan'))
           $archive_freq = get_post_meta( $post->ID, 'wpckan_archive_post_freq', true );
           //We do not use wpckan_output_template here, just require.
           require 'templates/archive_post_metabox.php';
-        }
-
-        function wpckan_publish_post( $post_ID ) {
-          wpckan_log("wpckan_publish_post: " . $post_ID);
-
-          if (wpckan_post_should_be_archived_on_publish( $post_ID )){
-            $post = get_post($post_ID);
-            try{
-              wpckan_api_archive_post_as_dataset($post);
-            }catch(Exception $e){
-              wpckan_log($e->getMessage());
-            }
-          }
         }
 
         function wpckan_save_post( $post_ID ) {

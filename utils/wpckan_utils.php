@@ -1,8 +1,7 @@
 <?php
 
   define("FREQ_NEVER","0");
-  define("FREQ_POST_PUBLISHED","1");
-  define("FREQ_POST_SAVED","2");
+  define("FREQ_POST_SAVED","1");
   define("FILTER_ALL","0");
   define("FILTER_ONLY_WITH_RESOURCES","1");
   define("DEFAULT_LOG","/tmp/wpckan.log");
@@ -349,19 +348,13 @@
 
   function wpckan_get_ckan_settings(){
 
-      $settings = array(
-        'baseUrl' => get_option('setting_ckan_url') . "/api/",
-        'scheme' => 'http',
-        'apiKey' => get_option('setting_ckan_api')
-      );
+    $settings = array(
+      'baseUrl' => get_option('setting_ckan_url') . "/api/",
+      'scheme' => 'http',
+      'apiKey' => get_option('setting_ckan_api')
+    );
 
-      return $settings;
-    }
-
-  function wpckan_post_should_be_archived_on_publish($post_ID){
-    $archive_freq = get_post_meta( $post_ID, 'wpckan_archive_post_freq', true);
-    wpckan_log("wpckan_post_should_be_archived_on_publish freq: " . $archive_freq);
-    return ( $archive_freq == FREQ_POST_PUBLISHED);
+    return $settings;
   }
 
   function wpckan_post_should_be_archived_on_save($post_ID){
