@@ -149,12 +149,20 @@
     if (!isset($post))
       wpckan_api_call_error("wpckan_api_archive_post_as_dataset",null);
 
-    // $extras = array(array('published_under' => get_permalink($post->ID)));
+
+    $extras = array();
+    $custom_fields = get_post_custom($post->ID);
+    foreach ( $custom_fields as $key => $value ) {     
+     if ((substr($key,0,1) == "_") || (substr($key,0,7) == "wpckan_") || (IsNullOrEmptyString($key)) || (IsNullOrEmptyString($value)))
+       continue;
+     array_push($extras,array('key' => $key, 'value' => implode(", ", $value)));
+    }
 
     $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
     $data = array('name' => $post->post_name,
                   'title' => $post->post_title,
-                  'notes' => wpckan_cleanup_text_for_archiving($post->post_content));
+                  'notes' => wpckan_cleanup_text_for_archiving($post->post_content),
+                  'extras' => $extras);
 
     $archive_orga = get_post_meta( $post->ID, 'wpckan_archive_post_orga', true );
     $archive_group = get_post_meta( $post->ID, 'wpckan_archive_post_group', true );
