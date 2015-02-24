@@ -232,7 +232,7 @@ Examples:
 
 ## Feature 3: Archiving WP Posts in CKAN
 
-The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived (on save or on publish).
+The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived.
 
 # Installation
 
