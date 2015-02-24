@@ -36,8 +36,8 @@
   </select></p>
   <label for"wpckan_archive_post_freq"><b><?php _e('Archive contents when:','wpckan_archive_post_freq') ?></b></label>
   <p><select name="wpckan_archive_post_freq" id="wpckan_archive_post_freq">
-    <option value="0" <?php if($archive_freq == 0) echo 'selected="selected"' ?>><?php _e('Never archive','wpckan_archive_post_freq_0' )?></option>    
-    <option value="2" <?php if($archive_freq == 2) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_archive_post_freq_2') ?></option>
+    <option value="0" <?php if($archive_freq == 0) echo 'selected="selected"' ?>><?php _e('Never archive','wpckan_archive_post_freq_0' )?></option>
+    <option value="1" <?php if($archive_freq == 1) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan_archive_post_freq_2') ?></option>
   </select></p>
 
 <?php } else { ?>
