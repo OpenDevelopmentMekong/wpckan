@@ -66,7 +66,7 @@
 
     $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
     $related_datasets = array();
-    if (!IsNullOrEmptyString($related_datasets_json))
+    if (!wpckan_is_null_or_empty_string($related_datasets_json))
       $related_datasets = json_decode($related_datasets_json,true);
 
     $limit = 0;
@@ -109,7 +109,7 @@
 
     $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
     $related_datasets = array();
-    if (!IsNullOrEmptyString($related_datasets_json))
+    if (!wpckan_is_null_or_empty_string($related_datasets_json))
     $related_datasets = json_decode($related_datasets_json,true);
 
     if (array_key_exists("group",$atts))
@@ -229,7 +229,7 @@
 
   function wpckan_log($text) {
     if (!get_option('setting_log_enabled')) return;
-    if (!IsNullOrEmptyString(get_option('setting_log_path')))
+    if (!wpckan_is_null_or_empty_string(get_option('setting_log_path')))
       Analog::handler(Handler\File::init (get_option('setting_log_path')));
     else
       Analog::handler(Handler\File::init (DEFAULT_LOG));
@@ -344,7 +344,7 @@
   }
 
   function wpckan_validate_settings_write(){
-    return !IsNullOrEmptyString(get_option('setting_ckan_api'));
+    return !wpckan_is_null_or_empty_string(get_option('setting_ckan_api'));
   }
 
   function wpckan_get_ckan_settings(){
@@ -388,8 +388,27 @@
     return ($page == 1);
   }
 
-  function IsNullOrEmptyString($question){
+  function wpckan_is_null_or_empty_string($question){
     return (!isset($question) || trim($question)==='');
+  }
+
+  function wpckan_is_valid_url($url){
+    if (filter_var($url, FILTER_VALIDATE_URL) != false){
+     return true;
+    }
+    return false;
+  }
+
+  function wpckan_get_url_extension($url){
+    $path = parse_url($url, PHP_URL_PATH);
+    return pathinfo($path, PATHINFO_EXTENSION);
+  }
+
+  function wpckan_get_url_extension_or_html($url){
+    $ext = wpckan_get_url_extension($url);
+    if ($ext)
+     return $ext;
+    return 'html';
   }
 
 

@@ -234,7 +234,9 @@ Examples:
 
 The plugin presents a metabox while users are editing posts. It allows users to specify if the post should be archived as a CKAN dataset. The plugin polls the CKAN instance and retrieves the list of available organizations and groups in order for users to be able to determine to which organization or group the dataset will be assign to. Also, when that particular post will be archived.
 
-**WARNING** This feature archives the custom fields along with the title and description. However, custom fields beginning with **_** or **wpckan_** will not be stored.
+This feature archives the custom fields along with the title and description. If a valid URL is found in the value of the custom fields, a new resource will be added to the dataset.
+
+**WARNING** However, custom fields beginning with **_** or **wpckan_** will not be stored.
 
 # Installation
 
@@ -246,6 +248,10 @@ The plugin presents a metabox while users are editing posts. It allows users to 
 1. Install composer http://getcomposer.org/
 2. Edit composer.json for adding/modifying dependencies versions
 3. Install dependencies <code>composer install</code>
+
+# Requirements
+
+* PHP 5 >= 5.2.0
 
 # Uses
 

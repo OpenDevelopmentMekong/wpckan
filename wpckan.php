@@ -90,7 +90,7 @@ if(!class_exists('wpckan'))
           wp_nonce_field('wpckan_add_related_datasets', 'wpckan_add_related_datasets_nonce');
           $related_datasets_json = get_post_meta( $post->ID, 'wpckan_related_datasets', true );
           $related_datasets = array();
-          if (!IsNullOrEmptyString($related_datasets_json))
+          if (!wpckan_is_null_or_empty_string($related_datasets_json))
             $related_datasets = json_decode($related_datasets_json,true);
 
           //We do not use wpckan_output_template here, just require.
