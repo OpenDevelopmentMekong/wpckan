@@ -84,6 +84,11 @@
       $filter = $atts["filter"];
     }
 
+    $filter_fields_json = NULL;
+    if (array_key_exists("filter_fields",$atts)){
+      $filter_fields_json = json_decode($atts["filter_fields"],true);
+    }
+
     $count = 0;
     $dataset_array = array();
     $atts["related_datasets"] = $related_datasets;
@@ -92,7 +97,9 @@
         $dataset_atts = array("id" => $dataset["dataset_id"]);
         try{
           if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-           array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+           if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
+            array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+           }
           }
         }catch(Exception $e){
           wpckan_log($e->getMessage());
@@ -121,6 +128,11 @@
     $filter = FILTER_ALL;
     if (array_key_exists("filter",$atts)){
       $filter = $atts["filter"];
+    }
+
+    $filter_fields_json = NULL;
+    if (array_key_exists("filter_fields",$atts)){
+      $filter_fields_json = json_decode($atts["filter_fields"],true);
     }
 
     $dataset_array = array();
@@ -161,7 +173,9 @@
         $dataset_atts = array("id" => $dataset["dataset_id"]);
         try{
          if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-          array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+          if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
+           array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+          }
          }
         }catch(Exception $e){
           wpckan_log($e->getMessage());
@@ -189,10 +203,17 @@
       $filter = $atts["filter"];
     }
 
+    $filter_fields_json = NULL;
+    if (array_key_exists("filter_fields",$atts)){
+      $filter_fields_json = json_decode($atts["filter_fields"],true);
+    }
+
     $filtered_dataset_array = array();
     foreach ($dataset_array as $dataset){
      if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-      array_push($filtered_dataset_array,wpckan_api_get_dataset($dataset));
+      if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
+       array_push($filtered_dataset_array,wpckan_api_get_dataset($dataset));
+      }
      }
     }
 
@@ -229,12 +250,16 @@
 
   function wpckan_log($text) {
     if (!get_option('setting_log_enabled')) return;
+
+    $bt = debug_backtrace();
+    $caller = array_shift($bt);
+
     if (!wpckan_is_null_or_empty_string(get_option('setting_log_path')))
       Analog::handler(Handler\File::init (get_option('setting_log_path')));
     else
       Analog::handler(Handler\File::init (DEFAULT_LOG));
 
-    Analog::log ($text);
+    Analog::log ( "[ " . $caller['file'] . " | " . $caller['line'] . " ] " . $text );
   }
 
   /*
@@ -255,6 +280,28 @@
      return ($dataset["num_resources"] >= 1);
     }
     return false;
+  }
+
+  function wpckan_dataset_has_matching_extras($dataset,$filter_fields_json){
+    wpckan_log("wpckan_dataset_has_matching_extras " . print_r($dataset,true) . print_r($filter_fields_json,true));
+
+    if (array_key_exists("dataset_extras",$dataset)){
+     $extras = json_decode($dataset["dataset_extras"], true);
+    }else if (array_key_exists("extras",$dataset)){
+     $extras = $dataset["extras"];
+    }else{
+     return false;
+    }
+
+    foreach ($extras as $extra){
+     $field_value = $filter_fields_json[$extra['key']];
+     if (!wpckan_is_null_or_empty_string($field_value) && strpos(strtolower($extra['value']),strtolower($field_value)) !== false){
+      return true;
+     }
+
+    }
+
+   return false;
   }
 
   function wpckan_cleanup_text_for_archiving($post_content){
@@ -390,6 +437,10 @@
 
   function wpckan_is_null_or_empty_string($question){
     return (!isset($question) || trim($question)==='');
+  }
+
+  function wpckan_is_null($question){
+    return !isset($question);
   }
 
   function wpckan_is_valid_url($url){
