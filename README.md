@@ -31,6 +31,10 @@ Filters the datasets according to following criteria:
   * '0' (ALL): Return all datasets (Default)
   * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
 
+
+* **filter_fields**: (Optional) JSON.
+Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
+
 #### Pagination
 
 * **page**: (Optional) Number.
@@ -57,6 +61,7 @@ Examples:
 [wpckan_related_datasets limit="3" page="2" prev_page_link="http://test?prev_page" next_page_link="http://test?next_page"]
 [wpckan_related_datasets include_fields_dataset="title,description,author"]
 [wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
+[wpckan_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 ```
 
 An example showing how the information returned by this shortcode will be structured:
@@ -113,6 +118,10 @@ Filters the datasets according to following criteria:
   * '0' (ALL): Return all datasets (Default)
   * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
 
+
+* **filter_fields**: (Optional) JSON.
+Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
+
 * **link_url**:  (Optional)
 Specify the URL to link the produced output with some other resource (i.e: in the CKAN instance)
 
@@ -130,6 +139,7 @@ Examples:
 [wpckan_number_of_related_datasets group="news" limit="1"]
 [wpckan_number_of_related_datasets group="news" suffix=" datasets found in the news."]
 [wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
+[wpckan_number_of_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 ```
 An example (corresponding to the last example above) showing how the information returned by this shortcode will be structured:
 
@@ -169,6 +179,10 @@ Filters the datasets according to following criteria:
   * '0' (ALL): Return all datasets (Default)
   * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
 
+
+* **filter_fields**: (Optional) JSON.
+Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
+
 #### Pagination
 
 * **page**: (Optional) Number.
@@ -195,6 +209,7 @@ Examples:
 [wpckan_query_datasets query="politics" limit="3" page="2" prev_page_link="http://test?prev_page" next_page_link="http://test?next_page"]
 [wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
+[wpckan_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 ```
 
 ```html
