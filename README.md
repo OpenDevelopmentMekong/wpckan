@@ -31,7 +31,6 @@ Filters the datasets according to following criteria:
   * '0' (ALL): Return all datasets (Default)
   * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
 
-
 * **filter_fields**: (Optional) JSON.
 Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
 
@@ -252,6 +251,15 @@ The plugin presents a metabox while users are editing posts. It allows users to 
 This feature archives the custom fields along with the title and description. If a valid URL is found in the value of the custom fields, a new resource will be added to the dataset.
 
 **WARNING** However, custom fields beginning with **_** or **wpckan_** will not be stored.
+
+## CORS Support disabled for CKAN >2.3
+
+Taken from http://docs.ckan.org/en/latest/changelog.html#id1:
+
+> Cross-Origin Resource Sharing (CORS) support is no longer enabled by default. Previously, Access-Control-Allow-* response headers were added for all requests, with Access-Control-Allow-Origin set to the wildcard value *.
+> To re-enable CORS, use the new ckan.cors configuration settings (ckan.cors.origin_allow_all and ckan.cors.origin_whitelist).
+
+So, mind that the CKAN instance which this plugin is used with needs to allow all origins or whitelist the domain where the wpckan is installed.
 
 # Installation
 
