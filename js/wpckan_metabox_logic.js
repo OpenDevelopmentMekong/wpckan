@@ -12,7 +12,7 @@ var field;
 var datasetList;
 var addButton;
 
-var DEBUG = false;
+var DEBUG = true;
 
 var datasets = [];
 
@@ -118,8 +118,11 @@ function wpckan_related_dataset_metabox_add(){
     return;
   }
 
-  addDataset(true,dataset_id,dataset_title,dataset_url,dataset_groups,dataset_extras,dataset_num_resources,dataset_org);
-  clearField();
+  if (dataset_id){
+   addDataset(true,dataset_id,dataset_title,dataset_url,dataset_groups,dataset_extras,dataset_num_resources,dataset_org);
+   clearField();
+  }
+
 }
 
 function listDatasets(){
