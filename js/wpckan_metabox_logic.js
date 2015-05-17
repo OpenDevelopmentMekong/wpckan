@@ -43,7 +43,7 @@ jQuery( document ).ready(function() {
           return jQuery.map(json.result.results, function (dataset) {
             return {
               id: dataset["id"],
-              title: dataset["title"],
+              title: dataset["title"]+' ['+ listGroups(dataset["groups"])+']'+' ('+dataset["num_resources"]+')',
               name: dataset["name"],
               groups: JSON.stringify(dataset["groups"]),
               extras: JSON.stringify(dataset["extras"]),
@@ -125,6 +125,15 @@ function wpckan_related_dataset_metabox_add(){
 
 }
 
+function listGroups(dataset_groups){
+  var groups = [];
+  for (index in dataset_groups){
+    group = dataset_groups[index];
+    groups.push(group["title"]);
+  }
+  return groups.join();
+}
+
 function listDatasets(){
   for (index in datasets){
     dataset = datasets[index];
@@ -152,7 +161,7 @@ function addDataset(save_in_array,dataset_id,dataset_title,dataset_url,dataset_g
     setFormValue();
   }
 
-  var entry = jQuery('<p><a target="_blank" href='+dataset_url+'>'+unescape(dataset_title)+' ('+dataset_num_resources+')</a>   </p>');
+  var entry = jQuery('<p><a target="_blank" href='+dataset_url+'>'+unescape(dataset_title)+'</a>   </p>');
   var del = jQuery('<a class="delete error" '+DATASET_ID_ATTR+'='+dataset_id+' href="#">Delete</a>');
   // TODO improve
   jQuery(del).on("click",function(){
