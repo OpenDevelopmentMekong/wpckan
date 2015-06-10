@@ -2,15 +2,15 @@
 
 <?php
   $include_fields_dataset = array();
-  $include_fields_resources = array();
-  if (array_key_exists("include_fields_dataset",$atts))
-    $include_fields_dataset = explode(",",$atts["include_fields_dataset"]);
   array_push($include_fields_dataset,"title"); //ensure that this field is present
   array_push($include_fields_dataset,"notes"); //ensure that this field is present
-  if (array_key_exists("include_fields_resources",$atts))
-    $include_fields_resources = explode(",",$atts["include_fields_resources"]);
+  $include_fields_resources = array();
   array_push($include_fields_resources,"name"); //ensure that this field is present
   array_push($include_fields_resources,"description"); //ensure that this field is present
+  if (array_key_exists("include_fields_dataset",$atts))
+    $include_fields_dataset = explode(",",$atts["include_fields_dataset"]);
+  if (array_key_exists("include_fields_resources",$atts))
+    $include_fields_resources = explode(",",$atts["include_fields_resources"]);
   $count = count($atts["related_dataset"]);
   if (array_key_exists("count",$atts)) $count = $atts["count"];
 ?>
