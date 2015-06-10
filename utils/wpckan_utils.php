@@ -69,6 +69,12 @@
     if (!wpckan_is_null_or_empty_string($related_datasets_json))
       $related_datasets = json_decode($related_datasets_json,true);
 
+    if (array_key_exists("group",$atts))
+      $filter_group = $atts["group"];
+    if (array_key_exists("organization",$atts)){
+      $filter_organization = $atts["organization"];
+    }
+
     $limit = 0;
     if (array_key_exists("limit",$atts)){
       $limit = (int)($atts["limit"]);
@@ -93,20 +99,53 @@
     $dataset_array = array();
     $atts["related_datasets"] = $related_datasets;
     foreach ($related_datasets as $dataset){
-      if (($page == 0) || (($count >= (($page-1) * $limit)) && ($count <= ($page * $limit)))){
-        $dataset_atts = array("id" => $dataset["dataset_id"]);
+
+      $qualifies_group = false;
+      $qualifies_organization = false;
+
+      if (!isset($filter_group))
+       $qualifies_group = true;
+      if (!isset($filter_organization))
+       $qualifies_organization = true;
+
+      // Check if dataset belongs to group
+      if (isset($filter_group) && !$qualifies_group){
+        $groups = json_decode($dataset["dataset_groups"], true);
+        foreach ($groups as $group){
+          if (strtolower($filter_group) == strtolower($group["name"])){
+           $qualifies_group = true;
+          }
+        }
+      }
+
+      // Check if dataset belongs to organization
+      if (isset($filter_organization) && isset($dataset["dataset_org"]) && !$qualifies_organization){
         try{
-          if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-           if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
-            array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
-           }
+          $organization = wpckan_api_get_organization($dataset["dataset_org"]);
+          if ( $organization["name"] == $filter_organization){
+           $qualifies_organization = true;
           }
         }catch(Exception $e){
           wpckan_log($e->getMessage());
         }
-        if (($limit != 0) && (count($dataset_array) >= $limit)) break;
       }
-      $count++;
+
+      if (($page == 0) || (($count >= (($page-1) * $limit)) && ($count <= ($page * $limit)))){
+       if ($qualifies_organization && $qualifies_group){
+         $dataset_atts = array("id" => $dataset["dataset_id"]);
+         try{
+           if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
+            if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
+             array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+            }
+           }
+         }catch(Exception $e){
+           wpckan_log($e->getMessage());
+         }
+         if (($limit != 0) && (count($dataset_array) >= $limit)) break;
+       }
+       $count++;
+      }
     }
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
   }
@@ -138,38 +177,37 @@
     $dataset_array = array();
     foreach ($related_datasets as $dataset){
 
-      $qualifies = false;
+      $qualifies_group = false;
+      $qualifies_organization = false;
 
-      if (!isset($filter_group) && !isset($filter_organization)){
-        $qualifies = true;
-      }else{
+      if (!isset($filter_group))
+       $qualifies_group = true;
+      if (!isset($filter_organization))
+       $qualifies_organization = true;
 
-        // Check if dataset belongs to group
-        if (isset($filter_group)){
-          $qualifies = false;
-          $groups = json_decode($dataset["dataset_groups"], true);
-          foreach ($groups as $group){
-            if (strtolower($filter_group) == strtolower($group["name"])){
-              $qualifies = true;
-            }
-          }
-        }
-
-        // Check if dataset belongs to organization
-        if (isset($filter_organization) && isset($dataset["dataset_org"])){
-          $qualifies = false;
-          try{
-            $organization = wpckan_api_get_organization($dataset["dataset_org"]);
-            if ( $organization["name"] == $filter_organization){
-              $qualifies = true;
-            }
-          }catch(Exception $e){
-            wpckan_log($e->getMessage());
+      // Check if dataset belongs to group
+      if (isset($filter_group) && !$qualifies_group){
+        $groups = json_decode($dataset["dataset_groups"], true);
+        foreach ($groups as $group){
+          if (strtolower($filter_group) == strtolower($group["name"])){
+           $qualifies_group = true;
           }
         }
       }
 
-      if ($qualifies){
+      // Check if dataset belongs to organization
+      if (isset($filter_organization) && isset($dataset["dataset_org"]) && !$qualifies_organization){
+        try{
+          $organization = wpckan_api_get_organization($dataset["dataset_org"]);
+          if ( $organization["name"] == $filter_organization){
+           $qualifies_organization = true;
+          }
+        }catch(Exception $e){
+          wpckan_log($e->getMessage());
+        }
+      }
+
+      if ($qualifies_organization && $qualifies_group){
         $dataset_atts = array("id" => $dataset["dataset_id"]);
         try{
          if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
