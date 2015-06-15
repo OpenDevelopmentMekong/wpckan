@@ -11,7 +11,7 @@
     $include_fields_dataset = explode(",",$atts["include_fields_dataset"]);
   if (array_key_exists("include_fields_resources",$atts))
     $include_fields_resources = explode(",",$atts["include_fields_resources"]);
-  $count = count($atts["related_dataset"]);
+  if (array_key_exists("related_dataset",$atts)) $count = count($atts["related_dataset"]);
   if (array_key_exists("count",$atts)) $count = $atts["count"];
 ?>
 

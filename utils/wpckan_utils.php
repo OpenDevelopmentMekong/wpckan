@@ -95,6 +95,11 @@
       $filter_fields_json = json_decode($atts["filter_fields"],true);
     }
 
+    $blank_on_empty = false;
+    if (array_key_exists("blank_on_empty",$atts)){
+      $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
+    }
+
     $count = 0;
     $dataset_array = array();
     $atts["related_datasets"] = $related_datasets;
@@ -147,6 +152,9 @@
        $count++;
       }
     }
+    if ((count($dataset_array) == 0) && $blank_on_empty)
+      return "";
+
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
   }
 
@@ -172,6 +180,11 @@
     $filter_fields_json = NULL;
     if (array_key_exists("filter_fields",$atts)){
       $filter_fields_json = json_decode($atts["filter_fields"],true);
+    }
+
+    $blank_on_empty = false;
+    if (array_key_exists("blank_on_empty",$atts)){
+      $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
     }
 
     $dataset_array = array();
@@ -221,6 +234,10 @@
         if (array_key_exists("limit",$atts) && (count($dataset_array) >= (int)($atts["limit"]))) break;
       }
     }
+
+    if ((count($dataset_array) == 0) && $blank_on_empty)
+      return "";
+      
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_number.php',$dataset_array,$atts);
   }
 
@@ -246,6 +263,11 @@
       $filter_fields_json = json_decode($atts["filter_fields"],true);
     }
 
+    $blank_on_empty = false;
+    if (array_key_exists("blank_on_empty",$atts)){
+      $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
+    }
+
     $filtered_dataset_array = array();
     foreach ($dataset_array as $dataset){
      if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
@@ -254,6 +276,9 @@
       }
      }
     }
+
+    if ((count($dataset_array) == 0) && $blank_on_empty)
+      return "";
 
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$filtered_dataset_array,$atts);
   }
