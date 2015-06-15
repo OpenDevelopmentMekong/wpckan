@@ -60,6 +60,11 @@ If provided, and as long **limit** and **page** are also given parameters, shows
 * **next_page_title**: (Optional) String.
 Replaces "Next" (Standard text) with the specified text.
 
+## Advanced
+
+* **blank_on_empty**: (Optional) Boolean.
+Returns an empty string "" if no datasets have been found to return
+
 Examples:
 ```php
 [wpckan_related_datasets]
@@ -69,6 +74,7 @@ Examples:
 [wpckan_related_datasets include_fields_dataset="title,description,author"]
 [wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
 [wpckan_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
+[wpckan_related_datasets blank_on_empty='true']
 ```
 
 An example showing how the information returned by this shortcode will be structured:
@@ -138,6 +144,11 @@ Prepends a string before the number.
 * **suffix**:  (Optional)
 Appends a string after the number.
 
+## Advanced
+
+* **blank_on_empty**: (Optional) Boolean.
+Returns an empty string "" if no datasets have been found to return
+
 Examples:
 ```php
 [wpckan_number_of_related_datasets]
@@ -147,6 +158,7 @@ Examples:
 [wpckan_number_of_related_datasets group="news" suffix=" datasets found in the news."]
 [wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
 [wpckan_number_of_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
+[wpckan_number_of_related_datasets blank_on_empty="true"]
 ```
 An example (corresponding to the last example above) showing how the information returned by this shortcode will be structured:
 
@@ -208,6 +220,11 @@ If provided, and as long **limit** and **page** are also given parameters, shows
 * **next_page_title**: (Optional) String.
 Replaces "Next" (Standard text) with the specified text.
 
+## Advanced
+
+* **blank_on_empty**: (Optional) Boolean.
+Returns an empty string "" if no datasets have been found to return
+
 Examples:
 ```php
 [wpckan_query_datasets query="coal"]
@@ -217,6 +234,7 @@ Examples:
 [wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 [wpckan_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
+[wpckan_query_datasets query="coal" blank_on_empty='true']
 ```
 
 ```html
