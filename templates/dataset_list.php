@@ -13,6 +13,9 @@
     $include_fields_resources = explode(",",$atts["include_fields_resources"]);
   if (array_key_exists("related_dataset",$atts)) $count = count($atts["related_dataset"]);
   if (array_key_exists("count",$atts)) $count = $atts["count"];
+
+  // insert type
+
 ?>
 
 <div class="wpckan_dataset_list">
