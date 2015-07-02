@@ -116,10 +116,12 @@
       // Check if dataset belongs to group
       if (isset($filter_group) && !$qualifies_group){
         $groups = json_decode($dataset["dataset_groups"], true);
-        foreach ($groups as $group){
-          if (strtolower($filter_group) == strtolower($group["name"])){
-           $qualifies_group = true;
-          }
+        if ($groups){
+         foreach ($groups as $group){
+           if (strtolower($filter_group) == strtolower($group["name"])){
+            $qualifies_group = true;
+           }
+         }
         }
       }
 
@@ -201,10 +203,12 @@
       // Check if dataset belongs to group
       if (isset($filter_group) && !$qualifies_group){
         $groups = json_decode($dataset["dataset_groups"], true);
-        foreach ($groups as $group){
-          if (strtolower($filter_group) == strtolower($group["name"])){
-           $qualifies_group = true;
-          }
+        if ($groups){
+         foreach ($groups as $group){
+           if (strtolower($filter_group) == strtolower($group["name"])){
+            $qualifies_group = true;
+           }
+         }
         }
       }
 
@@ -237,7 +241,7 @@
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
-      
+
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_number.php',$dataset_array,$atts);
   }
 
