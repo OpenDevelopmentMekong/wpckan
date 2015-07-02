@@ -25,7 +25,7 @@ jQuery( document ).ready(function() {
   addButton = jQuery("#wpckan_related_datasets_add_button");
 
   getFormValue();
-  listDatasets();
+  updateAndListDatasets();
 
   clearField();
   addButton.addClass("disabled");
@@ -134,10 +134,32 @@ function listGroups(dataset_groups){
   return groups.join();
 }
 
-function listDatasets(){
+function updateAndListDatasets(){
+  if (DEBUG) console.log("updateAndListDatasets");
+
   for (index in datasets){
-    dataset = datasets[index];
-    addDataset(false,dataset["dataset_id"],dataset["dataset_title"],dataset["dataset_url"],dataset["dataset_groups"],dataset["dataset_extras"],dataset["dataset_num_resources"],dataset["dataset_org"]);
+    dataset_id = datasets[index]["dataset_id"];
+
+    if (dataset_id){
+      jQuery.ajax({
+        url: field.attr(CKAN_BASE_URL) + "/api/3/action/package_show?id=" + dataset_id,
+        context: document.body
+      }).done(function(res) {
+        if (DEBUG) console.log(res)
+        if (res["success"])
+          var dataset = res["result"];
+          var dataset_id = dataset["id"];
+          var dataset_title = dataset["title"]+' ['+ listGroups(dataset["groups"])+']'+' ('+dataset["num_resources"]+')';
+          var dataset_url = field.attr(CKAN_BASE_URL) + "/dataset/" + dataset["id"];
+          var dataset_groups = JSON.stringify(dataset["groups"]);
+          var dataset_extras = JSON.stringify(dataset["extras"]);
+          var dataset_n_resources = dataset["num_resources"];
+          var dataset_org = dataset["owner_org"];
+          addDataset(false,dataset_id,dataset_title,dataset_url,dataset_groups,dataset_extras,dataset_n_resources,dataset_org);
+      });
+
+    }
+
   }
 }
 
