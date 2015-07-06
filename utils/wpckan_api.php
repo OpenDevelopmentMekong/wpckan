@@ -409,25 +409,22 @@
   function wpckan_api_parameter_error($function,$message){
     $error_log = "ERROR Parameters on " . $function . " message: " . $message;
     $error_message = "Something went wrong, check your connection details";
-    //wpckan_log($error_log);
+    wpckan_log($error_log);
     throw new ApiParametersException($error_message);
-    // return __($error_message,'wpckan_api_parameter_error');
   }
 
   function wpckan_api_call_error($function,$message){
     $error_log = "ERROR API CALL on " . $function . " message: " . $message;
     $error_message = "Something went wrong, check your connection details";
-    //wpckan_log($error_log);
+    wpckan_log($error_log);
     throw new ApiCallException($error_message);
-    // return __($error_message,'wpckan_api_call_error');
   }
 
   function wpckan_api_settings_error($function,$message){
     $error_log = "ERROR SETTINGS on " . $function . " message: " . $message;
     $error_message = "Please, specify CKAN URL and API Key";
-    // wpckan_log($error_log);
+    wpckan_log($error_log);
     throw new ApiSettingsException($error_message);
-    // return __($error_message,'wpckan_api_settings_error');
   }
 
 ?>
