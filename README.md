@@ -301,6 +301,7 @@ So, mind that the CKAN instance which this plugin is used with needs to allow al
 # Requirements
 
 * PHP 5 >= 5.2.0
+* PHP Curl extension (in ubuntu sudo apt-get install php5-curl)
 
 # Uses
 
