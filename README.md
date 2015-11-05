@@ -184,6 +184,8 @@ The shortcode has following parameters:
 
 * **group**: (Optional) Filter dataset results by showing only those belonging to a certain group.
 
+* **type**: (Optional) Filter dataset results by showing only those belonging to a certain dataset-type.
+
 * **include_fields_dataset**:  (Optional) Comma-separated.
 Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
 
@@ -235,6 +237,8 @@ Examples:
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 [wpckan_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_query_datasets query="coal" blank_on_empty='true']
+// show all datasets of the dataset-type library record
+[wpckan_query_datasets query="*:*" type="library_record"]
 ```
 
 ```html
