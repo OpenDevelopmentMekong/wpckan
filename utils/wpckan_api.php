@@ -67,13 +67,15 @@
       if (isset($atts['organization'])) $filter = $filter . "+owner_org:" . $atts['organization'];
       if (isset($atts['organization']) && isset($atts['group'])) $filter = $filter . " ";
       if (isset($atts['group'])) $filter = $filter . "+groups:" . $atts['group'];
+      // enables filter by dataset type functionality like http://192.168.33.10:8081/api/3/action/package_search?fq=type:laws_record
+      if (isset($atts['type'])) $filter = $filter . "+type:" . $atts['type'];
       if (!is_null($filter)){
         $arguments["fq"] = $filter;
       }
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
-      wpckan_log("wpckan_api_query_datasets commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
+      wpckan_log("wpckan_api_query_datasets commandName:" . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
 
       if ($response['success']==false){
         wpckan_api_call_error("wpckan_api_query_datasets",null);
@@ -82,7 +84,7 @@
     } catch (Exception $e){
         wpckan_api_call_error("wpckan_api_query_datasets",$e->getMessage());
     }
-
+    // RESULTS
     return $response['result'];
 
   }
@@ -409,25 +411,22 @@
   function wpckan_api_parameter_error($function,$message){
     $error_log = "ERROR Parameters on " . $function . " message: " . $message;
     $error_message = "Something went wrong, check your connection details";
-    //wpckan_log($error_log);
+    wpckan_log($error_log);
     throw new ApiParametersException($error_message);
-    // return __($error_message,'wpckan_api_parameter_error');
   }
 
   function wpckan_api_call_error($function,$message){
     $error_log = "ERROR API CALL on " . $function . " message: " . $message;
     $error_message = "Something went wrong, check your connection details";
-    //wpckan_log($error_log);
+    wpckan_log($error_log);
     throw new ApiCallException($error_message);
-    // return __($error_message,'wpckan_api_call_error');
   }
 
   function wpckan_api_settings_error($function,$message){
     $error_log = "ERROR SETTINGS on " . $function . " message: " . $message;
     $error_message = "Please, specify CKAN URL and API Key";
-    // wpckan_log($error_log);
+    wpckan_log($error_log);
     throw new ApiSettingsException($error_message);
-    // return __($error_message,'wpckan_api_settings_error');
   }
 
 ?>
