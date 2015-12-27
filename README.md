@@ -31,6 +31,9 @@ Per default, this shortcode shows only title and notes of the CKAN dataset (See 
 * **include_fields_resources**:  (Optional) Comma-separated string.
 Per default, this shortcode shows only name, description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
+* **include_fields_exra**: (Optional) Comma-separated string.
+This shortcode outputs extra metadatafields. A list of attributes can specified to present more Information.
+
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode string.
 

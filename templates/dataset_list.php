@@ -14,14 +14,20 @@
   if (array_key_exists("related_dataset",$atts)) $count = count($atts["related_dataset"]);
   if (array_key_exists("count",$atts)) $count = $atts["count"];
 
+// field extras
+  $include_fields_extra = array();
+  if (array_key_exists("include_fields_extra",$atts))
+    $include_fields_extra = explode(",",$atts["include_fields_extra"]);
   // insert type
 
 ?>
 
 <div class="wpckan_dataset_list">
   <ul>
+
   <?php foreach ($data as $dataset){ ?>
     <?php //var_dump($dataset["license_id"]);?>
+
     <li>
       <div class="wpckan_dataset">
         <?php if (array_key_exists("title",$dataset) && !wpckan_is_null_or_empty_string($dataset["title"]) && in_array("title",$include_fields_dataset)) {?>
@@ -74,9 +80,23 @@
                       <?php } ?>
                   </div>
                 </li>
+
+
               <?php } ?>
             </ul>
+            <?php if (array_key_exists("include_fields_extra",$atts))?>
+              <div class="wpckan_dataset_exras">
+                <ul>
+                  <?php  foreach ($include_fields_extra as $extra) {
+                    if (array_key_exists($extra,$dataset) && !wpckan_is_null_or_empty_string($dataset[$extra]) && in_array($extra,$include_fields_extra)) ?>
+                      <li><?php echo $dataset[$extra];?></li>
+                <?php } ?>
+                </ul>
+              </div>
+
           </div>
+
+
         <?php } ?>
       </div>
     </li>
