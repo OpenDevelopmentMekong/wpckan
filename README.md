@@ -26,10 +26,13 @@ Specify the name (Not title) of an organization available on the target CKAN ins
 Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
 
 * **include_fields_dataset**:  (Optional) Comma-separated string.
-Per default, this shortcode shows only title and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
+Per default, this shortcode shows only title and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license_id", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
 
 * **include_fields_resources**:  (Optional) Comma-separated string.
 Per default, this shortcode shows only name, description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
+
+* **include_fields_exra**: (Optional) Comma-separated string.
+This shortcode outputs extra metadatafields. A list of attributes can specified to present more Information.
 
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode string.
@@ -184,6 +187,8 @@ The shortcode has following parameters:
 
 * **group**: (Optional) Filter dataset results by showing only those belonging to a certain group.
 
+* **type**: (Optional) Filter dataset results by showing only those belonging to a certain dataset-type.
+
 * **include_fields_dataset**:  (Optional) Comma-separated.
 Per default, this shortcode shows only title (with link to the dataset's URL) and notes of the CKAN dataset (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "title", "notes", "url", "license", "license_url" "metadata_created", "metadata_modified", "author" , "author_email"
 
@@ -235,6 +240,8 @@ Examples:
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 [wpckan_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_query_datasets query="coal" blank_on_empty='true']
+// show all datasets of the dataset-type library record
+[wpckan_query_datasets query="*:*" type="library_record"]
 ```
 
 ```html
