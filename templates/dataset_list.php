@@ -87,9 +87,10 @@
             <?php if (array_key_exists("include_fields_extra",$atts))?>
               <div class="wpckan_dataset_exras">
                 <ul>
-                  <?php  foreach ($include_fields_extra as $extra) {
-                    if (array_key_exists($extra,$dataset) && !wpckan_is_null_or_empty_string($dataset[$extra]) && in_array($extra,$include_fields_extra)) ?>
+                  <?php foreach ($include_fields_extra as $extra) {
+                    if (array_key_exists($extra,$dataset) && !wpckan_is_null_or_empty_string($dataset[$extra]) && in_array($extra,$include_fields_extra)) {?>
                       <li><?php echo $dataset[$extra];?></li>
+                    <?php } ?>
                 <?php } ?>
                 </ul>
               </div>
