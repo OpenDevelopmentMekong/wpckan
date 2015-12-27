@@ -21,6 +21,7 @@
 <div class="wpckan_dataset_list">
   <ul>
   <?php foreach ($data as $dataset){ ?>
+    <?php //var_dump($dataset["license_id"]);?>
     <li>
       <div class="wpckan_dataset">
         <?php if (array_key_exists("title",$dataset) && !wpckan_is_null_or_empty_string($dataset["title"]) && in_array("title",$include_fields_dataset)) {?>
@@ -32,8 +33,8 @@
         <?php if (array_key_exists("url",$dataset) && !wpckan_is_null_or_empty_string($dataset["url"]) && in_array("url",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_url"><?php echo $dataset["url"] ?></div>
         <?php } ?>
-        <?php if (array_key_exists("license",$dataset) && !wpckan_is_null_or_empty_string($dataset["license"]) && in_array("license",$include_fields_dataset)) {?>
-          <div class="wpckan_dataset_license"><?php echo $dataset["license"] ?></div>
+        <?php if (array_key_exists("license_id",$dataset) && !wpckan_is_null_or_empty_string($dataset["license_id"]) && in_array("license_id",$include_fields_dataset)) {?>
+          <div class="wpckan_dataset_license"><?php echo $dataset["license_id"] ?></div>
         <?php } ?>
         <?php if (array_key_exists("license_url",$dataset) && !wpckan_is_null_or_empty_string($dataset["license_url"]) && in_array("license_url",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_license_url"><?php echo $dataset["license_url"] ?></div>
