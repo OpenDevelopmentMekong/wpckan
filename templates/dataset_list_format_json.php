@@ -19,30 +19,7 @@
   if (array_key_exists("include_fields_extra",$atts))
     $include_fields_extra = explode(",",$atts["include_fields_extra"]);
   // insert type
-  $dataset_count=count($data);
-
-
-?>
-<?php
-//  {
-//   "Herausgeber": "Xema",
-//   "Nummer": "1234-5678-9012-3456",
-//   "Deckung": 2e+6,
-//   "Waehrung": "EURO",
-//   "Inhaber": {
-//     "Name": "Mustermann",
-//     "Vorname": "Max",
-//     "maennlich": true,
-//     "Hobbys": [ "Reiten", "Golfen", "Lesen" ],
-//     "Alter": 42,
-//     "Kinder": [],
-//     "Partner": null
-//   }
-// }
-
-// $title=$dataset["title"];
-// $title_url=
-?>
+  $dataset_count=count($data);?>
 {
     "wpckan_dataset_list":{
       <?php foreach ($data as $index_data => $dataset){ ?>
@@ -91,21 +68,22 @@
                   $resource_language=$resource["language"][0];
                 }
                 ?>
-
-                "<?php echo $resoure_name;?>":{
-                  "wpckan_resource_name_link":"<?php echo $resource_name_link;?>",
-                  "wpckan_resource_description":"",
-                  <?php if (array_key_exists("revision_timestamp",$resource) && !wpckan_is_null_or_empty_string($resource["revision_timestamp"]) && in_array("revision_timestamp",$include_fields_resources)) {?>
-                    "wpckan_resource_revision_timestamp":"<?php echo $resource_revision_timestamp;?>",
-                  <?php } ?>
-                  "wpckan_resource_format":"<?php echo $resource_format;?>",
-                  "wpckan_resource_created":"<?php echo $resource_created;?>",
+                "<?php echo $index;?>":{
+                  "<?php echo $resoure_name;?>":{
+                    "wpckan_resource_name_link":"<?php echo $resource_name_link;?>",
+                    "wpckan_resource_description":"",
+                    <?php if (array_key_exists("revision_timestamp",$resource) && !wpckan_is_null_or_empty_string($resource["revision_timestamp"]) && in_array("revision_timestamp",$include_fields_resources)) {?>
+                      "wpckan_resource_revision_timestamp":"<?php echo $resource_revision_timestamp;?>",
+                    <?php } ?>
+                    "wpckan_resource_format":"<?php echo $resource_format;?>",
+                    "wpckan_resource_created":"<?php echo $resource_created;?>",
 
                     "wpckan_resource_language":"<?php echo $resource_language;?>"
+                  }
+                  }<?php if ($index == $resource_count - 1) { echo "";} else {echo ",";}?>
 
-                }<?php if ($index == $resource_count - 1) { echo "";} else {echo ",";}?>
+                <?php } ?>
 
-              <?php } ?>
             },
             "wpckan_dataset_extras":{
               <?php foreach ($include_fields_extra as $index_extra => $extra) {?>
