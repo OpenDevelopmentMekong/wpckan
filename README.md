@@ -31,9 +31,16 @@ Per default, this shortcode shows only title and notes of the CKAN dataset (See 
 * **include_fields_resources**:  (Optional) Comma-separated string.
 Per default, this shortcode shows only name, description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
-* **include_fields_exra**: (Optional) Comma-separated string.
+* **include_fields_extra**: (Optional) Comma-separated string.
 This shortcode outputs extra metadatafields. A list of attributes can specified to present more Information.
 
+* **format**: (Optional) Formating string
+This shortcode returns the data in pure data format instead of rendering HTML representation. Use inside page-templates!
+
+	*note that the resource description field is not available at the moment*
+
+	**Supported Formats:**
+  	* json
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode string.
 
@@ -44,6 +51,7 @@ Filters the datasets according to following criteria:
 
 * **filter_fields**: (Optional) JSON.
 Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
+
 
 #### Pagination
 
