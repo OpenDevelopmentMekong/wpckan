@@ -64,9 +64,9 @@
                 }
                 $resource_format=$resource["format"];
                 $resource_created=$resource["created"];
-                if (array_key_exists("created",$resource) && !wpckan_is_null_or_empty_string($resource["created"]) && in_array("created",$include_fields_resources)) {
-                  $resource_language=$resource["odm_language"][0];
-                }
+
+                $resource_language=$resource["odm_language"][0];
+
                 ?>
                 "<?php echo $index;?>":{
                     "wpckan_resource_name":"<?php echo $resource_name;?>",
