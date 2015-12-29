@@ -56,7 +56,7 @@
             "wpckan_resources_list":{
               <?php foreach ($dataset["resources"] as $index =>$resource){
                 //  wpckan_resources_list
-                $resoure_name=$resource["name"];
+                $resource_name=$resource["name"];
                 $resource_name_link=wpckan_get_link_to_resource($dataset["name"],$resource["id"]);
                 $resource_description=$resource["description"];
                 if (array_key_exists("revision_timestamp",$resource) && !wpckan_is_null_or_empty_string($resource["revision_timestamp"]) && in_array("revision_timestamp",$include_fields_resources)) {
@@ -65,11 +65,11 @@
                 $resource_format=$resource["format"];
                 $resource_created=$resource["created"];
                 if (array_key_exists("created",$resource) && !wpckan_is_null_or_empty_string($resource["created"]) && in_array("created",$include_fields_resources)) {
-                  $resource_language=$resource["language"][0];
+                  $resource_language=$resource["odm_language"][0];
                 }
                 ?>
                 "<?php echo $index;?>":{
-                  "<?php echo $resoure_name;?>":{
+                    "wpckan_resource_name":"<?php echo $resource_name;?>",
                     "wpckan_resource_name_link":"<?php echo $resource_name_link;?>",
                     "wpckan_resource_description":"",
                     <?php if (array_key_exists("revision_timestamp",$resource) && !wpckan_is_null_or_empty_string($resource["revision_timestamp"]) && in_array("revision_timestamp",$include_fields_resources)) {?>
@@ -79,12 +79,12 @@
                     "wpckan_resource_created":"<?php echo $resource_created;?>",
 
                     "wpckan_resource_language":"<?php echo $resource_language;?>"
-                  }
+
                   }<?php if ($index == $resource_count - 1) { echo "";} else {echo ",";}?>
 
                 <?php } ?>
+              },
 
-            },
             "wpckan_dataset_extras":{
               <?php foreach ($include_fields_extra as $index_extra => $extra) {?>
                 <?php $extra_count=count($include_fields_extra);?>
