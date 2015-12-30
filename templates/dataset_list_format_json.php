@@ -1,5 +1,7 @@
 <?php if (is_null($data)) die(); ?>
 <?php
+// disable error reporting as it breaks json structure
+error_reporting(0);
   $include_fields_dataset = array();
   array_push($include_fields_dataset,"title"); //ensure that this field is present
   array_push($include_fields_dataset,"notes"); //ensure that this field is present
