@@ -288,9 +288,7 @@
       // json template
       if ($atts["format"]=="json") {
         $json= wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list_format_json.php',$filtered_dataset_array,$atts);
-        $json_d=json_decode($json,true);
-        var_dump($json_d);
-        return($json_d);
+        return $json;
         //
       }
     }
