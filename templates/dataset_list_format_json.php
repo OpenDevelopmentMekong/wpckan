@@ -24,6 +24,7 @@ error_reporting(0);
     "wpckan_dataset_list":{
       <?php foreach ($data as $index_data => $dataset){ ?>
         <?php $resource_count=count($dataset["resources"]);?>
+        <?php $taxonomy_count=count($dataset["taxonomy"]);?>
         <?php
           // wpckan_dataset_list
            $title=$dataset["title"];
@@ -49,6 +50,11 @@ error_reporting(0);
             "wpckan_dataset_metadata_modified":"<?php echo $metadata_modified;?>",
             "wpckan_dataset_author":"<?php echo $author;?>",
             "wpckan_dataset_author_email":"<?php echo $author_email;?>",
+            "wpckan_dataset_taxomomy":[
+              <?php foreach ($dataset['taxonomy'] as $index => $taxonomy) {?>
+                "<?php echo $taxonomy;?>"<?php if ($index == $taxonomy_count - 1) { echo "";} else {echo ",";}?>
+              <?php } ?>
+            ],
             "wpckan_resources_list":{
               <?php foreach ($dataset["resources"] as $index =>$resource){
                 //  wpckan_resources_list
