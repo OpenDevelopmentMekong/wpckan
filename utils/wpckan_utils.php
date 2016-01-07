@@ -283,8 +283,18 @@
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
-
-    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$filtered_dataset_array,$atts);
+    // user can chose to output pure data instead of HTML representation with including "format" shortcode
+    if (array_key_exists("format",$atts)){
+      // json template
+      if ($atts["format"]=="json") {
+        $json= wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list_format_json.php',$filtered_dataset_array,$atts);
+        return $json;
+        //
+      }
+    }
+    else{
+      return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$filtered_dataset_array,$atts);
+    }
   }
 
   /*
