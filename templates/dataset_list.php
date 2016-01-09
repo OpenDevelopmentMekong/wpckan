@@ -26,8 +26,6 @@
   <ul>
 
   <?php foreach ($data as $dataset){ ?>
-
-
     <li>
       <div class="wpckan_dataset">
         <?php if (array_key_exists("title",$dataset) && !wpckan_is_null_or_empty_string($dataset["title"]) && in_array("title",$include_fields_dataset)) {?>
@@ -78,13 +76,9 @@
                       <?php if (array_key_exists("created",$resource) && !wpckan_is_null_or_empty_string($resource["created"]) && in_array("created",$include_fields_resources)) {?>
                         <div class="wpckan_resource_created"><?php echo $resource["created"] ?></div>
                       <?php } ?>
-
                       <div class="wpckan_resource_language"><?php echo $resource["odm_language"][0] ?></div>
-
                   </div>
                 </li>
-
-
               <?php } ?>
             </ul>
             <?php if (array_key_exists("include_fields_extra",$atts))?>
@@ -97,10 +91,7 @@
                 <?php } ?>
                 </ul>
               </div>
-
           </div>
-
-
         <?php } ?>
       </div>
     </li>
