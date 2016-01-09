@@ -67,7 +67,6 @@
       if (isset($atts['organization'])) $filter = $filter . "+owner_org:" . $atts['organization'];
       if (isset($atts['organization']) && isset($atts['group'])) $filter = $filter . " ";
       if (isset($atts['group'])) $filter = $filter . "+groups:" . $atts['group'];
-      // enables filter by dataset type functionality like http://192.168.33.10:8081/api/3/action/package_search?fq=type:laws_record
       if (isset($atts['type'])) $filter = $filter . "+type:" . $atts['type'];
       if (!is_null($filter)){
         $arguments["fq"] = $filter;
