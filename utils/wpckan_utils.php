@@ -229,7 +229,7 @@
         try{
          if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
           if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
-           array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
+           array_push($dataset_array,$dataset_atts);
           }
          }
         }catch(Exception $e){
@@ -276,20 +276,18 @@
     foreach ($dataset_array as $dataset){
      if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
       if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
-       array_push($filtered_dataset_array,wpckan_api_get_dataset($dataset));
+       array_push($filtered_dataset_array,$dataset);
       }
      }
     }
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
-    // user can chose to output pure data instead of HTML representation with including "format" shortcode
+
     if (array_key_exists("format",$atts)){
-      // json template
       if ($atts["format"]=="json") {
         $json= wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list_format_json.php',$filtered_dataset_array,$atts);
         return $json;
-        //
       }
     }
     else{
