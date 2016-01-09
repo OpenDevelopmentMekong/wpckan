@@ -1,7 +1,7 @@
 <?php if (is_null($data)) die(); ?>
 <?php
-// disable error reporting as it breaks json structure
-error_reporting(0);
+  // disable error reporting as it breaks json structure
+  error_reporting(0);
   $include_fields_dataset = array();
   array_push($include_fields_dataset,"title"); //ensure that this field is present
   array_push($include_fields_dataset,"notes"); //ensure that this field is present
@@ -14,7 +14,7 @@ error_reporting(0);
     $include_fields_resources = explode(",",$atts["include_fields_resources"]);
   if (array_key_exists("related_dataset",$atts)) $count = count($atts["related_dataset"]);
   if (array_key_exists("count",$atts)) $count = $atts["count"];
-// field extras
+  // field extras
   $include_fields_extra = array();
   if (array_key_exists("include_fields_extra",$atts))
     $include_fields_extra = explode(",",$atts["include_fields_extra"]);
@@ -26,7 +26,7 @@ error_reporting(0);
         <?php $resource_count=count($dataset["resources"]);?>
         <?php $taxonomy_count=count($dataset["taxonomy"]);?>
         <?php
-          // wpckan_dataset_list
+           // wpckan_dataset_list
            $title=$dataset["title"];
            $title_url= wpckan_get_link_to_dataset($dataset["name"]);
            $notes=$dataset["notes"];
