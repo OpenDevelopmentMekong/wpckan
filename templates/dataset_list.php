@@ -86,7 +86,7 @@
                 <ul>
                   <?php foreach ($include_fields_extra as $extra) {
                     if (array_key_exists($extra,$dataset) && !wpckan_is_null_or_empty_string($dataset[$extra]) && in_array($extra,$include_fields_extra)) {?>
-                      <li class="wpkan_dataset_extras-<?php echo $extra;?>"><?php echo $dataset[$extra];?></li>
+                      <li class="wpckan_dataset_extras-<?php echo $extra;?>"><?php echo $dataset[$extra];?></li>
                     <?php } ?>
                 <?php } ?>
                 </ul>

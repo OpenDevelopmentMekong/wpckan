@@ -66,7 +66,7 @@
         "wpckan_dataset_extras":{
           <?php $extra_count=count($include_fields_extra);?>
           <?php foreach ($include_fields_extra as $index_extra => $extra): ?>
-            "wpkan_dataset_extras-<?php echo $extra;?>":<?php echo json_encode($dataset[$extra]);?>
+            "wpckan_dataset_extras-<?php echo $extra;?>":<?php echo json_encode($dataset[$extra]);?>
           <?php if ($index_extra == $extra_count - 1) { echo "";} else {echo ",";}?>
           <?php endforeach; ?>
         }
