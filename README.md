@@ -324,6 +324,16 @@ So, mind that the CKAN instance which this plugin is used with needs to allow al
 * Silex CKAN PHP Client https://github.com/SilexConsulting/CKAN_PHP
 * Twitter's typeahead https://github.com/twitter/typeahead.js/
 
+# Testing
+
+Tests are found on ckanext/odm_dataset/tests and can be run with ```phpunit tests```
+
+# Continuous deployment
+
+Everytime code is pushed to the repository, travis will run the tests available on **/tests**. In case the code has been pushed to **master** branch and tests pass, the **_ci/deploy.sh** script will be called for deploying code in CKAN's DEV instance. Analog to this, and when code from **master** branch has been **tagged as release**, travis will deploy to CKAN's PROD instance automatically.
+
+For the automatic deployment, the scripts on **_ci/** are responsible of downloading the odm-automation repository, decrypting the **odm_tech_rsa.enc** private key file ( encrypted using Travis-ci encryption mechanism) and triggering deployment in either DEV or PROD environment.
+
 # Copyright and License
 
 This material is copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
