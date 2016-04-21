@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 set -e
-#echo "Installing dependencies"
+echo "Installing dependencies"
+pip install ansible
 #composer self-update
 #composer install --prefer-source --no-interaction --dev
 
