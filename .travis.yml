@@ -8,7 +8,7 @@ deploy:
   script: _ci/deploy.sh
   skip_cleanup: true
   on:
-    branch: fix-ci
+    branch: master
 - provider: script
   script: _ci/deploy.sh
   skip_cleanup: true
