@@ -2,13 +2,7 @@
 
 set -e
 echo "Installing dependencies"
-#sudo apt-get -y install software-properties-common
-#sudo apt-add-repository ppa:ansible/ansible
-#sudo apt-get update
 sudo apt-get -y install ansible
-
-#composer self-update
-#composer install --prefer-source --no-interaction --dev
 
 echo "Downloading and unzipping odm_automation"
 wget https://github.com/OpenDevelopmentMekong/odm-automation/archive/master.zip -O /tmp/odm_automation.zip
