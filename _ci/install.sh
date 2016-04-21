@@ -3,6 +3,7 @@
 set -e
 echo "Installing dependencies"
 sudo apt-get -y install ansible
+ansible --version
 
 echo "Downloading and unzipping odm_automation"
 wget https://github.com/OpenDevelopmentMekong/odm-automation/archive/master.zip -O /tmp/odm_automation.zip
