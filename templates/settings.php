@@ -28,7 +28,7 @@
               </td>
           </tr>
           <tr valign="top">
-              <th scope="row"><label for="setting_ckan_api"><?php _e('CKAN Api','wpckan_settings_ckan_api_title') ?></label></th>
+              <th scope="row"><label for="setting_ckan_api"><?php _e('CKAN Api key','wpckan_settings_ckan_api_title') ?></label></th>
               <td>
                 <input type="text" name="setting_ckan_api" id="setting_ckan_api" value="<?php echo get_option('setting_ckan_api'); ?>"/>
                 <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan_settings_ckan_api_summary') ?>.</p>
