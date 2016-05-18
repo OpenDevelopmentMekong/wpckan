@@ -2,7 +2,7 @@
 
 <?php if (wpckan_validate_settings_read()){ ?>
 
-  <label for="wpckan_related_datasets_add_field"><b><?php _e('Add related datasets','wpckan_related_datasets_add_title') ?></b></label>
+  <label for="wpckan_related_datasets_add_field"><b><?php _e('Add related datasets','wpckan') ?></b></label>
   <p>
     <input id="wpckan_related_datasets_add_field" class="new typeahead" onInput="wpckan_related_dataset_metabox_on_input();" wpckan-base-url="<?php echo get_option('setting_ckan_url'); ?>" wpckan-api-url="<?php echo wpckan_get_ckan_settings()["baseUrl"]; ?>" placeholder="Type for suggestions" type="text" name="wpckan_related_datasets_add_field" value="" size="25" />
     <input id="wpckan_related_datasets_add_button" class="button add disabled" type="button" value="Add" onClick="wpckan_related_dataset_metabox_add();" />
@@ -12,6 +12,6 @@
 
 <?php } else { ?>
 
-  <p class="error"><?php _e( 'wpckan is not correctly configured. Please, check the ', 'related_datasets_metabox_config_error' ) ?><a href="options-general.php?page=wpckan">Settings</a></p>
+  <p class="error"><?php _e( 'wpckan is not correctly configured. Please, check the ', 'wpckan' ) ?><a href="options-general.php?page=wpckan">Settings</a></p>
 
 <?php }?>
