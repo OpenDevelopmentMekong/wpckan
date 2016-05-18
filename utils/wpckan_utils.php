@@ -1,10 +1,10 @@
 <?php
 
-  define("FREQ_NEVER","0");
-  define("FREQ_POST_SAVED","1");
-  define("FILTER_ALL","0");
-  define("FILTER_ONLY_WITH_RESOURCES","1");
-  define("DEFAULT_LOG","/tmp/wpckan.log");
+  define("WPCKAN_FREQ_NEVER","0");
+  define("WPCKAN_FREQ_POST_SAVED","1");
+  define("WPCKAN_FILTER_ALL","0");
+  define("WPCKAN_FILTER_ONLY_WITH_RESOURCES","1");
+  define("WPCKAN_DEFAULT_LOG","/tmp/wpckan.log");
 
   use Analog\Analog;
   use Analog\Handler;
@@ -85,7 +85,7 @@
       $page = (int)($atts["page"]);
     }
 
-    $filter = FILTER_ALL;
+    $filter = WPCKAN_FILTER_ALL;
     if (array_key_exists("filter",$atts)){
       $filter = $atts["filter"];
     }
@@ -141,7 +141,7 @@
        if ($qualifies_organization && $qualifies_group){
          $dataset_atts = array("id" => $dataset["dataset_id"]);
          try{
-           if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
+           if ($filter == WPCKAN_FILTER_ALL || (($filter == WPCKAN_FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
             if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
              array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
             }
@@ -174,7 +174,7 @@
       $filter_organization = $atts["organization"];
     }
 
-    $filter = FILTER_ALL;
+    $filter = WPCKAN_FILTER_ALL;
     if (array_key_exists("filter",$atts)){
       $filter = $atts["filter"];
     }
@@ -227,7 +227,7 @@
       if ($qualifies_organization && $qualifies_group){
         $dataset_atts = array("id" => $dataset["dataset_id"]);
         try{
-         if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
+         if ($filter == WPCKAN_FILTER_ALL || (($filter == WPCKAN_FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
           if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
            array_push($dataset_array,$dataset_atts);
           }
@@ -257,7 +257,7 @@
       wpckan_log($e->getMessage());
     }
 
-    $filter = FILTER_ALL;
+    $filter = WPCKAN_FILTER_ALL;
     if (array_key_exists("filter",$atts)){
       $filter = $atts["filter"];
     }
@@ -274,7 +274,7 @@
 
     $filtered_dataset_array = array();
     foreach ($dataset_array as $dataset){
-     if ($filter == FILTER_ALL || (($filter == FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
+     if ($filter == WPCKAN_FILTER_ALL || (($filter == WPCKAN_FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
       if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
        array_push($filtered_dataset_array,$dataset);
       }
@@ -332,7 +332,7 @@
     if (!wpckan_is_null_or_empty_string(get_option('setting_log_path')))
       Analog::handler(Handler\File::init (get_option('setting_log_path')));
     else
-      Analog::handler(Handler\File::init (DEFAULT_LOG));
+      Analog::handler(Handler\File::init (WPCKAN_DEFAULT_LOG));
 
     Analog::log ( "[ " . $caller['file'] . " | " . $caller['line'] . " ] " . $text );
   }
@@ -483,7 +483,7 @@
   function wpckan_post_should_be_archived_on_save($post_ID){
     $archive_freq = get_post_meta( $post_ID, 'wpckan_archive_post_freq', true);
     wpckan_log("wpckan_post_should_be_archived_on_save freq: " . $archive_freq);
-    return ( $archive_freq == FREQ_POST_SAVED);
+    return ( $archive_freq == WPCKAN_FREQ_POST_SAVED);
   }
 
   function wpckan_sanitize_url($input) {

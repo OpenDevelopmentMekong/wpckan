@@ -11,7 +11,7 @@
           $logging_path = get_option('setting_log_path');
           $logging_enabled = get_option('setting_log_enabled');
           if (!$logging_path)
-            $logging_path = DEFAULT_LOG;
+            $logging_path = WPCKAN_DEFAULT_LOG;
           $valid_connection_read = wpckan_validate_settings_read();
           $valid_connection_write = wpckan_validate_settings_write();
           update_option('setting_ckan_valid_settings_read',$valid_connection_read);

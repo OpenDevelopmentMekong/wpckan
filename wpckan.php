@@ -225,7 +225,7 @@ if(class_exists('wpckan'))
     if(isset($wpckan))
     {
         // Add the settings link to the plugins page
-        function plugin_settings_link($links)
+        function wpckan_plugin_settings_link($links)
         {
             $settings_link = '<a href="options-general.php?page=wpckan">Settings</a>';
             array_unshift($links, $settings_link);
@@ -233,7 +233,7 @@ if(class_exists('wpckan'))
         }
 
         $plugin = plugin_basename(__FILE__);
-        add_filter("plugin_action_links_$plugin", 'plugin_settings_link');
+        add_filter("plugin_action_links_$plugin", 'wpckan_plugin_settings_link');
     }
 }
 
