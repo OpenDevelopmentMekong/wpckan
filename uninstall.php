@@ -24,7 +24,7 @@
  }
 
  foreach (get_post_types() as $post_type) {
-  $option_name = "setting_supported_post_types_" . $post_type;
+  $option_name = "wpckan_setting_supported_post_types_" . $post_type;
   if ( get_option( $option_name ) != false ) {
    delete_option( $option_name );
    delete_site_option( $option_name );

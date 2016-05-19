@@ -56,7 +56,7 @@
             <td>
              <?php
               foreach (get_post_types() as $post_type) {
-              $settings_name =  "setting_supported_post_types_" . $post_type;
+              $settings_name =  "wpckan_setting_supported_post_types_" . $post_type;
              ?>
               <p><input type="checkbox" name="<?php echo $settings_name ?>" id="<?php echo $settings_name ?>" <?php if (get_option($settings_name))  echo 'checked="true"'; ?>><?php echo $post_type ?></input></p>
              <?php } ?>

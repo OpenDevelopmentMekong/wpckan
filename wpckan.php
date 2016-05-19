@@ -180,7 +180,7 @@ if(!class_exists('wpckan'))
             register_setting('wpckan-group', 'wpckan_setting_log_enabled');
 
             foreach (get_post_types() as $post_type){
-             $settings_name =  "setting_supported_post_types_" . $post_type;
+             $settings_name =  "wpckan_setting_supported_post_types_" . $post_type;
              register_setting('wpckan-group', $settings_name);
             }
         }

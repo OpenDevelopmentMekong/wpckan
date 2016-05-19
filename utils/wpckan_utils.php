@@ -342,7 +342,7 @@
   */
 
   function wpckan_is_supported_post_type($post_type){
-   $settings_name =  "setting_supported_post_types_" . $post_type;
+   $settings_name =  "wpckan_setting_supported_post_types_" . $post_type;
    return get_option($settings_name);
   }
 
