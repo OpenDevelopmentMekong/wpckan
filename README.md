@@ -304,8 +304,9 @@ So, mind that the CKAN instance which this plugin is used with needs to allow al
 
 # Installation
 
-1. Either download the files as zip or clone recursively (contains submodules) <code>git clone https://github.com/OpenDevelopmentMekong/wpckan.git --recursive</code> into the Wordpress plugins folder.
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Either download the files as zip or clone <code>git clone https://github.com/OpenDevelopmentMekong/wpckan.git</code> into the Wordpress plugins folder.
+2. Install dependencies with composer (http://getcomposer.org) <code>composer install</code>
+3. Activate the plugin through the 'Plugins' menu in WordPress
 
 # Development
 
