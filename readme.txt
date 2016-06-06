@@ -3,7 +3,7 @@ Contributors: acorbi
 Donate link:
 Tags: ckan, api, datasets, open data
 Requires at least: 3.0.1
-Tested up to: 4.0
+Tested up to: 4.5.2
 Stable tag: trunk
 License: GPLv3 / copyright (c) 2014-2015 East-West Management Institute, Inc. (EWMI).
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
