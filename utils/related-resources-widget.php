@@ -133,3 +133,5 @@ class Wpckan_Related_Resources_Widget extends WP_Widget {
   return $instance;
  }
 }
+
+?>

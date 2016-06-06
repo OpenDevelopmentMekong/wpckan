@@ -135,3 +135,5 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
   return $instance;
  }
 }
+
+?>
