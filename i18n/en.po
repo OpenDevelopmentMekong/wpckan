@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpckan\n"
+"POT-Creation-Date: 2016-06-06 17:19+0200\n"
+"PO-Revision-Date: 2016-06-06 17:19+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: i18n\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: components\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: templates/archive_post_metabox.php:19
+msgid "CKAN Organization"
+msgstr ""
+
+#: templates/archive_post_metabox.php:21 templates/archive_post_metabox.php:30
+msgid "None"
+msgstr ""
+
+#: templates/archive_post_metabox.php:28
+msgid "CKAN Group"
+msgstr ""
+
+#: templates/archive_post_metabox.php:37
+msgid "Archive contents when:"
+msgstr ""
+
+#: templates/archive_post_metabox.php:39
+msgid "Never archive"
+msgstr ""
+
+#: templates/archive_post_metabox.php:40
+msgid "Post is saved"
+msgstr ""
+
+#: templates/archive_post_metabox.php:45
+#: templates/related_datasets_metabox.php:15
+msgid "wpckan is not correctly configured. Please, check the "
+msgstr ""
+
+#: templates/related_datasets_metabox.php:5
+msgid "Add related datasets"
+msgstr ""
+
+#: templates/settings.php:22
+msgid "Connecting to CKAN"
+msgstr ""
+
+#: templates/settings.php:24
+msgid "CKAN Url"
+msgstr ""
+
+#: templates/settings.php:27
+msgid "Specify protocol such as http:// or https://."
+msgstr ""
+
+#: templates/settings.php:31
+msgid "CKAN Api key"
+msgstr ""
+
+#: templates/settings.php:34
+msgid "Available under the profile page of a CKAN user with Admin rights."
+msgstr ""
+
+#: templates/settings.php:39
+msgid "Connection status"
+msgstr ""
+
+#: templates/settings.php:42
+msgid "CKAN URL specified correctly."
+msgstr ""
+
+#: templates/settings.php:44
+msgid "Problem connecting to CKAN instance. Please, check the specified URL."
+msgstr ""
+
+#: templates/settings.php:47
+msgid "CKAN API Key specified correctly."
+msgstr ""
+
+#: templates/settings.php:49
+msgid "Please, specify a valid CKAN API Key."
+msgstr ""
+
+#: templates/settings.php:55
+msgid "Supported post types"
+msgstr ""
+
+#: templates/settings.php:66
+msgid "Logging"
+msgstr ""
+
+#: templates/settings.php:68
+msgid "Enable log"
+msgstr ""
+
+#: templates/settings.php:74
+msgid "Path"
+msgstr ""
+
+#: templates/settings.php:77
+msgid "Path where logs are going to be stored. Mind permissions."
+msgstr ""
+
+#: utils/query-resources-widget.php:12
+msgid "WPCKAN Query Resources"
+msgstr ""
+
+#: utils/query-resources-widget.php:13
+msgid "Query resources and displays them in a post or page."
+msgstr ""
+
+#: utils/query-resources-widget.php:63 utils/related-resources-widget.php:74
+msgid "Related Resources"
+msgstr ""
+
+#: utils/query-resources-widget.php:89 utils/related-resources-widget.php:97
+msgid "Title:"
+msgstr ""
+
+#: utils/query-resources-widget.php:91
+msgid "Query:"
+msgstr ""
+
+#: utils/query-resources-widget.php:93 utils/related-resources-widget.php:99
+msgid "CKAN Organization:"
+msgstr ""
+
+#: utils/query-resources-widget.php:95 utils/query-resources-widget.php:102
+#: utils/related-resources-widget.php:101
+#: utils/related-resources-widget.php:108
+msgid "All"
+msgstr ""
+
+#: utils/query-resources-widget.php:100 utils/related-resources-widget.php:106
+msgid "CKAN Group:"
+msgstr ""
+
+#: utils/query-resources-widget.php:107 utils/related-resources-widget.php:113
+msgid "Limit:"
+msgstr ""
+
+#: utils/query-resources-widget.php:109
+msgid "More dataset: Link label"
+msgstr ""
+
+#: utils/query-resources-widget.php:112
+msgid "More dataset: Link (URL)"
+msgstr ""
+
+#: utils/related-resources-widget.php:12
+msgid "WPCKAN Related Resources"
+msgstr ""
+
+#: utils/related-resources-widget.php:13
+msgid "Display post related resources."
+msgstr ""
+
+#: utils/related-resources-widget.php:56
+msgid "More..."
+msgstr ""
+
+#: wpckan.php:79
+msgid "Add related CKAN content"
+msgstr ""
+
+#: wpckan.php:80
+msgid "Archive Post as CKAN dataset"
+msgstr ""
+
+#: wpckan.php:209
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
