@@ -1,6 +1,6 @@
 <?php
 
-function opendev_get_related_datasets($atts = false)
+function wpckan_opendev_get_related_datasets($atts = false)
 {
     if (!$atts) {
         $atts = array();
@@ -33,7 +33,7 @@ function opendev_get_related_datasets($atts = false)
     return $dataset_array;
 }
 
-function opendev_wpckan_api_query_datasets($atts)
+function wpckan_opendev_api_query_datasets($atts)
 {
     if (is_null(wpckan_get_ckan_settings())) {
         wpckan_api_settings_error('wpckan_api_query_datasets');
@@ -88,7 +88,7 @@ function opendev_wpckan_api_query_datasets($atts)
     return $response;
 }
 
-function get_ckan_domain()
+function wpckan_get_ckan_domain()
 {
     return get_option('setting_ckan_url');
 }

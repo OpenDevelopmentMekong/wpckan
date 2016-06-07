@@ -1,10 +1,9 @@
 <?php
 
-function get_dataset_by_id($ckan_domain, $id)
+function wpckan_get_dataset_by_id($ckan_domain, $id)
 {
     $ckanapi_url = $ckan_domain.'/api/3/action/package_show?id='.$id;
-  //echo $ckanapi_url;
-  $json = @file_get_contents($ckanapi_url);
+    $json = @file_get_contents($ckanapi_url);
     if ($json === false) {
         return [];
     }
@@ -13,7 +12,7 @@ function get_dataset_by_id($ckan_domain, $id)
     return $datasets['result'];
 }
 
-function get_datasets_filter($ckan_domain, $key, $value)
+function wpckan_get_datasets_filter($ckan_domain, $key, $value)
 {
     $ckanapi_url = $ckan_domain.'/api/3/action/package_search?fq='.$key.':'.$value;
     $json = @file_get_contents($ckanapi_url);
@@ -25,7 +24,7 @@ function get_datasets_filter($ckan_domain, $key, $value)
     return $datasets['result']['results'];
 }
 
-function get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
+function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
 {
     $lang = CURRENT_LANGUAGE;
 
@@ -51,7 +50,7 @@ function get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $ind
                       );
 
   // get ckan record by id
-  $get_info_from_ckan = get_dataset_by_id($ckan_domain, $ckan_dataset_id);
+  $get_info_from_ckan = wpckan_get_dataset_by_id($ckan_domain, $ckan_dataset_id);
     ?>
     <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer['ID'];
     ?>">
@@ -162,7 +161,7 @@ function get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $ind
 
 }
 
- function get_datastore_resources_filter($ckan_domain, $resource_id, $key, $value)
+ function wpckan_get_datastore_resources_filter($ckan_domain, $resource_id, $key, $value)
  {
      $datastore_url = $ckan_domain.'/api/3/action/datastore_search?resource_id='.$resource_id.'&limit=1000&filters={"'.$key.'":"'.$value.'"}';
      $json = @file_get_contents($datastore_url);
@@ -174,7 +173,7 @@ function get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $ind
      return $profiles['result']['records'];
  }
 
- function get_datastore_resource($ckan_domain, $resource_id)
+ function wpckan_get_datastore_resource($ckan_domain, $resource_id)
  {
      $datastore_url = $ckan_domain.'/api/3/action/datastore_search?resource_id='.$resource_id.'&limit=1000';
      $json = @file_get_contents($datastore_url);
