@@ -9,10 +9,15 @@ trim_trailing_whitespace = true
 
 [*.js]
 indent_size = 2
+indent_style = tab
 
 [*.json]
 indent_size = 2
 
 [*.py]
+indent_size = 2
+indent_style = tab
+
+[*.php]
 indent_size = 2
 indent_style = tab
