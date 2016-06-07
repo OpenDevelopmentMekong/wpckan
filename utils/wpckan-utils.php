@@ -157,7 +157,7 @@
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
 
-    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$dataset_array,$atts);
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list.php',$dataset_array,$atts);
   }
 
   function wpckan_show_number_of_related_datasets($atts) {
@@ -242,7 +242,7 @@
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
 
-    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_number.php',$dataset_array,$atts);
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-number.php',$dataset_array,$atts);
   }
 
   function wpckan_show_query_datasets($atts) {
@@ -286,12 +286,12 @@
 
     if (array_key_exists("format",$atts)){
       if ($atts["format"]=="json") {
-        $json= wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list_format_json.php',$filtered_dataset_array,$atts);
+        $json= wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list-format-json.php',$filtered_dataset_array,$atts);
         return $json;
       }
     }
     else{
-      return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset_list.php',$filtered_dataset_array,$atts);
+      return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/ddataset-listphp',$filtered_dataset_array,$atts);
     }
   }
 

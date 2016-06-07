@@ -20,36 +20,36 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: components\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: templates/archive_post_metabox.php:19
+#: templates/archive-post-metabox.php:19
 msgid "CKAN Organization"
 msgstr ""
 
-#: templates/archive_post_metabox.php:21 templates/archive_post_metabox.php:30
+#: templates/archive-post-metabox.php:21 templates/archive-post-metabox.php:30
 msgid "None"
 msgstr ""
 
-#: templates/archive_post_metabox.php:28
+#: templates/archive-post-metabox.php:28
 msgid "CKAN Group"
 msgstr ""
 
-#: templates/archive_post_metabox.php:37
+#: templates/archive-post-metabox.php:37
 msgid "Archive contents when:"
 msgstr ""
 
-#: templates/archive_post_metabox.php:39
+#: templates/archive-post-metabox.php:39
 msgid "Never archive"
 msgstr ""
 
-#: templates/archive_post_metabox.php:40
+#: templates/archive-post-metabox.php:40
 msgid "Post is saved"
 msgstr ""
 
-#: templates/archive_post_metabox.php:45
-#: templates/related_datasets_metabox.php:15
+#: templates/archive-post-metabox.php:45
+#: templates/related-datasets-metabox.php:15
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
-#: templates/related_datasets_metabox.php:5
+#: templates/related-datasets-metabox.php:5
 msgid "Add related datasets"
 msgstr ""
 

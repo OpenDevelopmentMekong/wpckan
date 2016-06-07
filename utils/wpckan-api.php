@@ -1,6 +1,6 @@
 <?php
 
-  include_once plugin_dir_path( __FILE__ ) . 'wpckan_utils.php' ;
+  include_once plugin_dir_path( __FILE__ ) . 'wpckan-utils.php' ;
   use Silex\ckan\CkanClient;
 
   /*

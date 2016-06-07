@@ -13,9 +13,9 @@
  include_once plugin_dir_path(__FILE__).'utils/datastore-api.php';
  include_once plugin_dir_path(__FILE__).'utils/related-resources-widget.php';
  include_once plugin_dir_path(__FILE__).'utils/query-resources-widget.php';
- include_once plugin_dir_path(__FILE__).'utils/wpckan_exceptions.php';
- include_once plugin_dir_path(__FILE__).'utils/wpckan_utils.php';
- include_once plugin_dir_path(__FILE__).'utils/wpckan_api.php';
+ include_once plugin_dir_path(__FILE__).'utils/wpckan-exceptions.php';
+ include_once plugin_dir_path(__FILE__).'utils/wpckan-utils.php';
+ include_once plugin_dir_path(__FILE__).'utils/wpckan-api.php';
 
 if (!class_exists('wpckan')) {
     class wpckan
@@ -113,7 +113,7 @@ if (!class_exists('wpckan')) {
             }
 
           //We do not use wpckan_output_template here, just require.
-          require 'templates/related_datasets_metabox.php';
+          require 'templates/related-datasets-metabox.php';
         }
 
         public function wpckan_render_archive_post_meta_box($post)
@@ -125,7 +125,7 @@ if (!class_exists('wpckan')) {
             $archive_group = get_post_meta($post->ID, 'wpckan_archive_post_group', true);
             $archive_freq = get_post_meta($post->ID, 'wpckan_archive_post_freq', true);
           //We do not use wpckan_output_template here, just require.
-          require 'templates/archive_post_metabox.php';
+          require 'templates/archive-post-metabox.php';
         }
 
         public function wpckan_save_post($post_ID)
