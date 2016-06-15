@@ -293,11 +293,56 @@ This feature archives the custom fields along with the title and description. If
 
 **WARNING** However, custom fields beginning with **_** or **wpckan_** will not be stored.
 
+## Feature 4: Show dataset detail
+
+The plugin exposes a shortcode which can be used to output the metadata and resources of a CKAN dataset, specified by id parameter
+
+* **id**: String.
+Unique identifier of the dataset
+
+Examples:
+```php
+[wpckan_dataset_detail id="ckan-dataset-one"]
+```
+
+```html
+<div class="wpckan_dataset_detail">
+	<h1 class="wpckan_dataset_title">title</h1>
+	<a href="#" class="wpckan_dataset_owner_org">Organization</a>
+	<p class="wpckan_dataset_notes">description</p>
+  <ul class="wpckan_dataset_tags">
+    <li class="wpckan_dataset_tag"><a href="#">Tag1</a></li>
+   	<li class="wpckan_dataset_tag"><a href="#">Tag2</a></li>
+  </ul>
+	<h2>Resources</h2>
+	<ul class="wpckan_dataset_resources">
+    <li class="wpckan_dataset_resource">
+			<img src="#"></img><a href="#">Resource1</a>
+		</li>
+		<li class="wpckan_dataset_resource">
+			<img src="#"></img><a href="#">Resource2</a>
+		</li>
+  </ul>
+	<h2>Additional info</h2>
+	<table class="wpckan_dataset_metadata_fields">
+    <tr class="wpckan_dataset_metadata_field">
+			<td>field name</td>
+			<td>field value</td>
+		</tr>
+  </table>
+</div>
+<div class="wpckan_dataset_list_pagination">
+<a href="#">Previous</a>
+<a href="#">Next</a>
+</div>
+```
+
 ## CORS Support disabled for CKAN >2.3
 
 Taken from http://docs.ckan.org/en/latest/changelog.html#id1:
 
 > Cross-Origin Resource Sharing (CORS) support is no longer enabled by default. Previously, Access-Control-Allow-* response headers were added for all requests, with Access-Control-Allow-Origin set to the wildcard value *.
+
 > To re-enable CORS, use the new ckan.cors configuration settings (ckan.cors.origin_allow_all and ckan.cors.origin_whitelist).
 
 So, mind that the CKAN instance which this plugin is used with needs to allow all origins or whitelist the domain where the wpckan is installed.

@@ -83,9 +83,38 @@
     } catch (Exception $e){
         wpckan_api_call_error("wpckan_api_query_datasets",$e->getMessage());
     }
-    // RESULTS
-    return $response['result'];
 
+    return $response['result'];
+  }
+
+  function wpckan_api_query_dataset_detail($atts) {
+
+    if (is_null(wpckan_get_ckan_settings()))
+      wpckan_api_settings_error("wpckan_api_query_dataset_detail");
+
+    if (!isset($atts['id']))
+      wpckan_api_call_error("wpckan_api_query_dataset_detail",null);
+
+    try{
+
+      $settings = wpckan_get_ckan_settings();
+      $ckanClient = CkanClient::factory($settings);
+      $commandName = 'GetDataset';
+      $arguments = array('id' => $atts['id']);
+      $command = $ckanClient->getCommand($commandName,$arguments);
+      $response = $command->execute();
+
+      wpckan_log("wpckan_api_query_dataset_detail commandName:" . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
+
+      if ($response['success']==false){
+        wpckan_api_call_error("wpckan_api_query_dataset_detail",null);
+      }
+
+    } catch (Exception $e){
+        wpckan_api_call_error("wpckan_api_query_dataset_detail",$e->getMessage());
+    }
+
+    return $response['result'];
   }
 
   function wpckan_api_get_organizations_list() {
