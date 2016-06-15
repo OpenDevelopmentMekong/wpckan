@@ -3,7 +3,7 @@
  * Plugin Name: wpckan
  * Plugin URI: http://www.lifeformapps.com/portfolio/wpckan/
  * Description: wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Alex Corbi (mail@lifeformapps.com)
  * Author URI: http://www.lifeformapps.com
  * License: GPLv3.
@@ -36,6 +36,13 @@ if (!class_exists('wpckan')) {
             add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
             add_shortcode('wpckan_number_of_related_datasets', array(&$this, 'wpckan_do_shortcode_get_number_of_related_datasets'));
             add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
+            add_action('admin_notices', array($this, 'check_requirements'));
+        }
+
+        function check_requirements(){
+          if (!wpckan_validate_settings_read()):
+            echo '<div class="error"><p>WPCKAN: Ckan API seems to be unresponsive or missconfigured, please check.</p></div>';
+          endif;
         }
 
         public function wpckan_register_plugin_styles($hook)
@@ -112,8 +119,8 @@ if (!class_exists('wpckan')) {
                 $related_datasets = json_decode($related_datasets_json, true);
             }
 
-          //We do not use wpckan_output_template here, just require.
-          require 'templates/related-datasets-metabox.php';
+            //We do not use wpckan_output_template here, just require.
+            require 'templates/related-datasets-metabox.php';
         }
 
         public function wpckan_render_archive_post_meta_box($post)
@@ -124,8 +131,9 @@ if (!class_exists('wpckan')) {
             $archive_orga = get_post_meta($post->ID, 'wpckan_archive_post_orga', true);
             $archive_group = get_post_meta($post->ID, 'wpckan_archive_post_group', true);
             $archive_freq = get_post_meta($post->ID, 'wpckan_archive_post_freq', true);
-          //We do not use wpckan_output_template here, just require.
-          require 'templates/archive-post-metabox.php';
+
+            //We do not use wpckan_output_template here, just require.
+            require 'templates/archive-post-metabox.php';
         }
 
         public function wpckan_save_post($post_ID)
