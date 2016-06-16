@@ -132,6 +132,9 @@ Specify the name (Not title) of a group available on the target CKAN instance in
 * **organization**:  (Optional)
 Specify the name (Not title) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
 
+* **type**:  (Optional)
+Specify the dataset type in order to filter custom dataset types.
+
 Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
 
 * **limit**: (Optional) Number.
@@ -169,6 +172,7 @@ Examples:
 [wpckan_number_of_related_datasets group="news" suffix=" datasets found in the news."]
 [wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
 [wpckan_number_of_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
+[wpckan_number_of_related_datasets limit="3" type='dataset']
 [wpckan_number_of_related_datasets blank_on_empty="true"]
 ```
 An example (corresponding to the last example above) showing how the information returned by this shortcode will be structured:

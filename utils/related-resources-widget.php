@@ -33,6 +33,9 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])) {
          $shortcode .= ' filter_fields=\''.$instance['filter_fields'].'\'';
      }
+     if (!empty($instance['type'])) {
+         $shortcode .= ' type="'.$instance['type'].'"';
+     }
      if (!empty($instance['limit']) && $instance['limit'] > 0) {
          $shortcode .= ' limit="'.$instance['limit'].'"';
      }
@@ -60,6 +63,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      $title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Related Resources', 'wpckan');
      $limit = !empty($instance['limit']) ? $instance['limit'] : 0;
      $filter_fields = isset($instance['filter_fields']) && json_decode($instance['filter_fields']) ? $instance['filter_fields'] : null;
+     $type = isset($instance['$type']) ? $instance['$type'] : 'dataset';
      $organization = isset($instance['organization']) ? $instance['organization'] : -1;
      $organization_list = [];
      if (function_exists('wpckan_api_get_organizations_list')) {
@@ -139,7 +143,15 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
       ?>" name="<?php echo $this->get_field_name('filter_fields');
       ?>" type="text" value="<?php echo esc_attr($filter_fields);
       ?>" placeholder="<?php _e('Specify valid JSON, otherwise not saved');
-      ?>"
+      ?>">
+    <label for="<?php echo $this->get_field_id('type');
+      ?>"><?php _e('Dataset type:');
+      ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id('type');
+      ?>" name="<?php echo $this->get_field_name('type');
+      ?>" type="text" value="<?php echo esc_attr($type);
+      ?>" placeholder="<?php _e('dataset, library_record, etc..');
+      ?>">
     <label for="<?php echo $this->get_field_id('limit');
      ?>"><?php _e('Limit:');
      ?></label>
@@ -166,6 +178,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      $instance['group'] = (!empty($new_instance['group'])) ? strip_tags($new_instance['group']) : '';
      $instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : '';
      $instance['filter_fields'] = (!empty($new_instance['filter_fields'])) ? strip_tags($new_instance['filter_fields']) : '';
+     $instance['type'] = (!empty($new_instance['type'])) ? strip_tags($new_instance['type']) : '';
 
      return $instance;
  }
