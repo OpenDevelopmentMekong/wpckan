@@ -31,7 +31,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
          $organization = ucwords(str_replace('-organization', '', $instance['organization']));
      }
      if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])) {
-         $shortcode .= ' filter_fields="'.$instance['filter_fields'].'"';
+         $shortcode .= ' filter_fields=\''.$instance['filter_fields'].'\'';
      }
      if (!empty($instance['limit']) && $instance['limit'] > 0) {
          $shortcode .= ' limit="'.$instance['limit'].'"';
