@@ -90,6 +90,11 @@
       $filter = $atts["filter"];
     }
 
+    $type = null;
+    if (array_key_exists("type",$atts)){
+      $type = $atts["type"];
+    }
+
     $filter_fields_json = NULL;
     if (array_key_exists("filter_fields",$atts)){
       $filter_fields_json = json_decode($atts["filter_fields"],true);
