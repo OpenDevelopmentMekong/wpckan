@@ -30,17 +30,15 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
          $shortcode .= ' organization="'.$instance['organization'].'"';
          $organization = ucwords(str_replace('-organization', '', $instance['organization']));
      }
+     if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])) {
+         $shortcode .= ' filter_fields="'.$instance['filter_fields'].'"';
+     }
      if (!empty($instance['limit']) && $instance['limit'] > 0) {
          $shortcode .= ' limit="'.$instance['limit'].'"';
      }
      $shortcode .= ' include_fields_dataset="title" include_fields_resources="format" blank_on_empty="true"]';
      $output = do_shortcode($shortcode);
 
-     $get_page_title = get_the_title();
-     $term = get_term_by('name', $get_page_title, 'category');
-     if ($term->parent == 0);
-     $taxonomy = $get_page_title;
-     $more_link = 'https://data.opendevelopmentmekong.net/dataset?odm_spatial_range='.$organization.'&groups='.$group.'&vocab_taxonomy='.$taxonomy;
      if (!empty($output) && $output != '') {
          echo $args['before_widget'];
          if (!empty($instance['title'])) {
@@ -48,7 +46,6 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
          }
 
          echo $output;
-         echo '<div style="text-align:right"><a href="'.$more_link.'" target="_blank">'.__('More...', 'wpckan').'</a></div>';
          echo $args['after_widget'];
      }
  }
@@ -62,7 +59,8 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
  {
      $title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Related Resources', 'wpckan');
      $limit = !empty($instance['limit']) ? $instance['limit'] : 0;
-     $organization = $instance['organization'];
+     $filter_fields = isset($instance['filter_fields']) && json_decode($instance['filter_fields']) ? $instance['filter_fields'] : null;
+     $organization = isset($instance['organization']) ? $instance['organization'] : -1;
      $organization_list = [];
      if (function_exists('wpckan_api_get_organizations_list')) {
          try {
@@ -70,7 +68,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
          } catch (Exception $e) {
          }
      }
-     $group = $instance['group'];
+     $group = isset($instance['group']) ? $instance['group'] : -1;
      $group_list = [];
      if (function_exists('wpckan_api_get_groups_list')) {
          try {
@@ -134,6 +132,14 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 }
      ?>
     </select>
+    <label for="<?php echo $this->get_field_id('filter_fields');
+      ?>"><?php _e('Additional filtering:');
+      ?></label>
+    <input class="widefat" id="<?php echo $this->get_field_id('filter_fields');
+      ?>" name="<?php echo $this->get_field_name('filter_fields');
+      ?>" type="text" value="<?php echo esc_attr($filter_fields);
+      ?>" placeholder="<?php _e('Specify valid JSON, otherwise not saved');
+      ?>"
     <label for="<?php echo $this->get_field_id('limit');
      ?>"><?php _e('Limit:');
      ?></label>
@@ -159,6 +165,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      $instance['organization'] = (!empty($new_instance['organization'])) ? strip_tags($new_instance['organization']) : '';
      $instance['group'] = (!empty($new_instance['group'])) ? strip_tags($new_instance['group']) : '';
      $instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : '';
+     $instance['filter_fields'] = (!empty($new_instance['filter_fields'])) ? strip_tags($new_instance['filter_fields']) : '';
 
      return $instance;
  }
