@@ -7,70 +7,50 @@
   * Api
   */
 
-  function wpckan_api_get_dataset($atts) {
-
-    if (is_null(wpckan_get_ckan_settings()))
-      wpckan_api_settings_error("wpckan_api_get_dataset");
-
-    if (!isset($atts['id']))
-      wpckan_api_call_error("wpckan_api_get_dataset",null);
-
-    try{
-
-      $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
-      $commandName = 'GetDataset';
-      $arguments = array('id' => $atts['id'], 'use_default_schema' => true);
-      $command = $ckanClient->getCommand($commandName,$arguments);
-      $response = $command->execute();
-
-      wpckan_log("wpckan_api_get_dataset commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
-
-      if ($response['success']==false){
-        wpckan_api_call_error("wpckan_api_get_dataset",null);
-      }
-
-    } catch (Exception $e){
-        wpckan_api_call_error("wpckan_api_get_dataset",$e->getMessage());
-    }
-
-    wpckan_log("wpckan_api_get_dataset: " . print_r($response['result'],true));
-    return $response['result'];
-
-  }
+  // function wpckan_api_get_dataset($atts) {
+  //
+  //   if (is_null(wpckan_get_ckan_settings()))
+  //     wpckan_api_settings_error("wpckan_api_get_dataset");
+  //
+  //   if (!isset($atts['id']))
+  //     wpckan_api_call_error("wpckan_api_get_dataset",null);
+  //
+  //   try{
+  //
+  //     $settings = wpckan_get_ckan_settings();
+  //     $ckanClient = CkanClient::factory($settings);
+  //     $commandName = 'GetDataset';
+  //     $arguments = array('id' => $atts['id'], 'use_default_schema' => true);
+  //     $command = $ckanClient->getCommand($commandName,$arguments);
+  //     $response = $command->execute();
+  //
+  //     wpckan_log("wpckan_api_get_dataset commandName: " . $commandName . " arguments: " . print_r($arguments,true) . " settings: " . print_r($settings,true));
+  //
+  //     if ($response['success']==false){
+  //       wpckan_api_call_error("wpckan_api_get_dataset",null);
+  //     }
+  //
+  //   } catch (Exception $e){
+  //       wpckan_api_call_error("wpckan_api_get_dataset",$e->getMessage());
+  //   }
+  //
+  //   wpckan_log("wpckan_api_get_dataset: " . print_r($response['result'],true));
+  //   return $response['result'];
+  //
+  // }
 
   function wpckan_api_query_datasets($atts) {
 
     if (is_null(wpckan_get_ckan_settings()))
       wpckan_api_settings_error("wpckan_api_query_datasets");
 
-    if (!isset($atts['query']))
-      wpckan_api_call_error("wpckan_api_query_datasets",null);
-
     try{
 
       $settings = wpckan_get_ckan_settings();
       $ckanClient = CkanClient::factory($settings);
       $commandName = 'PackageSearch';
-      $arguments = array('q' => $atts['query']);
-
-      if (isset($atts['limit'])){
-        $arguments['rows'] = (int)$atts['limit'];
-
-        if (isset($atts['page'])){
-          $page = (int)$atts['page'];
-          if ($page > 0) $arguments['start'] = (int)$atts['limit'] * ($page - 1);
-        }
-      }
-
-      $filter = null;
-      if (isset($atts['organization'])) $filter = $filter . "+owner_org:" . $atts['organization'];
-      if (isset($atts['organization']) && isset($atts['group'])) $filter = $filter . " ";
-      if (isset($atts['group'])) $filter = $filter . "+groups:" . $atts['group'];
-      if (isset($atts['type'])) $filter = $filter . "+type:" . $atts['type'];
-      if (!is_null($filter)){
-        $arguments["fq"] = $filter;
-      }
+      $arguments = compose_solr_query_from_attrs($atts);
+      
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
@@ -248,6 +228,11 @@
 
   function wpckan_api_search_package_with_id($id){
 
+    // Pass OR-separated list of ids if parameter is array
+    if (is_array($id)){
+      $id = '('. implode("OR ", $id).')';
+    }
+
     try{
 
       $settings = wpckan_get_ckan_settings();
@@ -401,6 +386,11 @@
 
     return $response['result'];
 
+  }
+
+  function wpckan_get_ckan_domain()
+  {
+      return get_option('setting_ckan_url');
   }
 
   /*

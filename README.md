@@ -34,13 +34,6 @@ Per default, this shortcode shows only name, description and format of the resou
 * **include_fields_extra**: (Optional) Comma-separated string.
 This shortcode outputs extra metadatafields. A list of attributes can specified to present more Information.
 
-* **format**: (Optional) Formating string
-This shortcode returns the data in pure data format instead of rendering HTML representation. Use inside page-templates!
-
-	*note that the resource description field is not available at the moment*
-
-	**Supported Formats:**
-  	* json
 * **limit**: (Optional) Number.
 Limits the amount of datasets shown by the shortcode string.
 
