@@ -253,7 +253,12 @@
 
     $arguments = array();
 
-    $fq = "?fq=";
+    // query
+    if (isset($attrs['query'])):
+      $arguments['q'] = $attrs['query'];
+    endif;
+
+    $fq = "";
 
     // group
     if (isset($attrs['group'])):
@@ -285,14 +290,16 @@
       endif;
     endif;
 
-    $arguments['fq'] = $fq;
+    if (!empty($fq)):
+      $arguments['fq'] = $fq;
+    endif;
 
     // limit
     if (isset($attrs['limit'])):
       $limit = (int)$attrs['limit'];
       $arguments['rows'] = $limit;
-      if (isset($atts['page'])):
-        $page = (int)$atts['page'];
+      if (isset($attrs['page'])):
+        $page = (int)$attrs['page'];
         if ($page > 0):
           $arguments['start'] = $limit * ($page - 1);
         endif;
