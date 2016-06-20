@@ -9,8 +9,9 @@
 
   function wpckan_api_query_datasets($atts) {
 
-    if (is_null(wpckan_get_ckan_settings()))
+    if (is_null(wpckan_get_ckan_settings())):
       wpckan_api_settings_error("wpckan_api_query_datasets");
+    endif;
 
     try{
 
