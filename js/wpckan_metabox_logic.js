@@ -107,27 +107,11 @@ function updateAndListDatasets(){
     console.log("updateAndListDatasets");
   }
 
-  for (index in datasets){
-    dataset_id = datasets[index]["dataset_id"];
-
-    if (dataset_id){
-      jQuery.ajax({
-        url: field.attr(CKAN_BASE_URL) + "/api/3/action/package_show?id=" + dataset_id,
-        context: document.body
-      }).done(function(res) {
-        if (DEBUG) {
-          console.log(res)
-        }
-        if (res["success"])
-          var dataset = res["result"];
-          var dataset_id = dataset["id"];
-          var dataset_title = dataset["title"];
-          addDataset(false,dataset_id,dataset_title);
-      });
-
-    }
-
+  for (var index in datasets){
+    dataset = datasets[index];
+    addDataset(false,dataset["dataset_id"],dataset["dataset_title"]);
   }
+
 }
 
 function getFormValue(){
