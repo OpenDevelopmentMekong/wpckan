@@ -60,7 +60,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
   */
  public function form( $instance ) {
   // outputs the options form on admin
-  $title = ! empty( $instance['title'] ) ? __( $instance['title'], 'wpckan') : __( 'Related Resources', 'wpckan' );
+  $title = ! empty( $instance['title'] ) ? __( $instance['title'], 'wpckan') : __( 'Related datasets', 'wpckan' );
   $query = ! empty( $instance['query'] ) ? $instance['query'] : null;
   $limit = ! empty( $instance['limit'] ) ? $instance['limit'] : 0;
   $more_text = ! empty( $instance['more_text'] ) ? $instance['more_text'] : 'Search for more';

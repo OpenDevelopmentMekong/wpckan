@@ -7,7 +7,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
         parent::__construct(
         'wpckan_related_resources_widget',
         __('WPCKAN Related Datasets', 'wpckan'),
-        array('description' => __('Display post related resources.', 'wpckan'))
+        array('description' => __('Display post related datasets.', 'wpckan'))
         );
     }
 
@@ -32,12 +32,15 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      }
      if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])) {
          $shortcode .= ' filter_fields=\''.$instance['filter_fields'].'\'';
+         $filter_fields = $instance['filter_fields'];
      }
      if (!empty($instance['type'])) {
          $shortcode .= ' type="'.$instance['type'].'"';
+         $type = $instance['type'];
      }
      if (!empty($instance['limit']) && $instance['limit'] > 0) {
          $shortcode .= ' limit="'.$instance['limit'].'"';
+         $limit = $instance['limit'];
      }
      $shortcode .= ' include_fields_dataset="title" include_fields_resources="format" blank_on_empty="true"]';
      $output = do_shortcode($shortcode);
@@ -60,7 +63,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
   */
  public function form($instance)
  {
-     $title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Related Resources', 'wpckan');
+     $title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Related datasets', 'wpckan');
      $limit = !empty($instance['limit']) ? $instance['limit'] : 0;
      $filter_fields = isset($instance['filter_fields']) && json_decode($instance['filter_fields']) ? $instance['filter_fields'] : null;
      $type = isset($instance['$type']) ? $instance['$type'] : 'dataset';
