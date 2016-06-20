@@ -1,12 +1,7 @@
 const DATASET_ID_ATTR = "wpckan-dataset-id";
 const DATASET_TITLE_ATTR = "wpckan-dataset-title";
-const DATASET_NAME_ATTR = "wpckan-dataset-name";
-const DATASET_GROUPS_ATTR = "wpckan-dataset-groups";
-const DATASET_EXTRAS_ATTR = "wpckan-dataset-extras";
-const DATASET_NUM_RESOURCES_ATTR = "wpckan-dataset-num-resources";
-const DATASET_ORG_ATTR = "wpckan-dataset-org";
-const CKAN_API_URL = "wpckan-api-url"
-const CKAN_BASE_URL = "wpckan-base-url"
+const CKAN_BASE_URL = "wpckan-base-url";
+const CKAN_API_URL = "wpckan-api-url";
 
 var field;
 var datasetList;
@@ -17,7 +12,9 @@ var DEBUG = false;
 var datasets = [];
 
 jQuery( document ).ready(function() {
-  if (DEBUG) console.log("wpckan_metabox_logic.js document ready");
+  if (DEBUG) {
+    console.log("wpckan_metabox_logic.js document ready");
+  }
 
   //Init div elements
   field = jQuery('#wpckan_related_datasets_add_field');
@@ -42,13 +39,8 @@ jQuery( document ).ready(function() {
         if (json.success){
           return jQuery.map(json.result.results, function (dataset) {
             return {
-              id: dataset["id"],
-              title: dataset["title"]+' ['+ listGroups(dataset["groups"])+']'+' ('+dataset["num_resources"]+')',
-              name: dataset["name"],
-              groups: JSON.stringify(dataset["groups"]),
-              extras: JSON.stringify(dataset["extras"]),
-              num_resources: dataset["num_resources"],
-              owner_org: dataset["owner_org"]
+              id: dataset.id,
+              title: dataset.title
             };
           });
         }
@@ -70,20 +62,10 @@ jQuery( document ).ready(function() {
     if (DEBUG) {
       console.log(item["id"]);
       console.log(item["title"]);
-      console.log(item["name"]);
-      console.log(item["groups"]);
-      console.log(item["extras"]);
-      console.log(item["num_resources"]);
-      console.log(item["owner_org"]);
     }
 
     jQuery(this).attr(DATASET_ID_ATTR,item["id"]);
     jQuery(this).attr(DATASET_TITLE_ATTR,escape(item["title"]));
-    jQuery(this).attr(DATASET_NAME_ATTR,item["name"]);
-    jQuery(this).attr(DATASET_GROUPS_ATTR,item["groups"]);
-    jQuery(this).attr(DATASET_EXTRAS_ATTR,item["extras"]);
-    jQuery(this).attr(DATASET_NUM_RESOURCES_ATTR,item["num_resources"]);
-    jQuery(this).attr(DATASET_ORG_ATTR,item["owner_org"]);
     addButton.removeClass("disabled");
   });
 
@@ -106,11 +88,6 @@ function wpckan_related_dataset_metabox_add(){
 
   var dataset_id = field.attr(DATASET_ID_ATTR);
   var dataset_title = field.attr(DATASET_TITLE_ATTR);
-  var dataset_url = field.attr(CKAN_BASE_URL) + "/dataset/" + field.attr(DATASET_NAME_ATTR);
-  var dataset_groups = field.attr(DATASET_GROUPS_ATTR);
-  var dataset_extras = field.attr(DATASET_EXTRAS_ATTR);
-  var dataset_num_resources = field.attr(DATASET_NUM_RESOURCES_ATTR);
-  var dataset_org = field.attr(DATASET_ORG_ATTR);
 
   var dataset = getDatasetWithId(dataset_id);
   if (dataset){
@@ -119,67 +96,49 @@ function wpckan_related_dataset_metabox_add(){
   }
 
   if (dataset_id){
-   addDataset(true,dataset_id,dataset_title,dataset_url,dataset_groups,dataset_extras,dataset_num_resources,dataset_org);
+   addDataset(true,dataset_id,dataset_title);
    clearField();
   }
 
 }
 
-function listGroups(dataset_groups){
-  var groups = [];
-  for (index in dataset_groups){
-    group = dataset_groups[index];
-    groups.push(group["title"]);
-  }
-  return groups.join();
-}
-
 function updateAndListDatasets(){
-  if (DEBUG) console.log("updateAndListDatasets");
-
-  for (index in datasets){
-    dataset_id = datasets[index]["dataset_id"];
-
-    if (dataset_id){
-      jQuery.ajax({
-        url: field.attr(CKAN_BASE_URL) + "/api/3/action/package_show?id=" + dataset_id,
-        context: document.body
-      }).done(function(res) {
-        if (DEBUG) console.log(res)
-        if (res["success"])
-          var dataset = res["result"];
-          var dataset_id = dataset["id"];
-          var dataset_title = dataset["title"]+' ['+ listGroups(dataset["groups"])+']'+' ('+dataset["num_resources"]+')';
-          var dataset_url = field.attr(CKAN_BASE_URL) + "/dataset/" + dataset["id"];
-          var dataset_groups = JSON.stringify(dataset["groups"]);
-          var dataset_extras = JSON.stringify(dataset["extras"]);
-          var dataset_n_resources = dataset["num_resources"];
-          var dataset_org = dataset["owner_org"];
-          addDataset(false,dataset_id,dataset_title,dataset_url,dataset_groups,dataset_extras,dataset_n_resources,dataset_org);
-      });
-
-    }
-
+  if (DEBUG) {
+    console.log("updateAndListDatasets");
   }
+
+  for (var index in datasets){
+    dataset = datasets[index];
+    addDataset(false,dataset["dataset_id"],dataset["dataset_title"]);
+  }
+
 }
 
 function getFormValue(){
   var datasets_json = jQuery("#wpckan_add_related_datasets_datasets").val();
-  if (DEBUG) console.log("getFormValue "+ datasets_json);
+  if (DEBUG) {
+    console.log("getFormValue "+ datasets_json);
+  }
   if (datasets_json) datasets = JSON.parse(datasets_json);
 }
 
 function setFormValue(){
   var datasets_json = JSON.stringify(datasets);
-  if (DEBUG) console.log("setFormValue "+ datasets_json);
+  if (DEBUG) {
+    console.log("setFormValue "+ datasets_json);
+  }
   jQuery("#wpckan_add_related_datasets_datasets").val(datasets_json);
 }
 
-function addDataset(save_in_array,dataset_id,dataset_title,dataset_url,dataset_groups,dataset_extras,dataset_num_resources,dataset_org){
+function addDataset(save_in_array,dataset_id,dataset_title){
+
+  var dataset_url = field.attr(CKAN_BASE_URL) + "/dataset/" + dataset_id;
 
   if (save_in_array){
-    datasets.push({"dataset_id": dataset_id, "dataset_title": dataset_title, "dataset_url": dataset_url, "dataset_groups": dataset_groups, "dataset_extras": dataset_extras, "dataset_num_resources": dataset_num_resources, "dataset_org": dataset_org});
-    if (DEBUG) console.log("Added dataset with id: " + dataset_id + " datasets in array: "+ datasets.length);
+    datasets.push({"dataset_id": dataset_id, "dataset_title": dataset_title});
+    if (DEBUG) {
+      console.log("Added dataset with id: " + dataset_id + " datasets in array: "+ datasets.length);
+    }
     setFormValue();
   }
 

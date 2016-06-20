@@ -3,16 +3,15 @@
  * Plugin Name: wpckan
  * Plugin URI: http://www.lifeformapps.com/portfolio/wpckan/
  * Description: wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: Alex Corbi (mail@lifeformapps.com)
  * Author URI: http://www.lifeformapps.com
  * License: GPLv3.
  */
  require 'vendor/autoload.php';
- include_once plugin_dir_path(__FILE__).'utils/ckan-api.php';
  include_once plugin_dir_path(__FILE__).'utils/datastore-api.php';
- include_once plugin_dir_path(__FILE__).'utils/related-resources-widget.php';
- include_once plugin_dir_path(__FILE__).'utils/query-resources-widget.php';
+ include_once plugin_dir_path(__FILE__).'widgets/related-resources-widget.php';
+ include_once plugin_dir_path(__FILE__).'widgets/query-resources-widget.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-exceptions.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-utils.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-api.php';
@@ -200,15 +199,15 @@ if (!class_exists('wpckan')) {
          */
         public function init_settings()
         {
-            register_setting('wpckan-group', 'setting_ckan_url', 'wpckan_sanitize_url');
-            register_setting('wpckan-group', 'setting_ckan_api');
-            register_setting('wpckan-group', 'setting_archive_freq');
-            register_setting('wpckan-group', 'setting_ckan_organization');
-            register_setting('wpckan-group', 'setting_ckan_group');
-            register_setting('wpckan-group', 'setting_ckan_valid_settings_read');
-            register_setting('wpckan-group', 'setting_ckan_valid_settings_write');
-            register_setting('wpckan-group', 'setting_log_path');
-            register_setting('wpckan-group', 'setting_log_enabled');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_url', 'wpckan_sanitize_url');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_api');
+            register_setting('wpckan-group', 'wpckan_setting_archive_freq');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_organization');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_group');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_valid_settings_read');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_valid_settings_write');
+            register_setting('wpckan-group', 'wpckan_setting_log_path');
+            register_setting('wpckan-group', 'wpckan_setting_log_enabled');
 
             foreach (get_post_types() as $post_type) {
                 $settings_name = 'setting_supported_post_types_'.$post_type;

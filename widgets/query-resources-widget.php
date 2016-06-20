@@ -1,15 +1,12 @@
 <?php
 
-class Wpckan_Query_Resources_Widget extends WP_Widget {
+class Wpckan_Query_Resources_Widget extends WP_Widget
+{
 
- /**
-  * Sets up the widgets name etc
-  */
  public function __construct() {
-  // widget actual processes
   parent::__construct(
    'wpckan_query_resources_widget',
-   __('WPCKAN Query Resources', 'wpckan'),
+   __('WPCKAN Query Datasets', 'wpckan'),
    array('description' => __('Query resources and displays them in a post or page.', 'wpckan'))
   );
  }
@@ -60,12 +57,12 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
   */
  public function form( $instance ) {
   // outputs the options form on admin
-  $title = ! empty( $instance['title'] ) ? __( $instance['title'], 'wpckan') : __( 'Related Resources', 'wpckan' );
-  $query = $instance['query'];
+  $title = ! empty( $instance['title'] ) ? __( $instance['title'], 'wpckan') : __( 'Related datasets', 'wpckan' );
+  $query = ! empty( $instance['query'] ) ? $instance['query'] : null;
   $limit = ! empty( $instance['limit'] ) ? $instance['limit'] : 0;
   $more_text = ! empty( $instance['more_text'] ) ? $instance['more_text'] : 'Search for more';
   $more_link = ! empty( $instance['more_link'] ) ? $instance['more_link'] : '';
-  $organization = $instance['organization'];
+  $organization = ! empty( $instance['organization'] ) ? $instance['organization'] : -1;
   $organization_list = [];
   if (function_exists('wpckan_api_get_organizations_list')){
     try{
@@ -74,7 +71,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
 
     }
   }
-  $group = $instance['group'];
+  $group = ! empty( $instance['group'] ) ? $instance['group'] : -1;
   $group_list = [];
   if (function_exists('wpckan_api_get_groups_list')){
     try{
@@ -108,7 +105,6 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
     <input class="widefat" type="number" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" value="<?php echo $limit; ?>">
     <label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More dataset: Link label' ); ?></label>
     <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'more_text' ); ?>" name="<?php echo $this->get_field_name( 'more_text' ); ?>" placeholder="Search for more" value="<?php echo esc_attr( $more_text ); ?>">
-
     <label for="<?php echo $this->get_field_id( 'more_link' ); ?>"><?php _e( 'More dataset: Link (URL)' ); ?></label>
     <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'more_link' ); ?>" name="<?php echo $this->get_field_name( 'more_link' ); ?>" value="<?php echo esc_attr( $more_link ); ?>">
   </p>

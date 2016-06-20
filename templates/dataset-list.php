@@ -2,29 +2,33 @@
 
 <?php
   $include_fields_dataset = array();
-  array_push($include_fields_dataset,"title"); //ensure that this field is present
-  array_push($include_fields_dataset,"notes"); //ensure that this field is present
+  array_push($include_fields_dataset,"title");
+  array_push($include_fields_dataset,"notes");
   $include_fields_resources = array();
-  array_push($include_fields_resources,"name"); //ensure that this field is present
-  array_push($include_fields_resources,"description"); //ensure that this field is present
-  if (array_key_exists("include_fields_dataset",$atts))
+  array_push($include_fields_resources,"name");
+  array_push($include_fields_resources,"description");
+  if (array_key_exists("include_fields_dataset",$atts)):
     $include_fields_dataset = explode(",",$atts["include_fields_dataset"]);
-  if (array_key_exists("include_fields_resources",$atts))
+  endif;
+  if (array_key_exists("include_fields_resources",$atts)):
     $include_fields_resources = explode(",",$atts["include_fields_resources"]);
-  if (array_key_exists("related_dataset",$atts)) $count = count($atts["related_dataset"]);
-  if (array_key_exists("count",$atts)) $count = $atts["count"];
+  endif;
+  if (array_key_exists("related_dataset",$atts)):
+    $count = count($atts["related_dataset"]);
+  endif;
+  if (array_key_exists("count",$atts)):
+    $count = $atts["count"];
+  endif;
 
-// field extras
   $include_fields_extra = array();
-  if (array_key_exists("include_fields_extra",$atts))
+  if (array_key_exists("include_fields_extra",$atts)):
     $include_fields_extra = explode(",",$atts["include_fields_extra"]);
-  // insert type
+  endif;
 
 ?>
 
 <div class="wpckan_dataset_list">
   <ul>
-
   <?php foreach ($data as $dataset){ ?>
     <li>
       <div class="wpckan_dataset">
@@ -76,7 +80,6 @@
                       <?php if (array_key_exists("created",$resource) && !wpckan_is_null_or_empty_string($resource["created"]) && in_array("created",$include_fields_resources)) {?>
                         <div class="wpckan_resource_created"><?php echo $resource["created"] ?></div>
                       <?php } ?>
-                      <div class="wpckan_resource_language"><?php echo $resource["odm_language"][0] ?></div>
                   </div>
                 </li>
               <?php } ?>

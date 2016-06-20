@@ -6,31 +6,31 @@
 
         <?php
           wpckan_log("Rendering settings.php");
-          $ckan_url = get_option('setting_ckan_url');
-          $ckan_api = get_option('setting_ckan_api');
-          $logging_path = get_option('setting_log_path');
-          $logging_enabled = get_option('setting_log_enabled');
+          $ckan_url = get_option('wpckan_setting_ckan_url');
+          $ckan_api = get_option('wpckan_setting_ckan_api');
+          $logging_path = get_option('wpckan_setting_log_path');
+          $logging_enabled = get_option('wpckan_setting_log_enabled');
           if (!$logging_path)
             $logging_path = WPCKAN_DEFAULT_LOG;
           $valid_connection_read = wpckan_validate_settings_read();
           $valid_connection_write = wpckan_validate_settings_write();
-          update_option('setting_ckan_valid_settings_read',$valid_connection_read);
-          update_option('setting_ckan_valid_settings_write',$valid_connection_write);
+          update_option('wpckan_setting_ckan_valid_settings_read',$valid_connection_read);
+          update_option('wpckan_setting_ckan_valid_settings_write',$valid_connection_write);
         ?>
 
         <table class="form-table">
           <th scope="row"><label><h3><?php _e('Connecting to CKAN','wpckan') ?></h3></label></th>
           <tr valign="top">
-              <th scope="row"><label for="setting_ckan_url"><?php _e('CKAN Url','wpckan') ?></label></th>
+              <th scope="row"><label for="wpckan_setting_ckan_url"><?php _e('CKAN Url','wpckan') ?></label></th>
               <td>
-                <input type="text" name="setting_ckan_url" id="setting_ckan_url" value="<?php echo $ckan_url ?>"/>
+                <input type="text" name="wpckan_setting_ckan_url" id="wpckan_setting_ckan_url" value="<?php echo $ckan_url ?>"/>
                 <p class="description"><?php _e('Specify protocol such as http:// or https://.','wpckan') ?>.</p>
               </td>
           </tr>
           <tr valign="top">
-              <th scope="row"><label for="setting_ckan_api"><?php _e('CKAN Api key','wpckan') ?></label></th>
+              <th scope="row"><label for="wpckan_setting_ckan_api"><?php _e('CKAN Api key','wpckan') ?></label></th>
               <td>
-                <input type="text" name="setting_ckan_api" id="setting_ckan_api" value="<?php echo get_option('setting_ckan_api'); ?>"/>
+                <input type="text" name="wpckan_setting_ckan_api" id="wpckan_setting_ckan_api" value="<?php echo get_option('wpckan_setting_ckan_api'); ?>"/>
                 <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan') ?>.</p>
               </td>
           </tr>
@@ -65,15 +65,15 @@
           <!-- Logging -->
           <th scope="row"><label><h3><?php _e('Logging','wpckan') ?></h3></label></th>
           <tr valign="top">
-            <th scope="row"><label for="setting_log_enabled"><?php _e('Enable log','wpckan') ?></label></th>
+            <th scope="row"><label for="wpckan_setting_log_enabled"><?php _e('Enable log','wpckan') ?></label></th>
             <td>
-              <input type="checkbox" name="setting_log_enabled" id="setting_log_enabled" <?php if ($logging_enabled)  echo 'checked="true"'; ?>/>
+              <input type="checkbox" name="wpckan_setting_log_enabled" id="wpckan_setting_log_enabled" <?php if ($logging_enabled)  echo 'checked="true"'; ?>/>
             </td>
           </tr>
           <tr valign="top">
-            <th scope="row"><label for="setting_log_path"><?php _e('Path','wpckan') ?></label></th>
+            <th scope="row"><label for="wpckan_setting_log_path"><?php _e('Path','wpckan') ?></label></th>
             <td>
-              <input type="text" name="setting_log_path" id="setting_log_path" value="<?php echo $logging_path ?>"/>
+              <input type="text" name="wpckan_setting_log_path" id="wpckan_setting_log_path" value="<?php echo $logging_path ?>"/>
               <p class="description"><?php _e('Path where logs are going to be stored. Mind permissions.','wpckan') ?></p>
             </td>
           </tr>

@@ -113,61 +113,61 @@ msgstr ""
 msgid "Path where logs are going to be stored. Mind permissions."
 msgstr ""
 
-#: utils/query-resources-widget.php:12
+#: widgets/query-resources-widget.php:12
 msgid "WPCKAN Query Resources"
 msgstr ""
 
-#: utils/query-resources-widget.php:13
+#: widgets/query-resources-widget.php:13
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: utils/query-resources-widget.php:63 utils/related-resources-widget.php:74
+#: widgets/query-resources-widget.php:63 widgets/related-resources-widget.php:74
 msgid "Related Resources"
 msgstr ""
 
-#: utils/query-resources-widget.php:89 utils/related-resources-widget.php:97
+#: widgets/query-resources-widget.php:89 widgets/related-resources-widget.php:97
 msgid "Title:"
 msgstr ""
 
-#: utils/query-resources-widget.php:91
+#: widgets/query-resources-widget.php:91
 msgid "Query:"
 msgstr ""
 
-#: utils/query-resources-widget.php:93 utils/related-resources-widget.php:99
+#: widgets/query-resources-widget.php:93 widgets/related-resources-widget.php:99
 msgid "CKAN Organization:"
 msgstr ""
 
-#: utils/query-resources-widget.php:95 utils/query-resources-widget.php:102
-#: utils/related-resources-widget.php:101
-#: utils/related-resources-widget.php:108
+#: widgets/query-resources-widget.php:95 widgets/query-resources-widget.php:102
+#: widgets/related-resources-widget.php:101
+#: widgets/related-resources-widget.php:108
 msgid "All"
 msgstr ""
 
-#: utils/query-resources-widget.php:100 utils/related-resources-widget.php:106
+#: widgets/query-resources-widget.php:100 widgets/related-resources-widget.php:106
 msgid "CKAN Group:"
 msgstr ""
 
-#: utils/query-resources-widget.php:107 utils/related-resources-widget.php:113
+#: widgets/query-resources-widget.php:107 widgets/related-resources-widget.php:113
 msgid "Limit:"
 msgstr ""
 
-#: utils/query-resources-widget.php:109
+#: widgets/query-resources-widget.php:109
 msgid "More dataset: Link label"
 msgstr ""
 
-#: utils/query-resources-widget.php:112
+#: widgets/query-resources-widget.php:112
 msgid "More dataset: Link (URL)"
 msgstr ""
 
-#: utils/related-resources-widget.php:12
+#: widgets/related-resources-widget.php:12
 msgid "WPCKAN Related Resources"
 msgstr ""
 
-#: utils/related-resources-widget.php:13
+#: widgets/related-resources-widget.php:13
 msgid "Display post related resources."
 msgstr ""
 
-#: utils/related-resources-widget.php:56
+#: widgets/related-resources-widget.php:56
 msgid "More..."
 msgstr ""
 

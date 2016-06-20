@@ -66,94 +66,22 @@
 
     $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
     $related_datasets = array();
-    if (!wpckan_is_null_or_empty_string($related_datasets_json))
+    if (!wpckan_is_null_or_empty_string($related_datasets_json)):
       $related_datasets = json_decode($related_datasets_json,true);
-
-    if (array_key_exists("group",$atts))
-      $filter_group = $atts["group"];
-    if (array_key_exists("organization",$atts)){
-      $filter_organization = $atts["organization"];
-    }
-
-    $limit = 0;
-    if (array_key_exists("limit",$atts)){
-      $limit = (int)($atts["limit"]);
-    }
-
-    $page = 0;
-    if (array_key_exists("limit",$atts) && array_key_exists("page",$atts)){
-      $page = (int)($atts["page"]);
-    }
-
-    $filter = WPCKAN_FILTER_ALL;
-    if (array_key_exists("filter",$atts)){
-      $filter = $atts["filter"];
-    }
-
-    $filter_fields_json = NULL;
-    if (array_key_exists("filter_fields",$atts)){
-      $filter_fields_json = json_decode($atts["filter_fields"],true);
-    }
+    endif;
 
     $blank_on_empty = false;
     if (array_key_exists("blank_on_empty",$atts)){
       $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
     }
 
-    $count = 0;
-    $dataset_array = array();
-    $atts["related_datasets"] = $related_datasets;
-    foreach ($related_datasets as $dataset){
+    // Add ids attribute to constraint search
+    $atts['ids'] = array_map(function($item){
+      return $item['dataset_id'];
+    }, $related_datasets);
+    $result = wpckan_api_query_datasets($atts);
+    $dataset_array = $result["results"];
 
-      $qualifies_group = false;
-      $qualifies_organization = false;
-
-      if (!isset($filter_group))
-       $qualifies_group = true;
-      if (!isset($filter_organization))
-       $qualifies_organization = true;
-
-      // Check if dataset belongs to group
-      if (isset($filter_group) && !$qualifies_group){
-        $groups = json_decode($dataset["dataset_groups"], true);
-        if ($groups){
-         foreach ($groups as $group){
-           if (strtolower($filter_group) == strtolower($group["name"])){
-            $qualifies_group = true;
-           }
-         }
-        }
-      }
-
-      // Check if dataset belongs to organization
-      if (isset($filter_organization) && isset($dataset["dataset_org"]) && !$qualifies_organization){
-        try{
-          $organization = wpckan_api_get_organization($dataset["dataset_org"]);
-          if ( $organization["name"] == $filter_organization){
-           $qualifies_organization = true;
-          }
-        }catch(Exception $e){
-          wpckan_log($e->getMessage());
-        }
-      }
-
-      if (($page == 0) || (($count >= (($page-1) * $limit)) && ($count <= ($page * $limit)))){
-       if ($qualifies_organization && $qualifies_group){
-         $dataset_atts = array("id" => $dataset["dataset_id"]);
-         try{
-           if ($filter == WPCKAN_FILTER_ALL || (($filter == WPCKAN_FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-            if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
-             array_push($dataset_array,wpckan_api_get_dataset($dataset_atts));
-            }
-           }
-         }catch(Exception $e){
-           wpckan_log($e->getMessage());
-         }
-         if (($limit != 0) && (count($dataset_array) >= $limit)) break;
-       }
-       $count++;
-      }
-    }
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
 
@@ -165,79 +93,21 @@
 
     $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
     $related_datasets = array();
-    if (!wpckan_is_null_or_empty_string($related_datasets_json))
-    $related_datasets = json_decode($related_datasets_json,true);
-
-    if (array_key_exists("group",$atts))
-      $filter_group = $atts["group"];
-    if (array_key_exists("organization",$atts)){
-      $filter_organization = $atts["organization"];
-    }
-
-    $filter = WPCKAN_FILTER_ALL;
-    if (array_key_exists("filter",$atts)){
-      $filter = $atts["filter"];
-    }
-
-    $filter_fields_json = NULL;
-    if (array_key_exists("filter_fields",$atts)){
-      $filter_fields_json = json_decode($atts["filter_fields"],true);
-    }
+    if (!wpckan_is_null_or_empty_string($related_datasets_json)):
+      $related_datasets = json_decode($related_datasets_json,true);
+    endif;
 
     $blank_on_empty = false;
     if (array_key_exists("blank_on_empty",$atts)){
       $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
     }
 
-    $dataset_array = array();
-    foreach ($related_datasets as $dataset){
-
-      $qualifies_group = false;
-      $qualifies_organization = false;
-
-      if (!isset($filter_group))
-       $qualifies_group = true;
-      if (!isset($filter_organization))
-       $qualifies_organization = true;
-
-      // Check if dataset belongs to group
-      if (isset($filter_group) && !$qualifies_group){
-        $groups = json_decode($dataset["dataset_groups"], true);
-        if ($groups){
-         foreach ($groups as $group){
-           if (strtolower($filter_group) == strtolower($group["name"])){
-            $qualifies_group = true;
-           }
-         }
-        }
-      }
-
-      // Check if dataset belongs to organization
-      if (isset($filter_organization) && isset($dataset["dataset_org"]) && !$qualifies_organization){
-        try{
-          $organization = wpckan_api_get_organization($dataset["dataset_org"]);
-          if ( $organization["name"] == $filter_organization){
-           $qualifies_organization = true;
-          }
-        }catch(Exception $e){
-          wpckan_log($e->getMessage());
-        }
-      }
-
-      if ($qualifies_organization && $qualifies_group){
-        $dataset_atts = array("id" => $dataset["dataset_id"]);
-        try{
-         if ($filter == WPCKAN_FILTER_ALL || (($filter == WPCKAN_FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-          if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
-           array_push($dataset_array,$dataset_atts);
-          }
-         }
-        }catch(Exception $e){
-          wpckan_log($e->getMessage());
-        }
-        if (array_key_exists("limit",$atts) && (count($dataset_array) >= (int)($atts["limit"]))) break;
-      }
-    }
+    // Add ids attribute to constraint search
+    $atts['ids'] = array_map(function($item){
+      return $item['dataset_id'];
+    }, $related_datasets);
+    $result = wpckan_api_query_datasets($atts);
+    $dataset_array = $result["results"];
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
@@ -257,42 +127,15 @@
       wpckan_log($e->getMessage());
     }
 
-    $filter = WPCKAN_FILTER_ALL;
-    if (array_key_exists("filter",$atts)){
-      $filter = $atts["filter"];
-    }
-
-    $filter_fields_json = NULL;
-    if (array_key_exists("filter_fields",$atts)){
-      $filter_fields_json = json_decode($atts["filter_fields"],true);
-    }
-
     $blank_on_empty = false;
     if (array_key_exists("blank_on_empty",$atts)){
       $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
     }
 
-    $filtered_dataset_array = array();
-    foreach ($dataset_array as $dataset){
-     if ($filter == WPCKAN_FILTER_ALL || (($filter == WPCKAN_FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-      if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
-       array_push($filtered_dataset_array,$dataset);
-      }
-     }
-    }
-
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
 
-    if (array_key_exists("format",$atts)){
-      if ($atts["format"]=="json") {
-        $json= wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list-format-json.php',$filtered_dataset_array,$atts);
-        return $json;
-      }
-    }
-    else{
-      return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/ddataset-listphp',$filtered_dataset_array,$atts);
-    }
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list.php',$dataset_array,$atts);
   }
 
   /*
@@ -310,7 +153,7 @@
   function wpckan_get_link_to_dataset($dataset_name){
     wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
 
-    return get_option('setting_ckan_url') . "/dataset/" . $dataset_name;
+    return get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
   }
 
   function wpckan_get_link_to_resource($dataset_name,$resource_id){
@@ -324,13 +167,13 @@
   */
 
   function wpckan_log($text) {
-    if (!get_option('setting_log_enabled')) return;
+    if (!get_option('wpckan_setting_log_enabled')) return;
 
     $bt = debug_backtrace();
     $caller = array_shift($bt);
 
-    if (!wpckan_is_null_or_empty_string(get_option('setting_log_path')))
-      Analog::handler(Handler\File::init (get_option('setting_log_path')));
+    if (!wpckan_is_null_or_empty_string(get_option('wpckan_setting_log_path')))
+      Analog::handler(Handler\File::init (get_option('wpckan_setting_log_path')));
     else
       Analog::handler(Handler\File::init (WPCKAN_DEFAULT_LOG));
 
@@ -340,6 +183,75 @@
   /*
   * Utilities
   */
+
+  function compose_solr_query_from_attrs($attrs){
+
+    $arguments = array();
+
+    // query
+    if (isset($attrs['query'])):
+      $arguments['q'] = $attrs['query'];
+    endif;
+
+    $fq = "";
+
+    // Ids
+    if (isset($attrs['ids'])):
+      $joined_ids =  $attrs['ids'];
+      if (is_array($attrs['ids'])):
+        $joined_ids = implode(" OR ", $attrs['ids']);
+      endif;
+      $fq = $fq . '+id:(' . $joined_ids . ')';
+    endif;
+
+    // group
+    if (isset($attrs['group'])):
+      $fq = $fq . '+groups:' . $attrs['group'];
+    endif;
+
+    // organization
+    if (isset($attrs['organization'])):
+      $fq = $fq . '+owner_org:' . $attrs['organization'];
+    endif;
+
+    // type
+    if (isset($attrs['type'])):
+      $fq = $fq . '+type:' . $attrs['type'];
+    endif;
+
+    // filter_fields
+    if (isset($attrs['filter_fields'])):
+      $filter_fields_json = json_decode($attrs['filter_fields'],true);
+      foreach ($filter_fields_json as $field => $value):
+        $fq = $fq . '+' . $field . ':' . $value;
+      endforeach;
+    endif;
+
+    // filter
+    if (isset($attrs['filter'])):
+      if ((int)$attrs['filter'] == 1):
+        $fq = $fq . '+num_resources:[1 TO *]';
+      endif;
+    endif;
+
+    if (!empty($fq)):
+      $arguments['fq'] = urldecode($fq);
+    endif;
+
+    // limit
+    if (isset($attrs['limit'])):
+      $limit = (int)$attrs['limit'];
+      $arguments['rows'] = $limit;
+      if (isset($attrs['page'])):
+        $page = (int)$attrs['page'];
+        if ($page > 0):
+          $arguments['start'] = $limit * ($page - 1);
+        endif;
+      endif;
+    endif;
+
+    return $arguments;
+  }
 
   function wpckan_is_supported_post_type($post_type){
    $settings_name =  "setting_supported_post_types_" . $post_type;
@@ -424,7 +336,7 @@
   }
 
   function wpckan_get_complete_url_for_dataset($dataset){
-    return get_option('setting_ckan_url') . "/dataset/" . $dataset["name"];
+    return get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset["name"];
   }
 
   function wpckan_get_group_names_for_user(){
@@ -466,15 +378,15 @@
   }
 
   function wpckan_validate_settings_write(){
-    return !wpckan_is_null_or_empty_string(get_option('setting_ckan_api'));
+    return !wpckan_is_null_or_empty_string(get_option('wpckan_setting_ckan_api'));
   }
 
   function wpckan_get_ckan_settings(){
 
     $settings = array(
-      'baseUrl' => get_option('setting_ckan_url') . "/api/",
+      'baseUrl' => get_option('wpckan_setting_ckan_url') . "/api/",
       'scheme' => 'http',
-      'apiKey' => get_option('setting_ckan_api')
+      'apiKey' => get_option('wpckan_setting_ckan_api')
     );
 
     return $settings;
