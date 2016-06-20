@@ -18,10 +18,10 @@ In order to use this information, this plugin exposes the **[wpckan_related_data
 The shortcode has following parameters:
 
 * **group**:  (Optional)
-Specify the name (Not title) of a group available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+Specify the id (Not title or name) of a group available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
 
 * **organization**:  (Optional)
-Specify the name (Not title) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+Specify the id (Not title or name) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
 
 Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
 
@@ -73,6 +73,7 @@ Examples:
 ```php
 [wpckan_related_datasets]
 [wpckan_related_datasets limit="3"]
+[wpckan_related_datasets organization="d9722d77-3b91-4c26-9172-950a9a4be07a"]
 [wpckan_related_datasets limit="3" page="2"]
 [wpckan_related_datasets limit="3" page="2" prev_page_link="http://test?prev_page" next_page_link="http://test?next_page"]
 [wpckan_related_datasets include_fields_dataset="title,description,author"]
@@ -121,10 +122,10 @@ Also, the plugin exposes the  **[wpckan_number_of_related_datasets]** shortcode 
 The shortcode has following parameters:
 
 * **group**:  (Optional)
-Specify the name (Not title) of a group available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+Specify the id (Not title or name) of a group available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
 
 * **organization**:  (Optional)
-Specify the name (Not title) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
+Specify the id (Not title or name) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
 
 * **type**:  (Optional)
 Specify the dataset type in order to filter custom dataset types.
@@ -165,6 +166,7 @@ Examples:
 [wpckan_number_of_related_datasets group="news" limit="1"]
 [wpckan_number_of_related_datasets group="news" suffix=" datasets found in the news."]
 [wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
+[wpckan_number_of_related_datasets organization="d9722d77-3b91-4c26-9172-950a9a4be07a"]
 [wpckan_number_of_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_number_of_related_datasets limit="3" type='dataset']
 [wpckan_number_of_related_datasets blank_on_empty="true"]
@@ -242,6 +244,7 @@ Examples:
 [wpckan_query_datasets query="coal"]
 [wpckan_query_datasets query="corruption" limit="5"]
 [wpckan_query_datasets query="corruption" limit="5" page="1"]
+[wpckan_query_datasets organization="d9722d77-3b91-4c26-9172-950a9a4be07a"]
 [wpckan_query_datasets query="politics" limit="3" page="2" prev_page_link="http://test?prev_page" next_page_link="http://test?next_page"]
 [wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]

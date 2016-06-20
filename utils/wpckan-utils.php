@@ -235,7 +235,7 @@
     endif;
 
     if (!empty($fq)):
-      $arguments['fq'] = $fq;
+      $arguments['fq'] = urldecode($fq);
     endif;
 
     // limit

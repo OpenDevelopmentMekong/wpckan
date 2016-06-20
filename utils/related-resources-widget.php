@@ -28,7 +28,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      }
      if (!empty($instance['organization']) && $instance['organization'] != '-1') {
          $shortcode .= ' organization="'.$instance['organization'].'"';
-         $organization = ucwords(str_replace('-organization', '', $instance['organization']));
+         $organization = $instance['organization'];
      }
      if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])) {
          $shortcode .= ' filter_fields=\''.$instance['filter_fields'].'\'';
@@ -102,10 +102,10 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      ?> value="-1"><?php _e('All', 'wpckan')?></option>
       <?php foreach ($organization_list as $dataset_organization) {
     ?>
-       <option <?php if ($dataset_organization['name'] == $organization) {
+       <option <?php if ($dataset_organization['id'] == $organization) {
     echo 'selected="selected"';
 }
-    ?> value="<?php echo $dataset_organization['name'];
+    ?> value="<?php echo $dataset_organization['id'];
     ?>"><?php echo $dataset_organization['display_name'];
     ?></option>
       <?php
@@ -125,7 +125,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      ?> value="-1"><?php _e('All', 'wpckan')?></option>
       <?php foreach ($group_list as $dataset_group) {
     ?>
-       <option <?php if ($dataset_group['name'] == $group) {
+       <option <?php if ($dataset_group['id'] == $group) {
     echo 'selected="selected"';
 }
     ?> value="<?php echo $dataset_group['name'];
