@@ -40,6 +40,20 @@ class UtilsTest extends PHPUnit_Framework_TestCase
     $this->assertContains("+type:some_type",$arguments["fq"]);
   }
 
+  public function testComposeSolrQueryFromAttrsOneId(){
+    $attrs = array('ids' => 'some_id');
+    $arguments = compose_solr_query_from_attrs($attrs);
+    $this->assertArrayHasKey("fq",$arguments);
+    $this->assertContains("+id:(some_id)",$arguments["fq"]);
+  }
+
+  public function testComposeSolrQueryFromAttrsIds(){
+    $attrs = array('ids' => array('some_id','other_id'));
+    $arguments = compose_solr_query_from_attrs($attrs);
+    $this->assertArrayHasKey("fq",$arguments);
+    $this->assertContains("+id:(some_id OR other_id)",$arguments["fq"]);
+  }
+
   public function testComposeSolrQueryFromAttrsFilterFields(){
     $attrs = array('filter_fields' => '{"spatial-text":"England","date":"2015"}');
     $arguments = compose_solr_query_from_attrs($attrs);

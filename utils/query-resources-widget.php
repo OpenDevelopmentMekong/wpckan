@@ -9,7 +9,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
   // widget actual processes
   parent::__construct(
    'wpckan_query_resources_widget',
-   __('WPCKAN Query Resources', 'wpckan'),
+   __('WPCKAN Query Datasets', 'wpckan'),
    array('description' => __('Query resources and displays them in a post or page.', 'wpckan'))
   );
  }
@@ -61,11 +61,11 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
  public function form( $instance ) {
   // outputs the options form on admin
   $title = ! empty( $instance['title'] ) ? __( $instance['title'], 'wpckan') : __( 'Related Resources', 'wpckan' );
-  $query = $instance['query'];
+  $query = ! empty( $instance['query'] ) ? $instance['query'] : null;
   $limit = ! empty( $instance['limit'] ) ? $instance['limit'] : 0;
   $more_text = ! empty( $instance['more_text'] ) ? $instance['more_text'] : 'Search for more';
   $more_link = ! empty( $instance['more_link'] ) ? $instance['more_link'] : '';
-  $organization = $instance['organization'];
+  $organization = ! empty( $instance['organization'] ) ? $instance['organization'] : -1;
   $organization_list = [];
   if (function_exists('wpckan_api_get_organizations_list')){
     try{
@@ -74,7 +74,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
 
     }
   }
-  $group = $instance['group'];
+  $group = ! empty( $instance['group'] ) ? $instance['group'] : -1;
   $group_list = [];
   if (function_exists('wpckan_api_get_groups_list')){
     try{

@@ -31,7 +31,7 @@
     } catch (Exception $e){
         wpckan_api_call_error("wpckan_api_query_datasets",$e->getMessage());
     }
-    // RESULTS
+
     return $response['result'];
 
   }

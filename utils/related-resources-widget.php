@@ -6,7 +6,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
     {
         parent::__construct(
         'wpckan_related_resources_widget',
-        __('WPCKAN Related Resources', 'wpckan'),
+        __('WPCKAN Related Datasets', 'wpckan'),
         array('description' => __('Display post related resources.', 'wpckan'))
         );
     }

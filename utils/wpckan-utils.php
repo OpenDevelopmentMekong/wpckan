@@ -79,7 +79,8 @@
     $atts['ids'] = array_map(function($item){
       return $item['dataset_id'];
     }, $related_datasets);
-    $dataset_array = wpckan_api_query_datasets($atts);
+    $result = wpckan_api_query_datasets($atts);
+    $dataset_array = $result["results"];
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
@@ -105,7 +106,8 @@
     $atts['ids'] = array_map(function($item){
       return $item['dataset_id'];
     }, $related_datasets);
-    $dataset_array = wpckan_api_query_datasets($atts);
+    $result = wpckan_api_query_datasets($atts);
+    $dataset_array = $result["results"];
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
@@ -192,6 +194,15 @@
     endif;
 
     $fq = "";
+
+    // Ids
+    if (isset($attrs['ids'])):
+      $joined_ids =  $attrs['ids'];
+      if (is_array($attrs['ids'])):
+        $joined_ids = implode(" OR ", $attrs['ids']);
+      endif;
+      $fq = $fq . '+id:(' . $joined_ids . ')';
+    endif;
 
     // group
     if (isset($attrs['group'])):

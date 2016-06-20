@@ -34,7 +34,7 @@ Per default, this shortcode shows only name, description and format of the resou
 * **include_fields_extra**: (Optional) Comma-separated string.
 This shortcode outputs extra metadatafields. A list of attributes can specified to present more Information.
 
-* **limit**: (Optional) Number.
+* **limit**: (Optional) Number. Default is 10.
 Limits the amount of datasets shown by the shortcode string.
 
 * **filter**: (Optional) Number.
@@ -79,6 +79,7 @@ Examples:
 [wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
 [wpckan_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_related_datasets blank_on_empty='true']
+[wpckan_related_datasets type='library_record']
 ```
 
 An example showing how the information returned by this shortcode will be structured:
@@ -130,7 +131,7 @@ Specify the dataset type in order to filter custom dataset types.
 
 Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
 
-* **limit**: (Optional) Number.
+* **limit**: (Optional) Number. Default is 10.
 Limits the amount of datasets shown by the shortcode.
 
 * **filter**: (Optional) Number.
@@ -167,6 +168,7 @@ Examples:
 [wpckan_number_of_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_number_of_related_datasets limit="3" type='dataset']
 [wpckan_number_of_related_datasets blank_on_empty="true"]
+[wpckan_number_of_related_datasets type="library_record"]
 ```
 An example (corresponding to the last example above) showing how the information returned by this shortcode will be structured:
 
@@ -200,7 +202,7 @@ Per default, this shortcode shows only title (with link to the dataset's URL) an
 * **include_fields_resources**:  (Optional) Comma-separated.
 Per default, this shortcode shows only name (with link to the resources's URL), description and format of the resources (See http://demo.ckan.org/api/3/action/package_search?q=spending). A list of attributes can be specified to present more information. Possible values: "name", "description", "revision_timestamp", "format", "created"
 
-* **limit**: (Optional) Number.
+* **limit**: (Optional) Number. Default is 10.
 Limits the amount of datasets shown by the shortcode.
 
 * **filter**: (Optional) Number.
@@ -245,7 +247,6 @@ Examples:
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 [wpckan_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_query_datasets query="coal" blank_on_empty='true']
-// show all datasets of the dataset-type library record
 [wpckan_query_datasets query="*:*" type="library_record"]
 ```
 
