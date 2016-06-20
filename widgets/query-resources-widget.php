@@ -1,12 +1,9 @@
 <?php
 
-class Wpckan_Query_Resources_Widget extends WP_Widget {
+class Wpckan_Query_Resources_Widget extends WP_Widget
+{
 
- /**
-  * Sets up the widgets name etc
-  */
  public function __construct() {
-  // widget actual processes
   parent::__construct(
    'wpckan_query_resources_widget',
    __('WPCKAN Query Datasets', 'wpckan'),
@@ -108,7 +105,6 @@ class Wpckan_Query_Resources_Widget extends WP_Widget {
     <input class="widefat" type="number" id="<?php echo $this->get_field_id( 'limit' ); ?>" name="<?php echo $this->get_field_name( 'limit' ); ?>" value="<?php echo $limit; ?>">
     <label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More dataset: Link label' ); ?></label>
     <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'more_text' ); ?>" name="<?php echo $this->get_field_name( 'more_text' ); ?>" placeholder="Search for more" value="<?php echo esc_attr( $more_text ); ?>">
-
     <label for="<?php echo $this->get_field_id( 'more_link' ); ?>"><?php _e( 'More dataset: Link (URL)' ); ?></label>
     <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'more_link' ); ?>" name="<?php echo $this->get_field_name( 'more_link' ); ?>" value="<?php echo esc_attr( $more_link ); ?>">
   </p>
