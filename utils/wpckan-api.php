@@ -50,7 +50,7 @@
       $ckanClient = CkanClient::factory($settings);
       $commandName = 'PackageSearch';
       $arguments = compose_solr_query_from_attrs($atts);
-      
+
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
 
@@ -390,7 +390,7 @@
 
   function wpckan_get_ckan_domain()
   {
-      return get_option('setting_ckan_url');
+      return get_option('wpckan_setting_ckan_url');
   }
 
   /*

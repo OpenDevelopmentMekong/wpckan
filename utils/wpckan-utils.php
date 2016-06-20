@@ -218,7 +218,7 @@
   function wpckan_get_link_to_dataset($dataset_name){
     wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
 
-    return get_option('setting_ckan_url') . "/dataset/" . $dataset_name;
+    return get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
   }
 
   function wpckan_get_link_to_resource($dataset_name,$resource_id){
@@ -232,13 +232,13 @@
   */
 
   function wpckan_log($text) {
-    if (!get_option('setting_log_enabled')) return;
+    if (!get_option('wpckan_setting_log_enabled')) return;
 
     $bt = debug_backtrace();
     $caller = array_shift($bt);
 
-    if (!wpckan_is_null_or_empty_string(get_option('setting_log_path')))
-      Analog::handler(Handler\File::init (get_option('setting_log_path')));
+    if (!wpckan_is_null_or_empty_string(get_option('wpckan_setting_log_path')))
+      Analog::handler(Handler\File::init (get_option('swpckan_setting_log_path)));
     else
       Analog::handler(Handler\File::init (WPCKAN_DEFAULT_LOG));
 
@@ -392,7 +392,7 @@
   }
 
   function wpckan_get_complete_url_for_dataset($dataset){
-    return get_option('setting_ckan_url') . "/dataset/" . $dataset["name"];
+    return get_option('swpckan_setting_ckan_url) . "/dataset/" . $dataset["name"];
   }
 
   function wpckan_get_group_names_for_user(){
@@ -434,15 +434,15 @@
   }
 
   function wpckan_validate_settings_write(){
-    return !wpckan_is_null_or_empty_string(get_option('setting_ckan_api'));
+    return !wpckan_is_null_or_empty_string(get_option('wpckan_setting_ckan_api'));
   }
 
   function wpckan_get_ckan_settings(){
 
     $settings = array(
-      'baseUrl' => get_option('setting_ckan_url') . "/api/",
+      'baseUrl' => get_option('sewpckan_setting_ckan_url . "/api/",
       'scheme' => 'http',
-      'apiKey' => get_option('setting_ckan_api')
+      'apiKey' => get_option('swpckan_setting_ckan_api)
     );
 
     return $settings;

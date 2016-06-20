@@ -1,6 +1,7 @@
 const DATASET_ID_ATTR = "wpckan-dataset-id";
 const DATASET_TITLE_ATTR = "wpckan-dataset-title";
-const CKAN_BASE_URL = "wpckan-base-url"
+const CKAN_BASE_URL = "wpckan-base-url";
+const CKAN_API_URL = "wpckan-api-url";
 
 var field;
 var datasetList;
