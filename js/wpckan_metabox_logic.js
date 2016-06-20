@@ -148,7 +148,7 @@ function setFormValue(){
 
 function addDataset(save_in_array,dataset_id,dataset_title){
 
-  var dataset_url = field.attr(CKAN_BASE_URL) + field.attr(CKAN_BASE_URL) + "/dataset/" + dataset_id;
+  var dataset_url = field.attr(CKAN_BASE_URL) + "/dataset/" + dataset_id;
 
   if (save_in_array){
     datasets.push({"dataset_id": dataset_id, "dataset_title": dataset_title});

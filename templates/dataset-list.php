@@ -76,7 +76,6 @@
                       <?php if (array_key_exists("created",$resource) && !wpckan_is_null_or_empty_string($resource["created"]) && in_array("created",$include_fields_resources)) {?>
                         <div class="wpckan_resource_created"><?php echo $resource["created"] ?></div>
                       <?php } ?>
-                      <div class="wpckan_resource_language"><?php echo $resource["odm_language"][0] ?></div>
                   </div>
                 </li>
               <?php } ?>

@@ -1,4 +1,3 @@
-<?php if (is_null($archive_orga) || is_null($archive_group) || is_null($archive_freq)) die(); ?>
 
 <?php if (wpckan_validate_settings_read() && wpckan_validate_settings_write()){ ?>
 
