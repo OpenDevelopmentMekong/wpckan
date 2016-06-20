@@ -25,7 +25,7 @@
       <?php } ?>
     <?php } ?>
   </select></p>
-  <label for="setting_ckan_group"><b><?php _e('CKAN Group','wpckan') ?></b></label>
+  <label for="wpckan_setting_ckan_group"><b><?php _e('CKAN Group','wpckan') ?></b></label>
   <p><select name="wpckan_archive_post_group" id="wpckan_archive_post_group">
     <option <?php if($archive_group == -1) echo 'selected="selected"' ?> value="-1"><?php _e('None','wpckan')?></option>
     <?php foreach ($group_list as $group){ ?>

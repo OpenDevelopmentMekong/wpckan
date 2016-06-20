@@ -70,38 +70,6 @@
       $related_datasets = json_decode($related_datasets_json,true);
     endif;
 
-    // if (array_key_exists("group",$atts))
-    //   $filter_group = $atts["group"];
-    // if (array_key_exists("organization",$atts)){
-    //   $filter_organization = $atts["organization"];
-    // }
-    //
-    // $limit = 0;
-    // if (array_key_exists("limit",$atts)){
-    //   $limit = (int)($atts["limit"]);
-    // }
-    //
-    // $page = 0;
-    // if (array_key_exists("limit",$atts) && array_key_exists("page",$atts)){
-    //   $page = (int)($atts["page"]);
-    // }
-    //
-    // $filter = WPCKAN_FILTER_ALL;
-    // if (array_key_exists("filter",$atts)){
-    //   $filter = $atts["filter"];
-    // }
-    //
-    // $filter_fields_json = NULL;
-    // if (array_key_exists("filter_fields",$atts)){
-    //   $filter_fields_json = json_decode($atts["filter_fields"],true);
-    // }
-    //
-    //
-    // $count = 0;
-    // $dataset_array = array();
-    // $atts["related_datasets"] = $related_datasets;
-    //
-
     $blank_on_empty = false;
     if (array_key_exists("blank_on_empty",$atts)){
       $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
@@ -128,22 +96,6 @@
       $related_datasets = json_decode($related_datasets_json,true);
     endif;
 
-    // if (array_key_exists("group",$atts))
-    //   $filter_group = $atts["group"];
-    // if (array_key_exists("organization",$atts)){
-    //   $filter_organization = $atts["organization"];
-    // }
-    //
-    // $filter = WPCKAN_FILTER_ALL;
-    // if (array_key_exists("filter",$atts)){
-    //   $filter = $atts["filter"];
-    // }
-    //
-    // $filter_fields_json = NULL;
-    // if (array_key_exists("filter_fields",$atts)){
-    //   $filter_fields_json = json_decode($atts["filter_fields"],true);
-    // }
-    //
     $blank_on_empty = false;
     if (array_key_exists("blank_on_empty",$atts)){
       $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
@@ -173,34 +125,15 @@
       wpckan_log($e->getMessage());
     }
 
-    // $filter = WPCKAN_FILTER_ALL;
-    // if (array_key_exists("filter",$atts)){
-    //   $filter = $atts["filter"];
-    // }
-    //
-    // $filter_fields_json = NULL;
-    // if (array_key_exists("filter_fields",$atts)){
-    //   $filter_fields_json = json_decode($atts["filter_fields"],true);
-    // }
-
     $blank_on_empty = false;
     if (array_key_exists("blank_on_empty",$atts)){
       $blank_on_empty = filter_var( $atts['blank_on_empty'], FILTER_VALIDATE_BOOLEAN );
     }
 
-    // $filtered_dataset_array = array();
-    // foreach ($dataset_array as $dataset){
-    //  if ($filter == WPCKAN_FILTER_ALL || (($filter == WPCKAN_FILTER_ONLY_WITH_RESOURCES) && wpckan_dataset_has_resources($dataset))){
-    //   if (wpckan_is_null($filter_fields_json) || (!wpckan_is_null($filter_fields_json) && wpckan_dataset_has_matching_extras($dataset,$filter_fields_json))){
-    //    array_push($filtered_dataset_array,$dataset);
-    //   }
-    //  }
-    // }
-
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
 
-    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list.php',$filtered_dataset_array,$atts);
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list.php',$dataset_array,$atts);
   }
 
   /*
@@ -238,7 +171,7 @@
     $caller = array_shift($bt);
 
     if (!wpckan_is_null_or_empty_string(get_option('wpckan_setting_log_path')))
-      Analog::handler(Handler\File::init (get_option('swpckan_setting_log_path)));
+      Analog::handler(Handler\File::init (get_option('wpckan_setting_log_path')));
     else
       Analog::handler(Handler\File::init (WPCKAN_DEFAULT_LOG));
 
@@ -392,7 +325,7 @@
   }
 
   function wpckan_get_complete_url_for_dataset($dataset){
-    return get_option('swpckan_setting_ckan_url) . "/dataset/" . $dataset["name"];
+    return get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset["name"];
   }
 
   function wpckan_get_group_names_for_user(){
@@ -440,9 +373,9 @@
   function wpckan_get_ckan_settings(){
 
     $settings = array(
-      'baseUrl' => get_option('sewpckan_setting_ckan_url . "/api/",
+      'baseUrl' => get_option('wpckan_setting_ckan_url') . "/api/",
       'scheme' => 'http',
-      'apiKey' => get_option('swpckan_setting_ckan_api)
+      'apiKey' => get_option('wpckan_setting_ckan_api')
     );
 
     return $settings;

@@ -24,6 +24,7 @@ function wpckan_get_datasets_filter($ckan_domain, $key, $value)
     return $datasets['result']['results'];
 }
 
+// TODO: parametrize
 function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
 {
     $lang = CURRENT_LANGUAGE;

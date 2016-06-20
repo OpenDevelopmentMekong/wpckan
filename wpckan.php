@@ -201,11 +201,11 @@ if (!class_exists('wpckan')) {
         {
             register_setting('wpckan-group', 'wpckan_setting_ckan_url', 'wpckan_sanitize_url');
             register_setting('wpckan-group', 'wpckan_setting_ckan_api');
-            register_setting('wpckan-group', 'setting_archive_freq');
-            register_setting('wpckan-group', 'setting_ckan_organization');
-            register_setting('wpckan-group', 'setting_ckan_group');
-            register_setting('wpckan-group', 'setting_ckan_valid_settings_read');
-            register_setting('wpckan-group', 'setting_ckan_valid_settings_write');
+            register_setting('wpckan-group', 'wpckan_setting_archive_freq');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_organization');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_group');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_valid_settings_read');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_valid_settings_write');
             register_setting('wpckan-group', 'wpckan_setting_log_path');
             register_setting('wpckan-group', 'wpckan_setting_log_enabled');
 

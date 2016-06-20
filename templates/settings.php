@@ -14,8 +14,8 @@
             $logging_path = WPCKAN_DEFAULT_LOG;
           $valid_connection_read = wpckan_validate_settings_read();
           $valid_connection_write = wpckan_validate_settings_write();
-          update_option('setting_ckan_valid_settings_read',$valid_connection_read);
-          update_option('setting_ckan_valid_settings_write',$valid_connection_write);
+          update_option('wpckan_setting_ckan_valid_settings_read',$valid_connection_read);
+          update_option('wpckan_setting_ckan_valid_settings_write',$valid_connection_write);
         ?>
 
         <table class="form-table">
