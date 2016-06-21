@@ -7,11 +7,14 @@
         <?php
           wpckan_log("Rendering settings.php");
           $ckan_url = get_option('wpckan_setting_ckan_url');
+          $ckan_url_redirection = get_option('wpckan_setting_ckan_url_redirection');
           $ckan_api = get_option('wpckan_setting_ckan_api');
+          $supported_fields = get_option('wpckan_setting_supported_fields');
           $logging_path = get_option('wpckan_setting_log_path');
           $logging_enabled = get_option('wpckan_setting_log_enabled');
-          if (!$logging_path)
+          if (!$logging_path):
             $logging_path = WPCKAN_DEFAULT_LOG;
+          endif;
           $valid_connection_read = wpckan_validate_settings_read();
           $valid_connection_write = wpckan_validate_settings_write();
           update_option('wpckan_setting_ckan_valid_settings_read',$valid_connection_read);
@@ -25,6 +28,13 @@
               <td>
                 <input type="text" name="wpckan_setting_ckan_url" id="wpckan_setting_ckan_url" value="<?php echo $ckan_url ?>"/>
                 <p class="description"><?php _e('Specify protocol such as http:// or https://.','wpckan') ?>.</p>
+              </td>
+          </tr>
+          <tr valign="top">
+              <th scope="row"><label for="wpckan_setting_ckan_url_redirection"><?php _e('CKAN Url redirection','wpckan') ?></label></th>
+              <td>
+                <input type="text" name="wpckan_setting_ckan_url_redirection" id="wpckan_setting_ckan_url_redirection" value="<?php echo $ckan_url_redirection ?>"/>
+                <p class="description"><?php _e('Specify a domain to redirect links from the CKAN URL to a different endpoint','wpckan') ?>.</p>
               </td>
           </tr>
           <tr valign="top">
@@ -61,6 +71,13 @@
               <p><input type="checkbox" name="<?php echo $settings_name ?>" id="<?php echo $settings_name ?>" <?php if (get_option($settings_name))  echo 'checked="true"'; ?>><?php echo $post_type ?></input></p>
              <?php } ?>
            </td>
+          </tr>
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_supported_fields"><?php _e('Supported fields','wpckan') ?></label></th>
+            <td>
+              <input type="text" name="wpckan_setting_supported_fields" id="wpckan_setting_supported_fields" value="<?php echo $supported_fields ?>"></input>
+              <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section','wpckan') ?></p>
+            </td>
           </tr>
           <!-- Logging -->
           <th scope="row"><label><h3><?php _e('Logging','wpckan') ?></h3></label></th>

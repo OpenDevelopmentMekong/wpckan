@@ -149,6 +149,10 @@
       wpckan_log($e->getMessage());
     }
 
+    if (!(isset($dataset))):
+      return "";
+    endif;
+
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-detail.php',$dataset,$atts);
 
   }
@@ -421,6 +425,11 @@
     return $clean_url;
   }
 
+  function wpckan_sanitize_csv($input) {
+    $clean_url =  str_replace(" ", "", $input);
+    return $clean_url;
+  }
+
   function wpckan_strip_mqtranslate_tags($input) {
     $clean_url = str_replace("<!--:-->", " ", $input);
     $clean_url = strip_tags($clean_url);
@@ -462,6 +471,16 @@
     if ($ext)
      return $ext;
     return 'html';
+  }
+
+  function wpckan_replace_domains_on_link($url){
+    $redirection = get_option('wpckan_setting_ckan_url_redirection');
+    if (empty($redirection)):
+      return $url;
+    endif;
+
+    $ckan_domain = get_option('wpckan_setting_ckan_url');
+    return $clean_url =  str_replace($ckan_domain,$redirection, $url);
   }
 
 ?>

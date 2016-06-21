@@ -34,7 +34,8 @@ if (!class_exists('wpckan')) {
             add_action('widgets_init', create_function('', 'register_widget("Wpckan_Related_Resources_Widget");'));
             add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
             add_shortcode('wpckan_number_of_related_datasets', array(&$this, 'wpckan_do_shortcode_get_number_of_related_datasets'));
-            add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));add_shortcode('wpckan_dataset_detail', array(&$this, 'wpckan_do_shortcode_dataset_detail'));
+            add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
+            add_shortcode('wpckan_dataset_detail', array(&$this, 'wpckan_do_shortcode_dataset_detail'));
             add_action('admin_notices', array($this, 'check_requirements'));
         }
 
@@ -211,6 +212,7 @@ if (!class_exists('wpckan')) {
         public function init_settings()
         {
             register_setting('wpckan-group', 'wpckan_setting_ckan_url', 'wpckan_sanitize_url');
+            register_setting('wpckan-group', 'wpckan_setting_ckan_url_redirection', 'wpckan_sanitize_url');
             register_setting('wpckan-group', 'wpckan_setting_ckan_api');
             register_setting('wpckan-group', 'wpckan_setting_archive_freq');
             register_setting('wpckan-group', 'wpckan_setting_ckan_organization');
@@ -219,6 +221,7 @@ if (!class_exists('wpckan')) {
             register_setting('wpckan-group', 'wpckan_setting_ckan_valid_settings_write');
             register_setting('wpckan-group', 'wpckan_setting_log_path');
             register_setting('wpckan-group', 'wpckan_setting_log_enabled');
+            register_setting('wpckan-group', 'wpckan_setting_supported_fields', 'wpckan_sanitize_csv');
 
             foreach (get_post_types() as $post_type) {
                 $settings_name = 'setting_supported_post_types_'.$post_type;
