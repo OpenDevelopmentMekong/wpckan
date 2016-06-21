@@ -138,6 +138,21 @@
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list.php',$dataset_array,$atts);
   }
 
+  function wpckan_show_dataset_detail($atts) {
+
+    wpckan_log("wpckan_show_dataset_detail "  . print_r($atts,true));
+
+    $dataset;
+    try{
+      $dataset = wpckan_api_query_dataset_detail($atts);
+    }catch(Exception $e){
+      wpckan_log($e->getMessage());
+    }
+
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-detail.php',$dataset,$atts);
+
+  }
+
   /*
   * Templates
   */
