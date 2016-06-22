@@ -7,11 +7,16 @@
         <?php
           wpckan_log("Rendering settings.php");
           $ckan_url = get_option('wpckan_setting_ckan_url');
+          //$ckan_url_redirection = get_option('wpckan_setting_ckan_url_redirection');
           $ckan_api = get_option('wpckan_setting_ckan_api');
+          $supported_fields = get_option('wpckan_setting_supported_fields');
+          $multilingual_fields = get_option('wpckan_setting_multilingual_fields');
+          $field_mappings = get_option('wpckan_setting_field_mappings');
           $logging_path = get_option('wpckan_setting_log_path');
           $logging_enabled = get_option('wpckan_setting_log_enabled');
-          if (!$logging_path)
+          if (!$logging_path):
             $logging_path = WPCKAN_DEFAULT_LOG;
+          endif;
           $valid_connection_read = wpckan_validate_settings_read();
           $valid_connection_write = wpckan_validate_settings_write();
           update_option('wpckan_setting_ckan_valid_settings_read',$valid_connection_read);
@@ -23,14 +28,14 @@
           <tr valign="top">
               <th scope="row"><label for="wpckan_setting_ckan_url"><?php _e('CKAN Url','wpckan') ?></label></th>
               <td>
-                <input type="text" name="wpckan_setting_ckan_url" id="wpckan_setting_ckan_url" value="<?php echo $ckan_url ?>"/>
+                <input class="full_width" type="text" name="wpckan_setting_ckan_url" id="wpckan_setting_ckan_url" value="<?php echo $ckan_url ?>"/>
                 <p class="description"><?php _e('Specify protocol such as http:// or https://.','wpckan') ?>.</p>
               </td>
           </tr>
           <tr valign="top">
               <th scope="row"><label for="wpckan_setting_ckan_api"><?php _e('CKAN Api key','wpckan') ?></label></th>
               <td>
-                <input type="text" name="wpckan_setting_ckan_api" id="wpckan_setting_ckan_api" value="<?php echo get_option('wpckan_setting_ckan_api'); ?>"/>
+                <input class="full_width" type="text" name="wpckan_setting_ckan_api" id="wpckan_setting_ckan_api" value="<?php echo get_option('wpckan_setting_ckan_api'); ?>"/>
                 <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan') ?>.</p>
               </td>
           </tr>
@@ -61,6 +66,32 @@
               <p><input type="checkbox" name="<?php echo $settings_name ?>" id="<?php echo $settings_name ?>" <?php if (get_option($settings_name))  echo 'checked="true"'; ?>><?php echo $post_type ?></input></p>
              <?php } ?>
            </td>
+          </tr>
+          <!-- Supported fields -->
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_supported_fields"><?php _e('Supported fields','wpckan') ?></label></th>
+            <td>
+              <input class="full_width" type="text" name="wpckan_setting_supported_fields" id="wpckan_setting_supported_fields" value="<?php echo $supported_fields ?>"></input>
+              <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section','wpckan') ?></p>
+            </td>
+          </tr>
+          <!-- Multilingual fields -->
+          <?php if (wpckan_is_qtranslate_available()): ?>
+            <tr valign="top">
+              <th scope="row"><label for="wpckan_setting_multilingual_fields"><?php _e('Fluent fields','wpckan') ?></label></th>
+              <td>
+                <input class="full_width" type="text" name="wpckan_setting_multilingual_fields" id="wpckan_setting_multilingual_fields" value="<?php echo $multilingual_fields ?>"></input>
+                <p class="description"><?php _e('Specify a list of Comma-separated field names which are marked as fluent. See https://github.com/open-data/ckanext-fluent/','wpckan') ?></p>
+              </td>
+            </tr>
+          <?php endif; ?>
+          <!-- Field mappings-->
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_field_mappings"><?php _e('Field mappings','wpckan') ?></label></th>
+            <td>
+              <textarea class="full_width" name="wpckan_setting_field_mappings" placeholder="owner_org  =>  Organization"><?php echo $field_mappings;?></textarea>
+              <p class="description"><?php _e('Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field to its label','wpckan') ?></p>
+            </td>
           </tr>
           <!-- Logging -->
           <th scope="row"><label><h3><?php _e('Logging','wpckan') ?></h3></label></th>

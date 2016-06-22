@@ -11,6 +11,10 @@
 
 }
 
+.full_width{
+  width:100%;
+}
+
 .tt-dropdown-menu{
   background:#fff;
   max-height: 150px;

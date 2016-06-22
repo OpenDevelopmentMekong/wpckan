@@ -35,6 +35,7 @@ if (!class_exists('wpckan')) {
             add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
             add_shortcode('wpckan_number_of_related_datasets', array(&$this, 'wpckan_do_shortcode_get_number_of_related_datasets'));
             add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));
+            add_shortcode('wpckan_dataset_detail', array(&$this, 'wpckan_do_shortcode_dataset_detail'));
             add_action('admin_notices', array($this, 'check_requirements'));
         }
 
@@ -87,6 +88,17 @@ if (!class_exists('wpckan')) {
             }
 
             return wpckan_show_query_datasets($atts);
+        }
+
+        public function wpckan_do_shortcode_dataset_detail($atts)
+        {
+            wpckan_log('wpckan_do_shortcode_dataset_detail: '.print_r($atts, true));
+
+            if (!wpckan_validate_settings_read()) {
+                die;
+            }
+
+            return wpckan_show_dataset_detail($atts);
         }
 
         public function wpckan_add_meta_boxes($post_type)
@@ -208,6 +220,9 @@ if (!class_exists('wpckan')) {
             register_setting('wpckan-group', 'wpckan_setting_ckan_valid_settings_write');
             register_setting('wpckan-group', 'wpckan_setting_log_path');
             register_setting('wpckan-group', 'wpckan_setting_log_enabled');
+            register_setting('wpckan-group', 'wpckan_setting_supported_fields', 'wpckan_sanitize_csv');
+            register_setting('wpckan-group', 'wpckan_setting_multilingual_fields', 'wpckan_sanitize_csv');
+            register_setting('wpckan-group', 'wpckan_setting_field_mappings', 'wpckan_sanitize_csv');
 
             foreach (get_post_types() as $post_type) {
                 $settings_name = 'setting_supported_post_types_'.$post_type;
