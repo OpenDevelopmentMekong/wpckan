@@ -72,7 +72,7 @@
 						<p class="wpckan_dataset_resource_description"><?php echo $resource['description']; ?></p>
 					<?php endif; ?>
 					<?php if (isset($resource['url'])): ?>
-						<a class="wpckan_dataset_resource_url" href="<?php echo $resource['url']; ?>"><?php _e('Download','wpckan') ?></a>
+						<a class="wpckan_dataset_resource_url button" href="<?php echo $resource['url']; ?>"><?php _e('Download','wpckan') ?></a>
 					<?php endif; ?>
 				</li>
 	    </ul>

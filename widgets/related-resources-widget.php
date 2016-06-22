@@ -22,32 +22,39 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      global $post;
 
      $shortcode = '[wpckan_related_datasets';
-     if (!empty($instance['group']) && $instance['group'] != '-1') {
+
+     if (!empty($instance['group']) && $instance['group'] != '-1'):
        $shortcode .= ' group="'.$instance['group'].'"';
-     }
-     if (!empty($instance['organization']) && $instance['organization'] != '-1') {
+     endif;
+
+     if (!empty($instance['organization']) && $instance['organization'] != '-1'):
        $shortcode .= ' organization="'.$instance['organization'].'"';
-     }
-     if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])) {
+     endif;
+
+     if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])):
        $shortcode .= ' filter_fields=\''.$instance['filter_fields'].'\'';
-     }
-     if (!empty($instance['type'])) {
+     endif;
+
+     if (!empty($instance['type'])):
        $shortcode .= ' type="'.$instance['type'].'"';
-     }
-     if (!empty($instance['limit']) && $instance['limit'] > 0) {
+     endif;
+
+     if (!empty($instance['limit']) && $instance['limit'] > 0):
        $shortcode .= ' limit="'.$instance['limit'].'"';
-     }
+     endif;
+
      $shortcode .= ' include_fields_dataset="title" include_fields_resources="format" blank_on_empty="true"]';
+
      $output = do_shortcode($shortcode);
 
-     if (!empty($output) && $output != '') {
+     if (!empty($output) && $output != ''):
          echo $args['before_widget'];
-         if (!empty($instance['title'])) {
+         if (!empty($instance['title'])):
              echo $args['before_title'].apply_filters('widget_title', __($instance['title'], 'wpckan')).$args['after_title'];
-         }
+         endif;
          echo $output;
          echo $args['after_widget'];
-     }
+     endif;
  }
 
  /**
