@@ -473,14 +473,23 @@
     return 'html';
   }
 
-  function wpckan_replace_domains_on_link($url){
-    $redirection = get_option('wpckan_setting_ckan_url_redirection');
-    if (empty($redirection)):
-      return $url;
+  function wpckan_is_qtranslate_available(){
+    return function_exists('qtranxf_getLanguage');
+  }
+
+  function wpckan_parse_field_mappings(){
+    $mappings_raw = get_option('wpckan_setting_field_mappings');
+    $mappings_clean = array();
+    if (!isset($mappings_raw)):
+      return $mappings_clean;
     endif;
 
-    $ckan_domain = get_option('wpckan_setting_ckan_url');
-    return $clean_url =  str_replace($ckan_domain,$redirection, $url);
+    $mappings = explode("\r\n", $mappings_raw);
+    foreach ($mappings as $value) {
+        $array_value = explode('=>', trim($value));
+        $mappings_clean[$array_value[0]] = $array_value[1];
+    }
+    return $mappings_clean;
   }
 
 ?>

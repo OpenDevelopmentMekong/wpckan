@@ -1,37 +1,55 @@
 <?php if (is_null($data)) die(); ?>
 
 <?php
-  //print_r($data);
 	$supported_fields_csv = get_option('wpckan_setting_supported_fields');
 	$supported_fields = explode(",", $supported_fields_csv);
+
+	$multilingual_fields = array();
+	$current_language = 'en';
+	if (wpckan_is_qtranslate_available()):
+		$multilingual_fields_csv = get_option('wpckan_setting_multilingual_fields');
+		$multilingual_fields = explode(",", $multilingual_fields_csv);
+		$current_language = qtranxf_getLanguage();
+	endif;
+
+	$field_mappings = wpckan_parse_field_mappings();
 ?>
-
-
-<!--
-  TODO: - multilingual support (both gettext and fluent)
-        - complete layout
-        - figure out way of linking (specify redirection on config)
--->
 
 <div class="wpckan_dataset_detail">
 
-	<!-- Title -->
-	<h1 class="wpckan_dataset_title"><?php echo $data['title'] ?></h1>
+	<!-- Title or title_translated in case of multilingual dataset-->
+	<?php
+		$title = $data['title'];
+		if (array_key_exists('title_translated',$data)):
+			if (array_key_exists($current_language,$data['title_translated'])):
+				$title = $data['title_translated'][$current_language];
+			endif;
+		endif;
+	?>
+	<h1 class="wpckan_dataset_title"><?php echo $title ?></h1>
 
 	<!-- Organization -->
   <?php if (isset($data['organization']['title'])): ?>
-    <a href="#" class="wpckan_dataset_organization"><?php echo $data['organization']['title'] ?></a>
+    <h3 class="wpckan_dataset_organization"><?php echo $data['organization']['title'] ?></h3>
   <?php endif; ?>
 
 	<!-- Tags -->
   <?php foreach($data['tags'] as $tag): ?>
     <ul class="wpckan_dataset_tags">
-      <li class="wpckan_dataset_tag"><a href="#"><?php echo $tag['display_name'] ?></a></li>
+      <li class="wpckan_dataset_tag"><?php echo $tag['display_name'] ?></li>
     </ul>
   <?php endforeach; ?>
 
-	<!-- Description -->
-	<p class="wpckan_dataset_notes"><?php echo $data['notes'] ?></p>
+	<!-- Notes or notes_translated in case of multilingual dataset -->
+	<?php
+		$notes = $data['notes'];
+		if (array_key_exists('notes_translated',$data)):
+			if (array_key_exists($current_language,$data['notes_translated'])):
+				$notes = $data['notes_translated'][$current_language];
+			endif;
+		endif;
+	?>
+	<p class="wpckan_dataset_notes"><?php echo $notes ?></p>
 
 	<!-- License -->
   <?php if (isset($data['license_title'])): ?>
@@ -40,7 +58,7 @@
 
 	<!-- Resources -->
 	<?php if (isset($data['resources'])): ?>
-		<h2>Resources</h2>
+		<h2><?php _e('Resources','wpckan') ?></h2>
 		<?php foreach($data['resources'] as $resource): ?>
 	    <ul class="wpckan_dataset_resources">
 	      <li class="wpckan_dataset_resource">
@@ -62,17 +80,27 @@
 	<?php endif; ?>
 
 	<!-- Metadata -->
-	<h2>Additional info</h2>
+	<h2><?php _e('Additional info','wpckan') ?></h2>
 	<table class="wpckan_dataset_metadata_fields">
 		<?php foreach($data as $key => $value): ?>
 			<?php if (!empty($supported_fields) && in_array($key,$supported_fields)): ?>
 				<tr class="wpckan_dataset_metadata_field">
-					<td><?php echo $key ?></td>
-					<td><?php
+					<?php
+						$key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
+						if (in_array($key,$multilingual_fields)):
+							if (is_array($value) &&  array_key_exists($current_language,$value)):
+								$value = $value[$current_language];
+								echo "<td>" . __($key) . "</td>";
+								echo "<td>" . $value . "</td>";
+							endif;
+						else:
 							if (is_array($value)):
 								$value = implode(", ",$value);
 							endif;
-							echo $value ?>
+							echo "<td>" . __($key) . "</td>";
+							echo "<td>" . $value . "</td>";
+						endif;
+						 ?>
 					</td>
 				</tr>
 			<?php endif; ?>
