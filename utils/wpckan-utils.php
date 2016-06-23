@@ -79,11 +79,17 @@
     $atts['ids'] = array_map(function($item){
       return $item['dataset_id'];
     }, $related_datasets);
+
+    if (empty($atts['ids'])):
+      return "";
+    endif;
+
     $result = wpckan_api_query_datasets($atts);
     $dataset_array = $result["results"];
 
-    if ((count($dataset_array) == 0) && $blank_on_empty)
+    if ((count($dataset_array) == 0) && $blank_on_empty):
       return "";
+    endif;
 
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list.php',$dataset_array,$atts);
   }
@@ -106,6 +112,11 @@
     $atts['ids'] = array_map(function($item){
       return $item['dataset_id'];
     }, $related_datasets);
+
+    if (empty($atts['ids'])):
+      return "";
+    endif;
+    
     $result = wpckan_api_query_datasets($atts);
     $dataset_array = $result["results"];
 
