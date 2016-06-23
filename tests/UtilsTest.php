@@ -47,6 +47,12 @@ class UtilsTest extends PHPUnit_Framework_TestCase
     $this->assertContains(" id:(some_id)",$arguments["fq"]);
   }
 
+  public function testComposeSolrQueryFromAttrsNoId(){
+    $attrs = array('ids' => array());
+    $arguments = compose_solr_query_from_attrs($attrs);
+    $this->assertFalse(array_key_exists("fq",$arguments));
+  }
+
   public function testComposeSolrQueryFromAttrsIds(){
     $attrs = array('ids' => array('some_id','other_id'));
     $arguments = compose_solr_query_from_attrs($attrs);

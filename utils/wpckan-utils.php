@@ -215,7 +215,7 @@
     $fq = "";
 
     // Ids
-    if (isset($attrs['ids'])):
+    if (isset($attrs['ids']) && !empty($attrs['ids'])):
       $joined_ids =  $attrs['ids'];
       if (is_array($attrs['ids'])):
         $joined_ids = implode(" OR ", $attrs['ids']);
