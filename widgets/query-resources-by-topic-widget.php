@@ -25,72 +25,35 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 		$limit = isset($instance['limit']) ? $instance['limit'] : -1;
 		$categories = wp_get_post_categories($post->ID);
-		$related_posts = array();
+
+		$categories_names_csv = 'economy';
 
 		if (!empty($categories)):
-			foreach ($this->available_post_types() as $post_type):
-				if (isset($instance[$post_type->name]) && $instance[$post_type->name]):
 
-					$taxonomy_terms = get_terms( 'category', array(
-					    'hide_empty' => 0,
-					    'fields' => 'ids'
-						)
-					);
+			$shortcode = '[wpckan_query_datasets filter_fields=\'{"tags":"' . $categories_names_csv . '"}\'';
 
-					print_r($taxonomy_terms);
+			if (!empty($instance['limit']) && $instance['limit'] > 0)
+	      $shortcode .= ' limit="' . $instance['limit'] . '"';
 
-					$query = array(
-			      'post_type' => $post_type->name,
-			      'tax_query' => array(
-			         array(
-			            'taxonomy' => 'category',
-			            'field' => 'id',
-			            'terms' => array(1)
-			         )
-						 )
-			   );
+			$shortcode .= '  blank_on_empty="true"]';
 
-				 $slider_posts = new WP_Query($query);
+			$output = do_shortcode($shortcode);
 
-				 if($slider_posts->have_posts()) : ?>
+			if (!empty($output) && $output != ""):
 
-					<div class='slider'>
-					   <?php while($slider_posts->have_posts()) : $slider_posts->the_post() ?>
-					      <div class='slide'>
-					         <h1><?php the_title() ?></h1>
-					      </div>
-					   <?php endwhile ?>
-					</div>
+				echo $args['before_widget'];
 
-				<?php endif;
+					if (!empty($instance['title'])):
+						 echo $args['before_title'].apply_filters('widget_title', __($instance['title'], 'opendev')).$args['after_title'];
+					endif;
 
+				echo $output;
 
+				echo $args['after_widget'];
 
-				endif;
-			endforeach;
-		endif;
-
-		echo $args['before_widget']; ?>
-
-		<?php
-			if (!empty($instance['title'])):
-				 echo $args['before_title'].apply_filters('widget_title', __($instance['title'], 'opendev')).$args['after_title'];
 			endif;
 
-				//print_r($related_posts);
-				?>
-
-		<ul>
-
-			<?php foreach($related_posts as $post):?>
-				<li>
-					<a href="<?php echo get_permalink($post->ID);?>"><?php echo $post->post_title . " " . $post->post_type;?></a>
-				</li>
-			<?php endforeach; ?>
-
-		</ul>
-
-		<?php echo $args['after_widget'];
+		endif;
 
 	}
 
@@ -101,21 +64,10 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-	  $post_types = $this->available_post_types();
-
 		$title = !empty($instance['title']) ? __($instance['title'], 'opendev') : __('Custom posts', 'opendev'); ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>">
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Select custom post type:' ); ?></label>
-			<?php foreach ( $post_types  as $post_type ): ?>
-				<p>
-					<input type="checkbox" <?php if (isset($instance[$post_type->name]) && $instance[$post_type->name]) { echo " checked"; } ?> name="<?php echo $this->get_field_name($post_type->name)?>" value="<?php echo $post_type->name ?>"><?php echo $post_type->labels->name ?></input>
-				</p>
-			<?php endforeach; ?>
 		</p>
 
 		<?php $limit = !empty($instance['limit']) ? $instance['limit'] : -1 ?>
@@ -139,25 +91,10 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
 		$instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : -1;
 
-		$post_types = $this->available_post_types();
-		foreach ($post_types as $post_type):
-			$instance[$post_type->name] = (!empty($new_instance[$post_type->name])) ? true : false;
-		endforeach;
 		return $instance;
 	}
 
-	private function available_post_types(){
-		$args = array(
-		   'public'   => true,
-		   '_builtin' => false
-		);
 
-		$output = 'objects';
-		$operator = 'and';
-		$post_types = get_post_types( $args, $output, $operator );
-
-		return $post_types;
-	}
 
 }
 
