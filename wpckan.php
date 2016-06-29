@@ -12,6 +12,7 @@
  include_once plugin_dir_path(__FILE__).'utils/datastore-api.php';
  include_once plugin_dir_path(__FILE__).'widgets/related-resources-widget.php';
  include_once plugin_dir_path(__FILE__).'widgets/query-resources-widget.php';
+ include_once plugin_dir_path(__FILE__).'widgets/query-resources-by-topic-widget.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-exceptions.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-utils.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-api.php';
@@ -30,8 +31,6 @@ if (!class_exists('wpckan')) {
             add_action('edit_post', array(&$this, 'wpckan_edit_post'));
             add_action('save_post', array(&$this, 'wpckan_save_post'));
             add_action('add_meta_boxes', array(&$this, 'wpckan_add_meta_boxes'));
-            add_action('widgets_init', create_function('', 'register_widget("Wpckan_Query_Resources_Widget");'));
-            add_action('widgets_init', create_function('', 'register_widget("Wpckan_Related_Resources_Widget");'));
             add_shortcode('wpckan_related_datasets', array(&$this, 'wpckan_do_shortcode_get_related_datasets'));
             add_shortcode('wpckan_number_of_related_datasets', array(&$this, 'wpckan_do_shortcode_get_number_of_related_datasets'));
             add_shortcode('wpckan_query_datasets', array(&$this, 'wpckan_do_shortcode_query_datasets'));

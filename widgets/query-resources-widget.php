@@ -139,7 +139,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   * @param array $old_instance The previous options
   */
  public function update( $new_instance, $old_instance ) {
-   
+
   $instance = array();
   $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
   $instance['query'] = ( ! empty( $new_instance['query'] ) ) ? strip_tags( $new_instance['query'] ) : '';
@@ -154,5 +154,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   return $instance;
  }
 }
+
+add_action( 'widgets_init', create_function('', 'register_widget("Wpckan_Query_Resources_Widget");'));
 
 ?>
