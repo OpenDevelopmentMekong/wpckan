@@ -28,14 +28,14 @@
           <tr valign="top">
               <th scope="row"><label for="wpckan_setting_ckan_url"><?php _e('CKAN Url','wpckan') ?></label></th>
               <td>
-                <input class="full_width" type="text" name="wpckan_setting_ckan_url" id="wpckan_setting_ckan_url" value="<?php echo $ckan_url ?>"/>
+                <input class="full-width" type="text" name="wpckan_setting_ckan_url" id="wpckan_setting_ckan_url" value="<?php echo $ckan_url ?>"/>
                 <p class="description"><?php _e('Specify protocol such as http:// or https://.','wpckan') ?>.</p>
               </td>
           </tr>
           <tr valign="top">
               <th scope="row"><label for="wpckan_setting_ckan_api"><?php _e('CKAN Api key','wpckan') ?></label></th>
               <td>
-                <input class="full_width" type="text" name="wpckan_setting_ckan_api" id="wpckan_setting_ckan_api" value="<?php echo get_option('wpckan_setting_ckan_api'); ?>"/>
+                <input class="full-width" type="text" name="wpckan_setting_ckan_api" id="wpckan_setting_ckan_api" value="<?php echo get_option('wpckan_setting_ckan_api'); ?>"/>
                 <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan') ?>.</p>
               </td>
           </tr>
@@ -71,7 +71,7 @@
           <tr valign="top">
             <th scope="row"><label for="wpckan_setting_supported_fields"><?php _e('Supported fields','wpckan') ?></label></th>
             <td>
-              <input class="full_width" type="text" name="wpckan_setting_supported_fields" id="wpckan_setting_supported_fields" value="<?php echo $supported_fields ?>"></input>
+              <input class="full-width" type="text" name="wpckan_setting_supported_fields" id="wpckan_setting_supported_fields" value="<?php echo $supported_fields ?>"></input>
               <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section','wpckan') ?></p>
             </td>
           </tr>
@@ -80,7 +80,7 @@
             <tr valign="top">
               <th scope="row"><label for="wpckan_setting_multilingual_fields"><?php _e('Fluent fields','wpckan') ?></label></th>
               <td>
-                <input class="full_width" type="text" name="wpckan_setting_multilingual_fields" id="wpckan_setting_multilingual_fields" value="<?php echo $multilingual_fields ?>"></input>
+                <input class="full-width" type="text" name="wpckan_setting_multilingual_fields" id="wpckan_setting_multilingual_fields" value="<?php echo $multilingual_fields ?>"></input>
                 <p class="description"><?php _e('Specify a list of Comma-separated field names which are marked as fluent. See https://github.com/open-data/ckanext-fluent/','wpckan') ?></p>
               </td>
             </tr>
@@ -89,7 +89,7 @@
           <tr valign="top">
             <th scope="row"><label for="wpckan_setting_field_mappings"><?php _e('Field mappings','wpckan') ?></label></th>
             <td>
-              <textarea class="full_width" name="wpckan_setting_field_mappings" placeholder="owner_org  =>  Organization"><?php echo $field_mappings;?></textarea>
+              <textarea class="full-width" name="wpckan_setting_field_mappings" placeholder="owner_org  =>  Organization"><?php echo $field_mappings;?></textarea>
               <p class="description"><?php _e('Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field to its label','wpckan') ?></p>
             </td>
           </tr>
