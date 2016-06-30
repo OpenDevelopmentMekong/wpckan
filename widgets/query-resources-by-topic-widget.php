@@ -9,8 +9,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		// widget actual processes
 		parent::__construct(
 			'wpckan_query_resources_by_topic_widget',
-			__('WPCKAN Resources by post\'s topic', 'opendev'),
-			array('description' => __('Queries CKAN for datasets tagged with the same tags as the post/page the widget is added to.', 'opendev'))
+			__('WPCKAN Query resources by post\'s category', 'opendev'),
+			array('description' => __('Queries CKAN for datasets with the post\'s category as value for the field specified.', 'opendev'))
 		);
 	}
 
@@ -23,19 +23,22 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $post;
 
+		$search_field = isset($instance['search_field']) ? $instance['search_field'] : 'title';
 		$limit = isset($instance['limit']) ? $instance['limit'] : -1;
-		$categories = wp_get_post_categories($post->ID);
+		$categories_names = wp_get_post_categories($post->ID,array(
+			"fields" => "names")
+		);
 
-		$categories_names_csv = 'economy';
+		$filter_value = "(" . implode(" OR ", $categories_names) . ")";
 
-		if (!empty($categories)):
+		if (!empty($categories_names) && !(empty($search_field))):
 
-			$shortcode = '[wpckan_query_datasets filter_fields=\'{"tags":"' . $categories_names_csv . '"}\'';
+			$shortcode = '[wpckan_query_datasets filter_fields=\'{"'. $search_field .'":"' . $filter_value . '"}\'';
 
 			if (!empty($instance['limit']) && $instance['limit'] > 0)
 	      $shortcode .= ' limit="' . $instance['limit'] . '"';
 
-			$shortcode .= '  blank_on_empty="true"]';
+			$shortcode .= ' include_fields_dataset="title" include_fields_resources="format" blank_on_empty="true"]';
 
 			$output = do_shortcode($shortcode);
 
@@ -70,6 +73,13 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>">
 		</p>
 
+		<?php
+		$search_field = !empty($instance['search_field']) ? __($instance['search_field'], 'opendev') : 'title' ?>
+		<p>
+			<label for="<?php echo $this->get_field_id('search_field');?>"><?php _e('Search field:');?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('search_field');?>" name="<?php echo $this->get_field_name('search_field');?>" type="text" value="<?php echo esc_attr($search_field);?>">
+		</p>
+
 		<?php $limit = !empty($instance['limit']) ? $instance['limit'] : -1 ?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'limit' ); ?>"><?php _e( 'Select max number of posts to list (-1 to show all):' ); ?></label>
@@ -89,6 +99,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 		$instance = array();
 		$instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+		$instance['search_field'] = (!empty($new_instance['search_field'])) ? strip_tags($new_instance['search_field']) : 'title';
 		$instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : -1;
 
 		return $instance;
