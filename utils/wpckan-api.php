@@ -64,7 +64,7 @@
     } catch (Exception $e){
         wpckan_api_call_error("wpckan_api_query_dataset_detail",$e->getMessage());
     }
-    
+
     return $response['result'];
   }
 
@@ -390,7 +390,7 @@
 
   function wpckan_get_ckan_domain()
   {
-      return get_option('wpckan_setting_ckan_url');
+      return $GLOBALS['options']->get_option('wpckan_setting_ckan_url');
   }
 
   /*

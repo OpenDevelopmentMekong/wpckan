@@ -4,7 +4,7 @@ function wpckan_get_or_cache($url,$id){
 
   $json = "{}";
 
-  if (!get_option('wpckan_setting_cache_enabled')):
+  if (!$GLOBALS['options']->get_option('wpckan_setting_cache_enabled')):
     $json = @file_get_contents($url);
   else:
     $json = $GLOBALS['cache']->get_data($id,$url);
