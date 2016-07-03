@@ -13,10 +13,19 @@
           $multilingual_fields = get_option('wpckan_setting_multilingual_fields');
           $field_mappings = get_option('wpckan_setting_field_mappings');
           $logging_path = get_option('wpckan_setting_log_path');
-          $logging_enabled = get_option('wpckan_setting_log_enabled');
-          if (!$logging_path):
-            $logging_path = WPCKAN_DEFAULT_LOG;
+          if (!isset($logging_path)):
+            $logging_path = WPCKAN_DEFAULT_LOG_PATH;
           endif;
+          $logging_enabled = get_option('wpckan_setting_log_enabled');
+          $cache_path = get_option('wpckan_setting_cache_path');
+          if (!isset($cache_path)):
+            $cache_path = WPCKAN_DEFAULT_CACHE_PATH;
+          endif;
+          $cache_time = get_option('wpckan_setting_cache_time');
+          if (!isset($cache_time)):
+            $cache_time = WPCKAN_DEFAULT_CACHE_TIME;
+          endif;
+          $cache_enabled = get_option('wpckan_setting_cache_enabled');
           $valid_connection_read = wpckan_validate_settings_read();
           $valid_connection_write = wpckan_validate_settings_write();
           update_option('wpckan_setting_ckan_valid_settings_read',$valid_connection_read);
@@ -93,6 +102,28 @@
               <p class="description"><?php _e('Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field to its label','wpckan') ?></p>
             </td>
           </tr>
+          <!-- Caching -->
+          <th scope="row"><label><h3><?php _e('Caching','wpckan') ?></h3></label></th>
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_cache_enabled"><?php _e('Enable caching for API requests','wpckan') ?></label></th>
+            <td>
+              <input type="checkbox" name="wpckan_setting_cache_enabled" id="wpckan_setting_cache_enabled" <?php if ($cache_enabled)  echo 'checked="true"'; ?>/>
+            </td>
+          </tr>
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_cache_path"><?php _e('Cache file path','wpckan') ?></label></th>
+            <td>
+              <input type="text" name="wpckan_setting_cache_path" id="wpckan_setting_cache_path" value="<?php echo $cache_path ?>"/>
+              <p class="description"><?php _e('Path where cached files are going to be stored. Mind permissions.','wpckan') ?></p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_cache_time"><?php _e('Cache time','wpckan') ?></label></th>
+            <td>
+              <input type="number" name="wpckan_setting_cache_time" id="wpckan_setting_cache_time" value="<?php echo (isset($cache_time) ? $cache_time : WPCKAN_DEFAULT_CACHE_TIME); ?>"/>
+              <p class="description"><?php _e('Time in milisecons cached versions will be kept.','wpckan') ?></p>
+            </td>
+          </tr>
           <!-- Logging -->
           <th scope="row"><label><h3><?php _e('Logging','wpckan') ?></h3></label></th>
           <tr valign="top">
@@ -102,7 +133,7 @@
             </td>
           </tr>
           <tr valign="top">
-            <th scope="row"><label for="wpckan_setting_log_path"><?php _e('Path','wpckan') ?></label></th>
+            <th scope="row"><label for="wpckan_setting_log_path"><?php _e('Log file path','wpckan') ?></label></th>
             <td>
               <input type="text" name="wpckan_setting_log_path" id="wpckan_setting_log_path" value="<?php echo $logging_path ?>"/>
               <p class="description"><?php _e('Path where logs are going to be stored. Mind permissions.','wpckan') ?></p>

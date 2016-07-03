@@ -3,7 +3,7 @@
  * Plugin Name: wpckan
  * Plugin URI: http://www.lifeformapps.com/portfolio/wpckan/
  * Description: wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
- * Version: 1.2.4
+ * Version: 1.3.0
  * Author: Alex Corbi (mail@lifeformapps.com)
  * Author URI: http://www.lifeformapps.com
  * License: GPLv3.
@@ -16,6 +16,13 @@
  include_once plugin_dir_path(__FILE__).'utils/wpckan-exceptions.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-utils.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-api.php';
+
+ $cache_path = get_option('wpckan_setting_cache_path');
+ $cache_time = get_option('wpckan_setting_cache_time');
+ $cache = new Gilbitron\Util\SimpleCache();
+ $cache->cache_path = $cache_path;
+ $cache->cache_time = $cache_time;
+ $GLOBALS['cache'] = $cache;
 
 if (!class_exists('wpckan')) {
     class wpckan
@@ -219,6 +226,9 @@ if (!class_exists('wpckan')) {
             register_setting('wpckan-group', 'wpckan_setting_ckan_valid_settings_write');
             register_setting('wpckan-group', 'wpckan_setting_log_path');
             register_setting('wpckan-group', 'wpckan_setting_log_enabled');
+            register_setting('wpckan-group', 'wpckan_setting_cache_path');
+            register_setting('wpckan-group', 'wpckan_setting_cache_time');
+            register_setting('wpckan-group', 'wpckan_setting_cache_enabled');
             register_setting('wpckan-group', 'wpckan_setting_supported_fields', 'wpckan_sanitize_csv');
             register_setting('wpckan-group', 'wpckan_setting_multilingual_fields', 'wpckan_sanitize_csv');
             register_setting('wpckan-group', 'wpckan_setting_field_mappings', 'wpckan_sanitize_csv');

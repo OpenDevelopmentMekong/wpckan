@@ -4,7 +4,9 @@
   define("WPCKAN_FREQ_POST_SAVED","1");
   define("WPCKAN_FILTER_ALL","0");
   define("WPCKAN_FILTER_ONLY_WITH_RESOURCES","1");
-  define("WPCKAN_DEFAULT_LOG","/tmp/wpckan.log");
+  define("WPCKAN_DEFAULT_LOG_PATH","/tmp/wpckan.log");
+  define("WPCKAN_DEFAULT_CACHE_PATH","/cache/");
+  define("WPCKAN_DEFAULT_CACHE_TIME",3600);
 
   use Analog\Analog;
   use Analog\Handler;
@@ -116,7 +118,7 @@
     if (empty($atts['ids'])):
       return "";
     endif;
-    
+
     $result = wpckan_api_query_datasets($atts);
     $dataset_array = $result["results"];
 
@@ -205,7 +207,7 @@
     if (!wpckan_is_null_or_empty_string(get_option('wpckan_setting_log_path')))
       Analog::handler(Handler\File::init (get_option('wpckan_setting_log_path')));
     else
-      Analog::handler(Handler\File::init (WPCKAN_DEFAULT_LOG));
+      Analog::handler(Handler\File::init (WPCKAN_DEFAULT_LOG_PATH));
 
     Analog::log ( "[ " . $caller['file'] . " | " . $caller['line'] . " ] " . $text );
   }

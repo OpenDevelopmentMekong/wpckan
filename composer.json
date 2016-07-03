@@ -11,6 +11,7 @@
   "require": {
     "silex/ckan_client": "dev-master",
     "analog/analog": "dev-master",
-    "twitter/typeahead.js": "dev-master"
+    "twitter/typeahead.js": "dev-master",
+    "gilbitron/php-simplecache": "~1.4"
   }
 }
