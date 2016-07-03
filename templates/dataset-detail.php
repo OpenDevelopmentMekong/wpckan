@@ -1,13 +1,13 @@
 <?php if (is_null($data)) die(); ?>
 
 <?php
-	$supported_fields_csv = get_option('wpckan_setting_supported_fields');
+	$supported_fields_csv = $GLOBALS['options']->get_option('wpckan_setting_supported_fields');
 	$supported_fields = explode(",", $supported_fields_csv);
 
 	$multilingual_fields = array();
 	$current_language = 'en';
 	if (wpckan_is_qtranslate_available()):
-		$multilingual_fields_csv = get_option('wpckan_setting_multilingual_fields');
+		$multilingual_fields_csv = $GLOBALS['options']->get_option('wpckan_setting_multilingual_fields');
 		$multilingual_fields = explode(",", $multilingual_fields_csv);
 		$current_language = qtranxf_getLanguage();
 	endif;

@@ -1,15 +1,29 @@
 <?php
 
 require_once dirname(dirname(__FILE__)) . '/utils/datastore-api.php';
+require_once dirname(dirname(__FILE__)) . '/utils/wpckan-options.php';
 
 class DatastoreApiTest extends PHPUnit_Framework_TestCase
 {
+
+  private $get_options_stub;
+
   public function setUp()
   {
+    parent::setUp();
+
+    $GLOBALS['options'] = $this->getMockBuilder(Wpckan_Options::class)
+                                   ->setMethods(['get_option'])
+                                   ->getMock();
+
+    $GLOBALS['options']->method('get_option')
+                           ->with($this->equalTo('wpckan_setting_cache_enabled'))
+                           ->willReturn(false);
   }
 
   public function tearDown()
   {
+    parent::tearDown();
   }
 
   public function testIncorrectCkanDomain()

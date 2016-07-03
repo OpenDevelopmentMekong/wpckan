@@ -1,9 +1,24 @@
 <?php
 
+function wpckan_get_or_cache($url,$id){
+
+  $json = "{}";
+
+  if (!$GLOBALS['options']->get_option('wpckan_setting_cache_enabled')):
+    $json = @file_get_contents($url);
+  else:
+    $json = $GLOBALS['cache']->get_data($id,$url);
+  endif;
+
+  return $json;
+}
+
 function wpckan_get_dataset_by_id($ckan_domain, $id)
 {
     $ckanapi_url = $ckan_domain.'/api/3/action/package_show?id='.$id;
-    $json = @file_get_contents($ckanapi_url);
+
+    $json = wpckan_get_or_cache($ckanapi_url,$id);
+
     if ($json === false) {
         return [];
     }
@@ -15,7 +30,9 @@ function wpckan_get_dataset_by_id($ckan_domain, $id)
 function wpckan_get_datasets_filter($ckan_domain, $key, $value)
 {
     $ckanapi_url = $ckan_domain.'/api/3/action/package_search?fq='.$key.':'.$value;
-    $json = @file_get_contents($ckanapi_url);
+
+    $json = wpckan_get_or_cache($ckanapi_url,$key . $value);
+
     if ($json === false) {
         return [];
     }
@@ -165,7 +182,7 @@ function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_i
  function wpckan_get_datastore_resources_filter($ckan_domain, $resource_id, $key, $value)
  {
      $datastore_url = $ckan_domain.'/api/3/action/datastore_search?resource_id='.$resource_id.'&limit=1000&filters={"'.$key.'":"'.$value.'"}';
-     $json = @file_get_contents($datastore_url);
+     $json = wpckan_get_or_cache($datastore_url,$resource_id);
      if ($json === false) {
          return [];
      }
@@ -177,7 +194,7 @@ function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_i
  function wpckan_get_datastore_resource($ckan_domain, $resource_id)
  {
      $datastore_url = $ckan_domain.'/api/3/action/datastore_search?resource_id='.$resource_id.'&limit=1000';
-     $json = @file_get_contents($datastore_url);
+     $json = wpckan_get_or_cache($datastore_url,$resource_id);
      if ($json === false) {
          return [];
      }
