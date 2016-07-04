@@ -1,6 +1,7 @@
 <?php
 
 require_once dirname(dirname(__FILE__)) . '/utils/datastore-api.php';
+require_once dirname(dirname(__FILE__)) . '/utils/wpckan-api.php';
 require_once dirname(dirname(__FILE__)) . '/utils/wpckan-options.php';
 
 class DatastoreApiTest extends PHPUnit_Framework_TestCase
