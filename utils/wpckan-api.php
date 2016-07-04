@@ -1,12 +1,30 @@
 <?php
 
-  include_once plugin_dir_path( __FILE__ ) . 'wpckan-utils.php' ;
   use Silex\ckan\CkanClient;
-
+  use Guzzle\Cache\DoctrineCacheAdapter;
+  use Guzzle\Plugin\Cache\CachePlugin;
+  use Guzzle\Plugin\Cache\DefaultCacheStorage;
+  use Doctrine\Common\Cache\FilesystemCache;
 
   /*
   * Api
   */
+
+  function wpckan_get_guzzle_client($settings){
+    $ckanClient = CkanClient::factory($settings);
+
+    $cachePlugin = new CachePlugin(array(
+        'storage' => new DefaultCacheStorage(
+            new DoctrineCacheAdapter(
+                new FilesystemCache('/cache/')
+            )
+        )
+    ));
+
+    $ckanClient->addSubscriber($cachePlugin);
+
+    return $ckanClient;
+  }
 
   function wpckan_api_query_datasets($atts) {
 
@@ -17,7 +35,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'PackageSearch';
       $arguments = compose_solr_query_from_attrs($atts);
 
@@ -50,7 +68,7 @@
 
     try{
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'GetDataset';
       $arguments = array('id' => $atts['id']);
 
@@ -77,7 +95,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'GetOrganizations';
       $arguments = array('all_fields' => true);
       $command = $ckanClient->getCommand($commandName,$arguments);
@@ -104,7 +122,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'GetGroups';
       $arguments = array('all_fields' => true);
       $command = $ckanClient->getCommand($commandName,$arguments);
@@ -148,7 +166,8 @@
 
     }
 
-    $ckanClient = CkanClient::factory(wpckan_get_ckan_settings());
+    $settings = wpckan_get_ckan_settings();
+    $ckanClient = wpckan_get_guzzle_client($settings);
     $data = array('name' => $post->post_name,
                   'title' => wpckan_strip_mqtranslate_tags($post->post_title),
                   'notes' => wpckan_cleanup_text_for_archiving($post->post_content),
@@ -174,7 +193,7 @@
       wpckan_log(json_encode($data));
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $arguments = array('data' => json_encode($data));
       $command = $ckanClient->getCommand($commandName,$arguments);
       $response = $command->execute();
@@ -207,7 +226,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'ResourceCreate';
       $arguments = array('data' => json_encode($data));
       $command = $ckanClient->getCommand($commandName,$arguments);
@@ -237,7 +256,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'PackageSearch';
       $arguments = array('fq' => '+name: ' . $id);
       $command = $ckanClient->getCommand($commandName,$arguments);
@@ -263,7 +282,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'GetOrganizationsUserIsMemberOf';
       $arguments = array('permission' => 'create_dataset');
       $command = $ckanClient->getCommand($commandName,$arguments);
@@ -285,7 +304,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'GetGroup';
       $arguments = array('id' => $id, 'include_datasets'=> false);
       $command = $ckanClient->getCommand($commandName,$arguments);
@@ -307,7 +326,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'GetGroupsUserCanEdit';
       $arguments = array();
       $command = $ckanClient->getCommand($commandName,$arguments);
@@ -329,7 +348,7 @@
     try{
 
       $settings = wpckan_get_ckan_settings();
-      $ckanClient = CkanClient::factory($settings);
+      $ckanClient = wpckan_get_guzzle_client($settings);
       $commandName = 'GetUser';
       $arguments = array('id' => $id);
       $command = $ckanClient->getCommand($commandName,$arguments);

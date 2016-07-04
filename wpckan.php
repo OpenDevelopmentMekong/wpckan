@@ -9,12 +9,12 @@
  * License: GPLv3.
  */
  require 'vendor/autoload.php';
- include_once plugin_dir_path(__FILE__).'utils/datastore-api.php';
  include_once plugin_dir_path(__FILE__).'widgets/related-resources-widget.php';
  include_once plugin_dir_path(__FILE__).'widgets/query-resources-widget.php';
  include_once plugin_dir_path(__FILE__).'widgets/query-resources-by-category-widget.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-exceptions.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-utils.php';
+ include_once plugin_dir_path(__FILE__).'utils/datastore-api.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-api.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-options.php';
 

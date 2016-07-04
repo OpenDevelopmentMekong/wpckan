@@ -16,6 +16,7 @@
     "silex/ckan_client": "dev-master",
     "analog/analog": "dev-master",
     "twitter/typeahead.js": "dev-master",
-    "gilbitron/php-simplecache": "dev-master"
+    "gilbitron/php-simplecache": "dev-master",
+    "doctrine/cache" : "*"
   }
 }
