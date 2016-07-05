@@ -7,11 +7,11 @@
         <?php
           wpckan_log("Rendering settings.php");
           $ckan_url = $GLOBALS['options']->get_option('wpckan_setting_ckan_url');
-          //$ckan_url_redirection = $GLOBALS['options']->get_option('wpckan_setting_ckan_url_redirection');
           $ckan_api = $GLOBALS['options']->get_option('wpckan_setting_ckan_api');
           $supported_fields = $GLOBALS['options']->get_option('wpckan_setting_supported_fields');
           $multilingual_fields = $GLOBALS['options']->get_option('wpckan_setting_multilingual_fields');
           $field_mappings = $GLOBALS['options']->get_option('wpckan_setting_field_mappings');
+          $redirect_enabled = $GLOBALS['options']->get_option('wpckan_setting_redirect_enabled');
           $logging_path = $GLOBALS['options']->get_option('wpckan_setting_log_path');
           if (!isset($logging_path)):
             $logging_path = WPCKAN_DEFAULT_LOG_PATH;
@@ -101,6 +101,14 @@
             <td>
               <textarea class="full-width" name="wpckan_setting_field_mappings" placeholder="owner_org  =>  Organization"><?php echo $field_mappings;?></textarea>
               <p class="description"><?php _e('Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field to its label','wpckan') ?></p>
+            </td>
+          </tr>
+          <!-- Redirect-->
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_redirect_enabled"><?php _e('Enable url redirection','wpckan') ?></label></th>
+            <td>
+              <input type="checkbox" name="wpckan_setting_redirect_enabled" id="wpckan_setting_redirect_enabled" <?php if ($redirect_enabled)  echo 'checked="true"'; ?>/>
+              <p class="description"><?php _e('if checked, links to datasets, resources and organizations will be redirected to /','wpckan') ?></p>
             </td>
           </tr>
           <!-- Caching -->
