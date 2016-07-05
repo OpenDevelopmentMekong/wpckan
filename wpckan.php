@@ -235,6 +235,7 @@ if (!class_exists('wpckan')) {
             register_setting('wpckan-group', 'wpckan_setting_supported_fields', 'wpckan_sanitize_csv');
             register_setting('wpckan-group', 'wpckan_setting_multilingual_fields', 'wpckan_sanitize_csv');
             register_setting('wpckan-group', 'wpckan_setting_field_mappings', 'wpckan_sanitize_csv');
+            register_setting('wpckan-group', 'wpckan_setting_redirect_enabled');
 
             foreach (get_post_types() as $post_type) {
                 $settings_name = 'setting_supported_post_types_'.$post_type;

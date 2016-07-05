@@ -185,6 +185,10 @@
   function wpckan_get_link_to_dataset($dataset_name){
     wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
 
+    if ($GLOBALS['options']->get_option('wpckan_setting_redirect_enabled')):
+      return "/dataset/?id=" . $dataset_name;
+    endif;
+
     return $GLOBALS['options']->get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
   }
 
@@ -493,7 +497,7 @@
   function wpckan_parse_field_mappings(){
     $mappings_raw = $GLOBALS['options']->get_option('wpckan_setting_field_mappings');
     $mappings_clean = array();
-    if (!isset($mappings_raw)):
+    if (empty($mappings_raw)):
       return $mappings_clean;
     endif;
 
