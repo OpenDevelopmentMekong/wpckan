@@ -380,7 +380,7 @@ So, mind that the CKAN instance which this plugin is used with needs to allow al
 
 # Testing
 
-Tests are found on ckanext/odm_dataset/tests and can be run with ```phpunit tests```
+Tests are found on /tests and can be run with ```phpunit tests```
 
 # Continuous deployment
 
