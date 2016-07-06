@@ -6,26 +6,26 @@
 
         <?php
           wpckan_log("Rendering settings.php");
-          $ckan_url = $GLOBALS['options']->get_option('wpckan_setting_ckan_url');
-          $ckan_api = $GLOBALS['options']->get_option('wpckan_setting_ckan_api');
-          $supported_fields = $GLOBALS['options']->get_option('wpckan_setting_supported_fields');
-          $multilingual_fields = $GLOBALS['options']->get_option('wpckan_setting_multilingual_fields');
-          $field_mappings = $GLOBALS['options']->get_option('wpckan_setting_field_mappings');
-          $redirect_enabled = $GLOBALS['options']->get_option('wpckan_setting_redirect_enabled');
-          $logging_path = $GLOBALS['options']->get_option('wpckan_setting_log_path');
+          $ckan_url = $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url');
+          $ckan_api = $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_api');
+          $supported_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
+          $multilingual_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
+          $field_mappings = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
+          $redirect_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled');
+          $logging_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path');
           if (!isset($logging_path)):
             $logging_path = WPCKAN_DEFAULT_LOG_PATH;
           endif;
-          $logging_enabled = $GLOBALS['options']->get_option('wpckan_setting_log_enabled');
-          $cache_path = $GLOBALS['options']->get_option('wpckan_setting_cache_path');
+          $logging_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled');
+          $cache_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path');
           if (!isset($cache_path)):
             $cache_path = WPCKAN_DEFAULT_CACHE_PATH;
           endif;
-          $cache_time = $GLOBALS['options']->get_option('wpckan_setting_cache_time');
+          $cache_time = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_time');
           if (!isset($cache_time)):
             $cache_time = WPCKAN_DEFAULT_CACHE_TIME;
           endif;
-          $cache_enabled = $GLOBALS['options']->get_option('wpckan_setting_cache_enabled');
+          $cache_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled');
           $valid_connection_read = wpckan_validate_settings_read();
           $valid_connection_write = wpckan_validate_settings_write();
           update_option('wpckan_setting_ckan_valid_settings_read',$valid_connection_read);
@@ -44,7 +44,7 @@
           <tr valign="top">
               <th scope="row"><label for="wpckan_setting_ckan_api"><?php _e('CKAN Api key','wpckan') ?></label></th>
               <td>
-                <input class="full-width" type="text" name="wpckan_setting_ckan_api" id="wpckan_setting_ckan_api" value="<?php echo $GLOBALS['options']->get_option('wpckan_setting_ckan_api'); ?>"/>
+                <input class="full-width" type="text" name="wpckan_setting_ckan_api" id="wpckan_setting_ckan_api" value="<?php echo $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_api'); ?>"/>
                 <p class="description"><?php _e('Available under the profile page of a CKAN user with Admin rights.','wpckan') ?>.</p>
               </td>
           </tr>
@@ -72,7 +72,7 @@
               foreach (get_post_types() as $post_type) {
               $settings_name =  "setting_supported_post_types_" . $post_type;
              ?>
-              <p><input type="checkbox" name="<?php echo $settings_name ?>" id="<?php echo $settings_name ?>" <?php if ($GLOBALS['options']->get_option($settings_name))  echo 'checked="true"'; ?>><?php echo $post_type ?></input></p>
+              <p><input type="checkbox" name="<?php echo $settings_name ?>" id="<?php echo $settings_name ?>" <?php if ($GLOBALS['wpckan_options']->get_option($settings_name))  echo 'checked="true"'; ?>><?php echo $post_type ?></input></p>
              <?php } ?>
            </td>
           </tr>

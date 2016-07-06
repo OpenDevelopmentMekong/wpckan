@@ -18,10 +18,10 @@
  include_once plugin_dir_path(__FILE__).'utils/wpckan-api.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-options.php';
 
- $GLOBALS['options'] = new Wpckan_Options();
+ $GLOBALS['wpckan_options'] = new Wpckan_Options();
 
- $cache_path = $GLOBALS['options']->get_option('wpckan_setting_cache_path');
- $cache_time = $GLOBALS['options']->get_option('wpckan_setting_cache_time');
+ $cache_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path');
+ $cache_time = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_time');
  $cache = new Gilbitron\Util\SimpleCache();
  $cache->cache_path = $cache_path;
  $cache->cache_time = $cache_time;

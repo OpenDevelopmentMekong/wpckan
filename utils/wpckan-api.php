@@ -410,7 +410,7 @@
 
   function wpckan_get_ckan_domain()
   {
-      return $GLOBALS['options']->get_option('wpckan_setting_ckan_url');
+      return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url');
   }
 
 
@@ -422,7 +422,7 @@
 
      $json = "{}";
 
-     if (!$GLOBALS['options']->get_option('wpckan_setting_cache_enabled')):
+     if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled')):
        $json = @file_get_contents($url);
      else:
        $json = $GLOBALS['cache']->get_data($id,$url);

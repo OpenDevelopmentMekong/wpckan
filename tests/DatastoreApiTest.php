@@ -13,11 +13,11 @@ class DatastoreApiTest extends PHPUnit_Framework_TestCase
   {
     parent::setUp();
 
-    $GLOBALS['options'] = $this->getMockBuilder(Wpckan_Options::class)
+    $GLOBALS['wpckan_options'] = $this->getMockBuilder(Wpckan_Options::class)
                                    ->setMethods(['get_option'])
                                    ->getMock();
 
-    $GLOBALS['options']->method('get_option')
+    $GLOBALS['wpckan_options']->method('get_option')
                            ->with($this->equalTo('wpckan_setting_cache_enabled'))
                            ->willReturn(false);
   }
