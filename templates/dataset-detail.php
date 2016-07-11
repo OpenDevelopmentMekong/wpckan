@@ -34,11 +34,11 @@
   <?php endif; ?>
 
 	<!-- Tags -->
-  <?php foreach($data['tags'] as $tag): ?>
-    <ul class="wpckan_dataset_tags">
+  <ul class="wpckan_dataset_tags">
+    <?php foreach($data['tags'] as $tag): ?>
       <li class="wpckan_dataset_tag"><?php echo $tag['display_name'] ?></li>
-    </ul>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
+  </ul>
 
 	<!-- Notes or notes_translated in case of multilingual dataset -->
 	<?php
