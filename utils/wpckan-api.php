@@ -575,13 +575,13 @@
            <?php if ($lang != 'en') {
        ?>
                    <div class="div-button"><a href="<?php echo $individual_layer['download_url_localization'];
-       ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'opendev');
+       ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');
        ?></a></div>
 
                    <?php if ($individual_layer['profilepage_url_localization']) {
        ?>
                      <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url_localization'];
-       ?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'opendev');
+       ?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');
        ?></a></div>
                    <?php
 
@@ -592,13 +592,13 @@
    } else {
        ?>
                    <div class="div-button"><a href="<?php echo $individual_layer['download_url'];
-       ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'opendev');
+       ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');
        ?></a></div>
 
                    <?php if ($individual_layer['profilepage_url']) {
        ?>
                      <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url'];
-       ?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'opendev');
+       ?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');
        ?></a></div>
                    <?php
 

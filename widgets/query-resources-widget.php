@@ -42,7 +42,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
    if (!empty($instance['limit']) && $instance['limit'] > 0)
      $shortcode .= ' limit="' . $instance['limit'] . '"';
 
-   $shortcode .= ' include_fields_dataset="title" include_fields_resources="format" blank_on_empty="true"]';
+   $shortcode .= ' include_fields_dataset="'.$instance['output_fields'].'" include_fields_resources="format" blank_on_empty="true"]';
 
    $output = do_shortcode($shortcode);
 
@@ -97,6 +97,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
 
     }
   }
+  $output_fields = !empty($instance['output_fields']) ? $instance['output_fields'] : 'title';
 
   ?>
   <p>
@@ -128,6 +129,11 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
     <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'more_text' ); ?>" name="<?php echo $this->get_field_name( 'more_text' ); ?>" placeholder="Search for more" value="<?php echo esc_attr( $more_text ); ?>">
     <label for="<?php echo $this->get_field_id( 'more_link' ); ?>"><?php _e( 'More dataset: Link (URL)' ); ?></label>
     <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'more_link' ); ?>" name="<?php echo $this->get_field_name( 'more_link' ); ?>" value="<?php echo esc_attr( $more_link ); ?>">
+    <h3>Output</h3>
+  	<p>
+			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields:');?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
+		</p>
   </p>
   <?php
  }
@@ -150,6 +156,8 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   $instance['limit'] = ( ! empty( $new_instance['limit'] ) ) ? $new_instance['limit'] : 0;
   $instance['more_text'] = ( ! empty( $new_instance['more_text'] ) ) ? $new_instance['more_text'] : 0;
   $instance['more_link'] = ( ! empty( $new_instance['more_link'] ) ) ? $new_instance['more_link'] : 0;
+  $instance['output_fields'] = (! empty( $new_instance['output_fields'])) ? strip_tags( $new_instance['output_fields'] ) : 'title';
+  $instance['output_fields'] = wpckan_sanitize_csv($instance['output_fields']);
 
   return $instance;
  }
