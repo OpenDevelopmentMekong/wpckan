@@ -56,28 +56,28 @@
     <a href="<?php echo $data['license_url'] ?>" class="wpckan_dataset_license"><?php echo $data['license_title'] ?></a>
   <?php endif; ?>
 
-	<!-- Resources -->
-	<?php if (isset($data['resources'])): ?>
-		<h2><?php _e('Resources','wpckan') ?></h2>
-    <ul class="wpckan_dataset_resources">
-		<?php foreach($data['resources'] as $resource): ?>
-      <li class="wpckan_dataset_resource">
-				<?php if (isset($resource['format'])): ?>
-					<p class="wpckan_dataset_resource_format"><?php echo $resource['format']; ?></p>
-				<?php endif; ?>
-				<?php if (isset($resource['name'])): ?>
-					<h3 class="wpckan_dataset_resource_name"><?php echo $resource['name']; ?></h3>
-				<?php endif; ?>
-				<?php if (isset($resource['description'])): ?>
-					<p class="wpckan_dataset_resource_description"><?php echo $resource['description']; ?></p>
-				<?php endif; ?>
-				<?php if (isset($resource['url'])): ?>
-					<a class="wpckan_dataset_resource_url button" href="<?php echo $resource['url']; ?>"><?php _e('Download','wpckan') ?></a>
-				<?php endif; ?>
-			</li>
-	  <?php endforeach; ?>
-    </ul>
-	<?php endif; ?>
+  <!-- Resources -->
+	<h2><?php _e('Resources','wpckan') ?></h2>
+	<table class="wpckan_dataset_resources">
+    <?php foreach($data['resources'] as $resource): ?>
+  		<tr class="wpckan_dataset_resource">
+  			<td class="wpckan_dataset_resource_format" format="<?php echo $resource['format']; ?>"><?php if (isset($resource['format'])): ?>
+          <p format="<?php echo $resource['format']; ?>"><?php echo $resource['format']; ?></p>
+        <?php endif; ?></td>
+        <td class="wpckan_dataset_resource_name">
+          <?php if (isset($resource['name'])): ?>
+            <h3><?php echo $resource['name']; ?></h3>
+          <?php endif; ?>
+          <?php if (isset($resource['description'])): ?>
+            <p><?php echo $resource['description']; ?></p>
+          <?php endif; ?>
+        </td>
+        <td class="wpckan_dataset_resource_url"><?php if (isset($resource['url'])): ?>
+          <a class="wpckan_dataset_resource_url button" href="<?php echo $resource['url']; ?>"><?php _e('Download','wpckan') ?></a>
+        <?php endif; ?></td>
+  		</tr>
+    <?php endforeach; ?>
+  </table>
 
 	<!-- Metadata -->
 	<h2><?php _e('Additional info','wpckan') ?></h2>
@@ -90,18 +90,16 @@
 						if (in_array($key,$multilingual_fields)):
 							if (is_array($value) &&  array_key_exists($current_language,$value)):
 								$value = $value[$current_language];
-								echo "<td>" . __($key) . "</td>";
-								echo "<td>" . $value . "</td>";
+								echo "<td><p>" . __($key) . "</p></td>";
+								echo "<td><p>" . $value . "</p></td>";
 							endif;
 						else:
 							if (is_array($value)):
 								$value = implode(", ",$value);
 							endif;
-							echo "<td>" . __($key) . "</td>";
-							echo "<td>" . $value . "</td>";
-						endif;
-						 ?>
-					</td>
+							echo "<td><p>" . __($key) . "</p></td>";
+							echo "<td><p>" . $value . "</p></td>";
+						endif; ?>
 				</tr>
 			<?php endif; ?>
 	  <?php endforeach; ?>
