@@ -59,24 +59,24 @@
 	<!-- Resources -->
 	<?php if (isset($data['resources'])): ?>
 		<h2><?php _e('Resources','wpckan') ?></h2>
+    <ul class="wpckan_dataset_resources">
 		<?php foreach($data['resources'] as $resource): ?>
-	    <ul class="wpckan_dataset_resources">
-	      <li class="wpckan_dataset_resource">
-					<?php if (isset($resource['format'])): ?>
-						<p class="wpckan_dataset_resource_format"><?php echo $resource['format']; ?></p>
-					<?php endif; ?>
-					<?php if (isset($resource['name'])): ?>
-						<h3 class="wpckan_dataset_resource_name"><?php echo $resource['name']; ?></h3>
-					<?php endif; ?>
-					<?php if (isset($resource['description'])): ?>
-						<p class="wpckan_dataset_resource_description"><?php echo $resource['description']; ?></p>
-					<?php endif; ?>
-					<?php if (isset($resource['url'])): ?>
-						<a class="wpckan_dataset_resource_url button" href="<?php echo $resource['url']; ?>"><?php _e('Download','wpckan') ?></a>
-					<?php endif; ?>
-				</li>
-	    </ul>
+      <li class="wpckan_dataset_resource">
+				<?php if (isset($resource['format'])): ?>
+					<p class="wpckan_dataset_resource_format"><?php echo $resource['format']; ?></p>
+				<?php endif; ?>
+				<?php if (isset($resource['name'])): ?>
+					<h3 class="wpckan_dataset_resource_name"><?php echo $resource['name']; ?></h3>
+				<?php endif; ?>
+				<?php if (isset($resource['description'])): ?>
+					<p class="wpckan_dataset_resource_description"><?php echo $resource['description']; ?></p>
+				<?php endif; ?>
+				<?php if (isset($resource['url'])): ?>
+					<a class="wpckan_dataset_resource_url button" href="<?php echo $resource['url']; ?>"><?php _e('Download','wpckan') ?></a>
+				<?php endif; ?>
+			</li>
 	  <?php endforeach; ?>
+    </ul>
 	<?php endif; ?>
 
 	<!-- Metadata -->
