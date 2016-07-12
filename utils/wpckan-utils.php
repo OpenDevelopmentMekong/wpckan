@@ -509,7 +509,7 @@
   }
 
   function wpckan_valid_id($id){
-    return isset($id) && !empty($id) && $id !== "";
+    return isset($id) && !empty($id) && $id !== "" && $id !== " ";
   }
 
 ?>
