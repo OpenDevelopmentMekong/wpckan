@@ -82,9 +82,7 @@
       return $item['dataset_id'];
     }, $related_datasets);
 
-    if (empty($atts['ids'])):
-      return "";
-    endif;
+    $atts['ids'] = array_filter($atts['ids'], "wpckan_valid_id");
 
     $result = wpckan_api_query_datasets($atts);
     $dataset_array = $result["results"];
@@ -203,7 +201,7 @@
   */
 
   function wpckan_log($text) {
-    
+
     if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled')) return;
 
     $bt = debug_backtrace();
@@ -508,6 +506,10 @@
         $mappings_clean[$array_value[0]] = $array_value[1];
     }
     return $mappings_clean;
+  }
+
+  function wpckan_valid_id($id){
+    return isset($id) && !empty($id) && $id !== "" && $id !== " ";
   }
 
 ?>
