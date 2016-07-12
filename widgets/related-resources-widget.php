@@ -43,7 +43,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
        $shortcode .= ' limit="'.$instance['limit'].'"';
      endif;
 
-     $shortcode .= ' include_fields_dataset="title" include_fields_resources="format" blank_on_empty="true"]';
+     $shortcode .= ' include_fields_dataset="'.$instance['output_fields'].'" include_fields_resources="format" blank_on_empty="true"]';
 
      $output = do_shortcode($shortcode);
 
@@ -84,7 +84,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
          } catch (Exception $e) {
          }
      }
-
+     $output_fields = !empty($instance['output_fields']) ? $instance['output_fields'] : 'title';
      ?>
   <p>
     <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');?></label>
@@ -109,6 +109,11 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
     <input class="widefat" id="<?php echo $this->get_field_id('type');?>" name="<?php echo $this->get_field_name('type');?>" type="text" value="<?php echo esc_attr($type);?>" placeholder="<?php _e('dataset, library_record, etc..');?>">
     <label for="<?php echo $this->get_field_id('limit');?>"><?php _e('Limit:');?></label>
     <input class="widefat" type="number" id="<?php echo $this->get_field_id('limit');?>" name="<?php echo $this->get_field_name('limit');?>" value="<?php echo esc_attr($limit);?>">
+    <h3>Output</h3>
+  	<p>
+			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields:');?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
+		</p>
   </p>
   <?php
 
@@ -129,6 +134,8 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      $instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : '';
      $instance['filter_fields'] = (!empty($new_instance['filter_fields'])) ? strip_tags($new_instance['filter_fields']) : '';
      $instance['type'] = (! empty( $new_instance['type'])) ? strip_tags( $new_instance['type'] ) : 'dataset';
+     $instance['output_fields'] = (! empty( $new_instance['output_fields'])) ? strip_tags( $new_instance['output_fields'] ) : 'dataset';
+     $instance['output_fields'] = wpckan_sanitize_csv($instance['output_fields']);
 
      return $instance;
  }
