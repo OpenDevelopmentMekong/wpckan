@@ -79,7 +79,7 @@
 
     // Add ids attribute to constraint search
     $atts['ids'] = array_map(function($item){
-      if (!empty($item['dataset_id'])):
+      if (!empty($item['dataset_id']) && $item['dataset_id'] != ''):
         return $item['dataset_id'];
       endif;
     }, $related_datasets);
