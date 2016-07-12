@@ -25,6 +25,8 @@
     $include_fields_extra = explode(",",$atts["include_fields_extra"]);
   endif;
 
+  $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
+
 ?>
 
 <div class="wpckan_dataset_list">
@@ -33,7 +35,7 @@
     <li>
       <div class="wpckan_dataset">
         <?php if (array_key_exists("title",$dataset) && !wpckan_is_null_or_empty_string($dataset["title"]) && in_array("title",$include_fields_dataset)) {?>
-          <div class="wpckan_dataset_title"><a target="_blank" href="<?php echo wpckan_get_link_to_dataset($dataset["name"]) ?>"><?php echo $dataset["title"] ?></a></div>
+          <div class="wpckan_dataset_title"><a <?php if ($target_blank_enabled){ echo 'target="_blank"';} ?>  href="<?php echo wpckan_get_link_to_dataset($dataset["name"]) ?>"><?php echo $dataset["title"] ?></a></div>
         <?php } ?>
         <?php if (array_key_exists("notes",$dataset) && !wpckan_is_null_or_empty_string($dataset["notes"]) && in_array("notes",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_notes"><?php echo $dataset["notes"] ?></div>

@@ -12,6 +12,7 @@
           $multilingual_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
           $field_mappings = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
           $redirect_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled');
+          $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
           $logging_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path');
           if (!isset($logging_path)):
             $logging_path = WPCKAN_DEFAULT_LOG_PATH;
@@ -109,6 +110,13 @@
             <td>
               <input type="checkbox" name="wpckan_setting_redirect_enabled" id="wpckan_setting_redirect_enabled" <?php if ($redirect_enabled)  echo 'checked="true"'; ?>/>
               <p class="description"><?php _e('if checked, links to datasets, resources and organizations will be redirected to /','wpckan') ?></p>
+            </td>
+          </tr>
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_target_blank_enabled"><?php _e('Open datasets in new tab','wpckan') ?></label></th>
+            <td>
+              <input type="checkbox" name="wpckan_setting_target_blank_enabled" id="wpckan_setting_target_blank_enabled" <?php if ($target_blank_enabled)  echo 'checked="true"'; ?>/>
+              <p class="description"><?php _e('if checked, links to datasets will be opened in a new tab/window','wpckan') ?></p>
             </td>
           </tr>
           <!-- Caching -->
