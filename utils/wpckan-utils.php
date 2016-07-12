@@ -79,14 +79,10 @@
 
     // Add ids attribute to constraint search
     $atts['ids'] = array_map(function($item){
-      if (!empty($item['dataset_id']) && $item['dataset_id'] != ''):
-        return $item['dataset_id'];
-      endif;
+      return $item['dataset_id'];
     }, $related_datasets);
 
-    if (empty($atts['ids'])):
-      return "";
-    endif;
+    $atts['ids'] = array_filter($atts['ids'], "wpckan_valid_id");
 
     $result = wpckan_api_query_datasets($atts);
     $dataset_array = $result["results"];
@@ -510,6 +506,10 @@
         $mappings_clean[$array_value[0]] = $array_value[1];
     }
     return $mappings_clean;
+  }
+
+  function wpckan_valid_id($id){
+    return isset($id) && !empty($id) && $id !== "";
   }
 
 ?>
