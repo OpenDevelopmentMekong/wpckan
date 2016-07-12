@@ -79,7 +79,9 @@
 
     // Add ids attribute to constraint search
     $atts['ids'] = array_map(function($item){
-      return $item['dataset_id'];
+      if (!empty($item['dataset_id'])):
+        return $item['dataset_id'];
+      endif;
     }, $related_datasets);
 
     if (empty($atts['ids'])):
@@ -203,7 +205,7 @@
   */
 
   function wpckan_log($text) {
-    
+
     if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled')) return;
 
     $bt = debug_backtrace();
