@@ -422,11 +422,22 @@
 
      $json = "{}";
 
+     wpckan_log("wpckan_get_or_cache url:" . $url . " id: " . $id);
+
      if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled')):
        $json = @file_get_contents($url);
      else:
        $valid_id = substr($id,0,249);
        $json = $GLOBALS['cache']->get_data($valid_id,$url);
+       wpckan_log($json);
+       if (strpos($json, '"success": false') !== false) {
+          $file_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path')  . $valid_id;
+          wpckan_log("wpckan_get_or_cache deleting cached file:" . $file_path);
+          if (file_exists($file_path)) {
+            unlink($file_path);
+          }
+       }
+
      endif;
 
      return $json;
@@ -457,6 +468,9 @@
        }
        $datasets = json_decode($json, true) ?: [];
 
+       if (!$datasets['success']){
+         return [];
+       }
        return $datasets['result']['results'];
    }
 
