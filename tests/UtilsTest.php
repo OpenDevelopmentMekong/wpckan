@@ -6,10 +6,20 @@ class UtilsTest extends PHPUnit_Framework_TestCase
 {
   public function setUp()
   {
+    $GLOBALS['wpckan_options'] = $this->getMockBuilder(Wpckan_Options::class)
+                                   ->setMethods(['get_option'])
+                                   ->getMock();
+
+    $GLOBALS['wpckan_options']->method('get_option')
+                          ->will($this->returnValueMap(array(
+                               array('wpckan_setting_cache_enabled', false),
+                               array('wpckan_setting_log_enabled', false)
+                           )));
   }
 
   public function tearDown()
   {
+    parent::tearDown();
   }
 
   public function testComposeSolrQueryFromAttrsQuery(){

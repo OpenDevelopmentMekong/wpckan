@@ -18,8 +18,10 @@ class DatastoreApiTest extends PHPUnit_Framework_TestCase
                                    ->getMock();
 
     $GLOBALS['wpckan_options']->method('get_option')
-                           ->with($this->equalTo('wpckan_setting_cache_enabled'))
-                           ->willReturn(false);
+                           ->will($this->returnValueMap(array(
+                                array('wpckan_setting_cache_enabled', false),
+                                array('wpckan_setting_log_enabled', false)
+                            )));
   }
 
   public function tearDown()
