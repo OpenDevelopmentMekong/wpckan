@@ -413,89 +413,6 @@
       return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url');
   }
 
-
-  /*
-   * Non-guzzle calls
-   */
-
-   function wpckan_get_or_cache($url,$id){
-
-     $json = "{}";
-
-     wpckan_log("wpckan_get_or_cache url:" . $url . " id: " . $id);
-
-     if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled')):
-       $json = @file_get_contents($url);
-     else:
-       $valid_id = substr($id,0,249);
-       $json = $GLOBALS['cache']->get_data($valid_id,$url);
-       wpckan_log($json);
-       if (strpos($json, '"success": false') !== false) {
-          $file_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path')  . $valid_id;
-          wpckan_log("wpckan_get_or_cache deleting cached file:" . $file_path);
-          if (file_exists($file_path)) {
-            unlink($file_path);
-          }
-       }
-
-     endif;
-
-     return $json;
-   }
-
-   function wpckan_get_dataset_by_id($ckan_domain, $id)
-   {
-       $ckanapi_url = $ckan_domain.'/api/3/action/package_show?id='.$id;
-
-       $json = wpckan_get_or_cache($ckanapi_url,$id);
-
-       if ($json === false) {
-           return [];
-       }
-       $datasets = json_decode($json, true) ?: [];
-
-       return $datasets['result'];
-   }
-
-   function wpckan_get_datasets_filter($ckan_domain, $key, $value)
-   {
-       $ckanapi_url = $ckan_domain.'/api/3/action/package_search?rows=1000&fq='.$key.':'.$value;
-
-       $json = wpckan_get_or_cache($ckanapi_url,$key . $value);
-
-       if ($json === false) {
-           return [];
-       }
-       $datasets = json_decode($json, true) ?: [];
-
-       if (!$datasets['success']){
-         return [];
-       }
-       return $datasets['result']['results'];
-   }
-
-   function wpckan_get_datasets_filters($ckan_domain, $filter_array)
-   {
-
-        if (empty($filter_array)):
-          return [];
-        endif;
-
-       $ckanapi_url = $ckan_domain.'/api/3/action/package_search?rows=1000&fq=';
-       foreach ($filter_array as $key => $value):
-         $ckanapi_url .= "+". $key . ":" . $value;
-       endforeach;
-
-       $json = wpckan_get_or_cache($ckanapi_url,$key . $value);
-
-       if ($json === false):
-           return [];
-       endif;
-       $datasets = json_decode($json, true) ?: [];
-
-       return $datasets['result']['results'];
-   }
-
    // TODO: parametrize
    function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
    {
@@ -523,7 +440,9 @@
                          );
 
      // get ckan record by id
-     $get_info_from_ckan = wpckan_get_dataset_by_id($ckan_domain, $ckan_dataset_id);
+     $get_info_from_ckan = wpckan_api_query_dataset_detail(array(
+       "id" => $ckan_dataset_id)
+     );
        ?>
        <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer['ID'];
        ?>">
