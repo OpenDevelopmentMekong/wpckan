@@ -159,7 +159,7 @@
      $imploded_value = implode(", ", $value);
 
      if (wpckan_is_valid_url($imploded_value)){
-       array_push($resources,array('name' => wpckan_strip_mqtranslate_tags($post->post_title), 'description' => $key, 'url' => $imploded_value, 'format' => wpckan_get_url_extension_or_html($imploded_value)));
+       array_push($resources,array('name' => wpckan_strip_qtranslate_tags($post->post_title), 'description' => $key, 'url' => $imploded_value, 'format' => wpckan_get_url_extension_or_html($imploded_value)));
      }else{
        array_push($extras,array('key' => $key, 'value' => $imploded_value));
      }
@@ -169,7 +169,7 @@
     $settings = wpckan_get_ckan_settings();
     $ckanClient = wpckan_get_guzzle_client($settings);
     $data = array('name' => $post->post_name,
-                  'title' => wpckan_strip_mqtranslate_tags($post->post_title),
+                  'title' => wpckan_strip_qtranslate_tags($post->post_title),
                   'notes' => wpckan_cleanup_text_for_archiving($post->post_content),
                   'extras' => $extras);
 
