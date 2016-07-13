@@ -328,7 +328,7 @@
 
   function wpckan_cleanup_text_for_archiving($post_content){
     $post_content = wpckan_detect_and_remove_shortcodes_in_text($post_content);
-    $post_content = wpckan_strip_mqtranslate_tags($post_content);
+    $post_content = wpckan_strip_qtranslate_tags($post_content);
     return $post_content;
   }
 
@@ -368,10 +368,6 @@
       }
     }
     return $text;
-  }
-
-  function wpckan_get_complete_url_for_dataset($dataset){
-    return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset["name"];
   }
 
   function wpckan_get_group_names_for_user(){
@@ -446,7 +442,7 @@
     return $clean_url;
   }
 
-  function wpckan_strip_mqtranslate_tags($input) {
+  function wpckan_strip_qtranslate_tags($input) {
     $clean_url = str_replace("<!--:-->", " ", $input);
     $clean_url = strip_tags($clean_url);
     return $clean_url;

@@ -113,28 +113,47 @@ class UtilsTest extends PHPUnit_Framework_TestCase
             );
   }
 
-  public function testSanitizeUrl()
+  // public function testSanitizeUrl()
+  // {
+  //     $result = wpckan_sanitize_url('http://data.opendevelopmentmekong.net/');
+  //     $this->assertEquals($result,'http://data.opendevelopmentmekong.net');
+  // }
+
+  public function testSanitizeCsv()
   {
-      //wpckan_sanitize_url
+      $result = wpckan_sanitize_csv('uno, dos, tres');
+      $this->assertEquals($result,'uno,dos,tres');
+  }
+
+  public function testStripQTranslateTags()
+  {
+      //wpckan_strip_qtranslate_tags
       $this->markTestSkipped(
-              'TODO testSanitizeUrl'
+              'TODO testStripQTranslateTags'
             );
   }
 
-  public function testStripMqTranslateTags()
+  public function testIsInValidUrl()
   {
-      //wpckan_strip_mqtranslate_tags
-      $this->markTestSkipped(
-              'TODO testStripMqTranslateTags'
-            );
+      $result = wpckan_is_valid_url('invalid');
+      $this->assertFalse($result);
   }
 
   public function testIsValidUrl()
   {
-      //wpckan_is_valid_url
-      $this->markTestSkipped(
-              'TODO testIsValidUrl'
-            );
+      $result = wpckan_is_valid_url('http://valid');
+      $this->assertTrue($result);
   }
 
+  public function testIsValidId()
+  {
+      $result = wpckan_valid_id('1234');
+      $this->assertTrue($result);
+  }
+
+  public function testIsInvalidId()
+  {
+      $result = wpckan_valid_id('');
+      $this->assertFalse($result);
+  }
 }
