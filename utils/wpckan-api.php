@@ -425,6 +425,7 @@
      if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled')):
        $json = @file_get_contents($url);
      else:
+       $valid_id = substr($id,0,255);
        $json = $GLOBALS['cache']->get_data($id,$url);
      endif;
 
