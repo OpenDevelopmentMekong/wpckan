@@ -426,7 +426,7 @@
        $json = @file_get_contents($url);
      else:
        $valid_id = substr($id,0,249);
-       $json = $GLOBALS['cache']->get_data($id,$url);
+       $json = $GLOBALS['cache']->get_data($valid_id,$url);
      endif;
 
      return $json;
