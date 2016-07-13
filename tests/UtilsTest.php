@@ -25,80 +25,73 @@ class UtilsTest extends PHPUnit_Framework_TestCase
   public function testComposeSolrQueryFromAttrsQuery(){
     $attrs = array('query' => 'some_query');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("q",$arguments);
-    $this->assertEquals($arguments["q"],"some_query");
+    $this->assertContains($arguments,"&q=some_query&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsGroup(){
     $attrs = array('group' => 'some_group_name');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("fq",$arguments);
-    $this->assertContains(" groups:some_group_name",$arguments["fq"]);
+    $this->assertContains($arguments,"&fq=+groups:some_group_name&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsOrganization(){
     $attrs = array('organization' => 'some_organization_name');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("fq",$arguments);
-    $this->assertContains(" owner_org:some_organization_name",$arguments["fq"]);
+    $this->assertContains($arguments,"&fq=+owner_org:some_organization_name&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsType(){
     $attrs = array('type' => 'some_type');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("fq",$arguments);
-    $this->assertContains(" type:some_type",$arguments["fq"]);
+    $this->assertContains($arguments,"&fq=+type:some_type&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsOneId(){
     $attrs = array('ids' => 'some_id');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("fq",$arguments);
-    $this->assertContains(" id:(some_id)",$arguments["fq"]);
+    $this->assertContains($arguments,"&fq=+id:(some_id)&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsNoId(){
     $attrs = array('ids' => array());
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertFalse(array_key_exists("fq",$arguments));
+    $this->assertContains($arguments,"&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsIds(){
     $attrs = array('ids' => array('some_id','other_id'));
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("fq",$arguments);
-    $this->assertContains(" id:(some_id OR other_id)",$arguments["fq"]);
+    $this->assertContains($arguments,"&fq=+id:(some_id OR other_id)&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsFilterFields(){
     $attrs = array('filter_fields' => '{"spatial-text":"England","date":"2015"}');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("fq",$arguments);
-    $this->assertContains(" spatial-text:England",$arguments["fq"]);
-    $this->assertContains(" date:2015",$arguments["fq"]);
+    $this->assertContains($arguments,"&fq=+spatial-text:England+date:2015&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsLimit(){
     $attrs = array('limit' => '10');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("rows",$arguments);
-    $this->assertEquals(10,$arguments["rows"]);
+    $this->assertContains($arguments,"&rows=10");
+  }
+
+  public function testComposeSolrQueryFromAttrsDefaultLimit(){
+    $attrs = array();
+    $arguments = compose_solr_query_from_attrs($attrs);
+    $this->assertContains($arguments,"&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsFilter(){
     $attrs = array('filter' => '1');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("fq",$arguments);
-    $this->assertContains(" num_resources:[1 TO *]",$arguments["fq"]);
+    $this->assertContains($arguments,"&fq=+num_resources:[1 TO *]&rows=1000");
   }
 
   public function testComposeSolrQueryFromAttrsLimitAndPage(){
     $attrs = array('limit' => '10', 'page' => '2');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertArrayHasKey("rows",$arguments);
-    $this->assertArrayHasKey("start",$arguments);
-    $this->assertEquals(10,$arguments["rows"]);
-    $this->assertEquals(10,$arguments["start"]);
+    $this->assertContains($arguments,"&rows=10&start=10&rows=1000");
   }
 
   public function testGetExtension()

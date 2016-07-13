@@ -84,7 +84,7 @@
 
     $atts['ids'] = array_filter($atts['ids'], "wpckan_valid_id");
 
-    $result = wpckan_api_query_datasets($atts);
+    $result = wpckan_api_package_search($atts);
     $dataset_array = $result["results"];
 
     if ((count($dataset_array) == 0) && $blank_on_empty):
@@ -117,7 +117,7 @@
       return "";
     endif;
 
-    $result = wpckan_api_query_datasets($atts);
+    $result = wpckan_api_package_search($atts);
     $dataset_array = $result["results"];
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
@@ -131,7 +131,7 @@
 
     $dataset_array = array();
     try{
-      $result = wpckan_api_query_datasets($atts);
+      $result = wpckan_api_package_search(wpckan_get_ckan_domain(),$atts);
       $dataset_array = $result["results"];
       $atts["count"] = $result["count"];
     }catch(Exception $e){
@@ -221,11 +221,15 @@
 
   function compose_solr_query_from_attrs($attrs){
 
-    $arguments = array();
+    $arguments = '';
+
+    if (!isset($attrs["limit"])):
+      $attrs["limit"] = "1000";
+    endif;
 
     // query
     if (isset($attrs['query'])):
-      $arguments['q'] = $attrs['query'];
+      $arguments .= '&q='.$attrs['query'];
     endif;
 
     $fq = "";
@@ -270,17 +274,17 @@
     endif;
 
     if (!empty($fq)):
-      $arguments['fq'] = urldecode($fq);
+      $arguments .= '&fq='.$fq;
     endif;
 
     // limit
     if (isset($attrs['limit'])):
-      $limit = (int)$attrs['limit'];
-      $arguments['rows'] = $limit;
+      $limit = $attrs['limit'];
+      $arguments .= '&rows='.$limit;
       if (isset($attrs['page'])):
         $page = (int)$attrs['page'];
         if ($page > 0):
-          $arguments['start'] = $limit * ($page - 1);
+          $arguments .= '&start='. (string)($limit * ($page - 1));
         endif;
       endif;
     endif;
