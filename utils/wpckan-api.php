@@ -375,7 +375,7 @@
      if(!empty($get_info_from_ckan)){
        ?>
        <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer->ID; ?>">
-          <table border="0" class="toggle-talbe">
+          <table border="0" class="toggle-table data-table">
               <tr><td colspan="2"><h5><?php echo $get_info_from_ckan['title_translated'][$lang]!=""?  $get_info_from_ckan['title_translated'][$lang] : $individual_layer->post_title; ?></h5></td></tr>
               <?php
               if($showing_fields == ""){
@@ -384,14 +384,15 @@
                     if(!empty($get_info_from_ckan)){
                         if($key == 'license_id' && $get_info_from_ckan['license_id']!=""){ ?>
                           <tr>
-                              <td><?php echo $attribute_metadata['license_id']; ?></td>
+                              <td class="row-key"><?php echo $attribute_metadata['license_id']; ?></td>
                               <td><?php echo $info == "unspecified"? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']; ?></td>
                           </tr>
                         <?php
                         }else{
                             if(array_key_exists($key, $attribute_metadata)){ ?>
                               <tr>
-                                  <td><?php echo $attribute_metadata[$key]; ?></td><td><?php echo is_array($info) ? $info[$lang]: $info; ?></td>
+                                  <td class="row-key"><?php echo $attribute_metadata[$key]; ?></td>
+                                  <td><?php echo is_array($info) ? $info[$lang]: $info; ?></td>
                               </tr>
                             <?php
                             }
@@ -404,13 +405,13 @@
                   if(!empty($get_info_from_ckan)){
                       if($key == 'license_id' && $get_info_from_ckan['license_id']!=""){ ?>
                         <tr>
-                            <td><?php echo $showing_fields['license_id']; ?></td>
+                            <td class="row-key"><?php echo $showing_fields['license_id']; ?></td>
                             <td><?php echo $info == "unspecified"? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']; ?></td>
                         </tr>
                       <?php
                       }else{  ?>
                           <tr>
-                              <td><?php echo $showing_fields[$key]; ?></td>
+                              <td class="row-key"><?php echo $showing_fields[$key]; ?></td>
                               <td><?php echo is_array($get_info_from_ckan[$key]) ? $get_info_from_ckan[$key][$lang]: $get_info_from_ckan[$key]; ?></td>
                           </tr>
                       <?php
