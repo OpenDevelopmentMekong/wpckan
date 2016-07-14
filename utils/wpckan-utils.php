@@ -84,7 +84,7 @@
 
     $atts['ids'] = array_filter($atts['ids'], "wpckan_valid_id");
 
-    $result = wpckan_api_package_search($atts);
+    $result = wpckan_api_package_search(wpckan_get_ckan_domain(),$atts);
     $dataset_array = $result["results"];
 
     if ((count($dataset_array) == 0) && $blank_on_empty):
@@ -117,7 +117,7 @@
       return "";
     endif;
 
-    $result = wpckan_api_package_search($atts);
+    $result = wpckan_api_package_search(wpckan_get_ckan_domain(),$atts);
     $dataset_array = $result["results"];
 
     if ((count($dataset_array) == 0) && $blank_on_empty)
