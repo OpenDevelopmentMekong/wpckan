@@ -347,148 +347,130 @@
    // TODO: parametrize
    function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
    {
-       $lang = CURRENT_LANGUAGE;
+     $lang = CURRENT_LANGUAGE;
 
-       $attribute_metadata = array(
-                           //  "title_translated" => "Title",
-                             'notes_translated' => 'Description',
-                             'odm_source' => 'Source(s)',
-                             'odm_completeness' => 'Completeness',
-                             'odm_metadata_reference_information' => 'Metadata Reference Information',
-                             'odm_process' => 'Process(es)',
-                             'odm_attributes' => 'Attributes',
-                             'odm_logical_consistency' => 'Logical Consistency',
-                             'odm_copyright' => 'Copyright',
-                             'version' => 'Version',
-                             'odm_date_created' => 'Date created',
-                             'odm_date_uploaded' => 'Date uploaded',
-                             'odm_temporal_range' => 'Temporal range',
-                             'odm_accuracy-en' => 'Accuracy',
-                             'odm_logical_consistency' => 'Logical Consistency',
-                             'odm_contact' => 'Contact',
-                             'odm_access_and_use_constraints' => 'Access and use constraints',
-                             'license_id' => 'License',
-                         );
+     $attribute_metadata = array(
+                            //  "title_translated" => "Title",
+                              "notes_translated" => "Description",
+                              "odm_source" => "Source(s)",
+                              "odm_completeness" => "Completeness",
+                              "odm_metadata_reference_information" => "Metadata Reference Information",
+                              "odm_process" => "Process(es)",
+                              "odm_attributes" => "Attributes",
+                              "odm_logical_consistency" => "Logical Consistency",
+                              "odm_copyright" => "Copyright",
+                              "version" => "Version",
+                              "odm_date_created" => "Date created",
+                              "odm_date_uploaded" => "Date uploaded",
+                              "odm_temporal_range" => "Temporal range",
+                              "odm_accuracy-en" => "Accuracy",
+                              "odm_logical_consistency" => "Logical Consistency",
+                              "odm_contact" => "Contact",
+                              "odm_access_and_use_constraints" => "Access and use constraints",
+                              "license_id" => "License"
+                          );
 
      // get ckan record by id
-     $get_info_from_ckan = wpckan_api_package_show(wpckan_get_ckan_domain(), $ckan_dataset_id); ?>
-       <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer['ID'];?>">
-           <table border="0" class="toggle-talbe">
-             <tr><td colspan="2"><h5><?php echo $get_info_from_ckan['title_translated'][$lang] ?></h5></td></tr>
-             <?php
-             if ($showing_fields == '') {
-                 if ($get_info_from_ckan) {
-                     foreach ($get_info_from_ckan as $key => $info) {
-
-                         if ($key == 'license_id') {
-                             ?>
-                           <tr>
-                             <td><?php echo $attribute_metadata['license_id'];
-                             ?></td>
-                             <td><?php echo $info == 'unspecified' ? ucwords($get_info_from_ckan['license_id']) : $get_info_from_ckan['license_id'];
-                             ?></td>
-                           </tr>
-                        <?php
-
-                         } else {
-                             if (array_key_exists($key, $attribute_metadata)) {
-                                 ?>
-                               <tr>
-                                 <td><?php echo $attribute_metadata[$key];
-                                 ?></td><td><?php echo is_array($info) ? $info[$lang] : $info;
-                                 ?></td>
-                               </tr>
-                          <?php
-
-                             }
-                         }
-                     }
-                 }
-             } else {
-                 foreach ($showing_fields as $key => $info) {
-                     if ($key == 'license_id') {
-                         ?>
-                       <tr>
-                         <td><?php echo $showing_fields['license_id'];
-                         ?></td>
-                         <td><?php echo $info == 'unspecified' ? ucwords($get_info_from_ckan['license_id']) : $get_info_from_ckan['license_id'];
-                         ?></td>
-                       </tr>
-                    <?php
-
-                     } else {
-                         if ($get_info_from_ckan) {
-                             ?>
-                           <tr>
-                             <td><?php echo $showing_fields[$key];
-                             ?></td>
-                             <td><?php echo is_array($get_info_from_ckan[$key]) ? $get_info_from_ckan[$key][$lang] : $get_info_from_ckan[$key];
-                             ?></td>
-                           </tr>
-                      <?php
-
-                         }
-                     }
-                 }
-             }
+     $get_info_from_ckan = wpckan_api_package_show($ckan_domain, $ckan_dataset_id);
+     if(!empty($get_info_from_ckan)){
        ?>
-           </table>
-         <?php if ($atlernative_links == 1) {?>
-           <div class="atlernative_links">
-           <?php
-              if ($lang != 'en') { ?>
-                <div class="div-button"><a href="<?php echo $individual_layer['download_url_localization'];?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');?></a></div>
-
-                   <?php if ($individual_layer['profilepage_url_localization']) { ?>
-                     <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url_localization'];?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');?></a></div>
-             <?php
+       <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer->ID; ?>">
+          <table border="0" class="toggle-talbe">
+              <tr><td colspan="2"><h5><?php echo $get_info_from_ckan['title_translated'][$lang]!=""?  $get_info_from_ckan['title_translated'][$lang] : $individual_layer->post_title; ?></h5></td></tr>
+              <?php
+              if($showing_fields == ""){
+                if($get_info_from_ckan){
+                  foreach ($get_info_from_ckan as $key => $info) {
+                    if(!empty($get_info_from_ckan)){
+                        if($key == 'license_id' && $get_info_from_ckan['license_id']!=""){ ?>
+                          <tr>
+                              <td><?php echo $attribute_metadata['license_id']; ?></td>
+                              <td><?php echo $info == "unspecified"? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']; ?></td>
+                          </tr>
+                        <?php
+                        }else{
+                            if(array_key_exists($key, $attribute_metadata)){ ?>
+                              <tr>
+                                  <td><?php echo $attribute_metadata[$key]; ?></td><td><?php echo is_array($info) ? $info[$lang]: $info; ?></td>
+                              </tr>
+                            <?php
+                            }
+                        }//end else
+                    } //!empty($get_info_from_ckan)
+                  } //end foreach
+                }//if get $get_info_from_ckan
+              }else { //if show fields are defined
+                foreach ($showing_fields as $key => $info) {
+                  if(!empty($get_info_from_ckan)){
+                      if($key == 'license_id' && $get_info_from_ckan['license_id']!=""){ ?>
+                        <tr>
+                            <td><?php echo $showing_fields['license_id']; ?></td>
+                            <td><?php echo $info == "unspecified"? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']; ?></td>
+                        </tr>
+                      <?php
+                      }else{  ?>
+                          <tr>
+                              <td><?php echo $showing_fields[$key]; ?></td>
+                              <td><?php echo is_array($get_info_from_ckan[$key]) ? $get_info_from_ckan[$key][$lang]: $get_info_from_ckan[$key]; ?></td>
+                          </tr>
+                      <?php
+                      }
+                  } //!empty($get_info_from_ckan)
+                } //end foreach
               }
               ?>
-           <?php
-            } else { ?>
-             <div class="div-button"><a href="<?php echo $individual_layer['download_url'];?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');?></a></div>
-
-             <?php if ($individual_layer['profilepage_url']) {?>
-               <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url'];?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');?></a></div>
-               <?php
-                }
-            } ?>
-           </div>
-         <?php
-       }
-       ?>
-       </div>
-
-   <?php
-
-   }
+          </table>
+          <?php
+          if ($atlernative_links == 1) {
+              $get_post_by_id = get_post($individual_layer->ID);
+              if ( (CURRENT_LANGUAGE != "en") ){
+                 $get_download_url = get_post_meta($get_post_by_id->ID, '_layer_download_link_localization', true);
+                 $get_profilepage_url = get_post_meta($get_post_by_id->ID, '_layer_profilepage_link_localization', true);
+              }else {
+                 $get_download_url = get_post_meta($get_post_by_id->ID, '_layer_download_link', true);
+                 $get_profilepage_url = get_post_meta($get_post_by_id->ID, '_layer_profilepage_link', true);
+              }
+              ?>
+              <div class="atlernative_links">
+              <?php if ($get_download_url != ''){ ?>
+                      <div class="div-button"><a href="<?php echo $get_download_url; ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e("Download data", "opendev"); ?></a></div>
+                   <?php
+                   }
+                   if ($get_profilepage_url != ''){ ?>
+                        <div class="div-button"><a href="<?php echo $get_profilepage_url; ?>" target="_blank"><i class="fa fa-table"></i> <?php _e("View dataset table", "opendev"); ?></a></div>
+                   <?php
+                   } ?>
+              </div><!-- atlernative_links -->
+            <?php
+          } //if $atlernative_links ?>
+        </div><!--layer-toggle-info-->
+        <?php
+      }//if ckan_dataset_id !=""
+    }//end function
 
   /*
   * Errors
   */
 
-  function wpckan_api_parameter_error($function, $message)
-  {
-      $error_log = 'ERROR Parameters on '.$function.' message: '.$message;
-      $error_message = 'Something went wrong, check your connection details';
-      wpckan_log($error_log);
-      throw new WpckanApiParametersException($error_message);
+  function wpckan_api_parameter_error($function,$message){
+    $error_log = "ERROR Parameters on " . $function . " message: " . $message;
+    $error_message = "Something went wrong, check your connection details";
+    wpckan_log($error_log);
+    throw new WpckanApiParametersException($error_message);
   }
 
-  function wpckan_api_call_error($function, $message)
-  {
-      $error_log = 'ERROR API CALL on '.$function.' message: '.$message;
-      $error_message = 'Something went wrong, check your connection details';
-      wpckan_log($error_log);
-      throw new WpckanApiCallException($error_message);
+  function wpckan_api_call_error($function,$message){
+    $error_log = "ERROR API CALL on " . $function . " message: " . $message;
+    $error_message = "Something went wrong, check your connection details";
+    wpckan_log($error_log);
+    throw new WpckanApiCallException($error_message);
   }
 
-  function wpckan_api_settings_error($function, $message)
-  {
-      $error_log = 'ERROR SETTINGS on '.$function.' message: '.$message;
-      $error_message = 'Please, specify CKAN URL and API Key';
-      wpckan_log($error_log);
-      throw new WpckanApiSettingsException($error_message);
+  function wpckan_api_settings_error($function,$message){
+    $error_log = "ERROR SETTINGS on " . $function . " message: " . $message;
+    $error_message = "Please, specify CKAN URL and API Key";
+    wpckan_log($error_log);
+    throw new WpckanApiSettingsException($error_message);
   }
 
 ?>
