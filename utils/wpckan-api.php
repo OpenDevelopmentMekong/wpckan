@@ -154,10 +154,10 @@
           $data['groups'] = array(array('id' => $archive_group));
       }
 
-      $result = wpckan_api_package_search(wpckan_get_ckan_domain(),array(
-        "ids" => array($post->post_name)
+      $result = wpckan_api_package_search(wpckan_get_ckan_domain(), array(
+        'ids' => array($post->post_name),
       ));
-      if ((int)$result["count"] == 0) {
+      if ((int) $result['count'] == 0) {
           $commandName = 'PackageCreate';
       } else {
           $commandName = 'PackageUpdate';
@@ -371,34 +371,34 @@
                          );
 
      // get ckan record by id
-     $get_info_from_ckan = wpckan_api_package_show(wpckan_get_ckan_domain(), $ckan_dataset_id);
-       ?>
-       <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer['ID'];
-       ?>">
+     $get_info_from_ckan = wpckan_api_package_show(wpckan_get_ckan_domain(), $ckan_dataset_id); ?>
+       <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer['ID'];?>">
            <table border="0" class="toggle-talbe">
              <tr><td colspan="2"><h5><?php echo $get_info_from_ckan['title_translated'][$lang] ?></h5></td></tr>
              <?php
              if ($showing_fields == '') {
                  if ($get_info_from_ckan) {
                      foreach ($get_info_from_ckan as $key => $info) {
+
                          if ($key == 'license_id') {
                              ?>
-                     <tr>
-                         <td><?php echo $attribute_metadata['license_id'];
+                           <tr>
+                             <td><?php echo $attribute_metadata['license_id'];
                              ?></td>
-                         <td><?php echo $info == 'unspecified' ? ucwords($get_info_from_ckan['license_id']) : $get_info_from_ckan['license_id'];
+                             <td><?php echo $info == 'unspecified' ? ucwords($get_info_from_ckan['license_id']) : $get_info_from_ckan['license_id'];
                              ?></td>
-                     </tr>
-                 <?php
+                           </tr>
+                        <?php
 
                          } else {
                              if (array_key_exists($key, $attribute_metadata)) {
-                                 ?>    <tr>
-                           <td><?php echo $attribute_metadata[$key];
+                                 ?>
+                               <tr>
+                                 <td><?php echo $attribute_metadata[$key];
                                  ?></td><td><?php echo is_array($info) ? $info[$lang] : $info;
                                  ?></td>
-                       </tr>
-             <?php
+                               </tr>
+                          <?php
 
                              }
                          }
@@ -408,23 +408,24 @@
                  foreach ($showing_fields as $key => $info) {
                      if ($key == 'license_id') {
                          ?>
-                   <tr>
-                       <td><?php echo $showing_fields['license_id'];
+                       <tr>
+                         <td><?php echo $showing_fields['license_id'];
                          ?></td>
-                       <td><?php echo $info == 'unspecified' ? ucwords($get_info_from_ckan['license_id']) : $get_info_from_ckan['license_id'];
+                         <td><?php echo $info == 'unspecified' ? ucwords($get_info_from_ckan['license_id']) : $get_info_from_ckan['license_id'];
                          ?></td>
-                   </tr>
-               <?php
+                       </tr>
+                    <?php
 
                      } else {
                          if ($get_info_from_ckan) {
-                             ?>    <tr>
-                           <td><?php echo $showing_fields[$key];
+                             ?>
+                           <tr>
+                             <td><?php echo $showing_fields[$key];
                              ?></td>
-                           <td><?php echo is_array($get_info_from_ckan[$key]) ? $get_info_from_ckan[$key][$lang] : $get_info_from_ckan[$key];
+                             <td><?php echo is_array($get_info_from_ckan[$key]) ? $get_info_from_ckan[$key][$lang] : $get_info_from_ckan[$key];
                              ?></td>
-                       </tr>
-           <?php
+                           </tr>
+                      <?php
 
                          }
                      }
@@ -432,49 +433,29 @@
              }
        ?>
            </table>
-         <?php if ($atlernative_links == 1) {
-    ?>
+         <?php if ($atlernative_links == 1) {?>
            <div class="atlernative_links">
-           <?php if ($lang != 'en') {
-    ?>
-                   <div class="div-button"><a href="<?php echo $individual_layer['download_url_localization'];
-    ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');
-    ?></a></div>
-
-                   <?php if ($individual_layer['profilepage_url_localization']) {
-    ?>
-                     <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url_localization'];
-    ?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');
-    ?></a></div>
-                   <?php
-
-}
-    ?>
            <?php
+              if ($lang != 'en') { ?>
+                <div class="div-button"><a href="<?php echo $individual_layer['download_url_localization'];?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');?></a></div>
 
-} else {
-    ?>
-                   <div class="div-button"><a href="<?php echo $individual_layer['download_url'];
-    ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');
-    ?></a></div>
-
-                   <?php if ($individual_layer['profilepage_url']) {
-    ?>
-                     <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url'];
-    ?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');
-    ?></a></div>
-                   <?php
-
-}
-    ?>
+                   <?php if ($individual_layer['profilepage_url_localization']) { ?>
+                     <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url_localization'];?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');?></a></div>
+             <?php
+              }
+              ?>
            <?php
+            } else { ?>
+             <div class="div-button"><a href="<?php echo $individual_layer['download_url'];?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e('Download data', 'wpckan');?></a></div>
 
-}
-    ?>
+             <?php if ($individual_layer['profilepage_url']) {?>
+               <div class="div-button"><a href="<?php echo $individual_layer['profilepage_url'];?>" target="_blank"><i class="fa fa-table"></i> <?php _e('View dataset table', 'wpckan');?></a></div>
+               <?php
+                }
+            } ?>
            </div>
          <?php
-
-}
+       }
        ?>
        </div>
 
