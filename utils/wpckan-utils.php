@@ -155,7 +155,7 @@
 
     $dataset;
     try{
-      $dataset = wpckan_api_query_dataset_detail($atts);
+      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$atts['id']);
     }catch(Exception $e){
       wpckan_log($e->getMessage());
     }

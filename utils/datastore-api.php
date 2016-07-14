@@ -29,10 +29,15 @@
  {
      $datastore_url = $ckan_domain.'/api/3/action/datastore_search?resource_id='.$resource_id.'&limit=1000&filters={"'.$key.'":"'.$value.'"}';
      $json = wpckan_get_or_cache($datastore_url,$resource_id);
+
      if ($json === false) {
          return [];
      }
+
      $profiles = json_decode($json, true) ?: [];
+     if ($profiles['success']==false){
+       return [];
+     }
 
      return $profiles['result']['records'];
  }
@@ -41,10 +46,15 @@
  {
      $datastore_url = $ckan_domain.'/api/3/action/datastore_search?resource_id='.$resource_id.'&limit=1000';
      $json = wpckan_get_or_cache($datastore_url,$resource_id);
+
      if ($json === false) {
          return [];
      }
+
      $profiles = json_decode($json, true) ?: [];
+     if ($profiles['success']==false){
+       return [];
+     }
 
      return $profiles['result']['records'];
  }
