@@ -34,11 +34,11 @@ jQuery( document ).ready(function() {
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: field.attr(CKAN_API_URL) + '3/action/package_search?q='+jQuery('#wpckan_related_datasets_add_field').val(),
+      url: field.attr(CKAN_API_URL) + '3/action/package_search?q=%QUERY',
+      wildcard: '%QUERY',
       filter: function (json) {
         if (json.success){
           return jQuery.map(json.result.results, function (dataset) {
-            console.log(dataset.title);
             return {
               id: dataset.id,
               title: dataset.title
