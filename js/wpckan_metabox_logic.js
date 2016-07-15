@@ -34,7 +34,7 @@ jQuery( document ).ready(function() {
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: field.attr(CKAN_API_URL) + '3/action/package_search?q=%QUERY',
+      url: field.attr(CKAN_API_URL) + '3/action/package_search?q='+field.val(),
       filter: function (json) {
         if (json.success){
           return jQuery.map(json.result.results, function (dataset) {
