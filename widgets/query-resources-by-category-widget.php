@@ -29,7 +29,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			"fields" => "names")
 		);
     $output_fields = isset($instance['output_fields']) ? $instance['output_fields'] : 'title';
-    $output_fields_resource = isset($instance['output_fields_resource']) ? $instance['output_fields_resource'] : '';
+    $output_fields_resources = isset($instance['output_fields_resources']) ? $instance['output_fields_resources'] : '';
 
 		$filter_value = "(" . implode(" OR ", $categories_names) . ")";
 
@@ -40,7 +40,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			if (!empty($instance['limit']) && $instance['limit'] > 0)
 	      $shortcode .= ' limit="' . $instance['limit'] . '"';
 
-			$shortcode .= ' include_fields_dataset="' . $output_fields . '" include_fields_resources="'. $output_fields_resource.'" blank_on_empty="true"]';
+			$shortcode .= ' include_fields_dataset="' . $output_fields . '" include_fields_resources="'. $output_fields_resources.'" blank_on_empty="true"]';
 
 			$output = do_shortcode($shortcode);
 
@@ -90,14 +90,14 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
     <?php
     $output_fields = !empty($instance['output_fields']) ? __($instance['output_fields'], 'wpckan') : 'title';
-    $output_fields_resource = !empty($instance['output_fields_resource']) ? __($instance['output_fields_resource'], 'wpckan') : '' ?>
+    $output_fields_resources = !empty($instance['output_fields_resources']) ? __($instance['output_fields_resources'], 'wpckan') : '' ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields for dataset:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
 		</p>
     <p>
-			<label for="<?php echo $this->get_field_id('output_fields_resource');?>"><?php _e('Output fields for resources:');?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resource');?>" name="<?php echo $this->get_field_name('output_fields_resource');?>" type="text" value="<?php echo esc_attr($output_fields_resource);?>">
+			<label for="<?php echo $this->get_field_id('output_fields_resources');?>"><?php _e('Output fields for resources:');?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resources');?>" name="<?php echo $this->get_field_name('output_fields_resources');?>" type="text" value="<?php echo esc_attr($output_fields_resources);?>">
 		</p>
 
 		<?php
