@@ -2,15 +2,11 @@
 
 <?php
   $include_fields_dataset = array();
-  array_push($include_fields_dataset,"title");
-  array_push($include_fields_dataset,"notes");
   $include_fields_resources = array();
-  array_push($include_fields_resources,"name");
-  array_push($include_fields_resources,"description");
-  if (array_key_exists("include_fields_dataset",$atts)):
+  if (array_key_exists("include_fields_dataset",$atts) && !empty($atts["include_fields_dataset"])):
     $include_fields_dataset = explode(",",$atts["include_fields_dataset"]);
   endif;
-  if (array_key_exists("include_fields_resources",$atts)):
+  if (array_key_exists("include_fields_resources",$atts) && !empty($atts["include_fields_resources"])):
     $include_fields_resources = explode(",",$atts["include_fields_resources"]);
   endif;
   if (array_key_exists("related_dataset",$atts)):
@@ -61,7 +57,7 @@
         <?php if (array_key_exists("author_email",$dataset) && !wpckan_is_null_or_empty_string($dataset["author_email"]) && in_array("author_email",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_author_email"><?php echo $dataset["author_email"] ?></div>
         <?php } ?>
-        <?php if (array_key_exists("resources",$dataset)){ ?>
+        <?php if (array_key_exists("resources",$dataset) && !empty($include_fields_resources)){ ?>
           <div class="wpckan_resources_list">
             <ul>
               <?php foreach ($dataset["resources"] as $resource){ ?>

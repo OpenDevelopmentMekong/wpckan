@@ -29,6 +29,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			"fields" => "names")
 		);
     $output_fields = isset($instance['output_fields']) ? $instance['output_fields'] : 'title';
+    $output_fields_resource = isset($instance['output_fields_resource']) ? $instance['output_fields_resource'] : '';
 
 		$filter_value = "(" . implode(" OR ", $categories_names) . ")";
 
@@ -39,7 +40,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			if (!empty($instance['limit']) && $instance['limit'] > 0)
 	      $shortcode .= ' limit="' . $instance['limit'] . '"';
 
-			$shortcode .= ' include_fields_dataset="' . $output_fields . '" include_fields_resources="format" blank_on_empty="true"]';
+			$shortcode .= ' include_fields_dataset="' . $output_fields . '" include_fields_resources="'. $output_fields_resource.'" blank_on_empty="true"]';
 
 			$output = do_shortcode($shortcode);
 
@@ -88,10 +89,15 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		</p>
 
     <?php
-    $output_fields = !empty($instance['output_fields']) ? __($instance['output_fields'], 'wpckan') : 'title' ?>
+    $output_fields = !empty($instance['output_fields']) ? __($instance['output_fields'], 'wpckan') : 'title';
+    $output_fields_resource = !empty($instance['output_fields_resource']) ? __($instance['output_fields_resource'], 'wpckan') : '' ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields:');?></label>
+			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields for dataset:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
+		</p>
+    <p>
+			<label for="<?php echo $this->get_field_id('output_fields_resource');?>"><?php _e('Output fields for resources:');?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resource');?>" name="<?php echo $this->get_field_name('output_fields_resource');?>" type="text" value="<?php echo esc_attr($output_fields_resource);?>">
 		</p>
 
 		<?php
@@ -111,6 +117,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : -1;
     $instance['output_fields'] = (!empty($new_instance['output_fields'])) ? strip_tags($new_instance['output_fields']) : 'title';
     $instance['output_fields'] = wpckan_sanitize_csv($instance['output_fields']);
+    $instance['output_fields_resources'] = (!empty($new_instance['output_fields_resources'])) ? strip_tags($new_instance['output_fields_resources']) : '';
+    $instance['output_fields_resources'] = wpckan_sanitize_csv($instance['output_fields_resources']);
 		return $instance;
 	}
 
