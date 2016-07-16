@@ -80,6 +80,7 @@
   </table>
 
 	<!-- Metadata -->
+  <?php print_r($multilingual_fields); ?>
 	<h2><?php _e('Additional info','wpckan') ?></h2>
 	<table class="wpckan_dataset_metadata_fields">
 		<?php foreach($data as $key => $value):?>
