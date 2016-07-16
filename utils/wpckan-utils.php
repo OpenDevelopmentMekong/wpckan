@@ -441,9 +441,9 @@
     return $clean_url;
   }
 
-  function wpckan_sanitize_csv($input) {
-    $clean_url =  str_replace(" ", "", $input);
-    return $clean_url;
+  function wpckan_remove_whitespaces($input) {
+    $clean_input =  str_replace(" ", "", $input);
+    return $clean_input;
   }
 
   function wpckan_strip_qtranslate_tags($input) {
@@ -503,7 +503,7 @@
     $mappings = explode("\r\n", $mappings_raw);
     foreach ($mappings as $value) {
         $array_value = explode('=>', trim($value));
-        $mappings_clean[$array_value[0]] = $array_value[1];
+        $mappings_clean[wpckan_remove_whitespaces($array_value[0])] = $array_value[1];
     }
     return $mappings_clean;
   }

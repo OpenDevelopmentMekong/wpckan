@@ -82,7 +82,7 @@
 	<!-- Metadata -->
 	<h2><?php _e('Additional info','wpckan') ?></h2>
 	<table class="wpckan_dataset_metadata_fields">
-		<?php foreach($data as $key => $value): ?>
+		<?php foreach($data as $key => $value):?>
 			<?php if (!empty($supported_fields) && in_array($key,$supported_fields)): ?>
 				<tr class="wpckan_dataset_metadata_field">
 					<?php

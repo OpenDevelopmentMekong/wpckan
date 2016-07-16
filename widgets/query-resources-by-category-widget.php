@@ -116,9 +116,9 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$instance['search_field'] = (!empty($new_instance['search_field'])) ? strip_tags($new_instance['search_field']) : 'title';
 		$instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : -1;
     $instance['output_fields'] = (!empty($new_instance['output_fields'])) ? strip_tags($new_instance['output_fields']) : 'title';
-    $instance['output_fields'] = wpckan_sanitize_csv($instance['output_fields']);
+    $instance['output_fields'] = wpckan_remove_whitespaces($instance['output_fields']);
     $instance['output_fields_resources'] = (!empty($new_instance['output_fields_resources'])) ? strip_tags($new_instance['output_fields_resources']) : '';
-    $instance['output_fields_resources'] = wpckan_sanitize_csv($instance['output_fields_resources']);
+    $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
 		return $instance;
 	}
 

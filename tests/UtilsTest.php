@@ -124,7 +124,7 @@ class UtilsTest extends PHPUnit_Framework_TestCase
 
   public function testSanitizeCsv()
   {
-      $result = wpckan_sanitize_csv('uno, dos, tres');
+      $result = wpckan_remove_whitespaces('uno, dos, tres');
       $this->assertEquals($result,'uno,dos,tres');
   }
 

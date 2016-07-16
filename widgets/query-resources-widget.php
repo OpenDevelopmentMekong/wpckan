@@ -162,9 +162,9 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   $instance['more_text'] = ( ! empty( $new_instance['more_text'] ) ) ? $new_instance['more_text'] : 0;
   $instance['more_link'] = ( ! empty( $new_instance['more_link'] ) ) ? $new_instance['more_link'] : 0;
   $instance['output_fields'] = (! empty( $new_instance['output_fields'])) ? strip_tags( $new_instance['output_fields'] ) : 'title';
-  $instance['output_fields'] = wpckan_sanitize_csv($instance['output_fields']);
+  $instance['output_fields'] = wpckan_remove_whitespaces($instance['output_fields']);
   $instance['output_fields_resources'] = (! empty( $new_instance['output_fields_resources'])) ? strip_tags( $new_instance['output_fields_resources'] ) : '';
-  $instance['output_fields_resources'] = wpckan_sanitize_csv($instance['output_fields_resources']);
+  $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
 
   return $instance;
  }
