@@ -261,9 +261,11 @@
     // filter_fields
     if (isset($attrs['filter_fields'])):
       $filter_fields_json = json_decode($attrs['filter_fields'],true);
-      foreach ($filter_fields_json as $field => $value):
-        $fq = $fq . '+' . $field . ':' . $value;
-      endforeach;
+      if (isset($filter_fields_json)):
+        foreach ($filter_fields_json as $field => $value):
+          $fq = $fq . '+' . $field . ':' . $value;
+        endforeach;
+      endif;
     endif;
 
     // filter
@@ -343,7 +345,7 @@
     $shortcodes = array("wpckan_related_datasets","wpckan_number_of_related_datasets","wpckan_query_datasets");
 
     foreach($shortcodes as $shortcode){
-      if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
+      if ( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
       && array_key_exists( 2, $matches )
       && in_array( $shortcode, $matches[2] ) )
       {
