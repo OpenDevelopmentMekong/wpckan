@@ -85,12 +85,12 @@
 	<h2><?php _e('Additional info', 'wpckan') ?></h2>
   <table class="wpckan_dataset_metadata_fields">
     <?php foreach ($data as $key => $value):?>
-      <?php if (!empty($supported_fields) && in_array($key, $supported_fields)): ?>
+      <?php if (!empty($value) && !empty($supported_fields) && in_array($key, $supported_fields)): ?>
         <tr class="wpckan_dataset_metadata_field">
           <?php
             $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
             if (in_array($key, $multilingual_fields)):
-              if (is_array($value) &&  array_key_exists($current_language, $value)):
+              if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
                 $value = $value[$current_language];
                 echo '<td><p>'.__($mapped_key).'</p></td>';
                 echo '<td><p>'.$value.'</p></td>';
