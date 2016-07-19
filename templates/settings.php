@@ -83,7 +83,7 @@
             <th scope="row"><label for="wpckan_setting_supported_fields"><?php _e('Supported fields','wpckan') ?></label></th>
             <td>
               <input class="full-width" type="text" name="wpckan_setting_supported_fields" id="wpckan_setting_supported_fields" placeholder="<?php _e('title, description, license_url, ...','wpckan') ?>" value="<?php echo $supported_fields ?>"></input>
-              <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section','wpckan') ?></p>
+              <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section. Mind order.','wpckan') ?></p>
             </td>
           </tr>
           <!-- Multilingual fields -->

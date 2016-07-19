@@ -84,27 +84,35 @@
 	<!-- Metadata -->
 	<h2><?php _e('Additional info', 'wpckan') ?></h2>
   <table class="wpckan_dataset_metadata_fields">
-    <?php foreach ($data as $key => $value):?>
-      <?php if (!empty($value) && !empty($supported_fields) && in_array($key, $supported_fields)): ?>
-        <tr class="wpckan_dataset_metadata_field">
-          <?php
-            $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
-            if (in_array($key, $multilingual_fields)):
-              if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
-                $value = $value[$current_language];
-                echo '<td><p>'.__($mapped_key).'</p></td>';
-                echo '<td><p>'.$value.'</p></td>';
+    <?php if (!empty($supported_fields)): ?>
+        <?php
+          foreach ($supported_fields as $key): ?>
+            <tr class="wpckan_dataset_metadata_field">
+            <?php $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
+            if (in_array($key,$data) && isset($data[$key])):
+              if (in_array($mapped_key, $multilingual_fields)):
+                if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
+                  $value = $value[$current_language];
+                  if (!empty($value)):
+                    echo '<td><p>'.__($mapped_key).'</p></td>';
+                    echo '<td><p>'.$value.'</p></td>';
+                  endif;
+                endif;
+              else:
+                $value = $data[$key];
+                if (is_array($value)):
+                  $value = implode(', ', $value);
+                endif;
+                if (!empty($value)):
+                  echo '<td><p>'.__($mapped_key).'</p></td>';
+                  echo '<td><p>'.$value.'</p></td>';
+                endif;
               endif;
-            else:
-              if (is_array($value)):
-                $value = implode(', ', $value);
-              endif;
-              echo '<td><p>'.__($mapped_key).'</p></td>';
-              echo '<td><p>'.$value.'</p></td>';
             endif; ?>
-        </tr>
-      <?php endif; ?>
-    <?php endforeach; ?>
+            </tr>
+          <?php endforeach; ?>
+
+    <?php endif; ?>
   </table>
 
 </div>
