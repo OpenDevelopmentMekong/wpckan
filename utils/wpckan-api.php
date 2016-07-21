@@ -347,8 +347,7 @@
    // TODO: parametrize
    function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
    {
-     $lang = CURRENT_LANGUAGE;
-
+     $lang = odm_language_manager()->get_current_language(); 
      $attribute_metadata = array(
                             //  "title_translated" => "Title",
                               "notes_translated" => "Description",
@@ -376,7 +375,7 @@
        ?>
        <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer->ID; ?>">
           <table border="0" class="toggle-table data-table">
-              <tr><td colspan="2"><h5><?php echo $get_info_from_ckan['title_translated'][$lang]!=""?  $get_info_from_ckan['title_translated'][$lang] : $individual_layer->post_title; ?></h5></td></tr>
+              <tr><td colspan="2"><h4><?php echo $get_info_from_ckan['title_translated'][$lang]!=""?  $get_info_from_ckan['title_translated'][$lang] : $individual_layer->post_title; ?></h4></td></tr>
               <?php
               if($showing_fields == ""){
                 if($get_info_from_ckan){
@@ -424,7 +423,7 @@
           <?php
           if ($atlernative_links == 1) {
               $get_post_by_id = get_post($individual_layer->ID);
-              if ( (CURRENT_LANGUAGE != "en") ){
+              if ( ($lang != "en") ){
                  $get_download_url = get_post_meta($get_post_by_id->ID, '_layer_download_link_localization', true);
                  $get_profilepage_url = get_post_meta($get_post_by_id->ID, '_layer_profilepage_link_localization', true);
               }else {
