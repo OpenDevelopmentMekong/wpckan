@@ -3,14 +3,14 @@
  function wpckan_get_or_cache($url,$id){
 
    $json = "{}";
+   $hashed_id = md5($id);
 
-   wpckan_log("wpckan_get_or_cache url:" . $url . " id: " . $id);
+   wpckan_log("wpckan_get_or_cache url:" . $url . " id: " . $hashed_id);
 
    if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled')):
      $json = @file_get_contents($url);
    else:
-     $valid_id = substr($id,0,249);
-     $json = $GLOBALS['cache']->get_data($valid_id,$url);
+     $json = $GLOBALS['cache']->get_data($hashed_id,$url);
 
      if (strpos($json, '"success": false') !== false) {
         $file_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path')  . $valid_id;
