@@ -117,32 +117,8 @@ An example showing how the information returned by this shortcode will be struct
   <a href="#">Next</a>
 </div>
 ```
-
 Also, the plugin exposes the  **[wpckan_number_of_related_datasets]** shortcode for returning the number of related datasets assigned to the post as a customizable link so a summary can be presented on the wordpress side.
-The shortcode has following parameters:
-
-* **group**:  (Optional)
-Specify the id (Not title or name) of a group available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
-
-* **organization**:  (Optional)
-Specify the id (Not title or name) of an organization available on the target CKAN instance in order to filter the related datasets to ONLY those assigned to it.
-
-* **type**:  (Optional)
-Specify the dataset type in order to filter custom dataset types.
-
-Note: If both **group** and **organization** parameters are specified then the dataset has to be asssigned to both in order to be returned by the shortcode.
-
-* **limit**: (Optional) Number. Default is 10.
-Limits the amount of datasets shown by the shortcode.
-
-* **filter**: (Optional) Number.
-Filters the datasets according to following criteria:
-  * '0' (ALL): Return all datasets (Default)
-  * '1' (ONLY WITH RESOURCES): Return only datasets featuring at least one resource.
-
-
-* **filter_fields**: (Optional) JSON.
-Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
+The shortcode has the same argument as the shortcode above, and also following additional parameters:
 
 * **link_url**:  (Optional)
 Specify the URL to link the produced output with some other resource (i.e: in the CKAN instance)
@@ -152,11 +128,6 @@ Prepends a string before the number.
 
 * **suffix**:  (Optional)
 Appends a string after the number.
-
-## Advanced
-
-* **blank_on_empty**: (Optional) Boolean.
-Returns an empty string "" if no datasets have been found to return
 
 Examples:
 ```php
@@ -283,6 +254,40 @@ Examples:
 <div class="wpckan_dataset_list_pagination">
 <a href="#">Previous</a>
 <a href="#">Next</a>
+</div>
+```
+
+Also, the plugin exposes the  **[wpckan_number_of_query_datasets]** shortcode for returning the number of queried datasets so a summary can be presented on the wordpress side.
+The shortcode has the same argument as the shortcode above, and also following additional parameters:
+
+* **link_url**:  (Optional)
+Specify the URL to link the produced output with some other resource (i.e: in the CKAN instance)
+
+* **prefix**:  (Optional)
+Prepends a string before the number.
+
+* **suffix**:  (Optional)
+Appends a string after the number.
+
+Examples:
+```php
+[wpckan_number_of_query_datasets]
+[wpckan_number_of_query_datasets link_url="http://link_to_more"]
+[wpckan_number_of_query_datasets group="news"]
+[wpckan_number_of_query_datasets group="news" limit="1"]
+[wpckan_number_of_query_datasets group="news" suffix=" datasets found in the news."]
+[wpckan_number_of_query_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
+[wpckan_number_of_query_datasets organization="d9722d77-3b91-4c26-9172-950a9a4be07a"]
+[wpckan_number_of_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
+[wpckan_number_of_query_datasets limit="3" type='dataset']
+[wpckan_number_of_query_datasets blank_on_empty="true"]
+[wpckan_number_of_query_datasets type="library_record"]
+```
+An example (corresponding to the last example above) showing how the information returned by this shortcode will be structured:
+
+```html
+<div class="wpckan_dataset_number">
+  <p><a target="_blank" href="http://link_to_more">Number of datasets: (5)</a></p>
 </div>
 ```
 

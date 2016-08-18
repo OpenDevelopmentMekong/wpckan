@@ -113,15 +113,11 @@
       return $item['dataset_id'];
     }, $related_datasets);
 
-    if (empty($atts['ids'])):
-      return "";
-    endif;
+    $atts['ids'] = array_filter($atts['ids'], "wpckan_valid_id");
 
     $result = wpckan_api_package_search(wpckan_get_ckan_domain(),$atts);
     $dataset_array = $result["results"];
-
-    if ((count($dataset_array) == 0) && $blank_on_empty)
-      return "";
+    $atts["count"] = $result["count"];
 
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-number.php',$dataset_array,$atts);
   }
@@ -147,6 +143,21 @@
       return "";
 
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-list.php',$dataset_array,$atts);
+  }
+
+  function wpckan_show_number_of_query_datasets($atts) {
+    wpckan_log("wpckan_show_number_of_query_datasets "  . print_r($atts,true));
+
+    $dataset_array = array();
+    try{
+      $result = wpckan_api_package_search(wpckan_get_ckan_domain(),$atts);
+      $dataset_array = $result["results"];
+      $atts["count"] = $result["count"];
+    }catch(Exception $e){
+      wpckan_log($e->getMessage());
+    }
+
+    return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-number.php',$dataset_array,$atts);
   }
 
   function wpckan_show_dataset_detail($atts) {
