@@ -302,6 +302,8 @@
       endif;
     endif;
 
+    $arguments .= '&sort=views_recent+desc';
+
     return $arguments;
   }
 
