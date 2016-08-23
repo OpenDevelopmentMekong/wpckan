@@ -37,6 +37,10 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 			$shortcode = '[wpckan_query_datasets filter_fields=\'{"'. $search_field .'":"' . $filter_value . '"}\'';
 
+			if (!empty($instance['type'])):
+				$shortcode .= ' type="'.$instance['type'].'"';
+			endif;
+
 			if (!empty($instance['limit']) && $instance['limit'] > 0)
 	      $shortcode .= ' limit="' . $instance['limit'] . '"';
 
@@ -69,7 +73,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		$title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Custom posts', 'wpckan'); ?>
+		$title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Custom posts', 'wpckan');
+		$type = !empty($instance['type']) ? $instance['type'] : 'dataset';?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>">
@@ -80,6 +85,11 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('search_field');?>"><?php _e('Search field:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('search_field');?>" name="<?php echo $this->get_field_name('search_field');?>" type="text" value="<?php echo esc_attr($search_field);?>">
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('type');?>"><?php _e('Dataset type:');?></label>
+	    <input class="widefat" id="<?php echo $this->get_field_id('type');?>" name="<?php echo $this->get_field_name('type');?>" type="text" value="<?php echo esc_attr($type);?>" placeholder="<?php _e('dataset, library_record, etc..');?>">
 		</p>
 
 		<?php $limit = !empty($instance['limit']) ? $instance['limit'] : -1 ?>
@@ -115,7 +125,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
 		$instance['search_field'] = (!empty($new_instance['search_field'])) ? strip_tags($new_instance['search_field']) : 'title';
 		$instance['limit'] = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : -1;
-    $instance['output_fields'] = (!empty($new_instance['output_fields'])) ? strip_tags($new_instance['output_fields']) : 'title';
+		$instance['type'] = (! empty( $new_instance['type'])) ? strip_tags( $new_instance['type'] ) : 'dataset';
+	  $instance['output_fields'] = (!empty($new_instance['output_fields'])) ? strip_tags($new_instance['output_fields']) : 'title';
     $instance['output_fields'] = wpckan_remove_whitespaces($instance['output_fields']);
     $instance['output_fields_resources'] = (!empty($new_instance['output_fields_resources'])) ? strip_tags($new_instance['output_fields_resources']) : '';
     $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
