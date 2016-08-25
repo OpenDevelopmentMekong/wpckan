@@ -22,6 +22,11 @@
   endif;
 
   $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
+  $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
+  $current_language = 'en';
+  if ($uses_ckanext_fluent && wpckan_is_qtranslate_available()):
+    $current_language = qtranxf_getLanguage();
+  endif;
 
 ?>
 
@@ -30,10 +35,17 @@
   <?php foreach ($data as $dataset){ ?>
     <li>
       <div class="wpckan_dataset">
-        <?php if (array_key_exists("title",$dataset) && !wpckan_is_null_or_empty_string($dataset["title"]) && in_array("title",$include_fields_dataset)) {?>
+        <?php if ($uses_ckanext_fluent && array_key_exists("title_translated",$dataset) && !wpckan_is_null_or_empty_string($dataset["title_translated"]) && in_array("title_translated",$include_fields_dataset)) {
+          $title = !empty($dataset["title_translated"][$current_language]) ? $dataset["title_translated"][$current_language] : $dataset["title_translated"]["en"]; ?>
+          <div class="wpckan_dataset_title"><a <?php if ($target_blank_enabled){ echo 'target="_blank"';} ?>  href="<?php echo wpckan_get_link_to_dataset($dataset["name"]) ?>"><?php echo $title; ?></a></div>
+        <?php } elseif (array_key_exists("title",$dataset) && !wpckan_is_null_or_empty_string($dataset["title"]) && in_array("title",$include_fields_dataset)) {?>
           <div class="wpckan_dataset_title"><a <?php if ($target_blank_enabled){ echo 'target="_blank"';} ?>  href="<?php echo wpckan_get_link_to_dataset($dataset["name"]) ?>"><?php echo $dataset["title"] ?></a></div>
         <?php } ?>
-        <?php if (array_key_exists("notes",$dataset) && !wpckan_is_null_or_empty_string($dataset["notes"]) && in_array("notes",$include_fields_dataset)) {?>
+        <?php if ($uses_ckanext_fluent && array_key_exists("notes_translated",$dataset) && !wpckan_is_null_or_empty_string($dataset["notes_translated"]) && in_array("notes_translated",$include_fields_dataset)) {
+          $notes = !empty($dataset["notes_translated"][$current_language]) ? $dataset["notes_translated"][$current_language] : $dataset["notes_translated"]["en"]; ?>
+          <div class="wpckan_dataset_notes"><?php echo $notes; ?></div>
+        <?php } ?>
+        <?php if (array_key_exists("notes",$dataset) && !wpckan_is_null_or_empty_string($dataset["notes"]) && in_array("notes",$include_fields_dataset)) { ?>
           <div class="wpckan_dataset_notes"><?php echo $dataset["notes"] ?></div>
         <?php } ?>
         <?php if (array_key_exists("url",$dataset) && !wpckan_is_null_or_empty_string($dataset["url"]) && in_array("url",$include_fields_dataset)) {?>

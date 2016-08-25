@@ -360,6 +360,16 @@ Taken from http://docs.ckan.org/en/latest/changelog.html#id1:
 
 So, mind that the CKAN instance which this plugin is used with needs to allow all origins or whitelist the domain where the wpckan is installed.
 
+## Support for ckanext-fluent and qTranslate/qTranslateX
+
+For the multilingual functionalities, this plugin relies on two other components:
+
+- ckanext-fluent (https://github.com/ckan/ckanext-fluent): This CKAN extension provides a way to store and return multilingual fields in CKAN datasets, resources, organizations and groups.
+
+- qTranslate/qTranslateX (https://github.com/qTranslate-Team/qtranslate-x): This plugin offers a way to maintain dynamic multilingual content on a WordPress site.
+
+If you are using both in your Wordpress/CKAN stack, you can configure WPCKAN to be able to present the data pulled from CKAN in the currently selected language on WP.
+
 # Installation
 
 1. Either download the files as zip or clone <code>git clone https://github.com/OpenDevelopmentMekong/wpckan.git</code> into the Wordpress plugins folder.

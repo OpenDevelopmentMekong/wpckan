@@ -9,6 +9,7 @@
           $ckan_url = $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url');
           $ckan_api = $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_api');
           $supported_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
+          $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
           $multilingual_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
           $field_mappings = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
           $redirect_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled');
@@ -86,16 +87,6 @@
               <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section. Mind order.','wpckan') ?></p>
             </td>
           </tr>
-          <!-- Multilingual fields -->
-          <?php if (wpckan_is_qtranslate_available()): ?>
-            <tr valign="top">
-              <th scope="row"><label for="wpckan_setting_multilingual_fields"><?php _e('Fluent fields','wpckan') ?></label></th>
-              <td>
-                <input class="full-width" type="text" name="wpckan_setting_multilingual_fields" id="wpckan_setting_multilingual_fields" value="<?php echo $multilingual_fields ?>"></input>
-                <p class="description"><?php _e('Specify a list of Comma-separated field names which are marked as fluent. See https://github.com/open-data/ckanext-fluent/','wpckan') ?></p>
-              </td>
-            </tr>
-          <?php endif; ?>
           <!-- Field mappings-->
           <tr valign="top">
             <th scope="row"><label for="wpckan_setting_field_mappings"><?php _e('Field mappings','wpckan') ?></label></th>
@@ -119,6 +110,24 @@
               <p class="description"><?php _e('if checked, links to datasets will be opened in a new tab/window','wpckan') ?></p>
             </td>
           </tr>
+          <!-- Multilingual fields -->
+          <?php if (wpckan_is_qtranslate_available()): ?>
+            <th scope="row"><label><h3><?php _e('Ckanext-fluent support','wpckan') ?></h3></label></th>
+            <tr valign="top">
+              <th scope="row"><label for="wpckan_setting_uses_ckanext_fluent"><?php _e('Is ckanext-fluent enabled in the CKAN instance?','wpckan') ?></label></th>
+              <td>
+                <input type="checkbox" name="wpckan_setting_uses_ckanext_fluent" id="wpckan_setting_uses_ckanext_fluent" <?php if ($uses_ckanext_fluent)  echo 'checked="true"'; ?>/>
+                <p class="description"><?php _e('Activate for enabling multilingual functionalities. Visit https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions','wpckan') ?></p>
+              </td>
+            </tr>
+            <tr valign="top">
+              <th scope="row"><label for="wpckan_setting_multilingual_fields"><?php _e('Fluent fields','wpckan') ?></label></th>
+              <td>
+                <input class="full-width" type="text" name="wpckan_setting_multilingual_fields" id="wpckan_setting_multilingual_fields" value="<?php echo $multilingual_fields ?>" <?php if (!$uses_ckanext_fluent)  echo 'disabled'; ?>></input>
+                <p class="description"><?php _e('Specify a list of Comma-separated field names which are marked as fluent. See https://github.com/open-data/ckanext-fluent/','wpckan') ?></p>
+              </td>
+            </tr>
+          <?php endif; ?>
           <!-- Caching -->
           <th scope="row"><label><h3><?php _e('Caching','wpckan') ?></h3></label></th>
           <tr valign="top">
@@ -160,3 +169,12 @@
         <?php @submit_button(); ?>
     </form>
 </div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('#wpckan_setting_uses_ckanext_fluent').change(function() {
+      console.log($('#wpckan_setting_uses_ckanext_fluent').attr('checked'));
+      $('#wpckan_setting_uses_ckanext_fluent').attr('checked') == "checked" ? $('#wpckan_setting_multilingual_fields').removeAttr("disabled") : $('#wpckan_setting_multilingual_fields').attr("disabled",true);
+    });
+  })
+</script>
