@@ -7,14 +7,16 @@
     $supported_fields = explode(',', $supported_fields_csv);
 
     $multilingual_fields = array();
+    $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
     $current_language = 'en';
-    if (wpckan_is_qtranslate_available()):
+    if ($uses_ckanext_fluent && wpckan_is_qtranslate_available()):
         $multilingual_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
         $multilingual_fields = explode(',', $multilingual_fields_csv);
         $current_language = qtranxf_getLanguage();
     endif;
 
     $field_mappings = wpckan_parse_field_mappings();
+
 ?>
 
 <div class="wpckan_dataset_detail">
@@ -22,9 +24,9 @@
 	<!-- Title or title_translated in case of multilingual dataset-->
 	<?php
         $title = $data['title'];
-        if (array_key_exists('title_translated', $data)):
+        if ($uses_ckanext_fluent && array_key_exists('title_translated', $data)):
             if (array_key_exists($current_language, $data['title_translated'])):
-                $title = $data['title_translated'][$current_language];
+                $title = !empty($data['title_translated'][$current_language]) ? $data['title_translated'][$current_language] : $data['title_translated']['en'];
             endif;
         endif;
     ?>
@@ -47,7 +49,7 @@
         $notes = $data['notes'];
         if (array_key_exists('notes_translated', $data)):
             if (array_key_exists($current_language, $data['notes_translated'])):
-                $notes = $data['notes_translated'][$current_language];
+              $notes = !empty($data['notes_translated'][$current_language]) ? $data['notes_translated'][$current_language] : $data['notes_translated']['en'];
             endif;
         endif;
     ?>
@@ -90,9 +92,10 @@
             <tr class="wpckan_dataset_metadata_field">
             <?php $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
             if (in_array($key,$data) && isset($data[$key])):
-              if (in_array($mapped_key, $multilingual_fields)):
+              $value = $data[$key];
+              if (in_array($key, $multilingual_fields)):
                 if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
-                  $value = $value[$current_language];
+                  $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
                   if (!empty($value)):
                     echo '<td><p>'.__($mapped_key).'</p></td>';
                     echo '<td><p>'.$value.'</p></td>';
