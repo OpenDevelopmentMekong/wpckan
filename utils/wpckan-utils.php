@@ -478,7 +478,7 @@
   }
 
   function wpckan_is_null_or_empty_string($question){
-    return (!isset($question) || trim($question)==='');
+    return (!isset($question) || empty($question));
   }
 
   function wpckan_is_null($question){
