@@ -12,8 +12,8 @@
    else:
      $json = $GLOBALS['cache']->get_data($hashed_id,$url);
 
-     if (strpos($json, '"success": false') !== false) {
-        $file_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path')  . $valid_id;
+     if (strpos($json, '"success": false') !== false && !empty($hashed_id)) {
+        $file_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path')  . $hashed_id;
         wpckan_log("wpckan_get_or_cache deleting cached file:" . $file_path);
         if (file_exists($file_path)) {
           unlink($file_path);
