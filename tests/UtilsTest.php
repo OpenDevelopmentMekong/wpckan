@@ -159,4 +159,28 @@ class UtilsTest extends PHPUnit_Framework_TestCase
       $result = wpckan_valid_id('');
       $this->assertFalse($result);
   }
+
+  public function testGetDatasetIdFromUrlOk()
+  {
+      $result = wpckan_get_dataset_id_from_dataset_url("https://data.opendevelopmentmekong.net/dataset/123456?type=dataset");
+      $this->assertEquals($result, "123456");
+  }
+
+  public function testGetDatasetIdFromUrlAnotherType()
+  {
+      $result = wpckan_get_dataset_id_from_dataset_url("https://data.opendevelopmentmekong.net/library_record/123456?type=library_record");
+      $this->assertEquals($result, "123456");
+  }
+
+  public function testGetDatasetIdFromUrlNoParam()
+  {
+      $result = wpckan_get_dataset_id_from_dataset_url("https://data.opendevelopmentmekong.net/dataset/123456");
+      $this->assertEquals($result, "123456");
+  }
+
+  public function testGetDatasetIdFromUrlTwoParams()
+  {
+      $result = wpckan_get_dataset_id_from_dataset_url("https://data.opendevelopmentmekong.net/dataset/123456?type=dataset?another_param=some_value");
+      $this->assertEquals($result, "123456");
+  }
 }

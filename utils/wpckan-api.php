@@ -347,7 +347,7 @@
    // TODO: parametrize
    function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
    {
-     $lang = odm_language_manager()->get_current_language(); 
+     $lang = odm_language_manager()->get_current_language();
      $attribute_metadata = array(
                             //  "title_translated" => "Title",
                               "notes_translated" => "Description",
@@ -432,8 +432,11 @@
               }
               ?>
               <div class="atlernative_links">
-              <?php if ($get_download_url != ''){ ?>
-                      <div class="div-button"><a href="<?php echo $get_download_url; ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e("Download data", "opendev"); ?></a></div>
+              <?php if ($get_download_url != ''){
+          				$ckan_dataset_id = wpckan_get_dataset_id_from_dataset_url($get_download_url);
+          				$layer_download_link = get_site_url()."/dataset/?id=".$ckan_dataset_id;
+              ?>
+                      <div class="div-button"><a href="<?php echo $layer_download_link; ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e("Download data", "opendev"); ?></a></div>
                    <?php
                    }
                    if ($get_profilepage_url != ''){ ?>
