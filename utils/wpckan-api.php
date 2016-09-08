@@ -344,11 +344,6 @@
       return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url');
   }
 
-  function wpckan_get_dataset_id_from_dataset_url($dataset_url){
-    		$explode_dataset_url = explode("/dataset/", str_replace("?type=dataset", "", $dataset_url));
-    		$ckan_dataset_id = $explode_dataset_url[1];
-    		return $ckan_dataset_id;
-  }
    // TODO: parametrize
    function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
    {

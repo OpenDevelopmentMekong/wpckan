@@ -201,6 +201,12 @@
     return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
   }
 
+  function wpckan_get_dataset_id_from_dataset_url($dataset_url){
+    		$explode_dataset_url = explode("/dataset/", str_replace("?type=dataset", "", $dataset_url));
+    		$ckan_dataset_id = $explode_dataset_url[1];
+    		return $ckan_dataset_id;
+  }
+
   function wpckan_get_link_to_resource($dataset_name,$resource_id){
     wpckan_log("wpckan_get_link_to_resource "  . print_r($dataset_name,true) . " " . print_r($resource_id,true));
 
