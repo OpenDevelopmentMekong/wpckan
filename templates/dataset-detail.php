@@ -86,7 +86,9 @@
 	<!-- Metadata -->
 	<h2><?php _e('Additional info', 'wpckan') ?></h2>
   <table class="wpckan_dataset_metadata_fields">
-    <?php if (!empty($supported_fields)): ?>
+    <?php
+        $metadata_available = false;
+        if (!empty($supported_fields)): ?>
         <?php
           foreach ($supported_fields as $key): ?>
             <tr class="wpckan_dataset_metadata_field">
@@ -97,6 +99,7 @@
                 if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
                   $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
                   if (!empty($value)):
+                    $metadata_available = true;
                     echo '<td><p>'.__($mapped_key).'</p></td>';
                     echo '<td><p>'.$value.'</p></td>';
                   endif;
@@ -107,13 +110,18 @@
                   $value = implode(', ', $value);
                 endif;
                 if (!empty($value)):
+                  $metadata_available = true;
                   echo '<td><p>'.__($mapped_key).'</p></td>';
                   echo '<td><p>'.$value.'</p></td>';
                 endif;
               endif;
             endif; ?>
             </tr>
-          <?php endforeach; ?>
+          <?php endforeach;
+          if ($metadata_available == false):
+            echo '<p>'.__('No metadata available for current dataset','wpckan').'</p>';
+          endif;
+        ?>
 
     <?php endif; ?>
   </table>
