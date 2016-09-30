@@ -93,16 +93,14 @@
           foreach ($supported_fields as $key): ?>
             <tr class="wpckan_dataset_metadata_field">
             <?php $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
-            if (in_array($key,$data) && isset($data[$key])):
+            if (array_key_exists($key,$data) && isset($data[$key])):
               $value = $data[$key];
-              if (in_array($key, $multilingual_fields)):
-                if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
-                  $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
-                  if (!empty($value)):
-                    $metadata_available = true;
-                    echo '<td><p>'.__($mapped_key).'</p></td>';
-                    echo '<td><p>'.$value.'</p></td>';
-                  endif;
+              if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
+                $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
+                if (!empty($value)):
+                  $metadata_available = true;
+                  echo '<td><p>'.__($mapped_key).'</p></td>';
+                  echo '<td><p>'.$value.'</p></td>';
                 endif;
               else:
                 $value = $data[$key];
