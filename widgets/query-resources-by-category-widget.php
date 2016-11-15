@@ -26,7 +26,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$search_field = isset($instance['search_field']) ? $instance['search_field'] : 'title';
 		$limit = isset($instance['limit']) ? $instance['limit'] : -1;
 		$categories_names = wp_get_post_categories($post->ID,array(
-			"fields" => "ids")
+			"fields" => "names")
 		);
     $output_fields = isset($instance['output_fields']) ? $instance['output_fields'] : 'title';
     $output_fields_resources = isset($instance['output_fields_resources']) ? $instance['output_fields_resources'] : '';
