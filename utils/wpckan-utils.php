@@ -544,4 +544,10 @@
     return isset($id) && !empty($id) && $id !== "" && $id !== " ";
   }
 
+  function wpckan_get_license_list(){
+    $path_to_license_file = wpckan_get_ckan_domain() . '/licenses.json';
+		$json_file = file_get_contents($path_to_license_file);
+		return json_decode($json_file);
+  }
+
 ?>
