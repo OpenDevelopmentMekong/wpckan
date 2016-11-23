@@ -121,11 +121,11 @@ msgstr ""
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: widgets/query-resources-widget.php:63 widgets/related-resources-widget.php:74
+#: widgets/query-resources-widget.php:63 widgets/related-datasets-widget.php:74
 msgid "Related Resources"
 msgstr ""
 
-#: widgets/query-resources-widget.php:89 widgets/related-resources-widget.php:97
+#: widgets/query-resources-widget.php:89 widgets/related-datasets-widget.php:97
 msgid "Title:"
 msgstr ""
 
@@ -133,21 +133,21 @@ msgstr ""
 msgid "Query:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:93 widgets/related-resources-widget.php:99
+#: widgets/query-resources-widget.php:93 widgets/related-datasets-widget.php:99
 msgid "CKAN Organization:"
 msgstr ""
 
 #: widgets/query-resources-widget.php:95 widgets/query-resources-widget.php:102
-#: widgets/related-resources-widget.php:101
-#: widgets/related-resources-widget.php:108
+#: widgets/related-datasets-widget.php:101
+#: widgets/related-datasets-widget.php:108
 msgid "All"
 msgstr ""
 
-#: widgets/query-resources-widget.php:100 widgets/related-resources-widget.php:106
+#: widgets/query-resources-widget.php:100 widgets/related-datasets-widget.php:106
 msgid "CKAN Group:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:107 widgets/related-resources-widget.php:113
+#: widgets/query-resources-widget.php:107 widgets/related-datasets-widget.php:113
 msgid "Limit:"
 msgstr ""
 
@@ -159,15 +159,15 @@ msgstr ""
 msgid "More dataset: Link (URL)"
 msgstr ""
 
-#: widgets/related-resources-widget.php:12
+#: widgets/related-datasets-widget.php:12
 msgid "WPCKAN Related Resources"
 msgstr ""
 
-#: widgets/related-resources-widget.php:13
+#: widgets/related-datasets-widget.php:13
 msgid "Display post related resources."
 msgstr ""
 
-#: widgets/related-resources-widget.php:56
+#: widgets/related-datasets-widget.php:56
 msgid "More..."
 msgstr ""
 

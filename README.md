@@ -347,7 +347,7 @@ Examples:
 
 This plugin ships with a series of widgets that basically expose the functionality of the different shortcodes for easy integration on a Wordpress site layout:
 
-* WPCKAN Related Datasets: Shows the information of the related datasets of the post or page the widget is integrated in. See **/inc/widgets/related-resources-widget.php**
+* WPCKAN Related Datasets: Shows the information of the related datasets of the post or page the widget is integrated in. See **/inc/widgets/related-datasets-widget.php**
 * WPCKAN Query Datasets: Shows the results of the specified query. See **/inc/widgets/query-resources-widget.php**
 * WPCKAN Query resources by post's category: Shows the results of a query made with the specified field as filter and the post's or page's categories as values for the query. See **/inc/widgets/query-resources-by-category-widget.php**
 
