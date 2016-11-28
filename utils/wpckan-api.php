@@ -40,7 +40,7 @@
 			$iteration = 1;
       if ($total_count - ($iteration * 1000) > 0):
 				$attrs["limit"] = 1000;
-				$attrs["page"] = $iteration;
+				$attrs["page"] = $iteration + 1;
 				$query = '?'.compose_solr_query_from_attrs($attrs);
 				$ckanapi_url = $ckan_domain.'/api/3/action/package_search'.$query;
 
