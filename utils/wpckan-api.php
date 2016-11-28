@@ -47,7 +47,7 @@
 	      $json = wpckan_get_or_cache($ckanapi_url, $query);
 				if ($json !== false) {
 					$datasets_iteration = json_decode($json, true) ?: [];
-	        $datasets['result']['results'] = array_merge($datasets['result']['results'],$datasets_iteration);
+	        $datasets['result']['results'] = array_merge($datasets['result']['results'],$datasets_iteration['result']['results']);
 					$iteration++;
 				}
       endif;
