@@ -36,6 +36,22 @@
       }
       $datasets = json_decode($json, true) ?: [];
 
+			$total_count = $datasets['result']['count'];
+			$iteration = 1;
+      if ($total_count - ($iteration * 1000) > 0):
+				$attrs["limit"] = 1000;
+				$attrs["page"] = $iteration;
+				$query = '?'.compose_solr_query_from_attrs($attrs);
+				$ckanapi_url = $ckan_domain.'/api/3/action/package_search'.$query;
+
+	      $json = wpckan_get_or_cache($ckanapi_url, $query);
+				if ($json !== false) {
+					$datasets_iteration = json_decode($json, true) ?: [];
+	        $datasets['result']['results'] = array_merge($datasets['result']['results'],$datasets_iteration);
+					$iteration++;
+				}
+      endif;
+
       return $datasets['result'];
   }
 

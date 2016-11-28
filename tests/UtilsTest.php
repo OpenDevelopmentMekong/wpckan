@@ -25,49 +25,49 @@ class UtilsTest extends PHPUnit_Framework_TestCase
   public function testComposeSolrQueryFromAttrsQuery(){
     $attrs = array('query' => 'some_query');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&q=some_query&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&q=some_query&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsGroup(){
     $attrs = array('group' => 'some_group_name');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&fq=+groups:some_group_name&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&fq=+groups:some_group_name&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsOrganization(){
     $attrs = array('organization' => 'some_organization_name');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&fq=+owner_org:some_organization_name&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&fq=+owner_org:some_organization_name&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsType(){
     $attrs = array('type' => 'some_type');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&fq=+type:some_type&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&fq=+type:some_type&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsOneId(){
     $attrs = array('ids' => 'some_id');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&fq=+id:(some_id)&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&fq=+id:(some_id)&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsNoId(){
     $attrs = array('ids' => array());
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsIds(){
     $attrs = array('ids' => array('some_id','other_id'));
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&fq=+id:(some_id OR other_id)&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&fq=+id:(some_id OR other_id)&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsFilterFields(){
     $attrs = array('filter_fields' => '{"spatial-text":"England","date":"2015"}');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&fq=+spatial-text:England+date:2015&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&fq=+spatial-text:England+date:2015&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsLimit(){
@@ -79,13 +79,13 @@ class UtilsTest extends PHPUnit_Framework_TestCase
   public function testComposeSolrQueryFromAttrsDefaultLimit(){
     $attrs = array();
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsFilter(){
     $attrs = array('filter' => '1');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&fq=+num_resources:[1 TO *]&rows=1000&sort=views_recent+desc");
+    $this->assertContains($arguments,"&fq=+num_resources:[1 TO *]&rows=9999&sort=views_recent+desc");
   }
 
   public function testComposeSolrQueryFromAttrsLimitAndPage(){
