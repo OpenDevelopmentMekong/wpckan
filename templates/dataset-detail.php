@@ -95,7 +95,7 @@
             <?php $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
             if (array_key_exists($key,$data) && isset($data[$key])):
               $value = $data[$key];
-              if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
+              if (is_array($value) && (!empty($value[$current_language]) || (!empty($value["en"]))) && !empty($value)):
                 $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
                 if (!empty($value)):
                   $metadata_available = true;
