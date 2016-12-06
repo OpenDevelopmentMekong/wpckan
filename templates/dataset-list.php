@@ -44,8 +44,11 @@
 						if (isset($dataset[$field_name])):?>
 	            <div class="wpckan_dataset_<?php echo($field_name); ?>">
 	              <?php
-								$to_print = (is_array($dataset[$field_name]) && isset($dataset[$field_name][$current_language])) ? $dataset[$field_name][$current_language] : $dataset[$field_name];
-	              if ($should_link_to_dataset): ?>
+                $to_print = $dataset[$field_name];
+                if (is_array($dataset[$field_name])):
+                  $to_print =  !empty($dataset[$field_name][$current_language]) ? $dataset[$field_name][$current_language] : $dataset[$field_name]["en"];
+                endif;
+								if ($should_link_to_dataset): ?>
 	                <a <?php if ($target_blank_enabled){ echo 'target="_blank"';} ?>  href="<?php echo wpckan_get_link_to_dataset($dataset["name"]) ?>">
 										<?php echo $to_print; ?>
 									</a>
@@ -73,8 +76,11 @@
 												if (isset($resource[$field_name])):?>
 	                        <div class="wpckan_resource_<?php echo($field_name); ?>">
 	                          <?php
-														$to_print = (is_array($resource[$field_name]) && isset($resource[$field_name][$current_language])) ? $resource[$field_name][$current_language] : $resource[$field_name];
-	                          if ($should_link_to_dataset): ?>
+                            $to_print = $resource[$field_name];
+                            if (is_array($resource[$field_name])):
+                              $to_print =  !empty($resource[$field_name][$current_language]) ? $resource[$field_name][$current_language] : $resource[$field_name]["en"];
+                            endif;
+														if ($should_link_to_dataset): ?>
 															<a <?php if ($target_blank_enabled){ echo 'target="_blank"';} ?>  href="<?php echo wpckan_get_link_to_dataset($resource["name"]) ?>">
 																<?php echo $to_print; ?>
 															</a>
