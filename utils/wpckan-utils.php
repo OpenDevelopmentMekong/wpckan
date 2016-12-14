@@ -525,8 +525,8 @@
     return function_exists('qtranxf_getLanguage');
   }
 
-  function wpckan_parse_field_mappings(){
-    $mappings_raw = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
+  function wpckan_parse_field_mappings($option){
+    $mappings_raw = $GLOBALS['wpckan_options']->get_option($option);
     $mappings_clean = array();
     if (empty($mappings_raw)):
       return $mappings_clean;

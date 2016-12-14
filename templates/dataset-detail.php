@@ -15,7 +15,8 @@
         $current_language = qtranxf_getLanguage();
     endif;
 
-    $field_mappings = wpckan_parse_field_mappings();
+    $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
+    $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
 
 ?>
 
@@ -92,15 +93,17 @@
         <?php
           foreach ($supported_fields as $key): ?>
             <tr class="wpckan_dataset_metadata_field">
-            <?php $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
+            <?php
+            $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
             if (array_key_exists($key,$data) && isset($data[$key])):
               $value = $data[$key];
               if (is_array($value) && (!empty($value[$current_language]) || (!empty($value["en"]))) && !empty($value)):
                 $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
-                if (!empty($value)):
+                $mapped_value = isset($field_mappings_value[$value]) ? $field_mappings_value[$value] : $value;
+                if (!empty($mapped_value)):
                   $metadata_available = true;
                   echo '<td><p>'.__($mapped_key).'</p></td>';
-                  echo '<td><p>'.$value.'</p></td>';
+                  echo '<td><p>'.$mapped_value.'</p></td>';
                 endif;
               else:
                 $value = $data[$key];
@@ -108,9 +111,10 @@
                   $value = implode(', ', $value);
                 endif;
                 if (!empty($value)):
+                  $mapped_value = isset($field_mappings_value[$value]) ? $field_mappings_value[$value] : $value;
                   $metadata_available = true;
                   echo '<td><p>'.__($mapped_key).'</p></td>';
-                  echo '<td><p>'.$value.'</p></td>';
+                  echo '<td><p>'.$mapped_value.'</p></td>';
                 endif;
               endif;
             endif; ?>

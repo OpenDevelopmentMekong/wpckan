@@ -250,6 +250,7 @@ if (!class_exists('wpckan')) {
             register_setting('wpckan-group', 'wpckan_setting_uses_ckanext_fluent');
             register_setting('wpckan-group', 'wpckan_setting_multilingual_fields', 'wpckan_remove_whitespaces');
             register_setting('wpckan-group', 'wpckan_setting_field_mappings');
+            register_setting('wpckan-group', 'wpckan_setting_field_mappings_values');
             register_setting('wpckan-group', 'wpckan_setting_redirect_enabled');
             register_setting('wpckan-group', 'wpckan_setting_target_blank_enabled');
 

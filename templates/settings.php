@@ -12,6 +12,7 @@
           $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
           $multilingual_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
           $field_mappings = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
+          $field_mappings_values = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings_values');
           $redirect_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled');
           $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
           $logging_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path');
@@ -87,12 +88,20 @@
               <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section. Mind order.','wpckan') ?></p>
             </td>
           </tr>
-          <!-- Field mappings-->
+          <!-- Field mappings for keys-->
           <tr valign="top">
-            <th scope="row"><label for="wpckan_setting_field_mappings"><?php _e('Field mappings','wpckan') ?></label></th>
+            <th scope="row"><label for="wpckan_setting_field_mappings"><?php _e('Field mappings for keys','wpckan') ?></label></th>
             <td>
               <textarea class="full-width" name="wpckan_setting_field_mappings" placeholder="owner_org  =>  Organization"><?php echo $field_mappings;?></textarea>
-              <p class="description"><?php _e('Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field to its label','wpckan') ?></p>
+              <p class="description"><?php _e('Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field key to its label','wpckan') ?></p>
+            </td>
+          </tr>
+          <!-- Field mappings for values-->
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_field_mappings_values"><?php _e('Field mappings for values','wpckan') ?></label></th>
+            <td>
+              <textarea class="full-width" name="wpckan_setting_field_mappings_values" placeholder="owner_org  =>  Organization"><?php echo $field_mappings_values;?></textarea>
+              <p class="description"><?php _e('Specify a list value => value mappings, separated by line breaks which define the mapping of a metadata field value to its label','wpckan') ?></p>
             </td>
           </tr>
           <!-- Redirect-->
