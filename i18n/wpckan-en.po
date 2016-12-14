@@ -1,0 +1,1041 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: wpckan\n"
+"POT-Creation-Date: 2016-12-14 13:54+0100\n"
+"PO-Revision-Date: 2016-12-14 13:54+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: i18n\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: components\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: i18n/additional-localization.php:2
+msgid "Action Plan"
+msgstr "Action Plan"
+
+#: i18n/additional-localization.php:3
+msgid "Amendments"
+msgstr "Amendments"
+
+#: i18n/additional-localization.php:4
+msgid "ASEAN Agreements"
+msgstr "ASEAN Agreements"
+
+#: i18n/additional-localization.php:5
+msgid "Bilateral Agreements"
+msgstr "Bilateral Agreements"
+
+#: i18n/additional-localization.php:6
+msgid "Bilateral Treaty"
+msgstr "Bilateral Treaty"
+
+#: i18n/additional-localization.php:7
+msgid "By-Laws"
+msgstr "By-Laws"
+
+#: i18n/additional-localization.php:8
+msgid "Circular"
+msgstr "Circular"
+
+#: i18n/additional-localization.php:9
+msgid "Code"
+msgstr "Code"
+
+#: i18n/additional-localization.php:10
+msgid "Constitution"
+msgstr "Constitution"
+
+#: i18n/additional-localization.php:11
+msgid "Contracts"
+msgstr "Contracts"
+
+#: i18n/additional-localization.php:12
+msgid "Agreements"
+msgstr "Agreements"
+
+#: i18n/additional-localization.php:13
+msgid "Customary law"
+msgstr "Customary law"
+
+#: i18n/additional-localization.php:14
+msgid "Decision"
+msgstr "Decision"
+
+#: i18n/additional-localization.php:15
+msgid "Decree"
+msgstr "Decree"
+
+#: i18n/additional-localization.php:16
+msgid "Directive"
+msgstr "Directive"
+
+#: i18n/additional-localization.php:17 i18n/additional-localization.php:130
+msgid "Draft"
+msgstr "Draft"
+
+#: i18n/additional-localization.php:18
+msgid "Guideline"
+msgstr "Guideline"
+
+#: i18n/additional-localization.php:19
+msgid "Instruction"
+msgstr "Instruction"
+
+#: i18n/additional-localization.php:20
+msgid "International Treaty"
+msgstr "International Treaty"
+
+#: i18n/additional-localization.php:21
+msgid "Joint circular"
+msgstr "Joint circular"
+
+#: i18n/additional-localization.php:22
+msgid "Law"
+msgstr "Law"
+
+#: i18n/additional-localization.php:23
+msgid "Letter"
+msgstr "Letter"
+
+#: i18n/additional-localization.php:24
+msgid "Notification"
+msgstr "Notification"
+
+#: i18n/additional-localization.php:25
+msgid "Order"
+msgstr "Order"
+
+#: i18n/additional-localization.php:26
+msgid "Ordinance"
+msgstr "Ordinance"
+
+#: i18n/additional-localization.php:27
+msgid "other"
+msgstr "other"
+
+#: i18n/additional-localization.php:28
+msgid "Policy"
+msgstr "Policy"
+
+#: i18n/additional-localization.php:29
+msgid "Proclamation"
+msgstr "Proclamation"
+
+#: i18n/additional-localization.php:30
+msgid "Regional Agreements"
+msgstr "Regional Agreements"
+
+#: i18n/additional-localization.php:31
+msgid "Regulation"
+msgstr "Regulation"
+
+#: i18n/additional-localization.php:32
+msgid "Resolution"
+msgstr "Resolution"
+
+#: i18n/additional-localization.php:33
+msgid "Royal decree"
+msgstr "Royal decree"
+
+#: i18n/additional-localization.php:34
+msgid "Rule"
+msgstr "Rule"
+
+#: i18n/additional-localization.php:35
+msgid "Strategic Plan"
+msgstr "Strategic Plan"
+
+#: i18n/additional-localization.php:36
+msgid "Strategy"
+msgstr "Strategy"
+
+#: i18n/additional-localization.php:37
+msgid "Sub-decree"
+msgstr "Sub-decree"
+
+#: i18n/additional-localization.php:38
+msgid "Trade Agreements"
+msgstr "Trade Agreements"
+
+#: i18n/additional-localization.php:39
+msgid "Triangualar Agreement"
+msgstr "Triangualar Agreement"
+
+#: i18n/additional-localization.php:40
+msgid "UN Charters"
+msgstr "UN Charters"
+
+#: i18n/additional-localization.php:42
+msgid "Prime Minister"
+msgstr "Prime Minister"
+
+#: i18n/additional-localization.php:43
+msgid "Minister in charge of the Office of the Council of Ministers"
+msgstr "Minister in charge of the Office of the Council of Ministers"
+
+#: i18n/additional-localization.php:44
+msgid "Minister of Interior"
+msgstr "Minister of Interior"
+
+#: i18n/additional-localization.php:45
+msgid "Minister of Land Management Urban Planning and Construction"
+msgstr "Minister of Land Management Urban Planning and Construction"
+
+#: i18n/additional-localization.php:46
+msgid "Minister of Economy and Finance"
+msgstr "Minister of Economy and Finance"
+
+#: i18n/additional-localization.php:47 i18n/additional-localization.php:54
+msgid "Minister of Environment"
+msgstr "Minister of Environment"
+
+#: i18n/additional-localization.php:48
+msgid "Minister of Agriculture Forestry and Fisheries"
+msgstr "Minister of Agriculture Forestry and Fisheries"
+
+#: i18n/additional-localization.php:49
+msgid "Minister of Civil Service"
+msgstr "Minister of Civil Service"
+
+#: i18n/additional-localization.php:50
+msgid "Minister of Cult and Religion"
+msgstr "Minister of Cult and Religion"
+
+#: i18n/additional-localization.php:51
+msgid "Minister of Culture and Fine Arts"
+msgstr "Minister of Culture and Fine Arts"
+
+#: i18n/additional-localization.php:52 i18n/additional-localization.php:100
+msgid "Ministry of Commerce"
+msgstr "Ministry of Commerce"
+
+#: i18n/additional-localization.php:53
+msgid "Minister of Education Youth and Sport"
+msgstr "Minister of Education Youth and Sport"
+
+#: i18n/additional-localization.php:55
+msgid "Minister of Foreign Affairs and International Cooperation"
+msgstr "Minister of Foreign Affairs and International Cooperation"
+
+#: i18n/additional-localization.php:56
+msgid "Minister of Health"
+msgstr "Minister of Health"
+
+#: i18n/additional-localization.php:57
+msgid "Minister of Industry and Handicrafts"
+msgstr "Minister of Industry and Handicrafts"
+
+#: i18n/additional-localization.php:58
+msgid "Minister of Information"
+msgstr "Minister of Information"
+
+#: i18n/additional-localization.php:59
+msgid "Minister of Justice"
+msgstr "Minister of Justice"
+
+#: i18n/additional-localization.php:60
+msgid "Minister of Labour and Vocational Training"
+msgstr "Minister of Labour and Vocational Training"
+
+#: i18n/additional-localization.php:61 i18n/additional-localization.php:103
+msgid "Ministry of Land Management, Urban Planning and Construction"
+msgstr "Ministry of Land Management, Urban Planning and Construction"
+
+#: i18n/additional-localization.php:62
+msgid "Minister of Mines and Energy"
+msgstr "Minister of Mines and Energy"
+
+#: i18n/additional-localization.php:63
+msgid "Minister of National Defense"
+msgstr "Minister of National Defense"
+
+#: i18n/additional-localization.php:64
+msgid "Minister of Parliamentary Affairs"
+msgstr "Minister of Parliamentary Affairs"
+
+#: i18n/additional-localization.php:65
+msgid "Minister of Planning"
+msgstr "Minister of Planning"
+
+#: i18n/additional-localization.php:66
+msgid "Minister of Posts and Telecommunication"
+msgstr "Minister of Posts and Telecommunication"
+
+#: i18n/additional-localization.php:67
+msgid "Minister of Public Works and Transport"
+msgstr "Minister of Public Works and Transport"
+
+#: i18n/additional-localization.php:68
+msgid "Minister of Social Affairs Veterans and Youth Rehabilitation"
+msgstr "Minister of Social Affairs Veterans and Youth Rehabilitation"
+
+#: i18n/additional-localization.php:69
+msgid "Minister of Tourism"
+msgstr "Minister of Tourism"
+
+#: i18n/additional-localization.php:70
+msgid "Minister of Water Resources and Meteorology"
+msgstr "Minister of Water Resources and Meteorology"
+
+#: i18n/additional-localization.php:71
+msgid "Minister of Women’s Affairs"
+msgstr "Minister of Women’s Affairs"
+
+#: i18n/additional-localization.php:72
+msgid "Secretary of State of Civil Aviation"
+msgstr "Secretary of State of Civil Aviation"
+
+#: i18n/additional-localization.php:73
+msgid "Secretary of State"
+msgstr "Secretary of State"
+
+#: i18n/additional-localization.php:74
+msgid "Provincial Governor/Council"
+msgstr "Provincial Governor/Council"
+
+#: i18n/additional-localization.php:75
+msgid "City Governor/Council"
+msgstr "City Governor/Council"
+
+#: i18n/additional-localization.php:76
+msgid "District Governor/Council"
+msgstr "District Governor/Council"
+
+#: i18n/additional-localization.php:77
+msgid "Commune Governor/Council"
+msgstr "Commune Governor/Council"
+
+#: i18n/additional-localization.php:78
+msgid ""
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
+" Economic Land Concessions (ELCs)"
+msgstr ""
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
+" Economic Land Concessions (ELCs)"
+
+#: i18n/additional-localization.php:79 i18n/additional-localization.php:122
+msgid "Royal Government of Cambodia"
+msgstr "Royal Government of Cambodia"
+
+#: i18n/additional-localization.php:80
+msgid "Secretary General"
+msgstr "Secretary General"
+
+#: i18n/additional-localization.php:81
+msgid "General Inspector"
+msgstr "General Inspector"
+
+#: i18n/additional-localization.php:82
+msgid "Forestry Administration"
+msgstr "Forestry Administration"
+
+#: i18n/additional-localization.php:83
+msgid "Council for Development"
+msgstr "Council for Development"
+
+#: i18n/additional-localization.php:84 i18n/additional-localization.php:123
+msgid "Electricity Authority of Cambodia"
+msgstr "Electricity Authority of Cambodia"
+
+#: i18n/additional-localization.php:85
+msgid "Cabinet"
+msgstr "Cabinet"
+
+#: i18n/additional-localization.php:86
+msgid "National Authority for Land Dispute Resolution"
+msgstr "National Authority for Land Dispute Resolution"
+
+#: i18n/additional-localization.php:87 i18n/additional-localization.php:97
+msgid "Council of Ministers"
+msgstr "Council of Ministers"
+
+#: i18n/additional-localization.php:88
+msgid "Company Director"
+msgstr "Company Director"
+
+#: i18n/additional-localization.php:89
+msgid "Apsara Authority"
+msgstr "Apsara Authority"
+
+#: i18n/additional-localization.php:90
+msgid "Phnom Penh Capital Hall"
+msgstr "Phnom Penh Capital Hall"
+
+#: i18n/additional-localization.php:92
+msgid "City Council"
+msgstr "City Council"
+
+#: i18n/additional-localization.php:93
+msgid "Commune Council"
+msgstr "Commune Council"
+
+#: i18n/additional-localization.php:94
+msgid "Congress between National Assembly and Senate"
+msgstr "Congress between National Assembly and Senate"
+
+#: i18n/additional-localization.php:95
+msgid "Constituent Assembly"
+msgstr "Constituent Assembly"
+
+#: i18n/additional-localization.php:96
+msgid "Constitutional Council"
+msgstr "Constitutional Council"
+
+#: i18n/additional-localization.php:98
+msgid "District Council"
+msgstr "District Council"
+
+#: i18n/additional-localization.php:99
+msgid "King, of the Kingdom of Cambodia"
+msgstr "King, of the Kingdom of Cambodia"
+
+#: i18n/additional-localization.php:101
+msgid "Ministry of Agriculture Forestry and Fisheries"
+msgstr "Ministry of Agriculture Forestry and Fisheries"
+
+#: i18n/additional-localization.php:102
+msgid "Ministry of Industries, Mines and Energy"
+msgstr "Ministry of Industries, Mines and Energy"
+
+#: i18n/additional-localization.php:104
+msgid "Ministry of Post & Telecommunication"
+msgstr "Ministry of Post & Telecommunication"
+
+#: i18n/additional-localization.php:105
+msgid "Ministry of Public Works & Transport"
+msgstr "Ministry of Public Works & Transport"
+
+#: i18n/additional-localization.php:106
+msgid "Ministry of Parliamentary Affairs & Inspection"
+msgstr "Ministry of Parliamentary Affairs & Inspection"
+
+#: i18n/additional-localization.php:107
+msgid "Ministry of Religions & Cults "
+msgstr "Ministry of Religions & Cults "
+
+#: i18n/additional-localization.php:108
+msgid ""
+"Ministry of Social Affairs, Labour, Vocational Training & Youth "
+"Rehabilitation"
+msgstr ""
+"Ministry of Social Affairs, Labour, Vocational Training & Youth "
+"Rehabilitation"
+
+#: i18n/additional-localization.php:109
+msgid "Ministry of Tourism"
+msgstr "Ministry of Tourism"
+
+#: i18n/additional-localization.php:110
+msgid "Ministry of Water Resources and Meterology"
+msgstr "Ministry of Water Resources and Meterology"
+
+#: i18n/additional-localization.php:111
+msgid "Ministry of Woman's Affairs"
+msgstr "Ministry of Woman's Affairs"
+
+#: i18n/additional-localization.php:112
+msgid "National Assembly"
+msgstr "National Assembly"
+
+#: i18n/additional-localization.php:113
+msgid "Office of the Council of Ministers"
+msgstr "Office of the Council of Ministers"
+
+#: i18n/additional-localization.php:114
+msgid "Office of the Prime Minister"
+msgstr "Office of the Prime Minister"
+
+#: i18n/additional-localization.php:115
+msgid "Parliament"
+msgstr "Parliament"
+
+#: i18n/additional-localization.php:116
+msgid "Provincial Council"
+msgstr "Provincial Council"
+
+#: i18n/additional-localization.php:117
+msgid "Provincial Department of Ministry"
+msgstr "Provincial Department of Ministry"
+
+#: i18n/additional-localization.php:118
+msgid "Royal Palace"
+msgstr "Royal Palace"
+
+#: i18n/additional-localization.php:119
+msgid "Senate"
+msgstr "Senate"
+
+#: i18n/additional-localization.php:120
+msgid "Village administration"
+msgstr "Village administration"
+
+#: i18n/additional-localization.php:121
+msgid "Phnom Penh Captial Hall"
+msgstr "Phnom Penh Captial Hall"
+
+#: i18n/additional-localization.php:125
+msgid "Under negotitation"
+msgstr "Under negotitation"
+
+#: i18n/additional-localization.php:126
+msgid "Framework agreement signed"
+msgstr "Framework agreement signed"
+
+#: i18n/additional-localization.php:127
+msgid "Negotiations launched"
+msgstr "Negotiations launched"
+
+#: i18n/additional-localization.php:128
+msgid "Signed but not yet in effect/validated"
+msgstr "Signed but not yet in effect/validated"
+
+#: i18n/additional-localization.php:129
+msgid "Signed and in effect"
+msgstr "Signed and in effect"
+
+#: i18n/additional-localization.php:131
+msgid "Adopted / validated / in effect"
+msgstr "Adopted / validated / in effect"
+
+#: i18n/additional-localization.php:132
+msgid "Cancelled"
+msgstr "Cancelled"
+
+#: i18n/additional-localization.php:133
+msgid "Expired"
+msgstr "Expired"
+
+#: i18n/additional-localization.php:134
+msgid "Bill approved"
+msgstr "Bill approved"
+
+#: i18n/additional-localization.php:135
+msgid "Bill discussed in Pyidaungsu Hluttaw"
+msgstr "Bill discussed in Pyidaungsu Hluttaw"
+
+#: i18n/additional-localization.php:136
+msgid "Bill send to the President for signature"
+msgstr "Bill send to the President for signature"
+
+#: i18n/additional-localization.php:137
+msgid "Repealed"
+msgstr "Repealed"
+
+#: i18n/additional-localization.php:139
+msgid "Advocacy and promotional materials"
+msgstr "Advocacy and promotional materials"
+
+#: i18n/additional-localization.php:140
+msgid "Analysis, discussion papers, and blogs"
+msgstr "Analysis, discussion papers, and blogs"
+
+#: i18n/additional-localization.php:141
+msgid "Books and book chapters"
+msgstr "Books and book chapters"
+
+#: i18n/additional-localization.php:142
+msgid "Case studies"
+msgstr "Case studies"
+
+#: i18n/additional-localization.php:143
+msgid "Issue and policy briefs"
+msgstr "Issue and policy briefs"
+
+#: i18n/additional-localization.php:144
+msgid "Profiles - People"
+msgstr "Profiles - People"
+
+#: i18n/additional-localization.php:145
+msgid "Profiles - Organizations and projects"
+msgstr "Profiles - Organizations and projects"
+
+#: i18n/additional-localization.php:146
+msgid "Profiles - Geographical areas and sites"
+msgstr "Profiles - Geographical areas and sites"
+
+#: i18n/additional-localization.php:147
+msgid "Conference/workshop proceedings and presentations"
+msgstr "Conference/workshop proceedings and presentations"
+
+#: i18n/additional-localization.php:148
+msgid ""
+"Reports, journal articles, and research papers (including theses and "
+"dissertations)"
+msgstr ""
+"Reports, journal articles, and research papers (including theses and "
+"dissertations)"
+
+#: i18n/additional-localization.php:149
+msgid "Company profiles"
+msgstr "Company profiles"
+
+#: i18n/additional-localization.php:150
+msgid "Archived web content"
+msgstr "Archived web content"
+
+#: i18n/additional-localization.php:152
+msgid "Banteay Meanchey"
+msgstr "Banteay Meanchey"
+
+#: i18n/additional-localization.php:153
+msgid "Battambang"
+msgstr "Battambang"
+
+#: i18n/additional-localization.php:154
+msgid "Kampong Cham"
+msgstr "Kampong Cham"
+
+#: i18n/additional-localization.php:155
+msgid "Kampong Chhnang"
+msgstr "Kampong Chhnang"
+
+#: i18n/additional-localization.php:156
+msgid "Kampong Speu"
+msgstr "Kampong Speu"
+
+#: i18n/additional-localization.php:157
+msgid "Kampong Thom"
+msgstr "Kampong Thom"
+
+#: i18n/additional-localization.php:158
+msgid "Kampot"
+msgstr "Kampot"
+
+#: i18n/additional-localization.php:159
+msgid "Kandal"
+msgstr "Kandal"
+
+#: i18n/additional-localization.php:160
+msgid "Kep"
+msgstr "Kep"
+
+#: i18n/additional-localization.php:161
+msgid "Koh Kong"
+msgstr "Koh Kong"
+
+#: i18n/additional-localization.php:162
+msgid "Kratie"
+msgstr "Kratie"
+
+#: i18n/additional-localization.php:163
+msgid "Mondulkiri"
+msgstr "Mondulkiri"
+
+#: i18n/additional-localization.php:164
+msgid "Oddar Meanchey"
+msgstr "Oddar Meanchey"
+
+#: i18n/additional-localization.php:165
+msgid "Pailin"
+msgstr "Pailin"
+
+#: i18n/additional-localization.php:166
+msgid "Phnom Penh"
+msgstr "Phnom Penh"
+
+#: i18n/additional-localization.php:167
+msgid "Preah Sihanouk"
+msgstr "Preah Sihanouk"
+
+#: i18n/additional-localization.php:168
+msgid "Preah Vihear"
+msgstr "Preah Vihear"
+
+#: i18n/additional-localization.php:169
+msgid "Prey Veng"
+msgstr "Prey Veng"
+
+#: i18n/additional-localization.php:170
+msgid "Pursat"
+msgstr "Pursat"
+
+#: i18n/additional-localization.php:171
+msgid "Ratanakiri"
+msgstr "Ratanakiri"
+
+#: i18n/additional-localization.php:172
+msgid "Siem Reap"
+msgstr "Siem Reap"
+
+#: i18n/additional-localization.php:173
+msgid "Stung Treng"
+msgstr "Stung Treng"
+
+#: i18n/additional-localization.php:174
+msgid "Svay Rieng"
+msgstr "Svay Rieng"
+
+#: i18n/additional-localization.php:175
+msgid "Takeo"
+msgstr "Takeo"
+
+#: i18n/additional-localization.php:176
+msgid "Tboung Khmum"
+msgstr "Tboung Khmum"
+
+#: templates/archive-post-metabox.php:18
+msgid "CKAN Organization"
+msgstr "CKAN Organization"
+
+#: templates/archive-post-metabox.php:20 templates/archive-post-metabox.php:29
+msgid "None"
+msgstr "None"
+
+#: templates/archive-post-metabox.php:27
+msgid "CKAN Group"
+msgstr "CKAN Group"
+
+#: templates/archive-post-metabox.php:36
+msgid "Archive contents when:"
+msgstr "Archive contents when:"
+
+#: templates/archive-post-metabox.php:38
+msgid "Never archive"
+msgstr "Never archive"
+
+#: templates/archive-post-metabox.php:39
+msgid "Post is saved"
+msgstr "Post is saved"
+
+#: templates/archive-post-metabox.php:44
+#: templates/related-datasets-metabox.php:15
+msgid "wpckan is not correctly configured. Please, check the "
+msgstr "wpckan is not correctly configured. Please, check the "
+
+#: templates/dataset-detail.php:64
+msgid "Resources"
+msgstr "Resources"
+
+#: templates/dataset-detail.php:80
+msgid "Download"
+msgstr "Download"
+
+#: templates/dataset-detail.php:87
+msgid "Additional info"
+msgstr "Additional info"
+
+#: templates/dataset-detail.php:120
+msgid "No metadata available for current dataset"
+msgstr "No metadata available for current dataset"
+
+#: templates/related-datasets-metabox.php:5
+msgid "Add related datasets"
+msgstr "Add related datasets"
+
+#: templates/settings.php:38
+msgid "Connecting to CKAN"
+msgstr "Connecting to CKAN"
+
+#: templates/settings.php:40
+msgid "CKAN Url"
+msgstr "CKAN Url"
+
+#: templates/settings.php:43
+msgid "Specify protocol such as http:// or https://."
+msgstr "Specify protocol such as http:// or https://."
+
+#: templates/settings.php:47
+msgid "CKAN Api key"
+msgstr "CKAN Api key"
+
+#: templates/settings.php:50
+msgid "Available under the profile page of a CKAN user with Admin rights."
+msgstr "Available under the profile page of a CKAN user with Admin rights."
+
+#: templates/settings.php:55
+msgid "Connection status"
+msgstr "Connection status"
+
+#: templates/settings.php:58
+msgid "CKAN URL specified correctly."
+msgstr "CKAN URL specified correctly."
+
+#: templates/settings.php:60
+msgid "Problem connecting to CKAN instance. Please, check the specified URL."
+msgstr "Problem connecting to CKAN instance. Please, check the specified URL."
+
+#: templates/settings.php:63
+msgid "CKAN API Key specified correctly."
+msgstr "CKAN API Key specified correctly."
+
+#: templates/settings.php:65
+msgid "Please, specify a valid CKAN API Key."
+msgstr "Please, specify a valid CKAN API Key."
+
+#: templates/settings.php:71
+msgid "Supported post types"
+msgstr "Supported post types"
+
+#: templates/settings.php:82
+msgid "Dataset detail pages"
+msgstr "Dataset detail pages"
+
+#: templates/settings.php:84
+msgid "Supported fields"
+msgstr "Supported fields"
+
+#: templates/settings.php:86
+msgid "title, description, license_url, ..."
+msgstr "title, description, license_url, ..."
+
+#: templates/settings.php:87
+msgid ""
+"Specify a list of Comma-separated field names to show on the additional data"
+" section. Mind order."
+msgstr ""
+"Specify a list of Comma-separated field names to show on the additional data"
+" section. Mind order."
+
+#: templates/settings.php:92
+msgid "Field mappings"
+msgstr "Field mappings"
+
+#: templates/settings.php:95
+msgid ""
+"Specify a list key => value mappings, separated by line breaks which define "
+"the mapping of a metadata field to its label"
+msgstr ""
+"Specify a list key => value mappings, separated by line breaks which define "
+"the mapping of a metadata field to its label"
+
+#: templates/settings.php:100
+msgid "Enable url redirection"
+msgstr "Enable url redirection"
+
+#: templates/settings.php:103
+msgid ""
+"if checked, links to datasets, resources and organizations will be "
+"redirected to /"
+msgstr ""
+"if checked, links to datasets, resources and organizations will be "
+"redirected to /"
+
+#: templates/settings.php:107
+msgid "Open datasets in new tab"
+msgstr "Open datasets in new tab"
+
+#: templates/settings.php:110
+msgid "if checked, links to datasets will be opened in a new tab/window"
+msgstr "if checked, links to datasets will be opened in a new tab/window"
+
+#: templates/settings.php:115
+msgid "Ckanext-fluent support"
+msgstr "Ckanext-fluent support"
+
+#: templates/settings.php:117
+msgid "Is ckanext-fluent enabled in the CKAN instance?"
+msgstr "Is ckanext-fluent enabled in the CKAN instance?"
+
+#: templates/settings.php:120
+msgid ""
+"Activate for enabling multilingual functionalities. Visit "
+"https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-"
+"fluent extensions"
+msgstr ""
+"Activate for enabling multilingual functionalities. Visit "
+"https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-"
+"fluent extensions"
+
+#: templates/settings.php:124
+msgid "Fluent fields"
+msgstr "Fluent fields"
+
+#: templates/settings.php:127
+msgid ""
+"Specify a list of Comma-separated field names which are marked as fluent. "
+"See https://github.com/open-data/ckanext-fluent/"
+msgstr ""
+"Specify a list of Comma-separated field names which are marked as fluent. "
+"See https://github.com/open-data/ckanext-fluent/"
+
+#: templates/settings.php:132
+msgid "Caching"
+msgstr "Caching"
+
+#: templates/settings.php:134
+msgid "Enable caching for API requests"
+msgstr "Enable caching for API requests"
+
+#: templates/settings.php:140
+msgid "Cache file path"
+msgstr "Cache file path"
+
+#: templates/settings.php:143
+msgid "Path where cached files are going to be stored. Mind permissions."
+msgstr "Path where cached files are going to be stored. Mind permissions."
+
+#: templates/settings.php:147
+msgid "Cache time"
+msgstr "Cache time"
+
+#: templates/settings.php:150
+msgid "Time in milisecons cached versions will be kept."
+msgstr "Time in milisecons cached versions will be kept."
+
+#: templates/settings.php:154
+msgid "Logging"
+msgstr "Logging"
+
+#: templates/settings.php:156
+msgid "Enable log"
+msgstr "Enable log"
+
+#: templates/settings.php:162
+msgid "Log file path"
+msgstr "Log file path"
+
+#: templates/settings.php:165
+msgid "Path where logs are going to be stored. Mind permissions."
+msgstr "Path where logs are going to be stored. Mind permissions."
+
+#: utils/wpckan-api.php:456
+msgid "Download data"
+msgstr "Download data"
+
+#: utils/wpckan-api.php:460
+msgid "View dataset table"
+msgstr "View dataset table"
+
+#: widgets/query-resources-by-category-widget.php:12
+msgid "WPCKAN Query resources by post's category"
+msgstr "WPCKAN Query resources by post's category"
+
+#: widgets/query-resources-by-category-widget.php:13
+msgid ""
+"Queries CKAN for datasets with the post's category as value for the field "
+"specified."
+msgstr ""
+"Queries CKAN for datasets with the post's category as value for the field "
+"specified."
+
+#: widgets/query-resources-by-category-widget.php:80
+msgid "Custom posts"
+msgstr "Custom posts"
+
+#: widgets/query-resources-by-category-widget.php:91
+#: widgets/query-resources-widget.php:105
+#: widgets/related-datasets-widget.php:91
+msgid "Title:"
+msgstr "Title:"
+
+#: widgets/query-resources-by-category-widget.php:95
+#: widgets/query-resources-widget.php:109
+#: widgets/related-datasets-widget.php:93
+msgid "CKAN Organization:"
+msgstr "CKAN Organization:"
+
+#: widgets/query-resources-by-category-widget.php:97
+#: widgets/query-resources-widget.php:111
+#: widgets/query-resources-widget.php:118
+#: widgets/related-datasets-widget.php:95
+#: widgets/related-datasets-widget.php:102
+msgid "All"
+msgstr "All"
+
+#: widgets/query-resources-by-category-widget.php:106
+msgid "Search field:"
+msgstr "Search field:"
+
+#: widgets/query-resources-by-category-widget.php:111
+#: widgets/query-resources-widget.php:125
+#: widgets/related-datasets-widget.php:109
+msgid "Dataset type:"
+msgstr "Dataset type:"
+
+#: widgets/query-resources-by-category-widget.php:112
+#: widgets/query-resources-widget.php:126
+#: widgets/related-datasets-widget.php:110
+msgid "dataset, library_record, etc.."
+msgstr "dataset, library_record, etc.."
+
+#: widgets/query-resources-by-category-widget.php:117
+msgid "Select max number of posts to list (-1 to show all):"
+msgstr "Select max number of posts to list (-1 to show all):"
+
+#: widgets/query-resources-by-category-widget.php:125
+#: widgets/query-resources-widget.php:135
+#: widgets/related-datasets-widget.php:115
+msgid "Output fields for dataset:"
+msgstr "Output fields for dataset:"
+
+#: widgets/query-resources-by-category-widget.php:129
+#: widgets/query-resources-widget.php:139
+#: widgets/related-datasets-widget.php:119
+msgid "Output fields for resources:"
+msgstr "Output fields for resources:"
+
+#: widgets/query-resources-widget.php:9
+msgid "WPCKAN Query Datasets"
+msgstr "WPCKAN Query Datasets"
+
+#: widgets/query-resources-widget.php:10
+msgid "Query resources and displays them in a post or page."
+msgstr "Query resources and displays them in a post or page."
+
+#: widgets/query-resources-widget.php:75
+#: widgets/related-datasets-widget.php:67
+msgid "Related datasets"
+msgstr "Related datasets"
+
+#: widgets/query-resources-widget.php:107
+msgid "Query:"
+msgstr "Query:"
+
+#: widgets/query-resources-widget.php:116
+#: widgets/related-datasets-widget.php:100
+msgid "CKAN Group:"
+msgstr "CKAN Group:"
+
+#: widgets/query-resources-widget.php:123
+#: widgets/related-datasets-widget.php:107
+msgid "Additional filtering:"
+msgstr "Additional filtering:"
+
+#: widgets/query-resources-widget.php:124
+#: widgets/related-datasets-widget.php:108
+msgid "Specify valid JSON, otherwise not saved"
+msgstr "Specify valid JSON, otherwise not saved"
+
+#: widgets/query-resources-widget.php:127
+#: widgets/related-datasets-widget.php:111
+msgid "Limit:"
+msgstr "Limit:"
+
+#: widgets/query-resources-widget.php:129
+msgid "More dataset: Link label"
+msgstr "More dataset: Link label"
+
+#: widgets/query-resources-widget.php:131
+msgid "More dataset: Link (URL)"
+msgstr "More dataset: Link (URL)"
+
+#: widgets/related-datasets-widget.php:9
+msgid "WPCKAN Related Datasets"
+msgstr "WPCKAN Related Datasets"
+
+#: widgets/related-datasets-widget.php:10
+msgid "Display post related datasets."
+msgstr "Display post related datasets."
+
+#: wpckan.php:133
+msgid "Add related CKAN content"
+msgstr "Add related CKAN content"
+
+#: wpckan.php:134
+msgid "Archive Post as CKAN dataset"
+msgstr "Archive Post as CKAN dataset"
+
+#: wpckan.php:276
+msgid "You do not have sufficient permissions to access this page."
+msgstr "You do not have sufficient permissions to access this page."
