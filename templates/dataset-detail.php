@@ -114,7 +114,7 @@
                   $mapped_value = isset($field_mappings_value[$value]) ? $field_mappings_value[$value] : $value;
                   $metadata_available = true;
                   echo '<td><p>'.__($mapped_key).'</p></td>';
-                  echo '<td><p>'.$mapped_value.'</p></td>';
+                  echo '<td><p>'.__($mapped_value).'</p></td>';
                 endif;
               endif;
             endif; ?>
