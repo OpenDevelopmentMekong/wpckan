@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wpckan\n"
 "POT-Creation-Date: 2016-12-14 13:54+0100\n"
-"PO-Revision-Date: 2016-12-14 23:49+0700\n"
+"PO-Revision-Date: 2016-12-15 09:49+0700\n"
 "Language-Team: Khmer (https://www.transifex.com/open-development-mekong/"
 "teams/27158/km/)\n"
 "MIME-Version: 1.0\n"
@@ -722,7 +722,7 @@ msgstr "ព័ត៌មាន​បន្ថែម"
 
 #: templates/dataset-detail.php:120
 msgid "No metadata available for current dataset"
-msgstr ""
+msgstr "ពុំមានទិន្នន័យមេតាសម្រាប់សំណុំទិន្នន័យនេះទេ"
 
 #: templates/related-datasets-metabox.php:5
 msgid "Add related datasets"
