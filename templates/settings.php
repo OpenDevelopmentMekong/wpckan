@@ -13,6 +13,7 @@
           $multilingual_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
           $field_mappings = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
           $field_mappings_values = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings_values');
+          $linked_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
           $redirect_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled');
           $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
           $logging_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path');
@@ -102,6 +103,14 @@
             <td>
               <textarea class="full-width" name="wpckan_setting_field_mappings_values" placeholder="owner_org  =>  Organization"><?php echo $field_mappings_values;?></textarea>
               <p class="description"><?php _e('Specify a list value => value mappings, separated by line breaks which define the mapping of a metadata field value to its label','wpckan') ?></p>
+            </td>
+          </tr>
+          <!-- Fields containing ids to link to other datasets -->
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_linked_fields"><?php _e('Linked fields','wpckan') ?></label></th>
+            <td>
+              <input class="full-width" type="text" name="wpckan_setting_linked_fields" id="wpckan_setting_linked_fields" placeholder="<?php _e('odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, odm_laws_parent_document, ...','wpckan') ?>" value="<?php echo $linked_fields ?>"></input>
+              <p class="description"><?php _e('Specify a list of Comma-separated field names containing ids to link to other datasets.','wpckan') ?></p>
             </td>
           </tr>
           <!-- Redirect-->
