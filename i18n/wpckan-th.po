@@ -1,23 +1,25 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2016-12-14 13:54+0100\n"
-"PO-Revision-Date: 2016-12-14 13:54+0100\n"
-"Language-Team: Thai (https://www.transifex.com/open-development-mekong/teams/27158/th/)\n"
+"POT-Creation-Date: 2016-12-15 09:52+0100\n"
+"PO-Revision-Date: 2016-12-15 09:52+0100\n"
+"Last-Translator: \n"
+"Language-Team: Thai (https://www.transifex.com/open-development-mekong/"
+"teams/27158/th/)\n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: i18n\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: components\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
@@ -317,8 +319,8 @@ msgstr ""
 
 #: i18n/additional-localization.php:78
 msgid ""
-"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
-" Economic Land Concessions (ELCs)"
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
+"Economic Land Concessions (ELCs)"
 msgstr ""
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
@@ -677,6 +679,234 @@ msgstr ""
 msgid "Tboung Khmum"
 msgstr ""
 
+#: i18n/additional-localization.php:178
+msgid "Title"
+msgstr ""
+
+#: i18n/additional-localization.php:179
+msgid "Description"
+msgstr ""
+
+#: i18n/additional-localization.php:180 i18n/additional-localization.php:203
+msgid "License"
+msgstr ""
+
+#: i18n/additional-localization.php:181
+msgid "Copyright"
+msgstr ""
+
+#: i18n/additional-localization.php:182
+msgid "Access and use constraints"
+msgstr ""
+
+#: i18n/additional-localization.php:183
+msgid "Organization"
+msgstr ""
+
+#: i18n/additional-localization.php:184
+msgid "Version"
+msgstr ""
+
+#: i18n/additional-localization.php:185
+msgid "Contact"
+msgstr ""
+
+#: i18n/additional-localization.php:186
+msgid "Topics"
+msgstr ""
+
+#: i18n/additional-localization.php:187
+msgid "Language"
+msgstr ""
+
+#: i18n/additional-localization.php:188
+msgid "Date created"
+msgstr ""
+
+#: i18n/additional-localization.php:189
+msgid "Date uploaded"
+msgstr ""
+
+#: i18n/additional-localization.php:190
+msgid "Date modified"
+msgstr ""
+
+#: i18n/additional-localization.php:191
+msgid "Temporal range"
+msgstr ""
+
+#: i18n/additional-localization.php:192
+msgid "Geographic area (spatial range)"
+msgstr ""
+
+#: i18n/additional-localization.php:193
+msgid "Accuracy"
+msgstr ""
+
+#: i18n/additional-localization.php:194
+msgid "Logical consistency"
+msgstr ""
+
+#: i18n/additional-localization.php:195
+msgid "Completeness"
+msgstr ""
+
+#: i18n/additional-localization.php:196
+msgid "Process(es)"
+msgstr ""
+
+#: i18n/additional-localization.php:197
+msgid "Source(s)"
+msgstr ""
+
+#: i18n/additional-localization.php:198
+msgid "Metadata reference information"
+msgstr ""
+
+#: i18n/additional-localization.php:199
+msgid "Attributes"
+msgstr ""
+
+#: i18n/additional-localization.php:200 i18n/additional-localization.php:215
+msgid "Document type"
+msgstr ""
+
+#: i18n/additional-localization.php:201
+msgid "Short title (alternative/varying form of title)"
+msgstr ""
+
+#: i18n/additional-localization.php:202
+msgid "Version / Edition"
+msgstr ""
+
+#: i18n/additional-localization.php:204
+msgid "Author (individual)"
+msgstr ""
+
+#: i18n/additional-localization.php:205
+msgid "Author (corporate)"
+msgstr ""
+
+#: i18n/additional-localization.php:206
+msgid "Co-author (individual)"
+msgstr ""
+
+#: i18n/additional-localization.php:207
+msgid "Co-author (corporate)"
+msgstr ""
+
+#: i18n/additional-localization.php:208
+msgid "ISBN number"
+msgstr ""
+
+#: i18n/additional-localization.php:209
+msgid "ISSN number"
+msgstr ""
+
+#: i18n/additional-localization.php:210
+msgid "Publication place"
+msgstr ""
+
+#: i18n/additional-localization.php:211
+msgid "Publisher"
+msgstr ""
+
+#: i18n/additional-localization.php:212
+msgid "Publication date"
+msgstr ""
+
+#: i18n/additional-localization.php:213
+msgid "Pagination"
+msgstr ""
+
+#: i18n/additional-localization.php:214
+msgid "General note"
+msgstr ""
+
+#: i18n/additional-localization.php:216
+msgid "Document reference #"
+msgstr ""
+
+#: i18n/additional-localization.php:217
+msgid "Alternative/short title"
+msgstr ""
+
+#: i18n/additional-localization.php:218
+msgid "Primary policy reference point"
+msgstr ""
+
+#: i18n/additional-localization.php:219
+msgid "Status"
+msgstr ""
+
+#: i18n/additional-localization.php:220
+msgid "Version date (of draft)"
+msgstr ""
+
+#: i18n/additional-localization.php:221
+msgid "Adoption date/Promulgation date/Signing date"
+msgstr ""
+
+#: i18n/additional-localization.php:222
+msgid "Effective date"
+msgstr ""
+
+#: i18n/additional-localization.php:223
+msgid "Application date"
+msgstr ""
+
+#: i18n/additional-localization.php:224
+msgid "Previous legal document"
+msgstr ""
+
+#: i18n/additional-localization.php:225
+msgid "Change notes"
+msgstr ""
+
+#: i18n/additional-localization.php:226
+msgid "Relationship to other legal docs"
+msgstr ""
+
+#: i18n/additional-localization.php:227
+msgid "Associated document"
+msgstr ""
+
+#: i18n/additional-localization.php:228
+msgid "Publication reference"
+msgstr ""
+
+#: i18n/additional-localization.php:229
+msgid "Links to source"
+msgstr ""
+
+#: i18n/additional-localization.php:230
+msgid "Drafting agency"
+msgstr ""
+
+#: i18n/additional-localization.php:231
+msgid "Technical assistance for drafting"
+msgstr ""
+
+#: i18n/additional-localization.php:232
+msgid "Agency providing technical assistance"
+msgstr ""
+
+#: i18n/additional-localization.php:233
+msgid "Technical assistance funding agency"
+msgstr ""
+
+#: i18n/additional-localization.php:234
+msgid "Issuing agency/parties"
+msgstr ""
+
+#: i18n/additional-localization.php:235
+msgid "Implementing agencies"
+msgstr ""
+
+#: i18n/additional-localization.php:236
+msgid "Notes"
+msgstr ""
+
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
 msgstr ""
@@ -726,158 +956,167 @@ msgstr ""
 msgid "Add related datasets"
 msgstr ""
 
-#: templates/settings.php:38
+#: templates/settings.php:39
 msgid "Connecting to CKAN"
 msgstr ""
 
-#: templates/settings.php:40
+#: templates/settings.php:41
 msgid "CKAN Url"
 msgstr ""
 
-#: templates/settings.php:43
+#: templates/settings.php:44
 msgid "Specify protocol such as http:// or https://."
 msgstr ""
 
-#: templates/settings.php:47
+#: templates/settings.php:48
 msgid "CKAN Api key"
 msgstr ""
 
-#: templates/settings.php:50
+#: templates/settings.php:51
 msgid "Available under the profile page of a CKAN user with Admin rights."
 msgstr ""
 
-#: templates/settings.php:55
+#: templates/settings.php:56
 msgid "Connection status"
 msgstr ""
 
-#: templates/settings.php:58
+#: templates/settings.php:59
 msgid "CKAN URL specified correctly."
 msgstr ""
 
-#: templates/settings.php:60
+#: templates/settings.php:61
 msgid "Problem connecting to CKAN instance. Please, check the specified URL."
 msgstr ""
 
-#: templates/settings.php:63
+#: templates/settings.php:64
 msgid "CKAN API Key specified correctly."
 msgstr ""
 
-#: templates/settings.php:65
+#: templates/settings.php:66
 msgid "Please, specify a valid CKAN API Key."
 msgstr ""
 
-#: templates/settings.php:71
+#: templates/settings.php:72
 msgid "Supported post types"
 msgstr ""
 
-#: templates/settings.php:82
+#: templates/settings.php:83
 msgid "Dataset detail pages"
 msgstr ""
 
-#: templates/settings.php:84
+#: templates/settings.php:85
 msgid "Supported fields"
 msgstr ""
 
-#: templates/settings.php:86
+#: templates/settings.php:87
 msgid "title, description, license_url, ..."
 msgstr ""
 
-#: templates/settings.php:87
+#: templates/settings.php:88
 msgid ""
-"Specify a list of Comma-separated field names to show on the additional data"
-" section. Mind order."
+"Specify a list of Comma-separated field names to show on the additional data "
+"section. Mind order."
 msgstr ""
 
-#: templates/settings.php:92
-msgid "Field mappings"
+#: templates/settings.php:93
+msgid "Field mappings for keys"
 msgstr ""
 
-#: templates/settings.php:95
+#: templates/settings.php:96
 msgid ""
 "Specify a list key => value mappings, separated by line breaks which define "
-"the mapping of a metadata field to its label"
+"the mapping of a metadata field key to its label"
 msgstr ""
 
-#: templates/settings.php:100
+#: templates/settings.php:101
+msgid "Field mappings for values"
+msgstr ""
+
+#: templates/settings.php:104
+msgid ""
+"Specify a list value => value mappings, separated by line breaks which "
+"define the mapping of a metadata field value to its label"
+msgstr ""
+
+#: templates/settings.php:109
 msgid "Enable url redirection"
 msgstr ""
 
-#: templates/settings.php:103
+#: templates/settings.php:112
 msgid ""
 "if checked, links to datasets, resources and organizations will be "
 "redirected to /"
 msgstr ""
 
-#: templates/settings.php:107
+#: templates/settings.php:116
 msgid "Open datasets in new tab"
 msgstr ""
 
-#: templates/settings.php:110
+#: templates/settings.php:119
 msgid "if checked, links to datasets will be opened in a new tab/window"
 msgstr ""
 
-#: templates/settings.php:115
+#: templates/settings.php:124
 msgid "Ckanext-fluent support"
 msgstr ""
 
-#: templates/settings.php:117
+#: templates/settings.php:126
 msgid "Is ckanext-fluent enabled in the CKAN instance?"
 msgstr ""
 
-#: templates/settings.php:120
+#: templates/settings.php:129
 msgid ""
-"Activate for enabling multilingual functionalities. Visit "
-"https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-"
-"fluent extensions"
+"Activate for enabling multilingual functionalities. Visit https://github.com/"
+"ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions"
 msgstr ""
 
-#: templates/settings.php:124
+#: templates/settings.php:133
 msgid "Fluent fields"
 msgstr ""
 
-#: templates/settings.php:127
+#: templates/settings.php:136
 msgid ""
 "Specify a list of Comma-separated field names which are marked as fluent. "
 "See https://github.com/open-data/ckanext-fluent/"
 msgstr ""
 
-#: templates/settings.php:132
+#: templates/settings.php:141
 msgid "Caching"
 msgstr ""
 
-#: templates/settings.php:134
+#: templates/settings.php:143
 msgid "Enable caching for API requests"
 msgstr ""
 
-#: templates/settings.php:140
+#: templates/settings.php:149
 msgid "Cache file path"
 msgstr ""
 
-#: templates/settings.php:143
+#: templates/settings.php:152
 msgid "Path where cached files are going to be stored. Mind permissions."
 msgstr ""
 
-#: templates/settings.php:147
+#: templates/settings.php:156
 msgid "Cache time"
 msgstr ""
 
-#: templates/settings.php:150
+#: templates/settings.php:159
 msgid "Time in milisecons cached versions will be kept."
 msgstr ""
 
-#: templates/settings.php:154
+#: templates/settings.php:163
 msgid "Logging"
 msgstr ""
 
-#: templates/settings.php:156
+#: templates/settings.php:165
 msgid "Enable log"
 msgstr ""
 
-#: templates/settings.php:162
+#: templates/settings.php:171
 msgid "Log file path"
 msgstr ""
 
-#: templates/settings.php:165
+#: templates/settings.php:174
 msgid "Path where logs are going to be stored. Mind permissions."
 msgstr ""
 
@@ -963,8 +1202,7 @@ msgstr ""
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: widgets/query-resources-widget.php:75
-#: widgets/related-datasets-widget.php:67
+#: widgets/query-resources-widget.php:75 widgets/related-datasets-widget.php:67
 msgid "Related datasets"
 msgstr ""
 
@@ -1008,14 +1246,14 @@ msgstr ""
 msgid "Display post related datasets."
 msgstr ""
 
-#: wpckan.php:133
+#: wpckan.php:140
 msgid "Add related CKAN content"
 msgstr ""
 
-#: wpckan.php:134
+#: wpckan.php:141
 msgid "Archive Post as CKAN dataset"
 msgstr ""
 
-#: wpckan.php:276
+#: wpckan.php:284
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
