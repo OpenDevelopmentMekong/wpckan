@@ -33,8 +33,8 @@
 	<h1 class="wpckan_dataset_title"><?php echo $title ?></h1>
 
 	<!-- Organization -->
-  <?php if (isset($data['organization']['title'])): ?>
-    <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], "wpckan") ?></h3>
+  <?php if (isset($data['organization']['title']) && (odm_country_manager()->get_current_country()=="mekong")): ?>
+    <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], 'wpckan') ?></h3>
   <?php endif; ?>
 
 	<!-- Tags -->
