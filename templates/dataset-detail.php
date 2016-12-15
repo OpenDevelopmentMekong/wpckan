@@ -99,7 +99,7 @@
               $value = $data[$key];
               if (is_array($value) && (!empty($value[$current_language]) || (!empty($value["en"]))) && !empty($value)):
                 $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
-                $mapped_value = isset($field_mappings_value[$value]) ? $field_mappings_value[$value] : $value;
+                $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
                 if (!empty($mapped_value)):
                   $metadata_available = true;
                   echo '<td><p>'.__($mapped_key).'</p></td>';
@@ -111,7 +111,7 @@
                   $value = implode(', ', $value);
                 endif;
                 if (!empty($value)):
-                  $mapped_value = isset($field_mappings_value[$value]) ? $field_mappings_value[$value] : $value;
+                  $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
                   $metadata_available = true;
                   echo '<td><p>'.__($mapped_key).'</p></td>';
                   echo '<td><p>'.__($mapped_value).'</p></td>';
