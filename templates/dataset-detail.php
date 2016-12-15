@@ -17,7 +17,8 @@
 
     $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
     $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
-
+    $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
+    $linked_fields = explode(',', $linked_fields_csv);
 ?>
 
 <div class="wpckan_dataset_detail">
@@ -99,10 +100,15 @@
               if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
                 $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
                 $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
-                if (!empty($value)):
+                if (!empty($mapped_value)):
                   $metadata_available = true;
-                  echo '<td><p>'.__($mapped_key).'</p></td>';
-                  echo '<td><p>'.__($mapped_value).'</p></td>';
+                  if (in_array($key,$linked_fields)):
+                    echo '<td><p>'.__($mapped_key).'</p></td>';
+                    echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
+                  else:
+                    echo '<td><p>'.__($mapped_key).'</p></td>';
+                    echo '<td><p>'.__($mapped_value).'</p></td>';
+                  endif;
                 endif;
               else:
                 $value = $data[$key];
@@ -112,8 +118,13 @@
                 if (!empty($value)):
                   $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
                   $metadata_available = true;
-                  echo '<td><p>'.__($mapped_key).'</p></td>';
-                  echo '<td><p>'.__($mapped_value).'</p></td>';
+                  if (in_array($key,$linked_fields)):
+                    echo '<td><p>'.__($mapped_key).'</p></td>';
+                    echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
+                  else:
+                    echo '<td><p>'.__($mapped_key).'</p></td>';
+                    echo '<td><p>'.__($mapped_value).'</p></td>';
+                  endif;
                 endif;
               endif;
             endif; ?>
