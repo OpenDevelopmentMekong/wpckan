@@ -53,7 +53,6 @@ if (!class_exists('wpckan')) {
         public function load_text_domain()
         {
           load_plugin_textdomain( 'wpckan', false,  dirname( plugin_basename( __FILE__ ) ) . '/i18n' );
-          load_plugin_textdomain( 'odm', false,  get_stylesheet_directory() . '/i18n' );
         }
 
         function check_requirements(){
