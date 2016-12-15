@@ -34,13 +34,13 @@
 
 	<!-- Organization -->
   <?php if (isset($data['organization']['title']) && (odm_country_manager()->get_current_country()=="mekong")): ?>
-    <h3 class="wpckan_dataset_organization"><?php echo $data['organization']['title'] ?></h3>
+    <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], 'wpckan') ?></h3>
   <?php endif; ?>
 
 	<!-- Tags -->
   <ul class="wpckan_dataset_tags">
     <?php foreach ($data['tags'] as $tag): ?>
-      <li class="wpckan_dataset_tag"><?php echo $tag['display_name'] ?></li>
+      <li class="wpckan_dataset_tag"><?php echo apply_filters('translate_term', $tag['display_name'], odm_language_manager()->get_current_language()); ?></li>
     <?php endforeach; ?>
   </ul>
 
@@ -95,7 +95,7 @@
             <?php $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
             if (array_key_exists($key,$data) && isset($data[$key])):
               $value = $data[$key];
-              if (is_array($value) && (!empty($value[$current_language]) || (!empty($value["en"]))) && !empty($value)):
+              if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
                 $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
                 if (!empty($value)):
                   $metadata_available = true;

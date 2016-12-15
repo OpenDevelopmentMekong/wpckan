@@ -47,6 +47,13 @@ if (!class_exists('wpckan')) {
             add_shortcode('wpckan_number_of_query_datasets', array(&$this, 'wpckan_do_shortcode_get_number_of_query_datasets'));
             add_shortcode('wpckan_dataset_detail', array(&$this, 'wpckan_do_shortcode_dataset_detail'));
             add_action('admin_notices', array($this, 'check_requirements'));
+            add_action('init', array($this, 'load_text_domain'));
+        }
+
+        public function load_text_domain()
+        {
+          load_plugin_textdomain( 'wpckan', false,  dirname( plugin_basename( __FILE__ ) ) . '/i18n' );
+          load_plugin_textdomain( 'odm', false,  get_stylesheet_directory() . '/i18n' );
         }
 
         function check_requirements(){
@@ -250,6 +257,7 @@ if (!class_exists('wpckan')) {
             register_setting('wpckan-group', 'wpckan_setting_uses_ckanext_fluent');
             register_setting('wpckan-group', 'wpckan_setting_multilingual_fields', 'wpckan_remove_whitespaces');
             register_setting('wpckan-group', 'wpckan_setting_field_mappings');
+            register_setting('wpckan-group', 'wpckan_setting_field_mappings_values');
             register_setting('wpckan-group', 'wpckan_setting_redirect_enabled');
             register_setting('wpckan-group', 'wpckan_setting_target_blank_enabled');
 
