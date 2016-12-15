@@ -34,7 +34,7 @@
 
 	<!-- Organization -->
   <?php if (isset($data['organization']['title'])): ?>
-    <h3 class="wpckan_dataset_organization"><?php echo $data['organization']['title'] ?></h3>
+    <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], "wpckan") ?></h3>
   <?php endif; ?>
 
 	<!-- Tags -->
