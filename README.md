@@ -83,7 +83,7 @@ Examples:
 [wpckan_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_related_datasets blank_on_empty="true"]
 [wpckan_related_datasets type="library_record"]
-[wpckan_related_datasets sort="metadata_modified desc"]
+[wpckan_related_datasets sort="metadata_modified+desc"]
 ```
 
 An example showing how the information returned by this shortcode will be structured:
@@ -228,7 +228,7 @@ Examples:
 [wpckan_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
 [wpckan_query_datasets query="coal" blank_on_empty="true"]
 [wpckan_query_datasets query="*:*" type="library_record"]
-[wpckan_query_datasets sort="metadata_modified desc"]
+[wpckan_query_datasets sort="metadata_modified+desc"]
 ```
 
 ```html
