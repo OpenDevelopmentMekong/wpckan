@@ -320,7 +320,7 @@
     endif;
 
 		// sort
-		$sort = isset($attrs['sort']) ? $attrs['sort'] : 'metadata_modified desc';
+		$sort = isset($attrs['sort']) ? $attrs['sort'] : 'metadata_modified+desc';
     $arguments .= '&sort=' . $sort;
 
     return $arguments;
