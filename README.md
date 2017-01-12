@@ -45,6 +45,8 @@ Filters the datasets according to following criteria:
 * **filter_fields**: (Optional) JSON.
 Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
 
+* **sort**: (Optional) String.
+As per the solr documentation, this is a comma-separated string of field names and sort-orderings.
 
 #### Pagination
 
@@ -79,8 +81,9 @@ Examples:
 [wpckan_related_datasets include_fields_dataset="title,description,author"]
 [wpckan_related_datasets include_fields_dataset="title,description,author" include_fields_resources="name,description,created"]
 [wpckan_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
-[wpckan_related_datasets blank_on_empty='true']
-[wpckan_related_datasets type='library_record']
+[wpckan_related_datasets blank_on_empty="true"]
+[wpckan_related_datasets type="library_record"]
+[wpckan_related_datasets sort="metadata_modified+desc"]
 ```
 
 An example showing how the information returned by this shortcode will be structured:
@@ -139,7 +142,7 @@ Examples:
 [wpckan_number_of_related_datasets group="news" prefix="Number of datasets: (" suffix=")" link_url="http://link_to_more"]
 [wpckan_number_of_related_datasets organization="d9722d77-3b91-4c26-9172-950a9a4be07a"]
 [wpckan_number_of_related_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
-[wpckan_number_of_related_datasets limit="3" type='dataset']
+[wpckan_number_of_related_datasets limit="3" type="dataset"]
 [wpckan_number_of_related_datasets blank_on_empty="true"]
 [wpckan_number_of_related_datasets type="library_record"]
 ```
@@ -187,6 +190,9 @@ Filters the datasets according to following criteria:
 * **filter_fields**: (Optional) JSON.
 Filters the datasets according to the content of the datasets' extra fields. The list of fields and values is specified as JSON string. The name of the fields must match exactly (case unsensitive) but for the value the php strpos() function will be employed. The OR operator will be applied if more than 1 key/value combination are given. See examples below.
 
+* **sort**: (Optional) String.
+As per the solr documentation, this is a comma-separated string of field names and sort-orderings.
+
 #### Pagination
 
 * **page**: (Optional) Number.
@@ -220,8 +226,9 @@ Examples:
 [wpckan_query_datasets query="forestry" organization="odmcambodia" group="news"]
 [wpckan_query_datasets query="elections" include_fields_dataset="title,notes,license" include_fields_resources="name,description,created"]
 [wpckan_query_datasets limit="3" filter_fields='{"spatial-text":"England","date":"2015"}']
-[wpckan_query_datasets query="coal" blank_on_empty='true']
+[wpckan_query_datasets query="coal" blank_on_empty="true"]
 [wpckan_query_datasets query="*:*" type="library_record"]
+[wpckan_query_datasets sort="metadata_modified+desc"]
 ```
 
 ```html
