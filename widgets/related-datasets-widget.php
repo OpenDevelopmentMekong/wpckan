@@ -9,6 +9,12 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
         __('WPCKAN Related Datasets', 'wpckan'),
         array('description' => __('Display post related datasets.', 'wpckan'))
         );
+
+				$this->sort_options = array(
+					"metadata_modified+desc" => "Metadata modified",
+					"relevance+asc" => "Relevance",
+					"views_recent+desc" => "Views recent"
+				);
     }
 
  /**
@@ -41,6 +47,10 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 
      if (!empty($instance['limit']) && $instance['limit'] > 0):
        $shortcode .= ' limit="'.$instance['limit'].'"';
+     endif;
+
+     if (!empty($instance['sort'])):
+       $shortcode .= ' sort="'.$instance['sort'].'"';
      endif;
 
      $shortcode .= ' include_fields_dataset="'.$instance['output_fields'].'" include_fields_resources="'.$instance['output_fields_resources'].'" blank_on_empty="true"]';
@@ -86,7 +96,8 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      }
      $output_fields = !empty($instance['output_fields']) ? $instance['output_fields'] : 'title';
      $output_fields_resources = !empty($instance['output_fields_resources']) ? $instance['output_fields_resources'] : '';
-     ?>
+		 $sort = isset($instance['sort']) ? $instance['sort'] : 'metadata_modified+desc';
+		 ?>
   <p>
     <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');?></label>
     <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>">
@@ -119,6 +130,14 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 			<label for="<?php echo $this->get_field_id('output_fields_resources');?>"><?php _e('Output fields for resources:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resources');?>" name="<?php echo $this->get_field_name('output_fields_resources');?>" type="text" value="<?php echo esc_attr($output_fields_resources);?>">
 		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Order by:' ); ?></label>
+			<select class='widefat' id="<?php echo $this->get_field_id('sort'); ?>" name="<?php echo $this->get_field_name('sort'); ?>" type="text">
+				<?php foreach ( $this->sort_options  as $key => $value ): ?>
+					<option <?php if ($sort == $key) { echo " selected"; } ?> value="<?php echo $key ?>"><?php echo $value ?></option>
+				<?php endforeach; ?>
+			</select>
+		</p>
   </p>
   <?php
 
@@ -143,6 +162,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      $instance['output_fields'] = wpckan_remove_whitespaces($instance['output_fields']);
      $instance['output_fields_resources'] = (! empty( $new_instance['output_fields_resources'])) ? strip_tags( $new_instance['output_fields_resources'] ) : '';
      $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
+		 $instance['sort'] = (! empty( $new_instance['sort'])) ? strip_tags( $new_instance['sort'] ) : 'metadata_modified+desc';
 
      return $instance;
  }

@@ -12,6 +12,12 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			__('WPCKAN Query resources by post\'s category', 'wpckan'),
 			array('description' => __('Queries CKAN for datasets with the post\'s category as value for the field specified.', 'wpckan'))
 		);
+
+		$this->sort_options = array(
+			"metadata_modified+desc" => "Metadata modified",
+			"relevance+asc" => "Relevance",
+			"views_recent+desc" => "Views recent"
+		);
 	}
 
 	/**
@@ -48,6 +54,10 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			if (!empty($instance['limit']) && $instance['limit'] > 0)
 	      $shortcode .= ' limit="' . $instance['limit'] . '"';
 
+			if (!empty($instance['sort'])):
+	      $shortcode .= ' sort="'.$instance['sort'].'"';
+	    endif;
+
 			$shortcode .= ' include_fields_dataset="' . $output_fields . '" include_fields_resources="'. $output_fields_resources.'" blank_on_empty="true"]';
 
 			$output = do_shortcode($shortcode);
@@ -81,6 +91,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$type = !empty($instance['type']) ? $instance['type'] : 'dataset';
 		$organization = isset($instance['organization']) ? $instance['organization'] : -1;
 		$organization_list = [];
+		$sort = isset($instance['sort']) ? $instance['sort'] : 'metadata_modified+desc';
 		if (function_exists('wpckan_api_get_organizations_list')) {
 				try {
 						$organization_list = wpckan_api_get_organizations_list();
@@ -129,6 +140,14 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('output_fields_resources');?>"><?php _e('Output fields for resources:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resources');?>" name="<?php echo $this->get_field_name('output_fields_resources');?>" type="text" value="<?php echo esc_attr($output_fields_resources);?>">
 		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Order by:' ); ?></label>
+			<select class='widefat' id="<?php echo $this->get_field_id('sort'); ?>" name="<?php echo $this->get_field_name('sort'); ?>" type="text">
+				<?php foreach ( $this->sort_options  as $key => $value ): ?>
+					<option <?php if ($sort == $key) { echo " selected"; } ?> value="<?php echo $key ?>"><?php echo $value ?></option>
+				<?php endforeach; ?>
+			</select>
+		</p>
 
 		<?php
 	}
@@ -151,6 +170,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
     $instance['output_fields'] = wpckan_remove_whitespaces($instance['output_fields']);
     $instance['output_fields_resources'] = (!empty($new_instance['output_fields_resources'])) ? strip_tags($new_instance['output_fields_resources']) : '';
     $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
+		$instance['sort'] = (! empty( $new_instance['sort'])) ? strip_tags( $new_instance['sort'] ) : 'metadata_modified+desc';
+
 		return $instance;
 	}
 
