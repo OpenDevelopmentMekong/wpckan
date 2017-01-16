@@ -1,24 +1,15 @@
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-01-16 16:45+0100\n"
-"PO-Revision-Date: 2017-01-16 16:45+0100\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: i18n\n"
-"X-Poedit-SearchPath-1: .\n"
-"X-Poedit-SearchPathExcluded-0: components\n"
-"X-Poedit-SearchPathExcluded-1: vendor\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
@@ -686,231 +677,231 @@ msgstr "Tboung Khmum"
 
 #: i18n/additional-localization.php:178
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 #: i18n/additional-localization.php:179
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: i18n/additional-localization.php:180 i18n/additional-localization.php:203
 msgid "License"
-msgstr ""
+msgstr "License"
 
 #: i18n/additional-localization.php:181
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: i18n/additional-localization.php:182
 msgid "Access and use constraints"
-msgstr ""
+msgstr "Access and use constraints"
 
 #: i18n/additional-localization.php:183
 msgid "Organization"
-msgstr ""
+msgstr "Organization"
 
 #: i18n/additional-localization.php:184
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
 #: i18n/additional-localization.php:185
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #: i18n/additional-localization.php:186
 msgid "Topics"
-msgstr ""
+msgstr "Topics"
 
 #: i18n/additional-localization.php:187
 msgid "Language"
-msgstr ""
+msgstr "Language"
 
 #: i18n/additional-localization.php:188
 msgid "Date created"
-msgstr ""
+msgstr "Date created"
 
 #: i18n/additional-localization.php:189
 msgid "Date uploaded"
-msgstr ""
+msgstr "Date uploaded"
 
 #: i18n/additional-localization.php:190
 msgid "Date modified"
-msgstr ""
+msgstr "Date modified"
 
 #: i18n/additional-localization.php:191
 msgid "Temporal range"
-msgstr ""
+msgstr "Temporal range"
 
 #: i18n/additional-localization.php:192
 msgid "Geographic area (spatial range)"
-msgstr ""
+msgstr "Geographic area (spatial range)"
 
 #: i18n/additional-localization.php:193
 msgid "Accuracy"
-msgstr ""
+msgstr "Accuracy"
 
 #: i18n/additional-localization.php:194
 msgid "Logical consistency"
-msgstr ""
+msgstr "Logical consistency"
 
 #: i18n/additional-localization.php:195
 msgid "Completeness"
-msgstr ""
+msgstr "Completeness"
 
 #: i18n/additional-localization.php:196
 msgid "Process(es)"
-msgstr ""
+msgstr "Process(es)"
 
 #: i18n/additional-localization.php:197
 msgid "Source(s)"
-msgstr ""
+msgstr "Source(s)"
 
 #: i18n/additional-localization.php:198
 msgid "Metadata reference information"
-msgstr ""
+msgstr "Metadata reference information"
 
 #: i18n/additional-localization.php:199
 msgid "Attributes"
-msgstr ""
+msgstr "Attributes"
 
 #: i18n/additional-localization.php:200 i18n/additional-localization.php:215
 msgid "Document type"
-msgstr ""
+msgstr "Document type"
 
 #: i18n/additional-localization.php:201
 msgid "Short title (alternative/varying form of title)"
-msgstr ""
+msgstr "Short title (alternative/varying form of title)"
 
 #: i18n/additional-localization.php:202
 msgid "Version / Edition"
-msgstr ""
+msgstr "Version / Edition"
 
 #: i18n/additional-localization.php:204
 msgid "Author (individual)"
-msgstr ""
+msgstr "Author (individual)"
 
 #: i18n/additional-localization.php:205
 msgid "Author (corporate)"
-msgstr ""
+msgstr "Author (individual)"
 
 #: i18n/additional-localization.php:206
 msgid "Co-author (individual)"
-msgstr ""
+msgstr "Co-author (individual)"
 
 #: i18n/additional-localization.php:207
 msgid "Co-author (corporate)"
-msgstr ""
+msgstr "Co-author (corporate)"
 
 #: i18n/additional-localization.php:208
 msgid "ISBN number"
-msgstr ""
+msgstr "ISBN number"
 
 #: i18n/additional-localization.php:209
 msgid "ISSN number"
-msgstr ""
+msgstr "ISSN number"
 
 #: i18n/additional-localization.php:210
 msgid "Publication place"
-msgstr ""
+msgstr "Publication place"
 
 #: i18n/additional-localization.php:211
 msgid "Publisher"
-msgstr ""
+msgstr "Publisher"
 
 #: i18n/additional-localization.php:212
 msgid "Publication date"
-msgstr ""
+msgstr "Publication date"
 
 #: i18n/additional-localization.php:213
 msgid "Pagination"
-msgstr ""
+msgstr "Pagination"
 
 #: i18n/additional-localization.php:214
 msgid "General note"
-msgstr ""
+msgstr "General note"
 
 #: i18n/additional-localization.php:216
 msgid "Document reference #"
-msgstr ""
+msgstr "Document reference #"
 
 #: i18n/additional-localization.php:217
 msgid "Alternative/short title"
-msgstr ""
+msgstr "Alternative/short title"
 
 #: i18n/additional-localization.php:218
 msgid "Primary policy reference point"
-msgstr ""
+msgstr "Primary policy reference point"
 
 #: i18n/additional-localization.php:219
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: i18n/additional-localization.php:220
 msgid "Version date (of draft)"
-msgstr ""
+msgstr "Version date (of draft)"
 
 #: i18n/additional-localization.php:221
 msgid "Adoption date/Promulgation date/Signing date"
-msgstr ""
+msgstr "Adoption date/Promulgation date/Signing date"
 
 #: i18n/additional-localization.php:222
 msgid "Effective date"
-msgstr ""
+msgstr "Effective date"
 
 #: i18n/additional-localization.php:223
 msgid "Application date"
-msgstr ""
+msgstr "Application date"
 
 #: i18n/additional-localization.php:224
 msgid "Previous legal document"
-msgstr ""
+msgstr "Previous legal document"
 
 #: i18n/additional-localization.php:225
 msgid "Change notes"
-msgstr ""
+msgstr "Change notes"
 
 #: i18n/additional-localization.php:226
 msgid "Relationship to other legal docs"
-msgstr ""
+msgstr "Relationship to other legal docs"
 
 #: i18n/additional-localization.php:227
 msgid "Associated document"
-msgstr ""
+msgstr "Associated document"
 
 #: i18n/additional-localization.php:228
 msgid "Publication reference"
-msgstr ""
+msgstr "Publication reference"
 
 #: i18n/additional-localization.php:229
 msgid "Links to source"
-msgstr ""
+msgstr "Links to source"
 
 #: i18n/additional-localization.php:230
 msgid "Drafting agency"
-msgstr ""
+msgstr "Drafting agency"
 
 #: i18n/additional-localization.php:231
 msgid "Technical assistance for drafting"
-msgstr ""
+msgstr "Technical assistance for drafting"
 
 #: i18n/additional-localization.php:232
 msgid "Agency providing technical assistance"
-msgstr ""
+msgstr "Agency providing technical assistance"
 
 #: i18n/additional-localization.php:233
 msgid "Technical assistance funding agency"
-msgstr ""
+msgstr "Technical assistance funding agency"
 
 #: i18n/additional-localization.php:234
 msgid "Issuing agency/parties"
-msgstr ""
+msgstr "Issuing agency/parties"
 
 #: i18n/additional-localization.php:235
 msgid "Implementing agencies"
-msgstr ""
+msgstr "Implementing agencies"
 
 #: i18n/additional-localization.php:236
 msgid "Notes"
-msgstr ""
+msgstr "Notes"
 
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
@@ -1027,39 +1018,47 @@ msgstr ""
 
 #: templates/settings.php:94
 msgid "Field mappings for keys"
-msgstr ""
+msgstr "Field mappings for keys"
 
 #: templates/settings.php:97
 msgid ""
 "Specify a list key => value mappings, separated by line breaks which define "
 "the mapping of a metadata field key to its label"
 msgstr ""
+"Specify a list key => value mappings, separated by line breaks which define "
+"the mapping of a metadata field key to its label"
 
 #: templates/settings.php:102
 msgid "Field mappings for values"
-msgstr ""
+msgstr "Field mappings for values"
 
 #: templates/settings.php:105
 msgid ""
 "Specify a list value => value mappings, separated by line breaks which "
 "define the mapping of a metadata field value to its label"
 msgstr ""
+"Specify a list value => value mappings, separated by line breaks which "
+"define the mapping of a metadata field value to its label"
 
 #: templates/settings.php:110
 msgid "Linked fields"
-msgstr ""
+msgstr "Linked fields"
 
 #: templates/settings.php:112
 msgid ""
 "odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
 "odm_laws_parent_document, ..."
 msgstr ""
+"odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
+"odm_laws_parent_document, ..."
 
 #: templates/settings.php:113
 msgid ""
 "Specify a list of Comma-separated field names containing ids to link to "
 "other datasets."
 msgstr ""
+"Specify a list of Comma-separated field names containing ids to link to "
+"other datasets."
 
 #: templates/settings.php:118
 msgid "Enable url redirection"
@@ -1229,7 +1228,7 @@ msgstr "Output fields for resources:"
 #: widgets/query-resources-widget.php:155
 #: widgets/related-datasets-widget.php:134
 msgid "Order by:"
-msgstr ""
+msgstr "Order by:"
 
 #: widgets/query-resources-widget.php:9
 msgid "WPCKAN Query Datasets"

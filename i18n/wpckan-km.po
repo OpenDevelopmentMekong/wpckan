@@ -1,25 +1,15 @@
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-01-16 16:45+0100\n"
-"PO-Revision-Date: 2017-01-16 16:45+0100\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: Khmer (https://www.transifex.com/open-development-mekong/"
-"teams/27158/km/)\n"
-"Language: km\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: km\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: i18n\n"
-"X-Poedit-SearchPath-1: .\n"
-"X-Poedit-SearchPathExcluded-0: components\n"
-"X-Poedit-SearchPathExcluded-1: vendor\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
@@ -318,9 +308,7 @@ msgid "Commune Governor/Council"
 msgstr ""
 
 #: i18n/additional-localization.php:78
-msgid ""
-"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
-"Economic Land Concessions (ELCs)"
+msgid "Inter-Ministerial Committee for Assessment Measurement and Evaluation of the Economic Land Concessions (ELCs)"
 msgstr ""
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
@@ -424,9 +412,7 @@ msgid "Ministry of Religions & Cults "
 msgstr "ក្រសួងធម្មការ និងសាសនា"
 
 #: i18n/additional-localization.php:108
-msgid ""
-"Ministry of Social Affairs, Labour, Vocational Training & Youth "
-"Rehabilitation"
+msgid "Ministry of Social Affairs, Labour, Vocational Training & Youth Rehabilitation"
 msgstr " ក្រសួង​សង្គមកិច្ច អតីត​យុទ្ធជន និង​យុវនីតិ​សម្បទា"
 
 #: i18n/additional-localization.php:109
@@ -566,9 +552,7 @@ msgid "Conference/workshop proceedings and presentations"
 msgstr ""
 
 #: i18n/additional-localization.php:148
-msgid ""
-"Reports, journal articles, and research papers (including theses and "
-"dissertations)"
+msgid "Reports, journal articles, and research papers (including theses and dissertations)"
 msgstr ""
 
 #: i18n/additional-localization.php:149
@@ -931,8 +915,7 @@ msgstr ""
 msgid "Post is saved"
 msgstr ""
 
-#: templates/archive-post-metabox.php:44
-#: templates/related-datasets-metabox.php:15
+#: templates/archive-post-metabox.php:44 templates/related-datasets-metabox.php:15
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
@@ -1013,9 +996,7 @@ msgid "title, description, license_url, ..."
 msgstr ""
 
 #: templates/settings.php:89
-msgid ""
-"Specify a list of Comma-separated field names to show on the additional data "
-"section. Mind order."
+msgid "Specify a list of Comma-separated field names to show on the additional data section. Mind order."
 msgstr ""
 
 #: templates/settings.php:94
@@ -1023,9 +1004,7 @@ msgid "Field mappings for keys"
 msgstr ""
 
 #: templates/settings.php:97
-msgid ""
-"Specify a list key => value mappings, separated by line breaks which define "
-"the mapping of a metadata field key to its label"
+msgid "Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field key to its label"
 msgstr ""
 
 #: templates/settings.php:102
@@ -1033,9 +1012,7 @@ msgid "Field mappings for values"
 msgstr ""
 
 #: templates/settings.php:105
-msgid ""
-"Specify a list value => value mappings, separated by line breaks which "
-"define the mapping of a metadata field value to its label"
+msgid "Specify a list value => value mappings, separated by line breaks which define the mapping of a metadata field value to its label"
 msgstr ""
 
 #: templates/settings.php:110
@@ -1043,15 +1020,11 @@ msgid "Linked fields"
 msgstr ""
 
 #: templates/settings.php:112
-msgid ""
-"odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
-"odm_laws_parent_document, ..."
+msgid "odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, odm_laws_parent_document, ..."
 msgstr ""
 
 #: templates/settings.php:113
-msgid ""
-"Specify a list of Comma-separated field names containing ids to link to "
-"other datasets."
+msgid "Specify a list of Comma-separated field names containing ids to link to other datasets."
 msgstr ""
 
 #: templates/settings.php:118
@@ -1059,9 +1032,7 @@ msgid "Enable url redirection"
 msgstr ""
 
 #: templates/settings.php:121
-msgid ""
-"if checked, links to datasets, resources and organizations will be "
-"redirected to /"
+msgid "if checked, links to datasets, resources and organizations will be redirected to /"
 msgstr ""
 
 #: templates/settings.php:125
@@ -1081,9 +1052,7 @@ msgid "Is ckanext-fluent enabled in the CKAN instance?"
 msgstr ""
 
 #: templates/settings.php:138
-msgid ""
-"Activate for enabling multilingual functionalities. Visit https://github.com/"
-"ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions"
+msgid "Activate for enabling multilingual functionalities. Visit https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions"
 msgstr ""
 
 #: templates/settings.php:142
@@ -1091,9 +1060,7 @@ msgid "Fluent fields"
 msgstr ""
 
 #: templates/settings.php:145
-msgid ""
-"Specify a list of Comma-separated field names which are marked as fluent. "
-"See https://github.com/open-data/ckanext-fluent/"
+msgid "Specify a list of Comma-separated field names which are marked as fluent. See https://github.com/open-data/ckanext-fluent/"
 msgstr ""
 
 #: templates/settings.php:150
@@ -1149,32 +1116,23 @@ msgid "WPCKAN Query resources by post's category"
 msgstr ""
 
 #: widgets/query-resources-by-category-widget.php:13
-msgid ""
-"Queries CKAN for datasets with the post's category as value for the field "
-"specified."
+msgid "Queries CKAN for datasets with the post's category as value for the field specified."
 msgstr ""
 
 #: widgets/query-resources-by-category-widget.php:90
 msgid "Custom posts"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:102
-#: widgets/query-resources-widget.php:117
-#: widgets/related-datasets-widget.php:102
+#: widgets/query-resources-by-category-widget.php:102 widgets/query-resources-widget.php:117 widgets/related-datasets-widget.php:102
 msgid "Title:"
 msgstr "ចំណងជើង៖"
 
-#: widgets/query-resources-by-category-widget.php:106
-#: widgets/query-resources-widget.php:121
-#: widgets/related-datasets-widget.php:104
+#: widgets/query-resources-by-category-widget.php:106 widgets/query-resources-widget.php:121 widgets/related-datasets-widget.php:104
 msgid "CKAN Organization:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:108
-#: widgets/query-resources-widget.php:123
-#: widgets/query-resources-widget.php:130
-#: widgets/related-datasets-widget.php:106
-#: widgets/related-datasets-widget.php:113
+#: widgets/query-resources-by-category-widget.php:108 widgets/query-resources-widget.php:123 widgets/query-resources-widget.php:130
+#: widgets/related-datasets-widget.php:106 widgets/related-datasets-widget.php:113
 msgid "All"
 msgstr "ទាំងអស់"
 
@@ -1182,15 +1140,11 @@ msgstr "ទាំងអស់"
 msgid "Search field:"
 msgstr "ស្វែងរកពាក្យ៖"
 
-#: widgets/query-resources-by-category-widget.php:122
-#: widgets/query-resources-widget.php:137
-#: widgets/related-datasets-widget.php:120
+#: widgets/query-resources-by-category-widget.php:122 widgets/query-resources-widget.php:137 widgets/related-datasets-widget.php:120
 msgid "Dataset type:"
 msgstr "ប្រភេទទិន្នន័យ"
 
-#: widgets/query-resources-by-category-widget.php:123
-#: widgets/query-resources-widget.php:138
-#: widgets/related-datasets-widget.php:121
+#: widgets/query-resources-by-category-widget.php:123 widgets/query-resources-widget.php:138 widgets/related-datasets-widget.php:121
 msgid "dataset, library_record, etc.."
 msgstr ""
 
@@ -1198,21 +1152,15 @@ msgstr ""
 msgid "Select max number of posts to list (-1 to show all):"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:136
-#: widgets/query-resources-widget.php:147
-#: widgets/related-datasets-widget.php:126
+#: widgets/query-resources-by-category-widget.php:136 widgets/query-resources-widget.php:147 widgets/related-datasets-widget.php:126
 msgid "Output fields for dataset:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:140
-#: widgets/query-resources-widget.php:151
-#: widgets/related-datasets-widget.php:130
+#: widgets/query-resources-by-category-widget.php:140 widgets/query-resources-widget.php:151 widgets/related-datasets-widget.php:130
 msgid "Output fields for resources:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:144
-#: widgets/query-resources-widget.php:155
-#: widgets/related-datasets-widget.php:134
+#: widgets/query-resources-by-category-widget.php:144 widgets/query-resources-widget.php:155 widgets/related-datasets-widget.php:134
 msgid "Order by:"
 msgstr ""
 
@@ -1232,23 +1180,19 @@ msgstr "ទិន្នន័យពាក់ព័ន្ធ"
 msgid "Query:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:128
-#: widgets/related-datasets-widget.php:111
+#: widgets/query-resources-widget.php:128 widgets/related-datasets-widget.php:111
 msgid "CKAN Group:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:135
-#: widgets/related-datasets-widget.php:118
+#: widgets/query-resources-widget.php:135 widgets/related-datasets-widget.php:118
 msgid "Additional filtering:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:136
-#: widgets/related-datasets-widget.php:119
+#: widgets/query-resources-widget.php:136 widgets/related-datasets-widget.php:119
 msgid "Specify valid JSON, otherwise not saved"
 msgstr ""
 
-#: widgets/query-resources-widget.php:139
-#: widgets/related-datasets-widget.php:122
+#: widgets/query-resources-widget.php:139 widgets/related-datasets-widget.php:122
 msgid "Limit:"
 msgstr ""
 
