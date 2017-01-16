@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2016-12-15 09:52+0100\n"
-"PO-Revision-Date: 2016-12-15 09:52+0100\n"
+"POT-Creation-Date: 2017-01-16 16:45+0100\n"
+"PO-Revision-Date: 2017-01-16 16:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: Burmese (https://www.transifex.com/open-development-mekong/"
 "teams/27158/my/)\n"
@@ -936,19 +936,19 @@ msgstr ""
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
-#: templates/dataset-detail.php:64
+#: templates/dataset-detail.php:66
 msgid "Resources"
 msgstr ""
 
-#: templates/dataset-detail.php:80
+#: templates/dataset-detail.php:82
 msgid "Download"
 msgstr ""
 
-#: templates/dataset-detail.php:87
+#: templates/dataset-detail.php:89
 msgid "Additional info"
 msgstr ""
 
-#: templates/dataset-detail.php:120
+#: templates/dataset-detail.php:134
 msgid "No metadata available for current dataset"
 msgstr ""
 
@@ -956,167 +956,183 @@ msgstr ""
 msgid "Add related datasets"
 msgstr ""
 
-#: templates/settings.php:39
+#: templates/settings.php:40
 msgid "Connecting to CKAN"
 msgstr ""
 
-#: templates/settings.php:41
+#: templates/settings.php:42
 msgid "CKAN Url"
 msgstr ""
 
-#: templates/settings.php:44
+#: templates/settings.php:45
 msgid "Specify protocol such as http:// or https://."
 msgstr ""
 
-#: templates/settings.php:48
+#: templates/settings.php:49
 msgid "CKAN Api key"
 msgstr ""
 
-#: templates/settings.php:51
+#: templates/settings.php:52
 msgid "Available under the profile page of a CKAN user with Admin rights."
 msgstr ""
 
-#: templates/settings.php:56
+#: templates/settings.php:57
 msgid "Connection status"
 msgstr ""
 
-#: templates/settings.php:59
+#: templates/settings.php:60
 msgid "CKAN URL specified correctly."
 msgstr ""
 
-#: templates/settings.php:61
+#: templates/settings.php:62
 msgid "Problem connecting to CKAN instance. Please, check the specified URL."
 msgstr ""
 
-#: templates/settings.php:64
+#: templates/settings.php:65
 msgid "CKAN API Key specified correctly."
 msgstr ""
 
-#: templates/settings.php:66
+#: templates/settings.php:67
 msgid "Please, specify a valid CKAN API Key."
 msgstr ""
 
-#: templates/settings.php:72
+#: templates/settings.php:73
 msgid "Supported post types"
 msgstr ""
 
-#: templates/settings.php:83
+#: templates/settings.php:84
 msgid "Dataset detail pages"
 msgstr ""
 
-#: templates/settings.php:85
+#: templates/settings.php:86
 msgid "Supported fields"
 msgstr ""
 
-#: templates/settings.php:87
+#: templates/settings.php:88
 msgid "title, description, license_url, ..."
 msgstr ""
 
-#: templates/settings.php:88
+#: templates/settings.php:89
 msgid ""
 "Specify a list of Comma-separated field names to show on the additional data "
 "section. Mind order."
 msgstr ""
 
-#: templates/settings.php:93
+#: templates/settings.php:94
 msgid "Field mappings for keys"
 msgstr ""
 
-#: templates/settings.php:96
+#: templates/settings.php:97
 msgid ""
 "Specify a list key => value mappings, separated by line breaks which define "
 "the mapping of a metadata field key to its label"
 msgstr ""
 
-#: templates/settings.php:101
+#: templates/settings.php:102
 msgid "Field mappings for values"
 msgstr ""
 
-#: templates/settings.php:104
+#: templates/settings.php:105
 msgid ""
 "Specify a list value => value mappings, separated by line breaks which "
 "define the mapping of a metadata field value to its label"
 msgstr ""
 
-#: templates/settings.php:109
-msgid "Enable url redirection"
+#: templates/settings.php:110
+msgid "Linked fields"
 msgstr ""
 
 #: templates/settings.php:112
+msgid ""
+"odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
+"odm_laws_parent_document, ..."
+msgstr ""
+
+#: templates/settings.php:113
+msgid ""
+"Specify a list of Comma-separated field names containing ids to link to "
+"other datasets."
+msgstr ""
+
+#: templates/settings.php:118
+msgid "Enable url redirection"
+msgstr ""
+
+#: templates/settings.php:121
 msgid ""
 "if checked, links to datasets, resources and organizations will be "
 "redirected to /"
 msgstr ""
 
-#: templates/settings.php:116
+#: templates/settings.php:125
 msgid "Open datasets in new tab"
 msgstr ""
 
-#: templates/settings.php:119
+#: templates/settings.php:128
 msgid "if checked, links to datasets will be opened in a new tab/window"
 msgstr ""
 
-#: templates/settings.php:124
+#: templates/settings.php:133
 msgid "Ckanext-fluent support"
 msgstr ""
 
-#: templates/settings.php:126
+#: templates/settings.php:135
 msgid "Is ckanext-fluent enabled in the CKAN instance?"
 msgstr ""
 
-#: templates/settings.php:129
+#: templates/settings.php:138
 msgid ""
 "Activate for enabling multilingual functionalities. Visit https://github.com/"
 "ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions"
 msgstr ""
 
-#: templates/settings.php:133
+#: templates/settings.php:142
 msgid "Fluent fields"
 msgstr ""
 
-#: templates/settings.php:136
+#: templates/settings.php:145
 msgid ""
 "Specify a list of Comma-separated field names which are marked as fluent. "
 "See https://github.com/open-data/ckanext-fluent/"
 msgstr ""
 
-#: templates/settings.php:141
+#: templates/settings.php:150
 msgid "Caching"
 msgstr ""
 
-#: templates/settings.php:143
+#: templates/settings.php:152
 msgid "Enable caching for API requests"
 msgstr ""
 
-#: templates/settings.php:149
+#: templates/settings.php:158
 msgid "Cache file path"
 msgstr ""
 
-#: templates/settings.php:152
+#: templates/settings.php:161
 msgid "Path where cached files are going to be stored. Mind permissions."
 msgstr ""
 
-#: templates/settings.php:156
+#: templates/settings.php:165
 msgid "Cache time"
 msgstr ""
 
-#: templates/settings.php:159
+#: templates/settings.php:168
 msgid "Time in milisecons cached versions will be kept."
 msgstr ""
 
-#: templates/settings.php:163
+#: templates/settings.php:172
 msgid "Logging"
 msgstr ""
 
-#: templates/settings.php:165
+#: templates/settings.php:174
 msgid "Enable log"
 msgstr ""
 
-#: templates/settings.php:171
+#: templates/settings.php:180
 msgid "Log file path"
 msgstr ""
 
-#: templates/settings.php:174
+#: templates/settings.php:183
 msgid "Path where logs are going to be stored. Mind permissions."
 msgstr ""
 
@@ -1138,60 +1154,66 @@ msgid ""
 "specified."
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:80
+#: widgets/query-resources-by-category-widget.php:90
 msgid "Custom posts"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:91
-#: widgets/query-resources-widget.php:105
-#: widgets/related-datasets-widget.php:91
+#: widgets/query-resources-by-category-widget.php:102
+#: widgets/query-resources-widget.php:117
+#: widgets/related-datasets-widget.php:102
 msgid "Title:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:95
-#: widgets/query-resources-widget.php:109
-#: widgets/related-datasets-widget.php:93
+#: widgets/query-resources-by-category-widget.php:106
+#: widgets/query-resources-widget.php:121
+#: widgets/related-datasets-widget.php:104
 msgid "CKAN Organization:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:97
-#: widgets/query-resources-widget.php:111
-#: widgets/query-resources-widget.php:118
-#: widgets/related-datasets-widget.php:95
-#: widgets/related-datasets-widget.php:102
+#: widgets/query-resources-by-category-widget.php:108
+#: widgets/query-resources-widget.php:123
+#: widgets/query-resources-widget.php:130
+#: widgets/related-datasets-widget.php:106
+#: widgets/related-datasets-widget.php:113
 msgid "All"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:106
+#: widgets/query-resources-by-category-widget.php:117
 msgid "Search field:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:111
-#: widgets/query-resources-widget.php:125
-#: widgets/related-datasets-widget.php:109
+#: widgets/query-resources-by-category-widget.php:122
+#: widgets/query-resources-widget.php:137
+#: widgets/related-datasets-widget.php:120
 msgid "Dataset type:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:112
-#: widgets/query-resources-widget.php:126
-#: widgets/related-datasets-widget.php:110
+#: widgets/query-resources-by-category-widget.php:123
+#: widgets/query-resources-widget.php:138
+#: widgets/related-datasets-widget.php:121
 msgid "dataset, library_record, etc.."
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:117
+#: widgets/query-resources-by-category-widget.php:128
 msgid "Select max number of posts to list (-1 to show all):"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:125
-#: widgets/query-resources-widget.php:135
-#: widgets/related-datasets-widget.php:115
+#: widgets/query-resources-by-category-widget.php:136
+#: widgets/query-resources-widget.php:147
+#: widgets/related-datasets-widget.php:126
 msgid "Output fields for dataset:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:129
-#: widgets/query-resources-widget.php:139
-#: widgets/related-datasets-widget.php:119
+#: widgets/query-resources-by-category-widget.php:140
+#: widgets/query-resources-widget.php:151
+#: widgets/related-datasets-widget.php:130
 msgid "Output fields for resources:"
+msgstr ""
+
+#: widgets/query-resources-by-category-widget.php:144
+#: widgets/query-resources-widget.php:155
+#: widgets/related-datasets-widget.php:134
+msgid "Order by:"
 msgstr ""
 
 #: widgets/query-resources-widget.php:9
@@ -1202,39 +1224,39 @@ msgstr ""
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: widgets/query-resources-widget.php:75 widgets/related-datasets-widget.php:67
+#: widgets/query-resources-widget.php:87 widgets/related-datasets-widget.php:77
 msgid "Related datasets"
 msgstr ""
 
-#: widgets/query-resources-widget.php:107
+#: widgets/query-resources-widget.php:119
 msgid "Query:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:116
-#: widgets/related-datasets-widget.php:100
+#: widgets/query-resources-widget.php:128
+#: widgets/related-datasets-widget.php:111
 msgid "CKAN Group:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:123
-#: widgets/related-datasets-widget.php:107
+#: widgets/query-resources-widget.php:135
+#: widgets/related-datasets-widget.php:118
 msgid "Additional filtering:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:124
-#: widgets/related-datasets-widget.php:108
+#: widgets/query-resources-widget.php:136
+#: widgets/related-datasets-widget.php:119
 msgid "Specify valid JSON, otherwise not saved"
 msgstr ""
 
-#: widgets/query-resources-widget.php:127
-#: widgets/related-datasets-widget.php:111
+#: widgets/query-resources-widget.php:139
+#: widgets/related-datasets-widget.php:122
 msgid "Limit:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:129
+#: widgets/query-resources-widget.php:141
 msgid "More dataset: Link label"
 msgstr ""
 
-#: widgets/query-resources-widget.php:131
+#: widgets/query-resources-widget.php:143
 msgid "More dataset: Link (URL)"
 msgstr ""
 
@@ -1246,11 +1268,11 @@ msgstr ""
 msgid "Display post related datasets."
 msgstr ""
 
-#: wpckan.php:140
+#: wpckan.php:139
 msgid "Add related CKAN content"
 msgstr ""
 
-#: wpckan.php:141
+#: wpckan.php:140
 msgid "Archive Post as CKAN dataset"
 msgstr ""
 
