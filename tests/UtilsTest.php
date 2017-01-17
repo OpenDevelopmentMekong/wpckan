@@ -28,6 +28,12 @@ class UtilsTest extends PHPUnit_Framework_TestCase
     $this->assertContains($arguments,"&q=\"some_query\"&rows=1000&sort=metadata_modified+desc");
   }
 
+	public function testComposeSolrQueryFromAttrsQueryKhmer(){
+    $attrs = array('query' => 'រដ្ឋធម្មនុញ្ញសាធារណរដ្ឋខ្មែរ');
+    $arguments = compose_solr_query_from_attrs($attrs);
+    $this->assertContains($arguments,"&q=\"%E1%9E%9A%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%92%E1%9E%98%E1%9F%92%E1%9E%98%E1%9E%93%E1%9E%BB%E1%9E%89%E1%9F%92%E1%9E%89%E1%9E%9F%E1%9E%B6%E1%9E%92%E1%9E%B6%E1%9E%9A%E1%9E%8E%E1%9E%9A%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%81%E1%9F%92%E1%9E%98%E1%9F%82%E1%9E%9A\"&rows=1000&sort=metadata_modified+desc");
+  }
+
   public function testComposeSolrQueryFromAttrsGroup(){
     $attrs = array('group' => 'some_group_name');
     $arguments = compose_solr_query_from_attrs($attrs);
