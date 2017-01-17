@@ -25,7 +25,7 @@ class UtilsTest extends PHPUnit_Framework_TestCase
   public function testComposeSolrQueryFromAttrsQuery(){
     $attrs = array('query' => 'some_query');
     $arguments = compose_solr_query_from_attrs($attrs);
-    $this->assertContains($arguments,"&q=some_query&rows=1000&sort=metadata_modified+desc");
+    $this->assertContains($arguments,"&q=\"some_query\"&rows=1000&sort=metadata_modified+desc");
   }
 
   public function testComposeSolrQueryFromAttrsGroup(){
