@@ -39,7 +39,7 @@
 			$total_count = $datasets['result']['count'];
 			$iteration = 1;
       $limit_set = array_key_exists("limit",$attrs) && $attrs["limit"] > 0;
-      if ( !$limit_set && $total_count - ($iteration * 1000) > 0):
+      while ( !$limit_set && $total_count - ($iteration * 1000) > 0):
 				$attrs["limit"] = 1000;
 				$attrs["page"] = $iteration + 1;
 				$query = '?'.compose_solr_query_from_attrs($attrs);
@@ -51,7 +51,7 @@
 	        $datasets['result']['results'] = array_merge($datasets['result']['results'],$datasets_iteration['result']['results']);
 					$iteration++;
 				}
-      endif;
+      endwhile;
 
       return $datasets['result'];
   }
