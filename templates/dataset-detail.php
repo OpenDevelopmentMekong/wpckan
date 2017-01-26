@@ -103,11 +103,11 @@
                 if (!empty($mapped_value)):
                   $metadata_available = true;
                   if (in_array($key,$linked_fields)):
-                    echo '<td><p>'.__($mapped_key).'</p></td>';
+                    echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
                     echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
                   else:
-                    echo '<td><p>'.__($mapped_key).'</p></td>';
-                    echo '<td><p>'.__($mapped_value).'</p></td>';
+                    echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
+                    echo '<td><p>'.__($mapped_value, 'wpckan').'</p></td>';
                   endif;
                 endif;
               else:
@@ -119,11 +119,11 @@
                   $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
                   $metadata_available = true;
                   if (in_array($key,$linked_fields)):
-                    echo '<td><p>'.__($mapped_key).'</p></td>';
+                    echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
                     echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
                   else:
-                    echo '<td><p>'.__($mapped_key).'</p></td>';
-                    echo '<td><p>'.__($mapped_value).'</p></td>';
+                    echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
+                    echo '<td><p>'.__($mapped_value, 'wpckan').'</p></td>';
                   endif;
                 endif;
               endif;
