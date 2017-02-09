@@ -25,7 +25,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$categories_names = array();
 		if (isset($post)):
 			$categories_names = wp_get_post_categories($post->ID,array(
-				"fields" => "name")
+				"fields" => "names")
 			);
 		elseif (isset($_GET['id'])):
 			try{
