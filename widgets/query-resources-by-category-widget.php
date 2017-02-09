@@ -29,7 +29,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			);
 		elseif (isset($_GET['id'])):
 			try{
-	      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$atts['id']);
+	      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$_GET['id']);
 				$categories_names = $dataset['taxonomy'];
 	    }catch(Exception $e){#
 	      wpckan_log($e->getMessage());
