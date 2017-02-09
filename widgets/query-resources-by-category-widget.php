@@ -25,13 +25,13 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		$categories_names = array();
 		if (isset($post)):
 			$categories_names = wp_get_post_categories($post->ID,array(
-				"fields" => "slugs")
+				"fields" => "name")
 			);
 		elseif (isset($_GET['id'])):
 			try{
 	      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$atts['id']);
 				$categories_names = $dataset['taxonomy'];
-	    }catch(Exception $e){
+	    }catch(Exception $e){#
 	      wpckan_log($e->getMessage());
 	    }
 		endif;
