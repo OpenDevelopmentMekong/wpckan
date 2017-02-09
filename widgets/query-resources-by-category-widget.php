@@ -27,7 +27,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 			$categories_names = wp_get_post_categories($post->ID,array(
 				"fields" => "names")
 			);
-		elseif (isset($_GET['id'])):
+		endif;
+		if (isset($_GET['id'])):
 			try{
 	      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$_GET['id']);
 				$categories_names = $dataset['taxonomy'];
