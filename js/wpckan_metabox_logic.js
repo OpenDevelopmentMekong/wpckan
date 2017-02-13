@@ -7,7 +7,7 @@ var field;
 var datasetList;
 var addButton;
 
-var DEBUG = true;
+var DEBUG = false;
 
 var datasets = [];
 
