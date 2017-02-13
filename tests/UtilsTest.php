@@ -134,6 +134,12 @@ class UtilsTest extends PHPUnit_Framework_TestCase
       $this->assertEquals($result,'uno,dos,tres');
   }
 
+  public function testSanitizeKeys()
+  {
+      $result = wpckan_remove_whitespaces('Document type ');
+      $this->assertEquals($result,'Documenttype');
+  }
+
   public function testStripQTranslateTags()
   {
       //wpckan_strip_qtranslate_tags
