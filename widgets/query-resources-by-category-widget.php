@@ -20,6 +20,26 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		);
 	}
 
+	private function get_categories($post){
+
+		$categories_names = array();
+		if (isset($post)):
+			$categories_names = wp_get_post_categories($post->ID,array(
+				"fields" => "names")
+			);
+		endif;
+		if (isset($_GET['id'])):
+			try{
+	      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$_GET['id']);
+				$categories_names = $dataset['taxonomy'];
+	    }catch(Exception $e){#
+	      wpckan_log($e->getMessage());
+	    }
+		endif;
+
+		return $categories_names;
+	}
+
 	/**
 	 * Outputs the content of the widget
 	 *
@@ -31,9 +51,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 		$search_field = isset($instance['search_field']) ? $instance['search_field'] : 'title';
 		$limit = isset($instance['limit']) ? $instance['limit'] : -1;
-		$categories_names = wp_get_post_categories($post->ID,array(
-			"fields" => "slugs")
-		);
+		$categories_names = $this->get_categories($post);
     $output_fields = isset($instance['output_fields']) ? $instance['output_fields'] : 'title';
     $output_fields_resources = isset($instance['output_fields_resources']) ? $instance['output_fields_resources'] : '';
 

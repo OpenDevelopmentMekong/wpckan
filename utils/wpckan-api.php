@@ -21,6 +21,10 @@
       }
       $datasets = json_decode($json, true) ?: [];
 
+			if (!isset($datasets['result'])):
+				return [];
+			endif;
+
       return $datasets['result'];
   }
 
@@ -35,6 +39,10 @@
           return [];
       }
       $datasets = json_decode($json, true) ?: [];
+
+			if (!isset($datasets['result'])):
+				return [];
+			endif;
 
 			$total_count = $datasets['result']['count'];
 			$iteration = 1;
