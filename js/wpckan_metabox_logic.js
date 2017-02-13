@@ -25,7 +25,8 @@ jQuery( document ).ready(function() {
   updateAndListDatasets();
 
   clearField();
-  addButton.addClass("disabled");
+  field.addClass("disabled");
+	addButton.addClass("disabled");
 
   // Instantiate the Bloodhound suggestion engine
   var suggestions = new Bloodhound({
