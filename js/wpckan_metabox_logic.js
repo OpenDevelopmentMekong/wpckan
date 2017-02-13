@@ -7,14 +7,11 @@ var field;
 var datasetList;
 var addButton;
 
-var DEBUG = false;
+var DEBUG = true;
 
 var datasets = [];
 
 jQuery( document ).ready(function() {
-  if (DEBUG) {
-    console.log("wpckan_metabox_logic.js document ready");
-  }
 
   //Init div elements
   field = jQuery('#wpckan_related_datasets_add_field');
@@ -25,7 +22,7 @@ jQuery( document ).ready(function() {
   updateAndListDatasets();
 
   clearField();
-  field.addClass("disabled");
+  field.removeAttr("disabled");
 	addButton.addClass("disabled");
 
   // Instantiate the Bloodhound suggestion engine
@@ -76,6 +73,10 @@ jQuery( document ).ready(function() {
     var dataset_id = jQuery(this).attr(DATASET_ID_ATTR);
     removeDatasetWithIdForEntry(dataset_id,this);
   });
+
+	if (DEBUG) {
+    console.log("wpckan_metabox_logic.js document ready");
+  }
 
 });
 
