@@ -1,14 +1,18 @@
+# Translators:
+# Alex Corbi <a.corbi@gmail.com>, 2017
+# ChandaraKhun <chandara@opendevcam.net>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Last-Translator: ChandaraKhun <chandara@opendevcam.net>, 2017\n"
+"Language-Team: Khmer (https://www.transifex.com/open-development-mekong/teams/27158/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: km\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
 #: i18n/additional-localization.php:2
@@ -33,7 +37,7 @@ msgstr "សន្ធិសញ្ញាទ្វេភាគី"
 
 #: i18n/additional-localization.php:7
 msgid "By-Laws"
-msgstr "តាមច្បាប់"
+msgstr "បទបញ្ជា"
 
 #: i18n/additional-localization.php:8
 msgid "Circular"
@@ -41,7 +45,7 @@ msgstr "សារាចរ"
 
 #: i18n/additional-localization.php:9
 msgid "Code"
-msgstr "កូដ"
+msgstr "ក្រម"
 
 #: i18n/additional-localization.php:10
 msgid "Constitution"
@@ -57,7 +61,7 @@ msgstr "កិច្ចព្រមព្រៀង"
 
 #: i18n/additional-localization.php:13
 msgid "Customary law"
-msgstr ""
+msgstr "ច្បាប់ទំនៀមទម្លាប់"
 
 #: i18n/additional-localization.php:14
 msgid "Decision"
@@ -69,7 +73,7 @@ msgstr "ក្រឹត្យ"
 
 #: i18n/additional-localization.php:16
 msgid "Directive"
-msgstr ""
+msgstr "បទបញ្ជា"
 
 #: i18n/additional-localization.php:17 i18n/additional-localization.php:130
 msgid "Draft"
@@ -89,7 +93,7 @@ msgstr "សិន្ធិ​សញ្ញា​អន្តរ​ជាតិ"
 
 #: i18n/additional-localization.php:21
 msgid "Joint circular"
-msgstr ""
+msgstr "សរាចររួម"
 
 #: i18n/additional-localization.php:22
 msgid "Law"
@@ -105,11 +109,11 @@ msgstr "សេចក្តីជូនដំណឹង"
 
 #: i18n/additional-localization.php:25
 msgid "Order"
-msgstr "បទបញ្ជា"
+msgstr "សេចក្តីបង្គាប់"
 
 #: i18n/additional-localization.php:26
 msgid "Ordinance"
-msgstr "បទប្បញ្ញត្តិ"
+msgstr "ដីកា"
 
 #: i18n/additional-localization.php:27
 msgid "other"
@@ -121,7 +125,7 @@ msgstr "គោលនយោបាយ"
 
 #: i18n/additional-localization.php:29
 msgid "Proclamation"
-msgstr "សេចក្តីប្រកាស"
+msgstr "ប្រកាស"
 
 #: i18n/additional-localization.php:30
 msgid "Regional Agreements"
@@ -129,11 +133,11 @@ msgstr "កិច្ចព្រមព្រៀងថ្នាក់តំបន
 
 #: i18n/additional-localization.php:31
 msgid "Regulation"
-msgstr "បទបញ្ញត្តិ​"
+msgstr "បទប្បញ្ញត្តិ"
 
 #: i18n/additional-localization.php:32
 msgid "Resolution"
-msgstr "ដំណោះស្រាយ"
+msgstr "សេចក្តីសម្រេចចិត្ត"
 
 #: i18n/additional-localization.php:33
 msgid "Royal decree"
@@ -197,195 +201,199 @@ msgstr "រដ្ឋមន្រ្តីក្រសួងកសិកម្ម
 
 #: i18n/additional-localization.php:49
 msgid "Minister of Civil Service"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងមុខងារសាធារណៈ"
 
 #: i18n/additional-localization.php:50
 msgid "Minister of Cult and Religion"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងធម្មការ និងសាសនា"
 
 #: i18n/additional-localization.php:51
 msgid "Minister of Culture and Fine Arts"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងវប្បធម៌ និងវិចិត្រសិល្បៈ"
 
 #: i18n/additional-localization.php:52 i18n/additional-localization.php:100
 msgid "Ministry of Commerce"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងពាណិជ្ជកម្ម"
 
 #: i18n/additional-localization.php:53
 msgid "Minister of Education Youth and Sport"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងអប់រំ យុវជន និងកីឡា"
 
 #: i18n/additional-localization.php:55
 msgid "Minister of Foreign Affairs and International Cooperation"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងការបរទេស និងសហប្រតិបត្តុិការអន្តរជាតិ"
 
 #: i18n/additional-localization.php:56
 msgid "Minister of Health"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងសុខាភិបាល"
 
 #: i18n/additional-localization.php:57
 msgid "Minister of Industry and Handicrafts"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងឧស្សាហកម្ម និងសិប្បកម្ម"
 
 #: i18n/additional-localization.php:58
 msgid "Minister of Information"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងព័ត៌មាន"
 
 #: i18n/additional-localization.php:59
 msgid "Minister of Justice"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងយុត្តិធម៌"
 
 #: i18n/additional-localization.php:60
 msgid "Minister of Labour and Vocational Training"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងការងារ និងបណ្តុះបណ្តាលវិជ្ជាជីវៈ"
 
 #: i18n/additional-localization.php:61 i18n/additional-localization.php:103
 msgid "Ministry of Land Management, Urban Planning and Construction"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់"
 
 #: i18n/additional-localization.php:62
 msgid "Minister of Mines and Energy"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងរ៉ែ និងថាមពល"
 
 #: i18n/additional-localization.php:63
 msgid "Minister of National Defense"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងការពារជាតិ"
 
 #: i18n/additional-localization.php:64
 msgid "Minister of Parliamentary Affairs"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងទំនាក់ទំនងជាមួយរដ្ឋសភា ព្រឹទ្ធសភា និងអធិការកិច្ច"
 
 #: i18n/additional-localization.php:65
 msgid "Minister of Planning"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងផែនការ"
 
 #: i18n/additional-localization.php:66
 msgid "Minister of Posts and Telecommunication"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងប្រៃសណីយ៍ និងទូរគមនាគមន៍"
 
 #: i18n/additional-localization.php:67
 msgid "Minister of Public Works and Transport"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងសាធារណការ និងដឹកជញ្ជូន"
 
 #: i18n/additional-localization.php:68
 msgid "Minister of Social Affairs Veterans and Youth Rehabilitation"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងសង្គមកិច្ច អតីតយុទ្ធជន និងយុវនីតិសម្បទា"
 
 #: i18n/additional-localization.php:69
 msgid "Minister of Tourism"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងទេសចរណ៍"
 
 #: i18n/additional-localization.php:70
 msgid "Minister of Water Resources and Meteorology"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងធនធានទឹក និងឧតុនិយម"
 
 #: i18n/additional-localization.php:71
 msgid "Minister of Women’s Affairs"
-msgstr ""
+msgstr "រដ្ឋមន្រ្តីក្រសួងកិច្ចការនារី"
 
 #: i18n/additional-localization.php:72
 msgid "Secretary of State of Civil Aviation"
-msgstr ""
+msgstr "រដ្ឋលេខាធិការរដ្ឋលេខាធិការដ្ឋានអាកាសចរណ៍ស៊ីវិល"
 
 #: i18n/additional-localization.php:73
 msgid "Secretary of State"
-msgstr ""
+msgstr "រដ្ឋលេខាធិការ"
 
 #: i18n/additional-localization.php:74
 msgid "Provincial Governor/Council"
-msgstr ""
+msgstr "អភិបាល/ក្រុមប្រឹក្សា រាជធានី-ខេត្ត"
 
 #: i18n/additional-localization.php:75
 msgid "City Governor/Council"
-msgstr ""
+msgstr "អភិបាល/ក្រុមប្រឹក្សាក្រុង"
 
 #: i18n/additional-localization.php:76
 msgid "District Governor/Council"
-msgstr ""
+msgstr "អភិបាល/ក្រុមប្រឹក្សា ស្រុក-ខណ្ឌ"
 
 #: i18n/additional-localization.php:77
 msgid "Commune Governor/Council"
-msgstr ""
+msgstr "អភិបាល/ក្រុមប្រឹក្សា ឃំុ-សង្កាត់"
 
 #: i18n/additional-localization.php:78
-msgid "Inter-Ministerial Committee for Assessment Measurement and Evaluation of the Economic Land Concessions (ELCs)"
+msgid ""
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
+" Economic Land Concessions (ELCs)"
 msgstr ""
+"គណៈកម្មាធិការអន្តរក្រសួង ដើម្បីត្រួតពិនិត្យ វាស់វែង "
+"និងវាយតម្លៃសម្បទានដីសេ្ឋកិច្ច"
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
 msgid "Royal Government of Cambodia"
-msgstr ""
+msgstr "រាជរដ្ឋាភិបាលនៃព្រះរាជាណាចក្រកម្ពុជា"
 
 #: i18n/additional-localization.php:80
 msgid "Secretary General"
-msgstr ""
+msgstr "អគ្គលេខាធិការ"
 
 #: i18n/additional-localization.php:81
 msgid "General Inspector"
-msgstr ""
+msgstr "អគ្គាធិការ"
 
 #: i18n/additional-localization.php:82
 msgid "Forestry Administration"
-msgstr ""
+msgstr "រដ្ឋបាលព្រៃឈើ"
 
 #: i18n/additional-localization.php:83
 msgid "Council for Development"
-msgstr ""
+msgstr "ក្រុមប្រឹក្សាអភិវឌ្ឍន៍កម្ពុជា"
 
 #: i18n/additional-localization.php:84 i18n/additional-localization.php:123
 msgid "Electricity Authority of Cambodia"
-msgstr ""
+msgstr "អាជ្ញាធរអគ្គិសនីកម្ពុជា"
 
 #: i18n/additional-localization.php:85
 msgid "Cabinet"
-msgstr ""
+msgstr "ខុទ្ទកាល័យ"
 
 #: i18n/additional-localization.php:86
 msgid "National Authority for Land Dispute Resolution"
-msgstr ""
+msgstr "អាជ្ញាធរជាតិដោះស្រាយទំនាស់ដីធ្លី"
 
 #: i18n/additional-localization.php:87 i18n/additional-localization.php:97
 msgid "Council of Ministers"
-msgstr ""
+msgstr "គណៈរដ្ឋមន្រ្តី"
 
 #: i18n/additional-localization.php:88
 msgid "Company Director"
-msgstr ""
+msgstr "នាយកក្រុមហ៊ុន"
 
 #: i18n/additional-localization.php:89
 msgid "Apsara Authority"
-msgstr ""
+msgstr "អាជ្ញាធរអប្សរា"
 
 #: i18n/additional-localization.php:90
 msgid "Phnom Penh Capital Hall"
-msgstr ""
+msgstr "សាលារាជធានីភ្នំពេញ"
 
 #: i18n/additional-localization.php:92
 msgid "City Council"
-msgstr ""
+msgstr "ក្រុមប្រឹក្សាក្រុង"
 
 #: i18n/additional-localization.php:93
 msgid "Commune Council"
-msgstr ""
+msgstr "ក្រុមប្រឹក្សាឃំុ-សង្កាត់"
 
 #: i18n/additional-localization.php:94
 msgid "Congress between National Assembly and Senate"
-msgstr ""
+msgstr "សមាជរដ្ឋសភា និងព្រឹទ្ធសភា"
 
 #: i18n/additional-localization.php:95
 msgid "Constituent Assembly"
-msgstr ""
+msgstr "សភាធម្មនុញ្ញ"
 
 #: i18n/additional-localization.php:96
 msgid "Constitutional Council"
-msgstr ""
+msgstr "ក្រុមប្រឹក្សាធម្មនុញ្ញ"
 
 #: i18n/additional-localization.php:98
 msgid "District Council"
-msgstr ""
+msgstr "ក្រុមប្រឹក្សា ស្រុក-ខណ្ឌ"
 
 #: i18n/additional-localization.php:99
 msgid "King, of the Kingdom of Cambodia"
-msgstr ""
+msgstr "ព្រះមហាក្សត្រ នៃព្រះរាជាណាចក្រកម្ពុជា"
 
 #: i18n/additional-localization.php:101
 msgid "Ministry of Agriculture Forestry and Fisheries"
@@ -405,14 +413,16 @@ msgstr "ក្រសួងសាធារណការ និងដឹកជញ�
 
 #: i18n/additional-localization.php:106
 msgid "Ministry of Parliamentary Affairs & Inspection"
-msgstr "ក្រសួងទំនាក់ទំនងជាមួយរដ្ឋសភា ព្រឹទ្ធសភា និងអធិការកិច្ច"
+msgstr "ក្រសួងទំនាក់ទំនងជាមួយរដ្ឋសភា-ព្រឹទ្ធសភា និងអធិការកិច្ច"
 
 #: i18n/additional-localization.php:107
 msgid "Ministry of Religions & Cults "
 msgstr "ក្រសួងធម្មការ និងសាសនា"
 
 #: i18n/additional-localization.php:108
-msgid "Ministry of Social Affairs, Labour, Vocational Training & Youth Rehabilitation"
+msgid ""
+"Ministry of Social Affairs, Labour, Vocational Training & Youth "
+"Rehabilitation"
 msgstr " ក្រសួង​សង្គមកិច្ច អតីត​យុទ្ធជន និង​យុវនីតិ​សម្បទា"
 
 #: i18n/additional-localization.php:109
@@ -429,23 +439,23 @@ msgstr "ក្រសួងកិច្ចការនារី"
 
 #: i18n/additional-localization.php:112
 msgid "National Assembly"
-msgstr "រដ្ឋសភា​ជាតិ"
+msgstr "រដ្ឋសភា​"
 
 #: i18n/additional-localization.php:113
 msgid "Office of the Council of Ministers"
-msgstr "ការិយាល័យនៃទីស្តីការគណៈរដ្ឋមន្ត្រី"
+msgstr "ទីស្តីការគណៈរដ្ឋមន្ត្រី"
 
 #: i18n/additional-localization.php:114
 msgid "Office of the Prime Minister"
-msgstr "ការិយាល័យនៃនាយករដ្ឋមន្ត្រី"
+msgstr "ខុទ្ទកាល័យនាយករដ្ឋមន្ត្រី"
 
 #: i18n/additional-localization.php:115
 msgid "Parliament"
-msgstr "រដ្ឋ​សភា"
+msgstr "សភា"
 
 #: i18n/additional-localization.php:116
 msgid "Provincial Council"
-msgstr "ក្រុមប្រឹក្សាខេត្ត"
+msgstr "ក្រុមប្រឹក្សាខេត្ត-រាជធានី"
 
 #: i18n/additional-localization.php:117
 msgid "Provincial Department of Ministry"
@@ -469,23 +479,23 @@ msgstr "សាលារាជធានីភ្នំពេញ"
 
 #: i18n/additional-localization.php:125
 msgid "Under negotitation"
-msgstr "ស្ថិត​ក្រោមការចរចា"
+msgstr "ក្នុងដំណើរការនៃកិច្ចចរចា"
 
 #: i18n/additional-localization.php:126
 msgid "Framework agreement signed"
-msgstr ""
+msgstr "កិច្ចព្រមព្រៀងក្របខណ្ឌចុះហត្ថលេខា"
 
 #: i18n/additional-localization.php:127
 msgid "Negotiations launched"
-msgstr ""
+msgstr "កិច្ចចរចាបានបញ្ចប់"
 
 #: i18n/additional-localization.php:128
 msgid "Signed but not yet in effect/validated"
-msgstr ""
+msgstr "ចុះហត្ថលេខា ប៉ុន្តែមិនទាន់ចូលជាធរមាន"
 
 #: i18n/additional-localization.php:129
 msgid "Signed and in effect"
-msgstr ""
+msgstr "ចុះហត្ថលេខានិងចូលជាធរមាន"
 
 #: i18n/additional-localization.php:131
 msgid "Adopted / validated / in effect"
@@ -517,51 +527,55 @@ msgstr ""
 
 #: i18n/additional-localization.php:139
 msgid "Advocacy and promotional materials"
-msgstr ""
+msgstr "សម្ភារៈតស៊ូមតិនិងផ្សព្វផ្សាយ"
 
 #: i18n/additional-localization.php:140
 msgid "Analysis, discussion papers, and blogs"
-msgstr ""
+msgstr "ឯកសារវិភាគ ឯកសារពិភាក្សា និងប្លុក"
 
 #: i18n/additional-localization.php:141
 msgid "Books and book chapters"
-msgstr ""
+msgstr "សៀវភៅ និងជំពូកសៀវភៅ"
 
 #: i18n/additional-localization.php:142
 msgid "Case studies"
-msgstr ""
+msgstr "ការសិក្សាតាមករណី"
 
 #: i18n/additional-localization.php:143
 msgid "Issue and policy briefs"
-msgstr ""
+msgstr "សេចក្តីសង្ខេបបញ្ហា និងគោលនយោបាយ"
 
 #: i18n/additional-localization.php:144
 msgid "Profiles - People"
-msgstr ""
+msgstr "ព័ត៌មានអំពី-បុគ្គល"
 
 #: i18n/additional-localization.php:145
 msgid "Profiles - Organizations and projects"
-msgstr ""
+msgstr "ព័ត៌មានអំពី-អង្គការចាត់តាំងនិងគម្រោង"
 
 #: i18n/additional-localization.php:146
 msgid "Profiles - Geographical areas and sites"
-msgstr ""
+msgstr "ព័ត៌មានអំពី-តំបន់និងទីតាំងភូមិសាស្រ្ត"
 
 #: i18n/additional-localization.php:147
 msgid "Conference/workshop proceedings and presentations"
-msgstr ""
+msgstr "អត្ថបទ និងបទបង្ហាញសន្និសីទ និងសិក្ខាសាលា"
 
 #: i18n/additional-localization.php:148
-msgid "Reports, journal articles, and research papers (including theses and dissertations)"
+msgid ""
+"Reports, journal articles, and research papers (including theses and "
+"dissertations)"
 msgstr ""
+"របាយការណ៍ អត្ថបទទិនានុប្បវត្តិ និងអត្ថបទស្រាវជ្រាវ (រាប់បញ្ចូលទាំង និក្ខេបបទ"
+" និងបរមាធិប្បាយ)"
 
 #: i18n/additional-localization.php:149
 msgid "Company profiles"
-msgstr ""
+msgstr "ព័ត៌មានក្រុមហ៊ុន"
 
 #: i18n/additional-localization.php:150
 msgid "Archived web content"
-msgstr ""
+msgstr "ខ្លឹមសារគេហទំព័រទុកក្នុងប័ណ្ណសារ"
 
 #: i18n/additional-localization.php:152
 msgid "Banteay Meanchey"
@@ -597,7 +611,7 @@ msgstr "កណ្តាល"
 
 #: i18n/additional-localization.php:160
 msgid "Kep"
-msgstr "កំពត"
+msgstr "កែប"
 
 #: i18n/additional-localization.php:161
 msgid "Koh Kong"
@@ -609,11 +623,11 @@ msgstr "ក្រចេះ"
 
 #: i18n/additional-localization.php:163
 msgid "Mondulkiri"
-msgstr "ខេត្តមណ្ឌលគិរី"
+msgstr "មណ្ឌលគិរី"
 
 #: i18n/additional-localization.php:164
 msgid "Oddar Meanchey"
-msgstr "Oddar Meanchey"
+msgstr "ឧត្តរមានជ័យ"
 
 #: i18n/additional-localization.php:165
 msgid "Pailin"
@@ -637,11 +651,11 @@ msgstr "ព្រៃវែង"
 
 #: i18n/additional-localization.php:170
 msgid "Pursat"
-msgstr "ខេត្តពោធិសាត់"
+msgstr "ពោធិ៍សាត់"
 
 #: i18n/additional-localization.php:171
 msgid "Ratanakiri"
-msgstr "ខេត្តរតនគីរី"
+msgstr "រតនគីរី"
 
 #: i18n/additional-localization.php:172
 msgid "Siem Reap"
@@ -665,257 +679,258 @@ msgstr "ត្បូងឃ្មុំ"
 
 #: i18n/additional-localization.php:178
 msgid "Title"
-msgstr ""
+msgstr "ចំណងជើង"
 
 #: i18n/additional-localization.php:179
 msgid "Description"
-msgstr ""
+msgstr "បរិយាយ"
 
 #: i18n/additional-localization.php:180 i18n/additional-localization.php:203
 msgid "License"
-msgstr ""
+msgstr "អាជ្ញាប័ណ្ណ"
 
 #: i18n/additional-localization.php:181
 msgid "Copyright"
-msgstr ""
+msgstr "រក្សាសិទ្ធិ"
 
 #: i18n/additional-localization.php:182
 msgid "Access and use constraints"
-msgstr ""
+msgstr "លក្ខខណ្ឌនៃការប្រើប្រាស់"
 
 #: i18n/additional-localization.php:183
 msgid "Organization"
-msgstr ""
+msgstr "អង្គភាព"
 
 #: i18n/additional-localization.php:184
 msgid "Version"
-msgstr ""
+msgstr "កំណែ"
 
 #: i18n/additional-localization.php:185
 msgid "Contact"
-msgstr ""
+msgstr "ទំនាក់ទំនង"
 
 #: i18n/additional-localization.php:186
 msgid "Topics"
-msgstr ""
+msgstr "ប្រធានបទ"
 
 #: i18n/additional-localization.php:187
 msgid "Language"
-msgstr ""
+msgstr "ភាសា"
 
 #: i18n/additional-localization.php:188
 msgid "Date created"
-msgstr ""
+msgstr "កាលបរិច្ឆេទបង្កើត"
 
 #: i18n/additional-localization.php:189
 msgid "Date uploaded"
-msgstr ""
+msgstr "កាលបរិច្ឆេទផ្ទុកឡើង"
 
 #: i18n/additional-localization.php:190
 msgid "Date modified"
-msgstr ""
+msgstr "កាលបរិច្ឆេទកែប្រែ"
 
 #: i18n/additional-localization.php:191
 msgid "Temporal range"
-msgstr ""
+msgstr "ចន្លោះកាលវេលា"
 
 #: i18n/additional-localization.php:192
 msgid "Geographic area (spatial range)"
-msgstr ""
+msgstr "តំបន់ភូមិសាស្រ្ត (ការលាតសន្ធឹងក្នុងលំហ)"
 
 #: i18n/additional-localization.php:193
 msgid "Accuracy"
-msgstr ""
+msgstr "ភាពត្រឹមត្រូវ"
 
 #: i18n/additional-localization.php:194
 msgid "Logical consistency"
-msgstr ""
+msgstr "ភាពទៀងទាត់តាមហេតុផល"
 
 #: i18n/additional-localization.php:195
 msgid "Completeness"
-msgstr ""
+msgstr "ភាពពេញលេញ"
 
 #: i18n/additional-localization.php:196
 msgid "Process(es)"
-msgstr ""
+msgstr "ដំណើរការ"
 
 #: i18n/additional-localization.php:197
 msgid "Source(s)"
-msgstr ""
+msgstr "ប្រភព"
 
 #: i18n/additional-localization.php:198
 msgid "Metadata reference information"
-msgstr ""
+msgstr "ព័ត៌មានប្រវត្តិទិន្នន័យ"
 
 #: i18n/additional-localization.php:199
 msgid "Attributes"
-msgstr ""
+msgstr "លក្ខណៈសម្បត្តិ"
 
 #: i18n/additional-localization.php:200 i18n/additional-localization.php:215
 msgid "Document type"
-msgstr ""
+msgstr "ប្រភេទនៃឯកសារ"
 
 #: i18n/additional-localization.php:201
 msgid "Short title (alternative/varying form of title)"
-msgstr ""
+msgstr "ចំណងជើងខ្លី (ទម្រង់ជំនួសចំណងជើងពេញលេញ)"
 
 #: i18n/additional-localization.php:202
 msgid "Version / Edition"
-msgstr ""
+msgstr "កំណែ/បោះពុម្ព"
 
 #: i18n/additional-localization.php:204
 msgid "Author (individual)"
-msgstr ""
+msgstr "អ្នកនិពន្ធ (បុគ្គល)"
 
 #: i18n/additional-localization.php:205
 msgid "Author (corporate)"
-msgstr ""
+msgstr "អ្នកនិពន្ធ (ស្ថាប័ន)"
 
 #: i18n/additional-localization.php:206
 msgid "Co-author (individual)"
-msgstr ""
+msgstr "សហអ្នកនិពន្ធ (បុគ្គល)"
 
 #: i18n/additional-localization.php:207
 msgid "Co-author (corporate)"
-msgstr ""
+msgstr "សហអ្នកនិពន្ធ (ស្ថាប័ន)"
 
 #: i18n/additional-localization.php:208
 msgid "ISBN number"
-msgstr ""
+msgstr "លេខ ISBN"
 
 #: i18n/additional-localization.php:209
 msgid "ISSN number"
-msgstr ""
+msgstr "លេខ ISSN"
 
 #: i18n/additional-localization.php:210
 msgid "Publication place"
-msgstr ""
+msgstr "ទីកន្លែងបោះពុម្ព"
 
 #: i18n/additional-localization.php:211
 msgid "Publisher"
-msgstr ""
+msgstr "អ្នកបោះពុម្ពផ្សាយ"
 
 #: i18n/additional-localization.php:212
 msgid "Publication date"
-msgstr ""
+msgstr "កាលបរិច្ឆេទបោះពុម្ព"
 
 #: i18n/additional-localization.php:213
 msgid "Pagination"
-msgstr ""
+msgstr "ចំនួនទំព័រ"
 
 #: i18n/additional-localization.php:214
 msgid "General note"
-msgstr ""
+msgstr "កំណត់ទូទៅ"
 
 #: i18n/additional-localization.php:216
 msgid "Document reference #"
-msgstr ""
+msgstr "លេខយោងឯកសារ"
 
 #: i18n/additional-localization.php:217
 msgid "Alternative/short title"
-msgstr ""
+msgstr "ចំណងជើងជំនួស/ខ្លី"
 
 #: i18n/additional-localization.php:218
 msgid "Primary policy reference point"
-msgstr ""
+msgstr "ឯកសារយោងគោលនយោបាយបឋម"
 
 #: i18n/additional-localization.php:219
 msgid "Status"
-msgstr ""
+msgstr "ស្ថានភាព"
 
 #: i18n/additional-localization.php:220
 msgid "Version date (of draft)"
-msgstr ""
+msgstr "កាលបរិច្ឆេទកំណែ (នៃសេចក្តីព្រាង)"
 
 #: i18n/additional-localization.php:221
 msgid "Adoption date/Promulgation date/Signing date"
-msgstr ""
+msgstr "កាលបរិច្ឆេទអនុម័ត/កាលបរិច្ឆេទប្រកាសឲ្យប្រើ/កាលបរិច្ឆេទចុះហត្ថលេខា"
 
 #: i18n/additional-localization.php:222
 msgid "Effective date"
-msgstr ""
+msgstr "កាលបរិច្ឆេទចូលជាធរមាន"
 
 #: i18n/additional-localization.php:223
 msgid "Application date"
-msgstr ""
+msgstr "កាលបរិច្ឆេទអនុវត្ត"
 
 #: i18n/additional-localization.php:224
 msgid "Previous legal document"
-msgstr ""
+msgstr "ឯកសារច្បាប់ពីមុន"
 
 #: i18n/additional-localization.php:225
 msgid "Change notes"
-msgstr ""
+msgstr "កំណត់អំពីការប្រែប្រួល"
 
 #: i18n/additional-localization.php:226
 msgid "Relationship to other legal docs"
-msgstr ""
+msgstr "ទំនាក់ទំនងនឹងឯកសារច្បាប់ផ្សេងទៀត"
 
 #: i18n/additional-localization.php:227
 msgid "Associated document"
-msgstr ""
+msgstr "ឯកសារពាក់ព័ន្ធ"
 
 #: i18n/additional-localization.php:228
 msgid "Publication reference"
-msgstr ""
+msgstr "ឯកសារយោង"
 
 #: i18n/additional-localization.php:229
 msgid "Links to source"
-msgstr ""
+msgstr "តំណភ្ជាប់ទៅកាន់ប្រភព"
 
 #: i18n/additional-localization.php:230
 msgid "Drafting agency"
-msgstr ""
+msgstr "ទីភ្នាក់ងារធ្វើពង្រាង"
 
 #: i18n/additional-localization.php:231
 msgid "Technical assistance for drafting"
-msgstr ""
+msgstr "ជំនួយបច្ចេកទេសសម្រាប់ការធ្វើពង្រាង"
 
 #: i18n/additional-localization.php:232
 msgid "Agency providing technical assistance"
-msgstr ""
+msgstr "ទីភ្នាក់ងារផ្តល់ជំនួយបច្ចេកទេស"
 
 #: i18n/additional-localization.php:233
 msgid "Technical assistance funding agency"
-msgstr ""
+msgstr "ទីភ្នាក់ងារផ្តល់មូលនិធិលើជំនួយបច្ចេកទេស"
 
 #: i18n/additional-localization.php:234
 msgid "Issuing agency/parties"
-msgstr ""
+msgstr "ទីភ្នាក់ងារ/ភាគីចេញ"
 
 #: i18n/additional-localization.php:235
 msgid "Implementing agencies"
-msgstr ""
+msgstr "ទីភ្នាក់ងារអនុវត្ត"
 
 #: i18n/additional-localization.php:236
 msgid "Notes"
-msgstr ""
+msgstr "កំណត់សម្គាល់"
 
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
-msgstr ""
+msgstr "អង្គភាពនៃមជ្ឈមណ្ឌលទិន្នន័យ CKAN "
 
 #: templates/archive-post-metabox.php:20 templates/archive-post-metabox.php:29
 msgid "None"
-msgstr ""
+msgstr "មិនមាន"
 
 #: templates/archive-post-metabox.php:27
 msgid "CKAN Group"
-msgstr ""
+msgstr "ក្រុមទិន្នន័យលើ CKAN"
 
 #: templates/archive-post-metabox.php:36
 msgid "Archive contents when:"
-msgstr ""
+msgstr "រក្សាខ្លឹមសារទុកជាប័ណ្ណសារ នៅពេល៖"
 
 #: templates/archive-post-metabox.php:38
 msgid "Never archive"
-msgstr ""
+msgstr "កំុរក្សាខ្លឹមសារទុកជាប័ណ្ណសារ "
 
 #: templates/archive-post-metabox.php:39
 msgid "Post is saved"
-msgstr ""
+msgstr "ការដាក់បង្ហោះត្រូវបានរក្សាទុក"
 
-#: templates/archive-post-metabox.php:44 templates/related-datasets-metabox.php:15
+#: templates/archive-post-metabox.php:44
+#: templates/related-datasets-metabox.php:15
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
@@ -933,19 +948,19 @@ msgstr "ព័ត៌មាន​បន្ថែម"
 
 #: templates/dataset-detail.php:134
 msgid "No metadata available for current dataset"
-msgstr "ពុំមានទិន្នន័យមេតាសម្រាប់សំណុំទិន្នន័យនេះទេ"
+msgstr "ពុំមានប្រវត្តិទិន្នន័យសម្រាប់សំណុំទិន្នន័យនេះទេ"
 
 #: templates/related-datasets-metabox.php:5
 msgid "Add related datasets"
-msgstr ""
+msgstr "បន្ថែមសំណុំទិន្នន័យពាក់ព័ន្ធ"
 
 #: templates/settings.php:40
 msgid "Connecting to CKAN"
-msgstr ""
+msgstr "ភ្ជាប់ទៅកាន់មជ្ឈមណ្ឌលទិន្នន័យ CKAN"
 
 #: templates/settings.php:42
 msgid "CKAN Url"
-msgstr ""
+msgstr "អាសយដ្ឋានគេហទំព័រ CKAN"
 
 #: templates/settings.php:45
 msgid "Specify protocol such as http:// or https://."
@@ -961,15 +976,15 @@ msgstr ""
 
 #: templates/settings.php:57
 msgid "Connection status"
-msgstr ""
+msgstr "ស្ថានភាពតភ្ជាប់"
 
 #: templates/settings.php:60
 msgid "CKAN URL specified correctly."
-msgstr ""
+msgstr "អាសយដ្ឋានគេហទំព័រ CKAN បញ្ជាក់បានត្រឹមត្រូវ"
 
 #: templates/settings.php:62
 msgid "Problem connecting to CKAN instance. Please, check the specified URL."
-msgstr ""
+msgstr "បញ្ហាតភ្ជាប់ទៅកាន់ CKAN។ សូមពិនិត្យមើល អាសយដ្ឋានគេហទំព័រ"
 
 #: templates/settings.php:65
 msgid "CKAN API Key specified correctly."
@@ -981,22 +996,24 @@ msgstr ""
 
 #: templates/settings.php:73
 msgid "Supported post types"
-msgstr ""
+msgstr "ប្រភេទដាក់បង្ហោះទៅបាន"
 
 #: templates/settings.php:84
 msgid "Dataset detail pages"
-msgstr ""
+msgstr "ទំព័រពិស្តារអំពីសំណុំទិន្នន័យ"
 
 #: templates/settings.php:86
 msgid "Supported fields"
-msgstr ""
+msgstr "ពាក្យអាចជ្រើសបាន"
 
 #: templates/settings.php:88
 msgid "title, description, license_url, ..."
 msgstr ""
 
 #: templates/settings.php:89
-msgid "Specify a list of Comma-separated field names to show on the additional data section. Mind order."
+msgid ""
+"Specify a list of Comma-separated field names to show on the additional data"
+" section. Mind order."
 msgstr ""
 
 #: templates/settings.php:94
@@ -1004,7 +1021,9 @@ msgid "Field mappings for keys"
 msgstr ""
 
 #: templates/settings.php:97
-msgid "Specify a list key => value mappings, separated by line breaks which define the mapping of a metadata field key to its label"
+msgid ""
+"Specify a list key => value mappings, separated by line breaks which define "
+"the mapping of a metadata field key to its label"
 msgstr ""
 
 #: templates/settings.php:102
@@ -1012,7 +1031,9 @@ msgid "Field mappings for values"
 msgstr ""
 
 #: templates/settings.php:105
-msgid "Specify a list value => value mappings, separated by line breaks which define the mapping of a metadata field value to its label"
+msgid ""
+"Specify a list value => value mappings, separated by line breaks which "
+"define the mapping of a metadata field value to its label"
 msgstr ""
 
 #: templates/settings.php:110
@@ -1020,11 +1041,15 @@ msgid "Linked fields"
 msgstr ""
 
 #: templates/settings.php:112
-msgid "odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, odm_laws_parent_document, ..."
+msgid ""
+"odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
+"odm_laws_parent_document, ..."
 msgstr ""
 
 #: templates/settings.php:113
-msgid "Specify a list of Comma-separated field names containing ids to link to other datasets."
+msgid ""
+"Specify a list of Comma-separated field names containing ids to link to "
+"other datasets."
 msgstr ""
 
 #: templates/settings.php:118
@@ -1032,16 +1057,18 @@ msgid "Enable url redirection"
 msgstr ""
 
 #: templates/settings.php:121
-msgid "if checked, links to datasets, resources and organizations will be redirected to /"
+msgid ""
+"if checked, links to datasets, resources and organizations will be "
+"redirected to /"
 msgstr ""
 
 #: templates/settings.php:125
 msgid "Open datasets in new tab"
-msgstr ""
+msgstr "បើកសំណំុទិន្នន័យនៅលើផ្ទាំងថ្មី"
 
 #: templates/settings.php:128
 msgid "if checked, links to datasets will be opened in a new tab/window"
-msgstr ""
+msgstr "ប្រសិនជ្រើសយក តំណទៅកាន់សំណំុទិន្នន័យនឹងបើកនៅលើផ្ទាំងថ្មី"
 
 #: templates/settings.php:133
 msgid "Ckanext-fluent support"
@@ -1052,7 +1079,10 @@ msgid "Is ckanext-fluent enabled in the CKAN instance?"
 msgstr ""
 
 #: templates/settings.php:138
-msgid "Activate for enabling multilingual functionalities. Visit https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions"
+msgid ""
+"Activate for enabling multilingual functionalities. Visit "
+"https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-"
+"fluent extensions"
 msgstr ""
 
 #: templates/settings.php:142
@@ -1060,7 +1090,9 @@ msgid "Fluent fields"
 msgstr ""
 
 #: templates/settings.php:145
-msgid "Specify a list of Comma-separated field names which are marked as fluent. See https://github.com/open-data/ckanext-fluent/"
+msgid ""
+"Specify a list of Comma-separated field names which are marked as fluent. "
+"See https://github.com/open-data/ckanext-fluent/"
 msgstr ""
 
 #: templates/settings.php:150
@@ -1105,34 +1137,43 @@ msgstr ""
 
 #: utils/wpckan-api.php:456
 msgid "Download data"
-msgstr ""
+msgstr "ទាញយកទិន្នន័យ"
 
 #: utils/wpckan-api.php:460
 msgid "View dataset table"
-msgstr ""
+msgstr "ពិនិត្យមើលតារាងសំណំុទិន្នន័យ"
 
 #: widgets/query-resources-by-category-widget.php:12
 msgid "WPCKAN Query resources by post's category"
 msgstr ""
 
 #: widgets/query-resources-by-category-widget.php:13
-msgid "Queries CKAN for datasets with the post's category as value for the field specified."
+msgid ""
+"Queries CKAN for datasets with the post's category as value for the field "
+"specified."
 msgstr ""
 
 #: widgets/query-resources-by-category-widget.php:90
 msgid "Custom posts"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:102 widgets/query-resources-widget.php:117 widgets/related-datasets-widget.php:102
+#: widgets/query-resources-by-category-widget.php:102
+#: widgets/query-resources-widget.php:117
+#: widgets/related-datasets-widget.php:102
 msgid "Title:"
 msgstr "ចំណងជើង៖"
 
-#: widgets/query-resources-by-category-widget.php:106 widgets/query-resources-widget.php:121 widgets/related-datasets-widget.php:104
+#: widgets/query-resources-by-category-widget.php:106
+#: widgets/query-resources-widget.php:121
+#: widgets/related-datasets-widget.php:104
 msgid "CKAN Organization:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:108 widgets/query-resources-widget.php:123 widgets/query-resources-widget.php:130
-#: widgets/related-datasets-widget.php:106 widgets/related-datasets-widget.php:113
+#: widgets/query-resources-by-category-widget.php:108
+#: widgets/query-resources-widget.php:123
+#: widgets/query-resources-widget.php:130
+#: widgets/related-datasets-widget.php:106
+#: widgets/related-datasets-widget.php:113
 msgid "All"
 msgstr "ទាំងអស់"
 
@@ -1140,11 +1181,15 @@ msgstr "ទាំងអស់"
 msgid "Search field:"
 msgstr "ស្វែងរកពាក្យ៖"
 
-#: widgets/query-resources-by-category-widget.php:122 widgets/query-resources-widget.php:137 widgets/related-datasets-widget.php:120
+#: widgets/query-resources-by-category-widget.php:122
+#: widgets/query-resources-widget.php:137
+#: widgets/related-datasets-widget.php:120
 msgid "Dataset type:"
 msgstr "ប្រភេទទិន្នន័យ"
 
-#: widgets/query-resources-by-category-widget.php:123 widgets/query-resources-widget.php:138 widgets/related-datasets-widget.php:121
+#: widgets/query-resources-by-category-widget.php:123
+#: widgets/query-resources-widget.php:138
+#: widgets/related-datasets-widget.php:121
 msgid "dataset, library_record, etc.."
 msgstr ""
 
@@ -1152,15 +1197,21 @@ msgstr ""
 msgid "Select max number of posts to list (-1 to show all):"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:136 widgets/query-resources-widget.php:147 widgets/related-datasets-widget.php:126
+#: widgets/query-resources-by-category-widget.php:136
+#: widgets/query-resources-widget.php:147
+#: widgets/related-datasets-widget.php:126
 msgid "Output fields for dataset:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:140 widgets/query-resources-widget.php:151 widgets/related-datasets-widget.php:130
+#: widgets/query-resources-by-category-widget.php:140
+#: widgets/query-resources-widget.php:151
+#: widgets/related-datasets-widget.php:130
 msgid "Output fields for resources:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:144 widgets/query-resources-widget.php:155 widgets/related-datasets-widget.php:134
+#: widgets/query-resources-by-category-widget.php:144
+#: widgets/query-resources-widget.php:155
+#: widgets/related-datasets-widget.php:134
 msgid "Order by:"
 msgstr ""
 
@@ -1172,7 +1223,8 @@ msgstr ""
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: widgets/query-resources-widget.php:87 widgets/related-datasets-widget.php:77
+#: widgets/query-resources-widget.php:87
+#: widgets/related-datasets-widget.php:77
 msgid "Related datasets"
 msgstr "ទិន្នន័យពាក់ព័ន្ធ"
 
@@ -1180,19 +1232,23 @@ msgstr "ទិន្នន័យពាក់ព័ន្ធ"
 msgid "Query:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:128 widgets/related-datasets-widget.php:111
+#: widgets/query-resources-widget.php:128
+#: widgets/related-datasets-widget.php:111
 msgid "CKAN Group:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:135 widgets/related-datasets-widget.php:118
+#: widgets/query-resources-widget.php:135
+#: widgets/related-datasets-widget.php:118
 msgid "Additional filtering:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:136 widgets/related-datasets-widget.php:119
+#: widgets/query-resources-widget.php:136
+#: widgets/related-datasets-widget.php:119
 msgid "Specify valid JSON, otherwise not saved"
 msgstr ""
 
-#: widgets/query-resources-widget.php:139 widgets/related-datasets-widget.php:122
+#: widgets/query-resources-widget.php:139
+#: widgets/related-datasets-widget.php:122
 msgid "Limit:"
 msgstr ""
 
@@ -1214,15 +1270,20 @@ msgstr ""
 
 #: wpckan.php:139
 msgid "Add related CKAN content"
-msgstr ""
+msgstr "បន្ថែមទិន្នន័យ CKAN ពាក់ព័ន្ធ"
 
 #: wpckan.php:140
 msgid "Archive Post as CKAN dataset"
-msgstr ""
+msgstr "រក្សាទុកការដាក់បង្ហោះជាសំណំុទិន្នន័យ CKAN"
 
 #: wpckan.php:284
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
+msgstr "លោកអ្នក មិនមានការអនុញ្ញាតគ្រប់គ្រាន់ដើម្បីចូលអានទំព័រនេះទេ"
 
-#~ msgid "Open Development Cambodia"
-#~ msgstr "អង្គការទិន្នន័យអំពីការអភិវឌ្ឍ"
+#~ msgid "Field mappings"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Specify a list key => value mappings, separated by line breaks which define "
+#~ "the mapping of a metadata field to its label"
+#~ msgstr ""
