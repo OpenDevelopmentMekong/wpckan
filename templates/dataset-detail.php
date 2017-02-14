@@ -89,7 +89,6 @@
 	<h2><?php _e('Additional info', 'wpckan') ?></h2>
   <table class="wpckan_dataset_metadata_fields">
     <?php
-				_e('Document type','wpckan');
         $metadata_available = false;
         if (!empty($supported_fields)): ?>
         <?php
