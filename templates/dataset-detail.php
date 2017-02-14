@@ -89,12 +89,14 @@
 	<h2><?php _e('Additional info', 'wpckan') ?></h2>
   <table class="wpckan_dataset_metadata_fields">
     <?php
+				_e('Document type','wpckan');
         $metadata_available = false;
         if (!empty($supported_fields)): ?>
         <?php
           foreach ($supported_fields as $key): ?>
             <tr class="wpckan_dataset_metadata_field">
-            <?php $mapped_key = isset($field_mappings[$key]) ? $field_mappings[$key] : $key;
+            <?php
+						$mapped_key = isset($field_mappings[$key]) ? trim($field_mappings[$key]," ") : $key;
             if (array_key_exists($key,$data) && isset($data[$key])):
               $value = $data[$key];
               if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
