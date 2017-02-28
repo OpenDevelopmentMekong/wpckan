@@ -235,4 +235,38 @@ echo _('Issuing agency/parties');
 echo _('Implementing agencies');
 echo _('Notes');
 
+echo _('Participating share');
+echo _('Contracting parties');
+echo _('Government entity');
+echo _('Concession name');
+echo _('Disclosure mode');
+echo _('Document reference number');
+echo _('Amendment to contract');
+echo _('Signature date');
+echo _('Short notes of change');
+echo _('Granted area');
+echo _('Contract term');
+echo _('Contract term unit');
+echo _('Payment for concession fees');
+echo _('Payment for concession fees unit');
+echo _('Guaranty deposit for contract implementation');
+echo _('Land use planning');
+echo _('Land use planning unit');
+echo _('Parties obligations');
+echo _('Job creation summary');
+echo _('Job creation number');
+echo _('Training summary');
+echo _('Training number');
+echo _('Environmental protection');
+echo _('Sociocultural protection');
+echo _('Fiscal duties summary');
+echo _('Fiscal duties number');
+echo _('Environmental impact assessment (EIA)');
+echo _('Social fund');
+echo _('Environmental fund summary');
+echo _('Environmental funds');
+echo _('Suspension revocation termination');
+echo _('Related documents');
+echo _('Suspension related project');
+
 ?>
