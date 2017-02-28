@@ -68,7 +68,7 @@ echo _('Minister of Public Works and Transport');
 echo _('Minister of Social Affairs Veterans and Youth Rehabilitation');
 echo _('Minister of Tourism');
 echo _('Minister of Water Resources and Meteorology');
-echo _('Minister of Women’s Affairs');
+echo _('Minister of Women\'s Affairs');
 echo _('Secretary of State of Civil Aviation');
 echo _('Secretary of State');
 echo _('Provincial Governor/Council');
