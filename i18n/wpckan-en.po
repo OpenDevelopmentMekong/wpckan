@@ -1433,16 +1433,3 @@ msgstr "Archive Post as CKAN dataset"
 #: wpckan.php:284
 msgid "You do not have sufficient permissions to access this page."
 msgstr "You do not have sufficient permissions to access this page."
-
-#~ msgid "Minister of Women’s Affairs"
-#~ msgstr "Minister of Women’s Affairs"
-
-#~ msgid "Field mappings"
-#~ msgstr "Field mappings"
-
-#~ msgid ""
-#~ "Specify a list key => value mappings, separated by line breaks which "
-#~ "define the mapping of a metadata field to its label"
-#~ msgstr ""
-#~ "Specify a list key => value mappings, separated by line breaks which "
-#~ "define the mapping of a metadata field to its label"
