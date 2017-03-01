@@ -13,6 +13,7 @@
           $multilingual_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
           $field_mappings = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
           $field_mappings_values = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings_values');
+          $supported_datatables = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_datatables');
           $linked_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
           $redirect_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled');
           $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
@@ -103,6 +104,14 @@
             <td>
               <textarea class="full-width" name="wpckan_setting_field_mappings_values" placeholder="owner_org  =>  Organization"><?php echo $field_mappings_values;?></textarea>
               <p class="description"><?php _e('Specify a list value => value mappings, separated by line breaks which define the mapping of a metadata field value to its label','wpckan') ?></p>
+            </td>
+          </tr>
+          <!-- Supported datatables-->
+          <tr valign="top">
+            <th scope="row"><label for="wpckan_setting_supported_datatables"><?php _e('Supported datatables','wpckan') ?></label></th>
+            <td>
+              <textarea class="full-width" name="wpckan_setting_supported_datatables" placeholder="owner_org  =>  Organization"><?php echo $supported_datatables;?></textarea>
+              <p class="description"><?php _e('Specify a list field_id => respurce_id mappings, separated by line breaks which define the mapping of a metadata field value to its label','wpckan') ?></p>
             </td>
           </tr>
           <!-- Fields containing ids to link to other datasets -->

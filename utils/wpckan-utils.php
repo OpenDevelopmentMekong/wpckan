@@ -544,7 +544,7 @@
     $mappings = explode("\r\n", $mappings_raw);
     foreach ($mappings as $value) {
         $array_value = explode('=>', trim($value));
-        $mappings_clean[wpckan_remove_whitespaces($array_value[0])] = $array_value[1];
+        $mappings_clean[wpckan_remove_whitespaces($array_value[0])] = trim($array_value[1]);
     }
     return $mappings_clean;
   }
