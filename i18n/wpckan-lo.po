@@ -1,4 +1,5 @@
-
+msgid ""
+msgstr ""
 "Project-Id-Version: wpckan\n"
 "POT-Creation-Date: 2017-02-28 17:25+0100\n"
 "PO-Revision-Date: \n"
