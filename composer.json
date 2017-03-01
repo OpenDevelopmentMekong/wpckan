@@ -5,7 +5,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/OpenDevelopmentMekong/CKAN_PHP.git"
+      "url": "https://github.com/OpenDevelopmentMekong/CKAN_PHP"
     },
     {
       "type": "vcs",

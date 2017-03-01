@@ -17,6 +17,7 @@
 
     $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
     $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
+		$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
     $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
     $linked_fields = explode(',', $linked_fields_csv);
 ?>
@@ -98,7 +99,34 @@
 						$mapped_key = isset($field_mappings[$key]) ? trim($field_mappings[$key]," ") : $key;
             if (array_key_exists($key,$data) && isset($data[$key])):
               $value = $data[$key];
-              if (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
+
+							if (array_key_exists($key, $supported_datatables) && !empty($supported_datatables[$key])):
+
+								$resource_id = $supported_datatables[$key];
+								$ids = is_array($value) ? $value : explode(',', $value);
+
+								if (count($ids) > 0):
+									echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
+									echo '<td><p>';
+									foreach($ids as $id):
+										$results = wpckan_get_datastore_resources_filter(wpckan_get_ckan_domain(),$resource_id,"id",$id);
+										$result = $results[0];
+										if (in_array($key,$linked_fields)):
+											echo '<a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $result["name"];
+										else:
+											echo __($result["name"], 'wpckan');
+										endif;
+
+										if ($id !== end($ids)):
+							        echo ', ';
+										endif;
+
+									endforeach;
+									echo '</p></td>';
+
+								endif;
+
+							elseif (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
                 $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
                 $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
                 if (!empty($mapped_value)):

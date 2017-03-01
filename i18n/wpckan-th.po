@@ -1,15 +1,23 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+
+"Project-Id-Version: wpckan\n"
+"POT-Creation-Date: 2017-02-28 17:26+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: th\n"
 "X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: i18n\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: components\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
@@ -280,7 +288,7 @@ msgid "Minister of Water Resources and Meteorology"
 msgstr ""
 
 #: i18n/additional-localization.php:71
-msgid "Minister of Women’s Affairs"
+msgid "Minister of Women's Affairs"
 msgstr ""
 
 #: i18n/additional-localization.php:72
@@ -897,6 +905,138 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
+#: i18n/additional-localization.php:238
+msgid "Participating share"
+msgstr ""
+
+#: i18n/additional-localization.php:239
+msgid "Contracting parties"
+msgstr ""
+
+#: i18n/additional-localization.php:240
+msgid "Government entity"
+msgstr ""
+
+#: i18n/additional-localization.php:241
+msgid "Concession name"
+msgstr ""
+
+#: i18n/additional-localization.php:242
+msgid "Disclosure mode"
+msgstr ""
+
+#: i18n/additional-localization.php:243
+msgid "Document reference number"
+msgstr ""
+
+#: i18n/additional-localization.php:244
+msgid "Amendment to contract"
+msgstr ""
+
+#: i18n/additional-localization.php:245
+msgid "Signature date"
+msgstr ""
+
+#: i18n/additional-localization.php:246
+msgid "Short notes of change"
+msgstr ""
+
+#: i18n/additional-localization.php:247
+msgid "Granted area"
+msgstr ""
+
+#: i18n/additional-localization.php:248
+msgid "Contract term"
+msgstr ""
+
+#: i18n/additional-localization.php:249
+msgid "Contract term unit"
+msgstr ""
+
+#: i18n/additional-localization.php:250
+msgid "Payment for concession fees"
+msgstr ""
+
+#: i18n/additional-localization.php:251
+msgid "Payment for concession fees unit"
+msgstr ""
+
+#: i18n/additional-localization.php:252
+msgid "Guaranty deposit for contract implementation"
+msgstr ""
+
+#: i18n/additional-localization.php:253
+msgid "Land use planning"
+msgstr ""
+
+#: i18n/additional-localization.php:254
+msgid "Land use planning unit"
+msgstr ""
+
+#: i18n/additional-localization.php:255
+msgid "Parties obligations"
+msgstr ""
+
+#: i18n/additional-localization.php:256
+msgid "Job creation summary"
+msgstr ""
+
+#: i18n/additional-localization.php:257
+msgid "Job creation number"
+msgstr ""
+
+#: i18n/additional-localization.php:258
+msgid "Training summary"
+msgstr ""
+
+#: i18n/additional-localization.php:259
+msgid "Training number"
+msgstr ""
+
+#: i18n/additional-localization.php:260
+msgid "Environmental protection"
+msgstr ""
+
+#: i18n/additional-localization.php:261
+msgid "Sociocultural protection"
+msgstr ""
+
+#: i18n/additional-localization.php:262
+msgid "Fiscal duties summary"
+msgstr ""
+
+#: i18n/additional-localization.php:263
+msgid "Fiscal duties number"
+msgstr ""
+
+#: i18n/additional-localization.php:264
+msgid "Environmental impact assessment (EIA)"
+msgstr ""
+
+#: i18n/additional-localization.php:265
+msgid "Social fund"
+msgstr ""
+
+#: i18n/additional-localization.php:266
+msgid "Environmental fund summary"
+msgstr ""
+
+#: i18n/additional-localization.php:267
+msgid "Environmental funds"
+msgstr ""
+
+#: i18n/additional-localization.php:268
+msgid "Suspension revocation termination"
+msgstr ""
+
+#: i18n/additional-localization.php:269
+msgid "Related documents"
+msgstr ""
+
+#: i18n/additional-localization.php:270
+msgid "Suspension related project"
+msgstr ""
+
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
 msgstr ""
@@ -938,7 +1078,7 @@ msgstr ""
 msgid "Additional info"
 msgstr ""
 
-#: templates/dataset-detail.php:134
+#: templates/dataset-detail.php:135
 msgid "No metadata available for current dataset"
 msgstr ""
 
@@ -1126,11 +1266,11 @@ msgstr ""
 msgid "Path where logs are going to be stored. Mind permissions."
 msgstr ""
 
-#: utils/wpckan-api.php:456
+#: utils/wpckan-api.php:464
 msgid "Download data"
 msgstr ""
 
-#: utils/wpckan-api.php:460
+#: utils/wpckan-api.php:468
 msgid "View dataset table"
 msgstr ""
 
@@ -1144,23 +1284,23 @@ msgid ""
 "specified."
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:90
+#: widgets/query-resources-by-category-widget.php:108
 msgid "Custom posts"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:102
+#: widgets/query-resources-by-category-widget.php:120
 #: widgets/query-resources-widget.php:117
 #: widgets/related-datasets-widget.php:102
 msgid "Title:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:106
+#: widgets/query-resources-by-category-widget.php:124
 #: widgets/query-resources-widget.php:121
 #: widgets/related-datasets-widget.php:104
 msgid "CKAN Organization:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:108
+#: widgets/query-resources-by-category-widget.php:126
 #: widgets/query-resources-widget.php:123
 #: widgets/query-resources-widget.php:130
 #: widgets/related-datasets-widget.php:106
@@ -1168,39 +1308,39 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:117
+#: widgets/query-resources-by-category-widget.php:135
 msgid "Search field:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:122
+#: widgets/query-resources-by-category-widget.php:140
 #: widgets/query-resources-widget.php:137
 #: widgets/related-datasets-widget.php:120
 msgid "Dataset type:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:123
+#: widgets/query-resources-by-category-widget.php:141
 #: widgets/query-resources-widget.php:138
 #: widgets/related-datasets-widget.php:121
 msgid "dataset, library_record, etc.."
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:128
+#: widgets/query-resources-by-category-widget.php:146
 msgid "Select max number of posts to list (-1 to show all):"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:136
+#: widgets/query-resources-by-category-widget.php:154
 #: widgets/query-resources-widget.php:147
 #: widgets/related-datasets-widget.php:126
 msgid "Output fields for dataset:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:140
+#: widgets/query-resources-by-category-widget.php:158
 #: widgets/query-resources-widget.php:151
 #: widgets/related-datasets-widget.php:130
 msgid "Output fields for resources:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:144
+#: widgets/query-resources-by-category-widget.php:162
 #: widgets/query-resources-widget.php:155
 #: widgets/related-datasets-widget.php:134
 msgid "Order by:"
