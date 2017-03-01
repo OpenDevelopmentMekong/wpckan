@@ -103,16 +103,27 @@
 							if (array_key_exists($key, $supported_datatables) && !empty($supported_datatables[$key])):
 
 								$resource_id = $supported_datatables[$key];
+								$ids = is_array($value) ? $value : explode(',', $value);
 
-								$results = wpckan_get_datastore_resources_filter(wpckan_get_ckan_domain(),$resource_id,"id",$value);
-								$result = $results[0];
+								if (count($ids) > 0):
+									echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
+									echo '<td><p>';
+									foreach($ids as $id):
+										$results = wpckan_get_datastore_resources_filter(wpckan_get_ckan_domain(),$resource_id,"id",$id);
+										$result = $results[0];
+										if (in_array($key,$linked_fields)):
+											echo '<a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $result["name"];
+										else:
+											echo __($result["name"], 'wpckan');
+										endif;
 
-								if (in_array($key,$linked_fields)):
-									echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-									echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $result["name"] .'</p></td>';
-								else:
-									echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-									echo '<td><p>'.__($result["name"], 'wpckan').'</p></td>';
+										if ($id !== end($ids)):
+							        echo ', ';
+										endif;
+
+									endforeach;
+									echo '</p></td>';
+
 								endif;
 
 							elseif (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
