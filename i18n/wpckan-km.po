@@ -263,7 +263,7 @@ msgid "Minister of National Defense"
 msgstr "រដ្ឋមន្រ្តីក្រសួងការពារជាតិ"
 
 #: i18n/additional-localization.php:64
-msgid "Minister of Parliamentary Affairs"
+msgid "Minister of National Assembly-Senate Relations and Inspection"
 msgstr "រដ្ឋមន្រ្តីក្រសួងទំនាក់ទំនងជាមួយរដ្ឋសភា ព្រឹទ្ធសភា និងអធិការកិច្ច"
 
 #: i18n/additional-localization.php:65
@@ -303,7 +303,7 @@ msgid "Secretary of State"
 msgstr "រដ្ឋលេខាធិការ"
 
 #: i18n/additional-localization.php:74
-msgid "Provincial Governor/Council"
+msgid "Municipal-Provincial Governor/Council"
 msgstr "អភិបាល/ក្រុមប្រឹក្សា រាជធានី-ខេត្ត"
 
 #: i18n/additional-localization.php:75
@@ -311,11 +311,11 @@ msgid "City Governor/Council"
 msgstr "អភិបាល/ក្រុមប្រឹក្សាក្រុង"
 
 #: i18n/additional-localization.php:76
-msgid "District Governor/Council"
+msgid "District-Khan Governor/Council"
 msgstr "អភិបាល/ក្រុមប្រឹក្សា ស្រុក-ខណ្ឌ"
 
 #: i18n/additional-localization.php:77
-msgid "Commune Governor/Council"
+msgid "Commune-Sangkat Chief/Council"
 msgstr "អភិបាល/ក្រុមប្រឹក្សា ឃំុ-សង្កាត់"
 
 #: i18n/additional-localization.php:78
@@ -327,7 +327,7 @@ msgstr ""
 "និងវាយតម្លៃសម្បទានដីសេ្ឋកិច្ច"
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
-msgid "Royal Government of Cambodia"
+msgid "Royal Government of the Kingdom of Cambodia"
 msgstr "រាជរដ្ឋាភិបាលនៃព្រះរាជាណាចក្រកម្ពុជា"
 
 #: i18n/additional-localization.php:80
@@ -343,7 +343,7 @@ msgid "Forestry Administration"
 msgstr "រដ្ឋបាលព្រៃឈើ"
 
 #: i18n/additional-localization.php:83
-msgid "Council for Development"
+msgid "Council for Development of Cambodia"
 msgstr "ក្រុមប្រឹក្សាអភិវឌ្ឍន៍កម្ពុជា"
 
 #: i18n/additional-localization.php:84 i18n/additional-localization.php:123
@@ -379,7 +379,7 @@ msgid "City Council"
 msgstr "ក្រុមប្រឹក្សាក្រុង"
 
 #: i18n/additional-localization.php:93
-msgid "Commune Council"
+msgid "Commune-Sangkat Council"
 msgstr "ក្រុមប្រឹក្សាឃំុ-សង្កាត់"
 
 #: i18n/additional-localization.php:94
@@ -395,7 +395,7 @@ msgid "Constitutional Council"
 msgstr "ក្រុមប្រឹក្សាធម្មនុញ្ញ"
 
 #: i18n/additional-localization.php:98
-msgid "District Council"
+msgid "District-Khan Council"
 msgstr "ក្រុមប្រឹក្សា ស្រុក-ខណ្ឌ"
 
 #: i18n/additional-localization.php:99
@@ -411,19 +411,19 @@ msgid "Ministry of Industries, Mines and Energy"
 msgstr "ក្រសួងឧស្សាហកម្ម រ៉ែ និងថាមពល"
 
 #: i18n/additional-localization.php:104
-msgid "Ministry of Post & Telecommunication"
+msgid "Ministry of Posts and Telecommunications"
 msgstr "ក្រសួងប្រៃសណីយ៍ និងទូរគមនាគមន៍"
 
 #: i18n/additional-localization.php:105
-msgid "Ministry of Public Works & Transport"
+msgid "Ministry of Public Works and Transport"
 msgstr "ក្រសួងសាធារណការ និងដឹកជញ្ជូន"
 
 #: i18n/additional-localization.php:106
-msgid "Ministry of Parliamentary Affairs & Inspection"
+msgid "Ministry of National Assembly-Senate Relations and Inspection"
 msgstr "ក្រសួងទំនាក់ទំនងជាមួយរដ្ឋសភា-ព្រឹទ្ធសភា និងអធិការកិច្ច"
 
 #: i18n/additional-localization.php:107
-msgid "Ministry of Religions & Cults "
+msgid "Ministry of Cult and Religion "
 msgstr "ក្រសួងធម្មការ និងសាសនា"
 
 #: i18n/additional-localization.php:108
@@ -461,7 +461,7 @@ msgid "Parliament"
 msgstr "សភា"
 
 #: i18n/additional-localization.php:116
-msgid "Provincial Council"
+msgid "Provincial-Capital Council"
 msgstr "ក្រុមប្រឹក្សាខេត្ត-រាជធានី"
 
 #: i18n/additional-localization.php:117
@@ -485,7 +485,7 @@ msgid "Phnom Penh Captial Hall"
 msgstr "សាលារាជធានីភ្នំពេញ"
 
 #: i18n/additional-localization.php:125
-msgid "Under negotitation"
+msgid "Under negotiation"
 msgstr "ក្នុងដំណើរការនៃកិច្ចចរចា"
 
 #: i18n/additional-localization.php:126
@@ -981,7 +981,7 @@ msgid "Land use planning unit"
 msgstr "ផែនការប្រើប្រាស់ដី គិតជា"
 
 #: i18n/additional-localization.php:255
-msgid "Parties obligations"
+msgid "Party's obligation in the implementation of the project"
 msgstr "កាតព្វភាគីអនុវត្តគម្រោង"
 
 #: i18n/additional-localization.php:256
@@ -989,7 +989,7 @@ msgid "Job creation summary"
 msgstr "កាតព្វកិច្ចផ្តល់ការងារ​​ ជាសង្ខេប"
 
 #: i18n/additional-localization.php:257
-msgid "Job creation number"
+msgid "Number of created jobs"
 msgstr "ចំនួនការងារត្រូវបានបង្កើត​​"
 
 #: i18n/additional-localization.php:258
@@ -1005,7 +1005,7 @@ msgid "Environmental protection"
 msgstr "កាតព្វកិច្ចខាងកិច្ចការពារបរិស្ថាន"
 
 #: i18n/additional-localization.php:261
-msgid "Sociocultural protection"
+msgid "Socio-cultural protection"
 msgstr "កាតព្វកិច្ចខាងកិច្ចការ​ពារ​​សង្គមវប្បធម៌"
 
 #: i18n/additional-localization.php:262
@@ -1013,7 +1013,7 @@ msgid "Fiscal duties summary"
 msgstr "កាតព្វកិច្ចពន្ធ  ជាសង្ខេប"
 
 #: i18n/additional-localization.php:263
-msgid "Fiscal duties number"
+msgid "Total amount of fiscal duties"
 msgstr "ចំនួនកាតព្វកិច្ចពន្ធ (គិតជាដុល្លារ)"
 
 #: i18n/additional-localization.php:264
@@ -1029,11 +1029,11 @@ msgid "Environmental fund summary"
 msgstr "មូលនិធិបរិស្ថាន ជាសង្ខេប"
 
 #: i18n/additional-localization.php:267
-msgid "Environmental funds"
+msgid "Total amount of environmental funds"
 msgstr "មូលនិធិបរិស្ថានសរុប (គិតជាដុល្លារ)"
 
 #: i18n/additional-localization.php:268
-msgid "Suspension revocation termination"
+msgid "Suspension and/or revocation or termination​"
 msgstr "ការព្យួរ​ទុក ឬ ការដកហូតឬ ការបញ្ចប់"
 
 #: i18n/additional-localization.php:269
