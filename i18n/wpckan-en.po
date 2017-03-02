@@ -260,8 +260,8 @@ msgid "Minister of National Defense"
 msgstr "Minister of National Defense"
 
 #: i18n/additional-localization.php:64
-msgid "Minister of Parliamentary Affairs"
-msgstr "Minister of Parliamentary Affairs"
+msgid "Minister of National Assembly-Senate Relations and Inspection"
+msgstr "Minister of National Assembly-Senate Relations and Inspection"
 
 #: i18n/additional-localization.php:65
 msgid "Minister of Planning"
@@ -300,20 +300,20 @@ msgid "Secretary of State"
 msgstr "Secretary of State"
 
 #: i18n/additional-localization.php:74
-msgid "Provincial Governor/Council"
-msgstr "Provincial Governor/Council"
+msgid "Municipal-Provincial Governor/Council"
+msgstr "Municipal-Provincial Governor/Council"
 
 #: i18n/additional-localization.php:75
 msgid "City Governor/Council"
 msgstr "City Governor/Council"
 
 #: i18n/additional-localization.php:76
-msgid "District Governor/Council"
-msgstr "District Governor/Council"
+msgid "District-Khan Governor/Council"
+msgstr "District-Khan Governor/Council"
 
 #: i18n/additional-localization.php:77
-msgid "Commune Governor/Council"
-msgstr "Commune Governor/Council"
+msgid "Commune-Sangkat Chief/Council"
+msgstr "Commune-Sangkat Chief/Council"
 
 #: i18n/additional-localization.php:78
 msgid ""
@@ -324,8 +324,8 @@ msgstr ""
 "Economic Land Concessions (ELCs)"
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
-msgid "Royal Government of Cambodia"
-msgstr "Royal Government of Cambodia"
+msgid "Royal Government of the Kingdom of Cambodia"
+msgstr "Royal Government of the Kingdom of Cambodia"
 
 #: i18n/additional-localization.php:80
 msgid "Secretary General"
@@ -340,8 +340,8 @@ msgid "Forestry Administration"
 msgstr "Forestry Administration"
 
 #: i18n/additional-localization.php:83
-msgid "Council for Development"
-msgstr "Council for Development"
+msgid "Council for Development of Cambodia"
+msgstr "Council for Development of Cambodia"
 
 #: i18n/additional-localization.php:84 i18n/additional-localization.php:123
 msgid "Electricity Authority of Cambodia"
@@ -376,8 +376,8 @@ msgid "City Council"
 msgstr "City Council"
 
 #: i18n/additional-localization.php:93
-msgid "Commune Council"
-msgstr "Commune Council"
+msgid "Commune-Sangkat Council"
+msgstr "Commune-Sangkat Council"
 
 #: i18n/additional-localization.php:94
 msgid "Congress between National Assembly and Senate"
@@ -392,8 +392,8 @@ msgid "Constitutional Council"
 msgstr "Constitutional Council"
 
 #: i18n/additional-localization.php:98
-msgid "District Council"
-msgstr "District Council"
+msgid "District-Khan Council"
+msgstr "District-Khan Council"
 
 #: i18n/additional-localization.php:99
 msgid "King, of the Kingdom of Cambodia"
@@ -408,20 +408,20 @@ msgid "Ministry of Industries, Mines and Energy"
 msgstr "Ministry of Industries, Mines and Energy"
 
 #: i18n/additional-localization.php:104
-msgid "Ministry of Post & Telecommunication"
-msgstr "Ministry of Post & Telecommunication"
+msgid "Ministry of Posts and Telecommunications"
+msgstr "Ministry of Posts and Telecommunications"
 
 #: i18n/additional-localization.php:105
-msgid "Ministry of Public Works & Transport"
-msgstr "Ministry of Public Works & Transport"
+msgid "Ministry of Public Works and Transport"
+msgstr "Ministry of Public Works and Transport"
 
 #: i18n/additional-localization.php:106
-msgid "Ministry of Parliamentary Affairs & Inspection"
-msgstr "Ministry of Parliamentary Affairs & Inspection"
+msgid "Ministry of National Assembly-Senate Relations and Inspection"
+msgstr "Ministry of National Assembly-Senate Relations and Inspection"
 
 #: i18n/additional-localization.php:107
-msgid "Ministry of Religions & Cults "
-msgstr "Ministry of Religions & Cults "
+msgid "Ministry of Cult and Religion "
+msgstr "Ministry of Cult and Religion "
 
 #: i18n/additional-localization.php:108
 msgid ""
@@ -460,8 +460,8 @@ msgid "Parliament"
 msgstr "Parliament"
 
 #: i18n/additional-localization.php:116
-msgid "Provincial Council"
-msgstr "Provincial Council"
+msgid "Provincial-Capital Council"
+msgstr "Provincial-Capital Council"
 
 #: i18n/additional-localization.php:117
 msgid "Provincial Department of Ministry"
@@ -484,8 +484,8 @@ msgid "Phnom Penh Captial Hall"
 msgstr "Phnom Penh Captial Hall"
 
 #: i18n/additional-localization.php:125
-msgid "Under negotitation"
-msgstr "Under negotitation"
+msgid "Under negotiation"
+msgstr "Under negotiation"
 
 #: i18n/additional-localization.php:126
 msgid "Framework agreement signed"
@@ -980,16 +980,16 @@ msgid "Land use planning unit"
 msgstr "Land use planning unit"
 
 #: i18n/additional-localization.php:255
-msgid "Parties obligations"
-msgstr "Parties obligations"
+msgid "Party's obligation in the implementation of the project"
+msgstr "Party's obligation in the implementation of the project"
 
 #: i18n/additional-localization.php:256
 msgid "Job creation summary"
 msgstr "Job creation summary"
 
 #: i18n/additional-localization.php:257
-msgid "Job creation number"
-msgstr "Job creation number"
+msgid "Number of created jobs"
+msgstr "Number of created jobs"
 
 #: i18n/additional-localization.php:258
 msgid "Training summary"
@@ -1004,16 +1004,16 @@ msgid "Environmental protection"
 msgstr "Environmental protection"
 
 #: i18n/additional-localization.php:261
-msgid "Sociocultural protection"
-msgstr "Sociocultural protection"
+msgid "Socio-cultural protection"
+msgstr "Socio-cultural protection"
 
 #: i18n/additional-localization.php:262
 msgid "Fiscal duties summary"
 msgstr "Fiscal duties summary"
 
 #: i18n/additional-localization.php:263
-msgid "Fiscal duties number"
-msgstr "Fiscal duties number"
+msgid "Total amount of fiscal duties"
+msgstr "Total amount of fiscal duties"
 
 #: i18n/additional-localization.php:264
 msgid "Environmental impact assessment (EIA)"
@@ -1028,12 +1028,12 @@ msgid "Environmental fund summary"
 msgstr "Environmental fund summary"
 
 #: i18n/additional-localization.php:267
-msgid "Environmental funds"
-msgstr "Environmental funds"
+msgid "Total amount of environmental funds"
+msgstr "Total amount of environmental funds"
 
 #: i18n/additional-localization.php:268
-msgid "Suspension revocation termination"
-msgstr "Suspension revocation termination"
+msgid "Suspension and/or revocation or termination​"
+msgstr "Suspension and/or revocation or termination​"
 
 #: i18n/additional-localization.php:269
 msgid "Related documents"

@@ -261,7 +261,7 @@ msgid "Minister of National Defense"
 msgstr ""
 
 #: i18n/additional-localization.php:64
-msgid "Minister of Parliamentary Affairs"
+msgid "Minister of National Assembly-Senate Relations and Inspection"
 msgstr ""
 
 #: i18n/additional-localization.php:65
@@ -301,7 +301,7 @@ msgid "Secretary of State"
 msgstr ""
 
 #: i18n/additional-localization.php:74
-msgid "Provincial Governor/Council"
+msgid "Municipal-Provincial Governor/Council"
 msgstr ""
 
 #: i18n/additional-localization.php:75
@@ -309,11 +309,11 @@ msgid "City Governor/Council"
 msgstr ""
 
 #: i18n/additional-localization.php:76
-msgid "District Governor/Council"
+msgid "District-Khan Governor/Council"
 msgstr ""
 
 #: i18n/additional-localization.php:77
-msgid "Commune Governor/Council"
+msgid "Commune-Sangkat Chief/Council"
 msgstr ""
 
 #: i18n/additional-localization.php:78
@@ -323,7 +323,7 @@ msgid ""
 msgstr ""
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
-msgid "Royal Government of Cambodia"
+msgid "Royal Government of the Kingdom of Cambodia"
 msgstr ""
 
 #: i18n/additional-localization.php:80
@@ -339,7 +339,7 @@ msgid "Forestry Administration"
 msgstr ""
 
 #: i18n/additional-localization.php:83
-msgid "Council for Development"
+msgid "Council for Development of Cambodia"
 msgstr ""
 
 #: i18n/additional-localization.php:84 i18n/additional-localization.php:123
@@ -375,7 +375,7 @@ msgid "City Council"
 msgstr ""
 
 #: i18n/additional-localization.php:93
-msgid "Commune Council"
+msgid "Commune-Sangkat Council"
 msgstr ""
 
 #: i18n/additional-localization.php:94
@@ -391,7 +391,7 @@ msgid "Constitutional Council"
 msgstr ""
 
 #: i18n/additional-localization.php:98
-msgid "District Council"
+msgid "District-Khan Council"
 msgstr ""
 
 #: i18n/additional-localization.php:99
@@ -407,19 +407,19 @@ msgid "Ministry of Industries, Mines and Energy"
 msgstr ""
 
 #: i18n/additional-localization.php:104
-msgid "Ministry of Post & Telecommunication"
+msgid "Ministry of Posts and Telecommunications"
 msgstr ""
 
 #: i18n/additional-localization.php:105
-msgid "Ministry of Public Works & Transport"
+msgid "Ministry of Public Works and Transport"
 msgstr ""
 
 #: i18n/additional-localization.php:106
-msgid "Ministry of Parliamentary Affairs & Inspection"
+msgid "Ministry of National Assembly-Senate Relations and Inspection"
 msgstr ""
 
 #: i18n/additional-localization.php:107
-msgid "Ministry of Religions & Cults "
+msgid "Ministry of Cult and Religion "
 msgstr ""
 
 #: i18n/additional-localization.php:108
@@ -457,7 +457,7 @@ msgid "Parliament"
 msgstr ""
 
 #: i18n/additional-localization.php:116
-msgid "Provincial Council"
+msgid "Provincial-Capital Council"
 msgstr ""
 
 #: i18n/additional-localization.php:117
@@ -481,7 +481,7 @@ msgid "Phnom Penh Captial Hall"
 msgstr ""
 
 #: i18n/additional-localization.php:125
-msgid "Under negotitation"
+msgid "Under negotiation"
 msgstr ""
 
 #: i18n/additional-localization.php:126
@@ -975,7 +975,7 @@ msgid "Land use planning unit"
 msgstr ""
 
 #: i18n/additional-localization.php:255
-msgid "Parties obligations"
+msgid "Party's obligation in the implementation of the project"
 msgstr ""
 
 #: i18n/additional-localization.php:256
@@ -983,7 +983,7 @@ msgid "Job creation summary"
 msgstr ""
 
 #: i18n/additional-localization.php:257
-msgid "Job creation number"
+msgid "Number of created jobs"
 msgstr ""
 
 #: i18n/additional-localization.php:258
@@ -999,7 +999,7 @@ msgid "Environmental protection"
 msgstr ""
 
 #: i18n/additional-localization.php:261
-msgid "Sociocultural protection"
+msgid "Socio-cultural protection"
 msgstr ""
 
 #: i18n/additional-localization.php:262
@@ -1007,7 +1007,7 @@ msgid "Fiscal duties summary"
 msgstr ""
 
 #: i18n/additional-localization.php:263
-msgid "Fiscal duties number"
+msgid "Total amount of fiscal duties"
 msgstr ""
 
 #: i18n/additional-localization.php:264
@@ -1023,11 +1023,11 @@ msgid "Environmental fund summary"
 msgstr ""
 
 #: i18n/additional-localization.php:267
-msgid "Environmental funds"
+msgid "Total amount of environmental funds"
 msgstr ""
 
 #: i18n/additional-localization.php:268
-msgid "Suspension revocation termination"
+msgid "Suspension and/or revocation or termination​"
 msgstr ""
 
 #: i18n/additional-localization.php:269
