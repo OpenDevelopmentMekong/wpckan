@@ -136,7 +136,8 @@
 						<?php
 						 	if (wpckan_is_date($mapped_value)):
 								$parsed_date = date_parse($mapped_value);
-								$mapped_value = $parsed_date["month"] . "/" . $parsed_date["day"] . "/" . $parsed_date["year"];
+                $monthName = date('M', mktime(0, 0, 0, $parsed_date["month"], 10));
+								$mapped_value =  $parsed_date["day"] . " " . $monthName . " " . $parsed_date["year"];
 							endif;
 						?>
 
