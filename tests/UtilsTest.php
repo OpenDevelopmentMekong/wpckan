@@ -195,4 +195,34 @@ class UtilsTest extends PHPUnit_Framework_TestCase
       $result = wpckan_get_dataset_id_from_dataset_url("https://data.opendevelopmentmekong.net/dataset/123456?type=dataset?another_param=some_value");
       $this->assertEquals($result, "123456");
   }
+
+  public function testisDate1()
+  {
+      $result = wpckan_is_date("2017-01-06");
+      $this->assertEquals($result, true);
+  }
+
+	public function testisDate2()
+  {
+      $result = wpckan_is_date("2017-13-06");
+      $this->assertEquals($result, false);
+  }
+
+	public function testisDate3()
+  {
+      $result = wpckan_is_date("2017-02-06T04:20:33");
+      $this->assertEquals($result, true);
+  }
+
+	public function testisDate4()
+  {
+      $result = wpckan_is_date("2017/02/06");
+      $this->assertEquals($result, true);
+  }
+
+	public function testisDate5()
+  {
+      $result = wpckan_is_date("3.6. 2017");
+      $this->assertEquals($result, true);
+  }
 }
