@@ -320,6 +320,8 @@ msgid ""
 "Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
 "Economic Land Concessions"
 msgstr ""
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
+"Economic Land Concessions"
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
 msgid "Royal Government of the Kingdom of Cambodia"
@@ -423,7 +425,7 @@ msgstr "Ministry of Cult and Religion "
 
 #: i18n/additional-localization.php:108
 msgid "Ministry of Social Affairs, Veterans and Youth Rehabilitation"
-msgstr ""
+msgstr "Ministry of Social Affairs, Veterans and Youth Rehabilitation"
 
 #: i18n/additional-localization.php:109
 msgid "Ministry of Tourism"
@@ -1035,171 +1037,171 @@ msgstr "Related documents"
 
 #: i18n/additional-localization.php:270
 msgid "Related project"
-msgstr ""
+msgstr "Related project"
 
 #: i18n/additional-localization.php:272
 msgid "Contract"
-msgstr ""
+msgstr "Contract"
 
 #: i18n/additional-localization.php:273
 msgid "Contract Amendment"
-msgstr ""
+msgstr "Contract Amendment"
 
 #: i18n/additional-localization.php:274
 msgid "Contract Annex"
-msgstr ""
+msgstr "Contract Annex"
 
 #: i18n/additional-localization.php:275
 msgid "Contract Farming Agreement"
-msgstr ""
+msgstr "Contract Farming Agreement"
 
 #: i18n/additional-localization.php:276
 msgid "Energy Contract"
-msgstr ""
+msgstr "Energy Contract"
 
 #: i18n/additional-localization.php:277
 msgid "Exploration Permit/License"
-msgstr ""
+msgstr "Exploration Permit/License"
 
 #: i18n/additional-localization.php:278
 msgid "Exploitation/extraction permit or license"
-msgstr ""
+msgstr "Exploitation/extraction permit or license"
 
 #: i18n/additional-localization.php:279
 msgid "Forest Concession Contract"
-msgstr ""
+msgstr "Forest Concession Contract"
 
 #: i18n/additional-localization.php:280
 msgid "In-land Fishcatchment Concession Contract"
-msgstr ""
+msgstr "In-land Fishcatchment Concession Contract"
 
 #: i18n/additional-localization.php:281
 msgid "Infrastructure Contract"
-msgstr ""
+msgstr "Infrastructure Contract"
 
 #: i18n/additional-localization.php:282
 msgid "Investment Promotion Agreement"
-msgstr ""
+msgstr "Investment Promotion Agreement"
 
 #: i18n/additional-localization.php:283
 msgid "Joint Venture Agreement"
-msgstr ""
+msgstr "Joint Venture Agreement"
 
 #: i18n/additional-localization.php:284
 msgid "Land Concession Contract"
-msgstr ""
+msgstr "Land Concession Contract"
 
 #: i18n/additional-localization.php:285
 msgid "Memorandum of Understanding"
-msgstr ""
+msgstr "Memorandum of Understanding"
 
 #: i18n/additional-localization.php:286
 msgid "Maritime Fishcatchment Concession Contract"
-msgstr ""
+msgstr "Maritime Fishcatchment Concession Contract"
 
 #: i18n/additional-localization.php:287
 msgid "Other long-term leasing contract of State Assets"
-msgstr ""
+msgstr "Other long-term leasing contract of State Assets"
 
 #: i18n/additional-localization.php:288
 msgid "Production or Profit Sharing Agreement"
-msgstr ""
+msgstr "Production or Profit Sharing Agreement"
 
 #: i18n/additional-localization.php:289
 msgid "Service Contract"
-msgstr ""
+msgstr "Service Contract"
 
 #: i18n/additional-localization.php:290
 msgid "Social Land Concession"
-msgstr ""
+msgstr "Social Land Concession"
 
 #: i18n/additional-localization.php:292
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: i18n/additional-localization.php:293
 msgid "Khmer"
-msgstr ""
+msgstr "Khmer"
 
 #: i18n/additional-localization.php:294
 msgid "Vietnamese"
-msgstr ""
+msgstr "Vietnamese"
 
 #: i18n/additional-localization.php:295
 msgid "Thai"
-msgstr ""
+msgstr "Thai"
 
 #: i18n/additional-localization.php:296
 msgid "Burmese"
-msgstr ""
+msgstr "Burmese"
 
 #: i18n/additional-localization.php:297
 msgid "Lao"
-msgstr ""
+msgstr "Lao"
 
 #: i18n/additional-localization.php:299
 msgid "Years"
-msgstr ""
+msgstr "Years"
 
 #: i18n/additional-localization.php:300
 msgid "Months"
-msgstr ""
+msgstr "Months"
 
 #: i18n/additional-localization.php:301
 msgid "$/ha"
-msgstr ""
+msgstr "$/ha"
 
 #: i18n/additional-localization.php:302
 msgid "$/m2"
-msgstr ""
+msgstr "$/m2"
 
 #: i18n/additional-localization.php:303
 msgid "ha"
-msgstr ""
+msgstr "ha"
 
 #: i18n/additional-localization.php:304
 msgid "m2"
-msgstr ""
+msgstr "m2"
 
 #: i18n/additional-localization.php:305
 msgid "Released by government"
-msgstr ""
+msgstr "Released by government"
 
 #: i18n/additional-localization.php:306
 msgid "Released by company"
-msgstr ""
+msgstr "Released by company"
 
 #: i18n/additional-localization.php:307
 msgid "Released by media"
-msgstr ""
+msgstr "Released by media"
 
 #: i18n/additional-localization.php:308
 msgid "Released by international non-governmental organizations (INGOs)"
-msgstr ""
+msgstr "Released by international non-governmental organizations (INGOs)"
 
 #: i18n/additional-localization.php:309
 msgid "Released by local non-governmental organizations (LNGOs)"
-msgstr ""
+msgstr "Released by local non-governmental organizations (LNGOs)"
 
 #: i18n/additional-localization.php:310
 msgid "Released by international organizations (IOs)"
-msgstr ""
+msgstr "Released by international organizations (IOs)"
 
 #: i18n/additional-localization.php:311
 msgid "Released by United Nations agencies (UNs)"
-msgstr ""
+msgstr "Released by United Nations agencies (UNs)"
 
 #: i18n/additional-localization.php:312
 msgid "Released by academia"
-msgstr ""
+msgstr "Released by academia"
 
 #: i18n/additional-localization.php:313
 msgid "Released by think tanks"
-msgstr ""
+msgstr "Released by think tanks"
 
 #: i18n/additional-localization.php:314
 msgid "Other"
-msgstr ""
+msgstr "Other"
 
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
@@ -1340,13 +1342,15 @@ msgstr ""
 
 #: templates/settings.php:111
 msgid "Supported datatables"
-msgstr ""
+msgstr "Supported datatables"
 
 #: templates/settings.php:114
 msgid ""
 "Specify a list field_id => respurce_id mappings, separated by line breaks "
 "which define the mapping of a metadata field value to its label"
 msgstr ""
+"Specify a list field_id => respurce_id mappings, separated by line breaks "
+"which define the mapping of a metadata field value to its label"
 
 #: templates/settings.php:119
 msgid "Linked fields"
