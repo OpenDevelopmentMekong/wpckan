@@ -5,22 +5,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-02-28 17:39+0100\n"
-"PO-Revision-Date: 2017-02-28 17:39+0100\n"
+"POT-Creation-Date: 2017-03-06 19:01+0100\n"
+"PO-Revision-Date: 2017-03-06 19:01+0100\n"
 "Last-Translator: Huy Eng Heng <huyeng_heng@yahoo.com>, 2017\n"
 "Language-Team: Khmer (https://www.transifex.com/open-development-mekong/teams/27158/km/)\n"
+"Language: km\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: km\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: i18n\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: components\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
@@ -320,11 +320,9 @@ msgstr "អភិបាល/ក្រុមប្រឹក្សា ឃំុ-ស
 
 #: i18n/additional-localization.php:78
 msgid ""
-"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
-" Economic Land Concessions (ELCs)"
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the Economic Land "
+"Concessions"
 msgstr ""
-"គណៈកម្មាធិការអន្តរក្រសួង ដើម្បីត្រួតពិនិត្យ វាស់វែង "
-"និងវាយតម្លៃសម្បទានដីសេ្ឋកិច្ច"
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
 msgid "Royal Government of the Kingdom of Cambodia"
@@ -427,10 +425,8 @@ msgid "Ministry of Cult and Religion "
 msgstr "ក្រសួងធម្មការ និងសាសនា"
 
 #: i18n/additional-localization.php:108
-msgid ""
-"Ministry of Social Affairs, Labour, Vocational Training & Youth "
-"Rehabilitation"
-msgstr " ក្រសួង​សង្គមកិច្ច អតីត​យុទ្ធជន និង​យុវនីតិ​សម្បទា"
+msgid "Ministry of Social Affairs, Veterans and Youth Rehabilitation"
+msgstr ""
 
 #: i18n/additional-localization.php:109
 msgid "Ministry of Tourism"
@@ -569,12 +565,8 @@ msgid "Conference/workshop proceedings and presentations"
 msgstr "អត្ថបទ និងបទបង្ហាញសន្និសីទ និងសិក្ខាសាលា"
 
 #: i18n/additional-localization.php:148
-msgid ""
-"Reports, journal articles, and research papers (including theses and "
-"dissertations)"
-msgstr ""
-"របាយការណ៍ អត្ថបទទិនានុប្បវត្តិ និងអត្ថបទស្រាវជ្រាវ (រាប់បញ្ចូលទាំង និក្ខេបបទ"
-" និងបរមាធិប្បាយ)"
+msgid "Reports, journal articles, and research papers (including theses and dissertations)"
+msgstr "របាយការណ៍ អត្ថបទទិនានុប្បវត្តិ និងអត្ថបទស្រាវជ្រាវ (រាប់បញ្ចូលទាំង និក្ខេបបទ និងបរមាធិប្បាយ)"
 
 #: i18n/additional-localization.php:149
 msgid "Company profiles"
@@ -1041,8 +1033,172 @@ msgid "Related documents"
 msgstr "ឯកសារពាក់ព័ន្ធ"
 
 #: i18n/additional-localization.php:270
-msgid "Suspension related project"
-msgstr "ការផ្អាកដែលទាក់ទងនឹងគម្រោង"
+msgid "Related project"
+msgstr ""
+
+#: i18n/additional-localization.php:272
+msgid "Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:273
+msgid "Contract Amendment"
+msgstr ""
+
+#: i18n/additional-localization.php:274
+msgid "Contract Annex"
+msgstr ""
+
+#: i18n/additional-localization.php:275
+msgid "Contract Farming Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:276
+msgid "Energy Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:277
+msgid "Exploration Permit/License"
+msgstr ""
+
+#: i18n/additional-localization.php:278
+msgid "Exploitation/extraction permit or license"
+msgstr ""
+
+#: i18n/additional-localization.php:279
+msgid "Forest Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:280
+msgid "In-land Fishcatchment Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:281
+msgid "Infrastructure Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:282
+msgid "Investment Promotion Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:283
+msgid "Joint Venture Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:284
+msgid "Land Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:285
+msgid "Memorandum of Understanding"
+msgstr ""
+
+#: i18n/additional-localization.php:286
+msgid "Maritime Fishcatchment Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:287
+msgid "Other long-term leasing contract of State Assets"
+msgstr ""
+
+#: i18n/additional-localization.php:288
+msgid "Production or Profit Sharing Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:289
+msgid "Service Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:290
+msgid "Social Land Concession"
+msgstr ""
+
+#: i18n/additional-localization.php:292
+msgid "English"
+msgstr ""
+
+#: i18n/additional-localization.php:293
+msgid "Khmer"
+msgstr ""
+
+#: i18n/additional-localization.php:294
+msgid "Vietnamese"
+msgstr ""
+
+#: i18n/additional-localization.php:295
+msgid "Thai"
+msgstr ""
+
+#: i18n/additional-localization.php:296
+msgid "Burmese"
+msgstr ""
+
+#: i18n/additional-localization.php:297
+msgid "Lao"
+msgstr ""
+
+#: i18n/additional-localization.php:299
+msgid "Years"
+msgstr ""
+
+#: i18n/additional-localization.php:300
+msgid "Months"
+msgstr ""
+
+#: i18n/additional-localization.php:301
+msgid "$/ha"
+msgstr ""
+
+#: i18n/additional-localization.php:302
+msgid "$/m2"
+msgstr ""
+
+#: i18n/additional-localization.php:303
+msgid "ha"
+msgstr ""
+
+#: i18n/additional-localization.php:304
+msgid "m2"
+msgstr ""
+
+#: i18n/additional-localization.php:305
+msgid "Released by government"
+msgstr ""
+
+#: i18n/additional-localization.php:306
+msgid "Released by company"
+msgstr ""
+
+#: i18n/additional-localization.php:307
+msgid "Released by media"
+msgstr ""
+
+#: i18n/additional-localization.php:308
+msgid "Released by international non-governmental organizations (INGOs)"
+msgstr ""
+
+#: i18n/additional-localization.php:309
+msgid "Released by local non-governmental organizations (LNGOs)"
+msgstr ""
+
+#: i18n/additional-localization.php:310
+msgid "Released by international organizations (IOs)"
+msgstr ""
+
+#: i18n/additional-localization.php:311
+msgid "Released by United Nations agencies (UNs)"
+msgstr ""
+
+#: i18n/additional-localization.php:312
+msgid "Released by academia"
+msgstr ""
+
+#: i18n/additional-localization.php:313
+msgid "Released by think tanks"
+msgstr ""
+
+#: i18n/additional-localization.php:314
+msgid "Other"
+msgstr ""
 
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
@@ -1068,24 +1224,23 @@ msgstr "កំុរក្សាខ្លឹមសារទុកជាប័ណ
 msgid "Post is saved"
 msgstr "ការដាក់បង្ហោះត្រូវបានរក្សាទុក"
 
-#: templates/archive-post-metabox.php:44
-#: templates/related-datasets-metabox.php:15
+#: templates/archive-post-metabox.php:44 templates/related-datasets-metabox.php:15
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
-#: templates/dataset-detail.php:66
+#: templates/dataset-detail.php:67
 msgid "Resources"
 msgstr "ធនធាន"
 
-#: templates/dataset-detail.php:82
+#: templates/dataset-detail.php:83
 msgid "Download"
 msgstr "ទាញយក"
 
-#: templates/dataset-detail.php:89
+#: templates/dataset-detail.php:90
 msgid "Additional info"
 msgstr "ព័ត៌មាន​បន្ថែម"
 
-#: templates/dataset-detail.php:135
+#: templates/dataset-detail.php:160
 msgid "No metadata available for current dataset"
 msgstr "ពុំមានប្រវត្តិទិន្នន័យសម្រាប់សំណុំទិន្នន័យនេះទេ"
 
@@ -1093,184 +1248,190 @@ msgstr "ពុំមានប្រវត្តិទិន្នន័យសម
 msgid "Add related datasets"
 msgstr "បន្ថែមសំណុំទិន្នន័យពាក់ព័ន្ធ"
 
-#: templates/settings.php:40
+#: templates/settings.php:41
 msgid "Connecting to CKAN"
 msgstr "ភ្ជាប់ទៅកាន់មជ្ឈមណ្ឌលទិន្នន័យ CKAN"
 
-#: templates/settings.php:42
+#: templates/settings.php:43
 msgid "CKAN Url"
 msgstr "អាសយដ្ឋានគេហទំព័រ CKAN"
 
-#: templates/settings.php:45
+#: templates/settings.php:46
 msgid "Specify protocol such as http:// or https://."
 msgstr ""
 
-#: templates/settings.php:49
+#: templates/settings.php:50
 msgid "CKAN Api key"
 msgstr ""
 
-#: templates/settings.php:52
+#: templates/settings.php:53
 msgid "Available under the profile page of a CKAN user with Admin rights."
 msgstr ""
 
-#: templates/settings.php:57
+#: templates/settings.php:58
 msgid "Connection status"
 msgstr "ស្ថានភាពតភ្ជាប់"
 
-#: templates/settings.php:60
+#: templates/settings.php:61
 msgid "CKAN URL specified correctly."
 msgstr "អាសយដ្ឋានគេហទំព័រ CKAN បញ្ជាក់បានត្រឹមត្រូវ"
 
-#: templates/settings.php:62
+#: templates/settings.php:63
 msgid "Problem connecting to CKAN instance. Please, check the specified URL."
 msgstr "បញ្ហាតភ្ជាប់ទៅកាន់ CKAN។ សូមពិនិត្យមើល អាសយដ្ឋានគេហទំព័រ"
 
-#: templates/settings.php:65
+#: templates/settings.php:66
 msgid "CKAN API Key specified correctly."
 msgstr ""
 
-#: templates/settings.php:67
+#: templates/settings.php:68
 msgid "Please, specify a valid CKAN API Key."
 msgstr ""
 
-#: templates/settings.php:73
+#: templates/settings.php:74
 msgid "Supported post types"
 msgstr "ប្រភេទដាក់បង្ហោះទៅបាន"
 
-#: templates/settings.php:84
+#: templates/settings.php:85
 msgid "Dataset detail pages"
 msgstr "ទំព័រពិស្តារអំពីសំណុំទិន្នន័យ"
 
-#: templates/settings.php:86
+#: templates/settings.php:87
 msgid "Supported fields"
 msgstr "ពាក្យអាចជ្រើសបាន"
 
-#: templates/settings.php:88
+#: templates/settings.php:89
 msgid "title, description, license_url, ..."
 msgstr ""
 
-#: templates/settings.php:89
+#: templates/settings.php:90
 msgid ""
-"Specify a list of Comma-separated field names to show on the additional data"
-" section. Mind order."
+"Specify a list of Comma-separated field names to show on the additional data section. Mind "
+"order."
 msgstr ""
 
-#: templates/settings.php:94
+#: templates/settings.php:95
 msgid "Field mappings for keys"
 msgstr ""
 
-#: templates/settings.php:97
+#: templates/settings.php:98
 msgid ""
-"Specify a list key => value mappings, separated by line breaks which define "
-"the mapping of a metadata field key to its label"
+"Specify a list key => value mappings, separated by line breaks which define the mapping of "
+"a metadata field key to its label"
 msgstr ""
 
-#: templates/settings.php:102
+#: templates/settings.php:103
 msgid "Field mappings for values"
 msgstr ""
 
-#: templates/settings.php:105
+#: templates/settings.php:106
 msgid ""
-"Specify a list value => value mappings, separated by line breaks which "
-"define the mapping of a metadata field value to its label"
+"Specify a list value => value mappings, separated by line breaks which define the mapping "
+"of a metadata field value to its label"
 msgstr ""
 
-#: templates/settings.php:110
+#: templates/settings.php:111
+msgid "Supported datatables"
+msgstr ""
+
+#: templates/settings.php:114
+msgid ""
+"Specify a list field_id => respurce_id mappings, separated by line breaks which define the "
+"mapping of a metadata field value to its label"
+msgstr ""
+
+#: templates/settings.php:119
 msgid "Linked fields"
 msgstr ""
 
-#: templates/settings.php:112
+#: templates/settings.php:121
 msgid ""
 "odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
 "odm_laws_parent_document, ..."
 msgstr ""
 
-#: templates/settings.php:113
+#: templates/settings.php:122
 msgid ""
-"Specify a list of Comma-separated field names containing ids to link to "
-"other datasets."
+"Specify a list of Comma-separated field names containing ids to link to other datasets."
 msgstr ""
 
-#: templates/settings.php:118
+#: templates/settings.php:127
 msgid "Enable url redirection"
 msgstr ""
 
-#: templates/settings.php:121
-msgid ""
-"if checked, links to datasets, resources and organizations will be "
-"redirected to /"
+#: templates/settings.php:130
+msgid "if checked, links to datasets, resources and organizations will be redirected to /"
 msgstr ""
 
-#: templates/settings.php:125
+#: templates/settings.php:134
 msgid "Open datasets in new tab"
 msgstr "បើកសំណំុទិន្នន័យនៅលើផ្ទាំងថ្មី"
 
-#: templates/settings.php:128
+#: templates/settings.php:137
 msgid "if checked, links to datasets will be opened in a new tab/window"
 msgstr "ប្រសិនជ្រើសយក តំណទៅកាន់សំណំុទិន្នន័យនឹងបើកនៅលើផ្ទាំងថ្មី"
 
-#: templates/settings.php:133
+#: templates/settings.php:142
 msgid "Ckanext-fluent support"
 msgstr ""
 
-#: templates/settings.php:135
+#: templates/settings.php:144
 msgid "Is ckanext-fluent enabled in the CKAN instance?"
 msgstr ""
 
-#: templates/settings.php:138
+#: templates/settings.php:147
 msgid ""
-"Activate for enabling multilingual functionalities. Visit "
-"https://github.com/ckan/ckanext-fluent in case you do not know the ckanext-"
-"fluent extensions"
+"Activate for enabling multilingual functionalities. Visit https://github.com/ckan/ckanext-"
+"fluent in case you do not know the ckanext-fluent extensions"
 msgstr ""
 
-#: templates/settings.php:142
+#: templates/settings.php:151
 msgid "Fluent fields"
 msgstr ""
 
-#: templates/settings.php:145
+#: templates/settings.php:154
 msgid ""
-"Specify a list of Comma-separated field names which are marked as fluent. "
-"See https://github.com/open-data/ckanext-fluent/"
+"Specify a list of Comma-separated field names which are marked as fluent. See https://"
+"github.com/open-data/ckanext-fluent/"
 msgstr ""
 
-#: templates/settings.php:150
+#: templates/settings.php:159
 msgid "Caching"
 msgstr ""
 
-#: templates/settings.php:152
+#: templates/settings.php:161
 msgid "Enable caching for API requests"
 msgstr ""
 
-#: templates/settings.php:158
+#: templates/settings.php:167
 msgid "Cache file path"
 msgstr ""
 
-#: templates/settings.php:161
+#: templates/settings.php:170
 msgid "Path where cached files are going to be stored. Mind permissions."
 msgstr ""
 
-#: templates/settings.php:165
+#: templates/settings.php:174
 msgid "Cache time"
 msgstr ""
 
-#: templates/settings.php:168
+#: templates/settings.php:177
 msgid "Time in milisecons cached versions will be kept."
 msgstr ""
 
-#: templates/settings.php:172
+#: templates/settings.php:181
 msgid "Logging"
 msgstr ""
 
-#: templates/settings.php:174
+#: templates/settings.php:183
 msgid "Enable log"
 msgstr ""
 
-#: templates/settings.php:180
+#: templates/settings.php:189
 msgid "Log file path"
 msgstr ""
 
-#: templates/settings.php:183
+#: templates/settings.php:192
 msgid "Path where logs are going to be stored. Mind permissions."
 msgstr ""
 
@@ -1287,31 +1448,25 @@ msgid "WPCKAN Query resources by post's category"
 msgstr ""
 
 #: widgets/query-resources-by-category-widget.php:13
-msgid ""
-"Queries CKAN for datasets with the post's category as value for the field "
-"specified."
+msgid "Queries CKAN for datasets with the post's category as value for the field specified."
 msgstr ""
 
 #: widgets/query-resources-by-category-widget.php:108
 msgid "Custom posts"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:120
-#: widgets/query-resources-widget.php:117
+#: widgets/query-resources-by-category-widget.php:120 widgets/query-resources-widget.php:117
 #: widgets/related-datasets-widget.php:102
 msgid "Title:"
 msgstr "ចំណងជើង៖"
 
-#: widgets/query-resources-by-category-widget.php:124
-#: widgets/query-resources-widget.php:121
+#: widgets/query-resources-by-category-widget.php:124 widgets/query-resources-widget.php:121
 #: widgets/related-datasets-widget.php:104
 msgid "CKAN Organization:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:126
-#: widgets/query-resources-widget.php:123
-#: widgets/query-resources-widget.php:130
-#: widgets/related-datasets-widget.php:106
+#: widgets/query-resources-by-category-widget.php:126 widgets/query-resources-widget.php:123
+#: widgets/query-resources-widget.php:130 widgets/related-datasets-widget.php:106
 #: widgets/related-datasets-widget.php:113
 msgid "All"
 msgstr "ទាំងអស់"
@@ -1320,14 +1475,12 @@ msgstr "ទាំងអស់"
 msgid "Search field:"
 msgstr "ស្វែងរកពាក្យ៖"
 
-#: widgets/query-resources-by-category-widget.php:140
-#: widgets/query-resources-widget.php:137
+#: widgets/query-resources-by-category-widget.php:140 widgets/query-resources-widget.php:137
 #: widgets/related-datasets-widget.php:120
 msgid "Dataset type:"
 msgstr "ប្រភេទទិន្នន័យ"
 
-#: widgets/query-resources-by-category-widget.php:141
-#: widgets/query-resources-widget.php:138
+#: widgets/query-resources-by-category-widget.php:141 widgets/query-resources-widget.php:138
 #: widgets/related-datasets-widget.php:121
 msgid "dataset, library_record, etc.."
 msgstr ""
@@ -1336,20 +1489,17 @@ msgstr ""
 msgid "Select max number of posts to list (-1 to show all):"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:154
-#: widgets/query-resources-widget.php:147
+#: widgets/query-resources-by-category-widget.php:154 widgets/query-resources-widget.php:147
 #: widgets/related-datasets-widget.php:126
 msgid "Output fields for dataset:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:158
-#: widgets/query-resources-widget.php:151
+#: widgets/query-resources-by-category-widget.php:158 widgets/query-resources-widget.php:151
 #: widgets/related-datasets-widget.php:130
 msgid "Output fields for resources:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:162
-#: widgets/query-resources-widget.php:155
+#: widgets/query-resources-by-category-widget.php:162 widgets/query-resources-widget.php:155
 #: widgets/related-datasets-widget.php:134
 msgid "Order by:"
 msgstr ""
@@ -1362,8 +1512,7 @@ msgstr ""
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: widgets/query-resources-widget.php:87
-#: widgets/related-datasets-widget.php:77
+#: widgets/query-resources-widget.php:87 widgets/related-datasets-widget.php:77
 msgid "Related datasets"
 msgstr "ទិន្នន័យពាក់ព័ន្ធ"
 
@@ -1371,23 +1520,19 @@ msgstr "ទិន្នន័យពាក់ព័ន្ធ"
 msgid "Query:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:128
-#: widgets/related-datasets-widget.php:111
+#: widgets/query-resources-widget.php:128 widgets/related-datasets-widget.php:111
 msgid "CKAN Group:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:135
-#: widgets/related-datasets-widget.php:118
+#: widgets/query-resources-widget.php:135 widgets/related-datasets-widget.php:118
 msgid "Additional filtering:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:136
-#: widgets/related-datasets-widget.php:119
+#: widgets/query-resources-widget.php:136 widgets/related-datasets-widget.php:119
 msgid "Specify valid JSON, otherwise not saved"
 msgstr ""
 
-#: widgets/query-resources-widget.php:139
-#: widgets/related-datasets-widget.php:122
+#: widgets/query-resources-widget.php:139 widgets/related-datasets-widget.php:122
 msgid "Limit:"
 msgstr ""
 
@@ -1415,6 +1560,17 @@ msgstr "បន្ថែមទិន្នន័យ CKAN ពាក់ព័ន្
 msgid "Archive Post as CKAN dataset"
 msgstr "រក្សាទុកការដាក់បង្ហោះជាសំណំុទិន្នន័យ CKAN"
 
-#: wpckan.php:284
+#: wpckan.php:285
 msgid "You do not have sufficient permissions to access this page."
 msgstr "លោកអ្នក មិនមានការអនុញ្ញាតគ្រប់គ្រាន់ដើម្បីចូលអានទំព័រនេះទេ"
+
+#~ msgid ""
+#~ "Inter-Ministerial Committee for Assessment Measurement and Evaluation of the Economic "
+#~ "Land Concessions (ELCs)"
+#~ msgstr "គណៈកម្មាធិការអន្តរក្រសួង ដើម្បីត្រួតពិនិត្យ វាស់វែង និងវាយតម្លៃសម្បទានដីសេ្ឋកិច្ច"
+
+#~ msgid "Ministry of Social Affairs, Labour, Vocational Training & Youth Rehabilitation"
+#~ msgstr " ក្រសួង​សង្គមកិច្ច អតីត​យុទ្ធជន និង​យុវនីតិ​សម្បទា"
+
+#~ msgid "Suspension related project"
+#~ msgstr "ការផ្អាកដែលទាក់ទងនឹងគម្រោង"

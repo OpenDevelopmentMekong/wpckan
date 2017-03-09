@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-02-28 17:26+0100\n"
+"POT-Creation-Date: 2017-03-06 19:01+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: my\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
@@ -319,7 +319,7 @@ msgstr ""
 #: i18n/additional-localization.php:78
 msgid ""
 "Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
-"Economic Land Concessions (ELCs)"
+"Economic Land Concessions"
 msgstr ""
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
@@ -423,9 +423,7 @@ msgid "Ministry of Cult and Religion "
 msgstr ""
 
 #: i18n/additional-localization.php:108
-msgid ""
-"Ministry of Social Affairs, Labour, Vocational Training & Youth "
-"Rehabilitation"
+msgid "Ministry of Social Affairs, Veterans and Youth Rehabilitation"
 msgstr ""
 
 #: i18n/additional-localization.php:109
@@ -1035,7 +1033,171 @@ msgid "Related documents"
 msgstr ""
 
 #: i18n/additional-localization.php:270
-msgid "Suspension related project"
+msgid "Related project"
+msgstr ""
+
+#: i18n/additional-localization.php:272
+msgid "Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:273
+msgid "Contract Amendment"
+msgstr ""
+
+#: i18n/additional-localization.php:274
+msgid "Contract Annex"
+msgstr ""
+
+#: i18n/additional-localization.php:275
+msgid "Contract Farming Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:276
+msgid "Energy Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:277
+msgid "Exploration Permit/License"
+msgstr ""
+
+#: i18n/additional-localization.php:278
+msgid "Exploitation/extraction permit or license"
+msgstr ""
+
+#: i18n/additional-localization.php:279
+msgid "Forest Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:280
+msgid "In-land Fishcatchment Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:281
+msgid "Infrastructure Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:282
+msgid "Investment Promotion Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:283
+msgid "Joint Venture Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:284
+msgid "Land Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:285
+msgid "Memorandum of Understanding"
+msgstr ""
+
+#: i18n/additional-localization.php:286
+msgid "Maritime Fishcatchment Concession Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:287
+msgid "Other long-term leasing contract of State Assets"
+msgstr ""
+
+#: i18n/additional-localization.php:288
+msgid "Production or Profit Sharing Agreement"
+msgstr ""
+
+#: i18n/additional-localization.php:289
+msgid "Service Contract"
+msgstr ""
+
+#: i18n/additional-localization.php:290
+msgid "Social Land Concession"
+msgstr ""
+
+#: i18n/additional-localization.php:292
+msgid "English"
+msgstr ""
+
+#: i18n/additional-localization.php:293
+msgid "Khmer"
+msgstr ""
+
+#: i18n/additional-localization.php:294
+msgid "Vietnamese"
+msgstr ""
+
+#: i18n/additional-localization.php:295
+msgid "Thai"
+msgstr ""
+
+#: i18n/additional-localization.php:296
+msgid "Burmese"
+msgstr ""
+
+#: i18n/additional-localization.php:297
+msgid "Lao"
+msgstr ""
+
+#: i18n/additional-localization.php:299
+msgid "Years"
+msgstr ""
+
+#: i18n/additional-localization.php:300
+msgid "Months"
+msgstr ""
+
+#: i18n/additional-localization.php:301
+msgid "$/ha"
+msgstr ""
+
+#: i18n/additional-localization.php:302
+msgid "$/m2"
+msgstr ""
+
+#: i18n/additional-localization.php:303
+msgid "ha"
+msgstr ""
+
+#: i18n/additional-localization.php:304
+msgid "m2"
+msgstr ""
+
+#: i18n/additional-localization.php:305
+msgid "Released by government"
+msgstr ""
+
+#: i18n/additional-localization.php:306
+msgid "Released by company"
+msgstr ""
+
+#: i18n/additional-localization.php:307
+msgid "Released by media"
+msgstr ""
+
+#: i18n/additional-localization.php:308
+msgid "Released by international non-governmental organizations (INGOs)"
+msgstr ""
+
+#: i18n/additional-localization.php:309
+msgid "Released by local non-governmental organizations (LNGOs)"
+msgstr ""
+
+#: i18n/additional-localization.php:310
+msgid "Released by international organizations (IOs)"
+msgstr ""
+
+#: i18n/additional-localization.php:311
+msgid "Released by United Nations agencies (UNs)"
+msgstr ""
+
+#: i18n/additional-localization.php:312
+msgid "Released by academia"
+msgstr ""
+
+#: i18n/additional-localization.php:313
+msgid "Released by think tanks"
+msgstr ""
+
+#: i18n/additional-localization.php:314
+msgid "Other"
 msgstr ""
 
 #: templates/archive-post-metabox.php:18
@@ -1067,19 +1229,19 @@ msgstr ""
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
-#: templates/dataset-detail.php:66
+#: templates/dataset-detail.php:67
 msgid "Resources"
 msgstr ""
 
-#: templates/dataset-detail.php:82
+#: templates/dataset-detail.php:83
 msgid "Download"
 msgstr ""
 
-#: templates/dataset-detail.php:89
+#: templates/dataset-detail.php:90
 msgid "Additional info"
 msgstr ""
 
-#: templates/dataset-detail.php:135
+#: templates/dataset-detail.php:160
 msgid "No metadata available for current dataset"
 msgstr ""
 
@@ -1087,183 +1249,193 @@ msgstr ""
 msgid "Add related datasets"
 msgstr ""
 
-#: templates/settings.php:40
+#: templates/settings.php:41
 msgid "Connecting to CKAN"
 msgstr ""
 
-#: templates/settings.php:42
+#: templates/settings.php:43
 msgid "CKAN Url"
 msgstr ""
 
-#: templates/settings.php:45
+#: templates/settings.php:46
 msgid "Specify protocol such as http:// or https://."
 msgstr ""
 
-#: templates/settings.php:49
+#: templates/settings.php:50
 msgid "CKAN Api key"
 msgstr ""
 
-#: templates/settings.php:52
+#: templates/settings.php:53
 msgid "Available under the profile page of a CKAN user with Admin rights."
 msgstr ""
 
-#: templates/settings.php:57
+#: templates/settings.php:58
 msgid "Connection status"
 msgstr ""
 
-#: templates/settings.php:60
+#: templates/settings.php:61
 msgid "CKAN URL specified correctly."
 msgstr ""
 
-#: templates/settings.php:62
+#: templates/settings.php:63
 msgid "Problem connecting to CKAN instance. Please, check the specified URL."
 msgstr ""
 
-#: templates/settings.php:65
+#: templates/settings.php:66
 msgid "CKAN API Key specified correctly."
 msgstr ""
 
-#: templates/settings.php:67
+#: templates/settings.php:68
 msgid "Please, specify a valid CKAN API Key."
 msgstr ""
 
-#: templates/settings.php:73
+#: templates/settings.php:74
 msgid "Supported post types"
 msgstr ""
 
-#: templates/settings.php:84
+#: templates/settings.php:85
 msgid "Dataset detail pages"
 msgstr ""
 
-#: templates/settings.php:86
+#: templates/settings.php:87
 msgid "Supported fields"
 msgstr ""
 
-#: templates/settings.php:88
+#: templates/settings.php:89
 msgid "title, description, license_url, ..."
 msgstr ""
 
-#: templates/settings.php:89
+#: templates/settings.php:90
 msgid ""
 "Specify a list of Comma-separated field names to show on the additional data "
 "section. Mind order."
 msgstr ""
 
-#: templates/settings.php:94
+#: templates/settings.php:95
 msgid "Field mappings for keys"
 msgstr ""
 
-#: templates/settings.php:97
+#: templates/settings.php:98
 msgid ""
 "Specify a list key => value mappings, separated by line breaks which define "
 "the mapping of a metadata field key to its label"
 msgstr ""
 
-#: templates/settings.php:102
+#: templates/settings.php:103
 msgid "Field mappings for values"
 msgstr ""
 
-#: templates/settings.php:105
+#: templates/settings.php:106
 msgid ""
 "Specify a list value => value mappings, separated by line breaks which "
 "define the mapping of a metadata field value to its label"
 msgstr ""
 
-#: templates/settings.php:110
+#: templates/settings.php:111
+msgid "Supported datatables"
+msgstr ""
+
+#: templates/settings.php:114
+msgid ""
+"Specify a list field_id => respurce_id mappings, separated by line breaks "
+"which define the mapping of a metadata field value to its label"
+msgstr ""
+
+#: templates/settings.php:119
 msgid "Linked fields"
 msgstr ""
 
-#: templates/settings.php:112
+#: templates/settings.php:121
 msgid ""
 "odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
 "odm_laws_parent_document, ..."
 msgstr ""
 
-#: templates/settings.php:113
+#: templates/settings.php:122
 msgid ""
 "Specify a list of Comma-separated field names containing ids to link to "
 "other datasets."
 msgstr ""
 
-#: templates/settings.php:118
+#: templates/settings.php:127
 msgid "Enable url redirection"
 msgstr ""
 
-#: templates/settings.php:121
+#: templates/settings.php:130
 msgid ""
 "if checked, links to datasets, resources and organizations will be "
 "redirected to /"
 msgstr ""
 
-#: templates/settings.php:125
+#: templates/settings.php:134
 msgid "Open datasets in new tab"
 msgstr ""
 
-#: templates/settings.php:128
+#: templates/settings.php:137
 msgid "if checked, links to datasets will be opened in a new tab/window"
 msgstr ""
 
-#: templates/settings.php:133
+#: templates/settings.php:142
 msgid "Ckanext-fluent support"
 msgstr ""
 
-#: templates/settings.php:135
+#: templates/settings.php:144
 msgid "Is ckanext-fluent enabled in the CKAN instance?"
 msgstr ""
 
-#: templates/settings.php:138
+#: templates/settings.php:147
 msgid ""
 "Activate for enabling multilingual functionalities. Visit https://github.com/"
 "ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions"
 msgstr ""
 
-#: templates/settings.php:142
+#: templates/settings.php:151
 msgid "Fluent fields"
 msgstr ""
 
-#: templates/settings.php:145
+#: templates/settings.php:154
 msgid ""
 "Specify a list of Comma-separated field names which are marked as fluent. "
 "See https://github.com/open-data/ckanext-fluent/"
 msgstr ""
 
-#: templates/settings.php:150
+#: templates/settings.php:159
 msgid "Caching"
 msgstr ""
 
-#: templates/settings.php:152
+#: templates/settings.php:161
 msgid "Enable caching for API requests"
 msgstr ""
 
-#: templates/settings.php:158
+#: templates/settings.php:167
 msgid "Cache file path"
 msgstr ""
 
-#: templates/settings.php:161
+#: templates/settings.php:170
 msgid "Path where cached files are going to be stored. Mind permissions."
 msgstr ""
 
-#: templates/settings.php:165
+#: templates/settings.php:174
 msgid "Cache time"
 msgstr ""
 
-#: templates/settings.php:168
+#: templates/settings.php:177
 msgid "Time in milisecons cached versions will be kept."
 msgstr ""
 
-#: templates/settings.php:172
+#: templates/settings.php:181
 msgid "Logging"
 msgstr ""
 
-#: templates/settings.php:174
+#: templates/settings.php:183
 msgid "Enable log"
 msgstr ""
 
-#: templates/settings.php:180
+#: templates/settings.php:189
 msgid "Log file path"
 msgstr ""
 
-#: templates/settings.php:183
+#: templates/settings.php:192
 msgid "Path where logs are going to be stored. Mind permissions."
 msgstr ""
 
@@ -1407,6 +1579,6 @@ msgstr ""
 msgid "Archive Post as CKAN dataset"
 msgstr ""
 
-#: wpckan.php:284
+#: wpckan.php:285
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
