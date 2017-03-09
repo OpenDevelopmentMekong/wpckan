@@ -55,7 +55,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
     $output_fields = isset($instance['output_fields']) ? $instance['output_fields'] : 'title';
     $output_fields_resources = isset($instance['output_fields_resources']) ? $instance['output_fields_resources'] : '';
 
-		$filter_value = "(" . implode(" OR ", $categories_names) . ")";
+		$filter_value = "(\"" . implode("\" OR \"", $categories_names) . "\")";
 
 		if (!empty($categories_names) && !(empty($search_field))):
 
