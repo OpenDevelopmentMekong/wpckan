@@ -100,11 +100,6 @@ class UtilsTest extends PHPUnit_Framework_TestCase
     $this->assertContains($arguments,"&rows=10&start=10&sort=metadata_modified+desc");
   }
 
-  public function testSafeUrlEncode(){
-    $result = wpckan_safe_url_encode("corn (mais)");
-    $this->assertEquals($result,"corn+(mais)");
-  }
-
   public function testGetExtension()
   {
       $result = wpckan_get_url_extension("http://domain.com/file.ext");

@@ -334,15 +334,6 @@
     return $arguments;
   }
 
-  function wpckan_safe_url_encode($string){
-   $string = str_replace("(","--OPEN_PARENTHESIS--",$string);
-   $string = str_replace(")","--CLOSE_PARENTHESIS--",$string);
-   $string =  urlencode($string);
-   $string = str_replace("--OPEN_PARENTHESIS--","(",$string);
-   $string = str_replace("--CLOSE_PARENTHESIS--",")",$string);
-   return $string;
-  }
-
   function wpckan_do_curl($url)
   {
     if(function_exists("curl_init")){

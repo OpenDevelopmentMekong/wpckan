@@ -59,7 +59,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 		if (!empty($categories_names) && !(empty($search_field))):
 
-			$shortcode = '[wpckan_query_datasets filter_fields=\'{"'. $search_field .'":"' . wpckan_safe_url_encode($filter_value) . '"}\'';
+			$shortcode = '[wpckan_query_datasets filter_fields=\'{"'. $search_field .'":"' . urlencode($filter_value) . '"}\'';
 
 			if (!empty($instance['organization']) && $instance['organization'] != '-1'):
         $shortcode .= ' organization="'.$instance['organization'].'"';
