@@ -257,7 +257,7 @@
 
     // query
     if (isset($attrs['query'])):
-      $arguments .= '&q="'.urlencode($attrs['query']) . '"';
+      $arguments .= 'q="'. urlencode($attrs['query']) . '"';
     endif;
 
     $fq = "";
@@ -296,6 +296,7 @@
             $taxonomy_top_tier = odm_taxonomy_manager()->get_taxonomy_top_tier();
             if (array_key_exists($value,$taxonomy_top_tier)):
               $value = "(\"" . implode("\" OR \"", $taxonomy_top_tier[$value]) . "\")";
+              $value = urlencode($value);
             endif;
           endif;
           $fq = $fq . '+' . $field . ':' . $value;
@@ -331,6 +332,22 @@
     $arguments .= '&sort=' . $sort;
 
     return $arguments;
+  }
+
+  function wpckan_do_curl($url)
+  {
+    if(function_exists("curl_init")){
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+      curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+      $content = curl_exec($ch);
+      curl_close($ch);
+      return $content;
+    } else {
+      return @file_get_contents($url);
+    }
   }
 
   function wpckan_is_supported_post_type($post_type){
@@ -555,7 +572,7 @@
 
   function wpckan_get_license_list(){
     $path_to_license_file = wpckan_get_ckan_domain() . '/licenses.json';
-		$json_file = file_get_contents($path_to_license_file);
+		$json_file = wpckan_do_curl($path_to_license_file);
 		return json_decode($json_file);
   }
 
