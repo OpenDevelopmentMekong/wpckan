@@ -258,8 +258,6 @@
     // query
     if (isset($attrs['query'])):
       $arguments .= 'q="'. urlencode($attrs['query']) . '"';
-    else:
-      $arguments .= 'q='. urlencode("*:*");
     endif;
 
     $fq = "";
