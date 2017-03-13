@@ -355,7 +355,7 @@
       curl_close($ch);
       return $content;
     } else {
-      return file_get_contents($url);
+      return @file_get_contents($url);
     }
   }
 
