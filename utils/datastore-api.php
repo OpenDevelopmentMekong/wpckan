@@ -8,7 +8,7 @@
    wpckan_log("wpckan_get_or_cache url:" . $url . " id: " . $hashed_id);
 
    if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled')):
-     $json = @file_get_contents($url);
+     $json = wpckan_do_curl($url);
    else:
      $json = $GLOBALS['cache']->get_data($hashed_id,$url);
 
