@@ -257,9 +257,9 @@
 
     // query
     if (isset($attrs['query'])):
-      $arguments .= '&q="'.urlencode($attrs['query']) . '"';
+      $arguments .= '?q="'.urlencode($attrs['query']) . '"';
     else:
-      $arguments .= '&q=*:*';
+      $arguments .= '?q=*:*';
     endif;
 
     $fq = "";
