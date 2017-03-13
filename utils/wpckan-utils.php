@@ -257,7 +257,7 @@
 
     // query
     if (isset($attrs['query'])):
-      $arguments .= 'q="'. urlencode($attrs['query']) . '"';
+      $arguments .= 'q="'. wpckan_safe_url_encode($attrs['query']) . '"';
     endif;
 
     $fq = "";
@@ -295,7 +295,8 @@
           if ($field == "extras_taxonomy"):
             $taxonomy_top_tier = odm_taxonomy_manager()->get_taxonomy_top_tier();
             if (array_key_exists($value,$taxonomy_top_tier)):
-              $value = "(\"" . urlencode(implode("\" OR \"", $taxonomy_top_tier[$value])) . "\")";
+              $value = "(\"" . implode("\" OR \"", $taxonomy_top_tier[$value]) . "\")";
+              $value = wpckan_safe_url_encode($value);
             endif;
           endif;
           $fq = $fq . '+' . $field . ':' . $value;
@@ -331,6 +332,15 @@
     $arguments .= '&sort=' . $sort;
 
     return $arguments;
+  }
+
+  function wpckan_safe_url_encode($string){
+   $string = str_replace("(","--OPEN_PARENTHESIS--",$string);
+   $string = str_replace(")","--CLOSE_PARENTHESIS--",$string);
+   $string =  urlencode($string);
+   $string = str_replace("--OPEN_PARENTHESIS--","(",$string);
+   $string = str_replace("--CLOSE_PARENTHESIS--",")",$string);
+   return $string;
   }
 
   function wpckan_is_supported_post_type($post_type){
