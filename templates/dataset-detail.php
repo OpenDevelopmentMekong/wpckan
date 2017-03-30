@@ -37,7 +37,7 @@
 
 	<!-- Organization -->
   <?php if (isset($data['organization']['title']) && (odm_country_manager()->get_current_country()=="mekong")): ?>
-    <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], 'wpckan') ?></h3>
+    <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], 'odi') ?></h3>
   <?php endif; ?>
 
 	<!-- Tags -->
@@ -64,7 +64,7 @@
   <?php endif; ?>
 
   <!-- Resources -->
-	<h2><?php _e('Resources', 'wpckan') ?></h2>
+	<h2><?php _e('Resources', 'odi') ?></h2>
 	<table class="wpckan_dataset_resources">
     <?php foreach ($data['resources'] as $resource): ?>
   		<tr class="wpckan_dataset_resource">
@@ -80,14 +80,14 @@
           <?php endif; ?>
         </td>
         <td class="wpckan_dataset_resource_url"><?php if (isset($resource['url'])): ?>
-          <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>"><?php _e('Download', 'wpckan') ?></a>
+          <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>"><?php _e('Download', 'odi') ?></a>
         <?php endif; ?></td>
   		</tr>
     <?php endforeach; ?>
   </table>
 
 	<!-- Metadata -->
-	<h2><?php _e('Additional info', 'wpckan') ?></h2>
+	<h2><?php _e('Additional info', 'odi') ?></h2>
   <table class="wpckan_dataset_metadata_fields">
     <?php
         $metadata_available = false;
@@ -144,11 +144,11 @@
             <?php
             if (!empty($mapped_value)):
               if (in_array($key,$linked_fields)):
-                echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
+                echo '<td><p>'.__($mapped_key, 'odi').'</p></td>';
                 echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
               else:
-                echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-                echo '<td><p>'.__($mapped_value, 'wpckan').'</p></td>';
+                echo '<td><p>'.__($mapped_key, 'odi').'</p></td>';
+                echo '<td><p>'.__($mapped_value, 'odi').'</p></td>';
               endif;
             endif;
             ?>
@@ -157,7 +157,7 @@
           <?php endforeach;
 
           if ($metadata_available == false):
-            echo '<p>'.__('No metadata available for current dataset','wpckan').'</p>';
+            echo '<p>'.__('No metadata available for current dataset','odi').'</p>';
           endif;
         ?>
 

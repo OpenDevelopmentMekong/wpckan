@@ -15,32 +15,32 @@
         }
   ?>
 
-  <label for="wpckan_archive_post_orga"><b><?php _e('CKAN Organization','wpckan') ?></b></label>
+  <label for="wpckan_archive_post_orga"><b><?php _e('CKAN Organization','odi') ?></b></label>
   <p><select name="wpckan_archive_post_orga" id="wpckan_archive_post_orga">
-    <option <?php if($archive_orga == -1) echo 'selected="selected"' ?> value="-1"><?php _e('None','wpckan')?></option>
+    <option <?php if($archive_orga == -1) echo 'selected="selected"' ?> value="-1"><?php _e('None','odi')?></option>
     <?php foreach ($organization_list as $organization){ ?>
       <?php if (in_array($organization["display_name"],$organization_names)) { ?>
         <option <?php if($archive_orga == $organization["id"]) echo 'selected="selected"' ?> value="<?php echo $organization["id"] ?>"><?php echo $organization["display_name"]?></option>
       <?php } ?>
     <?php } ?>
   </select></p>
-  <label for="wpckan_setting_ckan_group"><b><?php _e('CKAN Group','wpckan') ?></b></label>
+  <label for="wpckan_setting_ckan_group"><b><?php _e('CKAN Group','odi') ?></b></label>
   <p><select name="wpckan_archive_post_group" id="wpckan_archive_post_group">
-    <option <?php if($archive_group == -1) echo 'selected="selected"' ?> value="-1"><?php _e('None','wpckan')?></option>
+    <option <?php if($archive_group == -1) echo 'selected="selected"' ?> value="-1"><?php _e('None','odi')?></option>
     <?php foreach ($group_list as $group){ ?>
       <?php if (in_array($group["display_name"],$group_names)) { ?>
         <option <?php if($archive_group == $group["id"]) echo 'selected="selected"' ?> value="<?php echo $group["id"] ?>"><?php echo $group["display_name"]?></option>
       <?php } ?>
     <?php } ?>
   </select></p>
-  <label for"wpckan_archive_post_freq"><b><?php _e('Archive contents when:','wpckan') ?></b></label>
+  <label for"wpckan_archive_post_freq"><b><?php _e('Archive contents when:','odi') ?></b></label>
   <p><select name="wpckan_archive_post_freq" id="wpckan_archive_post_freq">
-    <option value="0" <?php if($archive_freq == 0) echo 'selected="selected"' ?>><?php _e('Never archive','wpckan' )?></option>
-    <option value="1" <?php if($archive_freq == 1) echo 'selected="selected"' ?>><?php _e('Post is saved','wpckan') ?></option>
+    <option value="0" <?php if($archive_freq == 0) echo 'selected="selected"' ?>><?php _e('Never archive','odi' )?></option>
+    <option value="1" <?php if($archive_freq == 1) echo 'selected="selected"' ?>><?php _e('Post is saved','odi') ?></option>
   </select></p>
 
 <?php } else { ?>
 
-  <p class="error"><?php _e( 'wpckan is not correctly configured. Please, check the ', 'wpckan' ) ?><a href="options-general.php?page=wpckan">Settings</a></p>
+  <p class="error"><?php _e( 'wpckan is not correctly configured. Please, check the ', 'odi' ) ?><a href="options-general.php?page=wpckan">Settings</a></p>
 
 <?php }?>

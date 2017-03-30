@@ -6,8 +6,8 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
     {
         parent::__construct(
         'wpckan_related_resources_widget',
-        __('WPCKAN Related Datasets', 'wpckan'),
-        array('description' => __('Display post related datasets.', 'wpckan'))
+        __('WPCKAN Related Datasets', 'odi'),
+        array('description' => __('Display post related datasets.', 'odi'))
         );
 
 				$this->sort_options = array(
@@ -60,7 +60,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
      if (!empty($output) && $output != ''):
          echo $args['before_widget'];
          if (!empty($instance['title'])):
-             echo $args['before_title'].apply_filters('widget_title', __($instance['title'], 'wpckan')).$args['after_title'];
+             echo $args['before_title'].apply_filters('widget_title', __($instance['title'], 'odi')).$args['after_title'];
          endif;
          echo $output;
          echo $args['after_widget'];
@@ -74,7 +74,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
   */
  public function form($instance)
  {
-     $title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Related datasets', 'wpckan');
+     $title = !empty($instance['title']) ? __($instance['title'], 'odi') : __('Related datasets', 'odi');
      $limit = !empty($instance['limit']) ? $instance['limit'] : 0;
      $filter_fields = !empty($instance['filter_fields']) && json_decode($instance['filter_fields']) ? $instance['filter_fields'] : null;
      $type = !empty($instance['type']) ? $instance['type'] : 'dataset';
@@ -103,14 +103,14 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
     <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>">
     <label for="<?php echo $this->get_field_id('organization');?>"><?php _e('CKAN Organization:');?></label>
     <select class="widefat" id="<?php echo $this->get_field_id('organization');?>" name="<?php echo $this->get_field_name('organization');?>">
-      <option <?php if ($organization == -1) { echo 'selected="selected"'; }?> value="-1"><?php _e('All', 'wpckan')?></option>
+      <option <?php if ($organization == -1) { echo 'selected="selected"'; }?> value="-1"><?php _e('All', 'odi')?></option>
       <?php foreach ($organization_list as $dataset_organization) { ?>
         <option <?php if ($dataset_organization['id'] == $organization) { echo 'selected="selected"';}?> value="<?php echo $dataset_organization['id'];?>"><?php echo $dataset_organization['display_name'];?></option>
       <?php } ?>
     </select>
     <label for="<?php echo $this->get_field_id('group');?>"><?php _e('CKAN Group:');?></label>
     <select class="widefat" id="<?php echo $this->get_field_id('group');?>" name="<?php echo $this->get_field_name('group');?>">
-      <option <?php if ($group == -1) { echo 'selected="selected"'; }?> value="-1"><?php _e('All', 'wpckan')?></option>
+      <option <?php if ($group == -1) { echo 'selected="selected"'; }?> value="-1"><?php _e('All', 'odi')?></option>
       <?php foreach ($group_list as $dataset_group) { ?>
         <option <?php if ($dataset_group['id'] == $group) { echo 'selected="selected"'; } ?> value="<?php echo $dataset_group['name']; ?>"><?php echo $dataset_group['display_name'];?></option>
       <?php } ?>

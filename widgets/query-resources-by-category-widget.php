@@ -9,8 +9,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		// widget actual processes
 		parent::__construct(
 			'wpckan_query_resources_by_topic_widget',
-			__('WPCKAN Query resources by post\'s category', 'wpckan'),
-			array('description' => __('Queries CKAN for datasets with the post\'s category as value for the field specified.', 'wpckan'))
+			__('WPCKAN Query resources by post\'s category', 'odi'),
+			array('description' => __('Queries CKAN for datasets with the post\'s category as value for the field specified.', 'odi'))
 		);
 
 		$this->sort_options = array(
@@ -85,7 +85,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 				echo $args['before_widget'];
 
 					if (!empty($instance['title'])):
-						 echo $args['before_title'].apply_filters('widget_title', __($instance['title'], 'wpckan')).$args['after_title'];
+						 echo $args['before_title'].apply_filters('widget_title', __($instance['title'], 'odi')).$args['after_title'];
 					endif;
 
 				echo $output;
@@ -105,7 +105,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		$title = !empty($instance['title']) ? __($instance['title'], 'wpckan') : __('Custom posts', 'wpckan');
+		$title = !empty($instance['title']) ? __($instance['title'], 'odi') : __('Custom posts', 'odi');
 		$type = !empty($instance['type']) ? $instance['type'] : 'dataset';
 		$organization = isset($instance['organization']) ? $instance['organization'] : -1;
 		$organization_list = [];
@@ -123,14 +123,14 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('organization');?>"><?php _e('CKAN Organization:');?></label>
 	    <select class="widefat" id="<?php echo $this->get_field_id('organization');?>" name="<?php echo $this->get_field_name('organization');?>">
-	      <option <?php if ($organization == -1) { echo 'selected="selected"'; }?> value="-1"><?php _e('All', 'wpckan')?></option>
+	      <option <?php if ($organization == -1) { echo 'selected="selected"'; }?> value="-1"><?php _e('All', 'odi')?></option>
 	      <?php foreach ($organization_list as $dataset_organization) { ?>
 	        <option <?php if ($dataset_organization['id'] == $organization) { echo 'selected="selected"';}?> value="<?php echo $dataset_organization['id'];?>"><?php echo $dataset_organization['display_name'];?></option>
 	      <?php } ?>
 	    </select>
 		</p>
 		<?php
-		$search_field = !empty($instance['search_field']) ? __($instance['search_field'], 'wpckan') : 'title' ?>
+		$search_field = !empty($instance['search_field']) ? __($instance['search_field'], 'odi') : 'title' ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('search_field');?>"><?php _e('Search field:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('search_field');?>" name="<?php echo $this->get_field_name('search_field');?>" type="text" value="<?php echo esc_attr($search_field);?>">
@@ -148,8 +148,8 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		</p>
 		<h3>Output</h3>
     <?php
-    $output_fields = !empty($instance['output_fields']) ? __($instance['output_fields'], 'wpckan') : 'title';
-    $output_fields_resources = !empty($instance['output_fields_resources']) ? __($instance['output_fields_resources'], 'wpckan') : '' ?>
+    $output_fields = !empty($instance['output_fields']) ? __($instance['output_fields'], 'odi') : 'title';
+    $output_fields_resources = !empty($instance['output_fields_resources']) ? __($instance['output_fields_resources'], 'odi') : '' ?>
 		<p>
 			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields for dataset:');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
