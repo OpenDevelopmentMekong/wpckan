@@ -32,8 +32,11 @@
   {
       $query = '?'.compose_solr_query_from_attrs($attrs);
       $ckanapi_url = $ckan_domain.'/api/3/action/package_search'.$query;
-
+      print_r($ckanapi_url);
       $json = wpckan_get_or_cache($ckanapi_url, $query);
+      echo "Json<br/>";
+
+      print_r($json);
 
       if ($json === false) {
           return [];
