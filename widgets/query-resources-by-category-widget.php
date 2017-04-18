@@ -21,12 +21,26 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 	}
 
 	private function get_categories($post){
-
-		$categories_names = array();
 		if (isset($post)):
-			$categories_names = wp_get_post_categories($post->ID,array(
-				"fields" => "names")
-			);
+			$categories_names = array();
+			global $wpdb;
+			global $table_prefix;
+			$get_post_cat_ids = wp_get_post_categories($post->ID,array( "fields" => "ids"));
+
+			$table_name = $wpdb->prefix . "terms";
+			$cat_results = $wpdb->get_results(
+			                $wpdb->prepare(
+			                   "SELECT name
+			                    FROM $table_name
+			                    WHERE `term_id` IN(".implode(', ', array_fill(0, count($get_post_cat_ids), '%d')).")
+			                   ",
+			                   $get_post_cat_ids
+			                )
+			            );
+
+			foreach ($cat_results as $key => $cat) {
+			   $categories_names[] = $cat->name;
+			} 
 		endif;
 		if (isset($_GET['id'])):
 			try{
@@ -36,7 +50,6 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 	      wpckan_log($e->getMessage());
 	    }
 		endif;
-
 		return $categories_names;
 	}
 
