@@ -21,8 +21,9 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 	}
 
 	private function get_categories($post){
+		$categories_names = array();
+		
 		if (isset($post)):
-			$categories_names = array();
 			global $wpdb;
 			global $table_prefix;
 			$get_post_cat_ids = wp_get_post_categories($post->ID,array( "fields" => "ids"));
@@ -40,7 +41,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 			foreach ($cat_results as $key => $cat) {
 			   $categories_names[] = $cat->name;
-			} 
+			}
 		endif;
 		if (isset($_GET['id'])):
 			try{
