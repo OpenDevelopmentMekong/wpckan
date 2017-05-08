@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-03-06 19:01+0100\n"
-"PO-Revision-Date: 2017-03-06 19:01+0100\n"
+"POT-Creation-Date: 2017-05-08 10:33+0200\n"
+"PO-Revision-Date: 2017-05-08 10:33+0200\n"
 "Last-Translator: Huy Eng Heng <huyeng_heng@yahoo.com>, 2017\n"
 "Language-Team: Khmer (https://www.transifex.com/open-development-mekong/teams/27158/km/)\n"
 "Language: km\n"
@@ -941,8 +941,8 @@ msgid "Short notes of change"
 msgstr "កំណត់ត្រាសង្ខេបនៃការផ្លាស់ប្តូរ"
 
 #: i18n/additional-localization.php:247
-msgid "Granted area"
-msgstr "ទំហំតំបន់សម្បទាន (គិតជាហិកតា) "
+msgid "Granted area (hectare)"
+msgstr ""
 
 #: i18n/additional-localization.php:248
 msgid "Contract term"
@@ -1552,17 +1552,20 @@ msgstr ""
 msgid "Display post related datasets."
 msgstr ""
 
-#: wpckan.php:139
+#: wpckan.php:140
 msgid "Add related CKAN content"
 msgstr "បន្ថែមទិន្នន័យ CKAN ពាក់ព័ន្ធ"
 
-#: wpckan.php:140
+#: wpckan.php:141
 msgid "Archive Post as CKAN dataset"
 msgstr "រក្សាទុកការដាក់បង្ហោះជាសំណំុទិន្នន័យ CKAN"
 
-#: wpckan.php:285
+#: wpckan.php:286
 msgid "You do not have sufficient permissions to access this page."
 msgstr "លោកអ្នក មិនមានការអនុញ្ញាតគ្រប់គ្រាន់ដើម្បីចូលអានទំព័រនេះទេ"
+
+#~ msgid "Granted area"
+#~ msgstr "ទំហំតំបន់សម្បទាន (គិតជាហិកតា) "
 
 #~ msgid ""
 #~ "Inter-Ministerial Committee for Assessment Measurement and Evaluation of the Economic "
