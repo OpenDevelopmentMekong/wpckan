@@ -577,9 +577,12 @@
   }
 
   function wpckan_is_date($value){
-    if (!$value) {
-        return false;
-    }
+    if (!$value):
+      return false;
+    endif;
+    if (strpos($value,"-") === false && strpos($value,".") === false && strpos($value,"/") === false):
+      return false;
+    endif;
     try {
         new \DateTime($value);
         return true;
