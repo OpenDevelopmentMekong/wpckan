@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-03-06 19:01+0100\n"
-"PO-Revision-Date: 2017-03-06 19:01+0100\n"
+"POT-Creation-Date: 2017-05-08 10:33+0200\n"
+"PO-Revision-Date: 2017-05-08 10:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -944,8 +944,8 @@ msgid "Short notes of change"
 msgstr "Short notes of change"
 
 #: i18n/additional-localization.php:247
-msgid "Granted area"
-msgstr "Granted area"
+msgid "Granted area (hectare)"
+msgstr ""
 
 #: i18n/additional-localization.php:248
 msgid "Contract term"
@@ -1594,17 +1594,20 @@ msgstr "WPCKAN Related Datasets"
 msgid "Display post related datasets."
 msgstr "Display post related datasets."
 
-#: wpckan.php:139
+#: wpckan.php:140
 msgid "Add related CKAN content"
 msgstr "Add related CKAN content"
 
-#: wpckan.php:140
+#: wpckan.php:141
 msgid "Archive Post as CKAN dataset"
 msgstr "Archive Post as CKAN dataset"
 
-#: wpckan.php:285
+#: wpckan.php:286
 msgid "You do not have sufficient permissions to access this page."
 msgstr "You do not have sufficient permissions to access this page."
+
+#~ msgid "Granted area"
+#~ msgstr "Granted area"
 
 #~ msgid ""
 #~ "Inter-Ministerial Committee for Assessment Measurement and Evaluation of "

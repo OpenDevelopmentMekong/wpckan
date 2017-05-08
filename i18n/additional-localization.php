@@ -244,7 +244,7 @@ echo _('Document reference number');
 echo _('Amendment to contract');
 echo _('Signature date');
 echo _('Short notes of change');
-echo _('Granted area');
+echo _('Granted area (hectare)');
 echo _('Contract term');
 echo _('Contract term unit');
 echo _('Payment for concession fees');
