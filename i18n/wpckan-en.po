@@ -945,7 +945,7 @@ msgstr "Short notes of change"
 
 #: i18n/additional-localization.php:247
 msgid "Granted area (hectare)"
-msgstr ""
+msgstr "Granted area (hectare)"
 
 #: i18n/additional-localization.php:248
 msgid "Contract term"
