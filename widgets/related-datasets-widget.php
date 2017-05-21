@@ -13,7 +13,10 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 				$this->sort_options = array(
 					"metadata_modified+desc" => "Metadata modified",
 					"relevance+asc" => "Relevance",
-					"views_recent+desc" => "Views recent"
+					"views_recent+desc" => "Views recent",
+          "odm_date_created+desc" => "Creation date (Datasets)",
+          "marc21_260c+desc" => "Publication date (Library)",
+          "odm_promulgation_date+desc" => "Promulgation date (Laws)"
 				);
     }
 
