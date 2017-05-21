@@ -45,6 +45,9 @@
 	            <div class="wpckan_dataset_<?php echo($field_name); ?>">
 	              <?php
                 $to_print = $dataset[$field_name];
+                if (wpckan_is_date($to_print)):
+                  $to_print= wpckan_print_date($to_print);
+                endif;
                 if (is_array($dataset[$field_name])):
                   $to_print =  !empty($dataset[$field_name][$current_language]) ? $dataset[$field_name][$current_language] : $dataset[$field_name]["en"];
                 endif;
