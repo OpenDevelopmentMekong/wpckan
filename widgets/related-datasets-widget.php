@@ -12,6 +12,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 
 				$this->sort_options = array(
 					"metadata_modified+desc" => "Metadata modified",
+          "metadata_created+desc" => "Metadata created",
 					"relevance+asc" => "Relevance",
 					"views_recent+desc" => "Views recent",
           "odm_date_created+desc" => "Creation date (Datasets)",

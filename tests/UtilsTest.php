@@ -231,4 +231,22 @@ class UtilsTest extends PHPUnit_Framework_TestCase
       $result = wpckan_is_date("6044");
       $this->assertEquals($result, false);
   }
+
+  public function testPrintDate()
+  {
+      $result = wpckan_print_date("3.6.2017");
+      $this->assertEquals($result, "2017-06-03");
+  }
+
+  public function testPrintDate2()
+  {
+      $result = wpckan_print_date("2017-06-13");
+      $this->assertEquals($result, "2017-06-13");
+  }
+
+  public function testPrintDate3()
+  {
+      $result = wpckan_print_date("2017-02-06T04:20:33");
+      $this->assertEquals($result, "2017-02-06");
+  }
 }
