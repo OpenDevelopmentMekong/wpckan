@@ -8,12 +8,11 @@
 
     $multilingual_fields = array();
     $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
-    $current_language = 'en';
     if ($uses_ckanext_fluent && wpckan_is_qtranslate_available()):
-        $multilingual_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
-        $multilingual_fields = explode(',', $multilingual_fields_csv);
-        $current_language = qtranxf_getLanguage();
+      $multilingual_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
+      $multilingual_fields = explode(',', $multilingual_fields_csv);
     endif;
+    $current_language = wpckan_get_current_language();
 
     $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
     $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
@@ -36,14 +35,14 @@
 	<h1 class="wpckan_dataset_title"><?php echo $title ?></h1>
 
 	<!-- Organization -->
-  <?php if (isset($data['organization']['title']) && (odm_country_manager()->get_current_country()=="mekong")): ?>
+  <?php if (isset($data['organization']['title']) && function_exists("odm_country_manager") && (odm_country_manager()->get_current_country()=="mekong")): ?>
     <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], 'wpckan') ?></h3>
   <?php endif; ?>
 
 	<!-- Tags -->
   <ul class="wpckan_dataset_tags">
     <?php foreach ($data['tags'] as $tag): ?>
-      <li class="wpckan_dataset_tag"><?php echo apply_filters('translate_term', $tag['display_name'], odm_language_manager()->get_current_language()); ?></li>
+      <li class="wpckan_dataset_tag"><?php echo apply_filters('translate_term', $tag['display_name'], $current_language); ?></li>
     <?php endforeach; ?>
   </ul>
 
