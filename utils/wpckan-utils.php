@@ -230,15 +230,19 @@
 
   function wpckan_log($text) {
 
-    if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled')) return;
+    if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled')):
+      return;
+    endif;
+
+    $log_file_path = !wpckan_is_null_or_empty_string($GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path')) ? $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path') : WPCKAN_DEFAULT_LOG_PATH;
+    if (!file_exists($log_file_path)):
+      return;
+    endif;
 
     $bt = debug_backtrace();
     $caller = array_shift($bt);
 
-    if (!wpckan_is_null_or_empty_string($GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path')))
-      Analog::handler(Handler\File::init ($GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path')));
-    else
-      Analog::handler(Handler\File::init (WPCKAN_DEFAULT_LOG_PATH));
+    Analog::handler(Handler\File::init($log_file_path));
 
     Analog::log ( "[ " . $caller['file'] . " | " . $caller['line'] . " ] " . $text );
   }
@@ -467,6 +471,15 @@
       wpckan_log($e->getMessage());
       return false;
     }
+
+    $log_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled');
+    if ($log_enabled):
+      $log_file_path = !wpckan_is_null_or_empty_string($GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path')) ? $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_path') : WPCKAN_DEFAULT_LOG_PATH;
+      if (!file_exists($log_file_path)):
+        return false;
+      endif;
+    endif;
+
     return true;
   }
 
