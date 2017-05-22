@@ -551,6 +551,17 @@
     return function_exists('qtranxf_getLanguage');
   }
 
+  function wpckan_get_current_language(){
+    $current_language = 'en';
+    if (wpckan_is_qtranslate_available() && function_exists("qtranxf_getLanguage")):
+      $current_language = qtranxf_getLanguage();
+    endif;
+    if (function_exists("odm_language_manager")):
+      $current_language = odm_language_manager()->get_current_language();
+    endif;
+    return $current_language;
+  }
+
   function wpckan_parse_field_mappings($option){
     $mappings_raw = $GLOBALS['wpckan_options']->get_option($option);
     $mappings_clean = array();

@@ -371,27 +371,27 @@
    // TODO: parametrize
    function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
    {
-     $lang = odm_language_manager()->get_current_language();
+     $lang = wpckan_get_current_language();
      $attribute_metadata = array(
-                            //  "title_translated" => "Title",
-                              "notes_translated" => "Description",
-                              "odm_source" => "Source(s)",
-                              "odm_completeness" => "Completeness",
-                              "odm_metadata_reference_information" => "Metadata Reference Information",
-                              "odm_process" => "Process(es)",
-                              "odm_attributes" => "Attributes",
-                              "odm_logical_consistency" => "Logical Consistency",
-                              "odm_copyright" => "Copyright",
-                              "version" => "Version",
-                              "odm_date_created" => "Date created",
-                              "odm_date_uploaded" => "Date uploaded",
-                              "odm_temporal_range" => "Temporal range",
-                              "odm_accuracy-en" => "Accuracy",
-                              "odm_logical_consistency" => "Logical Consistency",
-                              "odm_contact" => "Contact",
-                              "odm_access_and_use_constraints" => "Access and use constraints",
-                              "license_id" => "License"
-                          );
+        //  "title_translated" => "Title",
+        "notes_translated" => "Description",
+        "odm_source" => "Source(s)",
+        "odm_completeness" => "Completeness",
+        "odm_metadata_reference_information" => "Metadata Reference Information",
+        "odm_process" => "Process(es)",
+        "odm_attributes" => "Attributes",
+        "odm_logical_consistency" => "Logical Consistency",
+        "odm_copyright" => "Copyright",
+        "version" => "Version",
+        "odm_date_created" => "Date created",
+        "odm_date_uploaded" => "Date uploaded",
+        "odm_temporal_range" => "Temporal range",
+        "odm_accuracy-en" => "Accuracy",
+        "odm_logical_consistency" => "Logical Consistency",
+        "odm_contact" => "Contact",
+        "odm_access_and_use_constraints" => "Access and use constraints",
+        "license_id" => "License"
+      );
 
      // get ckan record by id
      $get_info_from_ckan = wpckan_api_package_show($ckan_domain, $ckan_dataset_id);
