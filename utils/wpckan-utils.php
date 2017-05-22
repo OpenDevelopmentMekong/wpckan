@@ -464,13 +464,7 @@
     return $organization_names;
   }
 
-  function wpckan_validate_settings_read(){
-    try{
-      wpckan_api_ping();
-    }catch(Exception $e){
-      wpckan_log($e->getMessage());
-      return false;
-    }
+  function wpckan_validate_settings_log(){
 
     $log_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled');
     if ($log_enabled):
@@ -479,6 +473,18 @@
         return false;
       endif;
     endif;
+
+    return true;
+  }
+
+
+  function wpckan_validate_settings_read(){
+    try{
+      wpckan_api_ping();
+    }catch(Exception $e){
+      wpckan_log($e->getMessage());
+      return false;
+    }
 
     return true;
   }
