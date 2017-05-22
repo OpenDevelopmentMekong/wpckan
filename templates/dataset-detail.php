@@ -8,7 +8,7 @@
 
     $multilingual_fields = array();
     $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
-    if ($uses_ckanext_fluent && wpckan_is_qtranslate_available()):
+    if ($uses_ckanext_fluent):
       $multilingual_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
       $multilingual_fields = explode(',', $multilingual_fields_csv);
     endif;
