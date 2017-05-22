@@ -189,7 +189,7 @@
             <th scope="row"><label for="wpckan_setting_log_path"><?php _e('Log file path','wpckan') ?></label></th>
             <td>
               <input type="text" name="wpckan_setting_log_path" id="wpckan_setting_log_path" value="<?php echo $logging_path ?>"/>
-              <p class="description"><?php _e('Path where logs are going to be stored. Mind permissions.','wpckan') ?></p>
+              <p class="description"><?php _e('Path to file storing the logs. Mind permissions, file will be created if it does not exist.','wpckan') ?></p>
             </td>
           </tr>
         </table>
