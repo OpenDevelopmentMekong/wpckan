@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-05-08 10:33+0200\n"
+"POT-Creation-Date: 2017-05-24 10:25+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1200,6 +1200,14 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
+#: i18n/additional-localization.php:316
+msgid "Yes"
+msgstr ""
+
+#: i18n/additional-localization.php:317
+msgid "No"
+msgstr ""
+
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
 msgstr ""
@@ -1229,19 +1237,19 @@ msgstr ""
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
-#: templates/dataset-detail.php:67
+#: templates/dataset-detail.php:66
 msgid "Resources"
 msgstr ""
 
-#: templates/dataset-detail.php:83
+#: templates/dataset-detail.php:82
 msgid "Download"
 msgstr ""
 
-#: templates/dataset-detail.php:90
+#: templates/dataset-detail.php:89
 msgid "Additional info"
 msgstr ""
 
-#: templates/dataset-detail.php:160
+#: templates/dataset-detail.php:159
 msgid "No metadata available for current dataset"
 msgstr ""
 
@@ -1436,14 +1444,16 @@ msgid "Log file path"
 msgstr ""
 
 #: templates/settings.php:192
-msgid "Path where logs are going to be stored. Mind permissions."
+msgid ""
+"Path to file storing the logs. Mind permissions, file will be created if it "
+"does not exist."
 msgstr ""
 
-#: utils/wpckan-api.php:464
+#: utils/wpckan-api.php:463
 msgid "Download data"
 msgstr ""
 
-#: utils/wpckan-api.php:468
+#: utils/wpckan-api.php:467
 msgid "View dataset table"
 msgstr ""
 
@@ -1457,65 +1467,65 @@ msgid ""
 "specified."
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:108
+#: widgets/query-resources-by-category-widget.php:127
 msgid "Custom posts"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:120
-#: widgets/query-resources-widget.php:117
-#: widgets/related-datasets-widget.php:102
+#: widgets/query-resources-by-category-widget.php:139
+#: widgets/query-resources-widget.php:121
+#: widgets/related-datasets-widget.php:106
 msgid "Title:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:124
-#: widgets/query-resources-widget.php:121
-#: widgets/related-datasets-widget.php:104
+#: widgets/query-resources-by-category-widget.php:143
+#: widgets/query-resources-widget.php:125
+#: widgets/related-datasets-widget.php:108
 msgid "CKAN Organization:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:126
-#: widgets/query-resources-widget.php:123
-#: widgets/query-resources-widget.php:130
-#: widgets/related-datasets-widget.php:106
-#: widgets/related-datasets-widget.php:113
+#: widgets/query-resources-by-category-widget.php:145
+#: widgets/query-resources-widget.php:127
+#: widgets/query-resources-widget.php:134
+#: widgets/related-datasets-widget.php:110
+#: widgets/related-datasets-widget.php:117
 msgid "All"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:135
+#: widgets/query-resources-by-category-widget.php:154
 msgid "Search field:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:140
-#: widgets/query-resources-widget.php:137
-#: widgets/related-datasets-widget.php:120
+#: widgets/query-resources-by-category-widget.php:159
+#: widgets/query-resources-widget.php:141
+#: widgets/related-datasets-widget.php:124
 msgid "Dataset type:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:141
-#: widgets/query-resources-widget.php:138
-#: widgets/related-datasets-widget.php:121
+#: widgets/query-resources-by-category-widget.php:160
+#: widgets/query-resources-widget.php:142
+#: widgets/related-datasets-widget.php:125
 msgid "dataset, library_record, etc.."
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:146
+#: widgets/query-resources-by-category-widget.php:165
 msgid "Select max number of posts to list (-1 to show all):"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:154
-#: widgets/query-resources-widget.php:147
-#: widgets/related-datasets-widget.php:126
+#: widgets/query-resources-by-category-widget.php:173
+#: widgets/query-resources-widget.php:151
+#: widgets/related-datasets-widget.php:130
 msgid "Output fields for dataset:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:158
-#: widgets/query-resources-widget.php:151
-#: widgets/related-datasets-widget.php:130
+#: widgets/query-resources-by-category-widget.php:177
+#: widgets/query-resources-widget.php:155
+#: widgets/related-datasets-widget.php:134
 msgid "Output fields for resources:"
 msgstr ""
 
-#: widgets/query-resources-by-category-widget.php:162
-#: widgets/query-resources-widget.php:155
-#: widgets/related-datasets-widget.php:134
+#: widgets/query-resources-by-category-widget.php:181
+#: widgets/query-resources-widget.php:159
+#: widgets/related-datasets-widget.php:138
 msgid "Order by:"
 msgstr ""
 
@@ -1527,39 +1537,39 @@ msgstr ""
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: widgets/query-resources-widget.php:87 widgets/related-datasets-widget.php:77
+#: widgets/query-resources-widget.php:91 widgets/related-datasets-widget.php:81
 msgid "Related datasets"
 msgstr ""
 
-#: widgets/query-resources-widget.php:119
+#: widgets/query-resources-widget.php:123
 msgid "Query:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:128
-#: widgets/related-datasets-widget.php:111
+#: widgets/query-resources-widget.php:132
+#: widgets/related-datasets-widget.php:115
 msgid "CKAN Group:"
-msgstr ""
-
-#: widgets/query-resources-widget.php:135
-#: widgets/related-datasets-widget.php:118
-msgid "Additional filtering:"
-msgstr ""
-
-#: widgets/query-resources-widget.php:136
-#: widgets/related-datasets-widget.php:119
-msgid "Specify valid JSON, otherwise not saved"
 msgstr ""
 
 #: widgets/query-resources-widget.php:139
 #: widgets/related-datasets-widget.php:122
-msgid "Limit:"
+msgid "Additional filtering:"
 msgstr ""
 
-#: widgets/query-resources-widget.php:141
-msgid "More dataset: Link label"
+#: widgets/query-resources-widget.php:140
+#: widgets/related-datasets-widget.php:123
+msgid "Specify valid JSON, otherwise not saved"
 msgstr ""
 
 #: widgets/query-resources-widget.php:143
+#: widgets/related-datasets-widget.php:126
+msgid "Limit:"
+msgstr ""
+
+#: widgets/query-resources-widget.php:145
+msgid "More dataset: Link label"
+msgstr ""
+
+#: widgets/query-resources-widget.php:147
 msgid "More dataset: Link (URL)"
 msgstr ""
 
@@ -1571,14 +1581,14 @@ msgstr ""
 msgid "Display post related datasets."
 msgstr ""
 
-#: wpckan.php:140
+#: wpckan.php:146
 msgid "Add related CKAN content"
 msgstr ""
 
-#: wpckan.php:141
+#: wpckan.php:147
 msgid "Archive Post as CKAN dataset"
 msgstr ""
 
-#: wpckan.php:286
+#: wpckan.php:292
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
