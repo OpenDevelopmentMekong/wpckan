@@ -313,5 +313,8 @@ echo _('Released by academia');
 echo _('Released by think tanks');
 echo _('Other');
 
+echo _('Yes');
+echo _('No');
+
 
 ?>
