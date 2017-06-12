@@ -52,11 +52,11 @@
                   $to_print =  !empty($dataset[$field_name][$current_language]) ? $dataset[$field_name][$current_language] : $dataset[$field_name]["en"];
                 endif;
 								if ($should_link_to_dataset): ?>
-                  <h4>
+                  <h5>
   	                <a <?php if ($target_blank_enabled){ echo 'target="_blank"';} ?>  href="<?php echo wpckan_get_link_to_dataset($dataset["name"]) ?>">
   										<?php echo $to_print; ?>
   									</a>
-                  </h4>
+                  </h5>
 	              <?php
 	              else: ?>
 									<?php echo $to_print; ?>
