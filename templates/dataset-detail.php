@@ -24,7 +24,9 @@
 ?>
 
 <div class="back_to_search">
-	<a href="/?s=<?php echo $search_query; ?>"><?php _e("Back to search","wpckan"); ?></a>
+	<div class="div-button">
+		<a href="/?s=<?php echo $search_query; ?>"><?php _e("Back to search","wpckan"); ?></a>
+	</div>
 </div>
 
 <div class="wpckan_dataset_detail">
