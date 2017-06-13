@@ -23,9 +23,13 @@
 	$search_query = isset($_GET["search_query"]) ? base64_decode($_GET["search_query"]) : null;
 ?>
 
-<div class="back_to_search">
-	<a class="button" href="/?<?php echo $search_query; ?>"><i class="fa fa-chevron-left"></i><?php _e("Back to search","wpckan"); ?></a>
-</div>
+<?php
+	if (isset($search_query)): ?>
+		<div class="back_to_search">
+			<a class="button" href="/?<?php echo $search_query; ?>"><i class="fa fa-chevron-left"></i><?php _e("Back to search","wpckan"); ?></a>
+		</div>
+<?php
+ 	endif; ?>
 
 <div class="wpckan_dataset_detail">
 
