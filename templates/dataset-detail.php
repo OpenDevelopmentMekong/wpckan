@@ -25,7 +25,7 @@
 
 <div class="back_to_search">
 	<div class="div-button">
-		<a href="/?s=<?php echo $search_query; ?>"><?php _e("Back to search","wpckan"); ?></a>
+		<a href="?<?php echo $search_query; ?>"><?php _e("Back to search","wpckan"); ?></a>
 	</div>
 </div>
 
