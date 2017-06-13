@@ -198,12 +198,12 @@
   function wpckan_get_link_to_dataset($dataset_name,$search_query){
     wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
 
-		$redirection_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled');
-    if ($redirection_enabled):
+    if ($GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled')):
       $url = "/dataset/?id=" . $dataset_name;
 			if (isset($search_query)):
 				$url .= "&search_query=" . base64_encode($search_query);
 			endif;
+			return $url;
     endif;
 
     return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
