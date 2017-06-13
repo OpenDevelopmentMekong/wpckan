@@ -3,23 +3,29 @@
 } ?>
 
 <?php
-    $supported_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
-    $supported_fields = explode(',', $supported_fields_csv);
+  $supported_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
+  $supported_fields = explode(',', $supported_fields_csv);
 
-    $multilingual_fields = array();
-    $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
-    if ($uses_ckanext_fluent):
-      $multilingual_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
-      $multilingual_fields = explode(',', $multilingual_fields_csv);
-    endif;
-    $current_language = wpckan_get_current_language();
+  $multilingual_fields = array();
+  $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
+  if ($uses_ckanext_fluent):
+    $multilingual_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
+    $multilingual_fields = explode(',', $multilingual_fields_csv);
+  endif;
+  $current_language = wpckan_get_current_language();
 
-    $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
-    $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
-		$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
-    $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
-    $linked_fields = explode(',', $linked_fields_csv);
+  $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
+  $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
+	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
+  $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
+  $linked_fields = explode(',', $linked_fields_csv);
+
+	$search_query = isset($_GET["search_query"]) ? base64_decode($_GET["search_query"]) : null;
 ?>
+
+<div class="back_to_search">
+	<a href="/?s=<?php echo $search_query; ?>"><?php _e("Back to search","wpckan"); ?></a>
+</div>
 
 <div class="wpckan_dataset_detail">
 
