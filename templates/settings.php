@@ -126,7 +126,7 @@
           <tr valign="top">
             <th scope="row"><label for="wpckan_setting_redirect_enabled"><?php _e('Enable url redirection','wpckan') ?></label></th>
             <td>
-              <input type="checkbox" name="wpckan_setting_redirect_enabled" value ="1" id="wpckan_setting_redirect_enabled" <?php if ($redirect_enabled)  echo 'checked="true"'; ?>/>
+              <input type="checkbox" name="wpckan_setting_redirect_enabled" id="wpckan_setting_redirect_enabled" <?php if ($redirect_enabled)  echo 'checked="true"'; ?>/>
               <p class="description"><?php _e('if checked, links to datasets, resources and organizations will be redirected to /','wpckan') ?></p>
             </td>
           </tr>
