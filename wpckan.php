@@ -72,7 +72,7 @@ if (!class_exists('wpckan')) {
         {
             wpckan_log('wpckan_register_plugin_styles');
 
-            wp_register_style('wpckan_css', plugins_url('wpckan/css/wpckan_style.css'));
+						wp_register_style('wpckan_css', plugin_dir_url(__FILE__).'css/wpckan_style.css');
             wp_enqueue_style('wpckan_css');
         }
 
