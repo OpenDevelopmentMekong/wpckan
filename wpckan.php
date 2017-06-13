@@ -37,7 +37,7 @@ if (!class_exists('wpckan')) {
         {
             add_action('admin_init', array(&$this, 'wpckan_admin_init'));
             add_action('admin_menu', array(&$this, 'wpckan_add_menu'));
-            add_action('admin_enqueue_scripts', array(&$this, 'wpckan_register_plugin_styles'));
+            add_action('init', array(&$this, 'wpckan_register_plugin_styles'));
             add_action('edit_post', array(&$this, 'wpckan_edit_post'));
             add_action('save_post', array(&$this, 'wpckan_save_post'));
             add_action('add_meta_boxes', array(&$this, 'wpckan_add_meta_boxes'));
