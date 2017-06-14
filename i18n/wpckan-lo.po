@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-05-24 10:25+0200\n"
+"POT-Creation-Date: 2017-06-14 15:50+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1237,19 +1237,23 @@ msgstr ""
 msgid "wpckan is not correctly configured. Please, check the "
 msgstr ""
 
-#: templates/dataset-detail.php:66
+#: templates/dataset-detail.php:21
+msgid "Back to search"
+msgstr ""
+
+#: templates/dataset-detail.php:68
 msgid "Resources"
 msgstr ""
 
-#: templates/dataset-detail.php:82
+#: templates/dataset-detail.php:94
 msgid "Download"
 msgstr ""
 
-#: templates/dataset-detail.php:89
+#: templates/dataset-detail.php:101
 msgid "Additional info"
 msgstr ""
 
-#: templates/dataset-detail.php:159
+#: templates/dataset-detail.php:171
 msgid "No metadata available for current dataset"
 msgstr ""
 
@@ -1257,193 +1261,169 @@ msgstr ""
 msgid "Add related datasets"
 msgstr ""
 
-#: templates/settings.php:41
+#: templates/settings.php:39
 msgid "Connecting to CKAN"
 msgstr ""
 
-#: templates/settings.php:43
+#: templates/settings.php:41
 msgid "CKAN Url"
 msgstr ""
 
-#: templates/settings.php:46
+#: templates/settings.php:44
 msgid "Specify protocol such as http:// or https://."
 msgstr ""
 
-#: templates/settings.php:50
+#: templates/settings.php:48
 msgid "CKAN Api key"
 msgstr ""
 
-#: templates/settings.php:53
+#: templates/settings.php:51
 msgid "Available under the profile page of a CKAN user with Admin rights."
 msgstr ""
 
-#: templates/settings.php:58
+#: templates/settings.php:56
 msgid "Connection status"
 msgstr ""
 
-#: templates/settings.php:61
+#: templates/settings.php:59
 msgid "CKAN URL specified correctly."
 msgstr ""
 
-#: templates/settings.php:63
+#: templates/settings.php:61
 msgid "Problem connecting to CKAN instance. Please, check the specified URL."
 msgstr ""
 
-#: templates/settings.php:66
+#: templates/settings.php:64
 msgid "CKAN API Key specified correctly."
 msgstr ""
 
-#: templates/settings.php:68
+#: templates/settings.php:66
 msgid "Please, specify a valid CKAN API Key."
 msgstr ""
 
-#: templates/settings.php:74
+#: templates/settings.php:72
 msgid "Supported post types"
 msgstr ""
 
-#: templates/settings.php:85
+#: templates/settings.php:83
 msgid "Dataset detail pages"
 msgstr ""
 
-#: templates/settings.php:87
+#: templates/settings.php:85
 msgid "Supported fields"
 msgstr ""
 
-#: templates/settings.php:89
+#: templates/settings.php:87
 msgid "title, description, license_url, ..."
 msgstr ""
 
-#: templates/settings.php:90
+#: templates/settings.php:88
 msgid ""
 "Specify a list of Comma-separated field names to show on the additional data "
 "section. Mind order."
 msgstr ""
 
-#: templates/settings.php:95
+#: templates/settings.php:93
 msgid "Field mappings for keys"
 msgstr ""
 
-#: templates/settings.php:98
+#: templates/settings.php:96
 msgid ""
 "Specify a list key => value mappings, separated by line breaks which define "
 "the mapping of a metadata field key to its label"
 msgstr ""
 
-#: templates/settings.php:103
+#: templates/settings.php:101
 msgid "Field mappings for values"
 msgstr ""
 
-#: templates/settings.php:106
+#: templates/settings.php:104
 msgid ""
 "Specify a list value => value mappings, separated by line breaks which "
 "define the mapping of a metadata field value to its label"
 msgstr ""
 
-#: templates/settings.php:111
+#: templates/settings.php:109
 msgid "Supported datatables"
 msgstr ""
 
-#: templates/settings.php:114
+#: templates/settings.php:112
 msgid ""
 "Specify a list field_id => respurce_id mappings, separated by line breaks "
 "which define the mapping of a metadata field value to its label"
 msgstr ""
 
-#: templates/settings.php:119
+#: templates/settings.php:117
 msgid "Linked fields"
 msgstr ""
 
-#: templates/settings.php:121
+#: templates/settings.php:119
 msgid ""
 "odm_laws_primary_policy_reference_point, odm_laws_previous_legal_document, "
 "odm_laws_parent_document, ..."
 msgstr ""
 
-#: templates/settings.php:122
+#: templates/settings.php:120
 msgid ""
 "Specify a list of Comma-separated field names containing ids to link to "
 "other datasets."
 msgstr ""
 
-#: templates/settings.php:127
+#: templates/settings.php:125
 msgid "Enable url redirection"
 msgstr ""
 
-#: templates/settings.php:130
+#: templates/settings.php:128
 msgid ""
 "if checked, links to datasets, resources and organizations will be "
 "redirected to /"
 msgstr ""
 
-#: templates/settings.php:134
+#: templates/settings.php:132
 msgid "Open datasets in new tab"
 msgstr ""
 
-#: templates/settings.php:137
+#: templates/settings.php:135
 msgid "if checked, links to datasets will be opened in a new tab/window"
 msgstr ""
 
-#: templates/settings.php:142
-msgid "Ckanext-fluent support"
-msgstr ""
-
-#: templates/settings.php:144
-msgid "Is ckanext-fluent enabled in the CKAN instance?"
-msgstr ""
-
-#: templates/settings.php:147
-msgid ""
-"Activate for enabling multilingual functionalities. Visit https://github.com/"
-"ckan/ckanext-fluent in case you do not know the ckanext-fluent extensions"
-msgstr ""
-
-#: templates/settings.php:151
-msgid "Fluent fields"
-msgstr ""
-
-#: templates/settings.php:154
-msgid ""
-"Specify a list of Comma-separated field names which are marked as fluent. "
-"See https://github.com/open-data/ckanext-fluent/"
-msgstr ""
-
-#: templates/settings.php:159
+#: templates/settings.php:139
 msgid "Caching"
 msgstr ""
 
-#: templates/settings.php:161
+#: templates/settings.php:141
 msgid "Enable caching for API requests"
 msgstr ""
 
-#: templates/settings.php:167
+#: templates/settings.php:147
 msgid "Cache file path"
 msgstr ""
 
-#: templates/settings.php:170
+#: templates/settings.php:150
 msgid "Path where cached files are going to be stored. Mind permissions."
 msgstr ""
 
-#: templates/settings.php:174
+#: templates/settings.php:154
 msgid "Cache time"
 msgstr ""
 
-#: templates/settings.php:177
+#: templates/settings.php:157
 msgid "Time in milisecons cached versions will be kept."
 msgstr ""
 
-#: templates/settings.php:181
+#: templates/settings.php:161
 msgid "Logging"
 msgstr ""
 
-#: templates/settings.php:183
+#: templates/settings.php:163
 msgid "Enable log"
 msgstr ""
 
-#: templates/settings.php:189
+#: templates/settings.php:169
 msgid "Log file path"
 msgstr ""
 
-#: templates/settings.php:192
+#: templates/settings.php:172
 msgid ""
 "Path to file storing the logs. Mind permissions, file will be created if it "
 "does not exist."
@@ -1589,6 +1569,6 @@ msgstr ""
 msgid "Archive Post as CKAN dataset"
 msgstr ""
 
-#: wpckan.php:292
+#: wpckan.php:291
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
