@@ -22,10 +22,7 @@
   endif;
 
   $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
-  $current_language = 'en';
-  if (wpckan_is_qtranslate_available()):
-    $current_language = qtranxf_getLanguage();
-  endif;
+  $current_language = wpckan_get_current_language();
 
 ?>
 
@@ -37,7 +34,7 @@
         <?php
           foreach ($include_fields_dataset as $field_name):
             $should_link_to_dataset = in_array($field_name, array("title")) ? true : false;
-            if ($uses_ckanext_fluent && array_key_exists($field_name."_translated",$dataset) && !wpckan_is_null_or_empty_string($dataset[$field_name."_translated"])):
+            if (array_key_exists($field_name."_translated",$dataset) && !wpckan_is_null_or_empty_string($dataset[$field_name."_translated"])):
               $field_name = $field_name . "_translated";
             endif;
 						if (isset($dataset[$field_name])):?>
@@ -74,7 +71,7 @@
                     <?php
 											foreach ($include_fields_resources as $field_name):
                         $should_link_to_dataset = in_array($field_name, array("name")) ? true : false;
-                        if ($uses_ckanext_fluent && array_key_exists($field_name."_translated",$resource) && !wpckan_is_null_or_empty_string($resource[$field_name."_translated"])):
+                        if (array_key_exists($field_name."_translated",$resource) && !wpckan_is_null_or_empty_string($resource[$field_name."_translated"])):
                           $field_name = $field_name . "_translated";
                         endif;
 												if (isset($resource[$field_name])):?>
