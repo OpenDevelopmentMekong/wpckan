@@ -5,15 +5,7 @@
 <?php
   $supported_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
   $supported_fields = explode(',', $supported_fields_csv);
-
-  $multilingual_fields = array();
-  $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
-  if ($uses_ckanext_fluent):
-    $multilingual_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_multilingual_fields');
-    $multilingual_fields = explode(',', $multilingual_fields_csv);
-  endif;
   $current_language = wpckan_get_current_language();
-
   $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
   $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
 	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
@@ -36,7 +28,7 @@
 	<!-- Title or title_translated in case of multilingual dataset-->
 	<?php
         $title = $data['title'];
-        if ($uses_ckanext_fluent && array_key_exists('title_translated', $data)):
+        if (array_key_exists('title_translated', $data)):
             if (array_key_exists($current_language, $data['title_translated'])):
                 $title = !empty($data['title_translated'][$current_language]) ? $data['title_translated'][$current_language] : $data['title_translated']['en'];
             endif;
@@ -81,12 +73,22 @@
           <p format="<?php echo $resource['format']; ?>"><?php echo $resource['format']; ?></p>
         <?php endif; ?></td>
         <td class="wpckan_dataset_resource_name">
-          <?php if (isset($resource['name'])): ?>
-            <h3><?php echo $resource['name']; ?></h3>
-          <?php endif; ?>
-          <?php if (isset($resource['description'])): ?>
-            <p><?php echo $resource['description']; ?></p>
-          <?php endif; ?>
+					<?php
+					$resource_title = $resource['name'];
+					if (array_key_exists('name_translated', $resource)):
+	            if (array_key_exists($current_language, $resource['name_translated'])):
+	                $resource_title = !empty($data['name_translated'][$current_language]) ? $data['name_translated'][$current_language] : $data['name_translated']['en'];
+	            endif;
+	        endif; ?>
+          <h3><?php echo $resource_title; ?></h3>
+					<?php
+					$resource_description = $resource['description'];
+					if (array_key_exists('description_translated', $resource)):
+	            if (array_key_exists($current_language, $resource['description_translated'])):
+	                $resource_description = !empty($data['description_translated'][$current_language]) ? $data['description_translated'][$current_language] : $data['description_translated']['en'];
+	            endif;
+	        endif; ?>
+          <p><?php echo $resource_description; ?></p>
         </td>
         <td class="wpckan_dataset_resource_url"><?php if (isset($resource['url'])): ?>
           <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>"><?php _e('Download', 'wpckan') ?></a>
