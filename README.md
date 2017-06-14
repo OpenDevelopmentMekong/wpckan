@@ -375,7 +375,7 @@ For the multilingual functionalities, this plugin relies on two other components
 
 - qTranslate/qTranslateX (https://github.com/qTranslate-Team/qtranslate-x): This plugin offers a way to maintain dynamic multilingual content on a WordPress site.
 
-If you are using both in your Wordpress/CKAN stack, WPCKAN will automatically present localized information on its different templates.
+If you are using both in your Wordpress/CKAN stack, WPCKAN will automatically present localized information on its different templates, if available. Otherwise, it falls back to English.
 
 # Installation
 
