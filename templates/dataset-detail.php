@@ -77,7 +77,7 @@
 					$resource_title = $resource['name'];
 					if (array_key_exists('name_translated', $resource)):
 	            if (array_key_exists($current_language, $resource['name_translated'])):
-	                $resource_title = !empty($data['name_translated'][$current_language]) ? $data['name_translated'][$current_language] : $data['name_translated']['en'];
+	                $resource_title = !empty($resource['name_translated'][$current_language]) ? $resource['name_translated'][$current_language] : $resource['name_translated']['en'];
 	            endif;
 	        endif; ?>
           <h3><?php echo $resource_title; ?></h3>
@@ -85,7 +85,7 @@
 					$resource_description = $resource['description'];
 					if (array_key_exists('description_translated', $resource)):
 	            if (array_key_exists($current_language, $resource['description_translated'])):
-	                $resource_description = !empty($data['description_translated'][$current_language]) ? $data['description_translated'][$current_language] : $data['description_translated']['en'];
+	                $resource_description = !empty($resource['description_translated'][$current_language]) ? $resource['description_translated'][$current_language] : $resource['description_translated']['en'];
 	            endif;
 	        endif; ?>
           <p><?php echo $resource_description; ?></p>
