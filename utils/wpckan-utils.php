@@ -576,7 +576,7 @@
 
   function wpckan_get_current_language(){
     $current_language = 'en';
-    if (wpckan_is_qtranslate_available() && function_exists("qtranxf_getLanguage")):
+    if (wpckan_is_qtranslate_available()):
       $current_language = qtranxf_getLanguage();
     endif;
     if (function_exists("odm_language_manager")):
