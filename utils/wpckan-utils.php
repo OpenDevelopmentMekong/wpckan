@@ -195,7 +195,7 @@
     return $output;
   }
 
-  function wpckan_get_link_to_dataset($dataset_name,$search_query){
+  function wpckan_get_link_to_dataset($dataset_name,$search_query = null){
     wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
 
     if ($GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled')):
@@ -611,7 +611,7 @@
   }
 
   function wpckan_is_date($value){
-    if (!$value):
+    if (!$value || !is_array($value)):
       return false;
     endif;
     if (strpos($value,"-") === false && strpos($value,".") === false && strpos($value,"/") === false):
