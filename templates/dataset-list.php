@@ -22,9 +22,8 @@
   endif;
 
   $target_blank_enabled = $GLOBALS['wpckan_options']->get_option('wpckan_setting_target_blank_enabled');
-  $uses_ckanext_fluent = $GLOBALS['wpckan_options']->get_option('wpckan_setting_uses_ckanext_fluent');
   $current_language = 'en';
-  if ($uses_ckanext_fluent && wpckan_is_qtranslate_available()):
+  if (wpckan_is_qtranslate_available()):
     $current_language = qtranxf_getLanguage();
   endif;
 
