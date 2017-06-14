@@ -611,7 +611,7 @@
   }
 
   function wpckan_is_date($value){
-    if (!$value):
+    if (!$value || !is_array($value)):
       return false;
     endif;
     if (strpos($value,"-") === false && strpos($value,".") === false && strpos($value,"/") === false):
