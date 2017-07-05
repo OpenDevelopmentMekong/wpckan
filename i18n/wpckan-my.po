@@ -1,184 +1,186 @@
+# Translators:
+# Alex Corbi <a.corbi@gmail.com>, 2017
+# Theint Naing Yoon <yoon@phandeeyar.org>, 2017
+# thetaung2 <thetaung@phandeeyar.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-06-14 15:50+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: my\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-06-14 15:49+0200\n"
+"PO-Revision-Date: 2017-06-14 15:49+0200\n"
+"Last-Translator: thetaung2 <thetaung@phandeeyar.org>, 2017\n"
+"Language-Team: Burmese (https://www.transifex.com/open-development-mekong/teams/27158/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: my\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: i18n\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: components\n"
-"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
-msgstr ""
+msgstr "အကောင်အထည်ဖော်မည့် အစီအစဥ်"
 
 #: i18n/additional-localization.php:3
 msgid "Amendments"
-msgstr ""
+msgstr "ဥပဒေပြန်လည်ပြင်ဆင်ချက်များ"
 
 #: i18n/additional-localization.php:4
 msgid "ASEAN Agreements"
-msgstr ""
+msgstr "အာစီယံ သဘောတူညီချက်များ"
 
 #: i18n/additional-localization.php:5
 msgid "Bilateral Agreements"
-msgstr ""
+msgstr "နှစ်နိုင်ငံအကြား သဘောတူညီချက်များ"
 
 #: i18n/additional-localization.php:6
 msgid "Bilateral Treaty"
-msgstr ""
+msgstr "နှစ်နိုင်ငံအကြား စာချုပ်များ"
 
 #: i18n/additional-localization.php:7
 msgid "By-Laws"
-msgstr ""
+msgstr "နည်းဥပဒေများ"
 
 #: i18n/additional-localization.php:8
 msgid "Circular"
-msgstr ""
+msgstr "စာချွန်လွှာများ"
 
 #: i18n/additional-localization.php:9
 msgid "Code"
-msgstr ""
+msgstr "စည်းမျဥ်း"
 
 #: i18n/additional-localization.php:10
 msgid "Constitution"
-msgstr ""
+msgstr "ဖွဲ့စည်းပုံအခြေခံဥပဒေ"
 
 #: i18n/additional-localization.php:11
 msgid "Contracts"
-msgstr ""
+msgstr "စာချုပ်များ"
 
 #: i18n/additional-localization.php:12
 msgid "Agreements"
-msgstr ""
+msgstr "သဘောတူညီချက်များ"
 
 #: i18n/additional-localization.php:13
 msgid "Customary law"
-msgstr ""
+msgstr "ဓလေ့ထုံးတမ်းဥပဒေ"
 
 #: i18n/additional-localization.php:14
 msgid "Decision"
-msgstr ""
+msgstr "ဆုံးဖြတ်ချက်"
 
 #: i18n/additional-localization.php:15
 msgid "Decree"
-msgstr ""
+msgstr "အမိန့်"
 
 #: i18n/additional-localization.php:16
 msgid "Directive"
-msgstr ""
+msgstr "လမ်းညွှန်ချက်"
 
 #: i18n/additional-localization.php:17 i18n/additional-localization.php:130
 msgid "Draft"
-msgstr ""
+msgstr "မူကြမ်း"
 
 #: i18n/additional-localization.php:18
 msgid "Guideline"
-msgstr ""
+msgstr "လမ်းညွှန်"
 
 #: i18n/additional-localization.php:19
 msgid "Instruction"
-msgstr ""
+msgstr "အညွှန်း"
 
 #: i18n/additional-localization.php:20
 msgid "International Treaty"
-msgstr ""
+msgstr "နိုင်ငံတကာ စာချုပ်များ"
 
 #: i18n/additional-localization.php:21
 msgid "Joint circular"
-msgstr ""
+msgstr "ပူးတွဲစာချွန်လွှာများ"
 
 #: i18n/additional-localization.php:22
 msgid "Law"
-msgstr ""
+msgstr "ဥပဒေ"
 
 #: i18n/additional-localization.php:23
 msgid "Letter"
-msgstr ""
+msgstr "စာ"
 
 #: i18n/additional-localization.php:24
 msgid "Notification"
-msgstr ""
+msgstr "အသိပေးချက်"
 
 #: i18n/additional-localization.php:25
 msgid "Order"
-msgstr ""
+msgstr "အမိန့်စာ"
 
 #: i18n/additional-localization.php:26
 msgid "Ordinance"
-msgstr ""
+msgstr "ထုံးစံ"
 
 #: i18n/additional-localization.php:27
 msgid "other"
-msgstr ""
+msgstr "အခြား"
 
 #: i18n/additional-localization.php:28
 msgid "Policy"
-msgstr ""
+msgstr "မူဝါဒ"
 
 #: i18n/additional-localization.php:29
 msgid "Proclamation"
-msgstr ""
+msgstr "တရားဝင်ကြေငြာချက်"
 
 #: i18n/additional-localization.php:30
 msgid "Regional Agreements"
-msgstr ""
+msgstr "ဒေသဆိုင်ရာ သဘောတူညီချက်"
 
 #: i18n/additional-localization.php:31
 msgid "Regulation"
-msgstr ""
+msgstr "လုပ်ထုံးလုပ်နည်း"
 
 #: i18n/additional-localization.php:32
 msgid "Resolution"
-msgstr ""
+msgstr "ဖြေရှင်းချက်"
 
 #: i18n/additional-localization.php:33
 msgid "Royal decree"
-msgstr ""
+msgstr "တော်ဝင် အမိန့်"
 
 #: i18n/additional-localization.php:34
 msgid "Rule"
-msgstr ""
+msgstr "စည်းမျဥ်း"
 
 #: i18n/additional-localization.php:35
 msgid "Strategic Plan"
-msgstr ""
+msgstr "မဟာဗျူဟာ အစီအစဥ်"
 
 #: i18n/additional-localization.php:36
 msgid "Strategy"
-msgstr ""
+msgstr "မဟာဗျူဟာ"
 
 #: i18n/additional-localization.php:37
 msgid "Sub-decree"
-msgstr ""
+msgstr "Sub-အမိန့်"
 
 #: i18n/additional-localization.php:38
 msgid "Trade Agreements"
-msgstr ""
+msgstr "ကုန်သွယ်မှုဆိုင်ရာ သဘောတူညီချက်များ"
 
 #: i18n/additional-localization.php:39
 msgid "Triangualar Agreement"
-msgstr ""
+msgstr "သုံးပွင့်ဆိုင် သဘောတူညီချက်"
 
 #: i18n/additional-localization.php:40
 msgid "UN Charters"
-msgstr ""
+msgstr "ကုလသမ္မဂ သဘောတူညီချက်များ"
 
 #: i18n/additional-localization.php:42
 msgid "Prime Minister"
-msgstr ""
+msgstr "ဝန်ကြီးချုပ်"
 
 #: i18n/additional-localization.php:43
 msgid "Minister in charge of the Office of the Council of Ministers"
@@ -186,39 +188,39 @@ msgstr ""
 
 #: i18n/additional-localization.php:44
 msgid "Minister of Interior"
-msgstr ""
+msgstr "ပြည်ထဲရေးဝန်ကြီး"
 
 #: i18n/additional-localization.php:45
 msgid "Minister of Land Management Urban Planning and Construction"
-msgstr ""
+msgstr "မြေယာစီမံခန့်ခွဲမှု၊ မြို့ပြစီမံကိန်းနှင့် ဆောက်လုပ်ရေးဝန်ကြီး"
 
 #: i18n/additional-localization.php:46
 msgid "Minister of Economy and Finance"
-msgstr ""
+msgstr "စီးပွားရေးနှင့် ငွေကြေး ဝန်ကြီး"
 
 #: i18n/additional-localization.php:47 i18n/additional-localization.php:54
 msgid "Minister of Environment"
-msgstr ""
+msgstr "သဘာဝပတ်ဝန်းကျင် ဝန်ကြီး"
 
 #: i18n/additional-localization.php:48
 msgid "Minister of Agriculture Forestry and Fisheries"
-msgstr ""
+msgstr "စိုက်ပျိုးရေး၊ သစ်တောနှင့် မွေးမြူရေးဝန်ကြီး"
 
 #: i18n/additional-localization.php:49
 msgid "Minister of Civil Service"
-msgstr ""
+msgstr "နိုင်ငံသားဝန်ဆာင်မှု ဝန်ကြီးဌာန"
 
 #: i18n/additional-localization.php:50
 msgid "Minister of Cult and Religion"
-msgstr ""
+msgstr "ယဥ်ကျေးမှုနှင့် ဘာသာရေးဝန်ကြီး"
 
 #: i18n/additional-localization.php:51
 msgid "Minister of Culture and Fine Arts"
-msgstr ""
+msgstr "ယဥ်ကျေးမှုနှင့် အနုပညာဝန်ကြီး"
 
 #: i18n/additional-localization.php:52 i18n/additional-localization.php:100
 msgid "Ministry of Commerce"
-msgstr ""
+msgstr "စီးပွားရေးဝန်ကြီး"
 
 #: i18n/additional-localization.php:53
 msgid "Minister of Education Youth and Sport"
@@ -230,7 +232,7 @@ msgstr ""
 
 #: i18n/additional-localization.php:56
 msgid "Minister of Health"
-msgstr ""
+msgstr "ကျန်းမာရေးဝန်ကြီး"
 
 #: i18n/additional-localization.php:57
 msgid "Minister of Industry and Handicrafts"
@@ -258,7 +260,7 @@ msgstr ""
 
 #: i18n/additional-localization.php:63
 msgid "Minister of National Defense"
-msgstr ""
+msgstr "ကာကွယ်ရေးဝန်ကြီးဌာန"
 
 #: i18n/additional-localization.php:64
 msgid "Minister of National Assembly-Senate Relations and Inspection"
@@ -266,7 +268,7 @@ msgstr ""
 
 #: i18n/additional-localization.php:65
 msgid "Minister of Planning"
-msgstr ""
+msgstr "အမျိုးသားစီမံကိန်းဝန်ကြီးဌာန"
 
 #: i18n/additional-localization.php:66
 msgid "Minister of Posts and Telecommunication"
@@ -318,8 +320,8 @@ msgstr ""
 
 #: i18n/additional-localization.php:78
 msgid ""
-"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
-"Economic Land Concessions"
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
+" Economic Land Concessions"
 msgstr ""
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
@@ -400,7 +402,7 @@ msgstr ""
 
 #: i18n/additional-localization.php:101
 msgid "Ministry of Agriculture Forestry and Fisheries"
-msgstr ""
+msgstr "စိုက်ပျိုးရေး၊ သစ်တောနှင့် မွေးမြူရေးဝန်ကြီးဌာန"
 
 #: i18n/additional-localization.php:102
 msgid "Ministry of Industries, Mines and Energy"
@@ -484,97 +486,101 @@ msgstr ""
 
 #: i18n/additional-localization.php:126
 msgid "Framework agreement signed"
-msgstr ""
+msgstr "မူဘောင်သဘောတူညီချက်ကို လက်မှတ်ထိုးပြီး"
 
 #: i18n/additional-localization.php:127
 msgid "Negotiations launched"
-msgstr ""
+msgstr "ညှိနှိုင်းဆွေးနွေးမှုများထုတ်ပြန်ပြီး"
 
 #: i18n/additional-localization.php:128
 msgid "Signed but not yet in effect/validated"
-msgstr ""
+msgstr "လက်မှတ်ထိုးပြီးသော်လည်း အသက်ဝင်/ထိရောက်ခြင်းမရှိသေး"
 
 #: i18n/additional-localization.php:129
 msgid "Signed and in effect"
-msgstr ""
+msgstr "လက်မှတ်ထိုးပြီး အသက်ဝင်နေပြီ"
 
 #: i18n/additional-localization.php:131
 msgid "Adopted / validated / in effect"
-msgstr ""
+msgstr "မွေးစားထားသည်/ ကိုက်ညီသည်/ အသက်ဝင်သည်"
 
 #: i18n/additional-localization.php:132
 msgid "Cancelled"
-msgstr ""
+msgstr "ပယ်ဖျက်သည်"
 
 #: i18n/additional-localization.php:133
 msgid "Expired"
-msgstr ""
+msgstr "ရက်လွန်သွားပြီ"
 
 #: i18n/additional-localization.php:134
 msgid "Bill approved"
-msgstr ""
+msgstr "မူကြမ်းအတည်ပြုပြီး"
 
 #: i18n/additional-localization.php:135
 msgid "Bill discussed in Pyidaungsu Hluttaw"
-msgstr ""
+msgstr "ပြည်ထောင်စုလွှတ်တော်တွင်ဆွေးနွေးထားသော ဥပဒေမူကြမ်း"
 
 #: i18n/additional-localization.php:136
 msgid "Bill send to the President for signature"
-msgstr ""
+msgstr "သမ္မတ လက်မှတ်ထိုးရန်အတွက် ပေးပို့ထားပြီးသော ဥပဒေမူကြမ်း"
 
 #: i18n/additional-localization.php:137
 msgid "Repealed"
-msgstr ""
+msgstr "ပယ်ဖျက်ပြီး"
 
 #: i18n/additional-localization.php:139
 msgid "Advocacy and promotional materials"
 msgstr ""
+"အသိပေးအရေးဆိုတင်ပြခြင်းနှင့် အများသိရှိအောင်ပြုလုပ်ခြင်းဆိုင်ရာ နည်းလမ်းများ"
 
 #: i18n/additional-localization.php:140
 msgid "Analysis, discussion papers, and blogs"
-msgstr ""
+msgstr "ခွဲခြမ်းစိတ်ဖြာခြင်း၊ ဆွေးနွေးမှုဆိုင်ရာ စာတမ်းများနှင့် ဘလော့များ"
 
 #: i18n/additional-localization.php:141
 msgid "Books and book chapters"
-msgstr ""
+msgstr "စာအုပ်များနှင့် စာအုပ်၏ အခန်းများ"
 
 #: i18n/additional-localization.php:142
 msgid "Case studies"
-msgstr ""
+msgstr "ဖြစ်ရပ်လေ့လာခြင်းများ"
 
 #: i18n/additional-localization.php:143
 msgid "Issue and policy briefs"
-msgstr ""
+msgstr "အကြောင်းအရာနှင့် မူဝါဒအကျဥ်း"
 
 #: i18n/additional-localization.php:144
 msgid "Profiles - People"
-msgstr ""
+msgstr "Profiles - လူများ"
 
 #: i18n/additional-localization.php:145
 msgid "Profiles - Organizations and projects"
-msgstr ""
+msgstr "Profiles - အဖွဲ့အစည်းများနှင့် စီမံကိန်းများ"
 
 #: i18n/additional-localization.php:146
 msgid "Profiles - Geographical areas and sites"
-msgstr ""
+msgstr "Profiles - ပထဝီဧရိယာနှင့် တည်နေရာများ"
 
 #: i18n/additional-localization.php:147
 msgid "Conference/workshop proceedings and presentations"
 msgstr ""
+"ဆွေးနွေးပွဲများ/ အလုပ်ရုံဆွေးနွေးပွဲများ လုပ်ဆောင်ခြင်းနှင့်တင်ဆက်ခြင်းများ"
 
 #: i18n/additional-localization.php:148
 msgid ""
 "Reports, journal articles, and research papers (including theses and "
 "dissertations)"
 msgstr ""
+"အစီရင်ခံစာများ၊ ဂျာနယ်ဆောင်းပါးများ နှင့် သုတေသနစာတမ်းများ "
+"(အထူးပြုရေးသားချက်များနှင့် တက္ကသိုလ်ဘွဲ့စာတမ်းများ)"
 
 #: i18n/additional-localization.php:149
 msgid "Company profiles"
-msgstr ""
+msgstr "ကုမ္ပဏီပရိုဖိုင်များ"
 
 #: i18n/additional-localization.php:150
 msgid "Archived web content"
-msgstr ""
+msgstr "သိမ်းဆည်းထားသော web ပေါ်ရှိအကြောင်းအရာ"
 
 #: i18n/additional-localization.php:152
 msgid "Banteay Meanchey"
@@ -678,279 +684,280 @@ msgstr ""
 
 #: i18n/additional-localization.php:178
 msgid "Title"
-msgstr ""
+msgstr "ခေါင်းစဥ်"
 
 #: i18n/additional-localization.php:179
 msgid "Description"
-msgstr ""
+msgstr "ဖော်ပြချက်"
 
 #: i18n/additional-localization.php:180 i18n/additional-localization.php:203
 msgid "License"
-msgstr ""
+msgstr "လိုင်စင်"
 
 #: i18n/additional-localization.php:181
 msgid "Copyright"
-msgstr ""
+msgstr "မူပိုင်ခွင့်"
 
 #: i18n/additional-localization.php:182
 msgid "Access and use constraints"
-msgstr ""
+msgstr "ရယူမှုနှင့် အသုံးပြုမှုဆိုင်ရာတားမြစ်ချက်များ"
 
 #: i18n/additional-localization.php:183
 msgid "Organization"
-msgstr ""
+msgstr "အဖွဲ့အစည်း"
 
 #: i18n/additional-localization.php:184
 msgid "Version"
-msgstr ""
+msgstr "မူကွဲ"
 
 #: i18n/additional-localization.php:185
 msgid "Contact"
-msgstr ""
+msgstr "ဆက်သွယ်ရန်"
 
 #: i18n/additional-localization.php:186
 msgid "Topics"
-msgstr ""
+msgstr "ခေါင်းစဥ်များ"
 
 #: i18n/additional-localization.php:187
 msgid "Language"
-msgstr ""
+msgstr "ဘာသာစကား"
 
 #: i18n/additional-localization.php:188
 msgid "Date created"
-msgstr ""
+msgstr "ဖန်တီးခဲ့သည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:189
 msgid "Date uploaded"
-msgstr ""
+msgstr "တင်ခဲ့သည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:190
 msgid "Date modified"
-msgstr ""
+msgstr "ပြန်လည်ပြင်ဆင်သည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:191
 msgid "Temporal range"
-msgstr ""
+msgstr "ကာလအပိုင်းအခြား"
 
 #: i18n/additional-localization.php:192
 msgid "Geographic area (spatial range)"
-msgstr ""
+msgstr "ပထဝီဝင်ဧရိယာ (spatial range)"
 
 #: i18n/additional-localization.php:193
 msgid "Accuracy"
-msgstr ""
+msgstr "တိကျမှု"
 
 #: i18n/additional-localization.php:194
 msgid "Logical consistency"
-msgstr ""
+msgstr "ယုတ္တိနည်းကျ တစ်သတ်မှတ်တည်းဖြစ်မှု"
 
 #: i18n/additional-localization.php:195
 msgid "Completeness"
-msgstr ""
+msgstr "ပြီးမြောက်မှု"
 
 #: i18n/additional-localization.php:196
 msgid "Process(es)"
-msgstr ""
+msgstr "ဖြစ်စဥ် (များ)"
 
 #: i18n/additional-localization.php:197
 msgid "Source(s)"
-msgstr ""
+msgstr "ရင်းမြစ် (များ)"
 
 #: i18n/additional-localization.php:198
 msgid "Metadata reference information"
-msgstr ""
+msgstr "Metadata ရည်ညွှန်း သတင်းအချက်အလက်များ"
 
 #: i18n/additional-localization.php:199
 msgid "Attributes"
-msgstr ""
+msgstr "သက်ဆိုင်သည့်အရာများ"
 
 #: i18n/additional-localization.php:200 i18n/additional-localization.php:215
 msgid "Document type"
-msgstr ""
+msgstr "စာတမ်းအမျိုးအစား"
 
 #: i18n/additional-localization.php:201
 msgid "Short title (alternative/varying form of title)"
-msgstr ""
+msgstr "ခေါင်းစဥ်အတို (ခေါင်းစဥ်၏မတူညီသည့်ပုံစံ)"
 
 #: i18n/additional-localization.php:202
 msgid "Version / Edition"
-msgstr ""
+msgstr "မူကွဲ/ ထုတ်လုပ်မှု"
 
 #: i18n/additional-localization.php:204
 msgid "Author (individual)"
-msgstr ""
+msgstr "ရေးသားသူ (ပုဂ္ဂလ)"
 
 #: i18n/additional-localization.php:205
 msgid "Author (corporate)"
-msgstr ""
+msgstr "ရေးသားသူ (ပူးပေါင်း)"
 
 #: i18n/additional-localization.php:206
 msgid "Co-author (individual)"
-msgstr ""
+msgstr "ပူးတွဲရေးသားသူ (ပုဂ္ဂလ)"
 
 #: i18n/additional-localization.php:207
 msgid "Co-author (corporate)"
-msgstr ""
+msgstr "ပူးတွဲရေးသားသူ (ပူးပေါင်း)"
 
 #: i18n/additional-localization.php:208
 msgid "ISBN number"
-msgstr ""
+msgstr "ISBN နံပါတ်"
 
 #: i18n/additional-localization.php:209
 msgid "ISSN number"
-msgstr ""
+msgstr "ISSN နံပါတ်"
 
 #: i18n/additional-localization.php:210
 msgid "Publication place"
-msgstr ""
+msgstr "ထုတ်ဝေသည့်နေရာ"
 
 #: i18n/additional-localization.php:211
 msgid "Publisher"
-msgstr ""
+msgstr "ထုတ်ဝေသူ"
 
 #: i18n/additional-localization.php:212
 msgid "Publication date"
-msgstr ""
+msgstr "ထုတ်ဝေသည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:213
 msgid "Pagination"
-msgstr ""
+msgstr "စာမျက်နှာသတ်မှတ်ချက်"
 
 #: i18n/additional-localization.php:214
 msgid "General note"
-msgstr ""
+msgstr "အထွေထွေမှတ်စု"
 
 #: i18n/additional-localization.php:216
 msgid "Document reference #"
-msgstr ""
+msgstr "စာတမ်းရည်ညွှန်း #"
 
 #: i18n/additional-localization.php:217
 msgid "Alternative/short title"
-msgstr ""
+msgstr "အမည်ကွဲ/ ခေါင်းစဥ်အတို"
 
 #: i18n/additional-localization.php:218
 msgid "Primary policy reference point"
-msgstr ""
+msgstr "မူလမူဝါဒ ရည်ညွှန်းအမှတ်"
 
 #: i18n/additional-localization.php:219
 msgid "Status"
-msgstr ""
+msgstr "အခြေအနေ"
 
 #: i18n/additional-localization.php:220
 msgid "Version date (of draft)"
-msgstr ""
+msgstr "မူကွဲရက်စွဲ (အကြမ်း)"
 
 #: i18n/additional-localization.php:221
 msgid "Adoption date/Promulgation date/Signing date"
 msgstr ""
+"လက်ခံသည့်ရက်စွဲ/ အများသိအောင်ပြုလုပ်သည့်ရက်စွဲ/ လက်မှတ်ရေးထိုးသည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:222
 msgid "Effective date"
-msgstr ""
+msgstr "အသက်ဝင်သည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:223
 msgid "Application date"
-msgstr ""
+msgstr "အကောင်အထည်ဖော်သည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:224
 msgid "Previous legal document"
-msgstr ""
+msgstr "ယခင်ဥပဒေကြောင်းအရစာတမ်း"
 
 #: i18n/additional-localization.php:225
 msgid "Change notes"
-msgstr ""
+msgstr "ပြောင်းလဲခြင်းမှတ်စု"
 
 #: i18n/additional-localization.php:226
 msgid "Relationship to other legal docs"
-msgstr ""
+msgstr "ဥပဒေကြောင်းဆိုင်ရာစာတမ်းများနှင့်ဆက်နွှယ်မှု"
 
 #: i18n/additional-localization.php:227
 msgid "Associated document"
-msgstr ""
+msgstr "ဆက်နွှယ်မှုရှိသည့် စာတမ်း"
 
 #: i18n/additional-localization.php:228
 msgid "Publication reference"
-msgstr ""
+msgstr "ထုတ်ဝေမှုဆိုင်ရာရည်ညွှန်း"
 
 #: i18n/additional-localization.php:229
 msgid "Links to source"
-msgstr ""
+msgstr "ရင်းမြစ်နှင့်ချိတ်ဆက်မှုများ"
 
 #: i18n/additional-localization.php:230
 msgid "Drafting agency"
-msgstr ""
+msgstr "မူကြမ်းဖွဲ့အေဂျင်စီ"
 
 #: i18n/additional-localization.php:231
 msgid "Technical assistance for drafting"
-msgstr ""
+msgstr "မူကြမ်းပြုစုခြင်းအတွက်နည်းပညာပိုင်းဆိုင်ရာအထောက်အပံ့"
 
 #: i18n/additional-localization.php:232
 msgid "Agency providing technical assistance"
-msgstr ""
+msgstr "နည်းပညာပိုင်းဆိုင်ရာအထောက်အပံ့ပေးနေသည့်အေဂျင်စီ"
 
 #: i18n/additional-localization.php:233
 msgid "Technical assistance funding agency"
-msgstr ""
+msgstr "နည်းပညာပိုင်းဆိုင်ရာအထောက်အပံ့မှုအတွက် ငွေကြေးထောက်ပံ့ပေးသော အေဂျင်စီ"
 
 #: i18n/additional-localization.php:234
 msgid "Issuing agency/parties"
-msgstr ""
+msgstr "ထုတ်လုပ်သည့် အေဂျင်စီ/ပါတီများ"
 
 #: i18n/additional-localization.php:235
 msgid "Implementing agencies"
-msgstr ""
+msgstr "အကောင်အထည်ဖော်နေသည့် အေဂျင်စီများ"
 
 #: i18n/additional-localization.php:236
 msgid "Notes"
-msgstr ""
+msgstr "မှတ်စုများ"
 
 #: i18n/additional-localization.php:238
 msgid "Participating share"
-msgstr ""
+msgstr "ပါဝင်ပါတ်သက်သော share"
 
 #: i18n/additional-localization.php:239
 msgid "Contracting parties"
-msgstr ""
+msgstr "စာချုပ်ချုပ်ဆိုထားသော အဖွဲ့အစည်းများ"
 
 #: i18n/additional-localization.php:240
 msgid "Government entity"
-msgstr ""
+msgstr "အစိုးရပိုင်လုပ်ငန်း"
 
 #: i18n/additional-localization.php:241
 msgid "Concession name"
-msgstr ""
+msgstr "ခွင့်ပြုချက်ရထားသည့်အမည်"
 
 #: i18n/additional-localization.php:242
 msgid "Disclosure mode"
-msgstr ""
+msgstr "သိရှိအောင်ပြုလုပ်သည့်နည်းလမ်း"
 
 #: i18n/additional-localization.php:243
 msgid "Document reference number"
-msgstr ""
+msgstr "ရည်ညွှန်းစာတမ်းနံပါတ်"
 
 #: i18n/additional-localization.php:244
 msgid "Amendment to contract"
-msgstr ""
+msgstr "စာချုပ်ကိုပြင်ဆင်မှု"
 
 #: i18n/additional-localization.php:245
 msgid "Signature date"
-msgstr ""
+msgstr "လက်မှတ်ရေးထိုးသည့်ရက်စွဲ"
 
 #: i18n/additional-localization.php:246
 msgid "Short notes of change"
-msgstr ""
+msgstr "ပြောင်းလဲမှုအတွက်မှတ်စုတိုများ"
 
 #: i18n/additional-localization.php:247
 msgid "Granted area (hectare)"
-msgstr ""
+msgstr "လုပ်ပိုင်ခွင့်ပေးထားသည့်ဧရိယာ (ဟက်တာ)"
 
 #: i18n/additional-localization.php:248
 msgid "Contract term"
-msgstr ""
+msgstr "စာချုပ်ပါဖော်ပြချက်များ"
 
 #: i18n/additional-localization.php:249
 msgid "Contract term unit"
-msgstr ""
+msgstr "စာချုပ်ပါဖော်ပြချက်အစိတ်အပိုင်း"
 
 #: i18n/additional-localization.php:250
 msgid "Payment for concession fees"
@@ -1114,35 +1121,35 @@ msgstr ""
 
 #: i18n/additional-localization.php:292
 msgid "English"
-msgstr ""
+msgstr "အင်္ဂလိပ်ဘာသာစကား"
 
 #: i18n/additional-localization.php:293
 msgid "Khmer"
-msgstr ""
+msgstr "ခမာဘာသာစကား"
 
 #: i18n/additional-localization.php:294
 msgid "Vietnamese"
-msgstr ""
+msgstr "ဗီယက်နမ်"
 
 #: i18n/additional-localization.php:295
 msgid "Thai"
-msgstr ""
+msgstr "ထိုင်း"
 
 #: i18n/additional-localization.php:296
 msgid "Burmese"
-msgstr ""
+msgstr "ဗမာ"
 
 #: i18n/additional-localization.php:297
 msgid "Lao"
-msgstr ""
+msgstr "လာအို"
 
 #: i18n/additional-localization.php:299
 msgid "Years"
-msgstr ""
+msgstr "နှစ်များ"
 
 #: i18n/additional-localization.php:300
 msgid "Months"
-msgstr ""
+msgstr "လများ"
 
 #: i18n/additional-localization.php:301
 msgid "$/ha"
@@ -1162,75 +1169,75 @@ msgstr ""
 
 #: i18n/additional-localization.php:305
 msgid "Released by government"
-msgstr ""
+msgstr "အစိုးရမှထုတ်ပြန်ခြင်း"
 
 #: i18n/additional-localization.php:306
 msgid "Released by company"
-msgstr ""
+msgstr "ကုမ္ပဏီမှထုတ်ပြန်ခြင်း"
 
 #: i18n/additional-localization.php:307
 msgid "Released by media"
-msgstr ""
+msgstr "မီဒီယာမှထုတ်ပြန်ခြင်း"
 
 #: i18n/additional-localization.php:308
 msgid "Released by international non-governmental organizations (INGOs)"
-msgstr ""
+msgstr "အစိုးရမဟုတ်သည့်နိုင်ငံတကာအဖွဲ့အစည်းများမှထုတ်ပြန်ခြင်း (INGOs)"
 
 #: i18n/additional-localization.php:309
 msgid "Released by local non-governmental organizations (LNGOs)"
-msgstr ""
+msgstr "အစိုးရမဟုတ်သည့်ပြည်တွင်းအဖွဲ့အစည်းများမှထုတ်ပြန်ခြင်း (LNGOs)"
 
 #: i18n/additional-localization.php:310
 msgid "Released by international organizations (IOs)"
-msgstr ""
+msgstr "နိုင်ငံတကာအဖွဲ့အစည်းများမှထုတ်ပြန်ခြင်း (IOs)"
 
 #: i18n/additional-localization.php:311
 msgid "Released by United Nations agencies (UNs)"
-msgstr ""
+msgstr "ကုလသမ္မဂအဖွဲ့အစည်းများမှထုတ်ပြန်ခြင်း (UNs)"
 
 #: i18n/additional-localization.php:312
 msgid "Released by academia"
-msgstr ""
+msgstr "တက္ကသိုလ်များမှထုတ်ပြန်ခြင်း"
 
 #: i18n/additional-localization.php:313
 msgid "Released by think tanks"
-msgstr ""
+msgstr "အပြောင်းအလဲအတွက် စိတ်ကူးအကြံဥာဏ်ထုတ်သည့်အဖွဲ့အစည်းများမှထုတ်ပြန်ခြင်း"
 
 #: i18n/additional-localization.php:314
 msgid "Other"
-msgstr ""
+msgstr "အခြား"
 
 #: i18n/additional-localization.php:316
 msgid "Yes"
-msgstr ""
+msgstr "လက်ခံပါသည်"
 
 #: i18n/additional-localization.php:317
 msgid "No"
-msgstr ""
+msgstr "လက်မခံပါ"
 
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
-msgstr ""
+msgstr "CKAN အဖွဲ့အစည်း"
 
 #: templates/archive-post-metabox.php:20 templates/archive-post-metabox.php:29
 msgid "None"
-msgstr ""
+msgstr "ဘာမျှမရှိပါ"
 
 #: templates/archive-post-metabox.php:27
 msgid "CKAN Group"
-msgstr ""
+msgstr "CKAN အုပ်စု"
 
 #: templates/archive-post-metabox.php:36
 msgid "Archive contents when:"
-msgstr ""
+msgstr ": အချိန်တွင် အကြောင်းအရာများကို သိမ်းဆည်းပါ"
 
 #: templates/archive-post-metabox.php:38
 msgid "Never archive"
-msgstr ""
+msgstr "ဘယ်တော့မှ မသိမ်းဆည်းပါနှင့်"
 
 #: templates/archive-post-metabox.php:39
 msgid "Post is saved"
-msgstr ""
+msgstr "ပို့စ့်ကို သိမ်းလိုက်ပါပြီ"
 
 #: templates/archive-post-metabox.php:44
 #: templates/related-datasets-metabox.php:15
@@ -1247,7 +1254,7 @@ msgstr ""
 
 #: templates/dataset-detail.php:94
 msgid "Download"
-msgstr ""
+msgstr "Download"
 
 #: templates/dataset-detail.php:101
 msgid "Additional info"
@@ -1283,7 +1290,7 @@ msgstr ""
 
 #: templates/settings.php:56
 msgid "Connection status"
-msgstr ""
+msgstr "ချိတ်ဆက်မှု အခြေအနေ"
 
 #: templates/settings.php:59
 msgid "CKAN URL specified correctly."
@@ -1319,8 +1326,8 @@ msgstr ""
 
 #: templates/settings.php:88
 msgid ""
-"Specify a list of Comma-separated field names to show on the additional data "
-"section. Mind order."
+"Specify a list of Comma-separated field names to show on the additional data"
+" section. Mind order."
 msgstr ""
 
 #: templates/settings.php:93
@@ -1413,15 +1420,15 @@ msgstr ""
 
 #: templates/settings.php:161
 msgid "Logging"
-msgstr ""
+msgstr "အကောင့်ဝင်ခြင်း"
 
 #: templates/settings.php:163
 msgid "Enable log"
-msgstr ""
+msgstr "ဝင်ရောက်နိုင်ရန် ဖွင့်မည်။"
 
 #: templates/settings.php:169
 msgid "Log file path"
-msgstr ""
+msgstr "ဖိုင်လမ်းကြောင်းတွင်းသို့ ဝင်ရောက်မည်။"
 
 #: templates/settings.php:172
 msgid ""
@@ -1455,13 +1462,13 @@ msgstr ""
 #: widgets/query-resources-widget.php:121
 #: widgets/related-datasets-widget.php:106
 msgid "Title:"
-msgstr ""
+msgstr "ခေါင်းစဉ်:"
 
 #: widgets/query-resources-by-category-widget.php:143
 #: widgets/query-resources-widget.php:125
 #: widgets/related-datasets-widget.php:108
 msgid "CKAN Organization:"
-msgstr ""
+msgstr "CKAN Organization:"
 
 #: widgets/query-resources-by-category-widget.php:145
 #: widgets/query-resources-widget.php:127
@@ -1469,7 +1476,7 @@ msgstr ""
 #: widgets/related-datasets-widget.php:110
 #: widgets/related-datasets-widget.php:117
 msgid "All"
-msgstr ""
+msgstr "အားလုံး"
 
 #: widgets/query-resources-by-category-widget.php:154
 msgid "Search field:"
@@ -1479,17 +1486,18 @@ msgstr ""
 #: widgets/query-resources-widget.php:141
 #: widgets/related-datasets-widget.php:124
 msgid "Dataset type:"
-msgstr ""
+msgstr "Dataset အမျိုးအစား:"
 
 #: widgets/query-resources-by-category-widget.php:160
 #: widgets/query-resources-widget.php:142
 #: widgets/related-datasets-widget.php:125
 msgid "dataset, library_record, etc.."
-msgstr ""
+msgstr "Dataset, မှတ်တမ်း အစရှိသည်.."
 
 #: widgets/query-resources-by-category-widget.php:165
 msgid "Select max number of posts to list (-1 to show all):"
 msgstr ""
+"စာရင်းသွင်းလိုသည့် အများဆုံး post အရေအတွက်ကို ရွေးချယ်မည် (-1 မှ အားလုံး)"
 
 #: widgets/query-resources-by-category-widget.php:173
 #: widgets/query-resources-widget.php:151
@@ -1507,7 +1515,7 @@ msgstr ""
 #: widgets/query-resources-widget.php:159
 #: widgets/related-datasets-widget.php:138
 msgid "Order by:"
-msgstr ""
+msgstr "စီစဉ်မည်"
 
 #: widgets/query-resources-widget.php:9
 msgid "WPCKAN Query Datasets"
@@ -1516,42 +1524,44 @@ msgstr ""
 #: widgets/query-resources-widget.php:10
 msgid "Query resources and displays them in a post or page."
 msgstr ""
+"အရင်းအမြစ်များကို စုံစမ်းရှာဖွေကာ post သို့မဟုတ် စာမျက်နှာအဖြစ် ဖော်ပြသည်"
 
-#: widgets/query-resources-widget.php:91 widgets/related-datasets-widget.php:81
+#: widgets/query-resources-widget.php:91
+#: widgets/related-datasets-widget.php:81
 msgid "Related datasets"
-msgstr ""
+msgstr "ဆက်စပ်မှုရှိသော Dataset များ"
 
 #: widgets/query-resources-widget.php:123
 msgid "Query:"
-msgstr ""
+msgstr "စုံစမ်းသည်:"
 
 #: widgets/query-resources-widget.php:132
 #: widgets/related-datasets-widget.php:115
 msgid "CKAN Group:"
-msgstr ""
+msgstr "CKAN Group:"
 
 #: widgets/query-resources-widget.php:139
 #: widgets/related-datasets-widget.php:122
 msgid "Additional filtering:"
-msgstr ""
+msgstr "Additional filtering:"
 
 #: widgets/query-resources-widget.php:140
 #: widgets/related-datasets-widget.php:123
 msgid "Specify valid JSON, otherwise not saved"
-msgstr ""
+msgstr "မှန်ကန်သော JSON ကိုဖော်ပြပါရန်၊ မဟုတ်လျှင် သိမ်းဆည်းထားမည်မဟုတ်ပါ"
 
 #: widgets/query-resources-widget.php:143
 #: widgets/related-datasets-widget.php:126
 msgid "Limit:"
-msgstr ""
+msgstr "Limit:"
 
 #: widgets/query-resources-widget.php:145
 msgid "More dataset: Link label"
-msgstr ""
+msgstr "More dataset: Link label"
 
 #: widgets/query-resources-widget.php:147
 msgid "More dataset: Link (URL)"
-msgstr ""
+msgstr "More dataset: Link (URL)"
 
 #: widgets/related-datasets-widget.php:9
 msgid "WPCKAN Related Datasets"
@@ -1571,4 +1581,4 @@ msgstr ""
 
 #: wpckan.php:291
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
+msgstr "ဤစာမျက်နှာကို ဝင်ရောက်ရန်ခွင့်ပြုချက် သင့်တွင်မရှိပါ"

@@ -1242,7 +1242,7 @@ msgstr "wpckan is not correctly configured. Please, check the "
 
 #: templates/dataset-detail.php:21
 msgid "Back to search"
-msgstr ""
+msgstr "Back to search"
 
 #: templates/dataset-detail.php:68
 msgid "Resources"
@@ -1593,51 +1593,3 @@ msgstr "Archive Post as CKAN dataset"
 #: wpckan.php:291
 msgid "You do not have sufficient permissions to access this page."
 msgstr "You do not have sufficient permissions to access this page."
-
-#~ msgid "Ckanext-fluent support"
-#~ msgstr "Ckanext-fluent support"
-
-#~ msgid "Is ckanext-fluent enabled in the CKAN instance?"
-#~ msgstr "Is ckanext-fluent enabled in the CKAN instance?"
-
-#~ msgid ""
-#~ "Activate for enabling multilingual functionalities. Visit https://github."
-#~ "com/ckan/ckanext-fluent in case you do not know the ckanext-fluent "
-#~ "extensions"
-#~ msgstr ""
-#~ "Activate for enabling multilingual functionalities. Visit https://github."
-#~ "com/ckan/ckanext-fluent in case you do not know the ckanext-fluent "
-#~ "extensions"
-
-#~ msgid "Fluent fields"
-#~ msgstr "Fluent fields"
-
-#~ msgid ""
-#~ "Specify a list of Comma-separated field names which are marked as fluent. "
-#~ "See https://github.com/open-data/ckanext-fluent/"
-#~ msgstr ""
-#~ "Specify a list of Comma-separated field names which are marked as fluent. "
-#~ "See https://github.com/open-data/ckanext-fluent/"
-
-#~ msgid "Path where logs are going to be stored. Mind permissions."
-#~ msgstr "Path where logs are going to be stored. Mind permissions."
-
-#~ msgid "Granted area"
-#~ msgstr "Granted area"
-
-#~ msgid ""
-#~ "Inter-Ministerial Committee for Assessment Measurement and Evaluation of "
-#~ "the Economic Land Concessions (ELCs)"
-#~ msgstr ""
-#~ "Inter-Ministerial Committee for Assessment Measurement and Evaluation of "
-#~ "the Economic Land Concessions (ELCs)"
-
-#~ msgid ""
-#~ "Ministry of Social Affairs, Labour, Vocational Training & Youth "
-#~ "Rehabilitation"
-#~ msgstr ""
-#~ "Ministry of Social Affairs, Labour, Vocational Training & Youth "
-#~ "Rehabilitation"
-
-#~ msgid "Suspension related project"
-#~ msgstr "Suspension related project"
