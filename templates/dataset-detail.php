@@ -11,17 +11,7 @@
 	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
   $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
   $linked_fields = explode(',', $linked_fields_csv);
-
-	$search_query = isset($_GET["search_query"]) ? base64_decode($_GET["search_query"]) : null;
 ?>
-
-<?php
-	if (isset($search_query)): ?>
-		<div class="back_to_search">
-			<a class="button" href="/<?php echo $search_query; ?>"><i class="fa fa-chevron-left"></i><?php _e("Back to search","wpckan"); ?></a>
-		</div>
-<?php
- 	endif; ?>
 
 <div class="wpckan_dataset_detail">
 
