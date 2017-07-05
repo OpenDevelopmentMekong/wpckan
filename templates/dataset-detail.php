@@ -27,13 +27,7 @@
 
 	<!-- Title or title_translated in case of multilingual dataset-->
 	<?php
-        $title = $data['title'];
-        if (array_key_exists('title_translated', $data)):
-            if (array_key_exists($current_language, $data['title_translated'])):
-                $title = !empty($data['title_translated'][$current_language]) ? $data['title_translated'][$current_language] : $data['title_translated']['en'];
-            endif;
-        endif;
-    ?>
+    $title = wpckan_get_multilingual_value('title',$data);?>
 	<h1 class="wpckan_dataset_title"><?php echo $title ?></h1>
 
 	<!-- Organization -->
@@ -50,13 +44,7 @@
 
 	<!-- Notes or notes_translated in case of multilingual dataset -->
 	<?php
-        $notes = $data['notes'];
-        if (array_key_exists('notes_translated', $data)):
-            if (array_key_exists($current_language, $data['notes_translated'])):
-              $notes = !empty($data['notes_translated'][$current_language]) ? $data['notes_translated'][$current_language] : $data['notes_translated']['en'];
-            endif;
-        endif;
-    ?>
+    $notes = wpckan_get_multilingual_value('notes',$data);?>
 	<p class="wpckan_dataset_notes"><?php echo $notes ?></p>
 
 	<!-- License -->

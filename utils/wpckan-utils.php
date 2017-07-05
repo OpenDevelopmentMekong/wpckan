@@ -209,6 +209,17 @@
     return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
   }
 
+	function wpckan_get_multilingual_value($field_name,$data){
+		$current_language = wpckan_get_current_language();
+    $value = $data[$field_name];
+    if (array_key_exists($field_name.'_translated', $data)):
+        if (array_key_exists($current_language, $data[$field_name.'_translated'])):
+            $value = !empty($data['title_translated'][$current_language]) ? $data[$field_name.'_translated'][$current_language] : $data[$field_name.'_translated']['en'];
+        endif;
+    endif;
+		return $value;
+	}
+
   function wpckan_get_dataset_id_from_dataset_url($dataset_url){
     $parsed_url = parse_url($dataset_url, PHP_URL_PATH);
     $exploded_by = array("dataset", "library_record", "laws_record");
