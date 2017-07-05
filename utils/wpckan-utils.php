@@ -201,7 +201,7 @@
     if ($GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled')):
       $url = "/dataset/?id=" . $dataset_name;
 			if (isset($search_query)):
-				$url .= "&search_query=" . base64_encode($search_query);
+				$url .= "&search_query=" . base64_encode("?" . $search_query);
 			endif;
 			return $url;
     endif;

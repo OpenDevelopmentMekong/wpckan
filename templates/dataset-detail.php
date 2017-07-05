@@ -18,7 +18,7 @@
 <?php
 	if (isset($search_query)): ?>
 		<div class="back_to_search">
-			<a class="button" href="/?<?php echo $search_query; ?>"><i class="fa fa-chevron-left"></i><?php _e("Back to search","wpckan"); ?></a>
+			<a class="button" href="/<?php echo $search_query; ?>"><i class="fa fa-chevron-left"></i><?php _e("Back to search","wpckan"); ?></a>
 		</div>
 <?php
  	endif; ?>
