@@ -195,6 +195,23 @@
     return $output;
   }
 
+	function wpckan_get_dataset_title($dataset_id){
+    wpckan_log("wpckan_get_dataset_title "  . print_r($dataset_id,true));
+
+    $dataset = null;
+    try{
+      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$dataset_id);
+    }catch(Exception $e){
+      wpckan_log($e->getMessage());
+    }
+
+    if (!(isset($dataset))):
+      return $dataset_id;
+    endif;
+
+		return wpckan_get_multilingual_value("title",$dataset);
+  }
+
   function wpckan_get_link_to_dataset($dataset_name,$search_query = null){
     wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
 
