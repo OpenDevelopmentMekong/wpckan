@@ -35,7 +35,7 @@
 	<!-- Notes or notes_translated in case of multilingual dataset -->
 	<?php
     $notes = wpckan_get_multilingual_value('notes',$data);?>
-	  <p class="wpckan_dataset_notes"><?php echo $notes ?></p>
+	  <p class="wpckan_dataset_notes expandible"><?php echo $notes ?></p>
 
 	<!-- License -->
   <?php if (isset($data['license_title'])): ?>
