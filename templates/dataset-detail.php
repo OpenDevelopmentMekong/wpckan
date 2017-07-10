@@ -11,29 +11,13 @@
 	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
   $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
   $linked_fields = explode(',', $linked_fields_csv);
-
-	$search_query = isset($_GET["search_query"]) ? base64_decode($_GET["search_query"]) : null;
 ?>
-
-<?php
-	if (isset($search_query)): ?>
-		<div class="back_to_search">
-			<a class="button" href="/?<?php echo $search_query; ?>"><i class="fa fa-chevron-left"></i><?php _e("Back to search","wpckan"); ?></a>
-		</div>
-<?php
- 	endif; ?>
 
 <div class="wpckan_dataset_detail">
 
 	<!-- Title or title_translated in case of multilingual dataset-->
 	<?php
-        $title = $data['title'];
-        if (array_key_exists('title_translated', $data)):
-            if (array_key_exists($current_language, $data['title_translated'])):
-                $title = !empty($data['title_translated'][$current_language]) ? $data['title_translated'][$current_language] : $data['title_translated']['en'];
-            endif;
-        endif;
-    ?>
+    $title = wpckan_get_multilingual_value('title',$data);?>
 	<h1 class="wpckan_dataset_title"><?php echo $title ?></h1>
 
 	<!-- Organization -->
@@ -50,14 +34,8 @@
 
 	<!-- Notes or notes_translated in case of multilingual dataset -->
 	<?php
-        $notes = $data['notes'];
-        if (array_key_exists('notes_translated', $data)):
-            if (array_key_exists($current_language, $data['notes_translated'])):
-              $notes = !empty($data['notes_translated'][$current_language]) ? $data['notes_translated'][$current_language] : $data['notes_translated']['en'];
-            endif;
-        endif;
-    ?>
-	<p class="wpckan_dataset_notes expandible"><?php echo $notes ?></p>
+    $notes = wpckan_get_multilingual_value('notes',$data);?>
+	  <p class="wpckan_dataset_notes"><?php echo $notes ?></p>
 
 	<!-- License -->
   <?php if (isset($data['license_title'])): ?>

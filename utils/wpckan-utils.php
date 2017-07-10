@@ -195,12 +195,30 @@
     return $output;
   }
 
+	function wpckan_get_dataset_title($dataset_id){
+    wpckan_log("wpckan_get_dataset_title "  . print_r($dataset_id,true));
+
+    $dataset = null;
+    try{
+      $dataset = wpckan_api_package_show(wpckan_get_ckan_domain(),$dataset_id);
+    }catch(Exception $e){
+      wpckan_log($e->getMessage());
+    }
+
+    if (!(isset($dataset))):
+      return $dataset_id;
+    endif;
+
+		return wpckan_get_multilingual_value("title",$dataset);
+  }
+
   function wpckan_get_link_to_dataset($dataset_name,$search_query = null){
     wpckan_log("wpckan_get_link_to_dataset "  . print_r($dataset_name,true));
 
     if ($GLOBALS['wpckan_options']->get_option('wpckan_setting_redirect_enabled')):
       $url = "/dataset/?id=" . $dataset_name;
 			if (isset($search_query)):
+				$search_query = $search_query[0] === "?" ? $search_query : "?" . $search_query;
 				$url .= "&search_query=" . base64_encode($search_query);
 			endif;
 			return $url;
@@ -208,6 +226,17 @@
 
     return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
   }
+
+	function wpckan_get_multilingual_value($field_name,$data){
+		$current_language = wpckan_get_current_language();
+    $value = $data[$field_name];
+    if (array_key_exists($field_name.'_translated', $data)):
+        if (array_key_exists($current_language, $data[$field_name.'_translated'])):
+            $value = !empty($data['title_translated'][$current_language]) ? $data[$field_name.'_translated'][$current_language] : $data[$field_name.'_translated']['en'];
+        endif;
+    endif;
+		return $value;
+	}
 
   function wpckan_get_dataset_id_from_dataset_url($dataset_url){
     $parsed_url = parse_url($dataset_url, PHP_URL_PATH);
