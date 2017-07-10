@@ -57,7 +57,7 @@
             endif;
         endif;
     ?>
-	<p class="wpckan_dataset_notes"><?php echo $notes ?></p>
+	<p class="wpckan_dataset_notes expandible"><?php echo $notes ?></p>
 
 	<!-- License -->
   <?php if (isset($data['license_title'])): ?>
@@ -88,7 +88,7 @@
 	                $resource_description = !empty($resource['description_translated'][$current_language]) ? $resource['description_translated'][$current_language] : $resource['description_translated']['en'];
 	            endif;
 	        endif; ?>
-          <p><?php echo $resource_description; ?></p>
+          <p class="expandible"><?php echo $resource_description; ?></p>
         </td>
         <td class="wpckan_dataset_resource_url"><?php if (isset($resource['url'])): ?>
           <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>"><?php _e('Download', 'wpckan') ?></a>
@@ -156,10 +156,10 @@
             if (!empty($mapped_value)):
               if (in_array($key,$linked_fields)):
                 echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-                echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
+                echo '<td><p class="expandible"><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
               else:
                 echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-                echo '<td><p>'.__($mapped_value, 'wpckan').'</p></td>';
+                echo '<td><p class="expandible">'.__($mapped_value, 'wpckan').'</p></td>';
               endif;
             endif;
             ?>
