@@ -75,7 +75,7 @@ if (!class_exists('wpckan')) {
 						wp_register_style('wpckan_css', plugin_dir_url(__FILE__) . 'css/wpckan_style.css');
             wp_enqueue_style('wpckan_css');
 
-						wp_register_style('metadata_dropdown_css', plugin_dir_url(__FILE__) . 'css/metadata_dropwdown.css');
+						wp_register_style('metadata_dropdown_css', plugin_dir_url(__FILE__) . 'css/metadata_dropdown.css');
             wp_enqueue_style('metadata_dropdown_css');
         }
 
