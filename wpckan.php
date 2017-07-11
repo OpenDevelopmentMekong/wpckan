@@ -31,7 +31,7 @@ if (!class_exists('wpckan')) {
     class wpckan
     {
         /**
-         * Construct the plugimargin-bottom: 20px;n object.
+         * Construct the plugin object.
          */
         public function __construct()
         {
