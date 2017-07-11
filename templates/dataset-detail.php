@@ -5,13 +5,9 @@
 <?php
   $supported_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
   $supported_fields = explode(',', $supported_fields_csv);
-  $current_language = wpckan_get_current_language();
-  $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
-  $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
-	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
-  $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
-  $linked_fields = explode(',', $linked_fields_csv);
-?>
+	$supported_fields_additional_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields_additional');
+  $supported_fields_additional = explode(',', $supported_fields_additional_csv);
+	$current_language = wpckan_get_current_language(); ?>
 
 <div class="wpckan_dataset_detail">
 
@@ -23,7 +19,7 @@
 	<!-- Organization -->
   <?php if (isset($data['organization']['title']) && function_exists("odm_country_manager") && (odm_country_manager()->get_current_country()=="mekong")): ?>
     <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], 'wpckan') ?></h3>
-  <?php endif; ?>
+  <?php endif; ?>$linked_fields
 
 	<!-- Tags -->
   <ul class="wpckan_dataset_tags">
@@ -76,8 +72,49 @@
   </table>
 
 	<!-- Metadata -->
-	<h2><?php _e('Additional info', 'wpckan') ?></h2>
+	<h2><?php _e('Metadata', 'wpckan') ?></h2>
+	<?php
+		if (!empty($supported_fields)): ?>
+		  <table class="wpckan_dataset_metadata_fields">
+		    <?php
+					render_metadata_table($supported_fields,$data); ?>
+		  </table>
+	<?php
+		endif; ?>
+
+		<?php
+			if (!empty($supported_fields_additional)): ?>
+				<div class="slidedable">
+					<h5><?php _e('View additional metadata', 'wpckan') ?></h5>
+					<div class="slidedable-content">
+						<table class="wpckan_dataset_metadata_fields">
+					    <?php
+								render_metadata_table($supported_fields_additional,$data); ?>
+					  </table>
+					</div>
+				</div>
+		<?php
+			endif; ?>
+
+	<h2><?php _e('Metadata', 'wpckan') ?></h2>
   <table class="wpckan_dataset_metadata_fields">
+    <?php
+			render_metadata_table($supported_fields,$data); ?>
+  </table>
+
+</div>
+
+<?php
+function render_metadata_table($supported_fields,$data){
+
+	$field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
+  $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
+	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
+	$linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
+  $linked_fields = explode(',', $linked_fields_csv);
+	$current_language = wpckan_get_current_language(); ?>
+
+	<table class="wpckan_dataset_metadata_fields">
     <?php
         $metadata_available = false;
         if (!empty($supported_fields)): ?>
@@ -152,5 +189,7 @@
 
     <?php endif; ?>
   </table>
+<?php
+}
 
-</div>
+?>
