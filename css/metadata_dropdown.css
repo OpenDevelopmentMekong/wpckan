@@ -1,17 +1,27 @@
+.metadata-heading{
+
+}
+
+.metadata-title{
+	float: left;
+}
+
 .metadata-dropdown {
     /* Size & position */
     position: relative;
-    width: 200px;
-    margin: 0 auto;
-    padding: 12px 15px;
+    width: 40px;
+    padding: 10px;
+		top: 16px;
+		left: 20px;
+		float: left;
 
-    /* Styles */
     background: #fff;
-    border-radius: 5px;
     box-shadow: 0 1px 0 rgba(0,0,0,0.2);
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease-out;
+		background: #7dd220;
+		color: #fff;
 }
 
 .metadata-dropdown:after { /* Little arrow */
@@ -24,7 +34,7 @@
     margin-top: -3px;
     border-width: 6px 6px 0 6px;
     border-style: solid;
-    border-color: #4cbeff transparent;
+    border-color: #ffffff transparent;
 }
 
 .metadata-dropdown .dropdown {

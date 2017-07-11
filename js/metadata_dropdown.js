@@ -1,9 +1,9 @@
-$(".metadata-dropdown").on('click', function(event){
-	$(this).toggleClass('active');
-	return false;
-});
-
 $(function() {
+
+	$(".metadata-dropdown").on('click', function(event){
+		$(this).toggleClass('active');
+		return false;
+	});
 
 	var dd = new DropDown( $('.metadata-dropdown') );
 
