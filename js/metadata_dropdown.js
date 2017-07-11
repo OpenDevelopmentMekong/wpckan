@@ -5,7 +5,7 @@ $(".metadata-dropdown").on('click', function(event){
 
 $(function() {
 
-	var dd = new DropDown( $('.') );
+	var dd = new DropDown( $('.metadata-dropdown') );
 
 	$(document).click(function() {
 		// all dropdowns
