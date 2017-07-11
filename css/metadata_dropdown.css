@@ -16,7 +16,6 @@
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease-out;
-	background: #7dd220;
 	color: #fff;
 }
 
@@ -54,7 +53,7 @@
   overflow: hidden;
 }
 
-.metadata-dropdown .dropdown ul {
+.metadata-dropdown ul {
 	margin-left: 0px;
 }
 
@@ -81,24 +80,19 @@
   vertical-align: middle;
 }
 
-/* Hover state */
-
-.metadata-dropdown .dropdown li:hover a {
-  color: #57a9d9;
-}
 
 /* Active state */
 
 .metadata-dropdown.active {
   border-radius: 5px 5px 0 0;
-  background: #4cbeff;
+  background: #fff;
+	color: #333;
   box-shadow: none;
   border-bottom: none;
-  color: white;
 }
 
 .metadata-dropdown.active:after {
-  border-color: #82d1ff transparent;
+  border-color: #ccc transparent;
 }
 
 .metadata-dropdown.active .dropdown {
