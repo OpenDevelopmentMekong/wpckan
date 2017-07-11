@@ -1,10 +1,5 @@
 $(function() {
 
-	$(".metadata-dropdown").on('click', function(event){
-		$(this).toggleClass('active');
-		return false;
-	});
-
 	var dd = new DropDown( $('.metadata-dropdown') );
 
 	$(document).click(function() {
@@ -12,7 +7,7 @@ $(function() {
 		$('.metadata-dropdown').removeClass('active');
 	});
 
-	obj.dd.on('click', function(event){
+	$(".metadata-dropdown").on('click', function(event){
 		$(this).toggleClass('active');
 		return false;
 	});
