@@ -72,7 +72,18 @@
   </table>
 
 	<!-- Metadata -->
-	<h2><?php _e('Metadata', 'wpckan') ?></h2>
+	<div class="metadata-heading">
+		<h2 class="metadata-title"><?php _e('Metadata', 'wpckan') ?></h2>
+		<div class="metadata-dropdown">
+			<span><i class="fa fa-download"></i></span>
+			<ul class="dropdown">
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.xml"><?php _e('XML', 'odm')?></a></li>
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/api/3/action/package_show?id=<?php echo $dataset_id;?>"><?php _e('JSON', 'odm')?></a></li>
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.rdf"><?php _e('RDF', 'odm')?></a></li>
+			</ul>
+		</div>
+	</div>
+
 	<?php
 		if (!empty($supported_fields)): ?>
 	    <?php
