@@ -56,13 +56,14 @@
 
 .metadata-dropdown .dropdown li {
   padding: 0 10px ;
+	margin-bottom: 0px;
 	text-align: center;
 }
 
 .metadata-dropdown .dropdown li a {
   display: block;
   text-decoration: none;
-  padding: 10px 0;
+  padding: 4px 0;
   transition: all 0.3s ease-out;
   border-bottom: 1px solid #e6e8ea;
 }
