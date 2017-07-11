@@ -82,25 +82,19 @@
 	<?php
 		endif; ?>
 
-		<?php
-			if (!empty($supported_fields_additional)): ?>
-				<div class="slidedable">
-					<h5><?php _e('View additional metadata', 'wpckan') ?></h5>
-					<div class="slidedable-content">
-						<table class="wpckan_dataset_metadata_fields">
-					    <?php
-								render_metadata_table($supported_fields_additional,$data); ?>
-					  </table>
-					</div>
+	<?php
+		if (!empty($supported_fields_additional)): ?>
+			<div class="slidedable">
+				<h5><?php _e('View additional metadata', 'wpckan') ?></h5>
+				<div class="slidedable-content">
+					<table class="wpckan_dataset_metadata_fields">
+				    <?php
+							render_metadata_table($supported_fields_additional,$data); ?>
+				  </table>
 				</div>
-		<?php
-			endif; ?>
-
-	<h2><?php _e('Metadata', 'wpckan') ?></h2>
-  <table class="wpckan_dataset_metadata_fields">
-    <?php
-			render_metadata_table($supported_fields,$data); ?>
-  </table>
+			</div>
+	<?php
+		endif; ?>
 
 </div>
 
