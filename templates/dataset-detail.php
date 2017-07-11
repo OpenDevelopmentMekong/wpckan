@@ -19,7 +19,7 @@
 	<!-- Organization -->
   <?php if (isset($data['organization']['title']) && function_exists("odm_country_manager") && (odm_country_manager()->get_current_country()=="mekong")): ?>
     <h3 class="wpckan_dataset_organization"><?php _e($data['organization']['title'], 'wpckan') ?></h3>
-  <?php endif; ?>$linked_fields
+  <?php endif; ?>
 
 	<!-- Tags -->
   <ul class="wpckan_dataset_tags">
