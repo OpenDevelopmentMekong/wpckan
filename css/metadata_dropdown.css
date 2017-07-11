@@ -39,7 +39,7 @@
   left: 0;
   right: 0;
 
-  /* Styles */
+  /* Styles */margin-left: 0px;
   background: #fff;
   border-radius: 0 0 5px 5px;
   border: 1px solid rgba(0,0,0,0.2);
@@ -51,7 +51,7 @@
   /* Hiding */
   max-height: 0;
   overflow: hidden;
-	margin-left: 0px;
+	margin-left: 0px !important;
 }
 
 .metadata-dropdown .dropdown li {
@@ -82,8 +82,8 @@
 
 .metadata-dropdown.active {
   border-radius: 5px 5px 0 0;
-  background: #fff;
-	color: #333;
+	background: #7dd220;
+	color: #fff;
   box-shadow: none;
   border-bottom: none;
 }
