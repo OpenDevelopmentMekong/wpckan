@@ -38,6 +38,7 @@ if (!class_exists('wpckan')) {
           add_action('admin_init', array(&$this, 'wpckan_admin_init'));
           add_action('admin_menu', array(&$this, 'wpckan_add_menu'));
           add_action('init', array(&$this, 'wpckan_register_plugin_styles'));
+					add_action('init', array(&$this, 'wpckan_register_plugin_scripts'));
           add_action('edit_post', array(&$this, 'wpckan_edit_post'));
           add_action('save_post', array(&$this, 'wpckan_save_post'));
           add_action('add_meta_boxes', array(&$this, 'wpckan_add_meta_boxes'));
@@ -77,6 +78,14 @@ if (!class_exists('wpckan')) {
 
 					wp_register_style('metadata_dropdown_css', plugin_dir_url(__FILE__) . 'css/metadata_dropdown.css');
           wp_enqueue_style('metadata_dropdown_css');
+        }
+
+				public function wpckan_register_plugin_scripts($hook)
+        {
+          wpckan_log('wpckan_register_plugin_scripts');
+
+					wp_register_script('metadata_dropdown_js', plugins_url('wpckan/js/metadata_dropdown.js'), array('jquery'));
+					wp_enqueue_script('metadata_dropdown_js');
         }
 
         public function wpckan_do_shortcode_get_related_datasets($atts)
@@ -156,8 +165,6 @@ if (!class_exists('wpckan')) {
           wp_enqueue_script('wpckan_typeahead');
           wp_register_script('wpckan_js', plugins_url('wpckan/js/wpckan_metabox_logic.js'), array('jquery'));
           wp_enqueue_script('wpckan_js');
-					wp_register_script('metadata_dropdown_js', plugins_url('wpckan/js/metadata_dropdown.js'), array('jquery'));
-          wp_enqueue_script('metadata_dropdown_js');
         }
 
         public function wpckan_render_dataset_meta_box($post)
