@@ -75,10 +75,8 @@
 	<h2><?php _e('Metadata', 'wpckan') ?></h2>
 	<?php
 		if (!empty($supported_fields)): ?>
-		  <table class="wpckan_dataset_metadata_fields">
-		    <?php
-					render_metadata_table($supported_fields,$data); ?>
-		  </table>
+	    <?php
+				render_metadata_table($supported_fields,$data); ?>
 	<?php
 		endif; ?>
 
@@ -87,10 +85,8 @@
 			<div class="slideable">
 				<h5><?php _e('View additional metadata', 'wpckan') ?></h5>
 				<div class="slideable-content">
-					<table class="wpckan_dataset_metadata_fields">
-				    <?php
-							render_metadata_table($supported_fields_additional,$data); ?>
-				  </table>
+			    <?php
+						render_metadata_table($supported_fields_additional,$data); ?>
 				</div>
 			</div>
 	<?php
