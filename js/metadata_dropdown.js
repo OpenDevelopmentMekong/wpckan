@@ -1,9 +1,8 @@
-$(function() {
+jQuery( document ).ready(function() {
 
 	var dd = new DropDown( $('.metadata-dropdown') );
 
 	$(document).click(function() {
-		// all dropdowns
 		$('.metadata-dropdown').removeClass('active');
 	});
 
