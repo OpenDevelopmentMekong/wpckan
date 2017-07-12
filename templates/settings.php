@@ -9,6 +9,7 @@
           $ckan_url = $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url');
           $ckan_api = $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_api');
           $supported_fields = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
+					$supported_fields_additional = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields_additional');
           $field_mappings = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings');
           $field_mappings_values = $GLOBALS['wpckan_options']->get_option('wpckan_setting_field_mappings_values');
           $supported_datatables = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_datatables');
@@ -85,7 +86,14 @@
             <th scope="row"><label for="wpckan_setting_supported_fields"><?php _e('Supported fields','wpckan') ?></label></th>
             <td>
               <input class="full-width" type="text" name="wpckan_setting_supported_fields" id="wpckan_setting_supported_fields" placeholder="<?php _e('title, description, license_url, ...','wpckan') ?>" value="<?php echo $supported_fields ?>"></input>
-              <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional data section. Mind order.','wpckan') ?></p>
+              <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the main metadata section. Mind order.','wpckan') ?></p>
+            </td>
+          </tr>
+					<tr valign="top">
+            <th scope="row"><label for="wpckan_setting_supported_fields_additional"><?php _e('Supported fields (Additional)','wpckan') ?></label></th>
+            <td>
+              <input class="full-width" type="text" name="wpckan_setting_supported_fields_additional" id="wpckan_setting_supported_fields_additional" placeholder="<?php _e('title, description, license_url, ...','wpckan') ?>" value="<?php echo $supported_fields_additional ?>"></input>
+              <p class="description"><?php _e('Specify a list of Comma-separated field names to show on the additional metadata section. Mind order.','wpckan') ?></p>
             </td>
           </tr>
           <!-- Field mappings for keys-->

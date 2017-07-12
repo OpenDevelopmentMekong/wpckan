@@ -1,0 +1,99 @@
+.metadata-title{
+	float: left;
+}
+
+.metadata-dropdown {
+  /* Size & position */
+  position: relative;
+  width: 40px;
+  padding: 10px;
+	top: 16px;
+	left: 20px;
+	float: left;
+
+  background: #7dd220;
+	color: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-out;
+}
+
+.metadata-dropdown:after { /* Little arrow */
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -3px;
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #ffffff transparent;
+}
+
+.metadata-dropdown .dropdown {
+  /* Size & position */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  /* Styles */margin-left: 0px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-top: none;
+  border-bottom: none;
+  list-style: none;
+  transition: all 0.3s ease-out;
+
+  /* Hiding */
+  max-height: 0;
+  overflow: hidden;
+	margin-left: 0px !important;
+}
+
+.metadata-dropdown .dropdown li {
+  padding: 0 10px ;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.metadata-dropdown .dropdown li a {
+  display: block;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: all 0.3s ease-out;
+  border-bottom: 1px solid #e6e8ea;
+}
+
+.metadata-dropdown .dropdown li:last-of-type a {
+  border: none;
+}
+
+.metadata-dropdown .dropdown li i {
+  margin-right: 5px;
+  color: inherit;
+  vertical-align: middle;
+}
+
+
+/* Active state */
+
+.metadata-dropdown.active {
+  border-radius: 5px 5px 0 0;
+	background: #7dd220;
+	color: #fff;
+  box-shadow: none;
+  border-bottom: none;
+}
+
+.metadata-dropdown.active:after {
+  border-color: #ccc transparent;
+}
+
+.metadata-dropdown.active .dropdown {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  max-height: 400px;
+}

@@ -5,13 +5,9 @@
 <?php
   $supported_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields');
   $supported_fields = explode(',', $supported_fields_csv);
-  $current_language = wpckan_get_current_language();
-  $field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
-  $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
-	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
-  $linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
-  $linked_fields = explode(',', $linked_fields_csv);
-?>
+	$supported_fields_additional_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields_additional');
+  $supported_fields_additional = explode(',', $supported_fields_additional_csv);
+	$current_language = wpckan_get_current_language(); ?>
 
 <div class="wpckan_dataset_detail">
 
@@ -35,7 +31,7 @@
 	<!-- Notes or notes_translated in case of multilingual dataset -->
 	<?php
     $notes = wpckan_get_multilingual_value('notes',$data);?>
-	<p class="wpckan_dataset_notes"><?php echo $notes ?></p>
+	  <p class="wpckan_dataset_notes expandible"><?php echo $notes ?></p>
 
 	<!-- License -->
   <?php if (isset($data['license_title'])): ?>
@@ -66,7 +62,7 @@
 	                $resource_description = !empty($resource['description_translated'][$current_language]) ? $resource['description_translated'][$current_language] : $resource['description_translated']['en'];
 	            endif;
 	        endif; ?>
-          <p><?php echo $resource_description; ?></p>
+          <p class="expandible"><?php echo $resource_description; ?></p>
         </td>
         <td class="wpckan_dataset_resource_url"><?php if (isset($resource['url'])): ?>
           <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>"><?php _e('Download', 'wpckan') ?></a>
@@ -76,8 +72,50 @@
   </table>
 
 	<!-- Metadata -->
-	<h2><?php _e('Additional info', 'wpckan') ?></h2>
-  <table class="wpckan_dataset_metadata_fields">
+	<div class="metadata-heading">
+		<h2 class="metadata-title"><?php _e('Metadata', 'wpckan') ?></h2>
+		<div class="metadata-dropdown">
+			<span><i class="fa fa-download"></i></span>
+			<ul class="dropdown">
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.xml"><?php _e('XML', 'odm')?></a></li>
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/api/3/action/package_show?id=<?php echo $dataset_id;?>"><?php _e('JSON', 'odm')?></a></li>
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.rdf"><?php _e('RDF', 'odm')?></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<?php
+		if (!empty($supported_fields)): ?>
+	    <?php
+				render_metadata_table($supported_fields,$data); ?>
+	<?php
+		endif; ?>
+
+	<?php
+		if (!empty($supported_fields_additional)): ?>
+			<div class="slideable">
+				<h5><?php _e('View additional metadata', 'wpckan') ?></h5>
+				<div class="slideable-content">
+			    <?php
+						render_metadata_table($supported_fields_additional,$data); ?>
+				</div>
+			</div>
+	<?php
+		endif; ?>
+
+</div>
+
+<?php
+function render_metadata_table($supported_fields,$data){
+
+	$field_mappings = wpckan_parse_field_mappings('wpckan_setting_field_mappings');
+  $field_mappings_values = wpckan_parse_field_mappings('wpckan_setting_field_mappings_values');
+	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
+	$linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
+  $linked_fields = explode(',', $linked_fields_csv);
+	$current_language = wpckan_get_current_language(); ?>
+
+	<table class="wpckan_dataset_metadata_fields">
     <?php
         $metadata_available = false;
         if (!empty($supported_fields)): ?>
@@ -134,10 +172,10 @@
             if (!empty($mapped_value)):
               if (in_array($key,$linked_fields)):
                 echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-                echo '<td><p><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
+                echo '<td><p class="expandible"><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
               else:
                 echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-                echo '<td><p>'.__($mapped_value, 'wpckan').'</p></td>';
+                echo '<td><p class="expandible">'.__($mapped_value, 'wpckan').'</p></td>';
               endif;
             endif;
             ?>
@@ -152,5 +190,7 @@
 
     <?php endif; ?>
   </table>
+<?php
+}
 
-</div>
+?>
