@@ -48,6 +48,15 @@ Filters the datasets according to the content of the datasets' extra fields. The
 * **sort**: (Optional) String.
 As per the solr documentation, this is a comma-separated string of field names and sort-orderings.
 
+* **template**: (Optional) String.
+Render the information using different templates:
+	* post-grid-single-1-cols
+	* post-grid-single-2-cols
+	* post-grid-single-4-cols
+	* post-list-single-1-cols
+	* post-list-single-2-cols
+	* post-list-single-4-cols
+
 #### Pagination
 
 * **page**: (Optional) Number.
@@ -192,6 +201,15 @@ Filters the datasets according to the content of the datasets' extra fields. The
 
 * **sort**: (Optional) String.
 As per the solr documentation, this is a comma-separated string of field names and sort-orderings.
+
+* **template**: (Optional) String.
+Render the information using different templates:
+	* post-grid-single-1-cols
+	* post-grid-single-2-cols
+	* post-grid-single-4-cols
+	* post-list-single-1-cols
+	* post-list-single-2-cols
+	* post-list-single-4-cols
 
 #### Pagination
 
