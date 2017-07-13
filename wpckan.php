@@ -3,7 +3,7 @@
  * Plugin Name: wpckan
  * Plugin URI: http://www.lifeformapps.com/portfolio/wpckan/
  * Description: wpckan is a wordpress plugin that exposes a series of functionalities to bring content stored in CKAN to Wordpress' UI and also provide mechanisms for archiving content generated on Wordpress into a CKAN instance.
- * Version: 2.3.2
+ * Version: 2.3.3
  * Author: Alex Corbi (mail@lifeformapps.com)
  * Author URI: http://www.lifeformapps.com
  * License: GPLv3
@@ -86,6 +86,9 @@ if (!class_exists('wpckan')) {
 
 					wp_register_script('metadata_dropdown_js', plugins_url('wpckan/js/metadata_dropdown.js'), array('jquery'));
 					wp_enqueue_script('metadata_dropdown_js');
+
+					wp_register_script('template_dropdown_js', plugins_url('wpckan/js/template_dropdown.js'), array('jquery'));
+					wp_enqueue_script('template_dropdown_js');
         }
 
         public function wpckan_do_shortcode_get_related_datasets($atts)
