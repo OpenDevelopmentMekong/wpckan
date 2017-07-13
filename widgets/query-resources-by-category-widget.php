@@ -190,22 +190,24 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		<?php
 		$output_fields = !empty($instance['output_fields']) ? __($instance['output_fields'], 'wpckan') : 'title';
 		$output_fields_resources = !empty($instance['output_fields_resources']) ? __($instance['output_fields_resources'], 'wpckan') : '' ?>
-		<p>
-			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields for dataset:');?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id('output_fields_resources');?>"><?php _e('Output fields for resources:');?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resources');?>" name="<?php echo $this->get_field_name('output_fields_resources');?>" type="text" value="<?php echo esc_attr($output_fields_resources);?>">
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Order by:' ); ?></label>
-			<select class='widefat' id="<?php echo $this->get_field_id('sort'); ?>" name="<?php echo $this->get_field_name('sort'); ?>" type="text">
-				<?php foreach ( $this->sort_options  as $key => $value ): ?>
-					<option <?php if ($sort == $key) { echo " selected"; } ?> value="<?php echo $key ?>"><?php echo $value ?></option>
-				<?php endforeach; ?>
-			</select>
-		</p>
+		<div class="template-dependent-options">
+			<p>
+				<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields for dataset:');?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
+			</p>
+			<p>
+				<label for="<?php echo $this->get_field_id('output_fields_resources');?>"><?php _e('Output fields for resources:');?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resources');?>" name="<?php echo $this->get_field_name('output_fields_resources');?>" type="text" value="<?php echo esc_attr($output_fields_resources);?>">
+			</p>
+			<p>
+				<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Order by:' ); ?></label>
+				<select class='widefat' id="<?php echo $this->get_field_id('sort'); ?>" name="<?php echo $this->get_field_name('sort'); ?>" type="text">
+					<?php foreach ( $this->sort_options  as $key => $value ): ?>
+						<option <?php if ($sort == $key) { echo " selected"; } ?> value="<?php echo $key ?>"><?php echo $value ?></option>
+					<?php endforeach; ?>
+				</select>
+			</p>
+		</div>
 
 		<?php
 	}
