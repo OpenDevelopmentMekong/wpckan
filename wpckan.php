@@ -86,6 +86,9 @@ if (!class_exists('wpckan')) {
 
 					wp_register_script('metadata_dropdown_js', plugins_url('wpckan/js/metadata_dropdown.js'), array('jquery'));
 					wp_enqueue_script('metadata_dropdown_js');
+
+					wp_register_script('template_dropdown_js', plugins_url('wpckan/js/template_dropdown.js'), array('jquery'));
+					wp_enqueue_script('template_dropdown_js');
         }
 
         public function wpckan_do_shortcode_get_related_datasets($atts)
