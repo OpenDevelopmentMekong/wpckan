@@ -50,12 +50,8 @@ As per the solr documentation, this is a comma-separated string of field names a
 
 * **template**: (Optional) String.
 Render the information using different templates:
-	* post-grid-single-1-cols
-	* post-grid-single-2-cols
-	* post-grid-single-4-cols
-	* post-list-single-1-cols
-	* post-list-single-2-cols
-	* post-list-single-4-cols
+	* dataset-list
+	* dataset-grid
 
 #### Pagination
 
@@ -204,12 +200,8 @@ As per the solr documentation, this is a comma-separated string of field names a
 
 * **template**: (Optional) String.
 Render the information using different templates:
-	* post-grid-single-1-cols
-	* post-grid-single-2-cols
-	* post-grid-single-4-cols
-	* post-list-single-1-cols
-	* post-list-single-2-cols
-	* post-list-single-4-cols
+	* dataset-list
+	* dataset-grid
 
 #### Pagination
 
