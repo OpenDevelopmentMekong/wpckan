@@ -181,7 +181,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 		<h3>Output</h3>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Select layout:' ); ?></label>
-			<select class='widefat template' id="<?php echo $this->get_field_id('template'); ?>" name="<?php echo $this->get_field_name('template'); ?>" type="text">
+			<select class='widefat template template-selector' id="<?php echo $this->get_field_id('template'); ?>" name="<?php echo $this->get_field_name('template'); ?>" type="text">
 				<?php foreach ( $this->templates  as $key => $value ): ?>
 					<option <?php if ($template == $value) { echo " selected"; } ?> value="<?php echo $value ?>"><?php echo $key ?></option>
 				<?php endforeach; ?>
