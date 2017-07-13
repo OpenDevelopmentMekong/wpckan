@@ -7,7 +7,8 @@
   $supported_fields = explode(',', $supported_fields_csv);
 	$supported_fields_additional_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields_additional');
   $supported_fields_additional = explode(',', $supported_fields_additional_csv);
-	$current_language = wpckan_get_current_language(); ?>
+	$current_language = wpckan_get_current_language(); 
+  $dataset_id = $data['id']; ?>
 
 <div class="wpckan_dataset_detail">
 
