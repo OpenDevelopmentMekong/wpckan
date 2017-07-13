@@ -148,7 +148,7 @@
     if ((count($dataset_array) == 0) && $blank_on_empty)
       return "";
 
-		$template = isset($atts["template"]) ? $atts["template"] : "dataset-list";
+		$template = isset($atts["template"]) ? $atts["template"] : 'dataset-list';
 
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/' . $template . '.php',$dataset_array,$atts);
   }
@@ -246,6 +246,21 @@
     endif;
 
     return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url') . "/dataset/" . $dataset_name;
+  }
+
+	function wpckan_get_image_urls_from_dataset($dataset){
+
+    $image_formats = array("png","jpeg","jpg");
+		$urls = array();
+
+    $count = 0;
+		foreach ($dataset['resources'] as $resource):
+			if (in_array(strtolower($resource["format"]),$image_formats)):
+				array_push($urls,$resource["url"]);
+			endif;
+		endforeach;
+
+    return $urls;
   }
 
 	function wpckan_get_multilingual_value($field_name,$data){

@@ -21,12 +21,8 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
 	);
 
 	$this->templates = array(
-		"grid-4-cols" => "post-grid-single-4-cols",
-		"grid-2-cols" => "post-grid-single-2-cols",
-		"grid-1-cols" => "post-grid-single-1-cols",
-		"list-4-cols" => "post-list-single-4-cols",
-		"list-2-cols" => "post-list-single-2-cols",
-		"list-1-cols" => "post-list-single-1-cols"
+		"dataset-list" => "dataset-list",
+		"dataset-grid" => "dataset-grid"
 	);
 
  }
@@ -112,7 +108,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   $more_link = ! empty( $instance['more_link'] ) ? $instance['more_link'] : '';
   $organization = ! empty( $instance['organization'] ) ? $instance['organization'] : -1;
   $organization_list = [];
-	$template = isset($instance['template']) ? $instance['template'] : 'list-1-cols';
+	$template = isset($instance['template']) ? $instance['template'] : 'dataset-list';
 
   if (function_exists('wpckan_api_get_organizations_list')){
     try{
@@ -168,7 +164,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
 			<label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Select layout:' ); ?></label>
 			<select class='widefat template' id="<?php echo $this->get_field_id('template'); ?>" name="<?php echo $this->get_field_name('template'); ?>" type="text">
 				<?php foreach ( $this->templates  as $key => $value ): ?>
-					<option <?php if ($template == $key) { echo " selected"; } ?> value="<?php echo $key ?>"><?php echo $key ?></option>
+					<option <?php if ($template == $value) { echo " selected"; } ?> value="<?php echo $value ?>"><?php echo $key ?></option>
 				<?php endforeach; ?>
 			</select>
 		</p>
@@ -215,7 +211,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   $instance['output_fields_resources'] = (! empty( $new_instance['output_fields_resources'])) ? strip_tags( $new_instance['output_fields_resources'] ) : '';
   $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
 	$instance['sort'] = (! empty( $new_instance['sort'])) ? strip_tags( $new_instance['sort'] ) : 'metadata_modified+desc';
-	$instance['template'] = (!empty( $new_instance['template'])) ? $new_instance['template'] : 'list-1-cols';
+	$instance['template'] = (!empty( $new_instance['template'])) ? $new_instance['template'] : 'dataset-list';
 
   return $instance;
  }
