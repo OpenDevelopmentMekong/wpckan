@@ -15,3 +15,5 @@ wp-content/wp-cache-config.php
 composer.lock
 **/vendor/
 **.mo
+
+sftp-config.json
