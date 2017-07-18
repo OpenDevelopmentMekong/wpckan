@@ -20,6 +20,11 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
     "odm_promulgation_date+desc" => "Promulgation date (Laws)"
 	);
 
+	$this->templates = array(
+		"dataset-list" => "dataset-list",
+		"dataset-grid" => "dataset-grid"
+	);
+
  }
 
  /**
@@ -32,44 +37,50 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
 
   global $post;
 
-   $shortcode = '[wpckan_query_datasets query="' . $instance['query'] . '"';
+	$template = isset($instance['template']) ? $instance['template'] : 'dataset-list';
 
-   if (!empty($instance['group']) && $instance['group'] != '-1'):
-     $shortcode .= ' group="' . $instance['group'] . '"';
-   endif;
+  $shortcode = '[wpckan_query_datasets query="' . $instance['query'] . '"';
 
-   if (!empty($instance['organization']) && $instance['organization'] != '-1'):
-     $shortcode .= ' organization="' . $instance['organization'] . '"';
-   endif;
+	if ($template !== "dataset-list"):
+		$shortcode .= ' template="'.$template.'"';
+	endif;
 
-   if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])):
-     $shortcode .= ' filter_fields=\''.$instance['filter_fields'].'\'';
-   endif;
+  if (!empty($instance['group']) && $instance['group'] != '-1'):
+    $shortcode .= ' group="' . $instance['group'] . '"';
+  endif;
 
-   if (!empty($instance['type'])):
-     $shortcode .= ' type="'.$instance['type'].'"';
-   endif;
+  if (!empty($instance['organization']) && $instance['organization'] != '-1'):
+    $shortcode .= ' organization="' . $instance['organization'] . '"';
+  endif;
 
-   if (!empty($instance['limit']) && $instance['limit'] > 0):
-     $shortcode .= ' limit="' . $instance['limit'] . '"';
-   endif;
+  if (!empty($instance['filter_fields']) && json_decode($instance['filter_fields'])):
+    $shortcode .= ' filter_fields=\''.$instance['filter_fields'].'\'';
+  endif;
 
-   if (!empty($instance['sort'])):
-     $shortcode .= ' sort="'.$instance['sort'].'"';
-   endif;
+  if (!empty($instance['type'])):
+    $shortcode .= ' type="'.$instance['type'].'"';
+  endif;
 
-   $shortcode .= ' include_fields_dataset="'.$instance['output_fields'].'" include_fields_resources="'. $instance['output_fields_resources']. '" blank_on_empty="true"]';
+  if (!empty($instance['limit']) && $instance['limit'] > 0):
+    $shortcode .= ' limit="' . $instance['limit'] . '"';
+  endif;
 
-   $output = do_shortcode($shortcode);
+  if (!empty($instance['sort'])):
+    $shortcode .= ' sort="'.$instance['sort'].'"';
+  endif;
 
-   if (!empty($output) && $output != ""):
+  $shortcode .= ' include_fields_dataset="'.$instance['output_fields'].'" include_fields_resources="'. $instance['output_fields_resources']. '" blank_on_empty="true"]';
 
-     echo $args['before_widget'];
-     if ( ! empty( $instance['title'] ) ) :
-      echo $args['before_title'] . apply_filters( 'widget_title', __( $instance['title'], 'wpckan')). $args['after_title'];
-     endif;
+  $output = do_shortcode($shortcode);
 
-     echo $output;
+  if (!empty($output) && $output != ""):
+
+    echo $args['before_widget'];
+    if ( ! empty( $instance['title'] ) ) :
+    	echo $args['before_title'] . apply_filters( 'widget_title', __( $instance['title'], 'wpckan')). $args['after_title'];
+    endif;
+
+    echo $output;
 
     if(!empty($instance['more_link']) && $instance['more_link'] != "" ):
       echo '<div style="text-align:right"><a href="'.$instance['more_link'].'" target="_blank">'.$instance['more_text'].'</a></div>';
@@ -77,7 +88,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
 
     echo $args['after_widget'];
 
-   endif;
+  endif;
 
  }
 
@@ -97,6 +108,8 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   $more_link = ! empty( $instance['more_link'] ) ? $instance['more_link'] : '';
   $organization = ! empty( $instance['organization'] ) ? $instance['organization'] : -1;
   $organization_list = [];
+	$template = isset($instance['template']) ? $instance['template'] : 'dataset-list';
+
   if (function_exists('wpckan_api_get_organizations_list')){
     try{
       $organization_list = wpckan_api_get_organizations_list();
@@ -147,22 +160,32 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
     <label for="<?php echo $this->get_field_id( 'more_link' ); ?>"><?php _e( 'More dataset: Link (URL)' ); ?></label>
     <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'more_link' ); ?>" name="<?php echo $this->get_field_name( 'more_link' ); ?>" value="<?php echo esc_attr( $more_link ); ?>">
     <h3>Output</h3>
-  	<p>
-			<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields for dataset:');?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
-		</p>
-    <p>
-			<label for="<?php echo $this->get_field_id('output_fields_resources');?>"><?php _e('Output fields for resources:');?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resources');?>" name="<?php echo $this->get_field_name('output_fields_resources');?>" type="text" value="<?php echo esc_attr($output_fields_resources);?>">
-		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Order by:' ); ?></label>
-			<select class='widefat' id="<?php echo $this->get_field_id('sort'); ?>" name="<?php echo $this->get_field_name('sort'); ?>" type="text">
-				<?php foreach ( $this->sort_options  as $key => $value ): ?>
-					<option <?php if ($sort == $key) { echo " selected"; } ?> value="<?php echo $key ?>"><?php echo $value ?></option>
+			<label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Select layout:' ); ?></label>
+			<select class='widefat template template-selector' id="<?php echo $this->get_field_id('template'); ?>" name="<?php echo $this->get_field_name('template'); ?>" type="text">
+				<?php foreach ( $this->templates  as $key => $value ): ?>
+					<option <?php if ($template == $value) { echo " selected"; } ?> value="<?php echo $value ?>"><?php echo $key ?></option>
 				<?php endforeach; ?>
 			</select>
 		</p>
+		<div class="template-dependent-options">
+	  	<p>
+				<label for="<?php echo $this->get_field_id('output_fields');?>"><?php _e('Output fields for dataset:');?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id('output_fields');?>" name="<?php echo $this->get_field_name('output_fields');?>" type="text" value="<?php echo esc_attr($output_fields);?>">
+			</p>
+	    <p>
+				<label for="<?php echo $this->get_field_id('output_fields_resources');?>"><?php _e('Output fields for resources:');?></label>
+				<input class="widefat" id="<?php echo $this->get_field_id('output_fields_resources');?>" name="<?php echo $this->get_field_name('output_fields_resources');?>" type="text" value="<?php echo esc_attr($output_fields_resources);?>">
+			</p>
+			<p>
+				<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Order by:' ); ?></label>
+				<select class='widefat' id="<?php echo $this->get_field_id('sort'); ?>" name="<?php echo $this->get_field_name('sort'); ?>" type="text">
+					<?php foreach ( $this->sort_options  as $key => $value ): ?>
+						<option <?php if ($sort == $key) { echo " selected"; } ?> value="<?php echo $key ?>"><?php echo $value ?></option>
+					<?php endforeach; ?>
+				</select>
+			</p>
+		</div>
   </p>
   <?php
  }
@@ -190,6 +213,7 @@ class Wpckan_Query_Resources_Widget extends WP_Widget
   $instance['output_fields_resources'] = (! empty( $new_instance['output_fields_resources'])) ? strip_tags( $new_instance['output_fields_resources'] ) : '';
   $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
 	$instance['sort'] = (! empty( $new_instance['sort'])) ? strip_tags( $new_instance['sort'] ) : 'metadata_modified+desc';
+	$instance['template'] = (!empty( $new_instance['template'])) ? $new_instance['template'] : 'dataset-list';
 
   return $instance;
  }

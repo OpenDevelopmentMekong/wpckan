@@ -250,4 +250,79 @@ class UtilsTest extends PHPUnit_Framework_TestCase
       $this->assertEquals($result, "2017-02-06");
   }
 
+	public function testGetImageUrlsFromDatasetEmpty()
+	{
+		$dataset = array(
+			"title" => "some title",
+			"resources" => array()
+		);
+		$result = wpckan_get_image_urls_from_dataset($dataset);
+		$this->assertTrue(is_array($result));
+		$this->assertEquals(count($result),0);
+	}
+
+	public function testGetImageUrlsFromDataset1ResourceNonImage()
+	{
+		$dataset = array(
+			"title" => "some title",
+			"resources" => array(
+				array(
+					"title" => "some resource title",
+					"format" => "PDF",
+					"url" => "some url"
+				)
+			)
+		);
+		$result = wpckan_get_image_urls_from_dataset($dataset);
+		$this->assertTrue(is_array($result));
+		$this->assertEquals(count($result),0);
+	}
+
+	public function testGetImageUrlsFromDataset1ResourceImage()
+	{
+		$dataset = array(
+			"title" => "some title",
+			"resources" => array(
+				array(
+					"title" => "some resource title",
+					"format" => "JPG",
+					"url" => "some url"
+				)
+			)
+		);
+		$result = wpckan_get_image_urls_from_dataset($dataset);
+		$this->assertTrue(is_array($result));
+		$this->assertEquals(count($result),1);
+		$this->assertEquals($result[0],"some url");
+	}
+	public function testGetImageUrlsFromDataset3Resources2Image()
+	{
+		$dataset = array(
+			"title" => "some title",
+			"resources" => array(
+				array(
+					"title" => "some resource title",
+					"format" => "JPG",
+					"url" => "some url"
+				),
+				array(
+					"title" => "some resource title",
+					"format" => "PDF",
+					"url" => "some url"
+				),
+				array(
+					"title" => "some resource title",
+					"format" => "png",
+					"url" => "another url"
+				)
+			)
+		);
+		$result = wpckan_get_image_urls_from_dataset($dataset);
+		$this->assertTrue(is_array($result));
+		$this->assertEquals(count($result),2);
+		$this->assertEquals($result[0],"some url");
+		$this->assertEquals($result[1],"another url");
+	}
+
+
 }
