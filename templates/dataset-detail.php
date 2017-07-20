@@ -66,7 +66,7 @@
           <p class="expandible"><?php echo $resource_description; ?></p>
         </td>
         <td class="wpckan_dataset_resource_url"><?php if (isset($resource['url'])): ?>
-          <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>"><?php _e('Download', 'wpckan') ?></a>
+          <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>" data-ga-event="Dataset|resource_download|<?php echo $dataset_id.'/'.$resource['id']; ?>"><?php _e('Download', 'wpckan') ?></a>
         <?php endif; ?></td>
   		</tr>
     <?php endforeach; ?>
@@ -78,9 +78,9 @@
 		<div class="metadata-dropdown">
 			<span><i class="fa fa-download"></i></span>
 			<ul class="dropdown">
-				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.xml"><?php _e('XML', 'odm')?></a></li>
-				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/api/3/action/package_show?id=<?php echo $dataset_id;?>"><?php _e('JSON', 'odm')?></a></li>
-				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.rdf"><?php _e('RDF', 'odm')?></a></li>
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.xml" data-ga-event="Dataset|metadata_download|<?php echo $dataset_id; ?>/xml"><?php _e('XML', 'odm')?></a></li>
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/api/3/action/package_show?id=<?php echo $dataset_id;?>" data-ga-event="Dataset|metadata_download|<?php echo $dataset_id; ?>/json"><?php _e('JSON', 'odm')?></a></li>
+				<li><a target="_blank" href="<?php echo wpckan_get_ckan_domain(); ?>/dataset/<?php echo $dataset_id;?>.rdf" data-ga-event="Dataset|metadata_download|<?php echo $dataset_id; ?>/rdf"><?php _e('RDF', 'odm')?></a></li>
 			</ul>
 		</div>
 	</div>
@@ -195,3 +195,9 @@ function render_metadata_table($supported_fields,$data){
 }
 
 ?>
+<script>
+  //Send GA Event
+  jQuery(function(){
+    ga('send', 'event', 'Dataset', 'view', '<?php echo $dataset_id; ?>');
+  });
+</script>
