@@ -24,7 +24,7 @@
 							$localized_title = wpckan_get_multilingual_value("title",$dataset);
 							$date = $dataset["metadata_created"];
 							$link = wpckan_get_link_to_dataset($dataset["id"]); ?>
-							<a class="item-title" href="<?php echo $link; ?>" title="<?php echo $localized_title; ?>">
+							<a class="item-title" href="<?php echo $link; ?>" title="<?php echo $localized_title; ?>" data-ga-event="Dataset|link_click|<?php echo $dataset["id"]; ?>">
 								<?php echo $localized_title; ?>
 							</a>
 	      	</div>
