@@ -299,7 +299,7 @@
 
   function wpckan_log($text) {
 
-    if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled')):
+    if (!(bool)($GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled'))):
       return;
     endif;
 
