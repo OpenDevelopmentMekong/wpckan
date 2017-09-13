@@ -70,14 +70,17 @@
   function wpckan_get_guzzle_client($settings)
   {
       $ckanClient = CkanClient::factory($settings);
-      $cache_plugin = new CachePlugin(array(
-          'storage' => new DefaultCacheStorage(
-              new DoctrineCacheAdapter(
-                  new FilesystemCache('/cache/')
-              )
-          ),
-      ));
-      $ckanClient->addSubscriber($cache_plugin);
+
+      if ((bool)($GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled'))):
+        $cache_plugin = new CachePlugin(array(
+            'storage' => new DefaultCacheStorage(
+                new DoctrineCacheAdapter(
+                    new FilesystemCache('/cache/')
+                )
+            ),
+        ));
+        $ckanClient->addSubscriber($cache_plugin);
+      endif;
 
       return $ckanClient;
   }
