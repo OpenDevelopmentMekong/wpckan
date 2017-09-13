@@ -155,7 +155,7 @@
             <th scope="row"><label for="wpckan_setting_cache_path"><?php _e('Cache file path','wpckan') ?></label></th>
             <td>
               <input type="text" name="wpckan_setting_cache_path" id="wpckan_setting_cache_path" value="<?php echo $cache_path ?>"/>
-              <p class="description"><?php _e('Path where cached files are going to be stored. Mind permissions.','wpckan') ?></p>
+              <p class="description"><?php _e('Path where cached files are going to be stored. Mind permissions. and make sure the path ends with trailing slash "/"','wpckan') ?></p>
             </td>
           </tr>
           <tr valign="top">
