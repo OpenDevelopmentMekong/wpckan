@@ -368,18 +368,10 @@
       return $GLOBALS['wpckan_options']->get_option('wpckan_setting_ckan_url');
   }
 
-
-   function wpckan_get_metadata_info_of_dataset_by_id($params_arr)
+   // TODO: parametrize
+   function wpckan_get_metadata_info_of_dataset_by_id($ckan_domain, $ckan_dataset_id, $individual_layer = '', $atlernative_links = 0, $showing_fields = '')
    {
-     $ckan_domain = isset($params_arr["ckan_domain"]) ? $params_arr["ckan_domain"] : wpckan_get_ckan_domain();
-     $ckan_dataset_id = isset($params_arr["ckan_dataset_id"]) ? $params_arr["ckan_dataset_id"] : null;
-     $get_layer_by_id = isset($params_arr["get_layer_post"]) ? $params_arr["get_layer_post"] : null;
-     $get_download_url = isset($params_arr["download_url"]) ? $params_arr["download_url"] : null;
-     $get_profilepage_url = isset($params_arr["profile_url"]) ? $params_arr["profile_url"] : null;
-     $showing_fields = isset($params_arr["showing_fields"]) ? $params_arr["showing_fields"] : null;
-     $echo = isset($params_arr["echo"]) ? $params_arr["echo"] : true;
      $lang = wpckan_get_current_language();
-     $get_info = null;
      $attribute_metadata = array(
         //  "title_translated" => "Title",
         "notes_translated" => "Description",
@@ -404,85 +396,83 @@
      // get ckan record by id
      $get_info_from_ckan = wpckan_api_package_show($ckan_domain, $ckan_dataset_id);
      if(!empty($get_info_from_ckan)){
-       $get_info .= '<div class="layer-toggle-info toggle-info toggle-info-' . $get_layer_by_id->ID .'">';
-          $get_info .= '<h4 class="'. odm_country_manager()->get_current_country() . '-bgcolor">';
-            $get_info .= $get_info_from_ckan['title_translated'][$lang]!=""?  $get_info_from_ckan['title_translated'][$lang] : $get_layer_by_id->post_title;
-          $get_info .= '</h4>';
-              if(!empty($showing_fields)){
-                if($get_info_from_ckan):
-                  foreach ($get_info_from_ckan as $key => $info) :
-                    if(array_key_exists($key, $showing_fields)):
-                        if(($key == 'notes_translated') && !empty($get_info_from_ckan['notes_translated'])):
-                              $info = is_array($info) ? $info[$lang]: $info;
-                              $get_info .= '<p>' . $info . '</p>';
-                        elseif($key == 'odm_date_created' && !empty($get_info_from_ckan['odm_date_created'])):
-                              $get_info .= '<p><strong>' . $attribute_metadata['odm_date_created'] .':</strong> ';
-                              $get_info .= ($info == "unspecified")? ucwords($get_info_from_ckan['odm_date_created'] ) : $get_info_from_ckan['odm_date_created']. '</p>';
-                        elseif($key == 'license_id' && $get_info_from_ckan['license_id']!=""):
-                              $get_info .= '<p><strong>' .$attribute_metadata['license_id'] .':</strong> ';
-                              $get_info .= ($info == "unspecified")? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']. '</p>';
-                        elseif($key == 'version' && $get_info_from_ckan['version']!=""):
-                              $get_info .= '<p><strong>' .$attribute_metadata['version'] .':</strong> ';
-                              $get_info .= ($info == "unspecified")? ucwords($get_info_from_ckan['version'] ) : $get_info_from_ckan['version']. '</p>';
-                        else:
-                              $get_info .= '<p><strong>'. $attribute_metadata[$key].'</strong><br/>';
-                              $get_info .= is_array($info) ? $info[$lang]: $info. '</p>';
-                        endif;
-                     endif;
-                  endforeach;
-                endif;
+       ?>
+       <div class="layer-toggle-info toggle-info toggle-info-<?php echo $individual_layer->ID; ?>">
+          <table border="0" class="toggle-table data-table">
+              <tr><td colspan="2"><h4><?php echo $get_info_from_ckan['title_translated'][$lang]!=""?  $get_info_from_ckan['title_translated'][$lang] : $individual_layer->post_title; ?></h4></td></tr>
+              <?php
+              if($showing_fields == ""){
+                if($get_info_from_ckan){
+                  foreach ($get_info_from_ckan as $key => $info) {
+                    if(!empty($get_info_from_ckan)){
+                        if($key == 'license_id' && $get_info_from_ckan['license_id']!=""){ ?>
+                          <tr>
+                              <td class="row-key"><?php echo $attribute_metadata['license_id']; ?></td>
+                              <td><?php echo $info == "unspecified"? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']; ?></td>
+                          </tr>
+                        <?php
+                        }else{
+                            if(array_key_exists($key, $attribute_metadata)){ ?>
+                              <tr>
+                                  <td class="row-key"><?php echo $attribute_metadata[$key]; ?></td>
+                                  <td><?php echo is_array($info) ? $info[$lang]: $info; ?></td>
+                              </tr>
+                            <?php
+                            }
+                        }//end else
+                    } //!empty($get_info_from_ckan)
+                  } //end foreach
+                }//if get $get_info_from_ckan
+              }else { //if show fields are defined
+                foreach ($showing_fields as $key => $info) {
+                  if(!empty($get_info_from_ckan)){
+                      if($key == 'license_id' && $get_info_from_ckan['license_id']!=""){ ?>
+                        <tr>
+                            <td class="row-key"><?php echo $showing_fields['license_id']; ?></td>
+                            <td><?php echo $info == "unspecified"? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']; ?></td>
+                        </tr>
+                      <?php
+                      }else{  ?>
+                          <tr>
+                              <td class="row-key"><?php echo $showing_fields[$key]; ?></td>
+                              <td><?php echo is_array($get_info_from_ckan[$key]) ? $get_info_from_ckan[$key][$lang]: $get_info_from_ckan[$key]; ?></td>
+                          </tr>
+                      <?php
+                      }
+                  } //!empty($get_info_from_ckan)
+                } //end foreach
+              }
+              ?>
+          </table>
+          <?php
+          if ($atlernative_links == 1) {
+              $get_post_by_id = get_post($individual_layer->ID);
+              if ( ($lang != "en") ){
+                 $get_download_url = get_post_meta($get_post_by_id->ID, '_layer_download_link_localization', true);
+                 $get_profilepage_url = get_post_meta($get_post_by_id->ID, '_layer_profilepage_link_localization', true);
               }else {
-                foreach ($showing_fields as $key => $info):
-                  if(!empty($get_info_from_ckan)):
-                      if($key == 'notes_translated' && !empty($get_info_from_ckan['notes_translated'])):
-                            $get_info .= '<p>' . is_array($info) ? $info[$lang]: $info . '</p>';
-                      elseif($key == 'odm_date_created' && !empty($get_info_from_ckan['odm_date_created'])):
-                            $get_info .= '<p>' . $attribute_metadata['odm_date_created'] .': ';
-                            $get_info .= ($info == "unspecified")? ucwords($get_info_from_ckan['odm_date_created'] ) : $get_info_from_ckan['odm_date_created']. '</p>';
-                      elseif($key == 'license_id' && $get_info_from_ckan['license_id']!=""):
-                            $get_info .= '<p>' .$attribute_metadata['license_id'] .': ';
-                            $get_info .= ($info == "unspecified")? ucwords($get_info_from_ckan['license_id'] ) : $get_info_from_ckan['license_id']. '</p>';
-                      elseif($key == 'version' && $get_info_from_ckan['version']!=""):
-                            $get_info .= '<p>' .$attribute_metadata['version'] .': ';
-                            $get_info .= ($info == "unspecified")? ucwords($get_info_from_ckan['version'] ) : $get_info_from_ckan['version']. '</p>';
-                      else:
-                          if(array_key_exists($key, $attribute_metadata)):
-                              $get_info .= '<p><strong>'. $attribute_metadata[$key].'</strong><br/>';
-                              $get_info .= is_array($info) ? $info[$lang]: $info. '</p>';
-                          endif;
-                      endif;
-                  endif;
-                endforeach;
+                 $get_download_url = get_post_meta($get_post_by_id->ID, '_layer_download_link', true);
+                 $get_profilepage_url = get_post_meta($get_post_by_id->ID, '_layer_profilepage_link', true);
               }
-
-              if ($get_layer_by_id) {
-                  if ( ($lang != "en") ){
-                     $get_download_url = get_post_meta($get_layer_by_id->ID, '_layer_download_link_localization', true);
-                     $get_profilepage_url = get_post_meta($get_layer_by_id->ID, '_layer_profilepage_link_localization', true);
-                  }else {
-                     $get_download_url = get_post_meta($get_layer_by_id->ID, '_layer_download_link', true);
-                     $get_profilepage_url = get_post_meta($get_layer_by_id->ID, '_layer_profilepage_link', true);
-                  }
-                  $get_info .= '<div class="atlernative_links">';
-                  if ($get_download_url != ''){
-              				$ckan_dataset_id = wpckan_get_dataset_id_from_dataset_url($get_download_url);
-              				$layer_download_link = get_site_url()."/dataset/?id=".$ckan_dataset_id;
-
-                      $get_info .= '<div class="div-button"><a href="'. $layer_download_link.'" target="_blank"><i class="fa fa-arrow-down"></i> '. __("Download data", "opendev"). '</a></div>';
-
+              ?>
+              <div class="atlernative_links">
+              <?php if ($get_download_url != ''){
+          				$ckan_dataset_id = wpckan_get_dataset_id_from_dataset_url($get_download_url);
+          				$layer_download_link = get_site_url()."/dataset/?id=".$ckan_dataset_id;
+              ?>
+                      <div class="div-button"><a href="<?php echo $layer_download_link; ?>" target="_blank"><i class="fa fa-arrow-down"></i> <?php _e("Download data", "opendev"); ?></a></div>
+                   <?php
                    }
-                   if ($get_profilepage_url != ''){
-                        $get_info .= '<div class="div-button"><a href="'. $get_profilepage_url. '" target="_blank"><i class="fa fa-table"></i> '. __("View dataset table", "opendev"). '</a></div>';
-                   }
-                  $get_info .= '</div>';
-              }
-        $get_info .= '</div>';
-      }//if ckan_dataset_id
-      if($echo){
-        echo $get_info;
-      }else{
-        return $get_info;
-      }
+                   if ($get_profilepage_url != ''){ ?>
+                        <div class="div-button"><a href="<?php echo $get_profilepage_url; ?>" target="_blank"><i class="fa fa-table"></i> <?php _e("View dataset table", "opendev"); ?></a></div>
+                   <?php
+                   } ?>
+              </div><!-- atlernative_links -->
+            <?php
+          } //if $atlernative_links ?>
+        </div><!--layer-toggle-info-->
+        <?php
+      }//if ckan_dataset_id !=""
     }//end function
 
   /*
