@@ -25,7 +25,7 @@
 				return [];
 			endif;
 
-      wpckan_log('wpckan_api_package_show result: '. $datasets['result']);
+      wpckan_log('wpckan_api_package_show result: '. print_r($datasets['result'], true));
 
       return $datasets['result'];
   }
@@ -62,7 +62,7 @@
 				}
       endwhile;
 
-      wpckan_log('wpckan_api_package_search result: '. $datasets['result']);
+      wpckan_log('wpckan_api_package_search result: '. print_r($datasets['result'], true));
 
       return $datasets['result'];
   }
@@ -112,7 +112,7 @@
           wpckan_api_call_error('wpckan_get_organizations_list', $e->getMessage());
       }
 
-      wpckan_log('wpckan_api_get_organizations_list result: '. $response['result']);
+      wpckan_log('wpckan_api_get_organizations_list result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -140,7 +140,7 @@
           wpckan_api_call_error('wpckan_do_get_groups_list', $e->getMessage());
       }
 
-      wpckan_log('wpckan_api_get_groups_list result: '. $response['result']);
+      wpckan_log('wpckan_api_get_groups_list result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -226,7 +226,7 @@
           wpckan_api_create_resource($resource);
       }
 
-      wpckan_log('wpckan_api_archive_post_as_dataset result: '. $response['result']);
+      wpckan_log('wpckan_api_archive_post_as_dataset result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -252,7 +252,7 @@
           wpckan_api_call_error('wpckan_do_get_organizations', null);
       }
 
-      wpckan_log('wpckan_api_create_resource result: '. $response['result']);
+      wpckan_log('wpckan_api_create_resource result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -275,7 +275,7 @@
           wpckan_api_call_error('wpckan_api_get_organization_list_for_user', $e->getMessage());
       }
 
-      wpckan_log('wpckan_api_get_organization_list_for_user result: '. $response['result']);
+      wpckan_log('wpckan_api_get_organization_list_for_user result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -297,7 +297,7 @@
           wpckan_api_call_error('wpckan_api_get_organization', $e->getMessage());
       }
 
-      wpckan_log('wpckan_api_get_organization result: '. $response['result']);
+      wpckan_log('wpckan_api_get_organization result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -319,7 +319,7 @@
           wpckan_api_call_error('wpckan_api_get_group_list_for_user', $e->getMessage());
       }
 
-      wpckan_log('wpckan_api_get_group_list_for_user result: '. $response['result']);
+      wpckan_log('wpckan_api_get_group_list_for_user result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -341,7 +341,7 @@
           wpckan_api_call_error('wpckan_api_user_show', $e->getMessage());
       }
 
-      wpckan_log('wpckan_api_user_show result: '. $response['result']);
+      wpckan_log('wpckan_api_user_show result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -382,7 +382,7 @@
           wpckan_api_call_error('wpckan_api_status_show', $e->getMessage());
       }
 
-      wpckan_log('wpckan_api_status_show result: '. $response['result']);
+      wpckan_log('wpckan_api_status_show result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -507,7 +507,7 @@
       }else{
         return $get_info;
       }
-    }//end function
+    }
 
   /*
   * Errors
