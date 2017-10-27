@@ -2,17 +2,17 @@
 <?php if (wpckan_validate_settings_read() && wpckan_validate_settings_write()){ ?>
 
   <?php $organization_names = wpckan_get_organization_names_for_user();
-        $group_names = wpckan_get_group_names_for_user();
+    $group_names = wpckan_get_group_names_for_user();
   ?>
 
   <?php $organization_list = array();
-        $group_list = array();
-        try{
-          $group_list = wpckan_api_get_groups_list();
-          $organization_list = wpckan_api_get_organizations_list();
-        } catch(Exception $e){
-            wpckan_log($e->getMessage());
-        }
+    $group_list = array();
+    try{
+      $group_list = wpckan_api_get_groups_list();
+      $organization_list = wpckan_api_get_organizations_list();
+    } catch(Exception $e){
+        wpckan_log($e->getMessage());
+    }
   ?>
 
   <label for="wpckan_archive_post_orga"><b><?php _e('CKAN Organization','wpckan') ?></b></label>
