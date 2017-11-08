@@ -282,8 +282,8 @@
 
 	function wpckan_get_organization_list($ckan_domain, $attrs)
   {
-		$query = '?'.compose_solr_query_from_attrs($attrs);
-    $ckanapi_url = $ckan_domain.'/api/3/action/organization_list?all_fields=true'.$query;
+
+    $ckanapi_url = $ckan_domain.'/api/3/action/organization_list?all_fields=true';
     $json = wpckan_get_or_cache($ckanapi_url, $query);
 
     if ($json === false) {
