@@ -282,19 +282,20 @@
 
 	function wpckan_get_organization_list($ckan_domain, $attrs)
   {
-      $ckanapi_url = $ckan_domain.'/api/3/action/organization_list';
-      $json = wpckan_get_or_cache($ckanapi_url, $query);
+		$query = '?'.compose_solr_query_from_attrs($attrs);
+    $ckanapi_url = $ckan_domain.'/api/3/action/organization_list'.$query;
+    $json = wpckan_get_or_cache($ckanapi_url, $query);
 
-      if ($json === false) {
-          return [];
-      }
-      $datasets = json_decode($json, true) ?: [];
+    if ($json === false) {
+        return [];
+    }
+    $datasets = json_decode($json, true) ?: [];
 
-			if (!isset($datasets['result'])):
-				return [];
-			endif;
+		if (!isset($datasets['result'])):
+			return [];
+		endif;
 
-      return $datasets['result'];
+    return $datasets['result'];
   }
 
   function wpckan_api_get_organization($id)
