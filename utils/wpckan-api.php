@@ -257,27 +257,44 @@
       return $response['result'];
   }
 
-  function wpckan_api_get_organization_list_for_user()
+  // function wpckan_api_get_organization_list_for_user()
+  // {
+  //     wpckan_log('wpckan_api_get_organization_list_for_user');
+	//
+  //     try {
+  //         $settings = wpckan_get_ckan_settings();
+  //         $ckanClient = wpckan_get_guzzle_client($settings);
+  //         $commandName = 'GetOrganizationsUserIsMemberOf';
+  //         $arguments = array('permission' => 'create_dataset');
+  //         $command = $ckanClient->getCommand($commandName, $arguments);
+  //         $response = $command->execute();
+	//
+  //         wpckan_log('wpckan_api_get_organization_list_for_user commandName: '.$commandName.' arguments: '.print_r($arguments, true).' settings: '.print_r($settings, true));
+	//
+  //     } catch (Exception $e) {
+  //         wpckan_api_call_error('wpckan_api_get_organization_list_for_user', $e->getMessage());
+  //     }
+	//
+  //     wpckan_log('wpckan_api_get_organization_list_for_user result: '. print_r($response['result'], true));
+	//
+  //     return $response['result'];
+  // }
+
+	function wpckan_get_organization_list($ckan_domain, $attrs)
   {
-      wpckan_log('wpckan_api_get_organization_list_for_user');
+      $ckanapi_url = $ckan_domain.'/api/3/action/organization_list';
+      $json = wpckan_get_or_cache($ckanapi_url, $query);
 
-      try {
-          $settings = wpckan_get_ckan_settings();
-          $ckanClient = wpckan_get_guzzle_client($settings);
-          $commandName = 'GetOrganizationsUserIsMemberOf';
-          $arguments = array('permission' => 'create_dataset');
-          $command = $ckanClient->getCommand($commandName, $arguments);
-          $response = $command->execute();
-
-          wpckan_log('wpckan_api_get_organization_list_for_user commandName: '.$commandName.' arguments: '.print_r($arguments, true).' settings: '.print_r($settings, true));
-
-      } catch (Exception $e) {
-          wpckan_api_call_error('wpckan_api_get_organization_list_for_user', $e->getMessage());
+      if ($json === false) {
+          return [];
       }
+      $datasets = json_decode($json, true) ?: [];
 
-      wpckan_log('wpckan_api_get_organization_list_for_user result: '. print_r($response['result'], true));
+			if (!isset($datasets['result'])):
+				return [];
+			endif;
 
-      return $response['result'];
+      return $datasets['result'];
   }
 
   function wpckan_api_get_organization($id)
