@@ -284,7 +284,7 @@
   {
 
     $ckanapi_url = $ckan_domain.'/api/3/action/organization_list?all_fields=true';
-    $json = wpckan_get_or_cache($ckanapi_url, $query);
+    $json = wpckan_get_or_cache($ckanapi_url);
 
     if ($json === false) {
         return [];
