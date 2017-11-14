@@ -280,7 +280,7 @@
   //     return $response['result'];
   // }
 
-	function wpckan_get_organization_list($ckan_domain, $attrs)
+	function wpckan_get_organization_list($ckan_domain)
   {
 
     $ckanapi_url = $ckan_domain.'/api/3/action/organization_list?all_fields=true';
