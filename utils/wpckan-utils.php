@@ -519,21 +519,11 @@
     return $group_names;
   }
 
-  function wpckan_get_organization_for_user(){
-    $organizations = array();
-    try{
-      $organizations = wpckan_api_get_organization_list_for_user();
-    }catch(Exception $e){
-      wpckan_log($e->getMessage());
-    }
-    return $organizations;
-  }
-
   function wpckan_get_organization_names_for_user(){
     $organizations = array();
     $organization_names = array();
     try{
-      $organizations = wpckan_api_get_organization_list_for_user();
+      $organizations = wpckan_api_get_organizations_list();
     }catch(Exception $e){
       wpckan_log($e->getMessage());
     }
