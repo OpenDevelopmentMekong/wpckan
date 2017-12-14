@@ -25,6 +25,8 @@
 				return [];
 			endif;
 
+      wpckan_log('wpckan_api_package_show result: '. print_r($datasets['result'], true));
+
       return $datasets['result'];
   }
 
@@ -60,6 +62,8 @@
 				}
       endwhile;
 
+      wpckan_log('wpckan_api_package_search result: '. print_r($datasets['result'], true));
+
       return $datasets['result'];
   }
 
@@ -70,14 +74,17 @@
   function wpckan_get_guzzle_client($settings)
   {
       $ckanClient = CkanClient::factory($settings);
-      $cache_plugin = new CachePlugin(array(
-          'storage' => new DefaultCacheStorage(
-              new DoctrineCacheAdapter(
-                  new FilesystemCache('/cache/')
-              )
-          ),
-      ));
-      $ckanClient->addSubscriber($cache_plugin);
+
+      if ((bool)($GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled'))):
+        $cache_plugin = new CachePlugin(array(
+            'storage' => new DefaultCacheStorage(
+                new DoctrineCacheAdapter(
+                    new FilesystemCache('/cache/')
+                )
+            ),
+        ));
+        $ckanClient->addSubscriber($cache_plugin);
+      endif;
 
       return $ckanClient;
   }
@@ -105,6 +112,8 @@
           wpckan_api_call_error('wpckan_get_organizations_list', $e->getMessage());
       }
 
+      wpckan_log('wpckan_api_get_organizations_list result: '. print_r($response['result'], true));
+
       return $response['result'];
   }
 
@@ -130,6 +139,8 @@
       } catch (Exception $e) {
           wpckan_api_call_error('wpckan_do_get_groups_list', $e->getMessage());
       }
+
+      wpckan_log('wpckan_api_get_groups_list result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -215,6 +226,8 @@
           wpckan_api_create_resource($resource);
       }
 
+      wpckan_log('wpckan_api_archive_post_as_dataset result: '. print_r($response['result'], true));
+
       return $response['result'];
   }
 
@@ -239,27 +252,27 @@
           wpckan_api_call_error('wpckan_do_get_organizations', null);
       }
 
+      wpckan_log('wpckan_api_create_resource result: '. print_r($response['result'], true));
+
       return $response['result'];
   }
 
-  function wpckan_api_get_organization_list_for_user()
+	function wpckan_get_organization_list($ckan_domain)
   {
-      wpckan_log('wpckan_api_get_organization_list_for_user');
 
-      try {
-          $settings = wpckan_get_ckan_settings();
-          $ckanClient = wpckan_get_guzzle_client($settings);
-          $commandName = 'GetOrganizationsUserIsMemberOf';
-          $arguments = array('permission' => 'create_dataset');
-          $command = $ckanClient->getCommand($commandName, $arguments);
-          $response = $command->execute();
+    $ckanapi_url = $ckan_domain.'/api/3/action/organization_list?all_fields=true';
+    $json = wpckan_get_or_cache($ckanapi_url,$ckanapi_url);
 
-          wpckan_log('wpckan_api_get_organization_list_for_user commandName: '.$commandName.' arguments: '.print_r($arguments, true).' settings: '.print_r($settings, true));
-      } catch (Exception $e) {
-          wpckan_api_call_error('wpckan_api_get_organization_list_for_user', $e->getMessage());
-      }
+    if ($json === false) {
+        return [];
+    }
+    $datasets = json_decode($json, true) ?: [];
 
-      return $response['result'];
+		if (!isset($datasets['result'])):
+			return [];
+		endif;
+
+    return $datasets['result'];
   }
 
   function wpckan_api_get_organization($id)
@@ -278,6 +291,8 @@
       } catch (Exception $e) {
           wpckan_api_call_error('wpckan_api_get_organization', $e->getMessage());
       }
+
+      wpckan_log('wpckan_api_get_organization result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -299,6 +314,8 @@
           wpckan_api_call_error('wpckan_api_get_group_list_for_user', $e->getMessage());
       }
 
+      wpckan_log('wpckan_api_get_group_list_for_user result: '. print_r($response['result'], true));
+
       return $response['result'];
   }
 
@@ -319,7 +336,7 @@
           wpckan_api_call_error('wpckan_api_user_show', $e->getMessage());
       }
 
-      wpckan_log($response);
+      wpckan_log('wpckan_api_user_show result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -359,6 +376,8 @@
       } catch (Exception $e) {
           wpckan_api_call_error('wpckan_api_status_show', $e->getMessage());
       }
+
+      wpckan_log('wpckan_api_status_show result: '. print_r($response['result'], true));
 
       return $response['result'];
   }
@@ -483,7 +502,7 @@
       }else{
         return $get_info;
       }
-    }//end function
+    }
 
   /*
   * Errors

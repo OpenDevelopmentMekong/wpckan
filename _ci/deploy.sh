@@ -16,7 +16,7 @@ if [ $TRAVIS_TAG ]; then
     echo "$(tput sgr0)" # reset
 
     export ANSIBLE_HOST_KEY_CHECKING=False
-    time ./deploy.sh wp prod
+    time ./deploy.sh wp prod wpckan
 
 else
 
@@ -26,7 +26,7 @@ else
     echo "$(tput sgr0)" # reset
 
     export ANSIBLE_HOST_KEY_CHECKING=False
-    time ./deploy.sh wp dev
+    time ./deploy.sh wp dev wpckan
 
 fi
 

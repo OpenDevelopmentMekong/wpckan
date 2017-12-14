@@ -144,7 +144,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 		if (function_exists('wpckan_api_get_organizations_list')) {
 				try {
-						$organization_list = wpckan_api_get_organizations_list();
+					$organization_list = wpckan_api_get_organizations_list();
 				} catch (Exception $e) {
 				}
 		} ?>

@@ -299,7 +299,7 @@
 
   function wpckan_log($text) {
 
-    if (!$GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled')):
+    if (!(bool)($GLOBALS['wpckan_options']->get_option('wpckan_setting_log_enabled'))):
       return;
     endif;
 
@@ -523,7 +523,7 @@
     $organizations = array();
     $organization_names = array();
     try{
-      $organizations = wpckan_api_get_organization_list_for_user();
+      $organizations = wpckan_api_get_organizations_list();
     }catch(Exception $e){
       wpckan_log($e->getMessage());
     }
