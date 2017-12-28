@@ -33,6 +33,11 @@ jQuery( document ).ready(function() {
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
       url: field.attr(CKAN_API_URL) + '3/action/package_search?q=%QUERY',
+      prepare: function (query, settings) {
+        settings.dataType = "jsonp"
+        settings.url = settings.url.replace('%QUERY', query)
+        return settings;
+      },
       wildcard: '%QUERY',
       filter: function (json) {
         if (json.success){
