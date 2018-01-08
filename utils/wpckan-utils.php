@@ -181,6 +181,7 @@
 
     if (!(isset($dataset)) || empty($dataset)):
       status_header(404);
+      header('Location: /dataset-not-found' );
       die();
     endif;
 
