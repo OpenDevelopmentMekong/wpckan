@@ -181,7 +181,6 @@
 
     if (!(isset($dataset)) || empty($dataset)):
       status_header(404);
-      include( get_404_template() );
       die();
     endif;
 
