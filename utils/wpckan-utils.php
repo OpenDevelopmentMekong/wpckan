@@ -179,7 +179,7 @@
       wpckan_log($e->getMessage());
     }
 
-    if (!(isset($dataset))):
+    if (!(isset($dataset)) || empty($dataset)):
       header('Location: '. get_404_template());
       die();
     endif;
@@ -210,7 +210,7 @@
       wpckan_log($e->getMessage());
     }
 
-    if (!(isset($dataset))):
+    if (!(isset($dataset)) || empty($dataset)):
       return $dataset_id;
     endif;
 
@@ -227,7 +227,7 @@
       wpckan_log($e->getMessage());
     }
 
-    if (!(isset($dataset))):
+    if (!(isset($dataset)) || empty($dataset)):
       return $dataset_id;
     endif;
 
