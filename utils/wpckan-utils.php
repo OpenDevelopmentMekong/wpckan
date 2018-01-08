@@ -180,7 +180,8 @@
     }
 
     if (!(isset($dataset))):
-      return "";
+      header('Location: '. get_404_template());
+      die();
     endif;
 
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-detail.php',$dataset,$atts);
