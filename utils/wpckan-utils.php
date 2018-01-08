@@ -180,7 +180,8 @@
     }
 
     if (!(isset($dataset)) || empty($dataset)):
-      header('Location: '. get_404_template());
+      status_header(404);
+      include( get_404_template() );
       die();
     endif;
 
