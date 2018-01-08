@@ -179,8 +179,10 @@
       wpckan_log($e->getMessage());
     }
 
-    if (!(isset($dataset))):
-      return "";
+    if (!(isset($dataset)) || empty($dataset)):
+      status_header(404);
+      header('Location: /dataset-not-found' );
+      die();
     endif;
 
     return wpckan_output_template( plugin_dir_path( __FILE__ ) . '../templates/dataset-detail.php',$dataset,$atts);
@@ -209,7 +211,7 @@
       wpckan_log($e->getMessage());
     }
 
-    if (!(isset($dataset))):
+    if (!(isset($dataset)) || empty($dataset)):
       return $dataset_id;
     endif;
 
@@ -226,7 +228,7 @@
       wpckan_log($e->getMessage());
     }
 
-    if (!(isset($dataset))):
+    if (!(isset($dataset)) || empty($dataset)):
       return $dataset_id;
     endif;
 
