@@ -88,17 +88,18 @@
 	<?php
 		if (!empty($supported_fields)): ?>
 	    <?php
-				render_metadata_table($supported_fields,$data); ?>
+				echo render_metadata_table($supported_fields,$data); ?>
 	<?php
 		endif; ?>
 
 	<?php
-		if (!empty($supported_fields_additional)): ?>
+    $additional_metadata = render_metadata_table($supported_fields_additional,$data);
+		if (!empty($supported_fields_additional) && $additional_metadata): ?>
 			<div class="slideable">
 				<h5><?php _e('View additional metadata', 'wpckan') ?></h5>
 				<div class="slideable-content">
 			    <?php
-						render_metadata_table($supported_fields_additional,$data); ?>
+						echo $additional_metadata; ?>
 				</div>
 			</div>
 	<?php
@@ -114,84 +115,89 @@ function render_metadata_table($supported_fields,$data){
 	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
 	$linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
   $linked_fields = explode(',', $linked_fields_csv);
-	$current_language = wpckan_get_current_language(); ?>
+  $current_language = wpckan_get_current_language(); 
+  
+  $show_content = false;
+  $html_content = null; 
 
-	<table class="wpckan_dataset_metadata_fields">
-    <?php
-        $metadata_available = false;
-        if (!empty($supported_fields)): ?>
-        <?php
-          foreach ($supported_fields as $key): ?>
-            <tr class="wpckan_dataset_metadata_field">
-            <?php
-						$mapped_key = isset($field_mappings[$key]) ? trim($field_mappings[$key]," ") : $key;
-            $mapped_value = "";
-            if (array_key_exists($key,$data) && isset($data[$key])):
-              $value = $data[$key];
+	$html_content = '<table class="wpckan_dataset_metadata_fields">' ?>
+  <?php
+      $metadata_available = false;
+      if (!empty($supported_fields)): ?>
+      <?php
+        foreach ($supported_fields as $key): 
+          $html_content .= '<tr class="wpckan_dataset_metadata_field">';?>
+          <?php
+          $mapped_key = isset($field_mappings[$key]) ? trim($field_mappings[$key]," ") : $key;
+          $mapped_value = "";
+          if (array_key_exists($key,$data) && isset($data[$key])):
+            $value = $data[$key];
 
-							if (array_key_exists($key, $supported_datatables) && !empty($supported_datatables[$key])):
-								$resource_id = $supported_datatables[$key];
-								$ids = is_array($value) ? $value : explode(',', $value);
-								if (count($ids) > 0):
-                  $metadata_available = true;
-									foreach($ids as $id):
-										$results = wpckan_get_datastore_resources_filter(wpckan_get_ckan_domain(),$resource_id,"id",$id);
-										$result = $results[0];
-                    $mapped_value = $mapped_value . $result["name"];
-										if ($id !== end($ids)):
-							        $mapped_value = $mapped_value . ", ";
-										endif;
-									endforeach;
-								endif;
-							elseif (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
-                $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
-                $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
-                if (!empty($mapped_value)):
-                  $metadata_available = true;
-                endif;
-              else:
-                $value = $data[$key];
-                if (is_array($value)):
-                  $value = implode(', ', $value);
-                endif;
-                if (!empty($value)):
-                  $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
-                  $metadata_available = true;
-                endif;
+            if (array_key_exists($key, $supported_datatables) && !empty($supported_datatables[$key])):
+              $resource_id = $supported_datatables[$key];
+              $ids = is_array($value) ? $value : explode(',', $value);
+              if (count($ids) > 0):
+                $metadata_available = true;
+                foreach($ids as $id):
+                  $results = wpckan_get_datastore_resources_filter(wpckan_get_ckan_domain(),$resource_id,"id",$id);
+                  $result = $results[0];
+                  $mapped_value = $mapped_value . $result["name"];
+                  if ($id !== end($ids)):
+                    $mapped_value = $mapped_value . ", ";
+                  endif;
+                endforeach;
               endif;
-            endif; ?>
-
-						<?php
-						 	if (wpckan_is_date($mapped_value)):
-								$parsed_date = date_parse($mapped_value);
-                $monthName = date('M', mktime(0, 0, 0, $parsed_date["month"], 10));
-								$mapped_value =  $parsed_date["day"] . " " . $monthName . " " . $parsed_date["year"];
-							endif;
-						?>
-
-            <?php
-            if (!empty($mapped_value)):
-              if (in_array($key,$linked_fields)):
-                echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-                echo '<td><p class="expandible"><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
-              else:
-                echo '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
-                echo '<td><p class="expandible">'.__($mapped_value, 'wpckan').'</p></td>';
+            elseif (is_array($value) && array_key_exists($current_language, $value) && !empty($value)):
+              $value = !empty($value[$current_language]) ? $value[$current_language] : $value["en"];
+              $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
+              if (!empty($mapped_value)):
+                $metadata_available = true;
+              endif;
+            else:
+              $value = $data[$key];
+              if (is_array($value)):
+                $value = implode(', ', $value);
+              endif;
+              if (!empty($value)):
+                $mapped_value = isset($field_mappings_values[$value]) ? $field_mappings_values[$value] : $value;
+                $metadata_available = true;
               endif;
             endif;
-            ?>
+          endif; ?>
 
-            </tr>
-          <?php endforeach;
+          <?php
+            if (wpckan_is_date($mapped_value)):
+              $parsed_date = date_parse($mapped_value);
+              $monthName = date('M', mktime(0, 0, 0, $parsed_date["month"], 10));
+              $mapped_value =  $parsed_date["day"] . " " . $monthName . " " . $parsed_date["year"];
+            endif;
+          ?>
 
-          if ($metadata_available == false):
-            echo '<p>'.__('No metadata available for current dataset','wpckan').'</p>';
+          <?php
+          if (!empty($mapped_value)):
+            $show_content = true;
+            if (in_array($key,$linked_fields)):
+              $html_content .= '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
+              $html_content .= '<td><p class="expandible"><a target="_blank" href="' . wpckan_get_link_to_dataset($mapped_value) . '"</a>' . $mapped_value .'</p></td>';
+            else:
+              $html_content .= '<td><p>'.__($mapped_key, 'wpckan').'</p></td>';
+              $html_content .= '<td><p class="expandible">'.__($mapped_value, 'wpckan').'</p></td>';
+            endif;
           endif;
-        ?>
+          ?>
 
-    <?php endif; ?>
-  </table>
-<?php
+          </tr>
+        <?php 
+        endforeach; ?>
+
+  <?php endif; 
+  $html_content .= '</table>';
+
+  if ($show_content):
+    return $html_content;
+  endif;
+
+  return null;
 }
 
 ?>
