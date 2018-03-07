@@ -1,1327 +1,1330 @@
+# Translators:
+# Lamphay Inthakoun <lamphay@gmail.com>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-06-14 15:50+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: lo\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-06-14 15:49+0200\n"
+"PO-Revision-Date: 2017-06-14 15:49+0200\n"
+"Last-Translator: Lamphay Inthakoun <lamphay@gmail.com>, 2018\n"
+"Language-Team: Lao (https://www.transifex.com/open-development-mekong/teams/27158/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: lo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: i18n\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: components\n"
-"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
-msgstr ""
+msgstr "ແຜນການດຳເນີນງານ"
 
 #: i18n/additional-localization.php:3
 msgid "Amendments"
-msgstr ""
+msgstr "ການແກ້ໄຂ"
 
 #: i18n/additional-localization.php:4
 msgid "ASEAN Agreements"
-msgstr ""
+msgstr "ສັນຍາອາຊຽນ"
 
 #: i18n/additional-localization.php:5
 msgid "Bilateral Agreements"
-msgstr ""
+msgstr "ສັນຍາສອງຝ່າຍ"
 
 #: i18n/additional-localization.php:6
 msgid "Bilateral Treaty"
-msgstr ""
+msgstr "ສົນທິສັນຍາສອງຝ່າຍ"
 
 #: i18n/additional-localization.php:7
 msgid "By-Laws"
-msgstr ""
+msgstr "ໂດຍກົດໝາຍ"
 
 #: i18n/additional-localization.php:8
 msgid "Circular"
-msgstr ""
+msgstr "ໃບແຈ້ງຄວາມ"
 
 #: i18n/additional-localization.php:9
 msgid "Code"
-msgstr ""
+msgstr "ລະຫັດ"
 
 #: i18n/additional-localization.php:10
 msgid "Constitution"
-msgstr ""
+msgstr "ລັດຖະທຳມະນູນ"
 
 #: i18n/additional-localization.php:11
 msgid "Contracts"
-msgstr ""
+msgstr "ສັນຍາ"
 
 #: i18n/additional-localization.php:12
 msgid "Agreements"
-msgstr ""
+msgstr "ຂໍ້ຕົກລົງ"
 
 #: i18n/additional-localization.php:13
 msgid "Customary law"
-msgstr ""
+msgstr "ກົດໝາຍປະເພນີ"
 
 #: i18n/additional-localization.php:14
 msgid "Decision"
-msgstr ""
+msgstr "ການຕັດສິນໃຈ"
 
 #: i18n/additional-localization.php:15
 msgid "Decree"
-msgstr ""
+msgstr "ບັນຍັດ"
 
 #: i18n/additional-localization.php:16
 msgid "Directive"
-msgstr ""
+msgstr "ຄຳສັ່ງ"
 
 #: i18n/additional-localization.php:17 i18n/additional-localization.php:130
 msgid "Draft"
-msgstr ""
+msgstr "ຮ່າງ"
 
 #: i18n/additional-localization.php:18
 msgid "Guideline"
-msgstr ""
+msgstr "ຄຳແນະນຳ"
 
 #: i18n/additional-localization.php:19
 msgid "Instruction"
-msgstr ""
+msgstr "ຄຳແນະນຳ"
 
 #: i18n/additional-localization.php:20
 msgid "International Treaty"
-msgstr ""
+msgstr "ສົນທິສັນຍາສາກົນ"
 
 #: i18n/additional-localization.php:21
 msgid "Joint circular"
-msgstr ""
+msgstr "ເຂົ້າຮ່ວມວົງ"
 
 #: i18n/additional-localization.php:22
 msgid "Law"
-msgstr ""
+msgstr "ກົດໝາຍ"
 
 #: i18n/additional-localization.php:23
 msgid "Letter"
-msgstr ""
+msgstr "ໜັງສື"
 
 #: i18n/additional-localization.php:24
 msgid "Notification"
-msgstr ""
+msgstr "ແຈ້ງການ"
 
 #: i18n/additional-localization.php:25
 msgid "Order"
-msgstr ""
+msgstr "ຄຳສັ່ງ"
 
 #: i18n/additional-localization.php:26
 msgid "Ordinance"
-msgstr ""
+msgstr "ກົດໝາຍ"
 
 #: i18n/additional-localization.php:27
 msgid "other"
-msgstr ""
+msgstr "ອື່ນໆ"
 
 #: i18n/additional-localization.php:28
 msgid "Policy"
-msgstr ""
+msgstr "ນະໂຍບາຍ"
 
 #: i18n/additional-localization.php:29
 msgid "Proclamation"
-msgstr ""
+msgstr "ການປະກາດ"
 
 #: i18n/additional-localization.php:30
 msgid "Regional Agreements"
-msgstr ""
+msgstr "ສັນຍາພາກພື້ນ"
 
 #: i18n/additional-localization.php:31
 msgid "Regulation"
-msgstr ""
+msgstr "ຂໍ້ກຳນົດ"
 
 #: i18n/additional-localization.php:32
 msgid "Resolution"
-msgstr ""
+msgstr "ການແກ້ໄຂ"
 
 #: i18n/additional-localization.php:33
 msgid "Royal decree"
-msgstr ""
+msgstr "ພະຣາຊກຳນົດ"
 
 #: i18n/additional-localization.php:34
 msgid "Rule"
-msgstr ""
+msgstr "ກົດລະບຽບ"
 
 #: i18n/additional-localization.php:35
 msgid "Strategic Plan"
-msgstr ""
+msgstr "ແຜນຍຸດທະສາດ"
 
 #: i18n/additional-localization.php:36
 msgid "Strategy"
-msgstr ""
+msgstr "ຍຸດທະສາດ"
 
 #: i18n/additional-localization.php:37
 msgid "Sub-decree"
-msgstr ""
+msgstr "ບັນຍັດຍ່ອຍ"
 
 #: i18n/additional-localization.php:38
 msgid "Trade Agreements"
-msgstr ""
+msgstr "ສັນຍາການຄ້າ"
 
 #: i18n/additional-localization.php:39
 msgid "Triangualar Agreement"
-msgstr ""
+msgstr "ສັນຍາສາມຝ່າຍ"
 
 #: i18n/additional-localization.php:40
 msgid "UN Charters"
-msgstr ""
+msgstr "ກົດບັດສະຫະປະຊາຊາດ"
 
 #: i18n/additional-localization.php:42
 msgid "Prime Minister"
-msgstr ""
+msgstr "ນາຍົກລັດຖະມົນຕີ"
 
 #: i18n/additional-localization.php:43
 msgid "Minister in charge of the Office of the Council of Ministers"
-msgstr ""
+msgstr "ລັດຖະມົນຕີທີ່ຮັບຜິດຊອບໃນຫ້ອງການຂອງຄະນະກຳມະການລັດຖະມົນຕີ"
 
 #: i18n/additional-localization.php:44
 msgid "Minister of Interior"
-msgstr ""
+msgstr "ລັດຖະມົນຕີພາຍໃນ"
 
 #: i18n/additional-localization.php:45
 msgid "Minister of Land Management Urban Planning and Construction"
-msgstr ""
+msgstr "ລັດຖະມົນຕີການຄຸ້ມຄອງທີ່ດິນການວາງແຜນ ແລະ ການກໍ່ສ້າງຕົວເມືອງ"
 
 #: i18n/additional-localization.php:46
 msgid "Minister of Economy and Finance"
-msgstr ""
+msgstr "ລັດຖະມົນຕີເສດຖະກິດ ແລະ ການເງິນ"
 
 #: i18n/additional-localization.php:47 i18n/additional-localization.php:54
 msgid "Minister of Environment"
-msgstr ""
+msgstr "ລັດຖະມົນຕີສິ່ງແວດລ້ອມ"
 
 #: i18n/additional-localization.php:48
 msgid "Minister of Agriculture Forestry and Fisheries"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະສິກຳປ່າໄມ້ ແລະ ການປະມົງ"
 
 #: i18n/additional-localization.php:49
 msgid "Minister of Civil Service"
-msgstr ""
+msgstr "ລັດຖະມົນຕີວ່າການກະຊວງແຮງງານ"
 
 #: i18n/additional-localization.php:50
 msgid "Minister of Cult and Religion"
-msgstr ""
+msgstr "ລັດຖະມົນຕີທາງດ້ານສາສະໜາ"
 
 #: i18n/additional-localization.php:51
 msgid "Minister of Culture and Fine Arts"
-msgstr ""
+msgstr "ລັດຖະມົນຕີວັດທະນະທຳ ແລະ ສິນລະປະ"
 
 #: i18n/additional-localization.php:52 i18n/additional-localization.php:100
 msgid "Ministry of Commerce"
-msgstr ""
+msgstr "ກະຊວງການຄ້າ"
 
 #: i18n/additional-localization.php:53
 msgid "Minister of Education Youth and Sport"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງການສຶກສາຊາວໜຸ່ມ ແລະ ກິລາ"
 
 #: i18n/additional-localization.php:55
 msgid "Minister of Foreign Affairs and International Cooperation"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງການຕ່າງປະເທດ ແລະ ການຮ່ວມມືສາກົນ"
 
 #: i18n/additional-localization.php:56
 msgid "Minister of Health"
-msgstr ""
+msgstr "ລັດຖະມົນຕີສາທາລະນະສຸກ"
 
 #: i18n/additional-localization.php:57
 msgid "Minister of Industry and Handicrafts"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງອຸດສະຫະກຳ ແລະ ຫັດຖະກຳ"
 
 #: i18n/additional-localization.php:58
 msgid "Minister of Information"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງຂໍ້ມູນ"
 
 #: i18n/additional-localization.php:59
 msgid "Minister of Justice"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງຍຸຕິທຳ"
 
 #: i18n/additional-localization.php:60
 msgid "Minister of Labour and Vocational Training"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງການຝຶກອົບຮົມສີມືແຮງງານ ແລະ ວິຊາຊີບ"
 
 #: i18n/additional-localization.php:61 i18n/additional-localization.php:103
 msgid "Ministry of Land Management, Urban Planning and Construction"
-msgstr ""
+msgstr "ກະຊວງຄຸ້ມຄອງທີ່ດິນ, ການວາງແຜນ ແລະ ການກໍ່ສ້າງຕົວເມືອງ"
 
 #: i18n/additional-localization.php:62
 msgid "Minister of Mines and Energy"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງບໍ່ແຮ່ ແລະ ພະລັງງານ"
 
 #: i18n/additional-localization.php:63
 msgid "Minister of National Defense"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງປ້ອງກັນປະເທດ"
 
 #: i18n/additional-localization.php:64
 msgid "Minister of National Assembly-Senate Relations and Inspection"
-msgstr ""
+msgstr "ລັດຖະມົນຕີການພົວພັນສະພາແຫ່ງຊາດ ແລະ ການກວດກາ"
 
 #: i18n/additional-localization.php:65
 msgid "Minister of Planning"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງແຜນການ"
 
 #: i18n/additional-localization.php:66
 msgid "Minister of Posts and Telecommunication"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງໄປສະນີ ແລະ ການສື່ສານໂທລະຄົມ"
 
 #: i18n/additional-localization.php:67
 msgid "Minister of Public Works and Transport"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງໂຍທາທິການ ແລະ ຂົນສົ່ງ"
 
 #: i18n/additional-localization.php:68
 msgid "Minister of Social Affairs Veterans and Youth Rehabilitation"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງສັງຄົມສົງເຄາະ, ນັກຮົບເກົ່າ ແລະ ການຟື້ນຟູຊາວໜຸ່ມ"
 
 #: i18n/additional-localization.php:69
 msgid "Minister of Tourism"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງການທ່ອງທ່ຽວ"
 
 #: i18n/additional-localization.php:70
 msgid "Minister of Water Resources and Meteorology"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງຊັບພະຍາກອນນ້ຳ ແລະ ອຸຕຸນິຍົມວິທະຍາ"
 
 #: i18n/additional-localization.php:71
 msgid "Minister of Women's Affairs"
-msgstr ""
+msgstr "ລັດຖະມົນຕີກະຊວງແມ່ຍິງ"
 
 #: i18n/additional-localization.php:72
 msgid "Secretary of State of Civil Aviation"
-msgstr ""
+msgstr "ເລຂາທິການຂອງລັດຂອງການບິນພົນລະເຮືອນ"
 
 #: i18n/additional-localization.php:73
 msgid "Secretary of State"
-msgstr ""
+msgstr "ເລຂາທິການຂອງລັດ"
 
 #: i18n/additional-localization.php:74
 msgid "Municipal-Provincial Governor/Council"
-msgstr ""
+msgstr "ເຈົ້າເມືອງ-ແຂວງ/ຄະນະກຳມະການ"
 
 #: i18n/additional-localization.php:75
 msgid "City Governor/Council"
-msgstr ""
+msgstr "ເຈົ້າຄອງຕົວເມືອງ/ຄະນະກຳມະການ"
 
 #: i18n/additional-localization.php:76
 msgid "District-Khan Governor/Council"
-msgstr ""
+msgstr "ເມືອງ-ຄານ ເຈົ້າເມືອງ/ຄະນະກຳມະການ"
 
 #: i18n/additional-localization.php:77
 msgid "Commune-Sangkat Chief/Council"
-msgstr ""
+msgstr "ປະຊາຄົມ-ສາງກັດ ຫົວໜ້າ/ຄະນະກຳມະການ"
 
 #: i18n/additional-localization.php:78
 msgid ""
-"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
-"Economic Land Concessions"
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
+" Economic Land Concessions"
 msgstr ""
+"ຄະນະກຳມະການສາກົນສຳລັບການປະເມີນ, ການວັດແທກ ແລະ "
+"ການປະເມີນຜົນຂອງເສດຖະກິດການສຳປະທານທີ່ດິນ"
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
 msgid "Royal Government of the Kingdom of Cambodia"
-msgstr ""
+msgstr "ລາຊາລັດຖະບານແຫ່ງອານາຈັກກຳປູເຈຍ"
 
 #: i18n/additional-localization.php:80
 msgid "Secretary General"
-msgstr ""
+msgstr "ເລຂາທິການທົ່ວໄປ"
 
 #: i18n/additional-localization.php:81
 msgid "General Inspector"
-msgstr ""
+msgstr "ຜູ້ກວດກາທົ່ວໄປ"
 
 #: i18n/additional-localization.php:82
 msgid "Forestry Administration"
-msgstr ""
+msgstr "ການຄຸ້ມຄອງປ່າໄມ້"
 
 #: i18n/additional-localization.php:83
 msgid "Council for Development of Cambodia"
-msgstr ""
+msgstr "ຄະນະກຳມະການສຳລັບການພັດທະນາກຳປູເຈຍ"
 
 #: i18n/additional-localization.php:84 i18n/additional-localization.php:123
 msgid "Electricity Authority of Cambodia"
-msgstr ""
+msgstr "ເຈົ້າໜ້າທີ່ໄຟຟ້າກຳປູເຈຍ"
 
 #: i18n/additional-localization.php:85
 msgid "Cabinet"
-msgstr ""
+msgstr "ຄະນະລັດຖະມົນຕີ"
 
 #: i18n/additional-localization.php:86
 msgid "National Authority for Land Dispute Resolution"
-msgstr ""
+msgstr "ເຈົ້າໜ້າທີ່ແຫ່ງຊາດສຳລັບການແກ້ໄຂຂໍ້ຂັດແຍ່ງກ່ຽວກັບທີ່ດິນ"
 
 #: i18n/additional-localization.php:87 i18n/additional-localization.php:97
 msgid "Council of Ministers"
-msgstr ""
+msgstr "ຄະນະລັດຖະມົນຕີ"
 
 #: i18n/additional-localization.php:88
 msgid "Company Director"
-msgstr ""
+msgstr "ຜູ້ອຳນວຍການບໍລິສັດ"
 
 #: i18n/additional-localization.php:89
 msgid "Apsara Authority"
-msgstr ""
+msgstr "ເຈົ້າໜ້າທີ່ປົກປັກຮັກສາເຂດວັດອັງກໍ"
 
 #: i18n/additional-localization.php:90
 msgid "Phnom Penh Capital Hall"
-msgstr ""
+msgstr "ຫໍນະຄອນຫຼວງພະນົມເປັນ"
 
 #: i18n/additional-localization.php:92
 msgid "City Council"
-msgstr ""
+msgstr "ຄະນະກຳມະການຕົວເມືອງ"
 
 #: i18n/additional-localization.php:93
 msgid "Commune-Sangkat Council"
-msgstr ""
+msgstr "ຄະນະກຳມະການຊຸມຊົນ-ສັງກັດ"
 
 #: i18n/additional-localization.php:94
 msgid "Congress between National Assembly and Senate"
-msgstr ""
+msgstr "ການພົບປະກັນລະຫວ່າງສະພາແຫ່ງຊາດ ແລະ ວຸດທິສະພາ"
 
 #: i18n/additional-localization.php:95
 msgid "Constituent Assembly"
-msgstr ""
+msgstr "ອົງປະກອບສະພາ"
 
 #: i18n/additional-localization.php:96
 msgid "Constitutional Council"
-msgstr ""
+msgstr "ສະພາການເມືອງ"
 
 #: i18n/additional-localization.php:98
 msgid "District-Khan Council"
-msgstr ""
+msgstr "ຄະນະກຳມະການເມືອງຄານ"
 
 #: i18n/additional-localization.php:99
 msgid "King, of the Kingdom of Cambodia"
-msgstr ""
+msgstr "ເຈົ້າຊີວິດຂອງອານາຈັກກຳປູເຈຍ"
 
 #: i18n/additional-localization.php:101
 msgid "Ministry of Agriculture Forestry and Fisheries"
-msgstr ""
+msgstr "ກະຊວງກະສິກຳ-ປ່າໄມ້ ແລະ ການປະມົງ"
 
 #: i18n/additional-localization.php:102
 msgid "Ministry of Industries, Mines and Energy"
-msgstr ""
+msgstr "ກະຊວງອຸດສາຫະກຳ, ບໍ່ແຮ່ ແລະ ພະລັງງານ"
 
 #: i18n/additional-localization.php:104
 msgid "Ministry of Posts and Telecommunications"
-msgstr ""
+msgstr "ກະຊວງ ໄປສະນີ, ໂທລະຄົມມະນາຄົມ ແລະ ການສື່ສານ"
 
 #: i18n/additional-localization.php:105
 msgid "Ministry of Public Works and Transport"
-msgstr ""
+msgstr "ກະຊວງໂຍທາທິການ ແລະ ຂົນສົ່ງ"
 
 #: i18n/additional-localization.php:106
 msgid "Ministry of National Assembly-Senate Relations and Inspection"
-msgstr ""
+msgstr "ກະຊວງການພົວພັນ ແລະ ການກວດກາສະພາແຫ່ງຊາດ-ວຸດທິສະພາ"
 
 #: i18n/additional-localization.php:107
 msgid "Ministry of Cult and Religion "
-msgstr ""
+msgstr "ກະຊວງສາສະໜາ "
 
 #: i18n/additional-localization.php:108
 msgid "Ministry of Social Affairs, Veterans and Youth Rehabilitation"
-msgstr ""
+msgstr "ກະຊວງ ສັງຄົມສົງເຄາະ, ນັກຮົບເກົ່າ ແລະ ການຟື້ນຟູຊາວໜຸ່ມ"
 
 #: i18n/additional-localization.php:109
 msgid "Ministry of Tourism"
-msgstr ""
+msgstr "ກະຊວງການທ່ອງທ່ຽວ"
 
 #: i18n/additional-localization.php:110
 msgid "Ministry of Water Resources and Meterology"
-msgstr ""
+msgstr "ກະຊວງຊັບພະຍາກອນນ້ຳ ແລະ ອຸຕຸນິຍົມວິທະຍາ"
 
 #: i18n/additional-localization.php:111
 msgid "Ministry of Woman's Affairs"
-msgstr ""
+msgstr "ກະຊວງແມ່ຍິງ"
 
 #: i18n/additional-localization.php:112
 msgid "National Assembly"
-msgstr ""
+msgstr "ສະພາແຫ່ງຊາດ"
 
 #: i18n/additional-localization.php:113
 msgid "Office of the Council of Ministers"
-msgstr ""
+msgstr "ຫ້ອງການສະພາລັດຖະມົນຕີ"
 
 #: i18n/additional-localization.php:114
 msgid "Office of the Prime Minister"
-msgstr ""
+msgstr "ຫ້ອງການນາຍົກລັດຖະມົນຕີ"
 
 #: i18n/additional-localization.php:115
 msgid "Parliament"
-msgstr ""
+msgstr "ລັດຖະສະພາ"
 
 #: i18n/additional-localization.php:116
 msgid "Provincial-Capital Council"
-msgstr ""
+msgstr "ຄະນະກຳມະການແຂວງ-ນະຄອນຫລວງ"
 
 #: i18n/additional-localization.php:117
 msgid "Provincial Department of Ministry"
-msgstr ""
+msgstr "ພະແນກປະຈຳແຂວງ"
 
 #: i18n/additional-localization.php:118
 msgid "Royal Palace"
-msgstr ""
+msgstr "ພະລາຊາວັງ"
 
 #: i18n/additional-localization.php:119
 msgid "Senate"
-msgstr ""
+msgstr "ວຸດທິສະພາ"
 
 #: i18n/additional-localization.php:120
 msgid "Village administration"
-msgstr ""
+msgstr "ການຄຸ້ມຄອງບ້ານ"
 
 #: i18n/additional-localization.php:121
 msgid "Phnom Penh Captial Hall"
-msgstr ""
+msgstr "ຫໍນະຄອນຫຼວງພະນົມເປັນ"
 
 #: i18n/additional-localization.php:125
 msgid "Under negotiation"
-msgstr ""
+msgstr "ພາຍໃຕ້ການເຈລະຈາ"
 
 #: i18n/additional-localization.php:126
 msgid "Framework agreement signed"
-msgstr ""
+msgstr "ຂໍ້ຕົກລົງກອບວຽກທີ່ເຊັນ"
 
 #: i18n/additional-localization.php:127
 msgid "Negotiations launched"
-msgstr ""
+msgstr "ການເຈລະຈາໄດ້ເລີ່ມດຳເນີນການ"
 
 #: i18n/additional-localization.php:128
 msgid "Signed but not yet in effect/validated"
-msgstr ""
+msgstr "ເຊັນແຕ່ຍັງບໍ່ມີຜົນບັງຄັບໃຊ້/ກວດກາອະນຸມັດ"
 
 #: i18n/additional-localization.php:129
 msgid "Signed and in effect"
-msgstr ""
+msgstr "ເຊັນ ແລະ ມີຜົນບັງຄັບໃຊ້"
 
 #: i18n/additional-localization.php:131
 msgid "Adopted / validated / in effect"
-msgstr ""
+msgstr "ຮັບຮອງເອົາ / ກວດສອບ / ມີ​ຜົນ​ນຳໃສ້"
 
 #: i18n/additional-localization.php:132
 msgid "Cancelled"
-msgstr ""
+msgstr "ຍົກເລີກ"
 
 #: i18n/additional-localization.php:133
 msgid "Expired"
-msgstr ""
+msgstr "ໝົດອາຍຸ"
 
 #: i18n/additional-localization.php:134
 msgid "Bill approved"
-msgstr ""
+msgstr "ຮ່າງກົດໝາຍທີ່ອະນຸມັດ"
 
 #: i18n/additional-localization.php:135
 msgid "Bill discussed in Pyidaungsu Hluttaw"
-msgstr ""
+msgstr "ຮ່າງກົດໝາຍສົນທະນາໃນຫໍສະມາຊິກສະພາຕ່ຳ"
 
 #: i18n/additional-localization.php:136
 msgid "Bill send to the President for signature"
-msgstr ""
+msgstr "ຮ່າງກົດໝາຍສົ່ງໃຫ້ປະທານປະເທດເຊັນ"
 
 #: i18n/additional-localization.php:137
 msgid "Repealed"
-msgstr ""
+msgstr "ຍົກເລີກ"
 
 #: i18n/additional-localization.php:139
 msgid "Advocacy and promotional materials"
-msgstr ""
+msgstr "ອຸປະກອນການໂຄສະນາ ແລະ ສົ່ງເສີມ"
 
 #: i18n/additional-localization.php:140
 msgid "Analysis, discussion papers, and blogs"
-msgstr ""
+msgstr "ການວິເຄາະ, ເອກະສານການສົນທະນາ ແລະ ພື້ນທີ່ສົນທະນາທາງເວັບໄຊ໌"
 
 #: i18n/additional-localization.php:141
 msgid "Books and book chapters"
-msgstr ""
+msgstr "ປື້ມ ແລະ ບົດຂອງປື້ມ"
 
 #: i18n/additional-localization.php:142
 msgid "Case studies"
-msgstr ""
+msgstr "ກໍລະນີສຶກສາ"
 
 #: i18n/additional-localization.php:143
 msgid "Issue and policy briefs"
-msgstr ""
+msgstr "ບັນຫາ ແລະ ນະໂຍບາຍຫຍໍ້"
 
 #: i18n/additional-localization.php:144
 msgid "Profiles - People"
-msgstr ""
+msgstr "ປະຫວັດຫຍໍ້-ຄົນ"
 
 #: i18n/additional-localization.php:145
 msgid "Profiles - Organizations and projects"
-msgstr ""
+msgstr "ປະຫວັດຫຍໍ້-ອົງການ-ໂຄງການ"
 
 #: i18n/additional-localization.php:146
 msgid "Profiles - Geographical areas and sites"
-msgstr ""
+msgstr "ປະຫວັດຫຍໍ້-ເຂດພູມສັນຖານ ແລະ ພື້ນທີ່"
 
 #: i18n/additional-localization.php:147
 msgid "Conference/workshop proceedings and presentations"
-msgstr ""
+msgstr "ການດຳເນີນການ ແລະ ການສະເໜີຂອງກອງປະຊຸມ"
 
 #: i18n/additional-localization.php:148
 msgid ""
 "Reports, journal articles, and research papers (including theses and "
 "dissertations)"
-msgstr ""
+msgstr "ບົດລາຍງານ, ບົດຄວາມວາລະສານ ແລະ ເອກະສານຄົ້ນຄວ້າ (ລວມທັງບົດວິທະຍານິພົນ)"
 
 #: i18n/additional-localization.php:149
 msgid "Company profiles"
-msgstr ""
+msgstr "ປະຫວັດຫຍໍ້ຂອງບໍລິສັດ"
 
 #: i18n/additional-localization.php:150
 msgid "Archived web content"
-msgstr ""
+msgstr "ເນື້ອໃນເວັບໄຊຕ໌ທີ່ເກັບໄວ້"
 
 #: i18n/additional-localization.php:152
 msgid "Banteay Meanchey"
-msgstr ""
+msgstr "ບັນເຕມຽນເຈ"
 
 #: i18n/additional-localization.php:153
 msgid "Battambang"
-msgstr ""
+msgstr "ບັດທຳບັງ"
 
 #: i18n/additional-localization.php:154
 msgid "Kampong Cham"
-msgstr ""
+msgstr "ຄຳໂພງຈຳ"
 
 #: i18n/additional-localization.php:155
 msgid "Kampong Chhnang"
-msgstr ""
+msgstr "ຄຳໂພງຈ໌ນາງ"
 
 #: i18n/additional-localization.php:156
 msgid "Kampong Speu"
-msgstr ""
+msgstr "ຄຳໂພງສ໌ປື"
 
 #: i18n/additional-localization.php:157
 msgid "Kampong Thom"
-msgstr ""
+msgstr "ຄຳໂພງທົມ"
 
 #: i18n/additional-localization.php:158
 msgid "Kampot"
-msgstr ""
+msgstr "ຄຳໂພດ"
 
 #: i18n/additional-localization.php:159
 msgid "Kandal"
-msgstr ""
+msgstr "ຄັນດາລ"
 
 #: i18n/additional-localization.php:160
 msgid "Kep"
-msgstr ""
+msgstr "ເຄບ"
 
 #: i18n/additional-localization.php:161
 msgid "Koh Kong"
-msgstr ""
+msgstr "ໂຄໂຄງ"
 
 #: i18n/additional-localization.php:162
 msgid "Kratie"
-msgstr ""
+msgstr "ຄ໌ຣາທິ"
 
 #: i18n/additional-localization.php:163
 msgid "Mondulkiri"
-msgstr ""
+msgstr "ມົນດາລຄີຣິ"
 
 #: i18n/additional-localization.php:164
 msgid "Oddar Meanchey"
-msgstr ""
+msgstr "ໂອດາຣມຽນເຈ"
 
 #: i18n/additional-localization.php:165
 msgid "Pailin"
-msgstr ""
+msgstr "ພາຍລີນ"
 
 #: i18n/additional-localization.php:166
 msgid "Phnom Penh"
-msgstr ""
+msgstr "ພະນົມເປັນ"
 
 #: i18n/additional-localization.php:167
 msgid "Preah Sihanouk"
-msgstr ""
+msgstr "ພ໌ເຣອາສີຫະນຸກ"
 
 #: i18n/additional-localization.php:168
 msgid "Preah Vihear"
-msgstr ""
+msgstr "ພ໌ເຣອາວີເຮອາຣ"
 
 #: i18n/additional-localization.php:169
 msgid "Prey Veng"
-msgstr ""
+msgstr "ເພຼເວງ"
 
 #: i18n/additional-localization.php:170
 msgid "Pursat"
-msgstr ""
+msgstr "ພູຣສາດ"
 
 #: i18n/additional-localization.php:171
 msgid "Ratanakiri"
-msgstr ""
+msgstr "ຣະທະນະຄິຣິ"
 
 #: i18n/additional-localization.php:172
 msgid "Siem Reap"
-msgstr ""
+msgstr "ສຽມຣຽບ"
 
 #: i18n/additional-localization.php:173
 msgid "Stung Treng"
-msgstr ""
+msgstr "ສະເຕິງແຕຼງ"
 
 #: i18n/additional-localization.php:174
 msgid "Svay Rieng"
-msgstr ""
+msgstr "ສະເວຣຽງ"
 
 #: i18n/additional-localization.php:175
 msgid "Takeo"
-msgstr ""
+msgstr "ທະເຄວ"
 
 #: i18n/additional-localization.php:176
 msgid "Tboung Khmum"
-msgstr ""
+msgstr "ທະບຸງຂະມຸ"
 
 #: i18n/additional-localization.php:178
 msgid "Title"
-msgstr ""
+msgstr "ຫົວຂໍ້"
 
 #: i18n/additional-localization.php:179
 msgid "Description"
-msgstr ""
+msgstr "ລາຍລະອຽດ"
 
 #: i18n/additional-localization.php:180 i18n/additional-localization.php:203
 msgid "License"
-msgstr ""
+msgstr "ການອະນຸຍາດ"
 
 #: i18n/additional-localization.php:181
 msgid "Copyright"
-msgstr ""
+msgstr "ລິຂະສິດ"
 
 #: i18n/additional-localization.php:182
 msgid "Access and use constraints"
-msgstr ""
+msgstr "ຂໍ້ຈຳກັດໃນການເຂົ້າເຖິງ ແລະ ການນຳໃຊ້"
 
 #: i18n/additional-localization.php:183
 msgid "Organization"
-msgstr ""
+msgstr "ອົງການຈັດຕັ້ງ"
 
 #: i18n/additional-localization.php:184
 msgid "Version"
-msgstr ""
+msgstr "ສະບັບ"
 
 #: i18n/additional-localization.php:185
 msgid "Contact"
-msgstr ""
+msgstr "ຕິດຕໍ່"
 
 #: i18n/additional-localization.php:186
 msgid "Topics"
-msgstr ""
+msgstr "ຫົວຂໍ້"
 
 #: i18n/additional-localization.php:187
 msgid "Language"
-msgstr ""
+msgstr "ພາສາ"
 
 #: i18n/additional-localization.php:188
 msgid "Date created"
-msgstr ""
+msgstr "ວັນທີສ້າງຂຶ້ນ"
 
 #: i18n/additional-localization.php:189
 msgid "Date uploaded"
-msgstr ""
+msgstr "ວັນທີອັບໂຫຼດ"
 
 #: i18n/additional-localization.php:190
 msgid "Date modified"
-msgstr ""
+msgstr "ວັນທີດັດແປງ"
 
 #: i18n/additional-localization.php:191
 msgid "Temporal range"
-msgstr ""
+msgstr "ຊ່ວງເວລາ"
 
 #: i18n/additional-localization.php:192
 msgid "Geographic area (spatial range)"
-msgstr ""
+msgstr "ເຂດພູມສັນຖານ (ຂອບເຂດທາງອາວະກາດ)"
 
 #: i18n/additional-localization.php:193
 msgid "Accuracy"
-msgstr ""
+msgstr "ຄວາມຖືກຕ້ອງ"
 
 #: i18n/additional-localization.php:194
 msgid "Logical consistency"
-msgstr ""
+msgstr "ສອດຄ່ອງຕາມເຫດຜົນ"
 
 #: i18n/additional-localization.php:195
 msgid "Completeness"
-msgstr ""
+msgstr "ຄວາມສົມບູນ"
 
 #: i18n/additional-localization.php:196
 msgid "Process(es)"
-msgstr ""
+msgstr "ຂະບວນການ"
 
 #: i18n/additional-localization.php:197
 msgid "Source(s)"
-msgstr ""
+msgstr "ແຫຼ່ງຂໍ້ມູນ"
 
 #: i18n/additional-localization.php:198
 msgid "Metadata reference information"
-msgstr ""
+msgstr "ຂໍ້ມູນອ້າງອີງກ່ຽວກັບລາຍລະອຽດຂອງຂໍ້ມູນ"
 
 #: i18n/additional-localization.php:199
 msgid "Attributes"
-msgstr ""
+msgstr "ຄຸນລັກສະນະ"
 
 #: i18n/additional-localization.php:200 i18n/additional-localization.php:215
 msgid "Document type"
-msgstr ""
+msgstr "ປະເພດເອກະສານ"
 
 #: i18n/additional-localization.php:201
 msgid "Short title (alternative/varying form of title)"
-msgstr ""
+msgstr "ຫົວຂໍ້ສັ້ນ (ທາງເລືອກ/ຮູບແບບຫົວຂໍ້ທີ່ແຕກຕ່າງກັນ)"
 
 #: i18n/additional-localization.php:202
 msgid "Version / Edition"
-msgstr ""
+msgstr "ສະບັບ/ຮູບແບບຂອງສິ່ງພິມ"
 
 #: i18n/additional-localization.php:204
 msgid "Author (individual)"
-msgstr ""
+msgstr "ຜູ້ຂຽນ (ບຸກຄົນ)"
 
 #: i18n/additional-localization.php:205
 msgid "Author (corporate)"
-msgstr ""
+msgstr "ຜູ້ຂຽນ (ບຸກຄົນ)"
 
 #: i18n/additional-localization.php:206
 msgid "Co-author (individual)"
-msgstr ""
+msgstr "ຜູ້ຂຽນຮ່ວມ (ບຸກຄົນ)"
 
 #: i18n/additional-localization.php:207
 msgid "Co-author (corporate)"
-msgstr ""
+msgstr "ຜູ້ຂຽນຮ່ວມ (ຮ່ວມກັນ)"
 
 #: i18n/additional-localization.php:208
 msgid "ISBN number"
-msgstr ""
+msgstr "ຕົວເລກ ISBN"
 
 #: i18n/additional-localization.php:209
 msgid "ISSN number"
-msgstr ""
+msgstr "ຕົວເລກ ISSN"
 
 #: i18n/additional-localization.php:210
 msgid "Publication place"
-msgstr ""
+msgstr "ສະຖານທີ່ຕີພິມ"
 
 #: i18n/additional-localization.php:211
 msgid "Publisher"
-msgstr ""
+msgstr "ຜູ້ຕີພິມ"
 
 #: i18n/additional-localization.php:212
 msgid "Publication date"
-msgstr ""
+msgstr "ວັນທີຕີພິມ"
 
 #: i18n/additional-localization.php:213
 msgid "Pagination"
-msgstr ""
+msgstr "ໝາຍເລກໜ້າ"
 
 #: i18n/additional-localization.php:214
 msgid "General note"
-msgstr ""
+msgstr "ໝາຍເຫດທົ່ວໄປ"
 
 #: i18n/additional-localization.php:216
 msgid "Document reference #"
-msgstr ""
+msgstr "ອ້າງອີງເອກະສານ #"
 
 #: i18n/additional-localization.php:217
 msgid "Alternative/short title"
-msgstr ""
+msgstr "ທາງເລືອກ/ຫົວຂໍ້ສັ້ນ"
 
 #: i18n/additional-localization.php:218
 msgid "Primary policy reference point"
-msgstr ""
+msgstr "ຈຸດອ້າງອີງນະໂຍບາຍຕົ້ນຕໍ"
 
 #: i18n/additional-localization.php:219
 msgid "Status"
-msgstr ""
+msgstr "ສະຖານະ"
 
 #: i18n/additional-localization.php:220
 msgid "Version date (of draft)"
-msgstr ""
+msgstr "ສະບັບວັນທີ (ຂອງຮ່າງ)"
 
 #: i18n/additional-localization.php:221
 msgid "Adoption date/Promulgation date/Signing date"
-msgstr ""
+msgstr "ວັນທີຮັບຮອງ/ວັນທີປະກາດໃຊ້/ວັນທີລົງລາຍເຊັນ"
 
 #: i18n/additional-localization.php:222
 msgid "Effective date"
-msgstr ""
+msgstr "ວັນທີມີຜົນບັງຄັບໃຊ້"
 
 #: i18n/additional-localization.php:223
 msgid "Application date"
-msgstr ""
+msgstr "ວັນທີຮ້ອງຂໍ"
 
 #: i18n/additional-localization.php:224
 msgid "Previous legal document"
-msgstr ""
+msgstr "ເອກະສານທາງກົດໝາຍທີ່ຜ່ານມາ"
 
 #: i18n/additional-localization.php:225
 msgid "Change notes"
-msgstr ""
+msgstr "ປ່ຽນບັນທຶກ"
 
 #: i18n/additional-localization.php:226
 msgid "Relationship to other legal docs"
-msgstr ""
+msgstr "ຄວາມສຳພັນກັບເອກະສານທາງກົດໝາຍອື່ນໆ"
 
 #: i18n/additional-localization.php:227
 msgid "Associated document"
-msgstr ""
+msgstr "ເອກະສານທີ່ກ່ຽວຂ້ອງ"
 
 #: i18n/additional-localization.php:228
 msgid "Publication reference"
-msgstr ""
+msgstr "ການອ້າງອີງສິ່ງພິມ"
 
 #: i18n/additional-localization.php:229
 msgid "Links to source"
-msgstr ""
+msgstr "ເຊື່ອມຕໍ່ຫາແຫຼ່ງຂໍ້ມູນ"
 
 #: i18n/additional-localization.php:230
 msgid "Drafting agency"
-msgstr ""
+msgstr "ອົງການທີ່ຮ່າງ"
 
 #: i18n/additional-localization.php:231
 msgid "Technical assistance for drafting"
-msgstr ""
+msgstr "ການຊ່ວຍເຫຼືອທາງດ້ານເຕັກນິກສຳລັບການຮ່າງ"
 
 #: i18n/additional-localization.php:232
 msgid "Agency providing technical assistance"
-msgstr ""
+msgstr "ອົງການໃຫ້ການຊ່ວຍເຫຼືອທາງດ້ານເຕັກນິກ"
 
 #: i18n/additional-localization.php:233
 msgid "Technical assistance funding agency"
-msgstr ""
+msgstr "ອົງການໃຫ້ທຶນຊ່ວຍເຫຼືອທາງດ້ານເຕັກນິກ"
 
 #: i18n/additional-localization.php:234
 msgid "Issuing agency/parties"
-msgstr ""
+msgstr "ອົງການອອກໃບອະນຸຍາດ/ພາກສ່ວນຕ່າງໆ"
 
 #: i18n/additional-localization.php:235
 msgid "Implementing agencies"
-msgstr ""
+msgstr "ອົງການຈັດຕັ້ງປະຕິບັດ"
 
 #: i18n/additional-localization.php:236
 msgid "Notes"
-msgstr ""
+msgstr "ໝາຍເຫດ"
 
 #: i18n/additional-localization.php:238
 msgid "Participating share"
-msgstr ""
+msgstr "ແບ່ງປັນການເຂົ້າຮ່ວມ"
 
 #: i18n/additional-localization.php:239
 msgid "Contracting parties"
-msgstr ""
+msgstr "ພາກສ່ວນສັນຍາ"
 
 #: i18n/additional-localization.php:240
 msgid "Government entity"
-msgstr ""
+msgstr "ໜ່ວຍງານລັດຖະບານ"
 
 #: i18n/additional-localization.php:241
 msgid "Concession name"
-msgstr ""
+msgstr "ຊື່ສຳປະທານ"
 
 #: i18n/additional-localization.php:242
 msgid "Disclosure mode"
-msgstr ""
+msgstr "ວິທີການເຜີຍແຜ່"
 
 #: i18n/additional-localization.php:243
 msgid "Document reference number"
-msgstr ""
+msgstr "ຕົວເລກອ້າງອີງເອກະສານ"
 
 #: i18n/additional-localization.php:244
 msgid "Amendment to contract"
-msgstr ""
+msgstr "ການແກ້ໄຂສັນຍາ"
 
 #: i18n/additional-localization.php:245
 msgid "Signature date"
-msgstr ""
+msgstr "ວັນທີລາຍເຊັນ"
 
 #: i18n/additional-localization.php:246
 msgid "Short notes of change"
-msgstr ""
+msgstr "ບັນທຶກຫຍໍ້ຂອງການປ່ຽນແປງ"
 
 #: i18n/additional-localization.php:247
 msgid "Granted area (hectare)"
-msgstr ""
+msgstr "ພື້ນທີ່ໄດ້ຮັບອະນຸຍາດໃຫ້ (ເຮັກຕາ)"
 
 #: i18n/additional-localization.php:248
 msgid "Contract term"
-msgstr ""
+msgstr "ໄລຍະສັນຍາ"
 
 #: i18n/additional-localization.php:249
 msgid "Contract term unit"
-msgstr ""
+msgstr "ໄລຍະຂອງສັນຍາ"
 
 #: i18n/additional-localization.php:250
 msgid "Payment for concession fees"
-msgstr ""
+msgstr "ການຈ່າຍສຳລັບຄ່າທຳນຽມສຳປະທານ"
 
 #: i18n/additional-localization.php:251
 msgid "Payment for concession fees unit"
-msgstr ""
+msgstr "ໜ່ວຍງານຈ່າຍຄ່າທຳນຽມສຳປະທານ"
 
 #: i18n/additional-localization.php:252
 msgid "Guaranty deposit for contract implementation"
-msgstr ""
+msgstr "ເງິນຝາກປະກັນສຳລັບການປະຕິບັດສັນຍາ"
 
 #: i18n/additional-localization.php:253
 msgid "Land use planning"
-msgstr ""
+msgstr "ການວາງແຜນນຳໃຊ້ທີ່ດິນ"
 
 #: i18n/additional-localization.php:254
 msgid "Land use planning unit"
-msgstr ""
+msgstr "ໜ່ວຍງານວາງແຜນນຳໃຊ້ທີ່ດິນ"
 
 #: i18n/additional-localization.php:255
 msgid "Party's obligation in the implementation of the project"
-msgstr ""
+msgstr "ພັນທະຂອງພັກໃນການປະຕິບັດໂຄງການ"
 
 #: i18n/additional-localization.php:256
 msgid "Job creation summary"
-msgstr ""
+msgstr "ສະຫຼຸບການສ້າງວຽກເຮັດງານທຳ"
 
 #: i18n/additional-localization.php:257
 msgid "Number of created jobs"
-msgstr ""
+msgstr "ຈຳນວນຂອງວຽກເຮັດງານທຳທີ່ໄດ້ສ້າງຂຶ້ນ"
 
 #: i18n/additional-localization.php:258
 msgid "Training summary"
-msgstr ""
+msgstr "ສະຫຼຸບການຝຶກອົບຮົມ"
 
 #: i18n/additional-localization.php:259
 msgid "Training number"
-msgstr ""
+msgstr "ຈຳນວນການຝຶກອົບຮົມ"
 
 #: i18n/additional-localization.php:260
 msgid "Environmental protection"
-msgstr ""
+msgstr "ການປົກປັກຮັກສາສິ່ງແວດລ້ອມ"
 
 #: i18n/additional-localization.php:261
 msgid "Socio-cultural protection"
-msgstr ""
+msgstr "ການປົກປັກຮັກສາສັງຄົມ-ວັດທະນະທຳ"
 
 #: i18n/additional-localization.php:262
 msgid "Fiscal duties summary"
-msgstr ""
+msgstr "ສະຫຼຸບການເງິນພາສີອາກອນ"
 
 #: i18n/additional-localization.php:263
 msgid "Total amount of fiscal duties"
-msgstr ""
+msgstr "ຈຳນວນທັງໝົດດ້ານການເງິນພາສີອາກອນ"
 
 #: i18n/additional-localization.php:264
 msgid "Environmental impact assessment (EIA)"
-msgstr ""
+msgstr "ການປະເມີນຜົນກະທົບຕໍ່ສິ່ງແວດລ້ອມ (EIA)"
 
 #: i18n/additional-localization.php:265
 msgid "Social fund"
-msgstr ""
+msgstr "ກອງທຶນສັງຄົມ"
 
 #: i18n/additional-localization.php:266
 msgid "Environmental fund summary"
-msgstr ""
+msgstr "ສະຫຼຸບກອງທຶນສິ່ງແວດລ້ອມ"
 
 #: i18n/additional-localization.php:267
 msgid "Total amount of environmental funds"
-msgstr ""
+msgstr "ຈຳນວນເງິນກອງທຶນສິ່ງແວດລ້ອມທັງໝົດ"
 
 #: i18n/additional-localization.php:268
 msgid "Suspension and/or revocation or termination​"
-msgstr ""
+msgstr "ການຢຸດຊົ່ວຄາວ ແລະ/ຫຼື ການຍົກເລີກ ຫຼື ການສິ້ນສຸດ"
 
 #: i18n/additional-localization.php:269
 msgid "Related documents"
-msgstr ""
+msgstr "ເອກະສານຕ່າງໆທີ່ກ່ຽວຂ້ອງ"
 
 #: i18n/additional-localization.php:270
 msgid "Related project"
-msgstr ""
+msgstr "ໂຄງການທີ່ກ່ຽວຂ້ອງ"
 
 #: i18n/additional-localization.php:272
 msgid "Contract"
-msgstr ""
+msgstr "ສັນຍາ"
 
 #: i18n/additional-localization.php:273
 msgid "Contract Amendment"
-msgstr ""
+msgstr "ການແກ້ໄຂສັນຍາ"
 
 #: i18n/additional-localization.php:274
 msgid "Contract Annex"
-msgstr ""
+msgstr "ເອກະສານຕິດຄັດຂອງສັນຍາ"
 
 #: i18n/additional-localization.php:275
 msgid "Contract Farming Agreement"
-msgstr ""
+msgstr "ຂໍ້ຕົກລົງສັນຍາກະສິກຳ"
 
 #: i18n/additional-localization.php:276
 msgid "Energy Contract"
-msgstr ""
+msgstr "ສັນຍາພະລັງງານ"
 
 #: i18n/additional-localization.php:277
 msgid "Exploration Permit/License"
-msgstr ""
+msgstr "ໃບ​ອະ​ນຸ​ຍາດສຳ​ຫຼວດ"
 
 #: i18n/additional-localization.php:278
 msgid "Exploitation/extraction permit or license"
-msgstr ""
+msgstr "ໃບ​ອະ​ນຸ​ຍາດ​ຂຸດ​ຄົ້ນ"
 
 #: i18n/additional-localization.php:279
 msgid "Forest Concession Contract"
-msgstr ""
+msgstr "​ສັນ​ຍາ​ສຳ​ປະ​ທານ​ປ່າ​ໄມ້"
 
 #: i18n/additional-localization.php:280
 msgid "In-land Fishcatchment Concession Contract"
-msgstr ""
+msgstr "ສັນຍາການສຳປະທານການປາທີ່ໄກຈາກທະເລ"
 
 #: i18n/additional-localization.php:281
 msgid "Infrastructure Contract"
-msgstr ""
+msgstr "ສັນ​ຍາ​ໂຄງ​ລ່າງ​ພື້ນ​ຖານ"
 
 #: i18n/additional-localization.php:282
 msgid "Investment Promotion Agreement"
-msgstr ""
+msgstr "​ສັນ​ຍາ​ສົ່ງ​ເສີມ​ການ​ລົງ​ທຶນ"
 
 #: i18n/additional-localization.php:283
 msgid "Joint Venture Agreement"
-msgstr ""
+msgstr "ສັນ​ຍາ​ຮ່ວມ​ທຶນ​ຮ່ວມ​ກັນ"
 
 #: i18n/additional-localization.php:284
 msgid "Land Concession Contract"
-msgstr ""
+msgstr "​ສັນ​ຍາ​ສຳ​ປະ​ທານ​ທີ່​ດິນ"
 
 #: i18n/additional-localization.php:285
 msgid "Memorandum of Understanding"
-msgstr ""
+msgstr "ບົດ​ບັນ​ທຶກ​ຄວາມ​ເຂົ້າ​ໃຈ"
 
 #: i18n/additional-localization.php:286
 msgid "Maritime Fishcatchment Concession Contract"
-msgstr ""
+msgstr "ສັນ​ຍາ​ສຳ​ປະ​ທານ​ການ​ຫາ​ປາ​ໃນ​ທະ​ເລ"
 
 #: i18n/additional-localization.php:287
 msgid "Other long-term leasing contract of State Assets"
-msgstr ""
+msgstr "ສັນ​ຍາ​ເຊົ່າ​ໄລ​ຍະ​ຍາວ​ຂອງ​ຊັບ​ສິນ​ລັດ"
 
 #: i18n/additional-localization.php:288
 msgid "Production or Profit Sharing Agreement"
-msgstr ""
+msgstr "ສັນ​ຍາ​ການ​ແບ່ງ​ປັນ​ຜົນ​ຜະ​ລິດ ຫຼື ຜົນ​ກຳ​ໄລ"
 
 #: i18n/additional-localization.php:289
 msgid "Service Contract"
-msgstr ""
+msgstr "ສັນ​ຍາ​ການ​ບໍ​ລິ​ການ"
 
 #: i18n/additional-localization.php:290
 msgid "Social Land Concession"
-msgstr ""
+msgstr "ການສຳປະທານທີ່ດິນສັງຄົມ"
 
 #: i18n/additional-localization.php:292
 msgid "English"
-msgstr ""
+msgstr "ພາສາອັງກິດ"
 
 #: i18n/additional-localization.php:293
 msgid "Khmer"
-msgstr ""
+msgstr "ພາສາຂະແມ"
 
 #: i18n/additional-localization.php:294
 msgid "Vietnamese"
-msgstr ""
+msgstr "ຫວຽດນາມ"
 
 #: i18n/additional-localization.php:295
 msgid "Thai"
-msgstr ""
+msgstr "ພາສາໄທ"
 
 #: i18n/additional-localization.php:296
 msgid "Burmese"
-msgstr ""
+msgstr "ພາສາພະມ້າ"
 
 #: i18n/additional-localization.php:297
 msgid "Lao"
-msgstr ""
+msgstr "ພາສາລາວ"
 
 #: i18n/additional-localization.php:299
 msgid "Years"
-msgstr ""
+msgstr "ປີ"
 
 #: i18n/additional-localization.php:300
 msgid "Months"
-msgstr ""
+msgstr "ເດືອນ"
 
 #: i18n/additional-localization.php:301
 msgid "$/ha"
-msgstr ""
+msgstr "ໂດລາ/ເຮັກຕາ"
 
 #: i18n/additional-localization.php:302
 msgid "$/m2"
-msgstr ""
+msgstr "ໂດລາ/ກິໂລຕາແມັດ"
 
 #: i18n/additional-localization.php:303
 msgid "ha"
-msgstr ""
+msgstr "ເຮັກຕາ"
 
 #: i18n/additional-localization.php:304
 msgid "m2"
-msgstr ""
+msgstr "ຕາແມັດ"
 
 #: i18n/additional-localization.php:305
 msgid "Released by government"
-msgstr ""
+msgstr "ປ່ອຍໂດຍລັດຖະບານ"
 
 #: i18n/additional-localization.php:306
 msgid "Released by company"
-msgstr ""
+msgstr "ປ່ອຍໂດຍບໍລິສັດ"
 
 #: i18n/additional-localization.php:307
 msgid "Released by media"
-msgstr ""
+msgstr "ປ່ອຍໂດຍສື່ມວນຊົນ"
 
 #: i18n/additional-localization.php:308
 msgid "Released by international non-governmental organizations (INGOs)"
-msgstr ""
+msgstr "ປ່ອຍໂດຍອົງການຈັດຕັ້ງສາກົນທີ່ບໍ່ແມ່ນລັດຖະບານ"
 
 #: i18n/additional-localization.php:309
 msgid "Released by local non-governmental organizations (LNGOs)"
-msgstr ""
+msgstr "ປ່ອຍໂດຍອົງການທ້ອງຖິ່ນທີ່ບໍ່ແມ່ນລັດຖະບານ"
 
 #: i18n/additional-localization.php:310
 msgid "Released by international organizations (IOs)"
-msgstr ""
+msgstr "ປ່ອຍໂດຍອົງການສາກົນ (IO)"
 
 #: i18n/additional-localization.php:311
 msgid "Released by United Nations agencies (UNs)"
-msgstr ""
+msgstr "ປ່ອຍໂດຍອົງການຍ່ອຍສະຫະປະຊາຊາດ"
 
 #: i18n/additional-localization.php:312
 msgid "Released by academia"
-msgstr ""
+msgstr "ປ່ອຍໂດຍສະຖາບັນການສຶກສາ"
 
 #: i18n/additional-localization.php:313
 msgid "Released by think tanks"
-msgstr ""
+msgstr "ປ່ອຍໂດຍອົງການຖັງຄວາມຄິດ"
 
 #: i18n/additional-localization.php:314
 msgid "Other"
-msgstr ""
+msgstr "ອື່ນໆ"
 
 #: i18n/additional-localization.php:316
 msgid "Yes"
-msgstr ""
+msgstr "ຖືກຕ້ອງ"
 
 #: i18n/additional-localization.php:317
 msgid "No"
-msgstr ""
+msgstr "ບໍ່"
 
 #: templates/archive-post-metabox.php:18
 msgid "CKAN Organization"
-msgstr ""
+msgstr "ອົງການ CKAN"
 
 #: templates/archive-post-metabox.php:20 templates/archive-post-metabox.php:29
 msgid "None"
-msgstr ""
+msgstr "ບໍ່ມີ"
 
 #: templates/archive-post-metabox.php:27
 msgid "CKAN Group"
-msgstr ""
+msgstr "ກຸ່ມ CKAN"
 
 #: templates/archive-post-metabox.php:36
 msgid "Archive contents when:"
-msgstr ""
+msgstr "ບັນທຶກເນື້ອຫາເມື່ອ:"
 
 #: templates/archive-post-metabox.php:38
 msgid "Never archive"
-msgstr ""
+msgstr "ບໍ່ເຄີຍຮວບຮວມ"
 
 #: templates/archive-post-metabox.php:39
 msgid "Post is saved"
-msgstr ""
+msgstr "ໂພດສ໌ໄດ້ເກັບຮັກສາໄວ້"
 
 #: templates/archive-post-metabox.php:44
 #: templates/related-datasets-metabox.php:15
 msgid "wpckan is not correctly configured. Please, check the "
-msgstr ""
+msgstr "wpckan ເອົາເຂົ້າກັນຢ່າງບໍ່ຖືກຕ້ອງ. ກະລຸນາ, ກວດເບິ່ງ"
 
 #: templates/dataset-detail.php:21
 msgid "Back to search"
-msgstr ""
+msgstr "ກັບໄປບ່ອນຊອກຫາ"
 
 #: templates/dataset-detail.php:68
 msgid "Resources"
-msgstr ""
+msgstr "ແຫຼ່ງທີ່ມາ"
 
 #: templates/dataset-detail.php:94
 msgid "Download"
-msgstr ""
+msgstr "ດາວໂຫຼດ"
 
 #: templates/dataset-detail.php:101
 msgid "Additional info"
-msgstr ""
+msgstr "ຂໍ້ມູນເພີ່ມເຕີມ"
 
 #: templates/dataset-detail.php:171
 msgid "No metadata available for current dataset"
-msgstr ""
+msgstr "ບໍ່ມີລາຍລະອຽດຂອງຂໍ້ມູນສຳລັບຊຸດຂໍ້ມູນປັດຈຸບັນ"
 
 #: templates/related-datasets-metabox.php:5
 msgid "Add related datasets"
-msgstr ""
+msgstr "ເພີ່ມຊຸດຂໍ້ມູນທີ່ກ່ຽວຂ້ອງ"
 
 #: templates/settings.php:39
 msgid "Connecting to CKAN"
-msgstr ""
+msgstr "ເຊື່ອມຕໍ່ກັບ CKAN"
 
 #: templates/settings.php:41
 msgid "CKAN Url"
-msgstr ""
+msgstr "CKAN URL"
 
 #: templates/settings.php:44
 msgid "Specify protocol such as http:// or https://."
-msgstr ""
+msgstr "ລະບຸໂປຣແກຣມເຊັ່ນ: http:// ຫຼື https://."
 
 #: templates/settings.php:48
 msgid "CKAN Api key"
-msgstr ""
+msgstr "ກະແຈຂອງ CKAN API"
 
 #: templates/settings.php:51
 msgid "Available under the profile page of a CKAN user with Admin rights."
-msgstr ""
+msgstr "ມີໃຫ້ພາຍໃຕ້ໜ້າໂຄງສ້າງຂອງຜູ້ນຳໃຊ້ CKAN ທີ່ມີສິດທິບໍລິຫານ"
 
 #: templates/settings.php:56
 msgid "Connection status"
-msgstr ""
+msgstr "ສະຖານະການເຊື່ອມຕໍ່"
 
 #: templates/settings.php:59
 msgid "CKAN URL specified correctly."
-msgstr ""
+msgstr "CKAN URL ໄດ້ລະບຸຢ່າງຖືກຕ້ອງ"
 
 #: templates/settings.php:61
 msgid "Problem connecting to CKAN instance. Please, check the specified URL."
-msgstr ""
+msgstr "ບັນຫາການເຊື່ອມຕໍ່ຫາກໍລະນີຂອງ CKAN. ກະລຸນາກວດເບິ່ງ URL ທີ່ໄດ້ກຳນົດ"
 
 #: templates/settings.php:64
 msgid "CKAN API Key specified correctly."
-msgstr ""
+msgstr "ກະແຈຂອງ CKAN API ໄດ້ລະບຸຢ່າງຖືກຕ້ອງ"
 
 #: templates/settings.php:66
 msgid "Please, specify a valid CKAN API Key."
-msgstr ""
+msgstr "ກະລຸນາລະບຸກະແຈຂອງ CKAN API ທີ່ຖືກຕ້ອງ"
 
 #: templates/settings.php:72
 msgid "Supported post types"
-msgstr ""
+msgstr "ປະເພດໂພດສ໌ທີ່ຈຸນເຈືອ"
 
 #: templates/settings.php:83
 msgid "Dataset detail pages"
-msgstr ""
+msgstr "ໜ້າຊຸດຂໍ້ມູນລະອຽດ"
 
 #: templates/settings.php:85
 msgid "Supported fields"
-msgstr ""
+msgstr "ດ້ານທີ່ຈຸນເຈືອ"
 
 #: templates/settings.php:87
 msgid "title, description, license_url, ..."
-msgstr ""
+msgstr "ຫົວຂໍ, ຄຳອະທິບາຍ, ໃບອະນຸຍາດ_url, ..."
 
 #: templates/settings.php:88
 msgid ""
-"Specify a list of Comma-separated field names to show on the additional data "
-"section. Mind order."
+"Specify a list of Comma-separated field names to show on the additional data"
+" section. Mind order."
 msgstr ""
+"ລະບຸລາຍການດ້ານຫົວຂໍ້ທີ່ແຍກໂດຍຈຸດເພື່ອສະແດງໃນສ່ວນຂໍ້ມູນເພີ່ມເຕີມ. ລະວັງລຳດັບ."
 
 #: templates/settings.php:93
 msgid "Field mappings for keys"
@@ -1431,11 +1434,11 @@ msgstr ""
 
 #: utils/wpckan-api.php:463
 msgid "Download data"
-msgstr ""
+msgstr "ດາວໂຫຼດຂໍ້ມູນ"
 
 #: utils/wpckan-api.php:467
 msgid "View dataset table"
-msgstr ""
+msgstr "ເບິ່ງຕາຕະລາງຊຸດຂໍ້ມູນ"
 
 #: widgets/query-resources-by-category-widget.php:12
 msgid "WPCKAN Query resources by post's category"
@@ -1455,13 +1458,13 @@ msgstr ""
 #: widgets/query-resources-widget.php:121
 #: widgets/related-datasets-widget.php:106
 msgid "Title:"
-msgstr ""
+msgstr "ຫົວຂໍ້"
 
 #: widgets/query-resources-by-category-widget.php:143
 #: widgets/query-resources-widget.php:125
 #: widgets/related-datasets-widget.php:108
 msgid "CKAN Organization:"
-msgstr ""
+msgstr "ອົງການ CKAN"
 
 #: widgets/query-resources-by-category-widget.php:145
 #: widgets/query-resources-widget.php:127
@@ -1469,106 +1472,107 @@ msgstr ""
 #: widgets/related-datasets-widget.php:110
 #: widgets/related-datasets-widget.php:117
 msgid "All"
-msgstr ""
+msgstr "ທັງໝົດ"
 
 #: widgets/query-resources-by-category-widget.php:154
 msgid "Search field:"
-msgstr ""
+msgstr "ດ້ານທີ່ຄົ້ນຫາ:"
 
 #: widgets/query-resources-by-category-widget.php:159
 #: widgets/query-resources-widget.php:141
 #: widgets/related-datasets-widget.php:124
 msgid "Dataset type:"
-msgstr ""
+msgstr "ປະເພດຊຸດຂໍ້ມູນ"
 
 #: widgets/query-resources-by-category-widget.php:160
 #: widgets/query-resources-widget.php:142
 #: widgets/related-datasets-widget.php:125
 msgid "dataset, library_record, etc.."
-msgstr ""
+msgstr "ຊຸດຂໍ້ມູນ, ຫ້ອງສະໝຸດ, ບັນທຶກ, ອື່ນໆ..."
 
 #: widgets/query-resources-by-category-widget.php:165
 msgid "Select max number of posts to list (-1 to show all):"
-msgstr ""
+msgstr "ເລືອກຈຳນວນສູງສຸດຂອງໂພດສ໌ເພື່ອລົງລາຍການ (-1 ເພື່ອສະແດງທັງໝົດ)"
 
 #: widgets/query-resources-by-category-widget.php:173
 #: widgets/query-resources-widget.php:151
 #: widgets/related-datasets-widget.php:130
 msgid "Output fields for dataset:"
-msgstr ""
+msgstr "ດ້ານຂໍ້ມູນທີ່ໄດ້ຮັບສຳລັບຊຸດຂໍ້ມູນ"
 
 #: widgets/query-resources-by-category-widget.php:177
 #: widgets/query-resources-widget.php:155
 #: widgets/related-datasets-widget.php:134
 msgid "Output fields for resources:"
-msgstr ""
+msgstr "ດ້ານຂໍ້ມູນທີ່ໄດ້ຮັບສຳລັບແຫຼ່ງທີ່ມາ:"
 
 #: widgets/query-resources-by-category-widget.php:181
 #: widgets/query-resources-widget.php:159
 #: widgets/related-datasets-widget.php:138
 msgid "Order by:"
-msgstr ""
+msgstr "ສັ່ງໂດຍ:"
 
 #: widgets/query-resources-widget.php:9
 msgid "WPCKAN Query Datasets"
-msgstr ""
+msgstr "ຄຳຖາມຊຸດຂໍ້ມູນ WPCKAN"
 
 #: widgets/query-resources-widget.php:10
 msgid "Query resources and displays them in a post or page."
-msgstr ""
+msgstr "ແຫຼ່ງທີ່ມາຂອງຄຳຖາມ ແລະ ສະແດງໃຫ້ເຫັນຢູ່ໃນໂພດສ໌ ຫຼື ໜ້າ"
 
-#: widgets/query-resources-widget.php:91 widgets/related-datasets-widget.php:81
+#: widgets/query-resources-widget.php:91
+#: widgets/related-datasets-widget.php:81
 msgid "Related datasets"
-msgstr ""
+msgstr "ຊຸດຂໍ້ມູນທີ່ກ່ຽວຂ້ອງ"
 
 #: widgets/query-resources-widget.php:123
 msgid "Query:"
-msgstr ""
+msgstr "ຄຳຖາມ:"
 
 #: widgets/query-resources-widget.php:132
 #: widgets/related-datasets-widget.php:115
 msgid "CKAN Group:"
-msgstr ""
+msgstr "ກຸ່ມ CKAN"
 
 #: widgets/query-resources-widget.php:139
 #: widgets/related-datasets-widget.php:122
 msgid "Additional filtering:"
-msgstr ""
+msgstr "ການກັ່ນຕອງເພີ່ມເຕີມ"
 
 #: widgets/query-resources-widget.php:140
 #: widgets/related-datasets-widget.php:123
 msgid "Specify valid JSON, otherwise not saved"
-msgstr ""
+msgstr "ລະບຸ JSON ທີ່ຖືກຕ້ອງ, ຖ້າບໍ່ດັ່ງນັ້ນຈະບໍ່ເກັບຮັກສາ"
 
 #: widgets/query-resources-widget.php:143
 #: widgets/related-datasets-widget.php:126
 msgid "Limit:"
-msgstr ""
+msgstr "ຈຳກັດ"
 
 #: widgets/query-resources-widget.php:145
 msgid "More dataset: Link label"
-msgstr ""
+msgstr "ຊຸດຂໍ້ມູນອີກ: "
 
 #: widgets/query-resources-widget.php:147
 msgid "More dataset: Link (URL)"
-msgstr ""
+msgstr "ຊຸດຂໍ້ມູນອີກ: ລິງ (URL)"
 
 #: widgets/related-datasets-widget.php:9
 msgid "WPCKAN Related Datasets"
-msgstr ""
+msgstr "ຊຸດຂໍ້ມູນທີ່ກ່ຽວຂ້ອງກັບ WPCKAN"
 
 #: widgets/related-datasets-widget.php:10
 msgid "Display post related datasets."
-msgstr ""
+msgstr "ສະແດງລາຍການທີ່ກ່ຽວຂ້ອງກັບຊຸດຂໍ້ມູນ"
 
 #: wpckan.php:146
 msgid "Add related CKAN content"
-msgstr ""
+msgstr "ເພີ່ມເນື້ອໃນທີ່ກ່ຽວຂ້ອງກັບ CKAN"
 
 #: wpckan.php:147
 msgid "Archive Post as CKAN dataset"
-msgstr ""
+msgstr "ບ່ອນເກັບເອກະສານແຈ້ງເປັນຊຸດຂໍ້ມູນຂອງ CKAN"
 
 #: wpckan.php:291
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
+msgstr "ທ່ານບໍ່ມີການອະນຸຍາດພຽງພໍໃນການເຂົ້າເຖິງໜ້ານີ້"
