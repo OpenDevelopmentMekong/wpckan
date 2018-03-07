@@ -1,6 +1,6 @@
 # Translators:
 # Alex Corbi <a.corbi@gmail.com>, 2017
-# Theint Naing Yoon <yoon@phandeeyar.org>, 2017
+# Yoon, 2017
 # thetaung2 <thetaung@phandeeyar.org>, 2017
 msgid ""
 msgstr ""
@@ -901,11 +901,11 @@ msgstr "နည်းပညာပိုင်းဆိုင်ရာအထော
 
 #: i18n/additional-localization.php:234
 msgid "Issuing agency/parties"
-msgstr "ထုတ်လုပ်သည့် အေဂျင်စီ/ပါတီများ"
+msgstr "အမိန့်ထုတ်ပြန်သည့် အဖွဲ့အစည်း/များ"
 
 #: i18n/additional-localization.php:235
 msgid "Implementing agencies"
-msgstr "အကောင်အထည်ဖော်နေသည့် အေဂျင်စီများ"
+msgstr "အကောင်အထည်ဖော်နေသည့် အဖွဲ့အစည်းများ"
 
 #: i18n/additional-localization.php:236
 msgid "Notes"

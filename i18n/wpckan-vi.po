@@ -1,24 +1,24 @@
+# Translators:
+# Alex Corbi <a.corbi@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: wpckan\n"
-"POT-Creation-Date: 2017-06-14 15:50+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: vi\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-06-14 15:49+0200\n"
+"PO-Revision-Date: 2017-06-14 15:49+0200\n"
+"Last-Translator: Alex Corbi <a.corbi@gmail.com>, 2017\n"
+"Language-Team: Vietnamese (https://www.transifex.com/open-development-mekong/teams/27158/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;_e;__;_n:1,2;_x:1,2c;_ex:1,2c\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: i18n\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: components\n"
-"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: i18n/additional-localization.php:2
 msgid "Action Plan"
@@ -318,8 +318,8 @@ msgstr ""
 
 #: i18n/additional-localization.php:78
 msgid ""
-"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the "
-"Economic Land Concessions"
+"Inter-Ministerial Committee for Assessment Measurement and Evaluation of the"
+" Economic Land Concessions"
 msgstr ""
 
 #: i18n/additional-localization.php:79 i18n/additional-localization.php:122
@@ -710,7 +710,7 @@ msgstr ""
 
 #: i18n/additional-localization.php:186
 msgid "Topics"
-msgstr ""
+msgstr "Chuyên đề"
 
 #: i18n/additional-localization.php:187
 msgid "Language"
@@ -1114,11 +1114,11 @@ msgstr ""
 
 #: i18n/additional-localization.php:292
 msgid "English"
-msgstr ""
+msgstr "Tiếng Anh"
 
 #: i18n/additional-localization.php:293
 msgid "Khmer"
-msgstr ""
+msgstr "Tiếng Khmer"
 
 #: i18n/additional-localization.php:294
 msgid "Vietnamese"
@@ -1214,7 +1214,7 @@ msgstr ""
 
 #: templates/archive-post-metabox.php:20 templates/archive-post-metabox.php:29
 msgid "None"
-msgstr ""
+msgstr "Không"
 
 #: templates/archive-post-metabox.php:27
 msgid "CKAN Group"
@@ -1247,7 +1247,7 @@ msgstr ""
 
 #: templates/dataset-detail.php:94
 msgid "Download"
-msgstr ""
+msgstr "Tải về"
 
 #: templates/dataset-detail.php:101
 msgid "Additional info"
@@ -1319,8 +1319,8 @@ msgstr ""
 
 #: templates/settings.php:88
 msgid ""
-"Specify a list of Comma-separated field names to show on the additional data "
-"section. Mind order."
+"Specify a list of Comma-separated field names to show on the additional data"
+" section. Mind order."
 msgstr ""
 
 #: templates/settings.php:93
@@ -1455,7 +1455,7 @@ msgstr ""
 #: widgets/query-resources-widget.php:121
 #: widgets/related-datasets-widget.php:106
 msgid "Title:"
-msgstr ""
+msgstr "Tiêu đề"
 
 #: widgets/query-resources-by-category-widget.php:143
 #: widgets/query-resources-widget.php:125
@@ -1489,7 +1489,7 @@ msgstr ""
 
 #: widgets/query-resources-by-category-widget.php:165
 msgid "Select max number of posts to list (-1 to show all):"
-msgstr ""
+msgstr "Chọn liệt kê tối đa số lượng bài đăng (-1 để hiển thị toàn bộ):"
 
 #: widgets/query-resources-by-category-widget.php:173
 #: widgets/query-resources-widget.php:151
@@ -1517,7 +1517,8 @@ msgstr ""
 msgid "Query resources and displays them in a post or page."
 msgstr ""
 
-#: widgets/query-resources-widget.php:91 widgets/related-datasets-widget.php:81
+#: widgets/query-resources-widget.php:91
+#: widgets/related-datasets-widget.php:81
 msgid "Related datasets"
 msgstr ""
 
