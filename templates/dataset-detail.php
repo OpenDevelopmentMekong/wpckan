@@ -103,7 +103,7 @@
 						echo $additional_metadata; ?>
 				</div>
 			</div>
-    </br>
+    <br />
 	<?php
 		endif; ?>
 
