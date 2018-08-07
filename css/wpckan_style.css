@@ -45,7 +45,8 @@
 
 .tt-query, /* UPDATE: newer versions use tt-input instead of tt-query */
 .tt-hint {
-    width: 396px;
+    /* width: 396px; */
+    width: 96px;
     height: 30px;
     padding: 8px 12px;
     font-size: 24px;
