@@ -7,7 +7,7 @@
   $supported_fields = explode(',', $supported_fields_csv);
 	$supported_fields_additional_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_supported_fields_additional');
   $supported_fields_additional = explode(',', $supported_fields_additional_csv);
-	$current_language = wpckan_get_current_language(); 
+	$current_language = wpckan_get_current_language();
   $dataset_id = $data['id']; ?>
 
 <div class="wpckan_dataset_detail">
@@ -54,8 +54,9 @@
 	            if (array_key_exists($current_language, $resource['name_translated'])):
 	                $resource_title = !empty($resource['name_translated'][$current_language]) ? $resource['name_translated'][$current_language] : $resource['name_translated']['en'];
 	            endif;
-	        endif; ?>
-          <h3><?php echo $resource_title; ?></h3>
+	        endif;
+          ?>
+          <h3><?php echo ($resource_title !="EIA")? $resource_title : $title; ?></h3>
 					<?php
 					$resource_description = $resource['description'];
 					if (array_key_exists('description_translated', $resource)):
@@ -63,7 +64,7 @@
 	                $resource_description = !empty($resource['description_translated'][$current_language]) ? $resource['description_translated'][$current_language] : $resource['description_translated']['en'];
 	            endif;
 	        endif; ?>
-          <p class="expandible"><?php echo $resource_description; ?></p>
+          <p class="expandible"><?php echo ($resource_description !="asdf")? $resource_description: ''; ?></p>
         </td>
         <td class="wpckan_dataset_resource_url"><?php if (isset($resource['url'])): ?>
           <a class="wpckan_dataset_resource_url button download" href="<?php echo $resource['url']; ?>" data-ga-event="Dataset|resource_download|<?php echo $dataset_id.'/'.$resource['id']; ?>"><?php _e('Download', 'wpckan') ?></a>
@@ -102,6 +103,7 @@
 						echo $additional_metadata; ?>
 				</div>
 			</div>
+    <br />
 	<?php
 		endif; ?>
 
@@ -115,17 +117,17 @@ function render_metadata_table($supported_fields,$data){
 	$supported_datatables = wpckan_parse_field_mappings('wpckan_setting_supported_datatables');
 	$linked_fields_csv = $GLOBALS['wpckan_options']->get_option('wpckan_setting_linked_fields');
   $linked_fields = explode(',', $linked_fields_csv);
-  $current_language = wpckan_get_current_language(); 
-  
+  $current_language = wpckan_get_current_language();
+
   $show_content = false;
-  $html_content = null; 
+  $html_content = null;
 
 	$html_content = '<table class="wpckan_dataset_metadata_fields">' ?>
   <?php
       $metadata_available = false;
       if (!empty($supported_fields)): ?>
       <?php
-        foreach ($supported_fields as $key): 
+        foreach ($supported_fields as $key):
           $html_content .= '<tr class="wpckan_dataset_metadata_field">';?>
           <?php
           $mapped_key = isset($field_mappings[$key]) ? trim($field_mappings[$key]," ") : $key;
@@ -140,10 +142,12 @@ function render_metadata_table($supported_fields,$data){
                 $metadata_available = true;
                 foreach($ids as $id):
                   $results = wpckan_get_datastore_resources_filter(wpckan_get_ckan_domain(),$resource_id,"id",$id);
-                  $result = $results[0];
-                  $mapped_value = $mapped_value . $result["name"];
-                  if ($id !== end($ids)):
-                    $mapped_value = $mapped_value . ", ";
+                  if(isset($results[0])):
+                    $result = $results[0];
+                    $mapped_value = $mapped_value . $result["name"];
+                    if ($id !== end($ids)):
+                      $mapped_value = $mapped_value . ", ";
+                    endif;
                   endif;
                 endforeach;
               endif;
@@ -187,10 +191,10 @@ function render_metadata_table($supported_fields,$data){
           ?>
 
           </tr>
-        <?php 
+        <?php
         endforeach; ?>
 
-  <?php endif; 
+  <?php endif;
   $html_content .= '</table>';
 
   if ($show_content):
