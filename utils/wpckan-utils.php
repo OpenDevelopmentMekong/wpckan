@@ -374,7 +374,11 @@
               $value = urlencode($value);
             endif;
           endif;
-          $fq = $fq . '+' . $field . ':' . $value;
+          if ($field == "odm_reference_document"):
+              $fq = $fq . '+' . $field . ':"' . $value.'"';
+          else:
+              $fq = $fq . '+' . $field . ':' . $value;
+          endif;
         endforeach;
       endif;
     endif;
@@ -417,6 +421,7 @@
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
       curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+      //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
       $content = curl_exec($ch);
       curl_close($ch);
       return $content;
