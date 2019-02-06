@@ -2,7 +2,7 @@
     <h2>WPCKAN -  A plugin for integrating CKAN and WP</h2>
     <form method="post" action="options.php">
         <?php @settings_fields('wpckan-group'); ?>
-        <?php @do_settings_fields('wpckan-group'); ?>
+        <?php @do_settings_fields('wpckan', 'CKAN'); ?>
 
         <?php
           wpckan_log("Rendering settings.php");
