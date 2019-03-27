@@ -67,8 +67,11 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 			$shortcode .= ' sort="'.$instance['sort'].'"';
 		endif;
 
-		$shortcode .= ' include_fields_dataset="'.$instance['output_fields'].'" include_fields_resources="'.$instance['output_fields_resources'].'" blank_on_empty="true"]';
+		if (!empty($instance['related_by_category'])):
+			$shortcode .= ' category="'.$instance['related_by_category'].'"';
+		endif;
 
+		$shortcode .= ' include_fields_dataset="'.$instance['output_fields'].'" include_fields_resources="'.$instance['output_fields_resources'].'" blank_on_empty="true"]';
 		$output = do_shortcode($shortcode);
 
 		if (!empty($output) && $output != ''):
@@ -93,6 +96,7 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 		 $filter_fields = !empty($instance['filter_fields']) && json_decode($instance['filter_fields']) ? $instance['filter_fields'] : null;
 		 $type = !empty($instance['type']) ? $instance['type'] : 'dataset';
 		 $organization = isset($instance['organization']) ? $instance['organization'] : -1;
+		 $related_by_category = !empty( $instance['related_by_category']) ? true : false;
 		 $organization_list = [];
 		 $template = isset($instance['template']) ? $instance['template'] : 'dataset-list';
 
@@ -135,6 +139,10 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 		<input class="widefat" id="<?php echo $this->get_field_id('filter_fields');?>" name="<?php echo $this->get_field_name('filter_fields');?>" type="text" value="<?php echo esc_attr($filter_fields);?>" placeholder="<?php _e('Specify valid JSON, otherwise not saved');?>">
 		<label for="<?php echo $this->get_field_id('type');?>"><?php _e('Dataset type:');?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('type');?>" name="<?php echo $this->get_field_name('type');?>" type="text" value="<?php echo esc_attr($type);?>" placeholder="<?php _e('dataset, library_record, etc..');?>">
+
+		<input type="checkbox" name="<?php echo $this->get_field_name('related_by_category'); ?>" id="<?php echo $this->get_field_id('related_by_category'); ?>" <?php if ($related_by_category)  echo 'checked="true"'; ?>/>
+		<label for="<?php echo $this->get_field_id('related_by_category');?>"><?php _e('Related By Category:');?></label><br/>
+
 		<label for="<?php echo $this->get_field_id('limit');?>"><?php _e('Limit:');?></label>
 		<input class="widefat" type="number" id="<?php echo $this->get_field_id('limit');?>" name="<?php echo $this->get_field_name('limit');?>" value="<?php echo esc_attr($limit);?>">
 		<h3>Output</h3>
@@ -189,12 +197,16 @@ class Wpckan_Related_Resources_Widget extends WP_Widget
 		 $instance['output_fields_resources'] = (! empty( $new_instance['output_fields_resources'])) ? strip_tags( $new_instance['output_fields_resources'] ) : '';
 		 $instance['output_fields_resources'] = wpckan_remove_whitespaces($instance['output_fields_resources']);
 		 $instance['sort'] = (! empty( $new_instance['sort'])) ? strip_tags( $new_instance['sort'] ) : 'metadata_modified+desc';
+		 $instance['related_by_category'] = isset($new_instance['related_by_category']) ? true : false;
 		 $instance['template'] = (!empty( $new_instance['template'])) ? $new_instance['template'] : 'dataset-list';
 
 		 return $instance;
  }
 }
+function Related_Resources_Widget(){
+	register_widget("Wpckan_Related_Resources_Widget");
+}
+add_action( 'widgets_init', 'Related_Resources_Widget');
 
-add_action( 'widgets_init', create_function('', 'register_widget("Wpckan_Related_Resources_Widget");'));
 
 ?>
