@@ -238,6 +238,6 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget {
 
 }
 
-add_action( 'widgets_init', function() { register_widget("Wpckan_Query_Resources_By_Topic_Widget"); });
+add_action( 'widgets_init', create_function('', 'register_widget("Wpckan_Query_Resources_By_Topic_Widget");'));
 
 ?>
