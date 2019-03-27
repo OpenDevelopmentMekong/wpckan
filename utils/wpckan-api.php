@@ -13,6 +13,7 @@
   function wpckan_api_package_show($ckan_domain, $id)
   {
       $ckanapi_url = $ckan_domain.'/api/3/action/package_show?id='.$id;
+      echo "<script>console.log( 'API 3 Show: /api/3/action/package_show?id=" . $id . "' );</script>";
 
       $json = wpckan_get_or_cache($ckanapi_url, $id);
 
@@ -35,6 +36,8 @@
       wpckan_log("wpckan_api_package_atts : ". print_r($attrs, true));	
 
       $ckanapi_url = $ckan_domain.'/api/3/action/package_search'.$query;
+      echo "<script>console.log( 'API 3 Search: /api/3/action/package_search" . $query . "' );</script>";
+
       $json = wpckan_get_or_cache($ckanapi_url, $query);
 
       if ($json === false) {

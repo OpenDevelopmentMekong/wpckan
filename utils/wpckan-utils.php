@@ -65,7 +65,6 @@
 
   function wpckan_show_related_datasets($atts) {
     wpckan_log("wpckan_show_related_datasets " . print_r($atts,true));
-
     $related_datasets_json = get_post_meta( $atts['post_id'], 'wpckan_related_datasets', true );
     $related_datasets = array();
     if (!wpckan_is_null_or_empty_string($related_datasets_json)):
@@ -79,13 +78,23 @@
 
     // Add ids attribute to constraint search
     $atts['ids'] = array_map(function($item){
-      return $item['dataset_id'];
+      return $item['dataset_id']; //get related dataset added in post
     }, $related_datasets);
 
     $atts['ids'] = array_filter($atts['ids'], "wpckan_valid_id");
 
     if (empty($atts['ids'])):
-      return "";
+       if(isset($atts['category']) && $atts['category']== true){
+ 		      $categories_names = wp_get_post_terms( $atts['post_id'], 'category', array( 'fields' => 'names' ) );
+          $filter_value = implode("OR", $categories_names);
+          if($categories_names){
+            $atts['filter_fields'] = '{"extras_taxonomy":"'.$filter_value.'"}';
+          }else {
+            return null;
+          }
+       }else {
+         return null;
+       }
     endif;
 
     $result = wpckan_api_package_search(wpckan_get_ckan_domain(),$atts);
@@ -364,15 +373,22 @@
     // filter_fields
     if (isset($attrs['filter_fields'])):
       $filter_fields_json = json_decode($attrs['filter_fields'],true);
+
       if (isset($filter_fields_json)):
         foreach ($filter_fields_json as $field => $value):
-
           if ($field == "extras_taxonomy"):
-            $taxonomy_top_tier = odm_taxonomy_manager()->get_taxonomy_top_tier();
-            if (array_key_exists($value,$taxonomy_top_tier)):
-              $value = "(\"" . implode("\" OR \"", $taxonomy_top_tier[$value]) . "\")";
-              $value = urlencode($value);
-            endif;
+            $taxonomy_top_tier = odm_taxonomy_manager()->get_taxonomy_top_tier(); //not work as exported, pls check
+            $taxonomy_values = explode("OR", $value);
+            if(count($taxonomy_values) > 1){
+                  $value = "(\"" . implode("\" OR \"", $taxonomy_values) . "\")";
+                  $value = urlencode($value);
+            }else{
+              if (array_key_exists($value,$taxonomy_top_tier)): //check if category exists or not
+                $value = "(\"" . implode("\" OR \"", $taxonomy_top_tier[$value]) . "\")";
+                $value = urlencode($value);
+              endif;
+            }
+
           endif;
           if ($field == "odm_reference_document"):
               $fq = $fq . '+' . $field . ':"' . $value.'"';
@@ -421,7 +437,7 @@
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
       curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-      //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
       $content = curl_exec($ch);
       curl_close($ch);
       return $content;
