@@ -312,10 +312,10 @@
 
     $bt = debug_backtrace();
     $caller = array_shift($bt);
-
+    $caller_2 = array_shift($bt);
     Analog::handler(Handler\File::init($log_file_path));
 
-    Analog::log ( "[ " . $caller['file'] . " | " . $caller['line'] . " ] " . $text );
+    Analog::log ( "[ ".$caller['file'].":".$caller['line'].", ".$caller_2['file'].": ". $caller_2['line'] . " ] " . $text );
   }
 
   /*
