@@ -11,13 +11,19 @@ function wpckan_get_or_cache($url,$id){
 
    wpckan_log("wpckan_get_or_cache url:" . $url . " id: " . $hashed_id);
 
-   if (defined(WP_REDIS_CACHE_HOST)) {
+   if (defined('WP_REDIS_CACHE_HOST')) {
      $json = $GLOBALS['cache']->fetch($hashed_id);
+     if ($json) {
+       wpckan_log("Got $url from redis");
+       return $json;
+     }
    }
-   if ($json && $json != '{}') {
+   if (!$json || $json == '{}') {
+     wpckan_log("Getting from $url");
      $json = wpckan_do_curl($url);
    }
    if (!(strpos($json, '"success": false') !== false && !empty($hashed_id))) {
+     wpckan_log("Saving $url to cache");
      $GLOBALS['cache']->save($hashed_id, $json, $GLOBALS['cache_time']);
    }
 
