@@ -17,15 +17,20 @@
  include_once plugin_dir_path(__FILE__).'utils/datastore-api.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-api.php';
  include_once plugin_dir_path(__FILE__).'utils/wpckan-options.php';
+ use Doctrine\Common\Cache\RedisCache;
 
  $GLOBALS['wpckan_options'] = new Wpckan_Options();
 
  $cache_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path');
  $cache_time = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_time');
- $cache = new Gilbitron\Util\SimpleCache();
- $cache->cache_path = $cache_path;
- $cache->cache_time = $cache_time;
- $GLOBALS['cache'] = $cache;
+ if (defined('WP_REDIS_CACHE_HOST')){
+     $redis = new Redis();
+     $redis->pconnect(WP_REDIS_CACHE_HOST, WP_REDIS_CACHE_PORT);
+     $cache = new RedisCache();
+     $cache->setRedis($redis);
+     $GLOBALS['cache'] = $cache;
+     $GLOBALS['cache_time'] = $cache_time;
+ }
 
 if (!class_exists('wpckan')) {
     class wpckan

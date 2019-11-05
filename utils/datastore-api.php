@@ -1,26 +1,25 @@
 <?php
 
- function wpckan_get_or_cache($url,$id){
+function wpckan_get_or_cache($url,$id){
 
-   $json = "{}";
-   $hashed_id = md5($id);
+  if (!$id) {
+    return  wpckan_do_curl($url);
+  }
+  
+  $json = "{}";
+  $hashed_id = "wpckan.".md5($id);
 
    wpckan_log("wpckan_get_or_cache url:" . $url . " id: " . $hashed_id);
 
-   if (!(bool)($GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled'))):
+   if (defined(WP_REDIS_CACHE_HOST)) {
+     $json = $GLOBALS['cache']->fetch($hashed_id);
+   }
+   if ($json && $json != '{}') {
      $json = wpckan_do_curl($url);
-   else:
-     $json = $GLOBALS['cache']->get_data($hashed_id,$url);
-
-     if (strpos($json, '"success": false') !== false && !empty($hashed_id)) {
-        $file_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path')  . $hashed_id;
-        wpckan_log("wpckan_get_or_cache deleting cached file:" . $file_path);
-        if (file_exists($file_path)) {
-          unlink($file_path);
-        }
-     }
-
-   endif;
+   }
+   if (!(strpos($json, '"success": false') !== false && !empty($hashed_id))) {
+     $GLOBALS['cache']->save($hashed_id, $json, $GLOBALS['cache_time']);
+   }
 
    return $json;
  }

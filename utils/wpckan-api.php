@@ -4,7 +4,7 @@
   use Guzzle\Cache\DoctrineCacheAdapter;
   use Guzzle\Plugin\Cache\CachePlugin;
   use Guzzle\Plugin\Cache\DefaultCacheStorage;
-  use Doctrine\Common\Cache\FilesystemCache;
+  use Doctrine\Common\Cache\RedisCache;
 
   /*
   * Custom api methods
@@ -75,16 +75,21 @@
   {
       $ckanClient = CkanClient::factory($settings);
 
-      if ((bool)($GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_enabled'))):
+      if (defined(WP_REDIS_CACHE_HOST)){
+	$redis = new Redis();
+	$redis->connect(WP_REDIS_CACHE_HOST, WP_REDIS_CACHE_PORT);
+	$cache = new RedisCache();
+	$cache->setRedis($redis);
+
         $cache_plugin = new CachePlugin(array(
             'storage' => new DefaultCacheStorage(
                 new DoctrineCacheAdapter(
-                    new FilesystemCache('/cache/')
+                    $cache
                 )
             ),
         ));
         $ckanClient->addSubscriber($cache_plugin);
-      endif;
+      }
 
       return $ckanClient;
   }
