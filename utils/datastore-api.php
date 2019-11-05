@@ -51,7 +51,7 @@ function wpckan_get_or_cache($url,$id){
      }
 
      $profiles = json_decode($json, true) ?: [];
-     if ($profiles['success']==false){
+     if (!isset($profiles['success']) || $profiles['success']==false){
        return [];
      }
 
