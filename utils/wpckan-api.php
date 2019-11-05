@@ -21,49 +21,48 @@
       }
       $datasets = json_decode($json, true) ?: [];
 
-			if (!isset($datasets['result'])):
-				return [];
-			endif;
-
-      wpckan_log('wpckan_api_package_show result: '. print_r($datasets['result'], true));
-
+      if (!isset($datasets['result'])):
+	return [];
+      endif;
+      
       return $datasets['result'];
   }
 
   function wpckan_api_package_search($ckan_domain, $attrs)
   {
       $query = '?'.compose_solr_query_from_attrs($attrs);
+      wpckan_log("wpckan_api_package_search : $query");
+      wpckan_log("wpckan_api_package_atts : ". print_r($attrs, true));	
+
       $ckanapi_url = $ckan_domain.'/api/3/action/package_search'.$query;
       $json = wpckan_get_or_cache($ckanapi_url, $query);
 
       if ($json === false) {
-          return [];
+	return [];
       }
       $datasets = json_decode($json, true) ?: [];
 
-			if (!isset($datasets['result'])):
-				return [];
-			endif;
+      if (!isset($datasets['result'])){
+	return [];
+      }
 
-			$total_count = $datasets['result']['count'];
-			$iteration = 1;
+      $total_count = $datasets['result']['count'];
+      $iteration = 1;
       $limit_set = array_key_exists("limit",$attrs) && $attrs["limit"] > 0;
-      while ( !$limit_set && $total_count - ($iteration * 1000) > 0):
-				$attrs["limit"] = 1000;
-				$attrs["page"] = $iteration + 1;
-				$query = '?'.compose_solr_query_from_attrs($attrs);
-				$ckanapi_url = $ckan_domain.'/api/3/action/package_search'.$query;
+      while ( !$limit_set && $total_count - ($iteration * 1000) > 0){
+	$attrs["limit"] = 1000;
+	$attrs["page"] = $iteration + 1;
+	$query = '?'.compose_solr_query_from_attrs($attrs);
+	$ckanapi_url = $ckan_domain.'/api/3/action/package_search'.$query;
 
-	      $json = wpckan_get_or_cache($ckanapi_url, $query);
-				if ($json !== false) {
-					$datasets_iteration = json_decode($json, true) ?: [];
-	        $datasets['result']['results'] = array_merge($datasets['result']['results'],$datasets_iteration['result']['results']);
-					$iteration++;
-				}
-      endwhile;
-
-      wpckan_log('wpckan_api_package_search result: '. print_r($datasets['result'], true));
-
+	$json = wpckan_get_or_cache($ckanapi_url, $query);
+	if ($json !== false) {
+	  $datasets_iteration = json_decode($json, true) ?: [];
+	  $datasets['result']['results'] = array_merge($datasets['result']['results'],$datasets_iteration['result']['results']);
+	  $iteration++;
+	}
+      }
+ 
       return $datasets['result'];
   }
 
