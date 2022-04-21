@@ -10,7 +10,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget
     {
         parent::__construct(
             'wpckan_query_resources_by_topic_widget',
-            __('WPCKAN Query resources by post\'s category', 'wpckan'),
+            __('WPCKAN Related resources by categories', 'wpckan'),
             array('description' => __('Queries CKAN for datasets with the post\'s category as value for the field specified.', 'wpckan'))
         );
 
@@ -79,7 +79,7 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget
     {
         global $post;
 
-        $search_field               = isset($instance['search_field']) ? sanitize_text_field($instance['search_field']) : 'title now';
+        $search_field               = isset($instance['search_field']) ? sanitize_text_field($instance['search_field']) : 'taxonomy';
         $limit                      = isset($instance['limit']) ? sanitize_text_field($instance['limit']) : -1;
         $categories_names           = $this->get_categories($post);
         $template                   = isset($instance['template']) ? $instance['template'] : 'dataset-list';
@@ -124,6 +124,10 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget
 
                 echo $output;
 
+                if (!empty($instance['more_link']) && $instance['more_link'] != "") :
+                    echo '<div style="text-align:right"><a href="' . $instance['more_link'] . '" target="_blank">' . $instance['more_text'] . '</a></div>';
+                endif;
+
                 echo $args['after_widget'];
             endif;
         endif;
@@ -136,11 +140,13 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget
      */
     public function form($instance)
     {
-        $title                      = !empty($instance['title']) ? __(sanitize_text_field($instance['title']), 'wpckan') : __('Custom posts', 'wpckan');
+        $title                      = !empty($instance['title']) ? __(sanitize_text_field($instance['title']), 'wpckan') : __('Related resources by category', 'wpckan');
         $organization               = isset($instance['organization']) ? sanitize_text_field($instance['organization']) : -1;
-        $search_field               = !empty($instance['search_field']) ? sanitize_text_field($instance['search_field']) : 'title';
+        $search_field               = !empty($instance['search_field']) ? sanitize_text_field($instance['search_field']) : 'taxonomy';
         $type                       = !empty($instance['type']) ? sanitize_text_field($instance['type']) : 'dataset';
         $limit                      = !empty($instance['limit']) ? sanitize_text_field($instance['limit']) : -1;
+        $more_text                  = !empty($instance['more_text']) ? $instance['more_text'] : 'More...';
+        $more_link                  = !empty($instance['more_link']) ? $instance['more_link'] : '';
 
         $template                   = isset($instance['template']) ? sanitize_text_field($instance['template']) : 'dataset-list';
         $output_fields              = !empty($instance['output_fields']) ? sanitize_text_field($instance['output_fields']) : 'title';
@@ -183,6 +189,14 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget
         <p>
             <label for="<?php echo $this->get_field_id('limit'); ?>"><?php _e('Select max number of posts to list (-1 to show all):', 'wpckan'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('limit'); ?>" name="<?php echo $this->get_field_name('limit'); ?>" type="number" min="-1" value="<?php echo $limit; ?>">
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('more_text'); ?>"><?php _e('More dataset: Link label', 'wpckan'); ?></label>
+            <input class="widefat" type="text" id="<?php echo $this->get_field_id('more_text'); ?>" name="<?php echo $this->get_field_name('more_text'); ?>" value="<?php echo esc_attr($more_text); ?>">
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('more_link'); ?>"><?php _e('More dataset: Link (URL)', 'wpckan'); ?></label>
+            <input class="widefat" type="text" id="<?php echo $this->get_field_id('more_link'); ?>" name="<?php echo $this->get_field_name('more_link'); ?>" value="<?php echo esc_attr($more_link); ?>">
         </p>
 
         <h3>Output</h3>
@@ -230,9 +244,12 @@ class Wpckan_Query_Resources_By_Topic_Widget extends WP_Widget
 
         $instance['title']                      = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
         $instance['organization']               = (!empty($new_instance['organization'])) ? strip_tags($new_instance['organization']) : '';
-        $instance['search_field']               = (!empty($new_instance['search_field'])) ? strip_tags($new_instance['search_field']) : 'title';
+        $instance['search_field']               = (!empty($new_instance['search_field'])) ? strip_tags($new_instance['search_field']) : 'taxonomy';
         $instance['type']                       = (!empty($new_instance['type'])) ? strip_tags($new_instance['type']) : 'dataset';
         $instance['limit']                      = (!empty($new_instance['limit'])) ? strip_tags($new_instance['limit']) : -1;
+        $instance['more_text']                  = (!empty($new_instance['more_text'])) ? $new_instance['more_text'] : 0;
+        $instance['more_link']                  = (!empty($new_instance['more_link'])) ? $new_instance['more_link'] : 0;
+        
         $instance['template']                   = (!empty($new_instance['template'])) ? $new_instance['template'] : 'dataset-list';
         
         $instance['output_fields']              = (!empty($new_instance['output_fields'])) ? strip_tags($new_instance['output_fields']) : 'title';
