@@ -1,0 +1,48 @@
+rules:
+  - id: php-arg-xss
+    mode: taint
+    pattern-sanitizers:
+      - pattern: esc_attr(...)
+      - pattern: esc_html(...)
+      - pattern: esc_textarea(...)
+      - pattern: esc_js(...)
+      - pattern: esc_url(...)
+      - pattern: htmlspecialchars(...)
+      - pattern: sanitize_text_field(...)
+      - pattern: wp_strip_all_tags(...)
+      - pattern: intval(...)
+      - pattern: absint(...)
+      - pattern: gmdate(...)
+      - pattern: isset(...)
+      - patterns:
+        - pattern-inside: array_key_exists($KEY, ...)
+        - pattern: $KEY
+      - pattern: (...)->getNumFound()
+      - pattern: get_post(...)
+      # array lookup is probably ok
+      - patterns:
+        - pattern-inside: $ARRAY[$INDEX]
+        - pattern: $INDEX
+      # local
+      - pattern: wpckan_get_dataset_title(...)
+      - pattern: wpckan_get_dataset_notes(...)
+      - pattern: $F->query_by_params(...)
+      - pattern: $F->query(...)
+      # maybe
+      - pattern: json_encode(...)
+      - pattern: filesize(...)
+      - pattern: file_get_contents(...)
+      # really not sure on this one
+      - pattern: do_shortcode(...)
+
+    pattern-sinks:
+      - pattern: echo(...);
+      - pattern: print(...);
+      - pattern: header(...);
+    pattern-sources:
+      - pattern: $_GET
+      - pattern: $_POST
+    languages:
+      - php
+    message: GET and POST should not be echoed unsanitized
+    severity: WARNING
