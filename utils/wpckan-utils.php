@@ -672,9 +672,9 @@
   }
 
   function wpckan_get_license_list(){
-    $path_to_license_file = wpckan_get_ckan_domain() . '/licenses.json';
+    $path_to_license_file = wpckan_get_ckan_domain() . 'api/action/license_list';
 		$json_file = wpckan_do_curl($path_to_license_file);
-		return json_decode($json_file);
+		return json_decode($json_file)['result'];
   }
 
   function wpckan_is_date($value){
