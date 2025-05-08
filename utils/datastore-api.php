@@ -5,7 +5,7 @@ function wpckan_get_or_cache($url,$id){
   if (!$id) {
     return  wpckan_do_curl($url);
   }
-  
+
   $json = "{}";
   $hashed_id = "wpckan.".md5($id);
 
@@ -23,8 +23,10 @@ function wpckan_get_or_cache($url,$id){
      $json = wpckan_do_curl($url);
    }
    if (!(strpos($json, '"success": false') !== false && !empty($hashed_id))) {
-     wpckan_log("Saving $url to cache");
-     $GLOBALS['cache']->save($hashed_id, $json, $GLOBALS['cache_time']);
+ 		if ($GLOBALS['cache'] !== null) {
+			wpckan_log("Saving $url to cache");
+			$GLOBALS['cache']->save($hashed_id, $json, $GLOBALS['cache_time']);
+		} else wpckan_log('cache is null');
    }
 
    return $json;

@@ -23,14 +23,21 @@
 
  $cache_path = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_path');
  $cache_time = $GLOBALS['wpckan_options']->get_option('wpckan_setting_cache_time');
- if (defined('WP_REDIS_CACHE_HOST')){
-     $redis = new Redis();
-     $redis->pconnect(WP_REDIS_CACHE_HOST, WP_REDIS_CACHE_PORT);
-     $cache = new RedisCache();
-     $cache->setRedis($redis);
-     $GLOBALS['cache'] = $cache;
-     $GLOBALS['cache_time'] = $cache_time;
- }
+  if (defined('WP_REDIS_CACHE_HOST')){
+      try {
+          if (!class_exists('Redis')) {
+              throw new Exception('Redis extension is not installed');
+          }
+          $redis = new Redis();
+          $redis->pconnect(WP_REDIS_CACHE_HOST, WP_REDIS_CACHE_PORT);
+          $cache = new RedisCache();
+          $cache->setRedis($redis);
+          $GLOBALS['cache'] = $cache;
+          $GLOBALS['cache_time'] = $cache_time;
+      } catch (Exception $e) {
+          error_log('WPCKAN Redis Error: ' . $e->getMessage());
+      }
+  }
 
 if (!class_exists('wpckan')) {
     class wpckan
