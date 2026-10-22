@@ -89,7 +89,7 @@
     endif;
 
     $result = wpckan_api_package_search(wpckan_get_ckan_domain(),$atts);
-    $dataset_array = $result["results"];
+    $dataset_array = $result["results"] ??[];
 
     if ((count($dataset_array) == 0) && $blank_on_empty):
       return "";
